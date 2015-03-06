@@ -1,0 +1,24 @@
+% definizione indice
+\ifthenelse{\equal{\INDICE}{true}}
+	{\tableofcontents \newpage}{}
+
+% definizione lista tabelle
+\ifthenelse{\equal{\TABELLE}{true}} 
+	{\listoftables \newpage}{}
+
+% definizione lista figure
+\ifthenelse{\equal{\FIGURE}{true}}
+	{\listoffigures \newpage}{}
+
+
+% numerazione pagine
+\pagenumbering{arabic}
+
+	% formato visualizzazione
+	\rfoot{\thepage ~di~\pageref{TotPages}}
+
+
+% separatore
+\iffalse
+	AOjvdYTJD7mcIIYItfsNiYPbmTTogRSP9hrrb2XPE1laMyQ9NHrPgTCTxnW0eV1YcM3Wqh7t5qThjczeXWq3O5FJ7BBQjoWZovC5
+\fi
