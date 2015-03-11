@@ -3,26 +3,26 @@
 
 
 % definizione variabili locali
-\def\DOCUMENTO{<Nome documento>}
+\def\DOCUMENTO{Studio di fattibilità}
 \def\VERSIONE{1.0.0}
 
 \def\DESCRIZIONE{<Info documento}
 
-\def\REDATTORE {<Redattore>}
+\def\REDATTORE {Fabio Ros}
 \def\VERIFICATORE {<Verificatore>}
 \def\RESPONSABILE {<Responsabile>}
 
-\def\USO {<Uso>}
+\def\USO {Interno}
 
 \def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\}
 
-\def\DESCRIZIONE {<Descrizione>}
+\def\DESCRIZIONE {Documento che descrive le motivazioni che ci hanno portato alla scelta del Progetto "Premi" sulla base di un'analisi di fattibilità di tutti e cinque i possibili capitolati.}
 
 
 % abilita (true) / disabilita (false) indice, lista tabelle, lista figure
 \def\INDICE	{true}
-\def\TABELLE {true}
-\def\FIGURE {true}
+\def\TABELLE {false}
+\def\FIGURE {false}
 
 
 % importa struttura
@@ -38,6 +38,22 @@
 %\section{<nomesezione>}
 %\input{sections/<nomefile>.tex}
 
+\section{Introduzione}
+\input{sections/Introduzione.tex}
+
+\newpage
+
+\section{Capitolato C4: Premi: Software di presentazione "better than Prezi"
+}
+\input{sections/C4_premi.tex}
+
+\newpage
+\section{Confronto con gli altri capitolati}
+\input{sections/Confronto_con_gli_altri_capitolati.tex}
+
+\newpage
+\section{Conclusioni}
+\input{sections/Conclusioni.tex}
 %\newpage
 
 % ...
