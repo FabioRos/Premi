@@ -1,5 +1,5 @@
 E' compito degli analisti stilare il documento Analisi dei requisiti.
-In questo documento dovranno essere presenti tutti i requisiti ed i casi d'uso(g) emersi dall'analisi del capitolato e dalle riunioni con il proponente.\\
+In questo documento dovranno essere presenti tutti i requisiti ed i casi d'uso emersi dall'analisi del capitolato e dalle riunioni con il proponente.\\
 
 \subsection{Requisiti}
 
@@ -9,16 +9,16 @@ R\{importanza\}\{tipo\}\{codice\}
 \begin{itemize}
   \item Importanza può assumere i seguenti valori:
 \begin{itemize}
-	\item (0) Requisito obbligatorio;
-	\item (1) Requisito desiderabile;
-	\item (2) Requisito opzionale.
+	\item {0} : Requisito obbligatorio;
+	\item {1} : Requisito desiderabile;
+	\item {2} : Requisito opzionale.
 \end{itemize}
   \item Tipo può assumere i seguenti valori:
 \begin{itemize}
-	\item (F) Requisito funzionale;
-	\item (Q) Requisito di qualità
-	\item (P) Requisito di prestazione;
-	\item (V) Requisito di vincolo.
+	\item {F} : Requisito funzionale;
+	\item {Q} : Requisito di qualità
+	\item {P} : Requisito di prestazione;
+	\item {V} : Requisito di vincolo.
 \end{itemize}
   \item Codice rappresenta il codice univoco di ogni requisito in forma gerarchica.
 \end{itemize}
@@ -26,13 +26,18 @@ Ogni requisito dovrà essere inserito (nel documento Analisi dei Requisiti) in u
 
 \subsection{Casi d'uso}
 
-Dopo la stesura dei requisito è sempre compito degli analisti l'analisi dei casi d'uso (UC use case).
-Per ogni caso d'uso(g) è richiesto:
+Dopo la stesura dei requisiti è sempre compito degli analisti analizzare i casi d'uso (abbreviati con UC, use case).
+Per ogni caso d'uso è richiesto:
 \begin{itemize}
-	\item Codice identificativo: nel formato UCxx, dove xx indica un numero identificativo del caso d'uso(g);
-	\item Descrizione: una breve descrizione chiara e dettagliata del caso d'uso(g);
-	\item Diagramma: dovrà essere usato UML(g) 2.0 per la creazione dei diagrammi dei casi d'uso(g);
+	\item Codice identificativo: nel formato UCxx, dove xx indica un numero identificativo del caso d'uso;
+	\item Titolo: titolo sintetico del caso d'uso;
+	\item Descrizione: una breve descrizione chiara e dettagliata del caso d'uso;
+	\item Diagramma: dovrà essere usato UML 2.4 per la creazione dei diagrammi dei casi d'uso;
 	\item Attori: gli attori coinvolti nel caso d'uso (principali e secondari);
 	\item Precondizione: la precondizione del requisito;
 	\item Postcondizione: la postcondizione del requisito.
 \end{itemize}
+
+\subsection{Tracciamento}
+
+Per il tracciamento dei requisiti è stato creato un database, accessibile via web, che associa ad ogni casi d'uso i corrispettivi requisiti e viceversa.

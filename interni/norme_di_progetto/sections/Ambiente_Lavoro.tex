@@ -1,33 +1,33 @@
-zIn questa sezione verrà illustrato l'ambiente di lavoro che sarà utilizzato durante lo sviluppo del progetto Premi.\\
+In questa sezione verrà illustrato l'ambiente di lavoro che sarà utilizzato durante lo sviluppo del progetto Premi.\\
 
 \subsection{Sistema operativo}
 
-Il sistema operativo utilizzato lasciato a discrezione di ogni membro del gruppo. Questa scelta è dovuta principalmente al fatto che il progetto dovrà supportare più piattaforme.
+Il sistema operativo utilizzato è lasciato a discrezione di ogni membro del gruppo. Questa scelta è dovuta principalmente al fatto che il progetto dovrà supportare più piattaforme.
 I membri del gruppo utilizzeranno i seguenti sistemi operativi:
 
 \begin{itemize}
-	\item Windows(g) 7 64 bit;
-	\item Ubunto(g) xx;
-	\item Mac OS(g) xx.
+	\item Windows 7 64 bit;
+	\item Ubuntu 14;
+	\item Mac OS X.
 \end{itemize}
 
 \subsection{Coordinamento}
 
 Il coordinamento del gruppo avviene tramite:
 \begin{itemize}
-	\item Repository(g) Github(g);
-	\item Google Drive(g);
-	\item Teamwork(g);
-	\item Facebook(g).
+	\item Repository Github;
+	\item Google Drive;
+	\item Teamwork;
+	\item Facebook.
 \end{itemize}
 
 \subsubsection{Repository Github}
 
-Nonostante siano disponibili molti repository (Github, Mercurial, SVN) è stato scelto di utilizzare Github(g) in quanto il servizio soddisfa pienamente le necessità di hosting e versionamento necessarie per lo sviluppo di questo progetto, inoltre diversi membri del gruppo avevano già usato tale repository.
+Nonostante siano disponibili molti repository (Github, Mercurial, SVN) è stato scelto di utilizzare Github in quanto il servizio soddisfa pienamente le necessità di hosting e versionamento necessarie per lo sviluppo di questo progetto, inoltre diversi membri del gruppo avevano già usato tale repository.
 
 \subsubsection{Google Drive}
 
-Abbiamo scelto di utilizzare questo servizio cloud per condividere tutti i documenti che vengono utilizzati frequentemente da parte dei membri del gruppo e per la semplicità di acceso dei documenti via browser.
+Abbiamo scelto di utilizzare questo servizio cloud per condividere tutti i documenti che vengono utilizzati frequentemente da parte dei membri del gruppo e per la semplicità di accesso dei documenti via browser.
 
 \subsubsection{Teamwork e Facebook}
 
@@ -38,7 +38,7 @@ Facebook viene utilizzato per inviare messaggi attraverso i membri del gruppo.
 
 \subsubsection{Stesura documenti}
 
-Per la stesura dei documenti verrà utilizzato il linguaggio di markup(g) LATEX.
+Per la stesura dei documenti verrà utilizzato il linguaggio di markup \LaTeX.
 Come editor è consigliato TexMaker, il quale è disponibile per tutti i principali sistemi operativi.
 
 \subsubsection{Script}
@@ -46,31 +46,29 @@ Come editor è consigliato TexMaker, il quale è disponibile per tutti i princip
 Per facilitare la stesura dei documenti sono stati creati alcuni script:
 
 \begin{itemize}
-	\item Generazione di tutti i documenti PDF: con il comando make all verranno generati tutti i PDF dei documenti contenuti nella directory corrente;
-	\item Controllo ortografico: con il comando make aspell verrà invocato il programma aspell su tutti i documenti della directory corrente;
-	\item Eliminazione file errati o vecchi: con il comando make clean verranno eliminatati i file generati da compilazioni vecchio o file non necessari della directory corrente;
-	\item Evidenziare glossario: con il comando java glossary verrà eseguito uno script che selezionerà nei documenti, della directory corrente, le parole contenute nella versione più recente del glossario e le evidenzierà con il simbolo (g).
+	%\item Generazione di tutti i documenti PDF: con il comando make all verranno generati tutti i PDF dei documenti contenuti nella directory corrente;
+	%\item Controllo ortografico: con il comando make aspell verrà invocato il programma aspell su tutti i documenti della directory corrente;
+	%\item Eliminazione file errati o vecchi: con il comando make clean verranno eliminatati i file generati da compilazioni vecchio o file non necessari della directory corrente;
+	\item Evidenziare glossario: con il comando java glossary verrà eseguito uno script che selezionerà nei documenti, della directory corrente, le parole contenute nella versione più recente del glossario e le evidenzierà con il simbolo \G.
+	
+	"scrivo altri script quando abbiamo deciso quali fare"
 
 \end{itemize}
 
 \subsubsection{Pianificazione delle attività}
 
-Per pianificare le attività verrà utilizzato il servizio Teamwork che permette, oltre a creare task ed assegnarli ai vari membri del gruppo, di creare in automatico in diagramma di Gantt.
+Per pianificare le attività verrà utilizzato il servizio Teamwork che permette, oltre a creare task ed assegnarli ai vari membri del gruppo, di creare in automatico il diagramma di Gantt.
 
 \subsection{Ambiente di sviluppo}
 
-%Descrizione IDE e Framework vari.
+"Descrizione IDE e Framework vari."
 
-%\subsection{Diagrammi UML}
+\subsection{Diagrammi UML}
 
-Per la realizzazione dei diagrammi UML(g) è stato scelto Astah(g) Professional Edition.
+Per la realizzazione dei diagrammi UML è stato scelto Astah Professional Edition.
 E' possibile ricevere gratuitamente la licenza della versione professional inviando una richiesta al sito http://astah.net/student-license-request.
 
 \subsection{Verifica}
-
-\subsubsection{Tracciamento dei requisiti}
-
-Per il tracciamento dei requisiti è stato creato un database, accessibile via web, che associa ad ogni casi d'uso(g) i corrispettivi requisiti e viceversa.
 
 \subsubsection{Verifica dei documenti}
 
@@ -84,15 +82,11 @@ Per una corretta verifica di un documento vanno seguite le seguenti pratiche:
 	\item 4) Controllo contenuto: il Verificatore dovrà controllare che il documento contenga tutto il necessario e che sia impaginato adeguatamente;
 	\item 5) Rispetto delle norme del progetto: il Verificatore dovrà controllare che il documento segua le norme di progetto stabilite;
 	\item 6) Lista di controllo: si dovrà stilare una lista di errori più frequenti, per semplificare le successive verifiche dei documenti;
-	\item 7) Rispetto indice Gulpease: il verificatore dovrà calcolare e controllore, per ogni documento, che gli indici di Gulpease risiedano nel range di valori specificato nel Piano di Qualifica, altrimenti si dovrà effettuare una ricerca walkthrough alla ricerca delle frasi troppo lunghe e complesse;
+	\item 7) Rispetto indice Gulpease: il verificatore dovrà calcolare e controllare, per ogni documento, che gli indici di Gulpease risiedano nel range di valori specificato nel Piano di Qualifica, altrimenti si dovrà effettuare una ricerca walkthrough alla ricerca delle frasi troppo lunghe e complesse;
 	\item 8) Segnalazione errori: una volta completata la verifica di un documento se sono stati riscontrati errori, il Verificatore dovrà aprire dei task per segnalarli.
 \end{itemize}
 
 \subsection{Verifica dei diagrammi}
 
-I diagrammi devono essere verificati manualmente dal verificatore e deve controllare che aderiscano correttamente allo stadard UML(g).
-In particolare deve controllare che i diagrammi di flusso siano rappresentati in maniera corretta e che i casi d'uso(g) utilizzino correttamente le inclusione e le estensioni.
-
-%\subsection{Verifica del codice}
-
-%Non lo so ancora XD.
+I diagrammi devono essere verificati manualmente dal verificatore e deve controllare che aderiscano correttamente allo stadard UML.
+In particolare deve controllare che i diagrammi di flusso siano rappresentati in maniera corretta e che i casi d'uso utilizzino correttamente le inclusioni e le estensioni.
