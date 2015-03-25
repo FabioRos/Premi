@@ -1,0 +1,43 @@
+\subsection{Caso d'uso UC8: Apertura infografica}
+\begin{figure}[h] 
+	\centering 
+	\includegraphics[scale=0.45] {img/UC8.png} 
+	\caption{UC8 - Apertura infografica} 
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente ha scelto di aprire un'\gls{infografica} già creata. L'utente deve scegliere e selezionare l'\gls{infografica} da aprire;
+	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il file da aprire;
+	\item \textbf{Flusso degli eventi:}
+	\begin{enumerate}
+		\item L'utente naviga il \gls{filesystem} alla ricerca del file desiderato [UC8.1];
+		\item L'utente seleziona il file [UC8.2];
+		\item L'utente conferma la selezione [UC8.3].
+	\end{enumerate}
+	\item \textbf{Postcondizione:} Il sistema ha caricato il file selezionato dall'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.1: Navigare il filesystem}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può navigare il \gls{filesystem} selezionando la cartella dentro la quale si trova l'\gls{infografica} da caricare;
+	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni una cartella;
+	\item \textbf{Postcondizione:} Il sistema ha aggiornato la cartella corrente con quella selezionata dall'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.2: Selezionare il file}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente deve selezionare il file che intende aprire;
+	\item \textbf{Precondizione:} Il sistema mostra tutti i file contenuti nella cartella scelta in precedenza;
+	\item \textbf{Postcondizione:} Il sistema evidenzia il file selezionato dall'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.3: Confermare selezione}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente conferma la scelta del file fatta in precedenza;
+	\item \textbf{Precondizione:} Il sistema ha selezionato il file scelto dall'utente;
+	\item \textbf{Postcondizione:} Il sistema ha caricato il file scelto in precedenza dall'utente.
+\end{itemize}
