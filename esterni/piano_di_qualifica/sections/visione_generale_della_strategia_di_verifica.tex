@@ -1,0 +1,92 @@
+\subsection{Pianificazione strategica e temporale}
+I nostri obiettivi possono essere raggiunti solamente attraverso una buona pianificazione in base alla quale dobbiamo agire. Con l'obiettivo di rispettare le scadenze fissate nel \textit{Piano di Progetto v1.0.0} è fondamentale un'attività di verifica ben organizzata e sistematica, pertanto è essenziale, prima di iniziare qualsiasi attività, capire la struttura e i contenuti di essi. È inoltre opportuna un'attenta lettura delle \textit{Norme di Progetto v1.0.0} dove saranno descritte le varie metodologie da seguire per l'individuazione e la correzione degli errori.
+
+\subsection{Responsabile}
+La responsabilità di tutte le attività di verifica e validazione sono a carico del \textit{Responsabile di Progetto} e dei \textit{Verificatori}. Questi ruoli, durante le varie fasi di progetto, saranno ricoperti da diversi componenti del gruppo, come descritto nel \textit{Piano di Progetto v1.0.0}. Per questo motivo è necessario che tutti i componenti del gruppo siano motivati e incoraggiati a prendersi le responsabilità per il lavoro svolto e per sviluppare nuovi approcci per il miglioramento della qualità.
+
+\subsection{Risorse necessarie}
+Per assicurarsi che gli obiettivi vengano raggiunti e monitorare costantemente lo sviluppo è necessario l'utilizzo sia di risorse umane che tecnologiche. I ruoli che hanno una responsabilità maggiore per l'attività di verifica e validazione sono il \textit{Responsabile di Progetto} e il \textit{Verificatore}. Per una descrizione dettagliata dei ruoli e delle loro responsabilità si rimanda alle \textit{Norme di Progettov1.0.0}. Inoltre nelle \textit{Norme di Progettov1.0.0} vengono descritte le risorse tecnologiche, ossia gli strumenti hardware e software, necessari alle attività di verifica. Affinché il lavoro delle persone implicate, in particolare del \textit{Verificatore}, venga agevolato si sono predisposti numerosi strumenti automatici garantendo un controllo più semplice e corretto.
+
+\subsection{Attività chiavi}
+\begin{itemize}
+	\item \textbf{Garanzia della qualità:} tutte le attività che sono realizzate all'interno di un sistema e che hanno e che hanno l'obiettivo di perseguire e soddisfare requisiti di qualità di un servizio. Si tratta di misurazione sistematica, di confronto con uno o più standard, di monitoraggio dei processi e feedback che garantiscono la prevenzione degli errori; attività a fronte delle quali questi ultimi dovrebbero essere eliminati;
+	\item \textbf{Pianificazione della qualità del prodotto:} la selezione delle procedure standard appropriati da questo sistema, adattandolo per uno specifico progetto software;
+	\item \textbf{Controllo della qualità:} la definizione dei processi che assicura che il team  di sviluppo software seguono le procedure e standard adottati nel progetto.
+\end{itemize}
+\newpage
+\subsection{Tecniche di analisi}
+Le due principali tecniche di analisi che verranno adottate sono l'analisi statica e l'analisi dinamica.
+	\subsubsection{Analisi statica}
+	L'analisi statica è una tecnica di analisi applicabile sia alla documentazione che al codice. Permette di verificare la correttezza dei prodotti, individuando errori e anomalie. Ci sono due tecniche per effettuare tale analisi:
+	\begin{itemize}
+		\item \textbf{Walktrough\footnote{Cosiddetta lettura a pettine.}:} 
+		\item \textbf{Inspection\footnote{Ricerca selettiva.}:} 
+	\end{itemize}
+	
+	\subsubsection{Analisi dinamica}
+	L'analisi dinamica è una tecnica di analisi applicabile al prodotto software. 
+	Prima di effettuare questo tipo di analisi, devono essere definiti:
+	\begin{itemize}
+		\item \textbf{Ambiente:} consiste sia dal sistema software che dal sistema hardware utilizzato;
+		\item \textbf{Specifica:} consiste nel definire i parametri di input necessari all'esecuzione e i parametri attesi per vedere se coincidono;
+		\item \textbf{Procedure:} consiste nel definire il modo in cui devono essere fatti i test, come trattare i risultati ottenuti e chiarire un'eventuale ordine tra i test;
+		\item \textbf{Test di unità\footnote{La più piccola quantità di software che è ragionevole testare da sola.}:} consiste nel verificare ogni singola unità del prodotto sofware attraverso l'utilizzo di strumenti come stub o driver. Lo scopo dello unit testing è quello di verificare il corretto funzionamento di parti di programma permettendo così una precoce individuazione dei bug. Uno unit testing accurato produce vari vantaggi come:
+			\begin{itemize}
+				\item Semplifica le modifiche;
+				\item Semplifica L'integrazione;
+				\item Supporta la documentazione.
+			\end{itemize}
+		\item \textbf{Test di integrazione:} consiste nella verifica dei componenti del sistema che sono formati dalla combinazione di più unità. Ha lo scopo di evidenziare gli eventuali errori residui, non individuati durante la realizzazione dei singoli moduli;
+		\item \textbf{Test di sistema:} consiste nell'eseguire nuovamente i test di unità e integrazione per le componenti che hanno subito modifiche o per le nuove funzionalità. Lo scopo è verificare di avere un prodotto di alta qualità per ogni nuova funzionalità o modifiche importanti;
+		\item \textbf{Test di accettazione:} È il collaudo del prodotto software che viene eseguito in presenza del proponente. Se tale collaudo viene superato positivamente si può procedere al rilascio ufficiale del prodotto sviluppato.
+	\end{itemize}
+\newpage
+\subsection{Misure e Metriche}
+Per garantire il raggiungimento degli obiettivi è necessario fissare delle metriche sulle quali poter misurare i risultati ottenuti dalle varie attività di verifica. È dunque di fondamentale importanza saper quantificare, attraverso delle metriche stabilite a priori, il processo di verifica. Grazie al ciclo di vita adottato descritto nel \textit{Piano di Progettov1.0.0} le metriche incerte ed approssimate si potranno migliorare in modo incrementale.\\
+Ogni metrica avrà due caratteristiche fondamentali:
+\begin{itemize}
+	\item \textbf{Range di accettazione:} intervallo entro il quale il prodotto si può ritenere soddisfacente;
+	\item \textbf{Range ottimale:} valore entro il quale dovrebbe arrivare la misurazione.
+\end{itemize} 
+	\subsubsection{Metriche per la documentazione}
+	Come metrica per i documenti redatti si è deciso di utilizzare l'indice di leggibilità Gulpease. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico. L'indice è tarato sulla lingua italiana e considera due variabili linguistiche: la lunghezza della parola e la lunghezza della frase rispetto al numero delle lettere. \\
+	L'indice è calcolato attraverso la seguente formula:\\
+	\begin{center}
+	$89+ \frac{300*\left(numero\:\ delle\:\ frasi \right)-10*\left(numero\:\ delle\:\ lettere\right)}{numero\:\ delle\:\ parole}$
+	\end{center}
+	I risultati sono compresi tra 0 e 100, dove 100 indica la leggibilità più alta e 0 la leggibilità più bassa. In generale risulta che i testi con indice:
+	\begin{itemize}
+		\item Inferiore a 80 sono difficili da leggere per chi ha la licenza elementare;
+		\item Inferiore a 60 sono difficili da leggere per chi ha la licenza media;
+		\item Inferiore a 40 sono difficile da leggere per chi ha il diploma superiore.
+	\end{itemize}
+	Basandoci su queste considerazioni è stato scelto di utilizzare:
+	\begin{itemize}
+		\item \textbf{Range di accettazione:} [40 - 100];
+		\item \textbf{Range ottimale:} [50 - 100].
+	\end{itemize}
+	
+	\subsubsection{Metriche per il software}
+	Di seguito saranno descritte le metriche che riguardano il software. Data l'inesperienza del gruppo, questa sezione e soggetta a modifiche nelle prossime revisioni.
+	\begin{itemize}
+		\item \textbf{Complessità ciclomatica:} misura direttamente il numero di cammini linearmente indipendenti attraverso il grafo di controllo di flusso. Essa viene calcolata utilizzando il grafo di controllo di flusso del programma: i nodi del grafo corrispondono a gruppi indivisibili di istruzioni, mentre gli archi connettono due nodi se il secondo gruppo di istruzioni può essere eseguito immediatamente dopo il primo gruppo. La complessità ciclomatica può, inoltre, essere applicata a singole funzioni, moduli, metodi o classi di un programma.
+			\begin{itemize}
+				\item \textbf{Range di accettazione:} [1 - 15];
+				\item \textbf{Range ottimale:} [1 - 10];
+			\end{itemize}
+		\item \textbf{Numero di parametri per metodo:} indica il numero di parametri formali di un metodo. Un numero elevato di parametri potrebbe indicare la necessità di ridurre le funzionalità associate a tale metodo.
+			\begin{itemize}
+				\item \textbf{Range di accettazione:} [0 - 8];
+				\item \textbf{Range ottimale:} [0 - 4];
+			\end{itemize}
+		\item \textbf{Linee di codice per linee di commento:} indica il rapporto tra il numero di linee di commento e il numero di linee di codice. La manutenibilità per il codice poco commentato comporta una difficile manutenibilità.
+			\begin{itemize}
+				\item \textbf{Range di accettazione:} [>20];
+				\item \textbf{Range ottimale:} [>30];
+			\end{itemize}
+		\item \textbf{Numero di livelli di annidamento:} indica il numero di livelli di annidamento dei metodi. Un numero elevato rappresenta un'alta complessità e riduce il livello di astrazione.
+			\begin{itemize}
+				\item \textbf{Range di accettazione:} [1 - 6];
+				\item \textbf{Range ottimale:} [1 - 3];
+			\end{itemize}
+	\end{itemize}
