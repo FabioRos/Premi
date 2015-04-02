@@ -3,20 +3,20 @@
 
 
 % definizione variabili locali
-\def\DOCUMENTO{<Nome documento>}
+\def\DOCUMENTO{Piano di Progetto}
 \def\VERSIONE{1.0.0}
 
-\def\DESCRIZIONE{<Info documento}
+\def\DESCRIZIONE{Documento che definisce la pianificazione delle attività del gruppo \GRUPPO{} nello svolgimento del progetto \PROGETTO.}
 
-\def\REDATTORE {<Redattore>}
-\def\VERIFICATORE {<Verificatore>}
-\def\RESPONSABILE {<Responsabile>}
+\def\REDATTORE {Agostinetto Matteo \\ & Burlin Valerio}
+\def\VERIFICATORE {Ros Fabio}
+\def\RESPONSABILE {Suierica Bogdan}
 
-\def\USO {<Uso>}
+\def\USO {Esterno}
 
 \def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\}
 
-\def\DESCRIZIONE {<Descrizione>}
+\def\DESCRIZIONE {Documento che definisce la pianificazione delle attività del gruppo \GRUPPO{} nello svolgimento del progetto \PROGETTO.}
 
 
 % abilita (true) / disabilita (false) indice, lista tabelle, lista figure
@@ -37,11 +37,20 @@
 
 %\section{<nomesezione>}
 %\input{sections/<nomefile>.tex}
-
 %\newpage
 
-% ...
-
+\section{Organigramma}
+\input{sections/organigramma.tex}
+\newpage
+\section{Introduzione}
+\input{sections/introduzione.tex}
+\newpage
+\section{Pianificazione}
+\input{sections/pianificazione.tex}
+\newpage
+\section{Analisi dei rischi}
+\input{sections/analisi_dei_rischi.tex}
+\newpage
 %\printglossaries
 
 \end{document}
