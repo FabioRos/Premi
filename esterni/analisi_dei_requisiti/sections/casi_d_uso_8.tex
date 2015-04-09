@@ -1,43 +1,309 @@
-\subsection{Caso d'uso UC8: Apertura infografica}
+\subsection{Caso d'uso UC8: Gestione dell'infografica}
 \begin{figure}[h] 
 	\centering 
 	\includegraphics[scale=0.45] {img/UC8.png} 
-	\caption{UC8 - Apertura infografica} 
+	\caption{UC8 - Gestione dell'infografica} 
 \end{figure}
 
 \begin{itemize}
 	\item \textbf{Attori:} Utente;
-	\item \textbf{Scopo e descrizione:} L'utente ha scelto di aprire un'\gls{infografica} già creata. L'utente deve scegliere e selezionare l'\gls{infografica} da aprire;
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il file da aprire;
+	\item \textbf{Scopo e descrizione:} L'utente sta lavorando su un'infografica per crearne una nuova scegliendo un template o per modificare ciò che ha già creato. Può quindi inserire le seguente cose: immagini, caselle di testo, dati real time, tabelle. Ha inoltre la possibilità di modificare gli elementi inseriti, oppure di eliminarli;
+	\item \textbf{Precondizione:} Il sistema mostra la schermata di gestione di un'infografica e l'utente vuole creare/modificare gli elementi in essa;
 	\item \textbf{Flusso degli eventi:}
 	\begin{enumerate}
-		\item L'utente naviga il \gls{filesystem} alla ricerca del file desiderato [UC8.1];
-		\item L'utente seleziona il file [UC8.2];
-		\item L'utente conferma la selezione [UC8.3].
+		\item L'utente può scegliere un template [UC8.1];
+		\item L'utente può cambiare il template [UC8.11];
+		
+		\item L'utente può inserire un'immagine [UC8.2];
+		\item L'utente carica un file per inserire l'immagine [UC8.12];
+		
+		\item L'utente può inserire una casella di testo [UC8.3];
+		\item L'utente sceglie la formattazione del testo [UC1.13];
+		
+		\item L'utente può inserire dati real time [UC8.4];
+		
+		\item L'utente può inserire una tabella [UC8.5];
+		\item L'utente può modificare una tabella [UC8.14];
+		
+		\item L'utente può inserire un grafico [UC8.6];
+		\item L'utente può personalizzare un grafico [UC8.15];
+		
+		\item L'utente può cambiare dimensione all'elemento [UC8.7];
+		
+		\item L'utente può cambiare posizione all'elemento [UC8.8];
+		
+		\item L'utente può ruotare l'elemento [UC8.9];
+		
+		\item L'utente può rimuovere l'elemento [UC8.10]
 	\end{enumerate}
-	\item \textbf{Postcondizione:} Il sistema ha caricato il file selezionato dall'utente.
+	\item \textbf{Postcondizione:} Il sistema mostra le operazioni effettuate dall'utente.
 \end{itemize}
 
-\subsection{Caso d'uso UC8.1: Navigare il filesystem}
+
+\subsection{Caso d'uso UC8.1: Scegliere un template}
 \begin{itemize}
 	\item \textbf{Attori:} Utente;
-	\item \textbf{Scopo e descrizione:} L'utente può navigare il \gls{filesystem} selezionando la cartella dentro la quale si trova l'\gls{infografica} da caricare;
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni una cartella;
-	\item \textbf{Postcondizione:} Il sistema ha aggiornato la cartella corrente con quella selezionata dall'utente.
+	\item \textbf{Scopo e descrizione:} L'utente sceglie il template con cui creare l'infografica;
+	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente scelga il template;
+	\item \textbf{Postcondizione:} Il sistema carica il template selezionato.
 \end{itemize}
 
-\subsection{Caso d'uso UC8.2: Selezionare il file}
+
+\subsection{Caso d'uso UC8.2: Inserire un'immagine}
 \begin{itemize}
-	\item \textbf{Attori:} Utente;
-	\item \textbf{Scopo e descrizione:} L'utente deve selezionare il file che intende aprire;
-	\item \textbf{Precondizione:} Il sistema mostra tutti i file contenuti nella cartella scelta in precedenza;
-	\item \textbf{Postcondizione:} Il sistema evidenzia il file selezionato dall'utente.
+\item \textbf{Attori:} Utente;
+\item \textbf{Scopo e descrizione:} L'utente deve inserire un immagine da mettere nell'infografica;
+\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni un immagine;
+\item \textbf{Postcondizione:} Il sistema ha caricato l'immagine selezionata dall'utente.
 \end{itemize}
 
-\subsection{Caso d'uso UC8.3: Confermare selezione}
+
+\subsection{Caso d'uso UC8.3: Inserire una casella di testo}
+\begin{itemize}
+\item \textbf{Attori:} Utente;
+\item \textbf{Scopo e descrizione:} L'utente deve inserire una casella di testo nella slide;
+\item \textbf{Precondizione:} Il sistema è in attesa che l'utente crei una casella di testo;
+\item \textbf{Postcondizione:} Il sistema ha creato la casella di testo.
+\end{itemize}
+
+
+\subsection{Caso d'uso UC8.4: Inserire dati real time}
 \begin{itemize}
 	\item \textbf{Attori:} Utente;
-	\item \textbf{Scopo e descrizione:} L'utente conferma la scelta del file fatta in precedenza;
-	\item \textbf{Precondizione:} Il sistema ha selezionato il file scelto dall'utente;
-	\item \textbf{Postcondizione:} Il sistema ha caricato il file scelto in precedenza dall'utente.
+	\item \textbf{Scopo e descrizione:} L'utente deve inserire dei dati \gls{real time};
+	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente inserisca i dati \gls{real time};
+	\item \textbf{Postcondizione:} Il sistema ha inserito i dati \gls{real time}.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.5: Inserire una tabella}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente deve inserire una tabella;
+	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente inserisca una tabella;
+	\item \textbf{Postcondizione:} Il sistema ha inserito la tabella.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.6: Inserire un grafico}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente deve inserire un grafico;
+	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente inserisca un grafico;
+	\item \textbf{Postcondizione:} Il sistema ha inserito il grafico.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.7: Ridimensionamento di un elemento}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente cambia la grandezza dell'elemento selezionato della slide;
+	\item \textbf{Precondizione:} Il sistema mostra l'elemento selezionato che si intende ridimensionare;
+	\item \textbf{Postcondizione:} Il sistema ha ridimensionato l'elemento della slide.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.8: Spostamento di un elemento}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente cambia la posizione dell'elemento selezionato della slide;
+	\item \textbf{Precondizione:} Il sistema mostra l'elemento selezionato che si intende spostare;
+	\item \textbf{Postcondizione:} Il sistema ha spostato l'elemento della slide.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.9: Rotazione di un elemento}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente ruota l'elemento selezionato della slide;
+	\item \textbf{Precondizione:} Il sistema mostra l'elemento selezionato che si intende ruotare;
+	\item \textbf{Postcondizione:} Il sistema ha ruotato l'elemento della slide.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.10: Rimozione di un elemento}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente elimina l'elemento selezionato dalla slide;
+	\item \textbf{Precondizione:} Il sistema mostra l'elemento selezionato che si intende cancellare;
+	\item \textbf{Postcondizione:} Il sistema ha cancellato l'elemento dalla slide.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.11: Cambiare il template}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente vuole cambiare il template selezionato;
+	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il template;
+	\item \textbf{Postcondizione:} Il sistema ha modificato il template con quello selezionato.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.12: Caricare un file}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente deve caricare un file da utilizzare nella presentazione;
+	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il file;
+	\item \textbf{Postcondizione:} Il sistema ha caricato il file selezionato dall'utente e lo ha inserito nella slide.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.13: Scegliere la formattazione del testo}
+\begin{figure}[h] 
+	\centering 
+	\includegraphics[scale=0.45] {img/UC8.13.png} 
+	\caption{UC8.13 - Scegliere la formattazione del testo}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può modificare l'aspetto del testo contenuto in una casella di testo. L'utente seleziona il testo e poi sceglie che modifiche effettuare;
+	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni la modifica da apportare al testo e il testo da modificare è selezionato;
+	\item \textbf{Flusso degli eventi:}
+	\begin{enumerate}
+		\item L'utente può cambiare la grandezza del testo [UC8.13.1];
+		\item L'utente può cambiare il colore del testo [UC8.13.2];
+		\item L'utente può cambiare il font del testo [UC8.13.3];
+		\item L'utente può abilitare o disabilitare il testo in corsivo [UC8.13.4];
+		\item L'utente può abilitare o disabilitare il testo in grassetto [UC8.13.5];
+		\item L'utente può spostare il testo in una nuova posizione [UC8.13.6].
+	\end{enumerate}
+	\item \textbf{Postcondizione:} Il sistema ha apportato le modifiche scelte al testo.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.13.1: Scegliere la grandezza}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può cambiare la grandezza del testo;
+	\item \textbf{Precondizione:} Il testo da modificare è selezionato;
+	\item \textbf{Postcondizione:} Il testo è stato ingrandito o rimpicciolito secondo la scelta dell'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.13.2: Scegliere il colore}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può cambiare il colore del testo;
+	\item \textbf{Precondizione:} Il testo da modificare è selezionato;
+	\item \textbf{Postcondizione:} Il testo è stato colorato secondo la scelta dell'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.13.3: Scegliere il font}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può cambiare il font del testo;
+	\item \textbf{Precondizione:} Il testo da modificare è selezionato;
+	\item \textbf{Postcondizione:} Il testo ha cambiato font secondo la scelta dell'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.13.4: Abilitare/disabilitare corsivo}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può abilitare o disabilitare la scrittura in corsivo;
+	\item \textbf{Precondizione:} Il testo da modificare è selezionato oppure è stata selezionata la casella di testo nella quale poter scrivere;
+	\item \textbf{Postcondizione:} Il testo è stato modificato secondo la scelta dell'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.13.5: Abilitare/Disabilitare grassetto}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può abilitare o disabilitare la scrittura in grassetto;
+	\item \textbf{Precondizione:} Il testo da modificare è selezionato oppure è stata selezionata la casella di testo nella quale poter scrivere;
+	\item \textbf{Postcondizione:} Il testo è stato modificato secondo la scelta dell'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.13.6: Posizionare il testo}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può spostare una casella di testo in una nuova posizione;
+	\item \textbf{Precondizione:} La casella di testo da spostare è stata selezionata;
+	\item \textbf{Postcondizione:} La casella di testo è stata spostata secondo la scelta dell'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.14: Modificare una tabella}
+\begin{figure}[h] 
+	\centering 
+	\includegraphics[scale=0.45] {img/UC8.14.png} 
+	\caption{UC8.14 - Modificare una tabella} 
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può modificare l'aspetto della tabella e del suo contenuto. L'utente seleziona la tabella o il testo e poi sceglie che modifiche effettuare;
+	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni la modifica da apportare alla tabella e la tabella o il testo da modificare sono selezionati;
+	\item \textbf{Flusso degli eventi:}
+	\begin{enumerate}
+		\item L'utente può modificare il numero di righe e di colonne [UC8.14.1]
+		\item L'utente può cambiare la grandezza della tabella [UC8.14.2];
+		\item L'utente può cambiare il colore di sfondo della tabella [UC8.14.3];
+		\item L'utente può cambiare l'allineamento del testo [UC8.14.4];
+		\item L'utente può cambiare la formattazione del testo [UC8.13];
+	\end{enumerate}
+	\item \textbf{Postcondizione:} Il sistema ha apportato le modifiche scelte alla tabella.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.14.1: Modificare il numero di righe e colonne della tabella}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può modificare la grandezza della tabella;
+	\item \textbf{Precondizione:} La tabella da modificare è stata selezionata;
+	\item \textbf{Postcondizione:} La tabella è stata modificata nelle sue dimensioni secondo la scelta dell'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.14.2: Scegliere grandezza della tabella}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può modificare la grandezza della tabella;
+	\item \textbf{Precondizione:} La tabella da modificare è stata selezionata;
+	\item \textbf{Postcondizione:} La tabella è stata modificata nelle sue dimensioni secondo la scelta dell'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.14.3: Scegliere colore di sfondo della tabella}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può modificare il colore di sfondo della tabella;
+	\item \textbf{Precondizione:} La tabella o le celle da modificare sono state selezionate;
+	\item \textbf{Postcondizione:} Lo sfondo della tabella o delle celle è stato modificato secondo la scelta dell'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.14.4: Scegliere allineamento del testo}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può modificare l'allineamento del testo della tabella;
+	\item \textbf{Precondizione:} La tabella o le celle da modificare sono state selezionate;
+	\item \textbf{Postcondizione:} L'allineamento del testo della tabella o delle celle è stato modificato secondo la scelta dell'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.15: Personalizzare un grafico}
+\begin{figure}[h] 
+	\centering 
+	\includegraphics[scale=0.45] {img/UC8.15.png} 
+	\caption{UC8.15 - Personalizzare un grafico} 
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può modificare la tipologia e l'aspetto del grafico o del suo contenuto. L'utente seleziona il grafico e poi sceglie che modifiche effettuare;
+	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni la modifica da apportare al grafico e il grafico da modificare è selezionato;
+	\item \textbf{Flusso degli eventi:}
+	\begin{enumerate}
+		\item L'utente può cambiare la tipologia del grafico [UC8.15.1];
+		\item L'utente può cambiare la dimensione del grafico [UC8.15.2]
+		\item L'utente può cambiare i colori del grafico [UC8.15.3];
+	\end{enumerate}
+	\item \textbf{Postcondizione:} Il sistema ha apportato le modifiche scelte al grafico.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.15.1: Scegliere la tipologia del grafico}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può modificare la tipologia del grafico;
+	\item \textbf{Precondizione:} Il grafico da modificare è stata selezionato;
+	\item \textbf{Postcondizione:} La tipologia del grafico è stata modificata secondo la scelta dell'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.15.2: Scegliere la grandezza del grafico}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può modificare la grandezza del grafico;
+	\item \textbf{Precondizione:} Il grafico da modificare è stata selezionato;
+	\item \textbf{Postcondizione:} Il grafico è stata modificato nelle sue dimensioni secondo la scelta dell'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC8.15.3: Scegliere i colori del grafico}
+\begin{itemize}
+	\item \textbf{Attori:} Utente;
+	\item \textbf{Scopo e descrizione:} L'utente può modificare il set di colori del grafico;
+	\item \textbf{Precondizione:} Il grafico da modificare è stata selezionato;
+	\item \textbf{Postcondizione:} I colori del grafico sono stati modificati secondo la scelta dell'utente.
 \end{itemize}
