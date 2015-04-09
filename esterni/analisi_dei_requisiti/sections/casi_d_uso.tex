@@ -1,4 +1,4 @@
-Verrano descritti di seguito i casi d'uso individuati per il progetto \PROGETTO. Ogni caso d'uso ha un codice che lo indentifica nella forma:
+Di seguito sono descritti i casi d'uso individuati per il progetto \PROGETTO. Ogni caso d'uso ha un codice che lo identifica nella forma:
 \begin{center}
 	UC[codice univoco del padre].[codice progressivo di livello]
 \end{center}
@@ -15,19 +15,21 @@ Il codice progressivo di livello potrà contenere diversi altri livelli di gerar
 
 \begin{itemize}
 	\item \textbf{Attori:} Visualizzatore, Proprietario;
-	\item \textbf{Scopo e descrizione:} Un visualizzatore può interagire con una presentazione già esistente, senza però poterla modificare. Il proprietario invece, dopo essersi autenticato, potrà effettuare diverse operazioni. Potrà gestire una presentazione, salvarla oppure esportarla per renderla disponibile offline. Potrà anche scegliere di stampare una presentazione nel modo da lui scelto. Analogamente il proprietario potrà gestire un'\gls{infografica}, salvarla oppure stamparla;
+	\item \textbf{Scopo e descrizione:} Un visualizzatore può interagire con una presentazione già esistente, senza però poterla modificare. Il proprietario invece, dopo essersi autenticato, potrà effettuare diverse operazioni. Potrà gestire una presentazione, salvarla oppure esportarla per renderla disponibile offline. Potrà anche scegliere di stampare una presentazione nel modo da lui scelto. Analogamente il proprietario potrà gestire un'infografica, salvarla oppure stamparla;
 	\item \textbf{Precondizione:} Il visualizzatore ha a disposizione una presentazione con la quale interagire oppure il proprietario ha avviato il programma che ora è pronto all'uso;
 	\item \textbf{Flusso degli eventi:}
 	\begin{enumerate}
 		\item Il visualizzatore può interagire con una presentazione [UC1];
 		\item Il proprietario deve autenticarsi [UC2];
 		\item Il proprietario può gestire una presentazione [UC3];
-		\item Il proprietario può salvare una presentazione [UC4];
-		\item Il proprietario può esportare una presentazione [UC5];
-		\item Il proprietario può stampare una presentazione [UC6];
-		\item Il proprietario può gestire un'infografica [UC7];
-		\item Il proprietario può salvare un'infografica [UC8];
-		\item Il proprietario può stampare un'infografica [UC9].
+		\item Il proprietario può aprire una presentazione esistente [UC4];
+		\item Il proprietario può salvare una presentazione [UC5];
+		\item Il proprietario può esportare una presentazione [UC6];
+		\item Il proprietario può stampare una presentazione [UC7];
+		\item Il proprietario può gestire un'infografica [UC8];
+		\item Il proprietario può aprire un'infografica esistente [UC9];
+		\item Il proprietario può salvare un'infografica [UC10];
+		\item Il proprietario può stampare un'infografica [UC11].
 	\end{enumerate}
 	\item \textbf{Postcondizione:} Il sistema ha ottenuto le informazioni sulle operazioni che il visualizzatore o il proprietario desidera eseguire.
 \end{itemize}
