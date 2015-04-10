@@ -15,8 +15,8 @@ In questa macro-fase, le ore ripartite tra i ruoli ed i conseguenti costi sono e
 		Responsabile di Progetto & 17 & 510 \\
 		Amministratore di Progetto & 26 & 520 \\ 
 		Analista & 50 & 1250 \\
-		Progettista & 0 & 0 \\
-		Programmatore & 0 & 0 \\
+		Progettista & & \\
+		Programmatore & & \\
 		Verificatore & 37 & 555 \\
 		\midrule
 		\textbf{Totale} & 130 & 2835 \\
@@ -26,7 +26,79 @@ In questa macro-fase, le ore ripartite tra i ruoli ed i conseguenti costi sono e
 	\caption{Costo per ruolo, fase di Analisi}
 \end{table}
 
-I seguenti grafici illustrano rispettivamente come ciascun ruolo abbia influito sul totale delle ore e dei costi di questa macro-fase.
+\noindent Il seguente grafico illustra come ciascun ruolo abbia influito sul totale delle ore di questa macro-fase.
+
+\def\angle{0}
+\def\radius{3}
+\def\cyclelist{{"blue","red","yellow","green"}}
+\newcount\cyclecount \cyclecount=-1
+\newcount\ind \ind=-1
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[nodes = {font=\sffamily}]
+\foreach \percent/\name in {
+	13/Responsabile di Progetto,
+	20/Amministratore di Progetto,
+	39/Analista,
+	28/Verificatore
+} {
+\ifx\percent\empty\else               % If \percent is empty, do nothing
+\global\advance\cyclecount by 1     % Advance cyclecount
+\global\advance\ind by 1            % Advance list index
+\ifnum3<\cyclecount                 % If cyclecount is larger than list
+\global\cyclecount=0              %   reset cyclecount and
+\global\ind=0                     %   reset list index
+\fi
+\pgfmathparse{\cyclelist[\the\ind]} % Get color from cycle list
+\edef\color{\pgfmathresult}         %   and store as \color
+% Draw angle and set labels
+\draw[fill={\color!50},draw={\color}] (0,0) -- (\angle:\radius)
+arc (\angle:\angle+\percent*3.6:\radius) -- cycle;
+\node at (\angle+0.5*\percent*3.6:0.7*\radius) {\percent\,\%};
+\node[pin=\angle+0.5*\percent*3.6:\name]
+at (\angle+0.5*\percent*3.6:\radius) {};
+\pgfmathparse{\angle+\percent*3.6}  % Advance angle
+\xdef\angle{\pgfmathresult}         %   and store in \angle
+\fi
+};
+\end{tikzpicture}
+\caption{Ore per ruoli, fase di Analisi}
+\end{figure}
+\newpage
+
+\noindent Il seguente grafico illustra come ciascun ruolo abbia influito sul totale dei costi di questa macro-fase.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[nodes = {font=\sffamily}]
+	\foreach \percent/\name in {
+		18/Responsabile di Progetto,
+		18/Amministratore di Progetto,
+		44/Analista,
+		20/Verificatore
+	} {
+		\ifx\percent\empty\else               % If \percent is empty, do nothing
+		\global\advance\cyclecount by 1     % Advance cyclecount
+		\global\advance\ind by 1            % Advance list index
+		\ifnum3<\cyclecount                 % If cyclecount is larger than list
+		\global\cyclecount=0              %   reset cyclecount and
+		\global\ind=0                     %   reset list index
+		\fi
+		\pgfmathparse{\cyclelist[\the\ind]} % Get color from cycle list
+		\edef\color{\pgfmathresult}         %   and store as \color
+		% Draw angle and set labels
+		\draw[fill={\color!50},draw={\color}] (0,0) -- (\angle:\radius)
+		arc (\angle:\angle+\percent*3.6:\radius) -- cycle;
+		\node at (\angle+0.5*\percent*3.6:0.7*\radius) {\percent\,\%};
+		\node[pin=\angle+0.5*\percent*3.6:\name]
+		at (\angle+0.5*\percent*3.6:\radius) {};
+		\pgfmathparse{\angle+\percent*3.6}  % Advance angle
+		\xdef\angle{\pgfmathresult}         %   and store in \angle
+		\fi
+	};
+\end{tikzpicture}
+\caption{Costo per ruoli, fase di Analisi}
+\end{figure}
 
 \subsection{Analisi di Dettaglio}
 In questa macro-fase, le ore ripartite tra i ruoli ed i conseguenti costi sono evidenziati dalla seguente tabella:
@@ -41,8 +113,8 @@ In questa macro-fase, le ore ripartite tra i ruoli ed i conseguenti costi sono e
 		Responsabile di Progetto & 4 & 120 \\
 		Amministratore di Progetto & 4 & 80 \\ 
 		Analista & 18 & 450 \\
-		Progettista & 0 & 0 \\
-		Programmatore & 0 & 0 \\
+		Progettista & & \\
+		Programmatore & & \\
 		Verificatore & 12 & 180 \\
 		\midrule
 		\textbf{Totale} & 38 & 830 \\
@@ -52,8 +124,73 @@ In questa macro-fase, le ore ripartite tra i ruoli ed i conseguenti costi sono e
 	\caption{Costo per ruolo, fase di Analisi di Dettaglio}
 \end{table}
 
-I seguenti grafici illustrano rispettivamente come ciascun ruolo abbia influito sul totale delle ore e dei costi di questa macro-fase.
+\newpage
+\noindent I seguenti grafici illustrano rispettivamente come ciascun ruolo abbia influito sul totale delle ore e dei costi di questa macro-fase.
 
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[nodes = {font=\sffamily}]
+	\foreach \percent/\name in {
+		11/Responsabile di Progetto,
+		11/Amministratore di Progetto,
+		47/Analista,
+		31/Verificatore
+	} {
+	\ifx\percent\empty\else               % If \percent is empty, do nothing
+	\global\advance\cyclecount by 1     % Advance cyclecount
+	\global\advance\ind by 1            % Advance list index
+	\ifnum3<\cyclecount                 % If cyclecount is larger than list
+	\global\cyclecount=0              %   reset cyclecount and
+	\global\ind=0                     %   reset list index
+	\fi
+	\pgfmathparse{\cyclelist[\the\ind]} % Get color from cycle list
+	\edef\color{\pgfmathresult}         %   and store as \color
+	% Draw angle and set labels
+	\draw[fill={\color!50},draw={\color}] (0,0) -- (\angle:\radius)
+	arc (\angle:\angle+\percent*3.6:\radius) -- cycle;
+	\node at (\angle+0.5*\percent*3.6:0.7*\radius) {\percent\,\%};
+	\node[pin=\angle+0.5*\percent*3.6:\name]
+	at (\angle+0.5*\percent*3.6:\radius) {};
+	\pgfmathparse{\angle+\percent*3.6}  % Advance angle
+	\xdef\angle{\pgfmathresult}         %   and store in \angle
+	\fi
+};
+\end{tikzpicture}
+\caption{Ore per ruoli, fase di Analisi di Dettaglio}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[nodes = {font=\sffamily}]
+	\foreach \percent/\name in {
+		14/Responsabile di Progetto,
+		10/Amministratore di Progetto,
+		54/Analista,
+		22/Verificatore
+	} {
+	\ifx\percent\empty\else               % If \percent is empty, do nothing
+	\global\advance\cyclecount by 1     % Advance cyclecount
+	\global\advance\ind by 1            % Advance list index
+	\ifnum3<\cyclecount                 % If cyclecount is larger than list
+	\global\cyclecount=0              %   reset cyclecount and
+	\global\ind=0                     %   reset list index
+	\fi
+	\pgfmathparse{\cyclelist[\the\ind]} % Get color from cycle list
+	\edef\color{\pgfmathresult}         %   and store as \color
+	% Draw angle and set labels
+	\draw[fill={\color!50},draw={\color}] (0,0) -- (\angle:\radius)
+	arc (\angle:\angle+\percent*3.6:\radius) -- cycle;
+	\node at (\angle+0.5*\percent*3.6:0.7*\radius) {\percent\,\%};
+	\node[pin=\angle+0.5*\percent*3.6:\name]
+	at (\angle+0.5*\percent*3.6:\radius) {};
+	\pgfmathparse{\angle+\percent*3.6}  % Advance angle
+	\xdef\angle{\pgfmathresult}         %   and store in \angle
+	\fi
+};
+\end{tikzpicture}
+\caption{Costo per ruoli, fase di Analisi di Dettaglio}
+\end{figure}
+\newpage
 \subsection{Progettazione Architetturale}
 In questa macro-fase, le ore ripartite tra i ruoli ed i conseguenti costi sono evidenziati dalla seguente tabella:
 
@@ -68,7 +205,7 @@ In questa macro-fase, le ore ripartite tra i ruoli ed i conseguenti costi sono e
 		Amministratore di Progetto & 5 & 100 \\ 
 		Analista & 16 & 400 \\
 		Progettista & 100 & 2200 \\
-		Programmatore & 0 & 0 \\
+		Programmatore & & \\
 		Verificatore & 41 & 615 \\
 		\midrule
 		\textbf{Totale} & 167 & 3465 \\
@@ -78,7 +215,77 @@ In questa macro-fase, le ore ripartite tra i ruoli ed i conseguenti costi sono e
 	\caption{Costo per ruolo, fase di Progettazione Architetturale}
 \end{table}
 
-I seguenti grafici illustrano rispettivamente come ciascun ruolo abbia influito sul totale delle ore e dei costi di questa macro-fase.
+\noindent Il seguente grafico illustra come ciascun ruolo abbia influito sul totale delle ore di questa macro-fase.
+
+\def\cyclelist{{"red","yellow","magenta","green","blue"}}
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[nodes = {font=\sffamily}]
+	\foreach \percent/\name in {
+		3/Responsabile di Progetto,
+		3/Amministratore di Progetto,
+		10/Analista,
+		60/Progettista,
+		24/Verificatore
+	} {
+	\ifx\percent\empty\else               % If \percent is empty, do nothing
+	\global\advance\cyclecount by 1     % Advance cyclecount
+	\global\advance\ind by 1            % Advance list index
+	\ifnum4<\cyclecount                 % If cyclecount is larger than list
+	\global\cyclecount=0              %   reset cyclecount and
+	\global\ind=0                     %   reset list index
+	\fi
+	\pgfmathparse{\cyclelist[\the\ind]} % Get color from cycle list
+	\edef\color{\pgfmathresult}         %   and store as \color
+	% Draw angle and set labels
+	\draw[fill={\color!50},draw={\color}] (0,0) -- (\angle:\radius)
+	arc (\angle:\angle+\percent*3.6:\radius) -- cycle;
+	\node at (\angle+0.5*\percent*3.6:0.7*\radius) {\percent\,\%};
+	\node[pin=\angle+0.5*\percent*3.6:\name]
+	at (\angle+0.5*\percent*3.6:\radius) {};
+	\pgfmathparse{\angle+\percent*3.6}  % Advance angle
+	\xdef\angle{\pgfmathresult}         %   and store in \angle
+	\fi
+};
+\end{tikzpicture}
+\caption{Ore per ruoli, fase di Progettazione Architetturale}
+\end{figure}
+\newpage
+
+\noindent Il seguente grafico illustra come ciascun ruolo abbia influito sul totale dei costi di questa macro-fase.
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[nodes = {font=\sffamily}]
+	\foreach \percent/\name in {
+		4/Responsabile di Progetto,
+		3/Amministratore di Progetto,
+		12/Analista,
+		63/Progettista,
+		18/Verificatore
+	} {
+	\ifx\percent\empty\else               % If \percent is empty, do nothing
+	\global\advance\cyclecount by 1     % Advance cyclecount
+	\global\advance\ind by 1            % Advance list index
+	\ifnum4<\cyclecount                 % If cyclecount is larger than list
+	\global\cyclecount=0              %   reset cyclecount and
+	\global\ind=0                     %   reset list index
+	\fi
+	\pgfmathparse{\cyclelist[\the\ind]} % Get color from cycle list
+	\edef\color{\pgfmathresult}         %   and store as \color
+	% Draw angle and set labels
+	\draw[fill={\color!50},draw={\color}] (0,0) -- (\angle:\radius)
+	arc (\angle:\angle+\percent*3.6:\radius) -- cycle;
+	\node at (\angle+0.5*\percent*3.6:0.7*\radius) {\percent\,\%};
+	\node[pin=\angle+0.5*\percent*3.6:\name]
+	at (\angle+0.5*\percent*3.6:\radius) {};
+	\pgfmathparse{\angle+\percent*3.6}  % Advance angle
+	\xdef\angle{\pgfmathresult}         %   and store in \angle
+	\fi
+};
+\end{tikzpicture}
+\caption{Costo per ruoli, fase di Progettazione Architetturale}
+\end{figure}
 
 \subsection{Progettazione di Dettaglio e Codifica}
 In questa macro-fase, le ore ripartite tra i ruoli ed i conseguenti costi sono evidenziati dalla seguente tabella:
@@ -162,7 +369,7 @@ Le ore totali previste per la realizzazione dell'intero progetto, suddivise in o
 									& Rendicontanto & 189 & 2835 \\
 		\midrule							
 		\multirow{2}*{} & Totale & 798 & 15058 \\
-						& Rendicontanto & 630 & 11393 \\
+						& Rendicontanto & \textbf{630} & \textbf{11393} \\
 		\bottomrule
 		
 	\end{tabular}
