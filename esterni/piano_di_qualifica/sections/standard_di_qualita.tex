@@ -1,8 +1,6 @@
-\subsection{Standard ISO/IEC 15504}
+\subsection{Standard ISO/IEC 15504}\label{15504}
 \begin{flushleft}
 Lo standard ISO/IEC 15504 descrive come i processi debbano essere continuamente controllati in modo da rilevare possibili rischi e debolezze che possano impedire il raggiungimento degli scopi prefissati, e di individuarne le cause in modo di migliore l'efficienza dei processi. I risultati dei vari controlli devono essere oggettivi, ripetibili e comparabili perché possano essere utilizzati nel miglioramento dei processi.
-
-Immagine
 
 Lo standard ISO/IEC 15504, conosciuto anche come SPICE(Software Process Improvement and Capability Determination), prevede per ogni processo un livello di capacità secondo la seguente ripartizione:
 
@@ -49,25 +47,7 @@ Ogni attributo di processo descritto sopra è misurabile e lo standard predispon
 	\item \textbf{F} completamente posseduto (86\% - 100\%).
 \end{itemize}
 
-\subsection{Ciclo di Deming}
-
-Il \textbf{ciclo di Deming} o \textbf{Deming Cycle} (\textbf{ciclo di PDCA} - plan–do–check–act) è un modello studiato per il miglioramento continuo della qualità tramite la costante interazione tra ricerca, progettazione, test, produzione e vendita.
-
-Le quattro fasi del ciclo \textbf{PDCA} sono le seguenti:
-\begin{itemize}[label={}]
-	\item \textbf{P (Plan):} fase in cui vengono definite attività, risorse, scadenze e responsabilità;
-	\item \textbf{D (Do):} fase di esecuzione delle attività pianificate, dapprima in contesti circoscritti;
-	\item \textbf{C (Check):} test e controllo, studio e raccolta dei risultati e dei riscontri;
-	\item \textbf{A (Act):} fase in cui si mette in pratica il miglioramento utilizzando i dati ottenuti dalla fase di verifica modificando le parti critiche dei processi.
-\end{itemize}
-
-\begin{figure}[h]
-\centering
-\includegraphics[height= 4cm] {./img/demcycle.png}
-\caption{Ciclo PDCA}
-\end{figure}
-
-\subsection{Standard ISO/IEC 9126}
+\subsection{Standard ISO/IEC 9126} \label{9126}
 
 Con la sigla \textbf{ISO/IEC 9126} si individua una serie di normative e linee guida preposte a descrivere un modello di qualità del software.
 Esso divide i criteri qualitativi in 3 aree diverse:
@@ -78,17 +58,18 @@ Esso divide i criteri qualitativi in 3 aree diverse:
 	\item \textbf{Qualità interna:} è la qualità del prodotto software vista dall'interno, si riferisce quindi alle caratteristiche di implementazione quali l'architettura e i codici sorgenti.
 \end{itemize}
 
-\subsection{Modello di qualità}
-Lo standard \textbf{ISOG/IECG 9126}
-prevede 6 caratteristiche qualitative principali, suddivise in ulteriori sotto caratteristiche, misurabili quantitativamente tramite metriche specifiche.
+Il modello di qualità dello standard prevede 6 caratteristiche qualitative principali, suddivise in ulteriori sotto caratteristiche, misurabili quantitativamente tramite metriche specifiche.
 
 \begin{figure}[h]
 \centering
-\includegraphics[height= 4cm] {./img/ISO_IEC_9126.png}
-\caption{Ciclo PDCA}
+\includegraphics[width=0.7\linewidth]{img/ISO_IEC_9126}
+\caption[Rappresentazione globale del modello ISO-IEC 9126]{Rappresentazione globale del modello ISO-IEC 9126}
+\label{fig:ISO_IEC_9126}
 \end{figure}
 
-\subsubsection{Funzionalità}
+
+\begin{itemize}
+\item \textbf{Funzionalità:}\\
 La \textbf{Funzionalità} è la capacità di un prodotto software di fornire funzioni che soddisfano esigenze stabilite:
 
 \begin{itemize}
@@ -99,7 +80,7 @@ La \textbf{Funzionalità} è la capacità di un prodotto software di fornire fun
 	\item \textbf{Sicurezza:} la capacità del prodotto software di proteggere informazioni e dati impedendo che persone o sistemi non autorizzati passano accedervi o modificarli.
 \end{itemize}
 
-\subsubsection{Affidabilità}
+\item \textbf{Affidabilità:}\\
 L'\textbf{Affidabilità} è la capacità del prodotto software di mantenere uno specificato livello di prestazioni:
 \begin{itemize}
 	\item \textbf{Maturità:} la capacità di un prodotto software di evitare che si verificano errori o malfunzionamenti;
@@ -108,7 +89,7 @@ L'\textbf{Affidabilità} è la capacità del prodotto software di mantenere uno 
 	\item \textbf{Aderenza:} la capacità di aderire a standard, regole e convenzioni inerenti all'affidabilità.
 \end{itemize}
 
-\subsubsection{Efficienza}
+\item \textbf{Efficienza:}\\
 L'\textbf{efficienza} è la capacità di fornire appropriate prestazioni relativamente alla quantità di risorse usate:
 \begin{itemize}
 	\item \textbf{Comportamento rispetto al tempo:} la capacità di fornire adeguati tempi di risposta, elaborazione e velocità sotto determinate condizioni;
@@ -116,7 +97,7 @@ L'\textbf{efficienza} è la capacità di fornire appropriate prestazioni relativ
 	\item \textbf{Conformità:} la capacità di aderire a standard e specifiche sull'efficienza.
 \end{itemize}
 
-\subsubsection{Usabilità}
+\item \textbf{Usabilità:}
 L'\textbf{usabilità} è la capacità del prodotto software di essere appreso e usato dall'utente quando usato sotto specifiche condizioni:
 \begin{itemize}
 	\item \textbf{Comprensibilità:} esprime la facilità di comprensione dei concetti del prodotto;
@@ -125,7 +106,7 @@ L'\textbf{usabilità} è la capacità del prodotto software di essere appreso e 
 	\item \textbf{Attrattività:} la capacità del software di essere piacevole per l'utente che ne fa uso;
 	\item \textbf{Conformità:} la capacità del software di aderire a standard o convenzioni relativi all'usabilità.
 \end{itemize}
-\subsubsection{Manutenibilità}
+\item \textbf{Manutenibilità:}\\
 La \textbf{manutenibilità} è la capacità del software di essere modificato, includendo correzioni, miglioramenti o adattamenti:
 \begin{itemize}
 	\item \textbf{Analizzabilità:} rappresenta la facilità con la quale è possibile analizzare il codice per localizzare un errore;
@@ -134,7 +115,7 @@ La \textbf{manutenibilità} è la capacità del software di essere modificato, i
 	\item \textbf{Testabilità:} la capacità di essere facilmente testato per validare le modifiche apportate al software.
 \end{itemize}
 
-\subsubsection{Portabilità}
+\item \textbf{Portabilità:}
 La \textbf{portabilità} è la capacità del software di essere trasportato da un ambiente di lavoro ad un altro:
 \begin{itemize}
 	\item \textbf{Adattabilità:} la capacità del software di essere adattato per differenti ambienti operativi senza dover applicare modifiche;
@@ -143,6 +124,7 @@ La \textbf{portabilità} è la capacità del software di essere trasportato da u
 	\item \textbf{Sostituibilità:} la capacità di essere utilizzato al posto di un altro software per svolgere gli stessi compiti nello stesso ambiente.
 \end{itemize}
 
+\end{itemize}
 
 % http://it.wikipedia.org/wiki/ISO/IEC_9126
 

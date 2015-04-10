@@ -10,11 +10,11 @@
 \def\VERIFICATORE {<Verificatore>}
 \def\RESPONSABILE {<Responsabile>}
 
-\def\USO {<Uso>}
+\def\USO {Esterno}
 
 \def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\}
 
-\def\DESCRIZIONE {Documento riguardante le strategie di verifica e validazione adottate dal gruppo \GRUPPO necessarie ad assicurare i requisiti qualitativi nello svolgimento del progetto \PROGETTO}
+\def\DESCRIZIONE {Documento riguardante le strategie di verifica e validazione adottate dal gruppo \GRUPPO\ necessarie ad assicurare i requisiti qualitativi nello svolgimento del progetto \PROGETTO}
 
 
 % abilita (true) / disabilita (false) indice, lista tabelle, lista figure
@@ -48,10 +48,9 @@
 \input{sections/gestione_amministrativa_della_revisione}
 
 \newpage
-{\renewcommand{\thesection}{\Alph{section}}
+\appendix
 \section{Standard di Qualità}
-\input{sections/standard_di_qualità.tex}
-}
+\input{sections/standard_di_qualita.tex}
 
 % ...
 
