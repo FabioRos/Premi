@@ -1,92 +1,46 @@
-\subsection{Caso d'uso UC6: Esportazione della presentazione}
+\subsection{Caso d'uso UC6: Esportazione del progetto}
 	\begin{figure}[h]
 		\centering
 		\includegraphics[scale=0.45] {img/UC6.png}
-		\caption{UC6 - Esportazione della presentazione}
+		\caption{UC6 - Esportazione del progetto}
 	\end{figure}
 
 	\begin{itemize}
-		\item \textbf{Attori:} Utente;
-		\item \textbf{Scopo e descrizione:} L'utente ha creato una presentazione di slide e vuole esportarla nel proprio computer;
+		\item \textbf{Attori:} Utente autenticato;
+		\item \textbf{Scopo e descrizione:} L'utente ha aperto un progetto e vuole esportarlo in locale per poterlo visualizzare offline;
 		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni la funzione esporta;
-		\item \textbf{Flusso degli eventi:}
+		\item \textbf{Flusso principale degli eventi:}
 		\begin{enumerate}
 			\item L'utente seleziona dal menù la funzione esporta [UC6.1];
-			\item L'utente seleziona il formato in cui esportare la presentazione [UC6.2];
-			\item L'utente seleziona la cartella nella quale esportare la presentazione [UC6.3];
-			\item L'utente seleziona il percorso di destinazione [UC6.5];
-			\item L'utente conferma l'esportazione [UC6.4];
+			\item Il sistema prepara il pacchetto da esportare [UC6.2]
+			\item L'utente salva il pacchetto in locale [UC6.4];
 		\end{enumerate}
-		\item \textbf{Postcondizione:} Il sistema ha esportato la presentazione.
+		\item \textbf{Postcondizione:} L'utente ha esportato il progetto e l'ha salvato in locale.
 	\end{itemize}
 
 
-\subsection{Caso d'uso UC6.1: Selezionare funzione esporta}
+\subsection{Caso d'uso UC6.1: Selezionare la funzione esporta}
 	\begin{itemize}
-		\item \textbf{Attori:} Utente;
-		\item \textbf{Scopo e descrizione:} L'utente seleziona dall'apposito menù la funzione di esportazione per esportare la presentazione;
-		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni la funzione esporta;
-		\item \textbf{Postcondizione:} Il sistema apre la finestra di dialogo per l'esportazione.
+		\item \textbf{Attori:} Utente autenticato;
+		\item \textbf{Scopo e descrizione:} L'utente seleziona dall'apposito menù la funzione di esportazione per esportare il progetto;
+		\item \textbf{Precondizione:} L'utete ha un progetto aperto e il sistema è in attesa che l'utente selezioni la funzione esporta;
+		\item \textbf{Postcondizione:} Il sistema inizia la procedura di esportazione.
 	\end{itemize}
 
 
-\subsection{Caso d'uso UC6.2: Selezionare il formato di esportazione}
+\subsection{Caso d'uso UC6.2: Preparazione del pacchetto da esportare}
 	\begin{itemize}
-		\item \textbf{Attori:} Utente;
-		\item \textbf{Scopo e descrizione:} L'utente seleziona il formato in cui esportare la presentazione;
-		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il formato dall'apposita finestra di dialogo;
-		\item \textbf{Postcondizione:} Il sistema registra la scelta fatta dall'utente.
+		\item \textbf{Attori:} Sistema;
+		\item \textbf{Scopo e descrizione:} Il sistema prepara il pacchetto da salvare in locale contenente il progetto;
+		\item \textbf{Precondizione:} L'utente ha scelto di esportare il progetto;
+		\item \textbf{Postcondizione:} Il sistema ha preparato il pacchetto del progetto e lo ha salvato nel server.
 	\end{itemize}
 
 
-\subsection{Caso d'uso UC6.3: Selezionare la destinazione di esportazione}
+\subsection{Caso d'uso UC6.3: Salvataggio del pacchetto in locale}
 	\begin{itemize}
-		\item \textbf{Attori:} Utente;
-		\item \textbf{Scopo e descrizione:} L'utente deve scegliere la destinazione in cui salvare la presentazione esportata.
-		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il percorso dall'apposita finestra di dialogo;
-		\item \textbf{Postcondizione:} Il sistema registra la destinazione desiderata.
-	\end{itemize}
-
-
-\subsection{Caso d'uso UC6.4: Confermare l'esportazione}
-	\begin{itemize}
-		\item \textbf{Attori:} Utente;
-		\item \textbf{Scopo e descrizione:} L'utente conferma l'esportazione nel formato e nella destinazione desiderati;
-		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente confermi l'esportazione;
-		\item \textbf{Postcondizione:} Il sistema ha esportato la presentazione.
-	\end{itemize}
-
-
-\subsection{Caso d'uso UC6.5: Selezionare il percorso}
-	\begin{figure}[h]
-		\centering
-		\includegraphics[scale=0.45] {img/UC6.5.png}
-		\caption{UC6.5 - Selezionare il percorso}
-	\end{figure}
-	\begin{itemize}
-		\item \textbf{Attori:} Utente;
-		\item \textbf{Scopo e descrizione:} L'utente deve scegliere il percorso. Naviga il \gls{filesystem}, lo seleziona ne e conferma la scelta;
-		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente navighi il \gls{filesystem} e confermi il percorso scelto;
-		\item \textbf{Flusso degli eventi:}
-		\begin{enumerate}
-			\item L'utente naviga il \gls{filesystem} alla ricerca della posizione desiderata [UC6.5.1];
-			\item L'utente conferma la posizione selezionata [UC6.5.2].
-		\end{enumerate}
-		\item \textbf{Postcondizione:} Il sistema registra il percorso desiderato.
-	\end{itemize}
-
-	\subsection{Caso d'uso UC6.5.1: Navigare il filesystem}
-	\begin{itemize}
-		\item \textbf{Attori:} Utente;
-		\item \textbf{Scopo e descrizione:} L'utente naviga il \gls{filesystem} per selezionare la cartella dentro la quale vuole esportare la presentazione;
-		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni una cartella;
-		\item \textbf{Postcondizione:} Il sistema ha aggiornato il percorso.
-	\end{itemize}
-
-	\subsection{Caso d'uso UC6.5.2: Confermare selezione}
-	\begin{itemize}
-		\item \textbf{Attori:} Utente;
-		\item \textbf{Scopo e descrizione:} L'utente conferma che il percorso selezionato è quello corretto;
-		\item \textbf{Precondizione:} Il sistema ha selezionato il percorso indicato dall'utente;
-		\item \textbf{Postcondizione:} Il sistema ha registrato il percorso scelto.
+		\item \textbf{Attori:} Utente autenticato;
+		\item \textbf{Scopo e descrizione:} L'utente deve salvare il pacchetto del progetto memorizzato sul server in locale.
+		\item \textbf{Precondizione:} Il sistema ha preparato il pacchetto, il quale si trova sul server;
+		\item \textbf{Postcondizione:} Il pacchetto è stato scaricato e salvato in locale.
 	\end{itemize}

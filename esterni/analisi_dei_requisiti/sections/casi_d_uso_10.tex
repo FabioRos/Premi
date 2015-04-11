@@ -1,61 +1,47 @@
-\subsection{Caso d'uso UC10: Salvataggio infografica}
+\subsection{Caso d'uso UC10: Salvataggio di un progetto}
 \begin{figure}[h] 
 	\centering 
 	\includegraphics[scale=0.45] {img/UC10.png} 
-	\caption{UC10 - Salvataggio infografica} 
+	\caption{UC10 - Salvataggio di un progetto} 
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Attori:} Utente;
-	\item \textbf{Scopo e descrizione:} L'utente ha creato un'\gls{infografica} e vuole salvarla in una specifica cartella;
+	\item \textbf{Attori:} Proprietario;
+	\item \textbf{Scopo e descrizione:} L'utente ha creato un progetto e vuole salvare il suo stato per poterlo aprire successivamente;
 	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni la funzione salva;
-	\item \textbf{Flusso degli eventi:}
+	\item \textbf{Flusso principale degli eventi:}
 	\begin{enumerate}
 		\item L'utente seleziona la funzione salva [UC10.1];
-		\item L'utente seleziona la cartella nella quale salvare l'\gls{infografica} [UC10.2];
-		\item L'utente scrive il nome del file [UC10.3];
-		\item L'utente può selezionare un file già esistente da sovrascrivere [UC10.4];
-		\item L'utente conferma il salvataggio [UC10.5].
+		\item L'utente inserisce il nome del progetto [UC10.2];
+		\item L'utente conferma il salvataggio [UC10.3].
 	\end{enumerate}
-	\item \textbf{Postcondizione:} Il sistema salvato l'\gls{infografica} nella cartella selezionata con il nome indicato.
+	\item \textbf{Postcondizione:} Il sistema ha salvato il progetto nel server con il nome indicato dall'utente.
 \end{itemize}
 
-\subsection{Caso d'uso UC10.1: Selezionare funzione salva}
+
+\subsection{Caso d'uso UC10.1: Selezionare la funzione salva}
 \begin{itemize}
-	\item \textbf{Attori:} Utente;
-	\item \textbf{Scopo e descrizione:} L'utente seleziona dall'apposito menù la funzione di salvataggio per salvare l'\gls{infografica};
+	\item \textbf{Attori:} Proprietario;
+	\item \textbf{Scopo e descrizione:} L'utente seleziona dall'apposito menù la funzione di salvataggio per salvare il progetto;
 	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni la funzione salva;
-	\item \textbf{Postcondizione:} Il sistema apre la finestra di dialogo per il salvataggio.
+	\item \textbf{Postcondizione:} Il sistema ha aperto la finestra di dialogo per il salvataggio.
 \end{itemize}
 
-\subsection{Caso d'uso UC10.2: Navigazione nel filesystem}
+
+\subsection{Caso d'uso UC10.2: Inserire il nome del file}
 \begin{itemize}
-	\item \textbf{Attori:} Utente;
-	\item \textbf{Scopo e descrizione:} L'utente naviga il \gls{filesystem} per selezionare posizione di salvataggio dell'\gls{infografica};
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni una cartella;
-	\item \textbf{Postcondizione:} Il sistema aggiorna il percorso con quello scelto dall'utente.
+	\item \textbf{Attori:} Proprietario;
+	\item \textbf{Scopo e descrizione:} L'utente deve inserire un nome valido con il quale salvare il progetto;
+	\item \textbf{Precondizione:} Il sistema permette all'utente di inserire il nome della presentazione da salvare;
+	\item \textbf{Postcondizione:} È stato inserito un nome valido per il progetto che l'utente desidera salvare e il sistema lo ha registrato.
 \end{itemize}
 
-\subsection{Caso d'uso UC10.3: Scrittura nome file}
-\begin{itemize}
-	\item \textbf{Attori:} Utente;
-	\item \textbf{Scopo e descrizione:} L'utente deve inserire un nome valido con il quale salvare l'\gls{infografica};
-	\item \textbf{Precondizione:} Il sistema permette all'utente di selezionare il nome dell'\gls{infografica} da salvare;
-	\item \textbf{Postcondizione:} È stato inserito un nome valido per l'\gls{infografica} che l'utente desidera salvare.
-\end{itemize}
 
-\subsection{Caso d'uso UC10.4: Seleziona file già esistente}
+\subsection{Caso d'uso UC10.3: Confermare il salvataggio}
 \begin{itemize}
-	\item \textbf{Attori:} Utente;
-	\item \textbf{Scopo e descrizione:} L'utente può selezionare un'\gls{infografica} già esistente da sovrascrivere con il salvataggio;
-	\item \textbf{Precondizione:} Il sistema contiene già un'\gls{infografica} con il nome che l'utente desidera utilizzare;
-	\item \textbf{Postcondizione:} L'\gls{infografica} già esistente è stata selezionata dall'utente.
+	\item \textbf{Attori:} Proprietario;
+	\item \textbf{Scopo e descrizione:} L'utente conferma il salvataggio del progetto;
+	\item \textbf{Precondizione:} Il sistema ha ricevuto la richiesta di salvataggio e ha registrato il nome con cui salvare il progetto;
+	\item \textbf{Postcondizione:} Il sistema ha salvato il progetto.
 \end{itemize}
-
-\subsection{Caso d'uso UC10.5: Conferma salvataggio}
-\begin{itemize}
-	\item \textbf{Attori:} Utente;
-	\item \textbf{Scopo e descrizione:} L'utente conferma il salvataggio dell'\gls{infografica};
-	\item \textbf{Precondizione:} Il sistema ha ricevuto la richiesta di salvataggio dell'\gls{infografica};
-	\item \textbf{Postcondizione:} Il sistema ha salvato l'\gls{infografica} selezionata dall'utente.
-\end{itemize}
+\newpage
