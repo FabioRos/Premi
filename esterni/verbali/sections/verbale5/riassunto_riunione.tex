@@ -1,0 +1,14 @@
+In questo incontro abbiamo presentato i casi d'uso individuati finora nell'Analisi dei Requisiti per verificarne la conformità alle richieste ed aspettative del Proponente.
+\noindent Dalla discussione è emerso che sia meglio non prevedere un singolo attore per il nostro sistema, ma che si possono individuare almeno due tipi di attore:
+\begin{itemize}
+	\item Un semplice visualizzatore della presentazione;
+	\item Il proprietario della presentazione.
+\end{itemize}
+Inoltre si è discusso a riguardo della possibilità di inserire anche un terzo attore rappresentato da chi conduce la presentazione, che avrà, come da requisiti individuati, una visualizzazione diversa da chi guarda semplicemente la presentazione.
+\noindent La discussione si è poi spostata sulla fattibilità del requisito aggiuntivo riguardo all'inclusione dei dati real time. Utilizzando Javascript come linguaggio di scripting lato client, per operazioni come accedere a metodi, proprietà e dati da siti esterni ci si scontra con la \textit{Same Origin Policy}\footnote{Regola che permette agli script in esecuzione in pagine che provengono dallo stesso sito di accedere ai reciproci metodi e proprietà senza specifiche restrizioni, impedendo invece l'accesso alla maggior parte dei metodi e delle proprietà tra pagine provenienti da siti diversi.}
+Per aggirare questa restrizione sono stati individuate due work-around:
+\begin{itemize}
+	\item Utilizzare il tag HTML \textbf{<img >}, che non è soggetto a tale restrizione;
+	\item Utilizzare un server esterno in cui salvare i dati che si desiderano prelevare da fonti esterne.
+\end{itemize}   
+Oltre a tale restrizione si è discusso poi dell'impatto sulla grafica della presentazione che potrebbero avere tali dati prelevati da fonti esterne. Importare dati come immagini non permette di avere il controllo sullo stile di come vengano poi effettivamente rappresentati sulla slide, cosa che potrebbe avere um impatto molto negativo sull'aspetto grafico generale della stessa. Per questo motivo, d'accordo con il Proponente, si è deciso di creare un parser che prelevi tali dati da un server remoto e li fornisca come array JSON per poi poter aver il pieno controllo della loro presentazione grafica all'interno del contenuto della slide.
