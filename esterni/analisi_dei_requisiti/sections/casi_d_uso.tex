@@ -7,51 +7,59 @@ Il codice progressivo di livello potrà contenere diversi altri livelli di gerar
 \subsection{Caso d'uso UCP: Scenario principale}
 \begin{figure}[h] 
 	\centering 
-	\includegraphics[scale=0.5] {img/UCP.png} 
+	%\includegraphics[scale=0.5] {img/UCP.png} 
 	\caption{UCP - Scenario principale} 
 \end{figure}
 
 \newpage
 
 \begin{itemize}
-	\item \textbf{Attori:} Visualizzatore, Proprietario;
+	\item \textbf{Attori:} Utente non autenticato, Utente autenticato, Utente proprietario;
+	
 	\item \textbf{Scopo e descrizione:} Un visualizzatore può interagire con una presentazione già esistente, senza però poterla modificare. Il proprietario invece, dopo essersi autenticato, potrà effettuare diverse operazioni. Potrà gestire una presentazione, salvarla oppure esportarla per renderla disponibile offline. Potrà anche scegliere di stampare una presentazione nel modo da lui scelto. Analogamente il proprietario potrà gestire un'infografica, salvarla oppure stamparla;
+	
 	\item \textbf{Precondizione:} Il visualizzatore ha a disposizione una presentazione con la quale interagire oppure il proprietario ha avviato il programma che ora è pronto all'uso;
-	\item \textbf{Flusso degli eventi:}
+	
+	\item \textbf{Flusso principale degli eventi:}
 	\begin{enumerate}
-		\item Il visualizzatore può interagire con una presentazione [UC1];
-		\item Il proprietario deve autenticarsi [UC2];
-		\item Il proprietario può gestire una presentazione [UC3];
-		\item Il proprietario può aprire una presentazione esistente [UC4];
-		\item Il proprietario può salvare una presentazione [UC5];
-		\item Il proprietario può esportare una presentazione [UC6];
-		\item Il proprietario può stampare una presentazione [UC7];
-		\item Il proprietario può gestire un'infografica [UC8];
-		\item Il proprietario può aprire un'infografica esistente [UC9];
-		\item Il proprietario può salvare un'infografica [UC10];
-		\item Il proprietario può stampare un'infografica [UC11].
+		\item L'utente si autentica [UC1];
+		\item L'utente si registra [UC2];
+		
+		\item L'utente ricerca un progetto [UC3];
+		\item L'utente visualizza un progetto [UC4];
+		\item L'utente stampa un progetto [UC5];
+		\item L'utente esporta un progetto [UC6];
+
+		\item L'utente proprietario apre un progetto esistente [UC7];
+
+		\item L'utente proprietario modifica un progetto [UC8];
+		\item L'utente proprietario crea un'infografica [UC9];		
+	
+		\item L'utente proprietario salva il progetto [UC10];
+		\item L'utente proprietario elimina un progetto [UC11].
 	\end{enumerate}
+	
 	\item \textbf{Postcondizione:} Il sistema ha ottenuto le informazioni sulle operazioni che il visualizzatore o il proprietario desidera eseguire.
 \end{itemize}
 
-\input{sections/casi_d_uso_1.tex}
+%\input{sections/casi_d_uso_1.tex}	% autenticazione
 
-\input{sections/casi_d_uso_2.tex}
+%\input{sections/casi_d_uso_2.tex}	% registrazione
 
-\input{sections/casi_d_uso_3.tex}
+%\input{sections/casi_d_uso_3.tex}	% ricerca
 
-\input{sections/casi_d_uso_4.tex}
+%\input{sections/casi_d_uso_4.tex}	% visualizzazione
 
-\input{sections/casi_d_uso_5.tex}
+\input{sections/casi_d_uso_5.tex}	% stampa
 
-\input{sections/casi_d_uso_6.tex}
+\input{sections/casi_d_uso_6.tex}	% esportazione
 
-\input{sections/casi_d_uso_7.tex}
+%\input{sections/casi_d_uso_7.tex}	% apertura
 
-\input{sections/casi_d_uso_8.tex}
+\input{sections/casi_d_uso_8.tex}	% modifica
 
-\input{sections/casi_d_uso_9.tex}
+\input{sections/casi_d_uso_9.tex}	% creazione infografica
 
-\input{sections/casi_d_uso_10.tex}
+\input{sections/casi_d_uso_10.tex}	% salvataggio
 
-\input{sections/casi_d_uso_11.tex}
+\input{sections/casi_d_uso_11.tex}	% eliminazione
