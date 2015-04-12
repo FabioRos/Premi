@@ -1,43 +1,62 @@
-\subsection{Caso d'uso UC4: Apertura di una presentazione}
+\newpage
+\subsection{Caso d'uso UC4: Visualizzazione}
 \begin{figure}[h] 
 	\centering 
 	\includegraphics[scale=0.45] {img/UC4.png} 
-	\caption{UC4 - Apertura di una presentazione} 
+	\caption{UC4 - Visualizzazione} 
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Attori:} Utente;
-	\item \textbf{Scopo e descrizione:} L'utente ha scelto di aprire una presentazione già esistente. L'utente deve scegliere e selezionare la presentazione da aprire;
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il file da aprire;
-	\item \textbf{Flusso degli eventi:}
+	\item \textbf{Attori:} Utente non autenticato, utente autenticato;
+	\item \textbf{Scopo e descrizione:} Un utente, una volta aperto un progetto, può scegliere se visualizzare una presentazione o un'\gls{infografica};
+	\item \textbf{Precondizione:} Il sistema mostra all'utente un progetto;
+	\item \textbf{Flusso principale degli eventi:}
 	\begin{enumerate}
-		\item L'utente naviga il filesystem alla ricerca del file desiderato [UC4.1];
-		\item L'utente seleziona il file [UC4.2];
-		\item L'utente conferma la selezione [UC4.3].
+		\item L'utente sceglie di visualizzare una presentazione [UC4.1];
+		\item L'utente sceglie di visualizzare un'\gls{infografica} [UC4.2].
 	\end{enumerate}
-	\item \textbf{Postcondizione:} Il sistema ha caricato il file selezionato dall'utente.
+	\item \textbf{Postcondizione:} Il sistema mostra all'utente la schermata di visualizzazione di una presentazione o di un'\gls{infografica} a seconda di cosa è stato scelto.
 \end{itemize}
 
-\subsection{Caso d'uso UC4.1: Navigare il filesystem}
+\subsection{Caso d'uso UC4.1: Visualizzazione di una presentazione}
+\begin{figure}[h] 
+	\centering 
+	\includegraphics[scale=0.45] {img/UC4.1.png} 
+	\caption{UC4.1 - Visualizzazione di una presentazione} 
+\end{figure}
+
 \begin{itemize}
-	\item \textbf{Attori:} Utente;
-	\item \textbf{Scopo e descrizione:} L'utente può navigare il filesystem selezionando la cartella dentro la quale si trova il file da caricare;
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni una cartella;
-	\item \textbf{Postcondizione:} Il sistema ha aggiornato la cartella corrente con quella selezionata dall'utente.
+	\item \textbf{Attori:} Utente non autenticato, utente autenticato;
+	\item \textbf{Scopo e descrizione:} Una volta scelto di visualizzare una presentazione, l'utente può scegliere se visualizzarla come presentatore o come ascoltatore;
+	\item \textbf{Precondizione:} L'utente ha scelto di visualizzare una presentazione;
+	\item \textbf{Flusso principale degli eventi:}
+	\begin{enumerate}
+		\item L'utente sceglie di visualizzare la presentazione come presentatore [UC4.1.1];
+		\item L'utente sceglie di visualizzare la presentazione come ascoltatore [UC4.1.2].
+	\end{enumerate}
+	\item \textbf{Postcondizione:} Il sistema mostra all'utente la schermata di visualizzazione di una presentazione con le impostazioni scelte.
 \end{itemize}
 
-\subsection{Caso d'uso UC4.2: Selezionare il file}
+\subsection{Caso d'uso UC4.1.1: Visualizza presentazione come presentatore }
 \begin{itemize}
-	\item \textbf{Attori:} Utente;
-	\item \textbf{Scopo e descrizione:} L'utente deve selezionare il file che intende aprire;
-	\item \textbf{Precondizione:} Il sistema mostra tutti i file contenuti nella cartella scelta in precedenza;
-	\item \textbf{Postcondizione:} Il sistema evidenzia il file selezionato dall'utente.
+	\item \textbf{Attori:} Utente non autenticato, utente autenticato;
+	\item \textbf{Scopo e descrizione:} L'utente ha scelto di visualizzare la presentazione come presentatore e il sistema mostra la presentazione con il supporto visivo dedicato al presentatore;
+	\item \textbf{Precondizione:} L'utente ha scelto di visualizzare la presentazione come presentatore;
+	\item \textbf{Postcondizione:} Il sistema avvia la presentazione con il supporto visivo dedicato al presentatore.
 \end{itemize}
 
-\subsection{Caso d'uso UC4.3: Confermare la selezione}
+\subsection{Caso d'uso UC4.1.2: Visualizza presentazione come ascoltatore}
 \begin{itemize}
-	\item \textbf{Attori:} Utente;
-	\item \textbf{Scopo e descrizione:} L'utente conferma la scelta del file fatta in precedenza;
-	\item \textbf{Precondizione:} Il sistema ha selezionato il file scelto dall'utente;
-	\item \textbf{Postcondizione:} Il sistema ha caricato il file scelto in precedenza dall'utente.
+	\item \textbf{Attori:} Utente non autenticato, utente autenticato;
+	\item \textbf{Scopo e descrizione:} L'utente ha scelto di visualizzare la presentazione come ascoltatore e il sistema mostra la presentazione selezionata;
+	\item \textbf{Precondizione:} L'utente ha scelto di visualizzare la presentazione come ascoltatore;
+	\item \textbf{Postcondizione:} Il sistema avvia la presentazione.
+\end{itemize}
+
+\subsection{Caso d'uso UC4.2: Visualizzazione di un'\gls{infografica}}
+\begin{itemize}
+	\item \textbf{Attori:} Utente non autenticato, utente autenticato;
+	\item \textbf{Scopo e descrizione:} L'utente ha scelto di visualizzare un'\gls{infografica} e il sistema la mostra;
+	\item \textbf{Precondizione:} L'utente ha scelto di visualizzare un'\gls{infografica};
+	\item \textbf{Postcondizione:} Il sistema mostra all'utente la schermata di visualizzazione dell'\gls{infografica}.
 \end{itemize}
