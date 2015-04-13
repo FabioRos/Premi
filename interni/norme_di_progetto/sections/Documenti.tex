@@ -1,7 +1,7 @@
 In questo capitolo si descrivono i vari standard adottati da \GRUPPO\ nella stesura, verifica e approvazione della documentazione da produrre.
 \subsection{Template}
 Per semplificare la redazione dei documenti è stato creato un template \LaTeX\ contenente tutte le impostazioni per l'aspetto grafico. \\
-Ogni documento dovrà essere realizzato con il template \LaTeX\ presente nel repository, il quale utilizzo è regolamentato da un'apposita guida.
+Ogni documento dovrà essere realizzato con il template \LaTeX\ presente nel repository, il quale utilizzo è regolamentato da un'apposita guida presente su Google Drive.
 \subsection{Versionamento}
 Per ogni documento è obbligatorio specificare la versione. Un numero di versione deve essere nella seguente forma:
 \begin{center}
@@ -32,7 +32,7 @@ Ogni documento deve avere in prima pagina le seguenti informazioni:
 	\item Breve descrizione del documento.
 \end{itemize}
 \subsubsection{Diario delle modifiche}
-Nella seconda pagina di ogni documento deve essere presente il diario delle modifiche.\\
+A partire dalla seconda pagina di ogni documento deve essere presente il diario delle modifiche.\\
 Ogni riga del diario delle modifiche contiene:
 \begin{itemize}
 	\item Una breve descrizione sulle modifiche effettuate;
@@ -51,7 +51,7 @@ L'intestazione di ogni pagina contiene:
 	\item Logo del gruppo;
 	\item La sezione corrente all'interno del documento.
 \end{itemize}
-A piè di ogni pagina è presente:
+A piè pagina sono sempre presenti:
 \begin{itemize}
 	\item Nome e versione del documento;
 	\item Pagina corrente nel formato N di T, dove N è il numero della pagina corrente e T è il numero di pagine totali del documento.
@@ -70,6 +70,7 @@ I documenti pronti per il rilascio dovranno essere rinominati osservando le segu
 	\item La versione del documento verrà aggiunta dopo il nome, e sarà preceduta dal carattere "-"(trattino) e da una "v".
 \end{itemize}
 
+\newpage
 \subsection{Norme tipografiche}
 Questa sezione racchiude tutte le informazioni riguardanti l'ortografia, la tipografia e l'assunzione di uno stile uniforme in tutti i documenti allo scopo di evitare incoerenze tra le diverse parti.
 
@@ -78,10 +79,10 @@ Questa sezione racchiude tutte le informazioni riguardanti l'ortografia, la tipo
 	\item \textbf{Punteggiatura}: qualsiasi carattere di punteggiatura non può seguire un carattere di spazio;
 	\item \textbf{Lettere maiuscole}: l'uso delle maiuscole è obbligatorio nelle seguenti situazioni:
 	\begin{itemize}
-		\item All'inizio di testo o di una sua parte (capitolo, paragrafo, ecc.);
+		\item All'inizio di un  testo o di una sua parte (capitolo, paragrafo, ecc.);
 		\item Dopo il punto, il punto esclamativo, il punto interrogativo;
 		\item All'inizio di ogni elemento di un elenco puntato;
-		\item Per i ruoli, di progetto, i nomi dei documenti, le fasi di progetto, revisioni di progetto oltre che dove previsto dalla lingua italiana.
+		\item Per i ruoli di progetto, i nomi dei documenti, le fasi di progetto, revisioni di progetto oltre a dove previsto dalla lingua italiana.
 	\end{itemize}
 	\item \textbf{Parentesi}: il testo racchiuso dentro le parentesi non deve mai iniziare con un carattere di spazio e non deve mai terminare con un carattere di spazio o punteggiatura.
 \end{itemize}	
@@ -109,7 +110,7 @@ Questa sezione racchiude tutte le informazioni riguardanti l'ortografia, la tipo
 	\item Elenchi puntati: per redigere un elenco si qualificano gli elementi e si introducono mediante
 	i due punti. Dopo i due punti si deve andare a capo. Ogni elemento dell'elenco termina con un punto e virgola, eccetto l'ultimo che termina con un punto semplice;
 	\item Pedice "G": il pedice "G" viene utilizzato in presenza di termini presenti nel \textit{Glossario};
-	\item Note a piè di pagina: ogni nota deve iniziare con la lettera della prima parola maiuscola e non deve essere preceduta da alcun carattere di spazio. Ogni nota deve terminare con un punto.
+	\item Note a piè di pagina: ogni nota deve iniziare con la lettera della prima parola maiuscola e non deve essere preceduta da alcun carattere di spaziatura. Ogni nota deve terminare con un punto.
 \end{itemize}
 
 \subsubsection{Formati ricorrenti}
@@ -127,7 +128,7 @@ Questa sezione racchiude tutte le informazioni riguardanti l'ortografia, la tipo
 		\item GG: rappresenta il formato del giorno scritto con due cifre.
 	\end{itemize}
 	\item Riferimenti ai documenti: ci si riferirà ai vari documenti scrivendo in corsivo il nome del documento e mettendo una lettera maiuscolo per ogni parola che non sia un articolo. Nel caso in cui ci si deve riferire ad una versione specifica del documento, essa andrà indicata alla fine  del nome del documento (esempio: \textit{Norme di Progetto v1.0.0});
-	\item Nome del gruppo: ci si riferirà al gruppo solo come "\textit{DazzleWorks}" con il nome del gruppo in corsivo. Per una scrittura corretta del nome è stato creato il comando \LaTeX\ apposito \verb|\GRUPPO|;
+	\item Nome del gruppo: ci si riferirà al gruppo solo come "\textit{DazzleWorks}" con il nome del gruppo in corsivo. Per una scrittura univoca del nome è stato creato il comando \LaTeX\ apposito \verb|\GRUPPO|;
 	\item Nome del progetto: ci si riferirà al nome del progetto solo come "\textbf{PREMI}". Per una scrittura corretta del nome è stato creato il comando \LaTeX\ \verb|\PROGETTO|.
 \end{itemize}
 
@@ -155,7 +156,7 @@ Le Sigle potranno comparire esclusivamente all'interno delle tabelle e diagrammi
 \subsubsection{Immagini}
 Tutte le immagini dovranno avere il formato PDF oppure PNG. In modo da garantire una maggiore qualità dell'immagine in caso di ridimensionamento è consigliato usare il formato PDF vettoriale. La conversione di un immagine in formato PDF è possibile attraverso il software GIMP\footnote{GNU Image Manipulation Program è un programma per la creazione e modifica di immagini digitali.}, il quale è stato già usato da tutti  i componenti del gruppo. \\ Le immagini devono essere accompagnate da una didascalia che inizia con la parola "Figura", seguita dal numero della figura, dal carattere "due punti" e da una breve descrizione.
 \subsubsection{Tabelle}
-Ogni tabella deve essere accompagnata da una didascalia che inizia con la parola "Tabella", seguita dal numero della tabella, dal carattere "due punti" e da una breve descrizione non banale.
+Ogni tabella deve essere accompagnata da una didascalia che inizia con la parola "Tabella", seguita dal numero della tabella, dal carattere "due punti" e da una  descrizione breve ma significativa.
 
 \subsection{Procedure di avanzamento di un documento}
 Nel momento in cui il redattore ritenga di aver concluso la stesura di un documento, si dovranno seguire i seguenti passi nell'ordine esatto di comparizione:
