@@ -1,0 +1,36 @@
+\subsection{Caso d'uso UC12: Eliminazione di un progetto}
+\begin{figure}[h] 
+	\centering 
+	\includegraphics[scale=0.45] {img/UC12.png} 
+	\caption{UC12 - Eliminazione di un progetto} 
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Attori:} Proprietario;
+	\item \textbf{Scopo e descrizione:} L'utente vuole eliminare un progetto che ha creato in precedenza;
+	\item \textbf{Precondizione:} L'utente ha già creato un progetto;
+	\item \textbf{Flusso principale degli eventi:}
+	\begin{enumerate}
+		\item L'utente seleziona il progetto che vuole eliminare [UC12.1];
+		\item L'utente conferma l'eliminazione del progetto [UC12.2].
+	\end{enumerate}
+	\item \textbf{Postcondizione:} Il sistema ha eliminato il progetto dal server.
+\end{itemize}
+
+
+\subsection{Caso d'uso UC12.1: Selezionare il progetto}
+\begin{itemize}
+	\item \textbf{Attori:} Proprietario;
+	\item \textbf{Scopo e descrizione:} L'utente seleziona il progetto che vuole eliminare;
+	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il progetto e dia il comando per eliminarlo;
+	\item \textbf{Postcondizione:} Il sistema apre la finestra di dialogo per la conferma dell'eliminazione.
+\end{itemize}
+
+
+\subsection{Caso d'uso UC12.2: Confermare l'eliminazione}
+\begin{itemize}
+	\item \textbf{Attori:} Proprietario;
+	\item \textbf{Scopo e descrizione:} L'utente deve confermare l'eliminazione del progetto;
+	\item \textbf{Precondizione:} L'utente ha scelto il progetto e dato il comando per eliminarlo;
+	\item \textbf{Postcondizione:} Il sistema ha eliminato il progetto dal server.
+\end{itemize}
