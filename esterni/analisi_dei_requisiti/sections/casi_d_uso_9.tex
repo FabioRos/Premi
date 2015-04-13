@@ -18,18 +18,14 @@
 		\item L'utente rimuove una slide [UC9.3];
 		
 		\item L'utente inserisce un'immagine [UC9.4];
-		\item L'utente carica un file per inserire l'immagine [UC9.14];
 		
 		\item L'utente inserisce una casella di testo [UC9.5];
-		\item L'utente sceglie la formattazione del testo [UC9.15];
 		
 		\item L'utente inserisce dati real time [UC9.6];
 		
 		\item L'utente inserisce una tabella [UC9.7];
-		\item L'utente modifica una tabella [UC9.16];
 		
 		\item L'utente inserisce un grafico [UC9.8];
-		\item L'utente modifica un grafico [UC9.17];
 		
 		\item L'utente sceglie un effetto di transizione [UC9.9];
 		
@@ -39,7 +35,14 @@
 		
 		\item L'utente ruota un elemento [UC9.12];
 		
-		\item L'utente rimuove un elemento [UC9.13].
+		\item L'utente rimuove un elemento [UC9.13];
+		
+		\item L'utente carica un file per inserire l'immagine [UC9.14];
+		\item L'utente sceglie la formattazione del testo [UC9.15];
+		\item L'utente modifica una tabella [UC9.16];
+		\item L'utente modifica un grafico [UC9.17];
+		
+		\item L'utente inserisce note / parole chiave [UC9.18].
 	\end{enumerate}
 	\item \textbf{Postcondizione:} Il sistema esegue le operazioni effettuate dall'utente.
 \end{itemize}
@@ -48,7 +51,7 @@
 \subsection{Caso d'uso UC9.1: Scegliere un template}
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente sceglie un template da utilizzare per la propria presentazione;
+	\item \textbf{Scopo e descrizione:} L'utente sceglie un template di stile da utilizzare per la propria presentazione;
 	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il template da utilizzare;
 	\item \textbf{Postcondizione:} Il sistema imposta il template selezionato per la presentazione.
 \end{itemize}
@@ -93,46 +96,33 @@
 \subsection{Caso d'uso UC9.6: Inserire dati real time}
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente deve inserire dei dati real time;
+	\item \textbf{Scopo e descrizione:}	L'inserimento di un dato real time consiste nell'inserimento di una stringa speciale che si occuperà di richiamare dei contenuti personalizzabili definiti precedentemente dall'utente. Questi contenuti hanno il compito di catturare dati provenienti dall'esterno per poi riportarli nelle slide ed avere così dati aggiornati in tempo reale in quanto saranno composti di codice eseguito a run-time dal server. Nel caso la presentazione venga visualizzata offline, i contenuti faranno riferimento ai dati ottenuti nel momento dell'inserimento dell'oggetto.
+	L'utente, quindi, deve inserire dei dati real time. Per inserirli deve caricare prima il codice che vuole richiamare attraverso l'oggetto inserito, poi inserire l'oggetto all'interno della presentazione indicando la funzione che deve svolgere.
+	
 	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente inserisca i dati real time;
+	\item \textbf{Flusso principale di eventi:}
+	\begin{enumerate}
+		\item L'utente inserisce il file contenente il codice da eseguire [UC9.6.1];
+	\end{enumerate}
 	\item \textbf{Postcondizione:} Il sistema ha inserito i dati real time.
 \end{itemize}
 
-
-\subsection{Caso d'uso UC9.7: Inserire una tabella}
-\begin{figure}[h]
-	\centering 
-	\includegraphics[scale=0.45] {img/UC9.7.png} 
-	\caption{UC9.7 - Inserire una tabella} 
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Attori:} Utente;
-	\item \textbf{Scopo e descrizione:} L'utente deve inserire una tabella. Seleziona il numero di righe e di colonne e inserisce i dati;
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il comando per inserire una tabella nella slide;
-	\item \textbf{Flusso principale degli eventi:}
-	\begin{enumerate}
-		\item L'utente inserisce il numero di righe e di colonne [UC9.7.1];
-		\item L'utente inserisce i dati all'interno della tabella [UC9.7.2];
-	\end{enumerate}
-	\item \textbf{Postcondizione:} Il sistema ha inserito la tabella nella slide.
-\end{itemize}
-
-	\subsection{Caso d'uso UC9.7.1: Inserire il numero di righe e colonne}
+	\subsection{Caso d'uso UC9.6.1: Inserire un file di codice}
 	\begin{itemize}
-		\item \textbf{Attori:} Utente;
-		\item \textbf{Scopo e descrizione:} L'utente deve inserire il numero di righe e di colonne per la tabella da inserire;
-		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente inserisca il numero di righe e di colonne;
-		\item \textbf{Postcondizione:} Il sistema registra l'inserimento dell'utente.
+		\item \textbf{Attori:} Proprietario;
+		\item \textbf{Scopo e descrizione:} L'utente deve inserire un file di codice da usare per un oggetto di dati real time;
+		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il comando per inserire un file;
+		\item \textbf{Postcondizione:} Il sistema ha caricato il file nel server e lo ha inserito nella lista dei file di codice.
 	\end{itemize}
 	
-	\subsection{Caso d'uso UC9.7.2: inserire contenuto tabella}
-	\begin{itemize}
-		\item \textbf{Attori:} Utente;
-		\item \textbf{Scopo e descrizione:} L'utente deve inserire il contenuto nelle celle della tabella;
-		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente inserisca il contenuto desiderato;
-		\item \textbf{Postcondizione:} Il sistema salva il contenuto inserito dall'utente.
-	\end{itemize}
+
+\subsection{Caso d'uso UC9.7: Inserire una tabella}
+\begin{itemize}
+	\item \textbf{Attori:} Proprietario;
+	\item \textbf{Scopo e descrizione:} L'utente deve inserire una tabella. Seleziona il numero di righe e di colonne e la inserisce nella posizione desiderata;
+	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il comando per inserire una tabella nella slide;
+	\item \textbf{Postcondizione:} Il sistema ha inserito la tabella nella slide e attiva la modalità di modifica della tabella.
+\end{itemize}
 
 
 \subsection{Caso d'uso UC9.8: Inserire un grafico}
@@ -143,10 +133,10 @@
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Attori:} Utente;
+	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente deve inserire un grafico. Seleziona il tipo di grafico e inserisce i dati;
 	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il comando per inserire un grafico;
-	\item \textbf{Flusso di eventi:}
+	\item \textbf{Flusso principale di eventi:}
 	\begin{enumerate}
 		\item L'utente sceglie la tipologia di grafico da inserire [UC9.8.1];
 		\item L'utente inserisce i dati da inserire nel grafico [UC9.8.2];
@@ -156,7 +146,7 @@
 
 	\subsection{Caso d'uso UC9.8.1: Scegliere la tipologia del grafico}
 	\begin{itemize}
-		\item \textbf{Attori:} Utente;
+		\item \textbf{Attori:} Proprietario;
 		\item \textbf{Scopo e descrizione:} L'utente deve scegliere il tipo di grafico da inserire;
 		\item \textbf{Precondizione:} Il sistema ha aperto la finestra di dialogo per la scelta del tipo di grafico;
 		\item \textbf{Postcondizione:} Il sistema ha registrato la scelta dell'utente.
@@ -164,7 +154,7 @@
 	
 	\subsection{Caso d'uso UC9.8.2: Inserire i dati del grafico}
 	\begin{itemize}
-		\item \textbf{Attori:} Utente;
+		\item \textbf{Attori:} Proprietario;
 		\item \textbf{Scopo e descrizione:} L'utente deve inserire i dati per il grafico da inserire;
 		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente inserisca ii dati;
 		\item \textbf{Postcondizione:} Il sistema salva i dati inseriti.
@@ -318,79 +308,88 @@
 	\item \textbf{Postcondizione:} Il sistema ha apportato le modifiche scelte alla tabella.
 \end{itemize}
 
-\subsection{Caso d'uso UC9.16.1: Modificare il numero di righe e colonne della tabella}
+	\subsection{Caso d'uso UC9.16.1: Modificare il numero di righe e colonne della tabella}
+	\begin{itemize}
+		\item \textbf{Attori:} Proprietario;
+		\item \textbf{Scopo e descrizione:} L'utente può modificare la grandezza della tabella;
+		\item \textbf{Precondizione:} La tabella da modificare è stata selezionata;
+		\item \textbf{Postcondizione:} La tabella è stata modificata nelle sue dimensioni secondo la scelta dell'utente.
+	\end{itemize}
+	
+	\subsection{Caso d'uso UC9.16.2: Scegliere grandezza della tabella}
+	\begin{itemize}
+		\item \textbf{Attori:} Proprietario;
+		\item \textbf{Scopo e descrizione:} L'utente può modificare la grandezza della tabella;
+		\item \textbf{Precondizione:} La tabella da modificare è stata selezionata;
+		\item \textbf{Postcondizione:} La tabella è stata modificata nelle sue dimensioni secondo la scelta dell'utente.
+	\end{itemize}
+	
+	\subsection{Caso d'uso UC9.16.3: Scegliere colore di sfondo della tabella}
+	\begin{itemize}
+		\item \textbf{Attori:} Proprietario;
+		\item \textbf{Scopo e descrizione:} L'utente può modificare il colore di sfondo della tabella;
+		\item \textbf{Precondizione:} La tabella o le celle da modificare sono state selezionate;
+		\item \textbf{Postcondizione:} Lo sfondo della tabella o delle celle è stato modificato secondo la scelta dell'utente.
+	\end{itemize}
+	
+	\subsection{Caso d'uso UC9.16.4: Scegliere allineamento del testo}
+	\begin{itemize}
+		\item \textbf{Attori:} Proprietario;
+		\item \textbf{Scopo e descrizione:} L'utente può modificare l'allineamento del testo della tabella;
+		\item \textbf{Precondizione:} La tabella o le celle da modificare sono state selezionate;
+		\item \textbf{Postcondizione:} L'allineamento del testo della tabella o delle celle è stato modificato secondo la scelta dell'utente.
+	\end{itemize}
+	
+	
+	\subsection{Caso d'uso UC9.17: Personalizzare un grafico}
+	\begin{figure}[h] 
+		\centering 
+		\includegraphics[scale=0.45] {img/UC9.17.png} 
+		\caption{UC9.17 - Personalizzare un grafico} 
+	\end{figure}
+	
+	\begin{itemize}
+		\item \textbf{Attori:} Proprietario;
+		\item \textbf{Scopo e descrizione:} L'utente può modificare la tipologia e l'aspetto del grafico o del suo contenuto. L'utente seleziona il grafico e poi sceglie che modifiche effettuare;
+		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni la modifica da apportare al grafico e il grafico da modificare è selezionato;
+		\item \textbf{Flusso principale degli eventi:}
+		\begin{enumerate}
+			\item L'utente può cambiare la tipologia del grafico [UC9.17.1];
+			\item L'utente può cambiare la dimensione del grafico [UC9.17.2]
+			\item L'utente può cambiare i colori del grafico [UC9.17.3];
+		\end{enumerate}
+		\item \textbf{Postcondizione:} Il sistema ha apportato le modifiche scelte al grafico.
+	\end{itemize}
+
+		\subsection{Caso d'uso UC9.17.1: Scegliere la tipologia del grafico}
+		\begin{itemize}
+			\item \textbf{Attori:} Proprietario;
+			\item \textbf{Scopo e descrizione:} L'utente deve modificare la tipologia del grafico. Seleziona il grafico e il comando per cambiare il tipo;
+			\item \textbf{Precondizione:} Il grafico da modificare è stata selezionato e il sistema è in attesa che l'utente selezioni il comando;
+			\item \textbf{Postcondizione:} La tipologia del grafico è stata modificata secondo la scelta dell'utente.
+		\end{itemize}
+		
+		\subsection{Caso d'uso UC9.17.2: Scegliere la grandezza del grafico}
+		\begin{itemize}
+			\item \textbf{Attori:} Proprietario;
+			\item \textbf{Scopo e descrizione:} L'utente deve modificare la grandezza del grafico;
+			\item \textbf{Precondizione:} Il grafico da modificare è stata selezionato;
+			\item \textbf{Postcondizione:} Il grafico è stata modificato nelle sue dimensioni secondo la scelta dell'utente.
+		\end{itemize}
+		
+		\subsection{Caso d'uso UC9.17.3: Scegliere i colori del grafico}
+		\begin{itemize}
+			\item \textbf{Attori:} Proprietario;
+			\item \textbf{Scopo e descrizione:} L'utente deve modificare il set di colori del grafico;
+			\item \textbf{Precondizione:} Il grafico da modificare è stata selezionato e il sistema è in attesa che l'utente selezioni il comando;
+			\item \textbf{Postcondizione:} I colori del grafico sono stati modificati secondo la scelta dell'utente.
+		\end{itemize}
+
+
+\subsection{Caso d'uso UC9.18: Inserire note / parole chiave}
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente può modificare la grandezza della tabella;
-	\item \textbf{Precondizione:} La tabella da modificare è stata selezionata;
-	\item \textbf{Postcondizione:} La tabella è stata modificata nelle sue dimensioni secondo la scelta dell'utente.
-\end{itemize}
-
-\subsection{Caso d'uso UC9.16.2: Scegliere grandezza della tabella}
-\begin{itemize}
-	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente può modificare la grandezza della tabella;
-	\item \textbf{Precondizione:} La tabella da modificare è stata selezionata;
-	\item \textbf{Postcondizione:} La tabella è stata modificata nelle sue dimensioni secondo la scelta dell'utente.
-\end{itemize}
-
-\subsection{Caso d'uso UC9.16.3: Scegliere colore di sfondo della tabella}
-\begin{itemize}
-	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente può modificare il colore di sfondo della tabella;
-	\item \textbf{Precondizione:} La tabella o le celle da modificare sono state selezionate;
-	\item \textbf{Postcondizione:} Lo sfondo della tabella o delle celle è stato modificato secondo la scelta dell'utente.
-\end{itemize}
-
-\subsection{Caso d'uso UC9.16.4: Scegliere allineamento del testo}
-\begin{itemize}
-	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente può modificare l'allineamento del testo della tabella;
-	\item \textbf{Precondizione:} La tabella o le celle da modificare sono state selezionate;
-	\item \textbf{Postcondizione:} L'allineamento del testo della tabella o delle celle è stato modificato secondo la scelta dell'utente.
-\end{itemize}
-
-
-\subsection{Caso d'uso UC9.17: Personalizzare un grafico}
-\begin{figure}[h] 
-	\centering 
-	\includegraphics[scale=0.45] {img/UC9.17.png} 
-	\caption{UC9.17 - Personalizzare un grafico} 
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente può modificare la tipologia e l'aspetto del grafico o del suo contenuto. L'utente seleziona il grafico e poi sceglie che modifiche effettuare;
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni la modifica da apportare al grafico e il grafico da modificare è selezionato;
-	\item \textbf{Flusso principale degli eventi:}
-	\begin{enumerate}
-		\item L'utente può cambiare la tipologia del grafico [UC9.17.1];
-		\item L'utente può cambiare la dimensione del grafico [UC9.17.2]
-		\item L'utente può cambiare i colori del grafico [UC9.17.3];
-	\end{enumerate}
-	\item \textbf{Postcondizione:} Il sistema ha apportato le modifiche scelte al grafico.
-\end{itemize}
-
-\subsection{Caso d'uso UC9.17.1: Scegliere la tipologia del grafico}
-\begin{itemize}
-	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente deve modificare la tipologia del grafico. Seleziona il grafico e il comando per cambiare il tipo;
-	\item \textbf{Precondizione:} Il grafico da modificare è stata selezionato e il sistema è in attesa che l'utente selezioni il comando;
-	\item \textbf{Postcondizione:} La tipologia del grafico è stata modificata secondo la scelta dell'utente.
-\end{itemize}
-
-\subsection{Caso d'uso UC9.17.2: Scegliere la grandezza del grafico}
-\begin{itemize}
-	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente deve modificare la grandezza del grafico;
-	\item \textbf{Precondizione:} Il grafico da modificare è stata selezionato;
-	\item \textbf{Postcondizione:} Il grafico è stata modificato nelle sue dimensioni secondo la scelta dell'utente.
-\end{itemize}
-
-\subsection{Caso d'uso UC9.17.3: Scegliere i colori del grafico}
-\begin{itemize}
-	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente deve modificare il set di colori del grafico;
-	\item \textbf{Precondizione:} Il grafico da modificare è stata selezionato e il sistema è in attesa che l'utente selezioni il comando;
-	\item \textbf{Postcondizione:} I colori del grafico sono stati modificati secondo la scelta dell'utente.
+	\item \textbf{Scopo e descrizione:} L'utente deve inserire delle note o delle parole chiave nella slide da usare durante la visualizzazione della presentazione in modalità presentatore. Seleziona il comando e inserisce ciò che desidera includere;
+	\item \textbf{Precondizione:} Il sistema è in attesa che venga selezionato il comando per inserire una nota / parola chiave;
+	\item \textbf{Postcondizione:} Il sistema inserisce le note / parole chiave che l'utente ha aggiunto.
 \end{itemize}
