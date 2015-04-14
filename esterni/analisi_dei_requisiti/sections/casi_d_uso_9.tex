@@ -299,16 +299,25 @@
 	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni la modifica da apportare alla tabella e la tabella o il testo da modificare sono selezionati;
 	\item \textbf{Flusso principale degli eventi:}
 	\begin{enumerate}
-		\item L'utente può modificare il numero di righe e di colonne [UC9.16.1]
-		\item L'utente può cambiare la grandezza della tabella [UC9.16.2];
-		\item L'utente può cambiare il colore di sfondo della tabella [UC9.16.3];
-		\item L'utente può cambiare l'allineamento del testo [UC9.16.4];
+		\item L'utente può modificare il contenuto di una cella [UC9.16.1];
+		\item L'utente può modificare il numero di righe e di colonne [UC9.16.2];
+		\item L'utente può cambiare la grandezza della tabella [UC9.16.3];
+		\item L'utente può cambiare il colore di sfondo della tabella [UC9.16.4];
+		\item L'utente può cambiare l'allineamento del testo [UC9.16.5];
 		\item L'utente può cambiare la formattazione del testo [UC9.15];
 	\end{enumerate}
 	\item \textbf{Postcondizione:} Il sistema ha apportato le modifiche scelte alla tabella.
 \end{itemize}
 
-	\subsection{Caso d'uso UC9.16.1: Modificare il numero di righe e colonne della tabella}
+	\subsection{Caso d'uso UC9.16.1: Modificare il contenuto di una cella della tabella}
+	\begin{itemize}
+		\item \textbf{Attori:} Proprietario;
+		\item \textbf{Scopo e descrizione:} L'utente può modificare il contenuto di una cella della tabella, cioè aggiungere e modificare elementi di testo;
+		\item \textbf{Precondizione:} La cella da modificare è stata selezionata;
+		\item \textbf{Postcondizione:} Il contenuto della cella è stato modificato.
+	\end{itemize}
+	
+	\subsection{Caso d'uso UC9.16.2: Modificare il numero di righe e colonne della tabella}
 	\begin{itemize}
 		\item \textbf{Attori:} Proprietario;
 		\item \textbf{Scopo e descrizione:} L'utente può modificare la grandezza della tabella;
@@ -316,7 +325,7 @@
 		\item \textbf{Postcondizione:} La tabella è stata modificata nelle sue dimensioni secondo la scelta dell'utente.
 	\end{itemize}
 	
-	\subsection{Caso d'uso UC9.16.2: Scegliere grandezza della tabella}
+	\subsection{Caso d'uso UC9.16.3: Scegliere grandezza della tabella}
 	\begin{itemize}
 		\item \textbf{Attori:} Proprietario;
 		\item \textbf{Scopo e descrizione:} L'utente può modificare la grandezza della tabella;
@@ -324,7 +333,7 @@
 		\item \textbf{Postcondizione:} La tabella è stata modificata nelle sue dimensioni secondo la scelta dell'utente.
 	\end{itemize}
 	
-	\subsection{Caso d'uso UC9.16.3: Scegliere colore di sfondo della tabella}
+	\subsection{Caso d'uso UC9.16.4: Scegliere colore di sfondo della tabella}
 	\begin{itemize}
 		\item \textbf{Attori:} Proprietario;
 		\item \textbf{Scopo e descrizione:} L'utente può modificare il colore di sfondo della tabella;
@@ -332,7 +341,7 @@
 		\item \textbf{Postcondizione:} Lo sfondo della tabella o delle celle è stato modificato secondo la scelta dell'utente.
 	\end{itemize}
 	
-	\subsection{Caso d'uso UC9.16.4: Scegliere allineamento del testo}
+	\subsection{Caso d'uso UC9.16.5: Scegliere allineamento del testo}
 	\begin{itemize}
 		\item \textbf{Attori:} Proprietario;
 		\item \textbf{Scopo e descrizione:} L'utente può modificare l'allineamento del testo della tabella;
