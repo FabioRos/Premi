@@ -61,12 +61,8 @@ Ogni metrica avrà due caratteristiche fondamentali:
 	\item \textbf{Range ottimale:} valore entro il quale dovrebbe arrivare la misurazione.
 \end{itemize} 
 	\subsubsection{Metriche per la documentazione}
-	Come metrica per i documenti redatti si è deciso di utilizzare l'indice di leggibilità Gulpease. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico. L'indice è tarato sulla lingua italiana e considera due variabili linguistiche:
-	\begin{itemize}
-		\item La lunghezza della parola;
-		\item La lunghezza della frase rispetto al numero delle lettere.
-	\end{itemize} 
-	L'indice è calcolato attraverso la seguente formula:\\
+	Come metrica per i documenti redatti si è deciso di utilizzare l'indice di leggibilità Gulpease. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico. L'indice è tarato sulla lingua italiana e considera due variabili linguistiche: la lunghezza della parola e la lunghezza della frase rispetto al numero delle lettere. \\
+	\noindent L'indice è calcolato attraverso la seguente formula:\\
 	\begin{center}
 	$89+ \frac{300*\left(numero\:\ delle\:\ frasi \right)-10*\left(numero\:\ delle\:\ lettere\right)}{numero\:\ delle\:\ parole}$
 	\end{center}
