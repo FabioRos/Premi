@@ -1,7 +1,7 @@
 \subsection{Caso d'uso UC2: Autenticazione}
 \begin{figure}[h] 
 	\centering 
-	\includegraphics[scale=0.45] {img/UC2.png} 
+	\includegraphics[scale=0.45] {img/UC2.png}
 	\caption{UC2 - Autenticazione} 
 \end{figure}
 
@@ -24,7 +24,7 @@
 \subsection{Caso d'uso UC2.1: Inserimento credenziali}
 \begin{figure}[h] 
 	\centering 
-	\includegraphics[scale=0.45] {img/UC2.1.png} 
+	\includegraphics[scale=0.45] {img/UC2.1.png}
 	\caption{UC2.1 - Inserimento credenziali} 
 \end{figure}
 \begin{itemize}
@@ -90,7 +90,7 @@
 \subsection{Caso d'uso UC2.6: Recupero dati}
 \begin{figure}[h] 
 	\centering 
-	\includegraphics[scale=0.45] {img/UC2.6.png} 
+	\includegraphics[scale=0.45] {img/UC2.6.png}
 	\caption{UC2.6 - Recupero dati} 
 \end{figure}
 \begin{itemize}
@@ -102,7 +102,7 @@
 		\item L'utente inserisce il proprio indirizzo mail [UC2.6.1];
 		\item L'utente conferma l'inserimento dell'indirizzo mail [UC2.6.2];
 		\item Il sistema controlla l'indirizzo e-mail inserita [UC2.6.3];
-		\item Il sistema non trova l'indirizzo e-mail nel database e segnala un errore [2.6.4];
+		\item Il sistema non trova l'indirizzo e-mail nel \gls{database} e segnala un errore [2.6.4];
 		\item Il sistema trova una corrispondenza con l'indirizzo e-mail indicato e invia i dati [2.6.5].
 	\end{enumerate}
 	\item \textbf{Postcondizione:} Il sistema ha inviato una mail contenente i dati di accesso relativi all'utente che ne ha fatto richiesta.
@@ -127,23 +127,24 @@
 \subsection{Caso d'uso UC2.6.3: Controllo mail}
 \begin{itemize}
 	\item \textbf{Attori:} Sistema;
-	\item \textbf{Scopo e descrizione:} Il sistema controlla che l'e-mail inserita dall'utente sia già presente nel database;
+	\item \textbf{Scopo e descrizione:} Il sistema controlla che l'e-mail inserita dall'utente sia già presente nel \gls{database};
 	\item \textbf{Precondizione:} L'utente ha confermato l'inserimento del proprio indirizzo e-mail;
-	\item \textbf{Postcondizione:} Il sistema ha controllato che l'indirizzo e-mail inserito esista nel database.
+	\item \textbf{Postcondizione:} Il sistema ha controllato che l'indirizzo e-mail inserito esista nel \gls{database}.
 \end{itemize}
 
 \subsection{Caso d'uso UC2.6.4: Indirizzo e-mail non presente}
 \begin{itemize}
 	\item \textbf{Attori:} Sistema;
-	\item \textbf{Scopo e descrizione:} Il sistema non trova l'indirizzo e-mail nel database e lo segnala all'utente;
-	\item \textbf{Precondizione:} Il sistema ha controllato l'indirizzo e-mail inserito e non ha trovato corrispondenze nel database;
-	\item \textbf{Postcondizione:} Il sistema avvisa l'utente che l'e-mail inserita non esiste nel database.
+	\item \textbf{Scopo e descrizione:} Il sistema non trova l'indirizzo e-mail nel \gls{database} e lo segnala all'utente;
+	\item \textbf{Precondizione:} Il sistema ha controllato l'indirizzo e-mail inserito e non ha trovato corrispondenze nel \gls{database};
+	\item \textbf{Postcondizione:} Il sistema avvisa l'utente che l'e-mail inserita non esiste nel \gls{database}.
 \end{itemize}
 
 \subsection{Caso d'uso UC2.6.5: Invio dei dati}
 \begin{itemize}
 	\item \textbf{Attori:} Sistema;
-	\item \textbf{Scopo e descrizione:} Il sistema ha trovato l'indirizzo e-mail nel database e invia le credenziali alla mail dell'utente;
-	\item \textbf{Precondizione:} Il sistema ha controllato l'indirizzo e-mail inserito e ha trovato una corrispondenza nel database;
+	\item \textbf{Scopo e descrizione:} Il sistema ha trovato l'indirizzo e-mail nel \gls{database} e invia le credenziali alla mail dell'utente;
+	\item \textbf{Precondizione:} Il sistema ha controllato l'indirizzo e-mail inserito e ha trovato una corrispondenza nel \gls{database};
 	\item \textbf{Postcondizione:} Il sistema invia le credenziali all'indirizzo e-mail indicata all'utente e avvisa l'utente dell'avvenuto invio.
 \end{itemize}
+
