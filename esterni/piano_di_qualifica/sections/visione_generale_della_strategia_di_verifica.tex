@@ -3,10 +3,10 @@ L'attività di verifica verrà istanziata per ogni processo attuato. La finalit�
 Il processo di verifica, diverso nelle varie fasi del progetto descritte nel \textit{Piano di Progetto v1.0.0}, sarà il seguente:
 \begin{itemize}
 	\item \textbf{Analisi:} in questa fase si devono seguire i metodi di verifica, descritti nelle \textit{Norme di Progetto v1.0.0}, sui documenti prodotti;
-	\item \textbf{Analisi di Dettaglio:} in questa fase si devono verificare i processi che hanno portato ad un incremento nel versionamento dei documenti, prodotti nella fase precedente, seguendo le procedure descritte nelle \textit{Norme di Progetto v1.0.0};
-	\item \textbf{Progettazione architetturale:} in questa fase, oltre a verificare i processi che hanno portato ad un incremento nel versionamento dei documenti, si andranno a verificare i prodotti ed i processi attuati per l'attività di progettazione architetturale;
-	\item \textbf{Progettazione di Dettaglio e Codifica:} in questa fase, oltre a verificare i processi che hanno portato ad un incremento nel versionamento dei documenti, si andrà a verificare che ogni requisito sia rintracciabile da uno dei componenti emersi durante la fase di progettazione;
-	\item \textbf{Verifica e Validazione:} in questa fase, oltre a verificare i processi che hanno portato ad un incremento nel versionamento dei documenti, verrà effettuato il collaudo del prodotto garantendone la correttezza.
+	\item \textbf{Analisi di Dettaglio:} in questa fase si devono verificare i processi che hanno portato ad un incremento nel \gls{versionamento} dei documenti, prodotti nella fase precedente, seguendo le procedure descritte nelle \textit{Norme di Progetto v1.0.0};
+	\item \textbf{Progettazione architetturale:} in questa fase, oltre a verificare i processi che hanno portato ad un incremento nel \gls{versionamento} dei documenti, si andranno a verificare i prodotti ed i processi attuati per l'attività di progettazione architetturale;
+	\item \textbf{Progettazione di Dettaglio e Codifica:} in questa fase, oltre a verificare i processi che hanno portato ad un incremento nel \gls{versionamento} dei documenti, si andrà a verificare che ogni requisito sia rintracciabile da uno dei componenti emersi durante la fase di progettazione;
+	\item \textbf{Verifica e Validazione:} in questa fase, oltre a verificare i processi che hanno portato ad un incremento nel \gls{versionamento} dei documenti, verrà effettuato il collaudo del prodotto garantendone la correttezza.
 \end{itemize} 
 
 \subsection{Pianificazione strategica e temporale}
@@ -20,7 +20,7 @@ Per assicurarsi che gli obiettivi siano raggiunti e monitorare costantemente lo 
 
 \subsection{Attività chiavi}
 \begin{itemize}
-	\item \textbf{Garanzia della qualità:} tutte le attività che sono realizzate all'interno di un sistema e che hanno l'obiettivo di perseguire e soddisfare requisiti di qualità di un servizio. Si tratta di misurazione sistematica, di confronto con uno o più standard di monitoraggio dei processi e feedback che garantiscono la prevenzione degli errori; attività a fronte delle quali questi ultimi dovrebbero essere eliminati;
+	\item \textbf{Garanzia della qualità:} tutte le attività che sono realizzate all'interno di un sistema e che hanno l'obiettivo di perseguire e soddisfare requisiti di qualità di un servizio. Si tratta di misurazione sistematica, di confronto con uno o più standard di monitoraggio dei processi e \gls{feedback} che garantiscono la prevenzione degli errori; attività a fronte delle quali questi ultimi dovrebbero essere eliminati;
 	\item \textbf{Pianificazione della qualità del prodotto:} la selezione di procedure standard appropriate per questo sistema, adattandole per uno specifico progetto software;
 	\item \textbf{Controllo della qualità:} la definizione dei processi che assicurano che il team  di sviluppo software segua le procedure e gli standard adottati nel progetto.
 \end{itemize}
@@ -31,8 +31,8 @@ Le due principali tecniche di analisi che verranno adottate sono l'\textit{anali
 	\subsubsection{Analisi statica}
 	L'analisi statica è una tecnica di analisi applicabile sia alla documentazione che al codice. Permette di verificare la correttezza dei prodotti, individuando errori ed anomalie. Ci sono due tecniche per effettuare tale analisi:
 	\begin{itemize}
-		\item \textbf{Walktrough\footnote{Cosiddetta lettura a pettine.}:} questa tecnica di analisi prevede una lettura critica del codice o del documento prodotto. Tale tecnica è molto dispendiosa in termini di risorse, poiché viene applicata all'intero documento, senza avere una precisa idea di quale sia il tipo di anomalia e di dove ricercarla;
-		\item \textbf{Inspection\footnote{Ricerca selettiva.}:} questa tecnica di analisi presuppone l'esperienza da parte del verificatore nel individuare gli errori e le anomalie più frequenti. A tal scopo è stata stilata una lista di controllo nella quale sono elencate le sezioni critiche. Questo ci consente una verifica più rapida e meno risorse umane. Dopo aver terminato l'analisi, è necessario stilare un rapporto di verifica.
+		\item \textbf{\gls{Walkthrough}\footnote{Cosiddetta lettura a pettine.}:} questa tecnica di analisi prevede una lettura critica del codice o del documento prodotto. Tale tecnica è molto dispendiosa in termini di risorse, poiché viene applicata all'intero documento, senza avere una precisa idea di quale sia il tipo di anomalia e di dove ricercarla;
+		\item \textbf{\gls{Inspection}\footnote{Ricerca selettiva.}:} questa tecnica di analisi presuppone l'esperienza da parte del verificatore nel individuare gli errori e le anomalie più frequenti. A tal scopo è stata stilata una lista di controllo nella quale sono elencate le sezioni critiche. Questo ci consente una verifica più rapida e meno risorse umane. Dopo aver terminato l'analisi, è necessario stilare un rapporto di verifica.
 	\end{itemize}
 	
 	\subsubsection{Analisi dinamica}
@@ -61,7 +61,7 @@ Ogni metrica avrà due caratteristiche fondamentali:
 	\item \textbf{Range ottimale:} valore entro il quale dovrebbe arrivare la misurazione.
 \end{itemize} 
 	\subsubsection{Metriche per la documentazione}
-	Come metrica per i documenti redatti si è deciso di utilizzare l'indice di leggibilità Gulpease. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico. L'indice è tarato sulla lingua italiana e considera due variabili linguistiche: la lunghezza della parola e la lunghezza della frase rispetto al numero delle lettere. \\
+	Come metrica per i documenti redatti si è deciso di utilizzare l'indice di leggibilità Gulpease\G. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico. L'indice è tarato sulla lingua italiana e considera due variabili linguistiche: la lunghezza della parola e la lunghezza della frase rispetto al numero delle lettere. \\
 	\noindent L'indice è calcolato attraverso la seguente formula:\\
 	\begin{center}
 	$89+ \frac{300*\left(numero\:\ delle\:\ frasi \right)-10*\left(numero\:\ delle\:\ lettere\right)}{numero\:\ delle\:\ parole}$
@@ -102,3 +102,4 @@ Ogni metrica avrà due caratteristiche fondamentali:
 				\item \textbf{Range ottimale:} [1 - 3].
 			\end{itemize}
 	\end{itemize}
+
