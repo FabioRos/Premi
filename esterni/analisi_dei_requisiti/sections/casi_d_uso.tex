@@ -1,0 +1,75 @@
+Di seguito sono descritti i \gls{casi d'uso} individuati per il progetto \PROGETTO. Ogni caso d'uso ha un codice che lo identifica nella forma:
+\begin{center}
+	UC[codice univoco del padre].[codice progressivo di livello]
+\end{center}
+Il codice progressivo di livello potrà contenere diversi altri livelli di gerarchia, essi saranno separati da un punto. Per comodità e chiarezza lo scenario principale verrà individuato attraverso il codice UCP. Successivamente verranno descritti i figli senza però riportare il codice del padre.
+
+\subsection{Caso d'uso UCP: Scenario principale}
+\begin{figure}[h] 
+	\centering 
+    \includegraphics[scale=0.3] {img/UCP.png} 
+	\caption{UCP - Scenario principale} 
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Attori:} Utente non autenticato, Utente autenticato, Utente proprietario;
+	
+	\item \textbf{Scopo e descrizione:} Un visualizzatore può interagire con un progetto già esistente, senza però poterlo modificare. Il proprietario invece, dopo essersi autenticato, potrà effettuare diverse operazioni. Potrà creare nuovo progetto, modificarlo, salvarla oppure esportarlo per renderlo disponibile offline. Potrà inoltre generare il PDF rispettivo PDF per poi stamparlo o salvarlo.
+	
+	\item \textbf{Precondizione:} Il visualizzatore ha a disposizione una progetto con il quale interagire oppure il proprietario ha avviato il programma che ora è pronto all'uso;
+	
+	\item \textbf{Flusso principale degli eventi:}
+	\begin{enumerate}
+		\item L'utente si registra [UC1];
+		\item L'utente si autentica [UC2];
+		\item L'utente ricerca un progetto [UC3];
+		\item L'utente visualizza un progetto [UC4];
+		\item L'utente genera il file PDF del progetto [UC5];
+		\item L'utente esporta un progetto [UC6];
+		\item L'utente crea un nuovo progetto [UC7];
+		\item L'utente proprietario apre un progetto esistente [UC8];
+		\item L'utente proprietario modifica un progetto [UC9];
+		\item L'utente proprietario crea un'\gls{infografica} [UC10];
+		\item L'utente proprietario salva il progetto [UC11];
+		\item L'utente proprietario elimina un progetto [UC12].
+	\end{enumerate}
+	
+	\item \textbf{Postcondizione:} Il sistema ha ottenuto le informazioni sulle operazioni che il visualizzatore o il proprietario desidera eseguire.
+\end{itemize}
+
+\input{sections/casi_d_uso_1.tex}	% registrazione
+\newpage
+
+\input{sections/casi_d_uso_2.tex}	% autenticazione
+\newpage
+
+\input{sections/casi_d_uso_3.tex}	% ricerca
+\newpage
+
+\input{sections/casi_d_uso_4.tex}	% visualizzazione
+\newpage
+
+\input{sections/casi_d_uso_5.tex}	% generazione file PDF
+\newpage
+
+\input{sections/casi_d_uso_6.tex}	% esportazione
+\newpage
+
+\input{sections/casi_d_uso_7.tex}	% creazione progetto
+\newpage
+
+\input{sections/casi_d_uso_8.tex}	% apertura
+\newpage
+
+\input{sections/casi_d_uso_9.tex}	% modifica
+\newpage
+
+\input{sections/casi_d_uso_10.tex}	% creazione \gls{infografica}
+\newpage
+
+\input{sections/casi_d_uso_11.tex}	% salvataggio
+\newpage
+
+\input{sections/casi_d_uso_12.tex}	% eliminazione
+\newpage
+

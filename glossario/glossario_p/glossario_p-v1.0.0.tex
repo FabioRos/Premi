@@ -1,0 +1,50 @@
+% importa variabili globali
+\input{../../template/config.tex}
+
+
+% definizione variabili locali
+\def\DOCUMENTO{Glossario}
+\def\VERSIONE{1.0.0}
+
+\def\REDATTORE {Agostinetto Matteo\\ & Carraro Nicola\\ & Crespan Emanuele\\ & Ros Fabio}
+\def\VERIFICATORE {Suierica Bogdan}
+\def\RESPONSABILE {Burlin Valerio}
+
+\def\USO {Esterno}
+
+\def\DISTRIBUZIONE {\COMMITTENTE{}\\ & \PROPONENTE{}\\}
+
+\def\DESCRIZIONE {Documento con la descrizione dei termini tecnici poco conosciuti.}
+
+
+% abilita (true) / disabilita (false) indice, lista tabelle, lista figure
+\def\INDICE	{false}
+\def\TABELLE {false}
+\def\FIGURE {false}
+
+
+% importa struttura
+\input {../../template/structure.tex}
+
+\input{diario_modifiche.tex}
+
+% importa indici
+\input {../../template/index.tex}
+
+\section{Introduzione}
+\subsection{Scopo del documento}
+Questo documento ha lo scopo di raccogliere i termini e le parole usati all'interno dei documenti che possono non essere conosciuti a una persona esterna che legge la documentazione e quindi di dare una breve definizione di essi.
+\newpage
+
+
+% importa parti documento
+\glsaddall
+
+%\input {sections/nomesezione}
+%\newpage
+
+% ...
+
+\printglossary[title=Glossario, nonumberlist]
+
+\end{document}

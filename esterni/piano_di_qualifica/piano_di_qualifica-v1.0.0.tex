@@ -1,0 +1,64 @@
+% importa variabili globali
+\input{../../template/config.tex}
+
+
+% definizione variabili locali
+\def\DOCUMENTO{Piano di Qualifica}
+\def\VERSIONE{1.0.0}
+
+\def\REDATTORE {Bogdan Suierica \\ & Crespan Emanuele}
+\def\VERIFICATORE {Burlin Valerio}
+\def\RESPONSABILE {Agostinetto Matteo}
+
+\def\USO {Esterno}
+
+\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\ & \PROPONENTE{}\\}
+
+\def\DESCRIZIONE {Documento riguardante le strategie di verifica e validazione adottate dal gruppo \GRUPPO\ necessarie ad assicurare i requisiti qualitativi nello svolgimento del progetto \PROGETTO.}
+
+
+% abilita (true) / disabilita (false) indice, lista tabelle, lista figure
+\def\INDICE	{true}
+\def\TABELLE {false}
+\def\FIGURE {true}
+
+
+% importa struttura
+\input {../../template/structure.tex}
+
+\input{diario_modifiche.tex}
+
+% importa indici
+\input {../../template/index.tex}
+
+
+% importa parti documento
+
+%\section{<nomesezione>}
+%\input{sections/<nomefile>.tex}
+
+\section{Introduzione}
+\input{sections/introduzione.tex}
+
+\newpage
+\section{Visione generale della strategia di verifica}
+\input{sections/visione_generale_della_strategia_di_verifica.tex}
+
+\newpage
+\section{Gestione amministrativa della revisione}
+\input{sections/gestione_amministrativa_della_revisione}
+
+\appendix
+\newpage
+\section{Standard di Qualità}
+\input{sections/standard_di_qualita.tex}
+
+\newpage
+\section{Riassunto attività di verifica}
+\input{sections/riassunto_attivita_di_verifica.tex}
+
+% ...
+
+%\printglossaries
+
+\end{document}

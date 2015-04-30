@@ -1,0 +1,50 @@
+% importa variabili globali
+\input{../../template/config.tex}
+
+
+% definizione variabili locali
+\def\DOCUMENTO{Verbale Interno del 2015-02-25}
+\def\VERSIONE{1.0.0}
+
+\def\DESCRIZIONE{In questo documento viene descritto il contenuto della prima riunione tra i componenti del gruppo \GRUPPO.}
+
+\def\REDATTORE {Burlin Valerio}
+\def\VERIFICATORE {Carraro Nicola}
+\def\RESPONSABILE {Agostinetto Matteo}
+
+\def\USO {Formale ad uso interno}
+
+\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\}
+
+\def\DESCRIZIONE {In questo documento viene descritto il contenuto della prima riunione tra i componenti del gruppo \GRUPPO.}
+
+
+% abilita (true) / disabilita (false) indice, lista tabelle, lista figure
+\def\INDICE	{true}
+\def\TABELLE {false}
+\def\FIGURE {false}
+
+
+% importa struttura
+\input {../../template/structure.tex}
+
+\input{diario_modifiche_verbale1.tex}
+
+% importa indici
+\input {../../template/index.tex}
+
+
+% importa parti documento
+
+\section{Informazioni sulla riunione}
+\input{sections/verbale1/informazioni_riunione.tex}
+\newpage
+\section{Riassunto della riunione}
+\input{sections/verbale1/riassunto_riunione.tex}
+
+
+% ...
+
+%\printglossaries
+
+\end{document}

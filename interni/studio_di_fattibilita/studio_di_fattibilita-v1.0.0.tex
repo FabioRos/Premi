@@ -1,0 +1,64 @@
+% importa variabili globali
+\input{../../template/config.tex}
+
+
+% definizione variabili locali
+\def\DOCUMENTO{Studio di fattibilit\'a}
+\def\VERSIONE{1.0.0}
+
+\def\DESCRIZIONE{Documento che descrive le motivazioni che ci hanno portato alla scelta del Progetto \PROGETTO{} sulla base di un'analisi di fattibilit\'a di tutti e cinque i capitolati proposti}
+
+\def\REDATTORE {Ros Fabio}
+\def\VERIFICATORE {Carraro Nicola}
+\def\RESPONSABILE {Burlin Valerio}
+
+\def\USO {Interno}
+
+\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\}
+
+\def\DESCRIZIONE {Documento che descrive le motivazioni che ci hanno portato alla scelta del Progetto \PROGETTO{} sulla base di un'analisi di fattibilit\'a di tutti e cinque i capitolati proposti.}
+
+
+% abilita (true) / disabilita (false) indice, lista tabelle, lista figure
+\def\INDICE	{true}
+\def\TABELLE {false}
+\def\FIGURE {false}
+
+
+
+% importa struttura
+\input {../../template/structure.tex}
+
+\input{diario_modifiche.tex}
+
+% importa indici
+\input {../../template/index.tex}
+
+
+% importa parti documento
+
+%\section{<nomesezione>}
+%\input{sections/<nomefile>.tex}
+
+\section{Introduzione}
+\input{sections/Introduzione.tex}
+
+\newpage
+
+\section{Capitolato C4: Premi: Software di presentazione "better than Prezi"}
+\input{sections/C4_premi.tex}
+
+\newpage
+\section{Confronto con gli altri capitolati}
+\input{sections/Confronto_con_gli_altri_capitolati.tex}
+
+\newpage
+\section{Conclusioni}
+\input{sections/Conclusioni.tex}
+%\newpage
+
+% ...
+
+%\printglossaries
+
+\end{document}

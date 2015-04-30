@@ -1,0 +1,69 @@
+% importa variabili globali
+\input{../../template/config.tex}
+
+% definizione variabili locali
+\def\DOCUMENTO{Piano di Progetto}
+\def\VERSIONE{1.0.0}
+
+\def\DESCRIZIONE{Documento che definisce la pianificazione delle attivit\'a del gruppo \GRUPPO{} nello svolgimento del progetto \PROGETTO.}
+
+\def\REDATTORE {Agostinetto Matteo \\ & Burlin Valerio}
+\def\VERIFICATORE {Ros Fabio}
+\def\RESPONSABILE {Suierica Bogdan}
+
+\def\USO {Esterno}
+
+\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\ & \PROPONENTE{}\\}
+
+\def\DESCRIZIONE {Documento che definisce la pianificazione delle attivit\'a del gruppo \GRUPPO{} nello svolgimento del progetto \PROGETTO.}
+
+
+% abilita (true) / disabilita (false) indice, lista tabelle, lista figure
+\def\INDICE	{true}
+\def\TABELLE {true}
+\def\FIGURE {true}
+
+
+% importa struttura
+\input {../../template/structure.tex}
+
+\input{diario_modifiche.tex}
+
+% importa indici
+\input {../../template/index.tex}
+
+
+% importa parti documento
+
+%\section{<nomesezione>}
+%\input{sections/<nomefile>.tex}
+%\newpage
+
+\section{Introduzione}
+\input{sections/introduzione.tex}
+\newpage
+\section{Pianificazione}
+\input{sections/pianificazione.tex}
+\newpage
+\section{Suddivisione del lavoro}
+\input{sections/suddivisione_lavoro.tex}
+\newpage
+\section{Prospetto economico}
+\input{sections/prospetto_economico.tex}
+\newpage
+\section{Analisi dei rischi}
+\input{sections/analisi_dei_rischi.tex}
+\newpage
+\section{Meccanismi di controllo e rendicontazione}
+\input{sections/meccanismi_rendicontazione.tex}
+\newpage
+\section{Consuntivo a finire}
+\input{sections/consuntivo.tex}
+\newpage
+\appendix 
+\section{Organigramma}
+\input{sections/organigramma.tex}
+\newpage
+%\printglossaries
+
+\end{document}

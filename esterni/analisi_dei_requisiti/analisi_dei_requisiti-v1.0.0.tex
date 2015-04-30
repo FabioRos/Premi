@@ -1,0 +1,55 @@
+% importa variabili globali
+\input{../../template/config.tex}
+
+% definizione variabili locali
+\def\DOCUMENTO{Analisi dei Requisiti}
+\def\VERSIONE{1.0.0}
+
+\def\DESCRIZIONE{Documento che descrive l'analisi dei requisiti e dei casi d'uso del gruppo \GRUPPO\ per il progetto \PROGETTO}
+
+\def\REDATTORE {Agostinetto Matteo \\ & Carraro Nicola \\ & Ros Fabio}
+\def\VERIFICATORE {Crespan Emanuele}
+\def\RESPONSABILE {Burlin Valerio}
+
+\def\USO {Esterno}
+
+\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\ & \PROPONENTE{}\\}
+
+\def\DESCRIZIONE {Documento che descrive l'analisi dei requisiti e dei casi d'uso del gruppo \GRUPPO{} per il progetto \PROGETTO.}
+
+
+% abilita (true) / disabilita (false) indice, lista tabelle, lista figure
+\def\INDICE	{true}
+\def\TABELLE {true}
+\def\FIGURE {true}
+
+
+% importa struttura
+\input {../../template/structure.tex}
+
+\input{diario_modifiche.tex}
+
+% importa indici
+\input {../../template/index.tex}
+
+
+\section{Introduzione}
+\input{sections/introduzione.tex}
+\newpage
+
+\section{Descrizione Generale}
+\input{sections/descrizione_generale.tex}
+\newpage
+
+\section{Casi d'uso}
+\input{sections/casi_d_uso.tex}
+\newpage
+
+\section{Requisiti}
+\input{sections/requisiti.tex}
+\newpage
+
+
+%\printglossaries
+
+\end{document}
