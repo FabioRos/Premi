@@ -1,0 +1,64 @@
+\subsection{Caso d'uso UC4: Visualizzazione}
+\begin{figure}[h] 
+	\centering 
+	\includegraphics[scale=0.45] {img/UC4.png}
+	\caption{UC4 - Visualizzazione} 
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Attori:} Utente non autenticato, utente autenticato;
+	\item \textbf{Scopo e descrizione:} Un utente, una volta aperto un progetto, può scegliere se visualizzare una presentazione o un'\gls{infografica};
+	\item \textbf{Precondizione:} Il sistema mostra all'utente un progetto;
+	\item \textbf{Flusso principale degli eventi:}
+	\begin{enumerate}
+		\item L'utente sceglie di visualizzare una presentazione [UC4.1];
+		\item L'utente sceglie di visualizzare un'\gls{infografica} [UC4.2].
+	\end{enumerate}
+	\item \textbf{Postcondizione:} Il sistema mostra all'utente la schermata di visualizzazione di una presentazione o di un'\gls{infografica} a seconda di cosa è stato scelto.
+\end{itemize}
+
+\subsection{Caso d'uso UC4.1: Visualizzazione di una presentazione}
+\begin{figure}[h] 
+	\centering 
+	\includegraphics[scale=0.45] {img/UC4.1.png}
+	\caption{UC4.1 - Visualizzazione di una presentazione} 
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Attori:} Utente non autenticato, utente autenticato;
+	\item \textbf{Scopo e descrizione:} La visualizzazione di una presentazione permette di scorrere le \gls{slide} nelle quattro direzioni a seconda di come sono state inserite. In generale, la presentazione segue un flusso principale (da sinistra a destra) nel quale sono presenti i capitoli principali, e un flusso secondario di dettaglio (dall'alto verso il basso) per ogni capitolo che si desidera, nel quale si può esplicitare l'argomento trattato.\\
+	Durante il passaggio da un capitolo all'altro avverrà un effetto di "zoom-out, zoom-in" con il quale è possibile avere una panoramica della presentazione e soprattutto delle \gls{slide} del capitolo che si andrà ad affrontare.\\
+	Una volta scelto di visualizzare una presentazione, l'utente può scegliere se visualizzarla come presentatore o come ascoltatore;
+	\item \textbf{Precondizione:} L'utente ha scelto di visualizzare una presentazione;
+	\item \textbf{Flusso principale degli eventi:}
+	\begin{enumerate}
+		\item L'utente sceglie di visualizzare la presentazione come presentatore [UC4.1.1];
+		\item L'utente sceglie di visualizzare la presentazione come ascoltatore [UC4.1.2].
+	\end{enumerate}
+	\item \textbf{Postcondizione:} Il sistema mostra all'utente la schermata di visualizzazione di una presentazione con le impostazioni scelte.
+\end{itemize}
+
+\subsection{Caso d'uso UC4.1.1: Visualizzare una presentazione come presentatore}
+\begin{itemize}
+	\item \textbf{Attori:} Utente non autenticato, utente autenticato;
+	\item \textbf{Scopo e descrizione:} L'utente ha scelto di visualizzare la presentazione come presentatore e il sistema mostra la presentazione con il supporto visivo dedicato al presentatore;
+	\item \textbf{Precondizione:} L'utente ha scelto di visualizzare la presentazione come presentatore;
+	\item \textbf{Postcondizione:} Il sistema avvia la presentazione con il supporto visivo dedicato al presentatore.
+\end{itemize}
+
+\subsection{Caso d'uso UC4.1.2: Visualizzare una presentazione come ascoltatore}
+\begin{itemize}
+	\item \textbf{Attori:} Utente non autenticato, utente autenticato;
+	\item \textbf{Scopo e descrizione:} L'utente ha scelto di visualizzare la presentazione come ascoltatore e il sistema mostra la presentazione selezionata;
+	\item \textbf{Precondizione:} L'utente ha scelto di visualizzare la presentazione come ascoltatore;
+	\item \textbf{Postcondizione:} Il sistema avvia la presentazione.
+\end{itemize}
+
+\subsection{Caso d'uso UC4.2: Visualizzazione di un'infografica}
+\begin{itemize}
+	\item \textbf{Attori:} Utente non autenticato, utente autenticato;
+	\item \textbf{Scopo e descrizione:} L'utente ha scelto di visualizzare un'\gls{infografica} e il sistema la mostra;
+	\item \textbf{Precondizione:} L'utente ha scelto di visualizzare un'\gls{infografica};
+	\item \textbf{Postcondizione:} Il sistema mostra all'utente la schermata di visualizzazione dell'\gls{infografica}.
+\end{itemize}
+

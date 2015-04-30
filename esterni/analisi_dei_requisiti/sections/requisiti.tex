@@ -1,0 +1,60 @@
+Di seguito verranno riportate la tabella riassuntiva e le tabelle specifiche per ogni tipo di requisito del sistema 
+
+Utilizzeremo la seguente notazione:\\
+R[importanza][tipo][codice]
+
+\begin{itemize}
+	\item L'importanza può assumere i seguenti valori:
+	\begin{itemize}
+		\item [OBB]: Requisito obbligatorio;
+		\item [DES]: Requisito desiderabile;
+		\item [OPZ]: Requisito opzionale.
+	\end{itemize}
+	
+	\item Tipo può assumere i seguenti valori:
+	\begin{itemize}
+		\item [F] : Requisito funzionale;
+		\item [Q] : Requisito di qualità;
+		\item [P] : Requisito di prestazione;
+		\item [V] : Requisito di vincolo.
+	\end{itemize}
+	
+	\item Codice rappresenta il codice univoco di ogni requisito in forma gerarchica.
+\end{itemize}
+
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+			\toprule
+			
+			\textbf{Categoria} & \textbf{Obbligatorio} & \textbf{Opzionale} & \textbf{Desiderabile} \\
+			
+			\midrule
+			\textbf{Funzionale} & 74 & 24 & 3 \\ \midrule
+			\textbf{Qualitativo} & 2 & 0 & 0 \\  \midrule
+			\textbf{Prestazionale} & 0 & 0 & 0 \\ \midrule
+			\textbf{Vincolo} & 6 & 0 & 0  \\ \midrule
+			
+			\bottomrule
+			
+		\end{tabular}
+		\caption{Tabella riassuntiva dei requisiti}
+		
+	\end{table}
+	\newpage
+
+\input{sections/tabella_requisiti_funzionali.tex}
+\newpage
+
+\input{sections/tabella_requisiti_vincoli.tex}
+\newpage
+
+\input{sections/tabella_requisiti_qualita.tex}
+\newpage
+
+\input{sections/tabella_tracciamento_fonti_requisiti.tex}
+\newpage
+
+%\input{sections/tabella_riassunto_requisiti.tex}
+%\newpage
+
