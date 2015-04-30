@@ -3,31 +3,30 @@
 
 
 % definizione variabili locali
-\def\DOCUMENTO{<Nome documento>}
+\def\DOCUMENTO{Piano di Qualifica}
 \def\VERSIONE{1.0.0}
 
-\def\DESCRIZIONE{<Info documento}
+\def\REDATTORE {Bogdan Suierica \\ & Crespan Emanuele}
+\def\VERIFICATORE {Burlin Valerio}
+\def\RESPONSABILE {Agostinetto Matteo}
 
-\def\REDATTORE {<Redattore>}
-\def\VERIFICATORE {<Verificatore>}
-\def\RESPONSABILE {<Responsabile>}
+\def\USO {Esterno}
 
-\def\USO {<Uso>}
+\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\ & \PROPONENTE{}\\}
 
-\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\}
-
-\def\DESCRIZIONE {<Descrizione>}
+\def\DESCRIZIONE {Documento riguardante le strategie di verifica e validazione adottate dal gruppo \GRUPPO\ necessarie ad assicurare i requisiti qualitativi nello svolgimento del progetto \PROGETTO.}
 
 
 % abilita (true) / disabilita (false) indice, lista tabelle, lista figure
 \def\INDICE	{true}
-\def\TABELLE {true}
+\def\TABELLE {false}
 \def\FIGURE {true}
 
 
 % importa struttura
 \input {../../template/structure.tex}
 
+\input{diario_modifiche.tex}
 
 % importa indici
 \input {../../template/index.tex}
@@ -38,7 +37,25 @@
 %\section{<nomesezione>}
 %\input{sections/<nomefile>.tex}
 
-%\newpage
+\section{Introduzione}
+\input{sections/introduzione.tex}
+
+\newpage
+\section{Visione generale della strategia di verifica}
+\input{sections/visione_generale_della_strategia_di_verifica.tex}
+
+\newpage
+\section{Gestione amministrativa della revisione}
+\input{sections/gestione_amministrativa_della_revisione}
+
+\appendix
+\newpage
+\section{Standard di Qualità}
+\input{sections/standard_di_qualita.tex}
+
+\newpage
+\section{Riassunto attività di verifica}
+\input{sections/riassunto_attivita_di_verifica.tex}
 
 % ...
 
