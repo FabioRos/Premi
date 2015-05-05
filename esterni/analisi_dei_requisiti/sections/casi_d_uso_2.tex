@@ -13,10 +13,7 @@
 	\begin{enumerate}
 		\item L'utente inserisce le proprie credenziali [UC2.1];
 		\item L'utente conferma l'inserimento dei dati selezionando la voce "login" [UC2.2];
-		\item Si può verificare un errore di accesso [UC2.3];
-		\item Il sistema controlla i dati inseriti e li accetta [UC2.4];
-		\item L'utente viene reindirizzato alla propria pagina personale [UC2.5];
-		\item L'utente può recuperare le sue credenziali se le dimentica [UC2.6].
+		\item L'utente può recuperare le sue credenziali se le dimentica [UC2.3].
 	\end{enumerate}
 	\item \textbf{Postcondizione:} Il sistema verifica le credenziali inserite e permette all'utente di accedere alla sua pagina personale.
 \end{itemize}
@@ -60,38 +57,14 @@
 	\item \textbf{Attori:} Utente non autenticato;
 	\item \textbf{Scopo e descrizione:} L'utente conferma le credenziali inserite scegliendo di effettuare l'accesso tramite il tasto di login;
 	\item \textbf{Precondizione:} Nome utente e password sono stati inseriti;
-	\item \textbf{Postcondizione:} Il sistema verifica i dati inseriti.
+	\item \textbf{Postcondizione:} Il sistema verifica i dati inseriti. Se sono corretti reindirizza l'utente alla pagina personale, altrimenti lo riporta alla schermata di accesso.
 \end{itemize}
 
-\subsection{Caso d'uso UC2.3: Errore di autenticazione}
-\begin{itemize}
-	\item \textbf{Attori:} Sistema;
-	\item \textbf{Scopo e descrizione:} L'utente ha inserito delle credenziali errate e il sistema blocca l'accesso, riportando l'utente alla schermata di accesso;
-	\item \textbf{Precondizione:} Nome utente e password sono stati inseriti in modo errato;
-	\item \textbf{Postcondizione:} Il sistema riporta l'utente alla schermata di accesso.
-\end{itemize}
-
-\subsection{Caso d'uso UC2.4: Dati inseriti correttamente}
-\begin{itemize}
-	\item \textbf{Attori:} Sistema;
-	\item \textbf{Scopo e descrizione:} Il sistema ha verificato che le credenziali inserite sono corrette;
-	\item \textbf{Precondizione:} Nome utente e password sono stati inseriti;
-	\item \textbf{Postcondizione:} Il sistema ha verificato che i dati inseriti sono corretti.
-\end{itemize}
-
-\subsection{Caso d'uso UC2.5: Reindirizzamento a pagina personale}
-\begin{itemize}
-	\item \textbf{Attori:} Sistema;
-	\item \textbf{Scopo e descrizione:} Il sistema dopo aver consentito l'accesso all'utente mostra la sua pagina personale;
-	\item \textbf{Precondizione:} Nome utente e password sono stati inseriti correttamente;
-	\item \textbf{Postcondizione:} Il sistema mostra la pagina personale dell'utente.
-\end{itemize}
-
-\subsection{Caso d'uso UC2.6: Recupero dati}
+\subsection{Caso d'uso UC2.3: Recupero dati}
 \begin{figure}[h] 
 	\centering 
-	\includegraphics[scale=0.45] {img/UC2.6.png}
-	\caption{UC2.6 - Recupero dati} 
+	\includegraphics[scale=0.45] {img/UC2.3.png}
+	\caption{UC2.3 - Recupero dati} 
 \end{figure}
 \begin{itemize}
 	\item \textbf{Attori:} Utente non autenticato;
@@ -99,16 +72,16 @@
 	\item \textbf{Precondizione:} L'utente ha selezionato l'opzione di recupero dei dati;
 	\item \textbf{Flusso principale degli eventi:}
 	\begin{enumerate}
-		\item L'utente inserisce il proprio indirizzo mail [UC2.6.1];
-		\item L'utente conferma l'inserimento dell'indirizzo mail [UC2.6.2];
-		\item Il sistema controlla l'indirizzo e-mail inserita [UC2.6.3];
-		\item Il sistema non trova l'indirizzo e-mail nel \gls{database} e segnala un errore [2.6.4];
-		\item Il sistema trova una corrispondenza con l'indirizzo e-mail indicato e invia i dati [2.6.5].
+		\item L'utente inserisce il proprio indirizzo mail [UC2.3.1];
+		\item L'utente conferma l'inserimento dell'indirizzo mail [UC2.3.2];
+		\item Il sistema controlla l'indirizzo e-mail inserita [UC2.3.3];
+		\item Il sistema non trova l'indirizzo e-mail e segnala un errore [2.3.4];
+		\item Il sistema trova una corrispondenza con l'indirizzo e-mail indicato e invia i dati [2.3.5].
 	\end{enumerate}
 	\item \textbf{Postcondizione:} Il sistema ha inviato una mail contenente i dati di accesso relativi all'utente che ne ha fatto richiesta.
 \end{itemize}
 
-\subsection{Caso d'uso UC2.6.1: Inserire indirizzo mail}
+\subsection{Caso d'uso UC2.3.1: Inserire indirizzo mail}
 \begin{itemize}
 	\item \textbf{Attori:} Utente non autenticato;
 	\item \textbf{Scopo e descrizione:} L'utente inserisce il proprio indirizzo e-mail nella casella vuota;
@@ -116,35 +89,10 @@
 	\item \textbf{Postcondizione:} La casella è stata compilata con l'indirizzo e-mail inserito dall'utente.
 \end{itemize}
 
-\subsection{Caso d'uso UC2.6.2: Conferma della mail inserita}
+\subsection{Caso d'uso UC2.3.2: Conferma della mail inserita}
 \begin{itemize}
 	\item \textbf{Attori:} Utente non autenticato;
 	\item \textbf{Scopo e descrizione:} L'utente conferma la mail inserita in precedenza e invia la richiesta;
 	\item \textbf{Precondizione:} L'utente ha inserito un indirizzo e-mail;
 	\item \textbf{Postcondizione:} L'utente ha confermato l'indirizzo e-mail inserito.
 \end{itemize}
-
-\subsection{Caso d'uso UC2.6.3: Controllo mail}
-\begin{itemize}
-	\item \textbf{Attori:} Sistema;
-	\item \textbf{Scopo e descrizione:} Il sistema controlla che l'e-mail inserita dall'utente sia già presente nel \gls{database};
-	\item \textbf{Precondizione:} L'utente ha confermato l'inserimento del proprio indirizzo e-mail;
-	\item \textbf{Postcondizione:} Il sistema ha controllato che l'indirizzo e-mail inserito esista nel \gls{database}.
-\end{itemize}
-
-\subsection{Caso d'uso UC2.6.4: Indirizzo e-mail non presente}
-\begin{itemize}
-	\item \textbf{Attori:} Sistema;
-	\item \textbf{Scopo e descrizione:} Il sistema non trova l'indirizzo e-mail nel \gls{database} e lo segnala all'utente;
-	\item \textbf{Precondizione:} Il sistema ha controllato l'indirizzo e-mail inserito e non ha trovato corrispondenze nel \gls{database};
-	\item \textbf{Postcondizione:} Il sistema avvisa l'utente che l'e-mail inserita non esiste nel \gls{database}.
-\end{itemize}
-
-\subsection{Caso d'uso UC2.6.5: Invio dei dati}
-\begin{itemize}
-	\item \textbf{Attori:} Sistema;
-	\item \textbf{Scopo e descrizione:} Il sistema ha trovato l'indirizzo e-mail nel \gls{database} e invia le credenziali alla mail dell'utente;
-	\item \textbf{Precondizione:} Il sistema ha controllato l'indirizzo e-mail inserito e ha trovato una corrispondenza nel \gls{database};
-	\item \textbf{Postcondizione:} Il sistema invia le credenziali all'indirizzo e-mail indicata all'utente e avvisa l'utente dell'avvenuto invio.
-\end{itemize}
-

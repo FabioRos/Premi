@@ -1,14 +1,14 @@
 \subsection{Caso d'uso UC9: Modifica della presentazione}
 \begin{figure}[h] 
 	\centering 
-	\includegraphics[scale=0.35] {img/UC9.png} 
+	\includegraphics[scale=0.3] {img/UC9.png} 
 	\caption{UC9 - Modifica della presentazione} 
 \end{figure}
 
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente sta lavorando su una presentazione per inserire delle nuove \gls{slide} o per modificare quelle già create. Può quindi inserire  elementi come: \gls{slide}, immagini, caselle di testo, dati \gls{real time}. Ha inoltre la possibilità di modificare gli elementi già inseriti, oppure di eliminarli. Può infine scegliere l'effetto di transizione tra una \gls{slide} e l'altra;
-	\item \textbf{Precondizione:} L'utente ha creato una presentazione nella fase di creazione di un progetto;
+	\item \textbf{Precondizione:} L'utente ha creato una nuova presentazione nella fase di creazione di un progetto o ha aperto un progetto creato in precedenza per modificarlo;
 	\item \textbf{Flusso principale degli eventi:}
 	\begin{enumerate}
 		
@@ -52,7 +52,7 @@
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente sceglie un \gls{template} di stile da utilizzare per la propria presentazione;
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il \gls{template} da utilizzare;
+	\item \textbf{Precondizione:} L'utente sta modificando la presentazione e ha selezionato il comando per cambiare il template;
 	\item \textbf{Postcondizione:} Il sistema imposta il \gls{template} selezionato per la presentazione.
 \end{itemize}
 
@@ -61,7 +61,7 @@
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente crea una nuova \gls{slide} nella presentazione per poter inserire del contenuto;
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente crei una nuova \gls{slide};
+	\item \textbf{Precondizione:} L'utente sta modificando la presentazione e ha selezionato il comando per inserire una \gls{slide};
 	\item \textbf{Postcondizione:} Il sistema ha creato la nuova \gls{slide}.
 \end{itemize}
 
@@ -70,7 +70,7 @@
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente vuole rimuovere una \gls{slide} della presentazione precedentemente creata;
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni una \gls{slide} e il comando per rimuoverla;
+	\item \textbf{Precondizione:} L'utente è posizionato nella \gls{slide} da eliminare e sceglie il comando per rimuoverla;
 	\item \textbf{Postcondizione:} Il sistema ha rimosso la \gls{slide} selezionata.
 \end{itemize}
 
@@ -79,8 +79,8 @@
 \begin{itemize}
 \item \textbf{Attori:} Proprietario;
 \item \textbf{Scopo e descrizione:} L'utente deve inserire un'immagine in una \gls{slide}. Seleziona il comando e sceglie l'immagine da inserire nella \gls{slide} corrente;
-\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il comando per inserire un'immagine;
-\item \textbf{Postcondizione:} Il sistema ha inserito l'immagine selezionata dall'utente nella \gls{slide}.
+\item \textbf{Precondizione:} L'utente sta modificando una \gls{slide} e seleziona il comando per inserire un'immagine;
+\item \textbf{Postcondizione:} Il sistema ha inserito l'immagine selezionata dall'utente nella \gls{slide} corrente.
 \end{itemize}
 
 
@@ -88,8 +88,8 @@
 \begin{itemize}
 \item \textbf{Attori:} Proprietario;
 \item \textbf{Scopo e descrizione:} L'utente deve inserire una casella di testo nella \gls{slide}. Seleziona il comando e inserisce la casella di testo nel punto della \gls{slide} desiderato;
-\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il comando per inserire una casella di testo;
-\item \textbf{Postcondizione:} Il sistema ha inserito la casella di testo nella \gls{slide}.
+\item \textbf{Precondizione:} L'utente sta modificando una \gls{slide} e seleziona il comando per inserire una casella di testo;
+\item \textbf{Postcondizione:} Il sistema ha inserito la casella di testo nella \gls{slide} corrente.
 \end{itemize}
 
 
@@ -99,19 +99,19 @@
 	\item \textbf{Scopo e descrizione:}	L'inserimento di un dato \gls{real time} consiste nell'inserimento di una stringa speciale che si occuperà di richiamare dei contenuti personalizzabili definiti precedentemente dall'utente. Questi contenuti hanno il compito di catturare dati provenienti dall'esterno per poi riportarli nelle \gls{slide} ed avere così dati aggiornati in tempo reale in quanto saranno composti di codice eseguito a run-time dal server. Nel caso la presentazione venga visualizzata offline, i contenuti faranno riferimento ai dati ottenuti nel momento dell'inserimento dell'oggetto.
 	L'utente, quindi, deve inserire dei dati \gls{real time}. Per inserirli deve caricare prima il codice che vuole richiamare attraverso l'oggetto inserito, poi inserire l'oggetto all'interno della presentazione indicando la funzione che deve svolgere.
 	
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente inserisca i dati \gls{real time};
+	\item \textbf{Precondizione:} L'utente sta modificando una \gls{slide} e seleziona il comando per inserire un elemento di dati \gls{real time};
 	\item \textbf{Flusso principale di eventi:}
 	\begin{enumerate}
 		\item L'utente inserisce il file contenente il codice da eseguire [UC9.6.1].
 	\end{enumerate}
-	\item \textbf{Postcondizione:} Il sistema ha inserito i dati \gls{real time}.
+	\item \textbf{Postcondizione:} Il sistema ha inserito l'elemento di dati \gls{real time} nella \gls{slide} corrente.
 \end{itemize}
 
 	\subsection{Caso d'uso UC9.6.1: Inserire un file di codice}
 	\begin{itemize}
 		\item \textbf{Attori:} Proprietario;
 		\item \textbf{Scopo e descrizione:} L'utente deve inserire un file di codice da usare per un oggetto di dati \gls{real time};
-		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il comando per inserire un file;
+		\item \textbf{Precondizione:} L'utente ha creato un file sorgente per i dati real time da caricare nel server;
 		\item \textbf{Postcondizione:} Il sistema ha caricato il file nel server e lo ha inserito nella lista dei file di codice.
 	\end{itemize}
 	
@@ -120,8 +120,8 @@
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente deve inserire una tabella. Seleziona il numero di righe e di colonne e la inserisce nella posizione desiderata;
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il comando per inserire una tabella nella \gls{slide};
-	\item \textbf{Postcondizione:} Il sistema ha inserito la tabella nella \gls{slide} e attiva la modalità di modifica della tabella.
+	\item \textbf{Precondizione:} L'utente sta modificando una \gls{slide} e seleziona il comando per inserire una tabella nella \gls{slide};
+	\item \textbf{Postcondizione:} Il sistema ha inserito la tabella nella \gls{slide} corrente e attiva la modalità di modifica della tabella.
 \end{itemize}
 
 
@@ -135,7 +135,7 @@
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente deve inserire un grafico. Seleziona il tipo di grafico e inserisce i dati;
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il comando per inserire un grafico;
+	\item \textbf{Precondizione:} L'utente sta modificando una \gls{slide} e seleziona il comando per inserire un grafico;
 	\item \textbf{Flusso principale di eventi:}
 	\begin{enumerate}
 		\item L'utente sceglie la tipologia di grafico da inserire [UC9.8.1];
@@ -148,7 +148,7 @@
 	\begin{itemize}
 		\item \textbf{Attori:} Proprietario;
 		\item \textbf{Scopo e descrizione:} L'utente deve scegliere il tipo di grafico da inserire;
-		\item \textbf{Precondizione:} Il sistema ha aperto la finestra di dialogo per la scelta del tipo di grafico;
+		\item \textbf{Precondizione:} La finestra di dialogo per la scelta del tipo di grafico è aperta;
 		\item \textbf{Postcondizione:} Il sistema ha registrato la scelta dell'utente.
 	\end{itemize}
 	
@@ -156,7 +156,7 @@
 	\begin{itemize}
 		\item \textbf{Attori:} Proprietario;
 		\item \textbf{Scopo e descrizione:} L'utente deve inserire i dati per il grafico da inserire;
-		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente inserisca i dati;
+		\item \textbf{Precondizione:} L'utente ha scelto il tipo di grafico;
 		\item \textbf{Postcondizione:} Il sistema salva i dati inseriti.
 	\end{itemize}
 
@@ -165,8 +165,8 @@
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente deve scegliere l'effetto di transizione da dare alla \gls{slide};
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni l'effetto desiderato;
-	\item \textbf{Postcondizione:} Il sistema ha inserito l'effetto di transizione.
+	\item \textbf{Precondizione:} L'utente sta modificando una presentazione e seleziona il comando per cambiare tipo di transizione tra le \gls{slide};
+	\item \textbf{Postcondizione:} Il sistema ha modificato l'effetto di transizione.
 \end{itemize}
 
 
@@ -174,8 +174,8 @@
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente cambia la grandezza dell'elemento selezionato della \gls{slide};
-	\item \textbf{Precondizione:} Il sistema mostra l'elemento selezionato che si intende ridimensionare;
-	\item \textbf{Postcondizione:} Il sistema ha ridimensionato l'elemento della \gls{slide}.
+	\item \textbf{Precondizione:} L'utente ha selezionato l'oggetto che vuole ridimensionare;
+	\item \textbf{Postcondizione:} Il sistema ha ridimensionato l'elemento della \gls{slide} selezionato.
 \end{itemize}
 
 
@@ -183,8 +183,8 @@
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente cambia la posizione dell'elemento selezionato della \gls{slide};
-	\item \textbf{Precondizione:} Il sistema mostra l'elemento selezionato che si intende spostare;
-	\item \textbf{Postcondizione:} Il sistema ha spostato l'elemento della \gls{slide}.
+	\item \textbf{Precondizione:} L'utente ha selezionato l'elemento che intende spostare;
+	\item \textbf{Postcondizione:} Il sistema ha spostato l'elemento della \gls{slide} selezionato.
 \end{itemize}
 
 
@@ -192,8 +192,8 @@
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente ruota l'elemento selezionato della \gls{slide};
-	\item \textbf{Precondizione:} Il sistema mostra l'elemento selezionato che si intende ruotare;
-	\item \textbf{Postcondizione:} Il sistema ha ruotato l'elemento della \gls{slide}.
+	\item \textbf{Precondizione:} L'utente ha selezionato l'oggetto che vuole ruotare;
+	\item \textbf{Postcondizione:} Il sistema ha ruotato l'elemento della \gls{slide} selezionato.
 \end{itemize}
 
 
@@ -201,8 +201,8 @@
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente elimina l'elemento selezionato dalla \gls{slide};
-	\item \textbf{Precondizione:} Il sistema mostra l'elemento selezionato che si intende cancellare;
-	\item \textbf{Postcondizione:} Il sistema ha cancellato l'elemento dalla \gls{slide}.
+	\item \textbf{Precondizione:} L'utente ha selezionato l'oggetto che vuole rimuovere;
+	\item \textbf{Postcondizione:} Il sistema ha rimosso dalla \gls{slide} l'elemento selezionato.
 \end{itemize}
 
 
@@ -210,7 +210,7 @@
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente deve caricare un file da utilizzare nella presentazione;
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni il file;
+	\item \textbf{Precondizione:} L'utente ha un file in locale da caricare sul server;
 	\item \textbf{Postcondizione:} Il sistema ha caricato il file selezionato dall'utente e lo ha inserito nella \gls{slide}.
 \end{itemize}
 
@@ -225,7 +225,7 @@
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente può modificare l'aspetto del testo contenuto in una casella di testo. L'utente seleziona il testo e poi sceglie che modifiche effettuare;
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni la modifica da apportare al testo e il testo da modificare è selezionato;
+	\item \textbf{Precondizione:} L'utente ha selezionato un elemento di testo inserito nella \gls{slide};
 	\item \textbf{Flusso principale degli eventi:}
 	\begin{enumerate}
 		\item L'utente può cambiare la grandezza del testo [UC9.15.1];
@@ -266,7 +266,7 @@
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente può abilitare o disabilitare la scrittura in corsivo;
-	\item \textbf{Precondizione:} Il testo da modificare è selezionato oppure è stata selezionata la casella di testo nella quale poter scrivere;
+	\item \textbf{Precondizione:} Il testo da modificare è selezionato;
 	\item \textbf{Postcondizione:} Il testo è stato modificato secondo la scelta dell'utente.
 \end{itemize}
 
@@ -274,16 +274,16 @@
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente può abilitare o disabilitare la scrittura in grassetto;
-	\item \textbf{Precondizione:} Il testo da modificare è selezionato oppure è stata selezionata la casella di testo nella quale poter scrivere;
+	\item \textbf{Precondizione:} Il testo da modificare è selezionato;
 	\item \textbf{Postcondizione:} Il testo è stato modificato secondo la scelta dell'utente.
 \end{itemize}
 
 \subsection{Caso d'uso UC9.15.6: Posizionare il testo}
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente può spostare una casella di testo in una nuova posizione;
-	\item \textbf{Precondizione:} La casella di testo da spostare è stata selezionata;
-	\item \textbf{Postcondizione:} La casella di testo è stata spostata secondo la scelta dell'utente.
+	\item \textbf{Scopo e descrizione:} L'utente può allineare il testo in una nuova posizione;
+	\item \textbf{Precondizione:} Il testo da modificare è selezionato;
+	\item \textbf{Postcondizione:} Il testo è stata allineato secondo la scelta dell'utente.
 \end{itemize}
 
 \newpage
@@ -297,15 +297,15 @@
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente può modificare l'aspetto della tabella e del suo contenuto. L'utente seleziona la tabella o il testo e poi sceglie che modifiche effettuare;
-	\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni la modifica da apportare alla tabella e la tabella o il testo da modificare sono selezionati;
+	\item \textbf{Precondizione:} L'utente ha selezionato una tabella, o una parte di essa, già inserita nella \gls{slide};
 	\item \textbf{Flusso principale degli eventi:}
 	\begin{enumerate}
 		\item L'utente può modificare il contenuto di una cella [UC9.16.1];
 		\item L'utente può modificare il numero di righe e di colonne [UC9.16.2];
-		\item L'utente può cambiare la grandezza della tabella [UC9.16.3];
-		\item L'utente può cambiare il colore di sfondo della tabella [UC9.16.4];
-		\item L'utente può cambiare l'allineamento del testo [UC9.16.5];
-		\item L'utente può cambiare la formattazione del testo [UC9.15].
+		\item L'utente può modificare il numero di colonne [UC9.16.3];
+		\item L'utente può cambiare la grandezza della tabella [UC9.16.4];
+		\item L'utente può cambiare il colore di sfondo della tabella [UC9.16.5];
+		\item L'utente può cambiare l'allineamento del testo [UC9.16.6].
 	\end{enumerate}
 	\item \textbf{Postcondizione:} Il sistema ha apportato le modifiche scelte alla tabella.
 \end{itemize}
@@ -318,23 +318,31 @@
 		\item \textbf{Postcondizione:} Il contenuto della cella è stato modificato.
 	\end{itemize}
 	
-	\subsection{Caso d'uso UC9.16.2: Modificare il numero di righe e colonne della tabella}
+	\subsection{Caso d'uso UC9.16.2: Modificare il numero di righe della tabella}
+	\begin{itemize}
+		\item \textbf{Attori:} Proprietario;
+		\item \textbf{Scopo e descrizione:} L'utente può modificare il numero di righe della tabella;
+		\item \textbf{Precondizione:} L'utente ha selezionato la tabella da modificare;
+		\item \textbf{Postcondizione:} La tabella è stata modificata nelle sue dimensioni secondo il numero di righe scelto dell'utente.
+	\end{itemize}
+	
+	\subsection{Caso d'uso UC9.16.3: Modificare il numero di colonne della tabella}
+	\begin{itemize}
+		\item \textbf{Attori:} Proprietario;
+		\item \textbf{Scopo e descrizione:} L'utente può modificare il numero di colonne della tabella;
+		\item \textbf{Precondizione:} L'utente ha selezionato la tabella da modificare;
+		\item \textbf{Postcondizione:} La tabella è stata modificata nelle sue dimensioni secondo il numero di colonne scelto dell'utente.
+	\end{itemize}
+	
+	\subsection{Caso d'uso UC9.16.4: Scegliere grandezza della tabella}
 	\begin{itemize}
 		\item \textbf{Attori:} Proprietario;
 		\item \textbf{Scopo e descrizione:} L'utente può modificare la grandezza della tabella;
-		\item \textbf{Precondizione:} La tabella da modificare è stata selezionata;
+		\item \textbf{Precondizione:} L'utente ha selezionato la tabella da modificare;
 		\item \textbf{Postcondizione:} La tabella è stata modificata nelle sue dimensioni secondo la scelta dell'utente.
 	\end{itemize}
 	
-	\subsection{Caso d'uso UC9.16.3: Scegliere grandezza della tabella}
-	\begin{itemize}
-		\item \textbf{Attori:} Proprietario;
-		\item \textbf{Scopo e descrizione:} L'utente può modificare la grandezza della tabella;
-		\item \textbf{Precondizione:} La tabella da modificare è stata selezionata;
-		\item \textbf{Postcondizione:} La tabella è stata modificata nelle sue dimensioni secondo la scelta dell'utente.
-	\end{itemize}
-	
-	\subsection{Caso d'uso UC9.16.4: Scegliere colore di sfondo della tabella}
+	\subsection{Caso d'uso UC9.16.5: Scegliere colore di sfondo della tabella}
 	\begin{itemize}
 		\item \textbf{Attori:} Proprietario;
 		\item \textbf{Scopo e descrizione:} L'utente può modificare il colore di sfondo della tabella;
@@ -342,7 +350,7 @@
 		\item \textbf{Postcondizione:} Lo sfondo della tabella o delle celle è stato modificato secondo la scelta dell'utente.
 	\end{itemize}
 	
-	\subsection{Caso d'uso UC9.16.5: Scegliere allineamento del testo}
+	\subsection{Caso d'uso UC9.16.6: Scegliere allineamento del testo}
 	\begin{itemize}
 		\item \textbf{Attori:} Proprietario;
 		\item \textbf{Scopo e descrizione:} L'utente può modificare l'allineamento del testo della tabella;
@@ -360,8 +368,8 @@
 	
 	\begin{itemize}
 		\item \textbf{Attori:} Proprietario;
-		\item \textbf{Scopo e descrizione:} L'utente può modificare la tipologia e l'aspetto del grafico o del suo contenuto. L'utente seleziona il grafico e poi sceglie che modifiche effettuare;
-		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni la modifica da apportare al grafico e il grafico da modificare è selezionato;
+		\item \textbf{Scopo e descrizione:} L'utente può modificare la tipologia e l'aspetto del grafico. L'utente seleziona il grafico e poi sceglie che modifiche effettuare;
+		\item \textbf{Precondizione:} L'utente ha selezionato un grafico già inserito in una \gls{slide};
 		\item \textbf{Flusso principale degli eventi:}
 		\begin{enumerate}
 			\item L'utente può cambiare la tipologia del grafico [UC9.17.1];
@@ -375,7 +383,7 @@
 		\begin{itemize}
 			\item \textbf{Attori:} Proprietario;
 			\item \textbf{Scopo e descrizione:} L'utente deve modificare la tipologia del grafico. Seleziona il grafico e il comando per cambiare il tipo;
-			\item \textbf{Precondizione:} Il grafico da modificare è stata selezionato e il sistema è in attesa che l'utente selezioni il comando;
+			\item \textbf{Precondizione:} L'utente ha selezionato il grafico da modificare;
 			\item \textbf{Postcondizione:} La tipologia del grafico è stata modificata secondo la scelta dell'utente.
 		\end{itemize}
 		
@@ -383,7 +391,7 @@
 		\begin{itemize}
 			\item \textbf{Attori:} Proprietario;
 			\item \textbf{Scopo e descrizione:} L'utente deve modificare la grandezza del grafico;
-			\item \textbf{Precondizione:} Il grafico da modificare è stato selezionato;
+			\item \textbf{Precondizione:} L'utente ha selezionato il grafico da modificare;
 			\item \textbf{Postcondizione:} Il grafico è stato modificato nelle sue dimensioni secondo la scelta dell'utente.
 		\end{itemize}
 		
@@ -391,16 +399,16 @@
 		\begin{itemize}
 			\item \textbf{Attori:} Proprietario;
 			\item \textbf{Scopo e descrizione:} L'utente deve modificare il set di colori del grafico;
-			\item \textbf{Precondizione:} Il grafico da modificare è stato selezionato e il sistema è in attesa che l'utente selezioni il comando;
+			\item \textbf{Precondizione:} L'utente ha selezionato il grafico da modificare;
 			\item \textbf{Postcondizione:} I colori del grafico sono stati modificati secondo la scelta dell'utente.
 		\end{itemize}
 
 
-\subsection{Caso d'uso UC9.18: Inserire note / parole chiave}
+\subsection{Caso d'uso UC9.18: Inserire note/parole chiave}
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente deve inserire delle note o delle parole chiave nella \gls{slide} da usare durante la visualizzazione della presentazione in modalità presentatore. Seleziona il comando e inserisce ciò che desidera includere;
-	\item \textbf{Precondizione:} Il sistema è in attesa che venga selezionato il comando per inserire una nota/parola chiave;
-	\item \textbf{Postcondizione:} Il sistema inserisce le note/parole chiave che l'utente ha aggiunto.
+	\item \textbf{Precondizione:} L'utente sta modificando una \gls{slide} e seleziona il comando per inserire le note/parole chiave;
+	\item \textbf{Postcondizione:} Il sistema inserisce le note/parole chiave che l'utente ha aggiunto nella \gls{slide} corrente.
 \end{itemize}
 
