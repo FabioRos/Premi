@@ -11,10 +11,10 @@
 	\item \textbf{Precondizione:} L'utente ha creato una nuova presentazione nella fase di creazione di un progetto o ha aperto un progetto creato in precedenza per modificarlo;
 	\item \textbf{Flusso principale degli eventi:}
 	\begin{enumerate}
-		
 		\item L'utente sceglie il \gls{template} [UC9.1];
 		
 		\item L'utente inserisce una nuova \gls{slide} [UC9.2];
+		
 		\item L'utente rimuove una \gls{slide} [UC9.3];
 		
 		\item L'utente inserisce un'immagine [UC9.4];
@@ -36,13 +36,18 @@
 		\item L'utente ruota un elemento [UC9.12];
 		
 		\item L'utente rimuove un elemento [UC9.13];
-		
+
 		\item L'utente carica un file per inserire l'immagine [UC9.14];
+
 		\item L'utente sceglie la formattazione del testo [UC9.15];
+
 		\item L'utente modifica una tabella [UC9.16];
+
 		\item L'utente modifica un grafico [UC9.17];
 		
-		\item L'utente inserisce note/parole chiave [UC9.18].
+		\item L'utente inserisce note/parole chiave [UC9.18];
+		
+		\item L'utente sposta una \gls{slide} [UC9.19].
 	\end{enumerate}
 	\item \textbf{Postcondizione:} Il sistema esegue le operazioni effettuate dall'utente.
 \end{itemize}
@@ -60,9 +65,9 @@
 \subsection{Caso d'uso UC9.2: Inserire una nuova \gls{slide}}
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente crea una nuova \gls{slide} nella presentazione per poter inserire del contenuto;
+	\item \textbf{Scopo e descrizione:} L'utente crea una nuova \gls{slide} nella presentazione per poter inserire del contenuto. Può inserire una nuova slide a destra o sotto la slide corrente;
 	\item \textbf{Precondizione:} L'utente sta modificando la presentazione e ha selezionato il comando per inserire una \gls{slide};
-	\item \textbf{Postcondizione:} Il sistema ha creato la nuova \gls{slide}.
+	\item \textbf{Postcondizione:} Il sistema ha creato la nuova \gls{slide} a destra o sotto quella corrente a seconda della scelta dell'utente.
 \end{itemize}
 
 
@@ -71,7 +76,7 @@
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente vuole rimuovere una \gls{slide} della presentazione precedentemente creata;
 	\item \textbf{Precondizione:} L'utente è posizionato nella \gls{slide} da eliminare e sceglie il comando per rimuoverla;
-	\item \textbf{Postcondizione:} Il sistema ha rimosso la \gls{slide} selezionata.
+	\item \textbf{Postcondizione:} Il sistema ha rimosso la \gls{slide} selezionata. Se esiste una slide sotto di essa la sposta al posto di quest'ultima, altrimenti (se esiste) sposta la slide a destra.
 \end{itemize}
 
 
@@ -93,26 +98,72 @@
 \end{itemize}
 
 
-\subsection{Caso d'uso UC9.6: Inserire dati real time}
+\subsection{Caso d'uso UC9.6: Inserire dati \gls{real time}}
+\begin{figure}[h] 
+	\centering 
+	\includegraphics[scale=0.45] {img/UC9.6.png}
+	\caption{UC9.6 - Inserire dati \gls{real time}} 
+\end{figure}
+
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:}	L'inserimento di un dato \gls{real time} consiste nell'inserimento di una stringa speciale che si occuperà di richiamare dei contenuti personalizzabili definiti precedentemente dall'utente. Questi contenuti hanno il compito di catturare dati provenienti dall'esterno per poi riportarli nelle \gls{slide} ed avere così dati aggiornati in tempo reale in quanto saranno composti di codice eseguito a run-time dal server. Nel caso la presentazione venga visualizzata offline, i contenuti faranno riferimento ai dati ottenuti nel momento dell'inserimento dell'oggetto.
-	L'utente, quindi, deve inserire dei dati \gls{real time}. Per inserirli deve caricare prima il codice che vuole richiamare attraverso l'oggetto inserito, poi inserire l'oggetto all'interno della presentazione indicando la funzione che deve svolgere.
+	\item \textbf{Scopo e descrizione:}	Un elemento di dati \gls{real time} consiste in un oggetto da inserire nella slide che visualizzerà in modo formattato con lo stile della presentazione dei dati presi dall'esterno e, quindi, aggiornati al momento dell'avio della presentazione. Il programma offre delle funzioni specifiche per tipi di dato diversi che, preso in input un array di dati, lo elaborano per inserire poi i dati formattati all'interno della slide.
+
+	I dati contenuti nell'array devono essere salvati in modo diverso per a seconda della funzione che si deve richiamare. Ogni funzione, infatti, per elaborare i dati correttamente richiede un array con delle determinate specifiche.
+	L'array di dati potrà poi essere fornito attraverso un file caricato direttamente sul server dall'utente oppure attraverso una funzione che raccoglie i dati da un sito web esterno e li ritorna all'interno di un array secondo.
+	
+	Le funzioni per estrapolare i dati da siti esterni e le funzioni che elaborano i dati di un array per inserire il contenuto nella slide possono essere implementate dall'utente, il quale è così in grado di creare degli elementi specifici adatti alle situazioni di cui necessita.
 	
 	\item \textbf{Precondizione:} L'utente sta modificando una \gls{slide} e seleziona il comando per inserire un elemento di dati \gls{real time};
 	\item \textbf{Flusso principale di eventi:}
 	\begin{enumerate}
-		\item L'utente inserisce il file contenente il codice da eseguire [UC9.6.1].
+		\item L'utente carica un file contenente i dati real time [UC9.6.1];
+		\item L'utente carica un file contenente la funzione di estrapolazione dati dall'esterno [UC9.6.2];
+		\item L'utente carica un file contenente la funzione di elaborazione dati dell'array [UC9.6.3];
+		\item L'utente sceglie il tipo di dato \gls{real time} [UC9.6.4];
+		\item L'utente sceglie i dati da inserire nella slide [UC9.6.5].
 	\end{enumerate}
 	\item \textbf{Postcondizione:} Il sistema ha inserito l'elemento di dati \gls{real time} nella \gls{slide} corrente.
 \end{itemize}
 
-	\subsection{Caso d'uso UC9.6.1: Inserire un file di codice}
+	\subsection{Caso d'uso UC9.6.1: Caricare un file di dati}
 	\begin{itemize}
 		\item \textbf{Attori:} Proprietario;
-		\item \textbf{Scopo e descrizione:} L'utente deve inserire un file di codice da usare per un oggetto di dati \gls{real time};
-		\item \textbf{Precondizione:} L'utente ha creato un file sorgente per i dati real time da caricare nel server;
-		\item \textbf{Postcondizione:} Il sistema ha caricato il file nel server e lo ha inserito nella lista dei file di codice.
+		\item \textbf{Scopo e descrizione:} L'utente deve caricare un file contenente i dati real time nel server;
+		\item \textbf{Precondizione:} L'utente ha creato un file contenente un array di dati;
+		\item \textbf{Postcondizione:} Il sistema ha caricato il file nel server nella opportuna directory.
+	\end{itemize}
+
+	\subsection{Caso d'uso UC9.6.2: Caricare un file con la funzione di estrapolazione dati}
+	\begin{itemize}
+		\item \textbf{Attori:} Proprietario;
+		\item \textbf{Scopo e descrizione:} L'utente deve caricare un file contenente la funzione di estrapolazione dei dati da un sito web. La funzione deve ritornare un array di dati;
+		\item \textbf{Precondizione:} L'utente ha creato un file sorgente contenente la funzione da eseguire;
+		\item \textbf{Postcondizione:} Il sistema ha caricato il file nel server nella directory dedicata a questi tipi di file.
+	\end{itemize}
+	
+	\subsection{Caso d'uso UC9.6.3: Caricare un file con la funzione di elaborazione dati}
+	\begin{itemize}
+		\item \textbf{Attori:} Proprietario;
+		\item \textbf{Scopo e descrizione:} L'utente deve caricare un file contenente la funzione di elaborazione dei dati dell'array passato in oggetto. La funzione deve ritornare i dati formattati per l'inserimento di essi nella slide;
+		\item \textbf{Precondizione:} L'utente ha creato un file sorgente contenente la funzione da eseguire;
+		\item \textbf{Postcondizione:} Il sistema ha caricato il file nel server nella directory dedicata a questi tipi di file.
+	\end{itemize}
+	
+	\subsection{Caso d'uso UC9.6.4: Scegliere il tipo di dato real time}
+	\begin{itemize}
+		\item \textbf{Attori:} Proprietario;
+		\item \textbf{Scopo e descrizione:} L'utente deve scegliere quale tipo di dati real time inserire nella slide;
+		\item \textbf{Precondizione:} Nel server è presente il file contenente la funzione di elaborazione dei dati;
+		\item \textbf{Postcondizione:} Il sistema registra la scelta dell'utente e permette di scegliere ila sorgente di dati da inserire.
+	\end{itemize}
+	
+	\subsection{Caso d'uso UC9.6.5: Scegliere la sorgente di dati real time da inserire}
+	\begin{itemize}
+		\item \textbf{Attori:} Proprietario;
+		\item \textbf{Scopo e descrizione:} L'utente deve scegliere la sorgente di dati real time da inserire nella slide, che può essere un file contenente dei dati oppure un file avente una funzione che prenda i dati dall'esterno;
+		\item \textbf{Precondizione:} Nel server è presente il file contenente la sorgente di dati compatibili con il tipo di dati real time scelto;
+		\item \textbf{Postcondizione:} Il sistema ha inserito l'oggetto di dati real time nella slide.
 	\end{itemize}
 	
 
@@ -134,7 +185,7 @@
 
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente deve inserire un grafico. Seleziona il tipo di grafico e inserisce i dati;
+	\item \textbf{Scopo e descrizione:} L'utente deve inserire un grafico. Seleziona la tipologia del grafico tra istogramma, torta e linea, e inserisce i dati;
 	\item \textbf{Precondizione:} L'utente sta modificando una \gls{slide} e seleziona il comando per inserire un grafico;
 	\item \textbf{Flusso principale di eventi:}
 	\begin{enumerate}
@@ -164,7 +215,7 @@
 \subsection{Caso d'uso UC9.9: Scegliere un effetto di transizione}
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente deve scegliere l'effetto di transizione da dare alla \gls{slide};
+	\item \textbf{Scopo e descrizione:} L'utente deve scegliere l'effetto di transizione da dare alla \gls{slide}. Può scegliere tra scorrimento, dissolvenza, convesso, concavo e nessuno;
 	\item \textbf{Precondizione:} L'utente sta modificando una presentazione e seleziona il comando per cambiare tipo di transizione tra le \gls{slide};
 	\item \textbf{Postcondizione:} Il sistema ha modificato l'effetto di transizione.
 \end{itemize}
@@ -412,3 +463,10 @@
 	\item \textbf{Postcondizione:} Il sistema inserisce le note/parole chiave che l'utente ha aggiunto nella \gls{slide} corrente.
 \end{itemize}
 
+\subsection{Caso d'uso UC9.19: Spostare una \gls{slide}}
+\begin{itemize}
+	\item \textbf{Attori:} Proprietario;
+	\item \textbf{Scopo e descrizione:} L'utente vuole spostare una \gls{slide} della presentazione precedentemente creata in un'altra posizione. Usa quindi gli appositi pulsanti per spostarla tra le slide nella posizione desiderata.
+	\item \textbf{Precondizione:} L'utente è nella schermata di visualizzazione globale della presentazione è ha creato almeno due slide;
+	\item \textbf{Postcondizione:} La slide è stata spostata.
+\end{itemize}
