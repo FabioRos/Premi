@@ -1,6 +1,7 @@
 In questa sezione verrà illustrato l'ambiente di lavoro che sarà utilizzato durante lo sviluppo del progetto \PROGETTO.\\
 
 \subsection{Protocollo per la gestione del progetto}
+
 \subsubsection{Creazione e gestione dei ticket}
 
 I \gls{ticket} vengono creati e gestiti quasi tutti dal responsabile di progetto.
@@ -26,7 +27,7 @@ Per creare un nuovo \gls{ticket} bisogna:
 	\label{fig:ticket}
 \end{figure}
 
-
+\newpage
 \subsubsection{Creazione delle milestone}
 
 Il responsabile di progetto ha il compito della creazione di una \gls{milestone} in occasione di ogni revisione al quale il gruppo \GRUPPO\ ha intenzione di partecipare, più altre \gls{milestone} qualora il responsabile di progetto lo ritenga necessario.
@@ -79,19 +80,10 @@ I membri del gruppo utilizzeranno i seguenti sistemi operativi:
 
 Il coordinamento del gruppo avviene tramite:
 \begin{itemize}
-	\item \gls{Repository} \gls{Git};
 	\item \gls{Google Drive};
-	\item \gls{Google Calendar};
+	\item \gls{Google Calendar};	
+	\item \gls{Repository} \gls{Git}.
 \end{itemize}
-
-\subsubsection{Repository Git}
-
-Nonostante siano disponibili molti \gls{repository} (\gls{Git}, \gls{Mercurial}, \gls{SVN}) è stato scelto di utilizzare \gls{Git} in quanto il servizio soddisfa pienamente le necessità di \gls{hosting} e \gls{versionamento} necessarie per lo sviluppo di questo progetto, inoltre diversi membri del gruppo avevano già usato tale servizio. Esso permette di lavorare senza una connessione attiva a internet e da la possibilità di ignorare alcune estensioni specificate in un file chiamato .gitignore\footnote{File globale di \gls{Git} che contiene una lista di regole per ignorare i file.}.\\ Per i membri del gruppo che desiderano utilizzare un client, si consigliano i seguenti:
-\begin{itemize}
-	\item \textbf{SourceTree};
-	\item \textbf{\gls{GitHub}};
-\end{itemize}
-Per maggiori dettagli si rimanda alla sezione \ref{repository}.
 
 \subsubsection{Google Drive}
 
@@ -102,6 +94,36 @@ Abbiamo scelto di utilizzare questo \gls{servizio cloud} per condividere tutti i
 \gls{Google Calendar} viene utilizzato per la gestione delle risorse umane e per tenere traccia degli eventi importanti; infatti è stato creato un calendario condiviso con tutti i membri del gruppo in modo da conoscere le date in cui una persona è assente o non reperibile e le date rilevanti per il gruppo.\\
 Inoltre è possibile modificare la gestione delle notifiche per un evento o più eventi in modo che venga inviata automaticamente una email a tutti i membri del gruppo. In questo caso il preavviso deve essere di almeno un giorno.
 
+\subsubsection{Repository Git}
+
+Nonostante siano disponibili molti \gls{repository} (\gls{Git}, \gls{Mercurial}, \gls{SVN}) è stato scelto di utilizzare \gls{Git} in quanto il servizio soddisfa pienamente le necessità di \gls{hosting} e \gls{versionamento} necessarie per lo sviluppo di questo progetto, inoltre diversi membri del gruppo avevano già usato tale servizio. Esso permette di lavorare senza una connessione attiva a internet e da la possibilità di ignorare alcune estensioni specificate in un file chiamato .gitignore\footnote{File globale di \gls{Git} che contiene una lista di regole per ignorare i file.}.\\ Per i membri del gruppo che desiderano utilizzare un client, si consigliano i seguenti:
+\begin{itemize}
+	\item \textbf{SourceTree};
+	\item \textbf{\gls{GitHub}};
+\end{itemize}
+Per maggiori dettagli si rimanda alla sezione \ref{repository}.
+
+\newpage
+\paragraph{Utilizzo del servizio}
+È necessario eseguire le operazioni di sincronizzazione all'inizio e alla fine di ogni sessione di lavoro. \\
+In particolare ad ogni sessione di lavoro andranno eseguite le seguenti operazioni:
+\begin{itemize}
+	\item \textbf{Pull} - scaricare da la versione più aggiornata del progetto per poterci poi lavorare offline;
+	\item \textbf{Add} - aggiungere i file ad uno specifico elenco generando una proposta di modifica;
+	\item \textbf{Commit} - validare le proposte fatte in precedenza;
+	\item \textbf{Push} - serve a pubblicare i risultati online, sulla piattaforma di sviluppo;
+	\item \textbf{Merge} - permette di fondere un \gls{branch} con il \gls{repository} padre, così da implementare le modifiche apportate ai file e alle cartelle originarie.
+\end{itemize}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{img/proceduraRepository}
+\caption[Procedura per l'utilizzo del Repository]{Procedura per l'utilizzo del Repository}
+\label{fig:proceduraRepository}
+\end{figure}
+
+È vietato utilizzare "git add *" per evitare di includere file nascosti essendo consapevoli dell'esatto contenuto. Ogni commit deve essere corredato di un messaggio che descriva in modo \gls{conciso} il lavoro svolto.
+
+\newpage
 \subsection{Ambiente documentale}
 
 \subsubsection{Stesura documenti}
