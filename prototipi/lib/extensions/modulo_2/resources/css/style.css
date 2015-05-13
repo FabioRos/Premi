@@ -1,0 +1,25 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 7-mag-2015, 14.21.06
+    Author     : fabio
+*/
+
+table.tabella_modulo_1{
+    border:1 px solid #fff;
+    color:#fff;
+    text-align: center;
+    width:100%;
+    font-size:1.6em;
+}
+
+.table_entry{
+    border:1 px solid #fff;
+    color:#fff;
+    text-align: center;
+    width:100%;
+    font-size:1.2em;
+}
