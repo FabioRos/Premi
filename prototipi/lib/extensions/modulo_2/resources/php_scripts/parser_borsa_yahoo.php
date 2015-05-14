@@ -25,14 +25,14 @@
 	$data['BRUXELLES'] = $dom->getElementById("yfs_l10_^bfx");
         $array_for_file['BRUXELLES']['valore']=$data['BRUXELLES']->nodeValue;
         
-	
 	echo $array_for_file['MILANO']['valore'] ."<br>";
         echo $array_for_file['PARIGI']['valore'] ."<br>";
-        echo $array_for_file['MADRID']['valore']."<br>";
-        echo $array_for_file['BRUXELLES']['valore']."<br>";
+        echo $array_for_file['MADRID']['valore'] ."<br>";
+        echo $array_for_file['BRUXELLES']['valore'] ."<br>";
         //var_dump($array_for_file);
         update_json($array_for_file);
         
+        error_reporting(E_ALL ^ E_WARNING); 
        
         function update_json($phpArray){           
             

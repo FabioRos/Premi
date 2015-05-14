@@ -23,3 +23,9 @@ table.tabella_modulo_1{
     width:100%;
     font-size:1.2em;
 }
+
+#tabella_modulo_2{
+    color:#fff;
+    text-align: center;
+    border: 2 px solid #fff;
+}
