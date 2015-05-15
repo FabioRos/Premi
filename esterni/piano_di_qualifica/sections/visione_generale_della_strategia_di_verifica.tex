@@ -25,33 +25,6 @@ Per assicurarsi che gli obiettivi siano raggiunti e monitorare costantemente lo 
 	\item \textbf{Controllo della qualità:} la definizione dei processi che assicurano che il team  di sviluppo software segua le procedure e gli standard adottati nel progetto.
 \end{itemize}
 Per garantire la qualità dei processi e per garantire una corretta pianificazione delle attività descritte in precedenza, si è deciso di aderire allo standard ISO/IEC 15504 conosciuto anche come SPICE(Software Process Improvement and Capability Determination)\footnote{Per una descrizione dettagliata si rimanda all'appendice \ref{15504} .}.
-
-\subsection{Tecniche di analisi}
-Le due principali tecniche di analisi che verranno adottate sono l'\textit{analisi statica} e l'\textit{analisi dinamica}.
-	\subsubsection{Analisi statica}
-	L'analisi statica è una tecnica di analisi applicabile sia alla documentazione che al codice. Permette di verificare la correttezza dei prodotti, individuando errori ed anomalie. Ci sono due tecniche per effettuare tale analisi:
-	\begin{itemize}
-		\item \textbf{\gls{Walkthrough}\footnote{Cosiddetta lettura a pettine.}:} questa tecnica di analisi prevede una lettura critica del codice o del documento prodotto. Tale tecnica è molto dispendiosa in termini di risorse, poiché viene applicata all'intero documento, senza avere una precisa idea di quale sia il tipo di anomalia e di dove ricercarla;
-		\item \textbf{\gls{Inspection}\footnote{Ricerca selettiva.}:} questa tecnica di analisi presuppone l'esperienza da parte del verificatore nel individuare gli errori e le anomalie più frequenti. A tal scopo è stata stilata una lista di controllo nella quale sono elencate le sezioni critiche. Questo ci consente una verifica più rapida e meno risorse umane. Dopo aver terminato l'analisi, è necessario stilare un rapporto di verifica.
-	\end{itemize}
-	
-	\subsubsection{Analisi dinamica}
-	L'analisi dinamica è una tecnica di analisi applicabile al prodotto software. 
-	Prima di effettuare questo tipo di analisi, devono essere definiti:
-	\begin{itemize}
-		\item \textbf{Ambiente:} formato sia dal sistema software che dal sistema hardware utilizzato;
-		\item \textbf{Specifica:} consiste nel definire i parametri di input necessari all'esecuzione ed i parametri attesi per vedere se coincidono;
-		\item \textbf{Procedure:} consiste nel definire il modo in cui devono essere fatti i test, come trattare i risultati ottenuti e chiarire un'eventuale ordine tra i test;
-		\item \textbf{Test di unità\footnote{La più piccola quantità di software che è ragionevole testare da sola.}:} consiste nel verificare ogni singola unità del prodotto sofware attraverso l'utilizzo di strumenti come stub o driver. Lo scopo dello unit testing è di verificare il corretto funzionamento di parti di programma permettendo così una precoce individuazione dei bug. Uno "unit testing" accurato produce vari vantaggi come:
-			\begin{itemize}
-				\item Semplifica le modifiche;
-				\item Semplifica l'integrazione;
-				\item Supporta la documentazione.
-			\end{itemize}
-		\item \textbf{Test di integrazione:} consiste nella verifica dei componenti del sistema che sono formati dalla combinazione di più unità. Ha lo scopo di evidenziare gli eventuali errori residui, non individuati durante la realizzazione dei singoli moduli;
-		\item \textbf{Test di sistema:} consiste nell'eseguire nuovamente i test di unità e integrazione per le componenti che hanno subito modifiche o per le nuove funzionalità. Lo scopo è verificare di avere un prodotto di alta qualità per ogni nuova funzionalità o modifica importante;
-		\item \textbf{Test di accettazione:} è il collaudo del prodotto software che viene eseguito in presenza del proponente. Se tale collaudo viene superato positivamente si può procedere al rilascio ufficiale del prodotto sviluppato.
-	\end{itemize}
 	
 \subsection{Misure e Metriche}
 Per garantire il raggiungimento degli obiettivi è necessario fissare delle metriche sulla base delle quali poter misurare i risultati ottenuti dalle varie attività di verifica. È dunque di fondamentale importanza saper quantificare, attraverso delle metriche stabilite a priori, il processo di verifica. Grazie al ciclo di vita adottato, descritto nel \textit{Piano di Progetto v1.0.0}, le metriche incerte ed approssimate si potranno migliorare in modo incrementale.\\
@@ -59,9 +32,32 @@ Ogni metrica avrà due caratteristiche fondamentali:
 \begin{itemize}
 	\item \textbf{Range di accettazione:} intervallo entro il quale il prodotto si può ritenere soddisfacente;
 	\item \textbf{Range ottimale:} valore entro il quale dovrebbe arrivare la misurazione.
-\end{itemize} 
+\end{itemize}
+
+
+\subsection{Metriche per i processi}
+Per misurare lo stato di avanzamento dei processi si è scelto di utilizzare indici che ne analizzino i costi e
+tempi.
+\subsubsection{2.9.1.1 Schedule Variance (SV)}
+Lo Schedule Variance è un indicatore di efficacia e serve a controllare se si è in linea, in anticipo o in ritardo rispetto alla pianificazione temporale delle attività nella baseline.
+Se SV G > 0 significa che il gruppo di lavoro sta producendo con maggior velocità rispetto a quanto pianificato, viceversa se negativo.
+Essendo stati inseriti slack durante la pianificazione della baseline dei processi, il valore di tale indice è inizialmente positivo.
+Parametri utilizzati:
+\begin{itemize}
+	\item Range-accettazione: $\left[  \geq - \: costo \: preventivo \: fase * 5 \% \right]$
+	\item Range-ottimale: $\left[\geq 0\right]$.
+\end{itemize}
+\subsection{Budget Variance (BV)}
+Il Budget Variance è un indicatore che ha un valore contabile e finanziario e che serve a controllare se alla data corrente si è speso di più o di meno rispetto a quanto pianificato.
+Se BV G > 0 significa che l’attuazione del progetto sta consumando il proprio budget con minor velocità rispetto a quanto pianificato, viceversa se negativo.
+Parametri utilizzati:
+\begin{itemize}
+	\item Range-accettazione: $\left[  \geq - \: costo \: preventivo \: fase * 10 \% \right]$
+	\item Range-ottimale: $\left[\geq 0\right]$.
+\end{itemize}
+
 	\subsubsection{Metriche per la documentazione}
-	Come metrica per i documenti redatti si è deciso di utilizzare l'indice di leggibilità \gls{Gulpease}. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico. L'indice è tarato sulla lingua italiana e considera due variabili linguistiche: la lunghezza della parola e la lunghezza della frase rispetto al numero delle lettere. \\
+	Come metrica per i documenti redatti si è deciso di utilizzare l'indice di leggibilità Gulpease\G. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico. L'indice è tarato sulla lingua italiana e considera due variabili linguistiche: la lunghezza della parola e la lunghezza della frase rispetto al numero delle lettere. \\
 	\noindent L'indice è calcolato attraverso la seguente formula:\\
 	\begin{center}
 	$89+ \frac{300*\left(numero\:\ delle\:\ frasi \right)-10*\left(numero\:\ delle\:\ lettere\right)}{numero\:\ delle\:\ parole}$
@@ -86,6 +82,11 @@ Ogni metrica avrà due caratteristiche fondamentali:
 				\item \textbf{Range di accettazione:} [1 - 15];
 				\item \textbf{Range ottimale:} [1 - 10].
 			\end{itemize}
+		\item \textbf{Attributi per classe:} un numero elevato di attributi all'interno della classe potrebbe indicare il bisogno di suddividere la classe in più sotto classi.
+			\begin{itemize}
+				\item \textbf{Range di accettazione:} [0 - 16];
+				\item \textbf{Range ottimale:} [3 - 8].
+			\end{itemize}
 		\item \textbf{Numero di parametri per metodo:} indica il numero di parametri formali di un metodo. Un numero elevato di parametri potrebbe indicare la necessità di ridurre le funzionalità associate a tale metodo.
 			\begin{itemize}
 				\item \textbf{Range di accettazione:} [0 - 8];
@@ -100,6 +101,12 @@ Ogni metrica avrà due caratteristiche fondamentali:
 			\begin{itemize}
 				\item \textbf{Range di accettazione:} [1 - 6];
 				\item \textbf{Range ottimale:} [1 - 3].
+			\end{itemize}
+		\item \textbf{Copertura del codice:}valore che indica la percentuale di codice che viene eseguito durante i test.
+		Un valore elevato indica un'alta probabilità che i moduli testati abbiano pochi errori.
+		\begin{itemize}
+				\item \textbf{Range di accettazione:} [\geq 40\%];
+				\item \textbf{Range ottimale:} [\geq 60\%].
 			\end{itemize}
 	\end{itemize}
 
