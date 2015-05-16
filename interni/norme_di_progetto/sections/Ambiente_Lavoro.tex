@@ -4,7 +4,7 @@ In questa sezione verrà illustrato l'ambiente di lavoro che sarà utilizzato du
 
 \subsubsection{Creazione e gestione dei ticket}
 
-I \gls{ticket} vengono creati e gestiti quasi tutti dal responsabile di progetto.
+I \gls{ticket} vengono creati e gestiti quasi tutti dal \textit{Responsabile di Progetto}.
 Qualora il \textit{Verificatore} trovasse imprecisioni o errori durante la verifica, avrà la possibilità di creare dei \gls{ticket} per segnalare suddetti errori.
 Ogni \gls{ticket} può essere assegnato ad uno o più membri del gruppo a seconda della complessità del lavoro e della disponibilità dei membri del gruppo.
 Per creare un nuovo \gls{ticket} bisogna:
@@ -30,7 +30,7 @@ Per creare un nuovo \gls{ticket} bisogna:
 \newpage
 \subsubsection{Creazione delle milestone}
 
-Il responsabile di progetto ha il compito della creazione di una \gls{milestone} in occasione di ogni revisione al quale il gruppo \GRUPPO\ ha intenzione di partecipare, più altre \gls{milestone} qualora il responsabile di progetto lo ritenga necessario.
+Il \textit{Responsabile di Progetto} ha il compito della creazione di una \gls{milestone} in occasione di ogni revisione al quale il gruppo \GRUPPO\ ha intenzione di partecipare, più altre \gls{milestone} qualora il \textit{Responsabile di Progetto} lo ritenga necessario.
 
 Per creare una nuova \gls{milestone} bisogna:
 
@@ -59,7 +59,7 @@ Se un \gls{ticket} non ha avuto i risultati attesi il \textit{Responsabile di Pr
 
 \subsubsection{Chiusura della milestone}
 
-Una volta raggiunta la scadenza, il \textit{Responsabile di Progetto}, deve chiudere la \gls{milestone} ed eventualmente aprirne un'altra per poi ricominciare tutto il protocollo da capo.
+Una volta raggiunta la scadenza il \textit{Responsabile di Progetto} deve chiudere la \gls{milestone} ed eventualmente aprirne un'altra per poi ricominciare tutto il protocollo da capo.
 
 
 
@@ -108,7 +108,7 @@ Per maggiori dettagli si rimanda alla sezione \ref{repository}.
 È necessario eseguire le operazioni di sincronizzazione all'inizio e alla fine di ogni sessione di lavoro. \\
 In particolare ad ogni sessione di lavoro andranno eseguite le seguenti operazioni:
 \begin{itemize}
-	\item \textbf{Pull} - scaricare da la versione più aggiornata del progetto per poterci poi lavorare offline;
+	\item \textbf{Pull} - scaricare la versione più aggiornata del progetto per poterci poi lavorare offline;
 	\item \textbf{Add} - aggiungere i file ad uno specifico elenco generando una proposta di modifica;
 	\item \textbf{Commit} - validare le proposte fatte in precedenza;
 	\item \textbf{Push} - serve a pubblicare i risultati online, sulla piattaforma di sviluppo;
@@ -121,7 +121,7 @@ In particolare ad ogni sessione di lavoro andranno eseguite le seguenti operazio
 \label{fig:proceduraRepository}
 \end{figure}
 
-È vietato utilizzare "git add *" per evitare di includere file nascosti essendo consapevoli dell'esatto contenuto. Ogni commit deve essere corredato di un messaggio che descriva in modo \gls{conciso} il lavoro svolto.
+È vietato utilizzare "git add *" per evitare di includere file nascosti. Tutti i membri del gruppo dovono essere consapevoli dell'esatto contenuto dei file. Ogni commit deve essere corredato di un messaggio che descriva in modo \gls{conciso} il lavoro svolto.
 
 \newpage
 \subsection{Ambiente documentale}
@@ -136,10 +136,10 @@ Come editor è consigliato TeXstudio\footnote{\url{http://texstudio.sourceforge.
 Per facilitare la stesura dei documenti sono stati creati alcuni script:
 
 \begin{itemize}
-	\item Generazione di tutti i documenti PDF: con il comando make all verranno generati tutti i PDF dei documenti contenuti nella directory corrente;
+	\item Generazione di tutti i documenti PDF: con il comando "make all" verranno generati tutti i PDF dei documenti contenuti nella directory corrente;
 	%\item Controllo ortografico: con il comando make aspell verrà invocato il programma aspell su tutti i documenti della directory corrente;
 	%\item Eliminazione file errati o vecchi: con il comando make clean verranno eliminatati i file generati da compilazioni vecchio o file non necessari della directory corrente;
-	\item Evidenziare glossario: con il comando \textit{java glossary} verrà eseguito uno script che selezionerà nei documenti, della directory corrente, le parole contenute nella versione più recente del glossario e le evidenzierà con il simbolo "\G".
+	\item Evidenziare glossario: con il comando \textit{java glossary} verrà eseguito uno script che selezionerà nei documenti della directory corrente le parole contenute nella versione più recente del glossario e le evidenzierà con il simbolo "\G".
 
 \end{itemize}
 
