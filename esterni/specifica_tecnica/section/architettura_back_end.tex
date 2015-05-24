@@ -47,8 +47,8 @@
 		\item *::Controller
 		\item *::Model
 	\end{itemize}
-	
-	
+
+
 \subsection{Premi::Back-End::Logic-Tier::Controller}
 	\subsubsection{Informazioni sul package}
 	\begin{figure}[h]
@@ -78,7 +78,44 @@
 	\end{itemize}
 
 
-%\subsection{Premi::Back-End::Logic-Tier::Model}
+\subsection{Premi::Back-End::Logic-Tier::Model}
+	\subsubsection{Informazioni sul package}
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/back-end-logic-tier-model}
+	\caption[Premi::Back-End::Logic-Tier::Model]{Premi::Back-End::Logic-Tier::Model}
+	\end{figure}
+	Il package contiene le classi che definisco il modello dell'applicazione.
+	
+	\subsubsection{Classi contenute}
+	\begin{itemize}
+		\item \textit{MongoHandler: }serve per comunicare con il livello inferiore ed interagire direttamente con la base di dati;
+			\\Relazione con altre classi:
+			\begin{itemize}
+				\item Premi::Back-End::Logic-Tier::Controller::UsersController::UserController.
+			\end{itemize}
+		\item \textit{Utente}: fornisce le operazioni per gestire un utente.
+			\\Relazione con altre classi:
+			\begin{itemize}
+				\item Premi::Back-End::Data-Tier::DataTierFrontController.
+			\end{itemize}
+	\end{itemize}
+	
+	\subsubsection{Package Contenuti}
+	\begin{itemize}
+		\item *::ProjectModel.
+	\end{itemize}
+
+
+\subsection{Premi::Back-End::Logic-Tier::Model::ProjectModel}
+	\subsubsection{Informazioni sul package}
+		\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.9\linewidth]{img/back-end-logic-tier-model-projectModel}
+		\caption[Premi::Back-End::Logic-Tier::Model::ProjectModel]{Premi::Back-End::Logic-Tier::Model::ProjectModel}
+	\end{figure}
+	Il package contiene il modello di tutte le componenti necessarie per il corretto funzionamento dell'applicazione.
+
 
 \subsection{Premi::Back-End::Data-Tier}
 	\subsubsection{Informazioni sul package}
