@@ -2,7 +2,7 @@
 In seguito alla pubblicazione dei capitolati d'appalto, il \textit{Responsabile di Progetto} avrà il compito di convocare una riunione per discutere sugli aspetti positivi e negativi dei capitolati. Sarà compito degli \textit{Analisti} redigere lo \textit{Studio di Fattibilità} in base a quanto emerso dalle riunioni.
 
 \subsubsection{Analisi dei requisiti}
-E' compito degli \textit{Analisti} stilare il documento \textit{Analisi dei requisiti}.
+E' compito degli \textit{Analisti} stilare il documento \textit{Analisi dei Requisiti}.
 In questo documento dovranno essere presenti tutti i requisiti ed i \gls{casi d'uso} emersi dall'analisi del capitolato e dalle riunioni con il Proponente.\\
 
 \newpage
@@ -16,20 +16,20 @@ I requisiti dovranno essere classificati per tipo e priorità, utilizzando la se
 	\end{math}
 \end{center}
 \begin{itemize}
-	\item Importanza può assumere i seguenti valori:
+	\item \textit{Importanza} può assumere i seguenti valori:
 	\begin{itemize}
 		\item \textbf{OBB:} Requisito obbligatorio;
 		\item \textbf{DES:} Requisito desiderabile;
 		\item \textbf{OPZ:} Requisito opzionale.
 	\end{itemize}
-	\item Tipo può assumere i seguenti valori:
+	\item \textit{Tipo} può assumere i seguenti valori:
 	\begin{itemize}
 		\item \textbf{F:} Requisito funzionale;
 		\item \textbf{Q:} Requisito di qualità;
 		\item \textbf{P:} Requisito di prestazione;
 		\item \textbf{V:} Requisito di vincolo.
 	\end{itemize}
-	\item Codice rappresenta il codice univoco di ogni requisito in forma gerarchica.
+	\item \textit{Codice} rappresenta il codice univoco di ogni requisito in forma gerarchica.
 \end{itemize}
 Ogni requisito dovrà essere inserito (nel documento \textit{Analisi dei Requisiti}) in una tabella contenente il codice identificativo, una breve descrizione e la fonte.
 
@@ -50,7 +50,7 @@ Per ogni caso d'uso sono richieste le seguenti informazioni:
 \newpage
 \paragraph{Tracciamento dei requisiti}
 Per il tracciamento dei requisiti è stato creato un \gls{database} che tiene traccia dei requisiti, \gls{casi d'uso} e tutte le dipendenze.
-È stato realizzato un \gls{plugin} per il Content Management System (\gls{CMS}) \gls{WordPress} per rendere possibile il popolamento e l'interrogazione.
+È stato realizzato un \gls{plugin} per il Content Management System (\gls{CMS}) \gls{WordPress} per renderne possibile il popolamento e l'interrogazione.
 Il \gls{plugin} genera automaticamente il codice \LaTeX\ per l'\textit{Analisi dei Requisiti}.
 Per sua natura, il \gls{plugin} è portabile su tutte le versioni di \gls{WordPress} ed alla fine del progetto sarà reso open-source in modo che possa essere riutilizzato da chi lo desideri. È stato scelto questo \gls{CMS} poiché, essendo conosciuto da due membri del gruppo, permette di concentrarsi esclusivamente sulla gestione dei requisiti tralasciando tutti gli aspetti di contorno, comprimendo così notevolmente i tempi di sviluppo.
 \begin{figure}[h]

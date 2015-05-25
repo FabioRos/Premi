@@ -23,7 +23,7 @@ Per creare un nuovo \gls{ticket} bisogna:
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{img/ticket}
-	\caption[Creazione ticket]{Creazione \gls{ticket}}
+	\caption[Creazione ticket]{Creazione ticket}
 	\label{fig:ticket}
 \end{figure}
 
@@ -91,7 +91,7 @@ Abbiamo scelto di utilizzare questo \gls{servizio cloud} per condividere tutti i
 È un servizio molto semplice e accessibile direttamente da \gls{browser} che permette di lavorare su documenti creati con \gls{Google Docs}.
 
 \subsubsection{Google Calendar}
-\gls{Google Calendar} viene utilizzato per la gestione delle risorse umane e per tenere traccia degli eventi importanti; infatti è stato creato un calendario condiviso con tutti i membri del gruppo in modo da conoscere le date in cui una persona è assente o non reperibile e le date rilevanti per il gruppo.\\
+\gls{Google Calendar} viene utilizzato per la gestione delle risorse umane e per tenere traccia degli eventi importanti. È stato creato un calendario condiviso con tutti i membri del gruppo in modo da conoscere le date in cui una persona è assente o non reperibile e le date rilevanti per il gruppo.\\
 Inoltre è possibile modificare la gestione delle notifiche per un evento o più eventi in modo che venga inviata automaticamente una email a tutti i membri del gruppo. In questo caso il preavviso deve essere di almeno un giorno.
 
 \subsubsection{Repository Git}
@@ -108,11 +108,11 @@ Per maggiori dettagli si rimanda alla sezione \ref{repository}.
 È necessario eseguire le operazioni di sincronizzazione all'inizio e alla fine di ogni sessione di lavoro. \\
 In particolare ad ogni sessione di lavoro andranno eseguite le seguenti operazioni:
 \begin{itemize}
-	\item \textbf{Pull} - scaricare la versione più aggiornata del progetto per poterci poi lavorare offline;
-	\item \textbf{Add} - aggiungere i file ad uno specifico elenco generando una proposta di modifica;
-	\item \textbf{Commit} - validare le proposte fatte in precedenza;
-	\item \textbf{Push} - serve a pubblicare i risultati online, sulla piattaforma di sviluppo;
-	\item \textbf{Merge} - permette di fondere un \gls{branch} con il \gls{repository} padre, così da implementare le modifiche apportate ai file e alle cartelle originarie.
+	\item \textbf{Pull}: scaricare la versione più aggiornata del progetto per poterci poi lavorare offline;
+	\item \textbf{Add}: aggiungere i file ad uno specifico elenco generando una proposta di modifica;
+	\item \textbf{Commit}: validare le proposte fatte in precedenza;
+	\item \textbf{Push}: serve a pubblicare i risultati online, sulla piattaforma di sviluppo;
+	\item \textbf{Merge}: permette di fondere un \gls{branch} con il \gls{repository} padre, così da implementare le modifiche apportate ai file e alle cartelle originarie.
 \end{itemize}
 \begin{figure}[h]
 \centering
@@ -121,7 +121,7 @@ In particolare ad ogni sessione di lavoro andranno eseguite le seguenti operazio
 \label{fig:proceduraRepository}
 \end{figure}
 
-È vietato utilizzare "git add *" per evitare di includere file nascosti. Tutti i membri del gruppo dovono essere consapevoli dell'esatto contenuto dei file. Ogni commit deve essere corredato di un messaggio che descriva in modo \gls{conciso} il lavoro svolto.
+\noindent È vietato utilizzare "git add *" per evitare di includere file nascosti. Tutti i membri del gruppo dovono essere consapevoli dell'esatto contenuto dei file. Ogni commit deve essere corredato di un messaggio che descriva in modo conciso il lavoro svolto.
 
 \newpage
 \subsection{Ambiente documentale}
@@ -139,7 +139,7 @@ Per facilitare la stesura dei documenti sono stati creati alcuni script:
 	\item Generazione di tutti i documenti PDF: con il comando "make all" verranno generati tutti i PDF dei documenti contenuti nella directory corrente;
 	%\item Controllo ortografico: con il comando make aspell verrà invocato il programma aspell su tutti i documenti della directory corrente;
 	%\item Eliminazione file errati o vecchi: con il comando make clean verranno eliminatati i file generati da compilazioni vecchio o file non necessari della directory corrente;
-	\item Evidenziare glossario: con il comando \textit{java glossary} verrà eseguito uno script che selezionerà nei documenti della directory corrente le parole contenute nella versione più recente del glossario e le evidenzierà con il simbolo "\G".
+	\item Evidenziare glossario: con il comando "java glossary" verrà eseguito uno script che selezionerà nei documenti della directory corrente le parole contenute nella versione più recente del glossario e le evidenzierà con il simbolo "\G".
 
 \end{itemize}
 
@@ -147,11 +147,11 @@ Per facilitare la stesura dei documenti sono stati creati alcuni script:
 Per pianificare le attività e la gestione del progetto e delle risorse umane si è scelto di usare GanttProject\footnote{\url{http://www.ganttproject.biz}}.
 
 \subsection{Ambiente di sviluppo}
-Secondo il decreto legislativo n.81, ogni centoventi minuti passati in maniera continuativa davanti al computer il ogni membro deve fare almeno quindici minuti interruzione.\footnote{\url{http://www.pmi.it/impresa/normativa/news/51788/dipendenti-al-pc-obblighi-di-legge-per-i-datori-di-lavoro.html}}
+Secondo il decreto legislativo n.81, ogni 120(centoventi) minuti passati in maniera continuativa davanti al computer ogni membro deve fare almeno quindici minuti interruzione.\footnote{\url{http://www.pmi.it/impresa/normativa/news/51788/dipendenti-al-pc-obblighi-di-legge-per-i-datori-di-lavoro.html}}
 
 \subsection{Diagrammi UML}
 
 Per la realizzazione dei diagrammi \gls{UML} è stato scelto \gls{Astah} Professional Edition\footnote{\url{http://astah.net/download}}.
-E' possibile ricevere gratuitamente la licenza della versione professional inviando una richiesta al sito \url{http://astah.net/student-license-request}.
+È possibile ricevere gratuitamente la licenza della versione professional inviando una richiesta al sito \url{http://astah.net/student-license-request}.
 
 

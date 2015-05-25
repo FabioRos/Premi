@@ -1,4 +1,4 @@
-In questo capitolo si descrivono i vari standard adottati da \GRUPPO\ nella stesura, verifica e approvazione della documentazione da produrre.
+In questo capitolo si descrivono i vari standard adottati da \GRUPPO\ nella stesura, verifica ed approvazione della documentazione da produrre.
 \subsection{Template}
 Per semplificare la redazione dei documenti è stato creato un \gls{template} \LaTeX\ contenente tutte le impostazioni per l'aspetto grafico. \\
 Ogni documento dovrà essere realizzato con il \gls{template} \LaTeX\ presente nel \gls{repository}, il quale utilizzo è regolamentato da un'apposita guida presente su \gls{Google Drive}.
@@ -7,7 +7,7 @@ Per ogni documento è obbligatorio specificare la versione. Un numero di version
 \begin{center}
 	\emph{X.Y.Z}
 \end{center}
-dove X, Y, Z sono interi non negativi e non devono contenere zeri iniziali. X è la versione \textit{Major}, Y è la versione \textit{Minor}, e Z e la versione \textit{Patch}.
+dove X, Y, Z sono interi non negativi e non devono contenere zeri iniziali. X è la versione \textit{Major}, Y è la versione \textit{Minor}, e Z è la versione \textit{Patch}.
 \begin{itemize}
 	\item X: la versione Major (X.y.z | X > 0) identifica la versione di rilascio. Deve essere incrementata se è stata introdotta qualsiasi modifica non retrocompatibile. Le versioni Patch e Minor devono essere reimpostate a 0 quando la versione Major è incrementata. 
 	\item Y: la versione Minor (x.Y.z | x > 0) deve essere incrementata se è stata introdotta una nuova funzionalità. La versione Patch deve essere reimpostata a 0 quando la versione Minor è incrementata.
@@ -37,6 +37,7 @@ Ogni riga del diario delle modifiche contiene:
 \begin{itemize}
 	\item Una breve descrizione sulle modifiche effettuate;
 	\item Cognome e nome di chi ha effettuato la modifica;
+	\item Ruolo di chi ha effettuato la modifica;
 	\item Data della modifica;
 	\item Versione del documento dopo la modifica.
 \end{itemize}
@@ -115,9 +116,9 @@ Questa sezione racchiude tutte le informazioni riguardanti l'ortografia, la tipo
 
 \subsubsection{Formati ricorrenti}
 \begin{itemize}
-	\item Nomi propri: l'utilizzo dei nomi propri deve seguire la seguente forma "Cognome Nome";
-	\item Percorsi: per gli indirizzi email e gli indirizzi web deve essere usato esclusivamente il comando \LaTeX  \verb|\url|;
-	\item Date:  ogni data deve seguire lo standard internazionale per date ed orari ISO 8601:
+	\item \textbf{Nomi propri}: l'utilizzo dei nomi propri deve seguire la seguente forma "Cognome Nome";
+	\item \textbf{Percorsi}: per gli indirizzi email e gli indirizzi web deve essere usato esclusivamente il comando \LaTeX  \verb|\url|;
+	\item \textbf{Date}:  ogni data deve seguire lo standard internazionale per date ed orari ISO 8601:
 	\begin{center}
 		AAAA-MM-GG
 	\end{center}
@@ -127,9 +128,9 @@ Questa sezione racchiude tutte le informazioni riguardanti l'ortografia, la tipo
 		\item MM: rappresenta il formato del mese scritto con due cifre;
 		\item GG: rappresenta il formato del giorno scritto con due cifre.
 	\end{itemize}
-	\item Riferimenti ai documenti: ci si riferirà ai vari documenti scrivendo in corsivo il nome del documento e mettendo una lettera maiuscola per ogni parola che non sia un articolo. Nel caso in cui ci si deve riferire ad una versione specifica del documento, essa andrà indicata alla fine  del nome del documento (esempio: \textit{Norme di Progetto v1.0.0});
-	\item Nome del gruppo: ci si riferirà al gruppo solo come "\textit{DazzleWorks}" con il nome del gruppo in corsivo. Per una scrittura univoca del nome è stato creato il comando \LaTeX\ apposito \verb|\GRUPPO|;
-	\item Nome del progetto: ci si riferirà al nome del progetto solo come "\textbf{PREMI}". Per una scrittura corretta del nome è stato creato il comando \LaTeX\ \verb|\PROGETTO|.
+	\item \textbf{Riferimenti ai documenti}: ci si riferirà ai vari documenti scrivendo in corsivo il nome del documento e mettendo una lettera maiuscola per ogni parola che non sia un articolo. Nel caso in cui ci si debba riferire ad una versione specifica del documento, essa andrà indicata alla fine  del nome del documento (esempio: \textit{Norme di Progetto v1.0.0});
+	\item \textbf{Nome del gruppo}: ci si riferirà al gruppo solo come "\textit{DazzleWorks}" con il nome del gruppo in corsivo. Per una scrittura univoca del nome è stato creato il comando \LaTeX\ apposito \verb|\GRUPPO|;
+	\item \textbf{Nome del progetto}: ci si riferirà al nome del progetto solo come "\textbf{PREMI}". Per una scrittura corretta del nome è stato creato il comando \LaTeX\ \verb|\PROGETTO|.
 \end{itemize}
 
 \subsubsection{Sigle}
