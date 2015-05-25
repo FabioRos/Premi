@@ -7,7 +7,7 @@
 
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente sta lavorando su una presentazione per inserire delle nuove \gls{slide} o per modificare quelle già create. Può quindi inserire  elementi come: \gls{slide}, immagini, caselle di testo, dati \gls{real time}. Ha inoltre la possibilità di modificare gli elementi già inseriti, oppure di eliminarli. Può infine scegliere l'effetto di transizione tra una \gls{slide} e l'altra;
+	\item \textbf{Scopo e descrizione:} L'utente sta lavorando su una presentazione per inserire delle nuove \gls{slides} o per modificare quelle già create. Può quindi inserire  elementi come: \gls{slides}, immagini, caselle di testo e dati \gls{real time}. Ha inoltre la possibilità di modificare gli elementi già inseriti, oppure di eliminarli. Può infine scegliere l'effetto di transizione tra una \gls{slide} e l'altra;
 	\item \textbf{Precondizione:} L'utente ha creato una nuova presentazione nella fase di creazione di un progetto o ha aperto un progetto creato in precedenza per modificarlo;
 	\item \textbf{Flusso principale degli eventi:}
 	\begin{enumerate}
@@ -65,7 +65,7 @@
 \subsection{Caso d'uso UC9.2: Inserire una nuova slide}
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente crea una nuova \gls{slide} nella presentazione per poter inserire del contenuto. Può inserire una nuova slide a destra o sotto la slide corrente;
+	\item \textbf{Scopo e descrizione:} L'utente crea una nuova \gls{slide} nella presentazione per poter inserire del contenuto. Può inserire una nuova \gls{slide} a destra o sotto la \gls{slide} corrente;
 	\item \textbf{Precondizione:} L'utente sta modificando la presentazione e ha selezionato il comando per inserire una \gls{slide};
 	\item \textbf{Postcondizione:} Il sistema ha creato la nuova \gls{slide} a destra o sotto quella corrente a seconda della scelta dell'utente.
 \end{itemize}
@@ -76,7 +76,7 @@
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente vuole rimuovere una \gls{slide} della presentazione precedentemente creata;
 	\item \textbf{Precondizione:} L'utente è posizionato nella \gls{slide} da eliminare e sceglie il comando per rimuoverla;
-	\item \textbf{Postcondizione:} Il sistema ha rimosso la \gls{slide} selezionata. Se esiste una slide sotto di essa la sposta al posto di quest'ultima, altrimenti (se esiste) sposta la slide a destra.
+	\item \textbf{Postcondizione:} Il sistema ha rimosso la \gls{slide} selezionata. Se esiste una \gls{slide} sotto di essa la sposta al posto di quest'ultima, altrimenti (se esiste) sposta la \gls{slide} a destra.
 \end{itemize}
 
 
@@ -107,21 +107,21 @@
 
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:}	Un elemento di dati \gls{real time} consiste in un oggetto da inserire nella slide che visualizzerà in modo formattato con lo stile della presentazione dei dati presi dall'esterno e, quindi, aggiornati al momento dell'avio della presentazione. Il programma offre delle funzioni specifiche per tipi di dato diversi che, preso in input un array di dati, lo elaborano per inserire poi i dati formattati all'interno della slide.
+	\item \textbf{Scopo e descrizione:}	Un elemento di dati \gls{real time} consiste in un oggetto da inserire nella \gls{slide} che visualizzerà in modo formattato, con lo stile della presentazione, dei dati presi dall'esterno e, quindi, aggiornati al momento dell'avio della presentazione. Il programma offre delle funzioni specifiche per tipi di dato diversi che, preso in input un array di dati, lo elaborano per inserire poi i dati formattati all'interno della \gls{slide}.
 
-	I dati contenuti nell'array devono essere salvati in modo diverso per a seconda della funzione che si deve richiamare. Ogni funzione, infatti, per elaborare i dati correttamente richiede un array con delle determinate specifiche.
+	I dati contenuti nell'array devono essere salvati in modo diverso a seconda della funzione che si deve richiamare. Ogni funzione, infatti, per elaborare i dati correttamente, richiede un array con delle determinate specifiche.
 	L'array di dati potrà poi essere fornito attraverso un file caricato direttamente sul server dall'utente oppure attraverso una funzione che raccoglie i dati da un sito web esterno e li ritorna all'interno di un array secondo.
 	
-	Le funzioni per estrapolare i dati da siti esterni e le funzioni che elaborano i dati di un array per inserire il contenuto nella slide possono essere implementate dall'utente, il quale è così in grado di creare degli elementi specifici adatti alle situazioni di cui necessita.
+	Le funzioni per estrapolare i dati da siti esterni e le funzioni che elaborano i dati di un array per inserire il contenuto nella \gls{slide} possono essere implementate dall'utente, il quale è così in grado di creare degli elementi specifici adatti alle situazioni di cui necessita.
 	
 	\item \textbf{Precondizione:} L'utente sta modificando una \gls{slide} e seleziona il comando per inserire un elemento di dati \gls{real time};
 	\item \textbf{Flusso principale di eventi:}
 	\begin{enumerate}
-		\item L'utente carica un file contenente i dati real time [UC9.6.1];
+		\item L'utente carica un file contenente i dati \gls{real time} [UC9.6.1];
 		\item L'utente carica un file contenente la funzione di estrapolazione dati dall'esterno [UC9.6.2];
 		\item L'utente carica un file contenente la funzione di elaborazione dati dell'array [UC9.6.3];
 		\item L'utente sceglie il tipo di dato \gls{real time} [UC9.6.4];
-		\item L'utente sceglie i dati da inserire nella slide [UC9.6.5].
+		\item L'utente sceglie i dati da inserire nella \gls{slide} [UC9.6.5].
 	\end{enumerate}
 	\item \textbf{Postcondizione:} Il sistema ha inserito l'elemento di dati \gls{real time} nella \gls{slide} corrente.
 \end{itemize}
@@ -129,7 +129,7 @@
 	\subsection{Caso d'uso UC9.6.1: Caricare un file di dati}
 	\begin{itemize}
 		\item \textbf{Attori:} Proprietario;
-		\item \textbf{Scopo e descrizione:} L'utente deve caricare un file contenente i dati real time nel server;
+		\item \textbf{Scopo e descrizione:} L'utente deve caricare un file contenente i dati \gls{real time} nel server;
 		\item \textbf{Precondizione:} L'utente ha creato un file contenente un array di dati;
 		\item \textbf{Postcondizione:} Il sistema ha caricato il file nel server nella opportuna directory.
 	\end{itemize}
@@ -286,7 +286,7 @@
 		\item L'utente può abilitare o disabilitare il testo in grassetto [UC9.15.5];
 		\item L'utente può spostare il testo in una nuova posizione [UC9.15.6].
 	\end{enumerate}
-	\item \textbf{Postcondizione:} Il sistema ha apportato le modifiche scelte al testo.
+	\item \textbf{Postcondizione:} Il sistema ha apportato le modifiche scelte all'elemento di testo selezionato.
 \end{itemize}
 
 \subsection{Caso d'uso UC9.15.1: Scegliere la grandezza}
@@ -352,7 +352,7 @@
 	\item \textbf{Flusso principale degli eventi:}
 	\begin{enumerate}
 		\item L'utente può modificare il contenuto di una cella [UC9.16.1];
-		\item L'utente può modificare il numero di righe e di colonne [UC9.16.2];
+		\item L'utente può modificare il numero di righe [UC9.16.2];
 		\item L'utente può modificare il numero di colonne [UC9.16.3];
 		\item L'utente può cambiare la grandezza della tabella [UC9.16.4];
 		\item L'utente può cambiare il colore di sfondo della tabella [UC9.16.5];
@@ -424,7 +424,7 @@
 		\item \textbf{Flusso principale degli eventi:}
 		\begin{enumerate}
 			\item L'utente può cambiare la tipologia del grafico [UC9.17.1];
-			\item L'utente può cambiare la dimensione del grafico [UC9.17.2]
+			\item L'utente può cambiare la dimensione del grafico [UC9.17.2];
 			\item L'utente può cambiare i colori del grafico [UC9.17.3].
 		\end{enumerate}
 		\item \textbf{Postcondizione:} Il sistema ha apportato le modifiche scelte al grafico.
@@ -466,7 +466,7 @@
 \subsection{Caso d'uso UC9.19: Spostare una slide}
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente vuole spostare una \gls{slide} della presentazione precedentemente creata in un'altra posizione. Usa quindi gli appositi pulsanti per spostarla tra le slide nella posizione desiderata.
-	\item \textbf{Precondizione:} L'utente è nella schermata di visualizzazione globale della presentazione è ha creato almeno due slide;
+	\item \textbf{Scopo e descrizione:} L'utente vuole spostare una \gls{slide} della presentazione precedentemente creata in un'altra posizione. Usa quindi gli appositi pulsanti per spostarla tra le slides nella posizione desiderata.
+	\item \textbf{Precondizione:} L'utente è nella schermata di visualizzazione globale della presentazione è ha creato almeno due slides;
 	\item \textbf{Postcondizione:} La slide è stata spostata.
 \end{itemize}
