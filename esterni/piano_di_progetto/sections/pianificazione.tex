@@ -32,11 +32,56 @@ Si è deciso di non riportare i diagrammi \gls{PERT} in quanto si sono dimostrat
 
 \noindent Sono riportati anche i \gls{WBS} delle varie attività al fine di mostrarne la gerarchia.
 
+\subsection{Stati di progresso per SEMAT}
+Per ogni periodo individuato per lo sviluppo del progetto \PROGETTO{} è stato pianificato il raggiungimento di uno stato di avanzamento di SEMAT. Di seguito si specificano in maggior dettaglio alcuni stati, adattandoli alle circostanze di questo progetto:
+\begin{itemize}
+	\item \textbf{Opportunity:} rappresenta l'insieme delle circostanze che rendono appropriato lo sviluppo o il cambiamento di un sistema software. Nel nostro caso le opportunità sono derivate dalla valutazione effettuata sui capitolati d'appalto.
+	\begin{itemize}
+		\item \textit{Benefit Accrued:} identifica i benefici derivanti dall'utilizzo del prodotto e dal ritorno dell'investimento. Nel nostro caso il beneficio riguarda la valutazione finale del progetto.
+	\end{itemize}
+	\item \textbf{Requirements:} rappresentano i requisiti che il sistema software deve soddisfare in accordo con l'opportunità individuata e soddisfando gli stakeholder. Nel nostro caso i requisiti dovranno essere ricavati dal capitolato d'appalto scelto e la progettazione dovrà essere effetuata in accordo con i Proponenti.
+	\begin{itemize}
+		\item \textit{Fulfilled:} il sistema soddisfa tutti i requisiti individuati in fase di analisi. Nel nostro caso il sistema software creato soddisfa sia i requisiti obbligatori che quelli opzionali e desiderabili.
+	\end{itemize}
+	\item \textbf{Work:} rappresenta le attività che comportano uno sforzo fisico o mentale al fine di ottenere un risultato. Nel nostro caso rappresenta tutte le attività pianificate per il completamento del progetto.
+	\begin{itemize}
+		\item \textit{Conclused:} tutte le attività per il completamento del progetto sono terminate ed il Proponente accetta il prodotto. I risultati del lavoro sono stati raggiunti.
+	\end{itemize}
+\end{itemize}
+
+\noindent Per la descrizione degli stati non specificati si rimanda alle schede informative della sezione \ref{sezione 1.2.2}.
+
+\noindent Gli stati pianificati sono definiti nella seguente tabella:
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|p{0.15\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|p{0.10\textwidth}|}
+	\toprule
+		 & AN & AD & PA & PDC & VV \\
+	\midrule
+	\midrule
+		\textbf{Opportunity} & Value Established & Value Established & Viable & Addressed & Benefit Accrued \\
+	\midrule
+		\textbf{Stakeholders} & Involved & Involved & In Agreement & Satisfied for Deployment & Satisfied in Use \\
+	\midrule
+		\textbf{Requirements} & Coherent & Coherent & Acceptable & Addressed & Fulfilled \\
+	\midrule
+		\textbf{Software System} & & & Architecture Selected & Usable & Ready \\
+	\midrule
+		\textbf{Team} & Formed & Collaborating & Performing & Performing & Adjourned \\     	 
+	\midrule
+		\textbf{Work} & Prepared & Started & Under Control & Under Control & Conclused \\
+	\midrule
+		\textbf{Way of Work} & In Use & In Place & Working Well & Working Well & Retired  \\  
+	\bottomrule 
+\end{tabular}
+\caption{Stati avanzamento per SEMAT}
+\end{table}
+
 \subsection{Analisi}
 \begin{description}
 	\item[Periodo:] Dal 2015-02-27 al 2015-04-15 .
 \end{description}
-Questa periodo di lavoro inizia con la scelta del capitolato da svolgere e termina con la scadenza per consegna della documentazione in ingresso alla \textit{Revisione dei Requisiti}. 
+Questo periodo di lavoro inizia con la scelta del capitolato da svolgere e termina con la scadenza per consegna della documentazione in ingresso alla \textit{Revisione dei Requisiti}. 
 
 \noindent Le macro-attività principali sono:
 \begin{itemize}
