@@ -1,0 +1,30 @@
+\subsection{Interfaccia REST-like}
+Si é scelto di utilizzare uno stile REST-like per quanto riguarda l'interfaccia della componente back-end dell'applicativo \PROGETTO, cioè basato sullo stile REST ma modificato per permettere l'autenticazione e l'utilizzo di determinate operazioni. Più precisamente il comportamento dell'interfaccia con cui si accede agli elementi della collection può considerarsi REST all'interno di una sessione utente, ovvero dall'operazione di login fino a quella di logout. Le motivazioni di tale scelta sono le seguenti:
+\begin{itemize}
+	\item Semplicità di utilizzo;
+	\item Semplicità di integrazione con i framework esistenti (Angular.js);
+	\item Indipendenza dal linguaggio di programmazione utilizzato.
+	\end{itemize}
+	REST utilizza un aggregato di dati con un nome (URI) e una rappresentazione su cui é possibile invocare operazioni CRUD tramite la seguente configurazione:
+	
+	\begin{table}[h]
+		\begin{tabular}{|p{0.2\textwidth}|p{0.35\textwidth}|p{0.35\textwidth}|}
+			\toprule
+			
+			\textbf{Risorsa} & \textbf{URI della collection} \smallbreak
+			es. http://site.com/users  & \textbf{URI di un utente} \smallbreak
+			es. http:/site.com/users/\{id\} \\
+			
+			\midrule
+			\textbf{GET} & Fornisce informazioni sui membri della collection. & Fornisce una rappresentazione dell'elemento della collection indicato. \\ \midrule
+			\textbf{PUT} & Non utilizzata. & Sostituisce l'elemento della collection indicato. Se non esiste lo crea. \\  \midrule
+			\textbf{POST} & Crea un nuovo elemento nella collection. La URI del nuovo elemento é generata in automatico e solitamente viene restituita dall'operazione. & Non utilizzata. \\ \midrule
+			\textbf{DELETE} & Non utilizzata. & Cancella l'elemento della collection indicato.  \\ \midrule
+			
+			
+			\end{tabular}\\
+			\caption{Tabella configurazioni REST}
+			
+			\end{table}
+			
+Si é deciso di scegliere il formato JSON come formato di rappresentazione dei dati poiché si integra perfettamente con i framework utilizzati e con il linguaggio Javascript.
