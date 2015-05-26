@@ -4,7 +4,7 @@ Le tipologie di permessi sono:
 \begin{itemize}
 	\item Utente non autenticato: risorsa che può essere richiesta da qualsiasi utente;
 	\item Utente autenticato: risorsa che può essere richiesta solo da utenti autenticati;
-	\item Utente proprietario: risorsa che può essere richiesta solo da utenti proprietari di un progetto.
+	\item Utente proprietario: risorsa che può essere richiesta solo da utenti proprietari di un progetto. Un utente proprietario della sua collezione di progetti é anche proprietario degli altri elementi contenuti nella collezione.
 \end{itemize}
 
 \begin{table}[h]
@@ -19,22 +19,6 @@ Le tipologie di permessi sono:
 \begin{table}[h]
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
-		\textbf{/login}	& \textbf{POST} & \textbf{Utente non autenticato} \\ \midrule
-		\multicolumn{3}{|c|}{Crea una nuova sessione associata all'utente, corrisponde all'azione di login.} \\
-		\bottomrule
-	\end{tabular}\\
-	\par\bigskip
-	
-	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
-		\toprule
-		\textbf{/logout} & \textbf{DELETE} & \textbf{Utente autenticato, Utente proprietario} \\ \midrule
-		\multicolumn{3}{|c|}{Elimina la sessione associata all'utente, corrisponde all'azione di logout.} \\
-		\bottomrule
-	\end{tabular}\\
-	\par\bigskip
-	
-	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
-		\toprule
 		\textbf{/register} & \textbf{POST} & \textbf{Utente non autenticato} \\ \midrule
 		\multicolumn{3}{|c|}{Crea una richiesta di registrazione.} \\
 		\bottomrule
@@ -43,23 +27,15 @@ Le tipologie di permessi sono:
 	
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
-		\textbf{/forgotpassword} & \textbf{POST} & \textbf{Utente non autenticato} \\ \midrule
-		\multicolumn{3}{|c|}{Crea una richiesta di recupero password.} \\
+		\textbf{/search/\{string\}} & \textbf{GET} & \textbf{Utente non autenticato, Utente autenticato, Utente proprietario} \\ \midrule
+		\multicolumn{3}{|c|}{Restituisce i risultati di una ricerca tramite il parametro \{string\}.} \\
 		\bottomrule
 	\end{tabular}\\
 	\par\bigskip
 	
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
-		\textbf{/search} & \textbf{GET} & \textbf{Utente non autenticato, Utente autenticato, Utente proprietario} \\ \midrule
-		\multicolumn{3}{|c|}{Restituisce i risultati di una ricerca.} \\
-		\bottomrule
-	\end{tabular}\\
-	\par\bigskip
-	
-	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
-		\toprule
-		\textbf{/projects} & \textbf{GET} & \textbf{Utente proprietario} \\ \midrule
+		\textbf{/projects} & \textbf{GET} & \textbf{Utente autenticato, Utente proprietario} \\ \midrule
 		\multicolumn{3}{|c|}{Restituisce la lista di tutti i progetti del relativo utente.} \\
 		\bottomrule
 		\textbf{/projects} & \textbf{POST} & \textbf{Utente proprietario} \\ \midrule
@@ -72,7 +48,7 @@ Le tipologie di permessi sono:
 \begin{table}[H]
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
-		\textbf{/projects/project/\{id\}} & \textbf{GET} & \textbf{Utente proprietario} \\ \midrule
+		\textbf{/projects/project/\{id\}} & \textbf{GET} & \textbf{Utente autenticato, Utente proprietario} \\ \midrule
 		\multicolumn{3}{|c|}{Restituisce i dati del progetto con id project/\{id\}.} \\ \midrule
 		\textbf{/projects/project/\{id\}} & \textbf{PUT} & \textbf{Utente proprietario} \\ \midrule
 		\multicolumn{3}{|c|}{Modifica i dati del progetto con id project/\{id\}.} \\ \midrule
@@ -84,7 +60,7 @@ Le tipologie di permessi sono:
 	
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
-		\textbf{/projects/project/\{id\}/infographic} & \textbf{GET} & \textbf{Utente proprietario} \\ \midrule
+		\textbf{/projects/project/\{id\}/infographic} & \textbf{GET} & \textbf{Utente autenticato, Utente proprietario} \\ \midrule
 		\multicolumn{3}{|c|}{Restituisce i dati dell'infografica del progetto con id project/\{id\}.} \\
 		\bottomrule
 		\textbf{/projects/project/\{id\}/infographic} & \textbf{POST} & \textbf{Utente proprietario} \\ \midrule
@@ -98,7 +74,7 @@ Le tipologie di permessi sono:
 	
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
-		\textbf{/projects/project/\{id\}/presentation} & \textbf{GET} & \textbf{Utente proprietario} \\ \midrule
+		\textbf{/projects/project/\{id\}/presentation} & \textbf{GET} & \textbf{Utente autenticato, Utente proprietario} \\ \midrule
 		\multicolumn{3}{|c|}{Restituisce i dati della presentazione del progetto con id project/\{id\}.} \\
 		\bottomrule
 		\textbf{/projects/project/\{id\}/presentation} & \textbf{POST} & \textbf{Utente proprietario} \\ \midrule
