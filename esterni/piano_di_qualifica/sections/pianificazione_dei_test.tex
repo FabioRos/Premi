@@ -42,15 +42,71 @@ I test di sistema descritti sotto, sono quelli che si riferiscono ai requisisti 
 
 \subsection{Test di integrazione}
 In questa sezione vengono descritti i test di integrazione da usare per testare le componenti descritte nella progettazione ad alto livello, tali test permettono di verificare la corretta implementazione ed il corretto flusso dei dati all'interno del sistema. \'E stato scelto di utilizzare una strategia di integrazione incrementale, che permette lo sviluppo e la verifica delle componenti in parallelo. Unendo infatti le varie componenti per via incrementale, nella maggior parte dei casi, gli errori riscontrati da un test sono da attribuirsi all'ultima parte aggiunta, inoltre con questa strategia è possibile retrocedere e tornare ad uno stato noto e funzionante del sistema. Si \'e deciso di utilizzare il metodo \gls{bottom-up} per integrare prima le componenti con minori dipendenze funzionali e maggiori funzionalit\'a (che corrispondono alle componenti per garantire i requisiti obbligatori) al fine di ottenere il prima possibile una versione funzionante delle parti obbligatorie del sistema. Agendo in questo modo le componenti strettamente legate a parti obbligatorie vengono testate molte volte contribuendo cos\'i ad abbassare il numero di errori in esse contenute. Si procede poi risalendo l'albero delle dipendenze fino ad arrivare alla componente di alto livello alla quale saranno dedicati gli ultimi test.
-\newline
-\newline
-INSERIRE IMMAGINE CHE MOSTRA LE COMPONENTI DEL SW AD ALTO LIVELLO
-\newline
-\newline
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\linewidth]{img/Integrazione_componenti.png}
+\caption[Sequenza d'integrazione delle componenti]{Sequenza d'integrazione delle componenti}
+\label{fig:Integrazione_componenti}
+\end{figure}
+
 \subsection{Descrizione dei test di integrazione}
-Tabella
+
+
+\begin{center}
+	\begin{table}[h]
+		\begin{tabular}{|l|p{0.7\textwidth}|l|c|}
+		\toprule
+			\textbf{Test} & \textbf{Descrizione} & \textbf{Componente} & \textbf{Stato} \\
+			\midrule
+			TI1 & Test di controllo finale lato utente & Front-End & N.A\\
+			\midrule
+			TI2 & Test che verifica la corretta visualizzazione delle interfacce & View & N.A\\
+			\midrule
+			TI3 & Test che verifica la corretta interazione tra i comandi & Controller & N.A\\
+			\midrule
+			TI4 & Test che verifica il corretto comportamento tra client e server & Back-End & N.A\\
+			\midrule
+			TI5 & Test che verifica il corretto funzionamento del server & Logic-tier & N.A\\
+			\midrule
+			TI6 & Test che verifica la corretta interazione tra i comandidel server & Controller & N.A\\
+			\midrule
+			TI7 & Test che verifica la correttezza dei dati & Back-End::Data-tier & N.A\\
+		\bottomrule
+		\end{tabular}
+		\caption{Tabella di tracciamento test di integrazione}
+	\end{table}
+\end{center}
+
 \subsection{Tracciamento componenti–test di integrazione}
-Tabella
+
+\begin{center}
+	\begin{table}[h]
+		\begin{tabular}{|c|c|}
+		\toprule
+			\textbf{Componente} & \textbf{Test}\\
+			\midrule
+			Front-End & TI1\\
+			\midrule
+			Front-End::View & TI2\\
+			\midrule
+			Front-End::Controller & TI3\\
+			\midrule
+			Back-End & TI4\\
+			\midrule
+			Back-End::Logic-tier & TI5\\
+			\midrule
+			Back-End::Logic-tier::Controller & TI6\\
+			\midrule
+			Back-End::Data-tier & TI7\\
+		\bottomrule
+		\end{tabular}
+		\caption{Tabella di tracciamento test di integrazione}
+	\end{table}
+\end{center}
+
+\newpage
+
 \subsection{Test di validazione}
 In questa sezione si descrivono i test di validazione che servono per accertarsi che il prodotto realizzato sia conforme alle aspettative.
 Per ogni test vengono descritti i vari passi che un utente deve eseguire per testare i requisiti ad esso associati. Per quanto riguarda il tracciamento test di validazione/requisiti \'e riportato in \textit{Analisi dei Requisiti v2.0.0?}.
