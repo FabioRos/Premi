@@ -1,8 +1,8 @@
-Di seguito verranno descritti tutti i test di validazione, di sistema e di integrazione che sono stati previsti. Si prevede in futuro l'aggiornamento dei test di unit\'a. Per le tempistiche di aggiornamento dei test si faccia riferimento al \textit{Piano di Progetto v2.0.0?}. La dicitura \textbf{N.A.} contenuta nella colonna \textit{Stato} nelle tabelle sottostanti indica che il test non \'e ancora stato applicato in quanto verr\'a applicato solo successivamente, come descritto nel \textit{Piano di Progetto v2.0.0?}.
+Di seguito verranno descritti tutti i test di validazione, di sistema e di integrazione che sono stati previsti. Si prevede in futuro l'aggiornamento dei test di unità. Per le tempistiche di aggiornamento dei test si faccia riferimento al \textit{Piano di Progetto v2.0.0}. La dicitura \textbf{N.A.} contenuta nella colonna \textit{Stato} nelle tabelle sottostanti indica che il test non è ancora stato applicato in quanto verrà applicato solo successivamente, come descritto nel \textit{Piano di Progetto v2.0.0}.
 
 
 \subsection{Test di sistema}
-In questa sezione vengono descritti i test di sistema che permettono di verificare il comportamento dinamico del sistema nella sua interezza rispetto ai requisiti descritti nell'\textit{Analisi dei Requisiti v2.0.0?}.
+In questa sezione vengono descritti i test di sistema che permettono di verificare il comportamento dinamico del sistema nella sua interezza rispetto ai requisiti descritti nell'\textit{Analisi dei Requisiti v2.0.0}.
 I test di sistema descritti sotto, sono quelli che si riferiscono ai requisisti software individuati e quindi meritevoli di un test.
 
 \subsubsection{Descrizione dei test di sistema}
@@ -41,7 +41,7 @@ I test di sistema descritti sotto, sono quelli che si riferiscono ai requisisti 
 \newpage
 
 \subsection{Test di integrazione}
-In questa sezione vengono descritti i test di integrazione da usare per testare le componenti descritte nella progettazione ad alto livello, tali test permettono di verificare la corretta implementazione ed il corretto flusso dei dati all'interno del sistema. \'E stato scelto di utilizzare una strategia di integrazione incrementale, che permette lo sviluppo e la verifica delle componenti in parallelo. Unendo infatti le varie componenti per via incrementale, nella maggior parte dei casi, gli errori riscontrati da un test sono da attribuirsi all'ultima parte aggiunta, inoltre con questa strategia è possibile retrocedere e tornare ad uno stato noto e funzionante del sistema. Si \'e deciso di utilizzare il metodo \gls{bottom-up} per integrare prima le componenti con minori dipendenze funzionali e maggiori funzionalit\'a (che corrispondono alle componenti per garantire i requisiti obbligatori) al fine di ottenere il prima possibile una versione funzionante delle parti obbligatorie del sistema. Agendo in questo modo le componenti strettamente legate a parti obbligatorie vengono testate molte volte contribuendo cos\'i ad abbassare il numero di errori in esse contenute. Si procede poi risalendo l'albero delle dipendenze fino ad arrivare alla componente di alto livello alla quale saranno dedicati gli ultimi test.
+In questa sezione vengono descritti i test di integrazione da usare per testare le componenti descritte nella progettazione ad alto livello. Tali test permettono di verificare la corretta implementazione ed il corretto flusso dei dati all'interno del sistema. È stato scelto di utilizzare una strategia di integrazione incrementale, che permette lo sviluppo e la verifica delle componenti in parallelo. Unendo infatti le varie componenti per via incrementale, nella maggior parte dei casi, gli errori riscontrati da un test sono da attribuirsi all'ultima parte aggiunta, inoltre con questa strategia è possibile retrocedere e tornare ad uno stato noto e funzionante del sistema. Si è deciso di utilizzare il metodo \gls{bottom-up} per integrare prima le componenti con minori dipendenze funzionali e maggiori funzionalità (che corrispondono alle componenti per garantire i requisiti obbligatori) al fine di ottenere il prima possibile una versione funzionante delle parti obbligatorie del sistema. Agendo in questo modo le componenti strettamente legate a parti obbligatorie vengono testate molte volte contribuendo così ad abbassare il numero di errori in esse contenute. Si procede poi risalendo l'albero delle dipendenze fino ad arrivare alla componente di alto livello alla quale saranno dedicati gli ultimi test.
 
 \begin{figure}[h]
 \centering
@@ -77,43 +77,38 @@ In questa sezione vengono descritti i test di integrazione da usare per testare 
 		\caption{Tabella di tracciamento test di integrazione}
 	\end{table}
 \end{center}
-
-\subsection{Tracciamento componenti–test di integrazione}
-
-\begin{center}
-	\begin{table}[h]
-		\begin{tabular}{|c|c|}
-		\toprule
-			\textbf{Componente} & \textbf{Test}\\
-			\midrule
-			Front-End & TI1\\
-			\midrule
-			Front-End::View & TI2\\
-			\midrule
-			Front-End::Controller & TI3\\
-			\midrule
-			Back-End & TI4\\
-			\midrule
-			Back-End::Logic-tier & TI5\\
-			\midrule
-			Back-End::Logic-tier::Controller & TI6\\
-			\midrule
-			Back-End::Data-tier & TI7\\
-		\bottomrule
-		\end{tabular}
-		\caption{Tabella di tracciamento test di integrazione}
-	\end{table}
-\end{center}
-
 \newpage
+\subsection{Tracciamento componenti–test di integrazione}
+\begin{table}[h]
+	\begin{tabular}{|c|c|}
+	\toprule
+		\textbf{Componente} & \textbf{Test}\\
+	\midrule
+		Front-End & TI1\\
+	\midrule
+		Front-End::View & TI2\\
+	\midrule
+		Front-End::Controller & TI3\\
+	\midrule
+		Back-End & TI4\\
+	\midrule
+		Back-End::Logic-tier & TI5\\
+	\midrule
+		Back-End::Logic-tier::Controller & TI6\\
+	\midrule
+		Back-End::Data-tier & TI7\\
+	\bottomrule
+	\end{tabular}
+	\caption{Tabella di tracciamento test di integrazione}
+\end{table}
 
 \subsection{Test di validazione}
 In questa sezione si descrivono i test di validazione che servono per accertarsi che il prodotto realizzato sia conforme alle aspettative.
-Per ogni test vengono descritti i vari passi che un utente deve eseguire per testare i requisiti ad esso associati. Per quanto riguarda il tracciamento test di validazione/requisiti \'e riportato in \textit{Analisi dei Requisiti v2.0.0?}.
+Per ogni test vengono descritti i vari passi che un utente deve eseguire per testare i requisiti ad esso associati. Per quanto riguarda il tracciamento test di validazione/requisiti è riportato in \textit{Analisi dei Requisiti v2.0.0?}.
 
-\subsection{Test TV1}
+\subsubsection{Test TV1}
 L'utente vuole verificare che ci si possa iscrivere. \newline
-All'utente \'e richiesto di:
+All'utente è richiesto di:
 \begin{itemize}
 	\item Cliccare il bottone per la registrazione (TV1.1);
 	\item Inserire un nome utente univoco (TV1.2);
@@ -126,9 +121,9 @@ All'utente \'e richiesto di:
 	\item Controllare di aver ricevuto una email di conferma di avvenuta registrazione (TV1.9).
 \end{itemize}
 
-\subsection{Test TV2}
+\subsubsection{Test TV2}
 L'utente vuole verificare che ci si possa autenticare. \newline
-All'utente \'e richiesto di:
+All'utente è richiesto di:
 \begin{itemize}
 	\item Cliccare il bottone per effettuare il login (TV2.1);
 	\item Inserire il proprio nome utente (TV2.2);
@@ -137,18 +132,18 @@ All'utente \'e richiesto di:
 	\item Controllare di poter accedere alla propria pagina personale (TV2.5).
 \end{itemize}
 
-\subsection{Test TV3}
+\subsubsection{Test TV3}
 L'utente vuole verificare di riuscire a visualizzare i risultati di una ricerca. \newline
-All'utente \'e richiesto di:
+All'utente è richiesto di:
 \begin{itemize}
 	\item Effettuare una ricerca usando come chiave un nome utente (TV3.1);
 	\item Effettuare una ricerca usando come chiave un titolo di un progetto (TV3.2);
 	\item Verificare che compaia la lista dei risultati della ricerca (TV3.3).
 \end{itemize}
 
-\subsection{Test TV4}
+\subsubsection{Test TV4}
 L'utente vuole verificare di riuscire a visualizzare una presentazione. \newline
-All'utente \'e richiesto di:
+All'utente è richiesto di:
 \begin{itemize}
 	\item Aprire una presentazione (TV4.1);
 	\item Scegliere l'opzione per la visualizzazione come ascoltatore (TV4.2);
@@ -156,34 +151,34 @@ All'utente \'e richiesto di:
 	\item Verificare che la presentazione sia visualizzata correttamente e che ci si possa muovere liberamente tra le \gls{slide} (TV4.4).
 \end{itemize}
 
-\subsection{Test TV5}
+\subsubsection{Test TV5}
 L'utente vuole verificare che il PDF creato sia corretto rispetto al progetto. \newline
-All'utente \'e richiesto di:
+All'utente è richiesto di:
 \begin{itemize}
 	\item Aprire un progetto (TV5.1);
-	\item Scegliere la funzione di generazione del PDF dall'apposito men\'u (TV5.2);
+	\item Scegliere la funzione di generazione del PDF dall'apposito menù (TV5.2);
 	\item Verificare che il PDF creato corrisponda al progetto selezionato (TV5.3).
 \end{itemize}
 
-\subsection{Test TV6}
+\subsubsection{Test TV6}
 L'utente vuole verificare che il progetto esportato sia utilizzabile offline. \newline
-All'utente \'e richiesto di:
+All'utente è richiesto di:
 \begin{itemize}
 	\item Aprire un progetto (TV6.1);
-	\item Scegliere la funzione di esportazione del progetto dall'apposito men\'u (TV6.2);
+	\item Scegliere la funzione di esportazione del progetto dall'apposito menù (TV6.2);
 	\item Scegliere la posizione in cui salvare il progetto in locale (TV6.3);
 	\item Avviare la presentazione in locale del progetto salvato (TV6.4);
 	\item Verificare che la presentazione funzioni senza errori e che corrisponda al progetto selezionato (TV6.5);
 \end{itemize}
 
-\subsection{Test TV7}
+\subsubsection{Test TV7}
 L'utente vuole verificare che sia possibile editare un progetto precedentemente creato. \newline
-All'utente \'e richiesto di:
+All'utente è richiesto di:
 \begin{itemize}
 	\item Selezionare un progetto (TV7.1);
 	\item Selezionare la \gls{slide} che si vuole modificare (TV7.2);
 	\item Scegliere l'elemento che si desidera modificare o inserirne uno di nuovo (TV7.3)
-	\item[] All'utente \'e richiesto di:
+	\item[] All'utente è richiesto di:
 	\begin{itemize}
 		\item Inserire una nuova \gls{slide} (TV7.3.1);
 		\item Inserire un'immagine (TV7.3.2);
@@ -202,9 +197,9 @@ All'utente \'e richiesto di:
 	\item Verificare che le modifiche effettuate siano state applicate al progetto tramite visualizzazione dello stesso (TV7.4).
 \end{itemize}
 
-\subsection{Test TV8}
+\subsubsection{Test TV8}
 L'utente vuole verificare che si possa salvare un progetto. \newline
-All'utente \'e richiesto di:
+All'utente è richiesto di:
 \begin{itemize}
 	\item Creare un nuovo progetto o modificare un progetto già esistente (TV8.1);
 	\item Selezionare la funzione di salvataggio (TV8.2);
@@ -212,9 +207,9 @@ All'utente \'e richiesto di:
 	\item Verificare che il progetto sia stato salvato, con il nome scelto, nell'apposita sezione riservata ai propri progetti (TV8.4).
 \end{itemize}
 
-\subsection{Test TV9}
+\subsubsection{Test TV9}
 L'utente vuole verificare che si possa eliminare un progetto. \newline
-All'utente \'e richiesto di:
+All'utente è richiesto di:
 \begin{itemize}
 	\item Selezionare il progetto che si vuole eliminare (TV9.1);
 	\item Selezionare la funzione di eliminazione del progetto (TV9.2);
