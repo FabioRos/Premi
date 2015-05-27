@@ -27,7 +27,7 @@
 	\end{figure}
 	
 	\subsubsection{Gestione richiesta di visualizzazione di una presentazione}
-	Il diagramma seguente rappresenta lo scenario con il quale viene gestita una richiesta di visualizzazione di una presentazione. La richiesta é gestita da \textit{PresentationController} che invia un FindPresentation() a \textit{Presentation} che recupera la prima slide tramite un RetrieveFirstSlide() verso \textit{Slide}, il quale ritorna un FirstSlideFound(). Infine \textit{Presentation} segnala a \textit{PresentationController} che la visualizzazione é pronta, viene inviato un ViewingReady() a \textit{PresentationController} che ritorna un ViewingStartData().
+	Il diagramma seguente rappresenta lo scenario con il quale viene gestita una richiesta di visualizzazione di una presentazione. La richiesta é gestita da \textit{PresentationController} che invia un FindPresentation() a \textit{Presentation} che recupera la prima \gls{slide} tramite un RetrieveFirstSlide() verso \textit{Slide}, il quale ritorna un FirstSlideFound(). Infine \textit{Presentation} segnala a \textit{PresentationController} che la visualizzazione é pronta, viene inviato un ViewingReady() a \textit{PresentationController} che ritorna un ViewingStartData().
 	
 	\begin{figure}[H]
 		\centering
@@ -57,7 +57,7 @@
 	\newpage
 	
 	\subsubsection{Gestione richiesta di modifica di un progetto}
-	Si é deciso di suddividere in sotto-diagrammi il diagramma riguardante la richiesta di modifica, al fine di rendere meno complicata e di più facile comprensione il diagramma stesso. A causa di questa suddivisione i diagrammi saranno tra loro molto simili, la gestione delle richieste infatti é la stessa, cambiano i componenti e il nome di alcuni segnali. Si utilizzerà la dicitura \{element\} per indicare uno degli elementi modificabili di una slide (chart, table, image, text, o real time) nella seguente spiegazione. 
+	Si é deciso di suddividere in sotto-diagrammi il diagramma riguardante la richiesta di modifica, al fine di rendere meno complicata e di più facile comprensione il diagramma stesso. A causa di questa suddivisione i diagrammi saranno tra loro molto simili, la gestione delle richieste infatti é la stessa, cambiano i componenti e il nome di alcuni segnali. Si utilizzerà la dicitura \{element\} per indicare uno degli elementi modificabili di una \gls{slide} (chart, table, image, text, o \gls{real time}) nella seguente spiegazione. 
 	\\Lo scenario generale con il quale vengono gestite le richieste é il seguente:
 	\begin{itemize}
 		\item[]la richiesta di modifica viene gestita da \textit{\{element\}Controller} che la interpreta e invia un InterpretRequest() a \textit{ComponentController}. Nel caso riguardi la creazione di un nuovo \{element\}, \textit{ComponentController} invia un Insert\{element\}() o un Create\{element\}() a \textit{\{element\}} che crea l'elemento richiesto. Viene poi inviato un CreationDone() da \textit{ComponentController} a \textit{\{element\}Controller} che ritorna un ElDataSend().\\
