@@ -12,7 +12,7 @@
 
 % ----- package -----
 \usepackage[T1]{fontenc}   % codifica dei font in uscita
-\usepackage[utf8]{inputenc}   % lettere accentate da tastiera
+\usepackage[utf8x]{inputenc}   % lettere accentate da tastiera
 \usepackage[italian]{babel}   % lingua principale del documento
 \usepackage[a4paper, top= 3cm, bottom= 3cm, left= 3cm, right= 3cm, bindingoffset= 5mm]{geometry} % impostazione margini
 
@@ -72,8 +72,8 @@
 
 
 % ----- glossario -----
-\loadglsentries{../../glossario/glossario.tex}
-\renewcommand*{\glssymbolsgroupname}{Simboli}
+%\loadglsentries{../../glossario/glossario.tex}
+%\renewcommand*{\glssymbolsgroupname}{Simboli}
 
 
 % ----- stile pagina -----
@@ -104,42 +104,7 @@
 
 % ----- prima pagina -----
 \begin{document}
-\thispagestyle{firststyle}
-
-\begin{center}
-
-%   \vspace{7cm}
-	\textbf{{\fontsize{40pt}{41pt}\selectfont \PROGETTO}} \\
-	\rule{8cm}{3pt}
-   
-   \vspace{4cm}
-   \includegraphics[height= 4cm] {\LOGO}
-   
-	\vspace{1cm}
-   {\fontsize{30pt}{31pt}\selectfont \textbf{\GRUPPO}}
-	
-	\vspace{5cm}
-	{\fontsize{18pt}{24pt}\selectfont \textbf{\DOCUMENTO}}
-	
-%	\vspace{1cm}
-	\begin{center}
-		\begin{tabular}{r|l}
-				\textbf{Versione} & \VERSIONE \\
-				\textbf{Redattori} & \REDATTORE \\
-				\textbf{Verificatori} & \VERIFICATORE \\
-				\textbf{Responsabili} & \RESPONSABILE \\
-				\textbf{Uso} & \USO \\
-				\textbf{Lista di distribuzione} & \DISTRIBUZIONE
-		\end{tabular}
-	\end{center}
-
-	\vspace{1cm}
-	\textbf{\DESCRIZIONE}
-
-\end{center}
-
-
-\newpage
+%\thispagestyle{firststyle}
 
 % ----- pagine successive -----
 \ULCornerWallPaper{1}{\INTESTAZIONE}
@@ -147,10 +112,8 @@
 
 %\thispagestyle{empty}
 
-\newpage
-
 % diario delle modifiche
 
 
 % numerazione pagine indici
-\pagenumbering{Roman}
+%\pagenumbering{Roman}
