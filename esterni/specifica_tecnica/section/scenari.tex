@@ -7,6 +7,7 @@
 		\caption{Diagrammi di sequenza - Richiesta di registrazione}
 	\end{figure}
 
+\newpage
 	\subsubsection{Gestione richiesta di autenticazione}
 	Il seguente diagramma rappresenta lo scenario con il quale viene gestita una richiesta di autenticazione. La richiesta viene presa in carico da \textit{LoginController} che verifica i dati e invia un CheckData() a \textit{UsersController}, da qui viene inviato un SearchForUser() a \textit{Utenti} per trovare una corrispondenza. Se le credenziali sono corrette \textit{Utenti} lo segnala a \textit{UsersController} tramite CorrectCredentials() e alla fine viene emesso un segnale di Redirect(); se le credenziali non sono corrette viene segnalato l'errore con un IncorrectCredentials() e in uscita arriva un ErrorMessage().\\
 	Da qui è possibile che arrivi una richiesta di recupero password. Essa é gestita da \textit{LoginController} che invia un CredentialsRecoveryRequest() a \textit{ForgotPasswordController}, poi \textit{UsersController} verifica i dati ricevuti e ricerca l'utente con un SearchForUser() verso \textit{Utenti}. Se i dati per il recupero password sono corretti \textit{UsersController} invia un CredentialsSendToMail() a \textit{ForgotPasswordController}, altrimenti viene inviato un CredentialsError(). Alla fine inviato un segnale in uscita RecoveryMessage() o ErrorMessage() da \textit{LoginController} rispettivamente se il recupero credenziali ha avuto buon esito o se é fallito.
@@ -17,15 +18,16 @@
 		\caption{Diagrammi di sequenza - Richiesta di autenticazione}
 	\end{figure}
 
+\newpage
 	\subsubsection{Gestione richiesta di ricerca di un progetto}
 	Il diagramma seguente rappresenta lo scenario con il quale viene gestita una richiesta di ricerca di un progetto. \textit{SearchResultController} interpreta la richiesta e definisce se sia una ricerca tramite nome utente o tramite nome del progetto. Nel primo caso viene inviato un CheckData() a \textit{UsersController} che verifica la richiesta e invia un SendResults() a \textit{SearchResultsController} che emette un DataResults(). Nel secondo caso il CheckData() viene inviato a \textit{ProjectController} che risponde con un SendResults() a \textit{SearchResultsController} che invia un DataResults().
-	\newpage
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.5]{img/search.png}
 		\caption{Diagrammi di sequenza - Richiesta di ricerca di un progetto}
 	\end{figure}
 	
+\newpage	
 	\subsubsection{Gestione richiesta di visualizzazione di una presentazione}
 	Il diagramma seguente rappresenta lo scenario con il quale viene gestita una richiesta di visualizzazione di una presentazione. La richiesta é gestita da \textit{PresentationController} che invia un FindPresentation() a \textit{Presentation} che recupera la prima \gls{slide} tramite un RetrieveFirstSlide() verso \textit{\gls{Slide}}, il quale ritorna un FirstSlideFound(). Infine \textit{Presentation} segnala a \textit{PresentationController} che la visualizzazione é pronta, viene inviato un ViewingReady() a \textit{PresentationController} che ritorna un ViewingStartData().
 	
@@ -45,6 +47,7 @@
 		\caption{Diagrammi di sequenza - Richiesta di creazione di un progetto}
 	\end{figure}
 	
+\newpage	
 	\subsubsection{Gestione richiesta di apertura di un progetto}
 	Il seguente diagramma rappresenta lo scenario con il quale viene gestita una richiesta di apertura di un progetto. La richiesta viene gestita da \textit{ProjectController} che invia un SearchForProject() a \textit{Project} per cercare il progetto richiesto. Se l'utente non interrompe l'apertura, da \textit{Project} viene inviato un ProjectFound() a \textit{ProjectController} che ritorna un OpeningProjectData(), altrimenti \textit{Project} invia un OpeningCancelled() e successivamente viene ritornato un UserInterruptMessage() da \textit{ProjectController}.
 	
