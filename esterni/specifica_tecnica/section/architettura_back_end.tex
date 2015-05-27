@@ -1,17 +1,17 @@
-\subsection{Premi::Back-End}
+\subsection{Premi::\gls{Back-End}}
 	\subsubsection*{Informazioni sul package}
 		\begin{figure}[h]
 			\centering
 			\includegraphics[width=0.7\linewidth]{img/back-end_package}
 			\caption[Premi::Back-End]{Premi::Back-End}
 		\end{figure}
-		Il package contiene le componenti della parte di back-end dell'applicazione.
+		Il package contiene le componenti della parte di \gls{back-end} dell'applicazione.
 		
 	\subsubsection*{Package contenuti}
 		\begin{itemize}
-			\item Premi::Back-End::Presentation-Tier;
-			\item Premi::Back-End::Logic-Tier;
-			\item Premi::Back-End::Data-Tier.
+			\item Premi::\gls{Back-End}::Presentation-Tier;
+			\item Premi::\gls{Back-End}::Logic-Tier;
+			\item Premi::\gls{Back-End}::Data-Tier.
 		\end{itemize}
 
 \newpage
@@ -23,13 +23,13 @@
 			\includegraphics[width=0.5\linewidth]{img/back-end_presentation-tier}
 			\caption[Premi::Back-End::Presentation-Tier]{Premi::Back-End::Presentation-Tier}
 		\end{figure}
-		Il package contiene le componenti necessarie per consentire il funzionamento del servizio REST, in modo tale da rendere possibile l'interfacciamento con il front-end.
+		Il package contiene le componenti necessarie per consentire il funzionamento del servizio \gls{REST}, in modo tale da rendere possibile l'interfacciamento con il \gls{front-end}.
 		
 	\subsubsection*{Package contenuti}
 		\begin{itemize}
 			\item Premi::Back-End::Data-Tier::REST:
 			\begin{itemize}
-				\item \textbf{Descrizione}: Il package contiene la struttura necessaria al funzionamento delle chiamate REST da parte del front-end, richiamando i rispettivi controller.
+				\item \textbf{Descrizione}: Il package contiene la struttura necessaria al funzionamento delle chiamate \gls{REST} da parte del \gls{front-end}, richiamando i rispettivi controller.
 			\end{itemize}
 		\end{itemize}
 		
@@ -59,19 +59,19 @@
 		\includegraphics[width=0.9\linewidth]{img/back-end_logic-tier_controller}
 		\caption[Premi::Back-End::Logic-Tier::Controller]{Premi::Back-End::Logic-Tier::Controller}
 	\end{figure}
-	Il package contiene le componenti che gestiscono la parte controller del lato back-end dell'applicazione. Al suo interno è presente l'interfaccia comune \textit{FrontController} dalla quale derivano tutti i controller del programma.
+	Il package contiene le componenti che gestiscono la parte controller del lato \gls{back-end} dell'applicazione. Al suo interno è presente l'interfaccia comune \textit{FrontController} dalla quale derivano tutti i controller del programma.
 	Sono presenti i controller per il progetto e i suoi componenti.
 
 	\subsubsection*{Package contenuti}
 		\begin{itemize}
 			\item Premi::Back-End::Logic-Tier::Controller::ComponentController:
 			\begin{itemize}
-				\item Descrizione: Il package contiene i controller per la gestione degli elementi di una slide.
+				\item Descrizione: Il package contiene i controller per la gestione degli elementi di una \gls{slide}.
 			\end{itemize}
 			
 			\item Premi::Back-End::Logic-Tier::Controller::RestController:
 			\begin{itemize}
-				\item Descrizione: Il package contiene i controller per il REST.
+				\item Descrizione: Il package contiene i controller per il \gls{REST}.
 			\end{itemize}
 			
 			\item Premi::Back-End::Logic-Tier::Controller::UsersController:
@@ -87,7 +87,7 @@
 				\item \textbf{Descrizione}: Classe che gestisce le operazioni e la logica applicativa degli elementi del progetto.
 				\item \textbf{Relazioni con altri package}:
 				\begin{itemize}
-					\item Premi::Back-End::Presentation-Tier::Rest.
+					\item Premi::Back-End::Presentation-Tier::\gls{Rest}.
 				\end{itemize}
 			\end{itemize}
 			
@@ -109,9 +109,9 @@
 				\end{itemize}
 			\end{itemize}
 			
-			\item Premi::Back-End::Logic-Tier::Controller::InfographicController:
+			\item Premi::\gls{Back-End}::Logic-Tier::Controller::InfographicController:
 			\begin{itemize}
-				\item \textbf{Descrizione}: Classe che gestisce le operazioni e la logica riguardante la gestione e la modifica di un'infografica;
+				\item \textbf{Descrizione}: Classe che gestisce le operazioni e la logica riguardante la gestione e la modifica di un'\gls{infografica};
 				\item \textbf{Relazioni con altre classi}:
 				\begin{itemize}
 					\item Premi::Back-End::Logi-Tier::Controller::FrontController.
@@ -120,7 +120,7 @@
 			
 			\item Premi::Back-End::Logic-Tier::Controller::SlideController:
 			\begin{itemize}
-				\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica riguardante la gestione e la modifica di una slide;
+				\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica riguardante la gestione e la modifica di una \gls{slide};
 				\item \textbf{Relazioni con altre classi}:
 				\begin{itemize}
 					\item Premi::Back-End::Logi-Tier::Controller::FrontController.
@@ -137,13 +137,13 @@
 			\includegraphics[width=0.9\linewidth]{img/back-end_logic-tier_controller_componentcontroller}
 			\caption[Premi::Back-End::Logic-Tier::Controller::ComponentController]{Premi::Back-End::Logic-Tier::Controller::ComponentController}
 		\end{figure}
-		Il package contiene le classi dei controller per la gestione degli elementi di una slide.
+		Il package contiene le classi dei controller per la gestione degli elementi di una \gls{slide}.
 		
 	\subsubsection*{Classi contenute}
 	\begin{itemize}
 		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa di tutti i componenti della slide;
+			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa di tutti i componenti della \gls{slide};
 			\item \textbf{Relazioni con altre classi}:
 			\begin{itemize}
 				\item Premi::Back-End::Logic-Tier::Controller::FrontController.
@@ -152,7 +152,7 @@
 		
 		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::RealTimeDataController:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per i dati real-time della slide;
+			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per i dati real-time della \gls{slide};
 			\item \textbf{Relazioni con altre classi}:
 			\begin{itemize}
 				\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController.
@@ -161,7 +161,7 @@
 		
 		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ChartController:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per i grafici della slide;
+			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per i grafici della \gls{slide};
 			\item \textbf{Relazioni con altre classi}:
 			\begin{itemize}
 				\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController.
@@ -170,7 +170,7 @@
 		
 		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ImageController:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per le immagini della slide;
+			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per le immagini della \gls{slide};
 			\item \textbf{Relazioni con altre classi}:
 			\begin{itemize}
 				\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController.
@@ -179,7 +179,7 @@
 		
 		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::TableController:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per le tabelle della slide;
+			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per le tabelle della \gls{slide};
 			\item \textbf{Relazioni con altre classi}:
 			\begin{itemize}
 				\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController.
@@ -188,7 +188,7 @@
 		
 		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::TextController:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per le caselle di testo della slide;
+			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per le caselle di testo della \gls{slide};
 			\item \textbf{Relazioni con altre classi}:
 			\begin{itemize}
 				\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController.
@@ -329,9 +329,9 @@
 			\end{itemize}
 		\end{itemize}
 		
-		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Slide:
+		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::\gls{Slide}:
 		\begin{itemize}
-			\item \textbf{Descrizione:} classe che rappresenta le slide che compongono una presentazione;
+			\item \textbf{Descrizione:} classe che rappresenta le \gls{slide} che compongono una presentazione;
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
 				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
@@ -340,7 +340,7 @@
 		
 		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Component:
 		\begin{itemize}
-			\item \textbf{Descrizione:} classe base che rappresenta i componenti di cui è formata una slide;
+			\item \textbf{Descrizione:} classe base che rappresenta i componenti di cui è formata una \gls{slide};
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
 				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
@@ -349,7 +349,7 @@
 		
 		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Chart:
 		\begin{itemize}
-			\item \textbf{Descrizione:} classe che rappresenta l'elemento "grafico" che può essere inserito in una slide;
+			\item \textbf{Descrizione:} classe che rappresenta l'elemento "grafico" che può essere inserito in una \gls{slide};
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
 				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
@@ -358,7 +358,7 @@
 		
 		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::RealTimeData:
 		\begin{itemize}
-			\item \textbf{Descrizione:} classe che rappresenta l'elemento "dati real-time" che può essere inserito in una slide;
+			\item \textbf{Descrizione:} classe che rappresenta l'elemento "dati real-time" che può essere inserito in una \gls{slide};
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
 				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
@@ -367,7 +367,7 @@
 		
 		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Text:
 		\begin{itemize}
-			\item \textbf{Descrizione:} classe che rappresenta l'elemento "testo" che può essere inserito in una slide;
+			\item \textbf{Descrizione:} classe che rappresenta l'elemento "testo" che può essere inserito in una \gls{slide};
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
 				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
@@ -376,7 +376,7 @@
 		
 		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Image:
 		\begin{itemize}
-			\item \textbf{Descrizione:} classe che rappresenta l'elemento "immagine" che può essere inserito in una slide;
+			\item \textbf{Descrizione:} classe che rappresenta l'elemento "immagine" che può essere inserito in una \gls{slide};
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
 				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
@@ -385,7 +385,7 @@
 		
 		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Table:
 		\begin{itemize}
-			\item \textbf{Descrizione:} classe che rappresenta l'elemento "tabella" che può essere inserito in una slide;
+			\item \textbf{Descrizione:} classe che rappresenta l'elemento "tabella" che può essere inserito in una \gls{slide};
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
 				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
@@ -427,7 +427,7 @@
 				
 			\item Premi::Back-End::Data-Tier::ProjectMapper:
 			\begin{itemize}
-				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti di tipo progetto nel database.
+				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti di tipo progetto nel \gls{database}.
 				\item \textbf{Relazione con altre classi}:
 				\begin{itemize}
 					\item Premi::Back-End::Data-Tier::DBMapper.
@@ -436,7 +436,7 @@
 				
 			\item Premi::Back-End::Data-Tier::PresentationMapper:
 			\begin{itemize}
-				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti di tipo presentazione nel database.
+				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti di tipo presentazione nel \gls{database}.
 				\item \textbf{Relazione con altre classi}:
 				\begin{itemize}
 					\item Premi::Back-End::Data-Tier::DBMapper.
@@ -445,7 +445,7 @@
 			
 			\item Premi::Back-End::Data-Tier::SlideMapper:
 			\begin{itemize}
-				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti di tipo slide nel database.
+				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti di tipo \gls{slide} nel \gls{database}.
 				\item \textbf{Relazione con altre classi}:
 				\begin{itemize}
 					\item Premi::Back-End::Data-Tier::DBMapper.
@@ -454,7 +454,7 @@
 			
 			\item Premi::Back-End::Data-Tier::ComponentMapper:
 			\begin{itemize}
-				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti componenti della slide nel database. Da questa classe deriveranno le altre classi specifiche per ogni componente, seguendo la struttura descritta all'interno del package *::ProjectModel;
+				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti componenti della \gls{slide} nel \gls{database}. Da questa classe deriveranno le altre classi specifiche per ogni componente, seguendo la struttura descritta all'interno del package *::ProjectModel;
 				\item \textbf{Relazione con altre classi}:
 				\begin{itemize}
 					\item Premi::Back-End::Data-Tier::DBMapper.
@@ -463,7 +463,7 @@
 			
 			\item Premi::Back-End::Data-Tier::InfographicMapper:
 			\begin{itemize}
-				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti di tipo infografica nel database.
+				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti di tipo \gls{infografica} nel \gls{database}.
 				\item \textbf{Relazione con altre classi}:
 				\begin{itemize}
 					\item Premi::Back-End::Data-Tier::DBMapper.
@@ -472,7 +472,7 @@
 			
 			\item Premi::Back-End::Data-Tier::UserMapper:
 			\begin{itemize}
-				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti di tipo utente nel database.
+				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti di tipo utente nel \gls{database}.
 				\item \textbf{Relazione con altre classi}:
 				\begin{itemize}
 					\item Premi::Back-End::Data-Tier::DBMapper.

@@ -1,5 +1,5 @@
 \subsection{Interfaccia REST}
-Di seguito sono elencate le risorse REST associate al tipo di metodo che è possibile richiedere su di esse e i permessi richiesti per poter effettuare la richiesta.
+Di seguito sono elencate le risorse \gls{REST} associate al tipo di metodo che è possibile richiedere su di esse e i permessi richiesti per poter effettuare la richiesta.
 Le tipologie di permessi sono:
 \begin{itemize}
 	\item Utente non autenticato: risorsa che può essere richiesta da qualsiasi utente;
@@ -61,13 +61,13 @@ Le tipologie di permessi sono:
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/projects/project\{id\}/infographic} & \textbf{GET} & \textbf{Utente autenticato, Utente proprietario} \\ \midrule
-		\multicolumn{3}{|c|}{Restituisce i dati dell'infografica del progetto con id project\{id\}.} \\
+		\multicolumn{3}{|c|}{Restituisce i dati dell'\gls{infografica} del progetto con id project\{id\}.} \\
 		\bottomrule
 		\textbf{/projects/project\{id\}/infographic} & \textbf{POST} & \textbf{Utente proprietario} \\ \midrule
-		\multicolumn{3}{|c|}{Crea un'infografica relativa al progetto con id project\{id\}.} \\
+		\multicolumn{3}{|c|}{Crea un'\gls{infografica} relativa al progetto con id project\{id\}.} \\
 		\bottomrule
 		\textbf{/projects/project\{id\}/infographic} & \textbf{DELETE} & \textbf{Utente proprietario} \\ \midrule
-		\multicolumn{3}{|c|}{Elimina l'infografica relativa al progetto con id project\{id\}.} \\
+		\multicolumn{3}{|c|}{Elimina l'\gls{infografica} relativa al progetto con id project\{id\}.} \\
 		\bottomrule
 	\end{tabular}\\
 	\par\bigskip
@@ -89,24 +89,24 @@ Le tipologie di permessi sono:
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/projects/project\{id\}/presentation
-			/slide\{id\}/components} & \textbf{GET} & \textbf{Utente proprietario} \\ \midrule
-		\multicolumn{3}{|p{1.0\textwidth}|}{Restituisce la lista dei componenti della slide con id slide\{id\} nella presentazione del progetto con id project\{id\}.} \\
+			/\gls{slide}\{id\}/components} & \textbf{GET} & \textbf{Utente proprietario} \\ \midrule
+		\multicolumn{3}{|p{1.0\textwidth}|}{Restituisce la lista dei componenti della \gls{slide} con id \gls{slide}\{id\} nella presentazione del progetto con id project\{id\}.} \\
 		\bottomrule
 	\end{tabular}\\
 	\par\bigskip
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/projects/project\{id\}/presentation
-			/slide\{id\}/components/component\{id\}} & \textbf{POST} & \textbf{Utente proprietario} \\ \midrule
-		\multicolumn{3}{|p{1.0\textwidth}|}{Crea la componente di id component\{id\} nella slide con id slide\{id\} della presentazione relativa al progetto con id project\{id\}.} \\
+			/\gls{slide}\{id\}/components/component\{id\}} & \textbf{POST} & \textbf{Utente proprietario} \\ \midrule
+		\multicolumn{3}{|p{1.0\textwidth}|}{Crea la componente di id component\{id\} nella \gls{slide} con id \gls{slide}\{id\} della presentazione relativa al progetto con id project\{id\}.} \\
 		\bottomrule
 		\textbf{/projects/project\{id\}/presentation
-			/slide\{id\}/components/component\{id\}} & \textbf{PUT} & \textbf{Utente proprietario} \\ \midrule
-		\multicolumn{3}{|p{1.0\textwidth}|}{Modifica la componente di id component\{id\} nella slide con id slide\{id\} della presentazione relativa al progetto con id project\{id\}.} \\
+			/\gls{slide}\{id\}/components/component\{id\}} & \textbf{PUT} & \textbf{Utente proprietario} \\ \midrule
+		\multicolumn{3}{|p{1.0\textwidth}|}{Modifica la componente di id component\{id\} nella \gls{slide} con id \gls{slide}\{id\} della presentazione relativa al progetto con id project\{id\}.} \\
 		\bottomrule
 		\textbf{/projects/project\{id\}/presentation
-			/slide\{id\}/components/component\{id\}} & \textbf{DELETE} & \textbf{Utente proprietario} \\ \midrule
-		\multicolumn{3}{|p{1.0\textwidth}|}{Elimina la componente di id component\{id\} nella slide con id slide\{id\} della presentazione relativa al progetto con id project\{id\}.} \\
+			/\gls{slide}\{id\}/components/component\{id\}} & \textbf{DELETE} & \textbf{Utente proprietario} \\ \midrule
+		\multicolumn{3}{|p{1.0\textwidth}|}{Elimina la componente di id component\{id\} nella \gls{slide} con id \gls{slide}\{id\} della presentazione relativa al progetto con id project\{id\}.} \\
 		\bottomrule
 	\end{tabular}	
 \end{table}

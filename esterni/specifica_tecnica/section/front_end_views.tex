@@ -5,7 +5,7 @@
 			\includegraphics[width=0.7\linewidth]{img/front-end_views}
 			\caption[Premi::Front-End::Views]{Premi::Front-End::Views}
 		\end{figure}
-		Il package contiene gli elementi per creare la parte grafica del front-end, la visualizzazione delle pagine e dell'editor del progetto.
+		Il package contiene gli elementi per creare la parte grafica del \gls{front-end}, la visualizzazione delle pagine e dell'editor del progetto.
 
 	\subsubsection*{Package contenuti:}
 
@@ -41,7 +41,7 @@
 
 		\item Premi::Front-End::Views::SlideEditView:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe per la gestione della pagina dell'editor di una slide;
+			\item \textbf{Descrizione}: classe per la gestione della pagina dell'editor di una \gls{slide};
 			\item \textbf{Relazioni con altre classi}:
 			\begin{itemize}
 				\item Premi::Front-End::Views::ComponentView.
@@ -65,12 +65,12 @@
 
 		\item Premi::Front-End::Views::ComponentView:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe base per la gestione grafica degli elementi che è possibile includere in una slide.
+			\item \textbf{Descrizione}: classe base per la gestione grafica degli elementi che è possibile includere in una \gls{slide}.
 		\end{itemize}
 
 		\item Premi::Front-End::Views::TableView:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe per la gestione grafica dell'elemento tabella che è possibile includere in una slide. Può essere composta da altri elementi della classe *::ComponentView;
+			\item \textbf{Descrizione}: classe per la gestione grafica dell'elemento tabella che è possibile includere in una \gls{slide}. Può essere composta da altri elementi della classe *::ComponentView;
 			\item \textbf{Relazioni con altre classi}:
 			\begin{itemize}
 				\item Premi::Front-End::Views::ComponentView.
@@ -80,7 +80,7 @@
 
 		\item Premi::Front-End::Views::TextView:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe per la gestione grafica dell'elemento casella di testo che è possibile includere in una slide;
+			\item \textbf{Descrizione}: classe per la gestione grafica dell'elemento casella di testo che è possibile includere in una \gls{slide};
 			\item \textbf{Relazioni con altre classi}:
 			\begin{itemize}
 				\item Premi::Front-End::Views::ComponentView.
@@ -89,7 +89,7 @@
 
 		\item Premi::Front-End::Views::ImageView:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe per la gestione grafica dell'elemento immagine che è possibile includere in una slide;
+			\item \textbf{Descrizione}: classe per la gestione grafica dell'elemento immagine che è possibile includere in una \gls{slide};
 			\item \textbf{Relazioni con altre classi}:
 			\begin{itemize}
 				\item Premi::Front-End::Views::ComponentView.
@@ -98,7 +98,7 @@
 
 		\item Premi::Front-End::Views::RealTimeDataView:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe per la gestione grafica dell'elemento di dati real-time che è possibile includere in una slide;
+			\item \textbf{Descrizione}: classe per la gestione grafica dell'elemento di dati real-time che è possibile includere in una \gls{slide};
 			\item \textbf{Relazioni con altre classi}:
 			\begin{itemize}
 				\item Premi::Front-End::Views::ComponentView.
@@ -107,7 +107,7 @@
 
 		\item Premi::Front-End::Views::ChartView:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe per la gestione grafica dell'elemento grafico che è possibile includere in una slide;
+			\item \textbf{Descrizione}: classe per la gestione grafica dell'elemento grafico che è possibile includere in una \gls{slide};
 			\item \textbf{Relazioni con altre classi}:
 			\begin{itemize}
 				\item Premi::Front-End::Views::ComponentView;
@@ -172,7 +172,7 @@
 		\begin{itemize}
 			\item Premi::Front-End::Views::PresentSlideShowViews::SlideView:
 			\begin{itemize}
-				\item \textbf{Descrizione}: classe per creare la parte grafica di una slide nella visualizzazione di una presentazione. È composta da oggetti della classe ComponentView,o sue derivate;
+				\item \textbf{Descrizione}: classe per creare la parte grafica di una \gls{slide} nella visualizzazione di una presentazione. È composta da oggetti della classe ComponentView,o sue derivate;
 				\item \textbf{Relazioni con altre classi}:
 				\begin{itemize}
 					\item Premi::Front-End::Views::ComponentView.
@@ -181,7 +181,7 @@
 
 			\item Premi::Front-End::Views::PresentSlideShowViews::PresentationInPresenterModeView:
 			\begin{itemize}
-				\item \textbf{Descrizione}: classe per creare la parte grafica di una slide nella visualizzazione di una presentazione nella modalità presentatore. È composta da oggetti della classe SlideView in quanto la contiene implementandola;
+				\item \textbf{Descrizione}: classe per creare la parte grafica di una \gls{slide} nella visualizzazione di una presentazione nella modalità presentatore. È composta da oggetti della classe SlideView in quanto la contiene implementandola;
 				\item \textbf{Relazioni con altre classi}:
 				\begin{itemize}
 					\item Premi::Front-End::Views::PresentSlideShowViews::SlideView.
@@ -189,7 +189,7 @@
 			\end{itemize}
 		\end{itemize}
 
-\subsection{Premi::Front-End::Views::InfographicEditorViews}
+\subsection{Premi::\gls{Front-End}::Views::InfographicEditorViews}
 	\subsubsection*{Informazioni sul package}
 	\begin{figure}[h]
 		\centering
@@ -203,12 +203,12 @@
 
 		\item Premi::Front-End::Views::InfographicEditorViews::InfographicEditorView:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe per creare un'infografica. Permette la personalizzazione di essa attraverso la selezione delle slide da usare.
+			\item \textbf{Descrizione}: classe per creare un'\gls{infografica}. Permette la personalizzazione di essa attraverso la selezione delle \gls{slide} da usare.
 		\end{itemize}
 
 		\item Premi::Front-End::Views::InfographicEditorViews::TemplatePageView:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe che permette di creare la sezione per selezionare il template da utilizzare nell'infografica;
+			\item \textbf{Descrizione}: classe che permette di creare la sezione per selezionare il \gls{template} da utilizzare nell'\gls{infografica};
 			\item \textbf{Relazioni con altre classi}:
 			\begin{itemize}
 				\item Premi::Front-End::Views::InfographicEditorViews::InfographicEditorView.
