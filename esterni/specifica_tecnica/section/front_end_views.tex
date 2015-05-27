@@ -1,7 +1,7 @@
 	\subsubsection*{Informazioni sul package}
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=0.7\linewidth]{img/front-end_views}
+			\includegraphics[width=0.9\linewidth]{img/front-end_views}
 			\caption[Premi::Front-End::Views]{Premi::Front-End::Views}
 		\end{figure}
 		Il package contiene gli elementi per creare la parte grafica del \gls{front-end}, la visualizzazione delle pagine e dell'editor del progetto.
@@ -35,7 +35,7 @@
 
 		\item Premi::Front-End::Views::ProjectView:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe per la gestione della pagina del progetto attualmente aperto dall'utente.
+			\item \textbf{Descrizione}: classe per la gestione di una pagina relativa ad un progetto.
 		\end{itemize}
 
 		\item Premi::Front-End::Views::SlideEditView:
@@ -171,19 +171,27 @@
 		\begin{itemize}
 			\item Premi::Front-End::Views::PresentSlideShowViews::SlideView:
 			\begin{itemize}
-				\item \textbf{Descrizione}: classe per creare la parte grafica di una \gls{slide} nella visualizzazione di una presentazione. È composta da oggetti della classe ComponentView,o sue derivate;
+				\item \textbf{Descrizione}: classe per creare la parte grafica di una \gls{slide} nella visualizzazione di una presentazione. È composta da oggetti della classe ComponentView;
 				\item \textbf{Relazioni con altre classi}:
 				\begin{itemize}
 					\item Premi::Front-End::Views::ComponentView.
 				\end{itemize}
 			\end{itemize}
+				\item Premi::Front-End::Views::PresentSlideShowViews::PresentationView:
+				\begin{itemize}
+					\item \textbf{Descrizione}: classe per creare la parte grafica di una \gls{slide} nella visualizzazione di una presentazione;
+					\item \textbf{Relazioni con altre classi}:
+					\begin{itemize}
+						\item Premi::Front-End::Views::SlideView.
+					\end{itemize}
+				\end{itemize}
 
 			\item Premi::Front-End::Views::PresentSlideShowViews::PresentationInPresenterModeView:
 			\begin{itemize}
-				\item \textbf{Descrizione}: classe per creare la parte grafica di una \gls{slide} nella visualizzazione di una presentazione nella modalità presentatore. È composta da oggetti della classe SlideView in quanto la contiene implementandola;
+				\item \textbf{Descrizione}: classe per creare la parte grafica di una \gls{slide} nella visualizzazione di una presentazione nella modalità presentatore. Estende la classe Premi::Front-End::Views::PresentSlideShowViews::PresentationView;
 				\item \textbf{Relazioni con altre classi}:
 				\begin{itemize}
-					\item Premi::Front-End::Views::PresentSlideShowViews::SlideView.
+					\item Premi::Front-End::Views::PresentSlideShowViews::PresentationView.
 				\end{itemize}
 			\end{itemize}
 		\end{itemize}
