@@ -4,11 +4,11 @@
 
 % definizione variabili locali
 \def\DOCUMENTO{Glossario}
-\def\VERSIONE{1.0.0}
+\def\VERSIONE{2.0.0}
 
 \def\REDATTORE {Agostinetto Matteo\\ & Carraro Nicola\\ & Crespan Emanuele\\ & Ros Fabio}
-\def\VERIFICATORE {Suierica Bogdan}
-\def\RESPONSABILE {Burlin Valerio}
+\def\VERIFICATORE {Suierica Bogdan\\ & Burlin Valerio}
+\def\RESPONSABILE {Carraro Nicola}
 
 \def\USO {Esterno}
 
@@ -33,13 +33,14 @@
 
 
 % importa parti documento
-\glsaddall
+%\glsaddall
 
 %\input {sections/nomesezione}
+\input {sections/gloss.tex}
 %\newpage
 
 % ...
 
-\printglossary[title=Glossario, nonumberlist]
+%\printglossary[title=Glossario, nonumberlist]
 
 \end{document}
