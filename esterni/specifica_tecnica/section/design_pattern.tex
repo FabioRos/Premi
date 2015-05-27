@@ -1,0 +1,61 @@
+I Design Pattern sono un modello da applicare per la risoluzione di problemi ricorrenti. I Design Pattern possono essere organizzati in quattro categorie:
+	\begin{itemize}
+		\item \textbf{Architetturali}: dividono il sistema in sottosistemi specificandone le responsabilità e dettando linee guida per organizzare le relazioni tra loro;
+		\item \textbf{Creazionali}: forniscono un'astrazione del processo d'istanziazione degli oggetti. Aiutano a rendere il sistema indipendente dalle modalità d'istanziazione, composizione e rappresentazione degli oggetti utilizzati;
+		\item \textbf{Strutturali}: si occupano della composizione di classi ed oggetti per formare Strutture complesse;
+		\item \textbf{Comportamentali}: si occupano della gestione degli algoritmi e delle responsabilità di oggetti che collaborano tra loro.
+	\end{itemize}
+	
+	\subsection{Pattern Architetturali}
+		\begin{itemize}
+			\item  Three-Tier 
+			\begin{itemize}
+				\item \textbf{Descrizione:} prevede la suddivisione dell'applicazione in tre diversi moduli o strati dedicati rispettivamente alla interfaccia utente, alla logica funzionale (business logic) e alla gestione dei dati persistenti.
+				\item \textbf{Contesto d'utilizzo:} Back-End\newline È stato adottato perché permette di organizzare modularmente gli strati software secondo una logica che si presta molto bene alla realtà da modellare. 
+			\end{itemize}
+			\item Model-View-Controller(MVC)
+			\begin{itemize}
+				\item \textbf{Descrizione:} prevede la separazione in tre componenti:
+    \begin{itemize}
+	  \item \textit{model}: fornisce i metodi per accedere ai dati utili all'applicazione;
+	  \item \textit{view}:  visualizza i dati contenuti nel model e si occupa delle interazione esterne;
+	  \item \textit{controller}: esegue funzionalità chiamate dalle view e modifica lo stato di model e/o view.
+    \end{itemize}
+				\item \textbf{Contesto d'utilizzo:} Front-End \newline È stato adottato perché permette di organizzare modularmente gli strati software mantenendo una struttura che permette di lavorare agevolmente con il framework Angular.js. 
+			\end{itemize}
+			\item Data Mapper
+			\begin{itemize}
+				\item \textbf{Descrizione:} permette di creare degli oggetti che mappano il database. Questo consente di creare spostare dati da oggetti al database e viceversa mantenendo le due parti indipendenti.
+				\item \textbf{Contesto d'utilizzo:} Back-End (Premi::Back-End::Data-Tier)
+			\end{itemize}
+		\end{itemize}
+
+	\subsection{Pattern Strutturali}
+		\begin{itemize}
+			\item Composite
+			\begin{itemize}
+				\item \textbf{Descrizione:} permette di comporre oggetti in strutture ad albero per rappresentare gerarchie in grado di trattare componenti foglia oppure composti allo stesso modo.   
+				\item \textbf{Contesto d'utilizzo:} Front-End e Back-End. In generale, ogni volta che vi è la necessità di creare o salvare componenti di una slide; 
+			\end{itemize}
+		\end{itemize}
+		\begin{itemize}
+			\item Front Controller
+			\begin{itemize}
+				\item \textbf{Descrizione:} fornisce un punto di ingresso centralizzato per la gestione delle richieste.
+				\item \textbf{Contesto d'utilizzo:} Back-End: (Premi::Back-End::Logic-Tier::Controller, Premi::Back-End::Data-Tier)
+			\end{itemize}
+		\end{itemize}
+
+	\subsection{Pattern Comportamentali}
+		\begin{itemize}
+			\item Command
+			\begin{itemize}
+				\item \textbf{Descrizione:} permette di incapsulare una richiesta in un oggetto in modo da variare il risultato a seconda di un parametro.
+				\item \textbf{Contesto d'utilizzo:} Front-End e Back-End. I casi sono principalmente i seguenti:
+				\begin{itemize}
+					\item Front-End: nella modalità "edit" di una slide, a seguito di un click su un componente;
+					\item Front-End: nella modalità "edit" oppure durante uno slideshow, nel momento in cui una slide deve disegnare le sue componenti con un metodo della forma drawComponent(id,tipo);
+					\item Back-End: nel momento in cui devo salvare un componente (la classe Premi::Back-End::Data-Tier::DataTierFrontController deve essere in grado di selezionare il mapper adeguato al tipo di dati).
+				\end{itemize}
+			\end{itemize}
+		\end{itemize}
