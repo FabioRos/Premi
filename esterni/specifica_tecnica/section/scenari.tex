@@ -29,7 +29,7 @@
 	
 \newpage	
 	\subsubsection{Gestione richiesta di visualizzazione di una presentazione}
-	Il diagramma seguente rappresenta lo scenario con il quale viene gestita una richiesta di visualizzazione di una presentazione. La richiesta é gestita da \textit{PresentationController} che invia un FindPresentation() a \textit{Presentation} che recupera la prima \gls{slide} tramite un RetrieveFirstSlide() verso \textit{\gls{Slide}}, il quale ritorna un FirstSlideFound(). Infine \textit{Presentation} segnala a \textit{PresentationController} che la visualizzazione é pronta, viene inviato un ViewingReady() a \textit{PresentationController} che ritorna un ViewingStartData().
+	Il diagramma seguente rappresenta lo scenario con il quale viene gestita una richiesta di visualizzazione di una presentazione. La richiesta é gestita da \textit{PresentationController} che invia un FindPresentation() a \textit{Presentation} che recupera la prima \gls{slide} tramite un RetrieveFirstSlide() verso \textit{Slide}, il quale ritorna un FirstSlideFound(). Infine \textit{Presentation} segnala a \textit{PresentationController} che la visualizzazione é pronta, viene inviato un ViewingReady() a \textit{PresentationController} che ritorna un ViewingStartData().
 	
 	\begin{figure}[H]
 		\centering
@@ -84,7 +84,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.5]{img/real_time.png}
-		\caption{Diagrammi di sequenza - Richiesta di modifica di un progetto: dati \gls{Real Time}}
+		\caption{Diagrammi di sequenza - Richiesta di modifica di un progetto: dati Real Time}
 	\end{figure}
 	
 	\begin{figure}[H]
