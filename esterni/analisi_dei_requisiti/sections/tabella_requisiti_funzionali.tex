@@ -1,161 +1,213 @@
 \subsection{Tabella dei requisiti funzionali}
 	\begin{table}[h]
-		\begin{tabular}{|p{0.2\textwidth}|p{0.6\textwidth}|p{0.2\textwidth}|}
+		\begin{tabular}{|p{0.2\textwidth}|p{0.55\textwidth}|p{0.2\textwidth}|}
 			\toprule
 			
 			\textbf{Requisito} & \textbf{Descrizione} & \textbf{Fonti} \\
 			
 			\midrule
 
-R[OBB][F]1 & Il sistema deve permettere ad un utente la registrazione & UC1, Interna \\ \midrule
-R[OBB][F]1.1 & Il sistema deve permettere la scelta di un nome utente univoco & UC1.1.4, Interna \\ \midrule
-R[OBB][F]1.1.1 & Il nome utente deve contenere almeno un carattere & UC1.1.5, Interna \\ \midrule
-R[OBB][F]1.2 & Il sistema deve permettere la scelta di una password & UC1.1.5, Interna \\ \midrule
-R[OBB][F]1.2.1 & La password deve contenere almeno 8 caratteri & UC1.1.6, Interna \\ \midrule
-R[OBB][F]1.3 & Il sistema deve permettere l'inserimento del nome dell'utente & UC1.1.1, Interna \\ \midrule
-R[OBB][F]1.4 & Il sistema deve permettere l'inserimento del cognome dell'utente & UC1.1.2, Interna \\ \midrule
-R[OBB][F]1.5 & Il sistema deve permettere l'inserimento di una email & UC1.1.3, Interna \\ \midrule
-R[OBB][F]1.5.1 & La mail deve essere formata da una stringa seguita dal carattere @ e una stringa dopo & UC1.1.4, Interna \\ \midrule
-R[OPZ][F]1.6 & Il sistema deve permettere la registrazione attraverso social network & Verbale3 \\ \midrule
-R[OPZ][F]1.6.1 & Il sistema deve permettere la registrazione attraverso \gls{Facebook} & Verbale3 \\ \midrule
-R[OPZ][F]1.6.2 & Il sistema deve permettere la registrazione attraverso Twitter & Verbale3 \\ \midrule
-R[OPZ][F]1.6.3 & Il sistema deve permettere la registrazione attraverso Google+ & Verbale3 \\ \midrule
-R[OPZ][F]1.6.1.1 & Il sistema deve permettere la visualizzazione di un messaggio di errore nel caso di mancata registrazione tramite \gls{Facebook} & Verbale3 \\ \midrule
-R[OPZ][F]1.6.2.1 & Il sistema deve permettere la visualizzazione di un messaggio di errore nel caso di mancata registrazione tramite Twitter & Verbale3 \\ \midrule
-R[OPZ][F]1.6.3.1 & Il sistema deve permettere la visualizzazione di un messaggio di errore nel caso di mancata registrazione tramite Google+ & Verbale3 \\ \midrule
-R[OPZ][F]1.6.4 & Il sistema deve permettere la visualizzazione di avvenuta registrazione  & Interna \\ \midrule
-R[OBB][F]1.7 & Il sistema deve permettere la visualizzazione di un messaggio di errore se i campi richiesto risultani sbagliati & UC1.3, Interna \\ \midrule
-
-\end{tabular}
-\end{table}
-\newpage
-
-\begin{table}[h]
-		\begin{tabular}{|p{0.2\textwidth}|p{0.6\textwidth}|p{0.2\textwidth}|}
-		\midrule
-
-R[OBB][F]2 & Il sistema deve permettere l'autenticazione dell'utente & UC2, UC2.2 \\ \midrule
-R[OBB][F]2.1 & Il sistema deve permettere l'inserimento del nome utente & UC2.1 \\ \midrule
-R[OBB][F]2.2 & Il sistema deve permettere l'inserimento della password & UC2.1 \\ \midrule
-R[OBB][F]2.3 & Il sistema deve segnalare l'errato inserimento delle credenziali & UC2.3 \\ \midrule
-R[OBB][F]2.4 & Il sistema deve permettere il reindirizzamento alla pagina personale in caso di avvenuta autenticazione & UC2.4, UC2.5 \\ \midrule
-R[OBB][F]2.5 & Il sistema deve permettere il recupero della password e del nome utente in caso di dimenticanza & Interna \\ \midrule
-R[OBB][F]2.5.1 & Il sistema deve permettere l'inserimento delle email per il recupero della password e del nome utente & Interna \\ \midrule
-R[OBB][F]3 & Il sistema deve permettere la ricerca di un progetto  & UC3 \\ \midrule
-R[OBB][F]3.1 & Il sistema deve permettere la ricerca attraverso l'inserimento del nome utente & UC3.1, UC3.2 \\ \midrule
-R[OBB][F]3.2 & Il sistema deve permettere la ricerca attraverso l'inserimento del titolo del progetto & UC3.1, UC3.2 \\ \midrule
-R[OBB][F]3.3 & Il sistema deve permettere la visualizzazione del risultato della ricerca & UC3.3 \\ \midrule
-R[OBB][F]3.4 & Il sistema deve permettere il reinserimento del nome utente per la ricerca & Interna \\ \midrule
-R[OBB][F]3.5 & Il sistema deve permettere il reinserimento della password per la ricerca & Interna \\ \midrule
-R[OBB][F]4 & Il sistema deve permettere all'utente l'apertura del progetto in modalità visualizzazione & UC4, Capitolato \\ \midrule
-R[OBB][F]4.1 & Il sistema deve permettere all'utente l'apertura di una presentazione & UC4.1, Capitolato \\ \midrule
-R[OBB][F]4.1.1 & Il sistema deve permettere all'utente autenticato la visualizzazione di una presentazione in modalità presentatore & UC4.1.1, Capitolato \\ \midrule
-R[OBB][F]4.1.2 & Il sistema deve permettere all'utente autenticato la visualizzazione di una presentazione in modalità ascoltatore & UC4.1.2, Capitolato \\ \midrule
-R[OPZ][F]4.2 & Il sistema deve permettere all'utente la visualizzazione di un'\gls{infografica} & UC4.2, Verbale4 \\ \midrule
-R[OBB][F]5 & Il sistema deve permettere all'utente di generare il PDF del progetto & UC5, Capitolato \\ \midrule
+			R[OBB][F]1 & Il sistema deve permettere ad un utente la registrazione & UC1, Interna \\ \midrule
+			R[OBB][F]1.1 & Il sistema deve permettere la scelta di un nome utente & UC1.1.4, Interna \\ \midrule
+			R[OBB][F]1.1.1 & Il nome utente deve contenere almeno un carattere & UC1.1.5, Interna \\ \midrule
+			R[OBB][F]1.1.2 & Il nome utente deve essere univoco & UC1.1.5, Interna \\ \midrule
+			R[OBB][F]1.2 & Il sistema deve permettere la scelta di una password & UC1.1.5, Interna \\ \midrule
+			R[OBB][F]1.2.1 & La password deve contenere almeno 8 caratteri & UC1.1.6, Interna \\ \midrule
+			R[OBB][F]1.2.2 & La password deve essere criptata per garantire la confidenzialità dei dati & Interna \\ \midrule
+			R[OBB][F]1.3 & Il sistema deve permettere l'inserimento del nome dell'utente & UC1.1.1, Interna \\ \midrule
+			R[OBB][F]1.3.1 & Il nome deve contenere solo caratteri alfabetici & Interna \\ \midrule
+			R[OBB][F]1.4 & Il sistema deve permettere l'inserimento del cognome dell'utente & UC1.1.2, Interna \\ \midrule
+			R[OBB][F]1.4.1 & Il cognome deve contenere solo caratteri alfabetici & Interna \\ \midrule
+			R[OBB][F]1.5 & Il sistema deve permettere l'inserimento di una email & UC1.1.3, Interna \\ \midrule
+			R[OBB][F]1.5.1 & La mail deve essere formata da una stringa seguita dal carattere @ e una stringa dopo & UC1.1.4, Interna \\ \midrule
+			R[OPZ][F]1.6 & Il sistema deve permettere la registrazione attraverso social network & Verbale3 \\ \midrule
+			R[OPZ][F]1.6.1 & Il sistema deve permettere la registrazione attraverso \gls{Facebook} & Verbale3 \\ \midrule
+			R[OPZ][F]1.6.2 & Il sistema deve permettere la registrazione attraverso Twitter & Verbale3 \\ \midrule
+			R[OPZ][F]1.6.3 & Il sistema deve permettere la registrazione attraverso Google+ & Verbale3 \\ \midrule
+			R[OPZ][F]1.6.1.1 & Il sistema deve permettere la visualizzazione di un messaggio di errore nel caso di mancata registrazione tramite \gls{Facebook} & Verbale3 \\ \midrule
+			R[OPZ][F]1.6.2.1 & Il sistema deve permettere la visualizzazione di un messaggio di errore nel caso di mancata registrazione tramite Twitter & Verbale3 \\ \midrule
+	
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+	\begin{table}[h]
+			\begin{tabular}{|p{0.2\textwidth}|p{0.55\textwidth}|p{0.2\textwidth}|}
+			\midrule
+	
+			R[OPZ][F]1.6.3.1 & Il sistema deve permettere la visualizzazione di un messaggio di errore nel caso di mancata registrazione tramite Google+ & Verbale3 \\ \midrule
+			R[OPZ][F]1.6.4 & Il sistema deve permettere la visualizzazione di avvenuta registrazione  & Interna \\ \midrule
+			R[OBB][F]1.7 & Il sistema deve permettere la visualizzazione di un messaggio di errore se i campi richiesti risultano sbagliati & Interna \\ \midrule
+			R[OBB][F]2 & Il sistema deve permettere l'autenticazione dell'utente & UC2, UC2.2 \\ \midrule
+			R[OBB][F]2.1 & Il sistema deve permettere l'inserimento del nome utente & UC2.1 \\ \midrule
+			R[OBB][F]2.2 & Il sistema deve permettere l'inserimento della password & UC2.1 \\ \midrule
+			R[OBB][F]2.3 & Il sistema deve segnalare l'errato inserimento delle credenziali & Interna \\ \midrule
+			R[OBB][F]2.4 & Il sistema deve permettere il reindirizzamento alla pagina personale in caso di avvenuta autenticazione & Interna \\ \midrule
+			R[OBB][F]2.5 & Il sistema deve permettere il recupero della password e del nome utente in caso di dimenticanza & Interna \\ \midrule
+			R[OBB][F]2.5.1 & Il sistema deve permettere l'inserimento delle email per il recupero della password e del nome utente & Interna \\ \midrule
+			R[OBB][F]3 & Il sistema deve permettere la ricerca di un progetto  & UC3 \\ \midrule
+			R[OBB][F]3.1 & Il sistema deve permettere la ricerca attraverso l'inserimento del nome utente & UC3.1, UC3.2 \\ \midrule
+			R[OBB][F]3.2 & Il sistema deve permettere la ricerca attraverso l'inserimento del titolo del progetto & UC3.1, UC3.2 \\ \midrule
+			R[OBB][F]3.3 & Il sistema deve permettere la visualizzazione del risultato della ricerca & UC3, Interna \\ \midrule
+			R[OBB][F]3.4 & Il sistema deve permettere il reinserimento di un nome utente diverso per la ricerca & Interna \\ \midrule
+			R[OBB][F]3.5 & Il sistema deve permettere il reinserimento di un titolo diverso per la ricerca & Interna \\ \midrule
+			R[OBB][F]4 & Il sistema deve permettere all'utente l'apertura del progetto in modalità visualizzazione & UC4, Capitolato \\ \midrule
 
 		\end{tabular}
 	\end{table}
 	\newpage
 	
 	\begin{table}[h]
-		\begin{tabular}{|p{0.2\textwidth}|p{0.6\textwidth}|p{0.2\textwidth}|}
+		\begin{tabular}{|p{0.2\textwidth}|p{0.55\textwidth}|p{0.2\textwidth}|}
 			\midrule
 
-R[OBB][F]5.1 & Il sistema deve permettere all'utente di generare il PDF della presentazione & UC5.1, Capitolato \\ \midrule
-R[OBB][F]5.2 & Il sistema deve permettere all'utente di generare il PDF dell'\gls{infografica} & UC5.2, Verbale4, Interna \\ \midrule
-R[OBB][F]6 & L'utente deve poter esportare un pacchetto stand-alone per la visualizzazione offline & UC6 \\ \midrule
-R[OBB][F]6.1 & L'utente deve poter scegliere il percorso per il salvataggio del pacchetto & UC6.2 \\ \midrule
-R[OBB][F]7 & L'utente deve poter creare un nuovo progetto & UC7, Capitolato \\ \midrule
-R[OBB][F]7.1 & L'utente deve poter inserire il titolo del progetto & UC7.1, Capitolato \\ \midrule
-R[OBB][F]7.2 & L'utente deve poter scegliere il \gls{template} di stile per il proprio progetto & UC7.2, Capitolato \\ \midrule
-R[OBB][F]8 & Il proprietario deve poter aprire un progetto da lui precedentemente creato & UC8, Capitolato \\ \midrule
-R[OBB][F]8.1 & Il proprietario deve poter scegliere il progetto da aprire & UC8.1, Capitolato \\ \midrule
-R[OBB][F]9 & Il proprietario deve poter modificare il contenuto di una \gls{slide} & UC9, Capitolato \\ \midrule
-R[OBB][F]9.1 & Il proprietario deve poter modificare il \gls{template} di stile della presentazione & UC9.1, Capitolato, Verbale2 \\ \midrule
-R[OBB][F]9.2 & Il proprietario deve poter inserire una nuova \gls{slide} & UC9.2, Capitolato \\ \midrule
-R[OBB][F]9.3 & Il proprietario deve poter rimuovere una \gls{slide} & UC9.3, Capitolato \\ \midrule
-R[OBB][F]9.4 & Il proprietario deve poter inserire un immagine & UC9.4, Capitolato \\ \midrule
-R[OBB][F]9.4.1 & Il sistema deve accettare in input immagini di formato: JPG, \gls{PNG}, GIF & UC9.4, Capitolato \\ \midrule
-R[OBB][F]9.5 & Il proprietario deve poter inserire elementi di testo & UC9.5, Capitolato \\ \midrule
-R[OPZ][F]9.6 & Il proprietario deve poter inserire dati \gls{real time} & UC9.6, Verbale4, Verbale5 \\ \midrule
-R[OPZ][F]9.6.1 & Il proprietario deve poter inserire un file contenente il codice da eseguire  & UC9.6, Verbale4, Verbale5 \\ \midrule
-R[OBB][F]9.7 & Il proprietario deve poter inserire le tabelle & UC9.7 \\ \midrule
-R[OBB][F]9.7.1 & Il proprietario deve poter scegliere il numero di righe della tabella & UC9.7 \\ \midrule
+			R[OBB][F]4.1 & Il sistema deve permettere all'utente l'apertura di una presentazione & UC4.1, Capitolato \\ \midrule
+			R[OBB][F]4.1.1 & Il sistema deve permettere all'utente autenticato la visualizzazione di una presentazione in modalità presentatore & UC4.1.1, Capitolato \\ \midrule
+			R[OBB][F]4.1.1.1 & Il sistema deve poter visualizzare la slide corrente per il presentatore & UC4.1.1 \\ \midrule
+			R[OBB][F]4.1.1.2 & Il sistema deve poter visualizzare le slide successive per il presentatore & UC4.1.1, Interna \\ \midrule
+			R[OBB][F]4.1.1.3 & Il sistema deve poter visualizzare le note della slide per il presentatore & UC4.1.1, Interna \\ \midrule
+			R[OBB][F]4.1.1.4 & Il sistema deve poter visualizzare il tempo trascorso per il presentatore & UC4.1.1, Interna \\ \midrule
+			R[OBB][F]4.1.1.5 & Il sistema deve poter visualizzare il tempo trascorso per il presentatore & UC4.1.1, Interna \\ \midrule
+			R[OBB][F]4.1.2 & Il sistema deve permettere all'utente autenticato la visualizzazione di una presentazione in modalità ascoltatore & UC4.1.2, Capitolato \\ \midrule
+			R[OBB][F]4.1.2.1 & Il sistema deve poter visualizzare la slide corrente per l'ascoltatore & UC4.1.2, Interna \\ \midrule
+			R[OBB][F]4.1.3 & Il sistema deve poter visualizzare i comandi di navigazione per l'ascoltatore & UC4.1.3, Interna \\ \midrule
+			R[OPZ][F]4.2 & Il sistema deve permettere all'utente la visualizzazione di un'\gls{infografica} & UC4.2, Verbale4 \\ \midrule
+			R[OBB][F]5 & Il sistema deve permettere all'utente di generare il PDF del progetto & UC5, Capitolato \\ \midrule
+			R[OBB][F]5.1 & Il sistema deve permettere all'utente di generare il PDF della presentazione & UC5.1, Capitolato \\ \midrule
+			R[OBB][F]5.2 & Il sistema deve permettere all'utente di generare il PDF dell'\gls{infografica} & UC5.2, Verbale4, Interna \\ \midrule
+			R[OBB][F]6 & L'utente deve poter esportare un pacchetto stand-alone per la visualizzazione offline & UC6 \\ \midrule
+			R[OBB][F]6.1 & L'utente deve poter scegliere il percorso per il salvataggio del pacchetto & UC6.2 \\ \midrule
+			R[OBB][F]7 & L'utente deve poter creare un nuovo progetto & UC7, Capitolato \\ \midrule
+			R[OBB][F]7.1 & L'utente deve poter inserire il titolo del progetto & UC7.1, Capitolato \\ \midrule
 
 		\end{tabular}
 	\end{table}
 	\newpage
 	
 	\begin{table}[h]
-		\begin{tabular}{|p{0.2\textwidth}|p{0.6\textwidth}|p{0.2\textwidth}|}
+		\begin{tabular}{|p{0.2\textwidth}|p{0.55\textwidth}|p{0.2\textwidth}|}
 			\midrule
 			
-R[OBB][F]9.7.2 & Il proprietario deve poter scegliere il numero di colonne della tabella & UC9.7 \\ \midrule
-R[OPZ][F]9.8 & Il proprietario deve poter inserire un grafico & UC9.8, Interna \\ \midrule
-R[OPZ][F]9.8.1 & Il proprietario deve poter scegliere il modello di grafico  & UC9.8.1, Interna \\ \midrule
-R[OPZ][F]9.8.2 & Il proprietario deve poter inserire il numero di elementi che avra il grafico & UC9.8.2, Interna \\ \midrule
-R[OPZ][F]9.8.3 & Il proprietario deve poter inserire il nome degli elementi del grafico  & UC9.8.2, Interna \\ \midrule
-R[OPZ][F]9.8.24 & Il proprietario deve poter inserire il valore degli elementi del grafico & UC9.8.2, Interna \\ \midrule
-R[OBB][F]9.9 & Il proprietario deve poter scegliere un effetto di transizione delle \gls{slide} & UC9.9, Capitolato, Verbale2 \\ \midrule
-R[OBB][F]9.10 & Il proprietario deve poter ridimensionare un elemento selezionato & UC9.10 \\ \midrule
-R[OBB][F]9.11 & Il proprietario deve poter spostare un elemento selezionato & UC9.11 \\ \midrule
-R[OBB][F]9.12 & Il proprietario deve poter ruotare un elemento selezionato & UC9.12 \\ \midrule
-R[OBB][F]9.13 & Il proprietario deve poter rimuovere un elemento selezionato & UC9.13 \\ \midrule
-R[OBB][F]9.14 & Il proprietario deve poter caricare un file da inserire nella \gls{slide} & UC9.14 \\ \midrule
-R[OBB][F]9.15 & Il proprietario deve poter modificare la formattazione del testo & UC9.15, Capitolato, Verbale2 \\ \midrule
-R[OBB][F]9.15.1 & Il proprietario deve poter cambiare la grandezza del testo & UC9.15.1, Capitolato, Verbale2 \\ \midrule
-R[OBB][F]9.15.2 & Il proprietario deve poter cambiare il colore del testo & UC9.15.2, Capitolato, Verbale2 \\ \midrule
-R[OBB][F]9.15.3 & Il proprietario deve poter cambiare il \gls{font} del testo & UC9.15.3, Capitolato, Verbale2 \\ \midrule
-R[OBB][F]9.15.4 & Il proprietario deve poter abilitare/disabilitare il corsivo del testo & UC9.15.4, Capitolato, Verbale2 \\ \midrule
-R[OBB][F]9.15.5 & Il proprietario deve poter abilitare/disabilitare il grassetto del testo & UC9.15.5, Capitolato, Verbale2 \\ \midrule
-R[OBB][F]9.15.6 & Il proprietario deve poter cambiare la posizione del testo all'interno della \gls{slide} & UC9.15.6, Capitolato, Verbale2 \\ \midrule
+			R[OBB][F]7.2 & L'utente deve poter scegliere il \gls{template} di stile per il proprio progetto & UC7.2, Capitolato \\ \midrule
+			R[OBB][F]8 & Il proprietario deve poter aprire un progetto da lui precedentemente creato & UC8, Capitolato \\ \midrule
+			R[OBB][F]8.1 & Il proprietario deve poter scegliere il progetto da aprire & UC8.1, Capitolato \\ \midrule
+			R[OBB][F]9 & Il proprietario deve poter modificare il contenuto di una \gls{slide} & UC9, Capitolato \\ \midrule
+			R[OBB][F]9.1 & Il proprietario deve poter modificare il \gls{template} di stile della presentazione & UC9.1, Capitolato, Verbale2 \\ \midrule
+			R[OBB][F]9.2 & Il proprietario deve poter inserire una nuova \gls{slide} & UC9.2, Capitolato \\ \midrule
+			R[OBB][F]9.2.1 & Il proprietario deve poter inserire una nuova \gls{slide} a destra & UC9.2 \\ \midrule
+			R[OBB][F]9.2.2 & Il proprietario deve poter inserire una nuova \gls{slide} a sinistra & UC9.2 \\ \midrule
+			R[OBB][F]9.3 & Il proprietario deve poter rimuovere una \gls{slide} & UC9.3, Capitolato \\ \midrule
+			R[OBB][F]9.4 & Il proprietario deve poter inserire un immagine & UC9.4, Capitolato \\ \midrule
+			R[OBB][F]9.4.1 & Il sistema deve accettare in input immagini di formato JPG & UC9.4, Capitolato \\ \midrule
+			R[OBB][F]9.4.2 & Il sistema deve accettare in input immagini di formato \gls{PNG} & UC9.4, Capitolato \\ \midrule
+			R[OBB][F]9.4.3 & Il sistema deve accettare in input immagini di formato GIF & UC9.4, Capitolato \\ \midrule
+			R[OBB][F]9.5 & Il proprietario deve poter inserire elementi di testo & UC9.5, Capitolato \\ \midrule
+			R[OPZ][F]9.6 & Il proprietario deve poter inserire dati \gls{real time} & UC9.6, Verbale4, Verbale5 \\ \midrule
+			R[OPZ][F]9.6.1 & Il proprietario deve poter caricare un file di dati & UC9.6.1 \\ \midrule
+			R[OPZ][F]9.6.2 & Il proprietario deve poter caricare un file per la funzione di estrapolazione dati & UC9.6.2 \\ \midrule
+			R[OPZ][F]9.6.3 & Il proprietario deve poter caricare un file per la funzione di elaborazione di dati dall'array & UC9.6.3 \\ \midrule
+			R[OPZ][F]9.6.4 & Il proprietario deve poter scegliere il tipo di dati real time da inserire & UC9.6.4 \\ \midrule
 
 		\end{tabular}
 	\end{table}
 	\newpage
 	
 	\begin{table}[h]
-		\begin{tabular}{|p{0.2\textwidth}|p{0.6\textwidth}|p{0.2\textwidth}|}
+		\begin{tabular}{|p{0.2\textwidth}|p{0.55\textwidth}|p{0.2\textwidth}|}
 			\midrule
-			
-R[OBB][F]9.16 & Il proprietario deve poter modificare una tabella & UC9.16 \\ \midrule
-R[OBB][F]9.16.1 & Il proprietario deve poter cambiare il contenuto di una cella della tabella & UC9.16.1 \\ \midrule
-R[OBB][F]9.16.2 & Il proprietario deve poter aggiungere righe alla tabella & UC9.16.2 \\ \midrule
-R[OBB][F]9.16.3 & Il proprietario deve poter cancellare righe alla tabella & UC9.16.2 \\ \midrule
-R[OBB][F]9.16.4 & Il proprietario deve poter aggiungere colonne alla tabella & UC9.16.3 \\ \midrule
-R[OBB][F]9.16.5 & Il proprietario deve poter cancellare colonne alla tabella & UC9.16.3 \\ \midrule
-R[OBB][F]9.16.6 & Il proprietario deve poter modificare la grandezza della tabella & UC9.16.4 \\ \midrule
-R[OPZ][F]9.17 & Il proprietario deve poter modificare un grafico & UC9.17, Interna \\ \midrule
-R[OPZ][F]9.17.1 & Il proprietario deve poter aggiungere un elemento al grafico & UC9.17, Interna \\ \midrule
-R[OPZ][F]9.17.2 & Il proprietario deve poter cancellare un elemento dal grafico & UC9.17, Interna \\ \midrule
-R[OPZ][F]9.17.3 & Il proprietario deve poter modificare il nome di un elemento del grafico & UC9.17, Interna \\ \midrule
-R[OPZ][F]9.17.4 & Il proprietario deve poter modificare il valore di un elemento del grafico & UC9.17, Interna \\ \midrule
-R[OPZ][F]9.17.5 & Il proprietario deve poter modificare il modello di grafico & UC9.17.1, Interna \\ \midrule
-R[OPZ][F]9.17.6 & Il proprietario deve poter modificare la grandezza del grafico & UC9.17.2, Interna \\ \midrule
-R[OPZ][F]9.17.7 & Il proprietario deve poter modificare il set di colori del grafico & UC9.17.3, interna \\ \midrule
-R[DES][F]10 & Il proprietario deve poter creare un'\gls{infografica} & UC10, Verbale4 \\ \midrule
-R[DES][F]10.1 & Il proprietario deve poter scegliere il \gls{template} dell'\gls{infografica} & UC10.1, Verbale4 \\ \midrule
-R[DES][F]10.2 & Il proprietario deve poter scegliere le \gls{slide} da inserire nell'\gls{infografica} & UC10.2, Verbale4 \\ \midrule
-R[OBB][F]11 & Il proprietario deve poter salvare il progetto & UC11, Capitolato  \\ \midrule
-R[OBB][F]11.1 & Il sistema deve essere previsto di una funziona salva & UC11.1, Capitolato \\ \midrule
-R[OBB][F]11.2 & Il proprietario deve poter modificare il nome inserito alla creazione del progetto & UC11.2, Capitolato \\ \midrule
-R[OBB][F]12 & Il proprietario deve poter eliminare un progetto & UC12, Capitolato \\ \midrule
+
+			R[OPZ][F]9.6.5 & Il proprietario deve poter scegliere la sorgente di dati real time & UC9.6.5 \\ \midrule
+			R[OBB][F]9.7 & Il proprietario deve poter inserire le tabelle & UC9.7 \\ \midrule
+			R[OBB][F]9.7.1 & Il proprietario deve poter scegliere il numero di righe della tabella & UC9.7 \\ \midrule
+			R[OBB][F]9.7.2 & Il proprietario deve poter scegliere il numero di colonne della tabella & UC9.7 \\ \midrule
+			R[OPZ][F]9.8 & Il proprietario deve poter inserire un grafico & UC9.8, Interna \\ \midrule
+			R[OPZ][F]9.8.1 & Il proprietario deve poter scegliere il modello di grafico & UC9.8.1, Interna \\ \midrule
+			R[OPZ][F]9.8.1.1 & Il proprietario deve poter scegliere il modello di grafico istogramma & UC9.8.1, Interna \\ \midrule
+			R[OPZ][F]9.8.1.2 & Il proprietario deve poter scegliere il modello di grafico a torta & UC9.8.1, Interna \\ \midrule
+			R[OPZ][F]9.8.1.3 & Il proprietario deve poter scegliere il modello di grafico a linea & UC9.8.1, Interna \\ \midrule
+			R[OPZ][F]9.8.2 & Il proprietario deve poter inserire il numero di elementi che avrà il grafico & UC9.8.2, Interna \\ \midrule
+			R[OPZ][F]9.8.3 & Il proprietario deve poter inserire il nome degli elementi del grafico  & UC9.8.2, Interna \\ \midrule
+			R[OPZ][F]9.8.24 & Il proprietario deve poter inserire il valore degli elementi del grafico & UC9.8.2, Interna \\ \midrule
+			R[OBB][F]9.9 & Il proprietario deve poter scegliere un effetto di transizione delle \gls{slide} & UC9.9, Capitolato, Verbale2 \\ \midrule
+			R[OBB][F]9.9.1 & Il proprietario deve poter scegliere l'effetto di transizione a scorrimento & UC9.9, Capitolato, Verbale2 \\ \midrule
+			R[OBB][F]9.9.2 & Il proprietario deve poter scegliere l'effetto di transizione a dissolvenza & UC9.9, Capitolato, Verbale2 \\ \midrule
+			R[OBB][F]9.9.3 & Il proprietario deve poter scegliere l'effetto di transizione a convesso & UC9.9, Capitolato, Verbale2 \\ \midrule
+			R[OBB][F]9.9.4 & Il proprietario deve poter scegliere l'effetto di transizione a concavo & UC9.9, Capitolato, Verbale2 \\ \midrule
+			R[OBB][F]9.9.5 & Il proprietario deve poter scegliere nessun effetto di transizione & UC9.9, Capitolato, Verbale2 \\ \midrule
 
 		\end{tabular}
 	\end{table}
 	\newpage
 	
 	\begin{table}[h]
-		\begin{tabular}{|p{0.2\textwidth}|p{0.6\textwidth}|p{0.2\textwidth}|}
+		\begin{tabular}{|p{0.2\textwidth}|p{0.55\textwidth}|p{0.2\textwidth}|}
 			\midrule
 			
-R[OBB][F]12.1 & Il proprietario deve poter selezionare il progetto da eliminare & UC12.1, Capitolato \\ \midrule
-R[OBB][F]12.2.1 & Il sistema deve permettere la visualizzazione di un messaggio per la conferma eleminazione & UC12.2, Capitolato \\ \midrule
-R[OBB][F]12.2.2 & Il proprietario deve poter confermare l'eliminazione del progetto  & UC12.2, Capitolato \\ \midrule
+			R[OBB][F]9.10 & Il proprietario deve poter ridimensionare un elemento selezionato & UC9.10 \\ \midrule
+			R[OBB][F]9.11 & Il proprietario deve poter spostare un elemento selezionato & UC9.11 \\ \midrule
+			R[OBB][F]9.12 & Il proprietario deve poter ruotare un elemento selezionato & UC9.12 \\ \midrule
+			R[OBB][F]9.13 & Il proprietario deve poter rimuovere un elemento selezionato & UC9.13 \\ \midrule
+			R[OBB][F]9.14 & Il proprietario deve poter caricare un file da inserire nella \gls{slide} & UC9.14 \\ \midrule
+			R[OBB][F]9.15 & Il proprietario deve poter modificare la formattazione del testo & UC9.15, Capitolato, Verbale2 \\ \midrule
+			R[OBB][F]9.15.1 & Il proprietario deve poter cambiare la grandezza del testo & UC9.15.1, Capitolato, Verbale2 \\ \midrule
+			R[OBB][F]9.15.2 & Il proprietario deve poter cambiare il colore del testo & UC9.15.2, Capitolato, Verbale2 \\ \midrule
+			R[OBB][F]9.15.3 & Il proprietario deve poter cambiare il \gls{font} del testo & UC9.15.3, Capitolato, Verbale2 \\ \midrule
+			R[OBB][F]9.15.4 & Il proprietario deve poter abilitare/disabilitare il corsivo del testo & UC9.15.4, Capitolato, Verbale2 \\ \midrule
+			R[OBB][F]9.15.5 & Il proprietario deve poter abilitare/disabilitare il grassetto del testo & UC9.15.5, Capitolato, Verbale2 \\ \midrule
+			R[OBB][F]9.15.6 & Il proprietario deve poter cambiare la posizione del testo all'interno della \gls{slide} & UC9.15.6, Capitolato, Verbale2 \\ \midrule
+			R[OBB][F]9.16 & Il proprietario deve poter modificare una tabella & UC9.16 \\ \midrule
+			R[OBB][F]9.16.1 & Il proprietario deve poter cambiare il contenuto di una cella della tabella & UC9.16.1 \\ \midrule
+			R[OBB][F]9.16.2 & Il proprietario deve poter aggiungere righe alla tabella & UC9.16.2 \\ \midrule
+			R[OBB][F]9.16.3 & Il proprietario deve poter cancellare righe alla tabella & UC9.16.2 \\ \midrule
+			R[OBB][F]9.16.4 & Il proprietario deve poter aggiungere colonne alla tabella & UC9.16.3 \\ \midrule
+			R[OBB][F]9.16.5 & Il proprietario deve poter cancellare colonne alla tabella & UC9.16.3 \\ \midrule
 
+		\end{tabular}
+	\end{table}
+	\newpage
+	
+	\begin{table}[h]
+		\begin{tabular}{|p{0.2\textwidth}|p{0.55\textwidth}|p{0.2\textwidth}|}
+			\midrule
+
+			R[OBB][F]9.16.6 & Il proprietario deve poter modificare la grandezza della tabella & UC9.16.4 \\ \midrule
+			R[OPZ][F]9.17 & Il proprietario deve poter modificare un grafico & UC9.17, Interna \\ \midrule
+			R[OPZ][F]9.17.1 & Il proprietario deve poter aggiungere un elemento al grafico & UC9.17, Interna \\ \midrule
+			R[OPZ][F]9.17.2 & Il proprietario deve poter cancellare un elemento dal grafico & UC9.17, Interna \\ \midrule
+			R[OPZ][F]9.17.3 & Il proprietario deve poter modificare il nome di un elemento del grafico & UC9.17, Interna \\ \midrule
+			R[OPZ][F]9.17.4 & Il proprietario deve poter modificare il valore di un elemento del grafico & UC9.17, Interna \\ \midrule
+			R[OPZ][F]9.17.5 & Il proprietario deve poter modificare il modello di grafico & UC9.17.1, Interna \\ \midrule
+			R[OPZ][F]9.17.5.1 & Il proprietario deve poter modificare il modello di grafico a istogramma & UC9.17.1, Interna \\ \midrule
+			R[OPZ][F]9.17.5.2 & Il proprietario deve poter modificare il modello di grafico a torta & UC9.17.1, Interna \\ \midrule
+			R[OPZ][F]9.17.5.3 & Il proprietario deve poter modificare il modello di grafico a linea & UC9.17.1, Interna \\ \midrule
+			R[OPZ][F]9.17.6 & Il proprietario deve poter modificare la grandezza del grafico & UC9.17.2, Interna \\ \midrule
+			R[OPZ][F]9.17.7 & Il proprietario deve poter modificare il set di colori del grafico & UC9.17.3, interna \\ \midrule
+			R[OPZ][F]9.18 & Il proprietario deve poter modificare le note di una slide & UC9.18 \\ \midrule
+			R[OPZ][F]9.19 & Il proprietario deve poter spostare una slide & UC9.19 \\ \midrule
+			R[DES][F]10 & Il proprietario deve poter creare un'\gls{infografica} & UC10, Verbale4 \\ \midrule
+			R[DES][F]10.1 & Il proprietario deve poter scegliere il \gls{template} dell'\gls{infografica} & UC10.1, Verbale4 \\ \midrule
+			R[DES][F]10.2 & Il proprietario deve poter scegliere le \gls{slide} da inserire nell'\gls{infografica} & UC10.2, Verbale4 \\ \midrule
+			R[OBB][F]11 & Il proprietario deve poter salvare il progetto & UC11, Capitolato  \\ \midrule
+
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+	\begin{table}[h]
+		\begin{tabular}{|p{0.2\textwidth}|p{0.55\textwidth}|p{0.2\textwidth}|}
+			\midrule
+	
+			R[OBB][F]11.1 & Il sistema deve essere previsto di una funziona salva & UC11.1, Capitolato \\ \midrule
+			R[OBB][F]11.2 & Il proprietario deve poter modificare il nome inserito alla creazione del progetto & UC11.2, Capitolato \\ \midrule
+			R[OBB][F]12 & Il proprietario deve poter eliminare un progetto & UC12, Capitolato \\ \midrule
+			R[OBB][F]12.1 & Il proprietario deve poter selezionare il progetto da eliminare & UC12.1, Capitolato \\ \midrule
+			R[OBB][F]12.2.1 & Il sistema deve permettere la visualizzazione di un messaggio per la conferma eleminazione & UC12.2, Capitolato \\ \midrule
+			R[OBB][F]12.2.2 & Il proprietario deve poter confermare l'eliminazione del progetto  & UC12.2, Capitolato \\ \midrule
+			R[OBB][F]13 & Il proprietario deve poter consultare il manuale utente & UC13 \\
+	
+			\bottomrule
+	
 		\end{tabular}
 		\caption{Tabella dei requisiti funzionali}
 	\end{table}
 	\newpage
-
