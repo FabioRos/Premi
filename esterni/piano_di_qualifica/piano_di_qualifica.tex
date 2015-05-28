@@ -4,11 +4,11 @@
 
 % definizione variabili locali
 \def\DOCUMENTO{Piano di Qualifica}
-\def\VERSIONE{1.0.0}
+\def\VERSIONE{2.0.0}
 
-\def\REDATTORE {Bogdan Suierica \\ & Crespan Emanuele}
-\def\VERIFICATORE {Burlin Valerio}
-\def\RESPONSABILE {Agostinetto Matteo}
+\def\REDATTORE {Agostinetto Matteo \\ & Crespan Emanuele}
+\def\VERIFICATORE {Ros Fabio}
+\def\RESPONSABILE {Carraro Nicola}
 
 \def\USO {Esterno}
 
@@ -19,7 +19,7 @@
 
 % abilita (true) / disabilita (false) indice, lista tabelle, lista figure
 \def\INDICE	{true}
-\def\TABELLE {false}
+\def\TABELLE {true}
 \def\FIGURE {true}
 
 
@@ -41,22 +41,30 @@
 \input{sections/introduzione.tex}
 
 \newpage
+\section{Standard di Qualità}
+\input{sections/standard_di_qualita.tex}
+
+\newpage
 \section{Visione generale della strategia di verifica}
 \input{sections/visione_generale_della_strategia_di_verifica.tex}
 
 \newpage
 \section{Gestione amministrativa della revisione}
-\input{sections/gestione_amministrativa_della_revisione}
+\input{sections/gestione_amministrativa_della_revisione.tex}
+
+\newpage
+\section{Pianificazione dei test}
+\input{sections/pianificazione_dei_test.tex}
 
 \appendix
-\newpage
-\section{Standard di Qualità}
-\input{sections/standard_di_qualita.tex}
 
 \newpage
 \section{Riassunto attività di verifica}
 \input{sections/riassunto_attivita_di_verifica.tex}
 
+\newpage
+\section{Dettaglio delle verifiche tramite analisi}
+\input{sections/dettaglio_verifiche_tramite_analisi.tex}
 % ...
 
 %\printglossaries
