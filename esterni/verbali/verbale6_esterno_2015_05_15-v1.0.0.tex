@@ -1,0 +1,48 @@
+% importa variabili globali
+\input{../../template/config.tex}
+
+
+% definizione variabili locali
+\def\DOCUMENTO{Verbale Esterno del 2015-05-15}
+\def\VERSIONE{1.0.0}
+
+\def\REDATTORE {Carraro Nicola}
+\def\VERIFICATORE {Burlin Valerio}
+\def\RESPONSABILE {Agostinetto Matteo}
+
+\def\USO {Esterno}
+
+\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\ & \PROPONENTE{}\\} 
+
+\def\DESCRIZIONE {In questo documento viene descritto il contenuto del terzo incontro tra il Proponente ed il gruppo \GRUPPO.}
+
+
+% abilita (true) / disabilita (false) indice, lista tabelle, lista figure
+\def\INDICE	{true}
+\def\TABELLE {false}
+\def\FIGURE {false}
+
+
+% importa struttura
+\input {../../template/structure.tex}
+
+\input{diario_modifiche_verbale6.tex}
+
+% importa indici
+\input {../../template/index.tex}
+
+
+% importa parti documento
+
+\section{Informazioni sulla riunione}
+\input{sections/verbale6/informazioni_riunione.tex}
+\newpage
+
+\section{Riassunto della riunione}
+\input{sections/verbale6/riassunto_riunione.tex}
+% ...
+
+%\printglossaries
+
+\end{document}
+

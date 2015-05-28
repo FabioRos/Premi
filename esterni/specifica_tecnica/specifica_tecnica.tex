@@ -1,0 +1,84 @@
+% importa variabili globali
+\input{../../template/config.tex}
+
+
+% definizione variabili locali
+\def\DOCUMENTO{Specifica tecnica}
+\def\VERSIONE{1.0.0}
+
+\def\REDATTORE {Burlin Valerio\\ & Crespan Emanuele\\ & Ros Fabio\\ & Suierica Bogdan}
+\def\VERIFICATORE {Agostinetto Matteo}
+\def\RESPONSABILE {Carraro Nicola}
+
+\def\USO {Esterno}
+
+\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\}
+
+\def\DESCRIZIONE {Specifica tecnica e architettura dell'applicazione \PROGETTO.}
+
+
+% abilita (true) / disabilita (false) indice, lista tabelle, lista figure
+\def\INDICE	{true}
+\def\TABELLE {true}
+\def\FIGURE {true}
+
+
+% importa struttura
+\input {../../template/structure.tex}
+
+\input{diario_modifiche.tex}
+
+% importa indici
+\input {../../template/index.tex}
+
+
+% importa parti documento
+
+\section{Introduzione}
+\input{section/introduzione.tex}
+
+\newpage
+
+\section{Tecnologie utilizzate}
+\input{section/tecnologie.tex}
+
+\newpage
+
+\section{Descrizione architettura}
+\input{section/descrizione_architettura.tex}
+\input{section/interfaccia_rest_like.tex}
+
+\newpage
+
+\section{Architettura Front-End}
+\input{section/architettura_front_end.tex}
+
+\newpage
+
+\section{Architettura Back-End}
+\input{section/interfaccia_rest.tex}
+\newpage
+
+\input{section/architettura_back_end.tex}
+\newpage
+
+\input{section/scenari.tex}
+
+\newpage
+
+\section{Design Pattern}\label{pattern}
+\input{section/design_pattern.tex}
+\newpage
+
+\section{Diagrammi di attività}
+\input{section/diagrammi_di_attivita.tex}
+\newpage
+
+\section{Tracciamento}
+\input{section/tracciamento.tex}
+\newpage
+
+
+%\printglossaries
+
+\end{document}

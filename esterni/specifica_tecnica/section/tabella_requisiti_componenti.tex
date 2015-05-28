@@ -1,0 +1,265 @@
+	\begin{table}[h]
+		\caption{Tabella del tracciamento requisiti-componenti}
+		\begin{tabular}{|p{0.18\textwidth}|p{0.20\textwidth}|p{0.59\textwidth}|}
+			\toprule
+			
+			\textbf{Requisito} & \textbf{Descrizione} & \textbf{Componente} \\
+			
+			\midrule
+
+			R[OBB][F]1 & Il sistema deve permettere ad un utente la registrazione & Back-End::Logic-Tier::Controller::UsersController; Back-End::Logic-Tier::Controller; Back-End::Logic-Tier::Model; Back-End::Data-Tier; Front-End::Views::UsersView; Front-End::Controller; Front-End::Controller::UserController\\ \midrule
+			R[OBB][F]1.1 & Il sistema deve permettere la scelta di un nome utente & Back-End::Logic-Tier::Controller::UsersController; Back-End::Logic-Tier::Controller; Back-End::Logic-Tier::Model; Back-End::Data-Tier; Front-End::Views::UsersView; Front-End::Controller; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]1.1.1 & Il nome utente deve contenere almeno un carattere & Back-End::Logic-Tier::Controller::UsersController; Back-End::Logic-Tier::Controller; Back-End::Logic-Tier::Model; Back-End::Data-Tier; Front-End::Views::UsersView; Front-End::Controller; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]1.1.2 & Il nome utente deve essere univoco & Back-End::Logic-Tier::Controller::UsersController; Back-End::Logic-Tier::Controller; Back-End::Logic-Tier::Model; Back-End::Data-Tier; Front-End::Views::UsersView; Front-End::Controller; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]1.2 & Il sistema deve permettere la scelta di una password & Back-End::Logic-Tier::Controller::UsersController; Back-End::Logic-Tier::Controller; Back-End::Logic-Tier::Model; Back-End::Data-Tier; Front-End::Views::UsersView; Front-End::Controller; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]1.2.1 & La password deve contenere almeno 8 caratteri & Back-End::Logic-Tier::Controller::UsersController; Back-End::Logic-Tier::Controller; Back-End::Logic-Tier::Model; Back-End::Data-Tier; Front-End::Views::UsersView; Front-End::Controller; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]1.2.2 & La password deve essere criptata per garantire la confidenzialità dei dati & Back-End::Logic-Tier::Controller::UsersController; Back-End::Logic-Tier::Controller; Back-End::Logic-Tier::Model; Back-End::Data-Tier; Front-End::Views::UsersView; Front-End::Controller; Front-End::Controller::UserController \\ \midrule
+			
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+	\begin{table}[h]
+		\begin{tabular}{|p{0.18\textwidth}|p{0.20\textwidth}|p{0.59\textwidth}|}
+			\midrule
+			R[OBB][F]1.3 & Il sistema deve permettere l'inserimento del nome dell'utente & Back-End::Logic-Tier::Controller::UsersController; Back-End::Logic-Tier::Controller; Back-End::Logic-Tier::Model; Back-End::Data-Tier; Front-End::Views::UsersView; Front-End::Controller; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]1.3.1 & Il nome deve contenere solo caratteri alfabetici & Back-End::Logic-Tier::Controller::UsersController; Back-End::Logic-Tier::Controller; Back-End::Logic-Tier::Model; Back-End::Data-Tier; Front-End::Views::UsersView; Front-End::Controller; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]1.4 & Il sistema deve permettere l'inserimento del cognome dell'utente & Back-End::Logic-Tier::Controller::UsersController; Back-End::Logic-Tier::Controller; Back-End::Logic-Tier::Model; Back-End::Data-Tier; Front-End::Views::UsersView; Front-End::Controller; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]1.4.1 & Il cognome deve contenere solo caratteri alfabetici & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]1.5 & Il sistema deve permettere l'inserimento di una email & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]1.5.1 & La mail deve essere formata da una stringa seguita dal carattere @ e una stringa dopo & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OPZ][F]1.6 & Il sistema deve permettere la registrazione attraverso social network & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OPZ][F]1.6.1 & Il sistema deve permettere la registrazione attraverso Facebook & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OPZ][F]1.6.2 & Il sistema deve permettere la registrazione attraverso Twitter & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			
+		\end{tabular}
+		\end{table}
+		\newpage
+			
+	\begin{table}[h]
+		\begin{tabular}{|p{0.18\textwidth}|p{0.20\textwidth}|p{0.59\textwidth}|}
+			\midrule	
+			
+			R[OPZ][F]1.6.3 & Il sistema deve permettere la registrazione attraverso Google+ & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OPZ][F]1.6.1.1 & Il sistema deve permettere la visualizzazione di un messaggio di errore nel caso di mancata registrazione tramite Facebook & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OPZ][F]1.6.2.1 & Il sistema deve permettere la visualizzazione di un messaggio di errore nel caso di mancata registrazione tramite Twitter & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OPZ][F]1.6.3.1 & Il sistema deve permettere la visualizzazione di un messaggio di errore nel caso di mancata registrazione tramite Google+ & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OPZ][F]1.6.4 & Il sistema deve permettere la visualizzazione di avvenuta registrazione  & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]1.7 & Il sistema deve permettere la visualizzazione di un messaggio di errore se i campi richiesti risultano sbagliati & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]2 & Il sistema deve permettere l'autenticazione dell'utente & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]2.1 & Il sistema deve permettere l'inserimento del nome utente & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]2.2 & Il sistema deve permettere l'inserimento della password & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+	
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+	\begin{table}[h]
+			\begin{tabular}{|p{0.18\textwidth}|p{0.20\textwidth}|p{0.59\textwidth}|}
+			\midrule
+	
+			
+			R[OBB][F]2.3 & Il sistema deve segnalare l'errato inserimento delle credenziali & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]2.4 & Il sistema deve permettere il reindirizzamento alla pagina personale in caso di avvenuta autenticazione & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]2.5 & Il sistema deve permettere il recupero della password e del nome utente in caso di dimenticanza & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]2.5.1 & Il sistema deve permettere l'inserimento delle email per il recupero della password e del nome utente & Back-End::Logic-Tier::Controller::UsersController ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views::UsersView ; Front-End::Controller ; Front-End::Controller::UserController \\ \midrule
+			R[OBB][F]3 & Il sistema deve permettere la ricerca di un progetto  & Back-End::Logic-Tier::Controller ; Back-End::Logic-tier::UsersController ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Controller \\ \midrule
+			R[OBB][F]3.1 & Il sistema deve permettere la ricerca attraverso l'inserimento del nome utente & Back-End::Logic-Tier::Controller ; Back-End::Logic-tier::UsersController ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Controller \\ \midrule
+			R[OBB][F]3.2 & Il sistema deve permettere la ricerca attraverso l'inserimento del titolo del progetto & Back-End::Logic-Tier::Controller ; Back-End::Logic-tier::UsersController ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Controller \\ \midrule
+			R[OBB][F]3.3 & Il sistema deve permettere la visualizzazione del risultato della ricerca & Back-End::Logic-Tier::Controller ; Back-End::Logic-tier::UsersController ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Controller \\ \midrule
+			R[OBB][F]3.4 & Il sistema deve permettere il reinserimento di un nome utente diverso per la ricerca & Back-End::Logic-Tier::Controller ; Back-End::Logic-tier::UsersController ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Controller \\ \midrule
+			R[OBB][F]3.5 & Il sistema deve permettere il reinserimento di un titolo diverso per la ricerca & Back-End::Logic-Tier::Controller ; Back-End::Logic-tier::UsersController ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Controller \\ \midrule
+
+		\end{tabular}
+	\end{table}
+	\newpage
+	
+	\begin{table}[h]
+		\begin{tabular}{|p{0.18\textwidth}|p{0.20\textwidth}|p{0.59\textwidth}|}
+			\midrule
+			
+			R[OBB][F]4 & Il sistema deve permettere all'utente l'apertura del progetto in modalità visualizzazione & Back-End::Logic-Tier::Controller; Back-End::Logic-Tier::Model::ProjectModel; Back-End::Data-Tier; Front-End::Model; Front-End::Views::PresentSlideShowViews ; Front-End::Controller::PresentSlideShowController; \\ \midrule
+			R[OBB][F]4.1 & Il sistema deve permettere all'utente l'apertura di una presentazione & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Model ; Front-End::Views::PresentSlideShowViews ; Front-End::Controller::PresentSlideShowController; \\ \midrule
+			R[OBB][F]4.1.1 & Il sistema deve permettere all'utente autenticato la visualizzazione di una presentazione in modalità presentatore & Back-End::Logic-Tier::Controller  ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Model ; Front-End::Views::PresentSlideShowViews ; Front-End::Controller::PresentSlideShowController ; Back-End::Presentation-Tier \\ \midrule
+			R[OBB][F]4.1.1.1 & Il sistema deve poter visualizzare la slide corrente per il presentatore & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Model ; Front-End::Views::PresentSlideShowViews ; Front-End::Controller::PresentSlideShowController ; Back-End::Presentation-Tier \\ \midrule
+			R[OBB][F]4.1.1.2 & Il sistema deve poter visualizzare le slide successive per il presentatore & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Model ; Front-End::Views::PresentSlideShowViews ; Front-End::Controller::PresentSlideShowController ; Back-End::Presentation-Tier \\ \midrule
+			R[OBB][F]4.1.1.3 & Il sistema deve poter visualizzare le note della slide per il presentatore & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Model ; Front-End::Views::PresentSlideShowViews ; Front-End::Controller::PresentSlideShowController ; Back-End::Presentation-Tier \\ \midrule
+			R[OBB][F]4.1.1.4 & Il sistema deve poter visualizzare il tempo trascorso per il presentatore & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Model ; Front-End::Views::PresentSlideShowViews ; Front-End::Controller::PresentSlideShowController ; Back-End::Presentation-Tier \\ \midrule
+			R[OBB][F]4.1.1.5 & Il sistema deve poter visualizzare il tempo trascorso per il presentatore & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Model ; Front-End::Views::PresentSlideShowViews ; Front-End::Controller::PresentSlideShowController ; Back-End::Presentation-Tier \\ \midrule
+
+		\end{tabular}
+	\end{table}
+	\newpage
+	
+	\begin{table}[h]
+		\begin{tabular}{|p{0.18\textwidth}|p{0.20\textwidth}|p{0.59\textwidth}|}
+			\midrule
+			
+			R[OBB][F]4.1.2 & Il sistema deve permettere all'utente autenticato la visualizzazione di una presentazione in modalità ascoltatore & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Presentation-Tier ; Front-End::Views::PresentSlideShowView ; Front-End::Model; Front-End::Controller::PresentSlideShowController \\ \midrule
+			R[OBB][F]4.1.2.1 & Il sistema deve poter visualizzare la slide corrente per l'ascoltatore & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Presentation-Tier ; Front-End::Views::PresentSlideShowView ; Front-End::Model; Front-End::Controller::PresentSlideShowController \\ \midrule
+			R[OBB][F]4.1.3 & Il sistema deve poter visualizzare i comandi di navigazione per l'ascoltatore & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Presentation-Tier ; Front-End::Views::PresentSlideShowView ; Front-End::Model; Front-End::Controller::PresentSlideShowController \\ \midrule
+			R[OPZ][F]4.2 & Il sistema deve permettere all'utente la visualizzazione di un'infografica & Back-End::Logic-Tier ; Back-End::Logic-Tier::Model::ProjectModel; Back-End::Data-Tier ; Front-End::Views::InfographicEditorViews ; Front-End::Model ; Front-End::Controller::InfographicEditorController ;   \\ \midrule
+			R[OBB][F]5 & Il sistema deve permettere all'utente di generare il PDF del progetto & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Controller \\ \midrule
+			R[OBB][F]5.1 & Il sistema deve permettere all'utente di generare il PDF della presentazione & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Controller \\ \midrule
+			R[OBB][F]5.2 & Il sistema deve permettere all'utente di generare il PDF dell'infografica & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Controller \\ \midrule
+			R[OBB][F]6 & L'utente deve poter esportare un pacchetto stand-alone per la visualizzazione offline & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Controller \\ \midrule
+			R[OBB][F]6.1 & L'utente deve poter scegliere il percorso per il salvataggio del pacchetto & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Controller \\ \midrule
+
+		\end{tabular}
+	\end{table}
+	\newpage
+	
+	\begin{table}[h]
+		\begin{tabular}{|p{0.18\textwidth}|p{0.20\textwidth}|p{0.59\textwidth}|}
+			\midrule
+
+				R[OBB][F]7 & L'utente deve poter creare un nuovo progetto & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Controller \\ \midrule
+				R[OBB][F]7.1 & L'utente deve poter inserire il titolo del progetto & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Controller \\ \midrule
+				R[OBB][F]7.2 & L'utente deve poter scegliere il template di stile per il proprio progetto & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+				R[OBB][F]8 & Il proprietario deve poter aprire un progetto da lui precedentemente creato & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+				R[OBB][F]8.1 & Il proprietario deve poter scegliere il progetto da aprire & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+				R[OBB][F]9 & Il proprietario deve poter modificare il contenuto di una slide & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controllero \\ \midrule
+				R[OBB][F]9.1 & Il proprietario deve poter modificare il template di stile della presentazione & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+				R[OBB][F]9.2 & Il proprietario deve poter inserire una nuova slide & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+				R[OBB][F]9.2.1 & Il proprietario deve poter inserire una nuova slide a destra & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+				R[OBB][F]9.2.2 & Il proprietario deve poter inserire una nuova slide a sinistra & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+				R[OBB][F]9.3 & Il proprietario deve poter rimuovere una slide & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+
+		\end{tabular}
+	\end{table}
+	\newpage
+	
+	\begin{table}[h]
+		\begin{tabular}{|p{0.18\textwidth}|p{0.20\textwidth}|p{0.59\textwidth}|}
+			\midrule
+			
+			R[OBB][F]9.4 & Il proprietario deve poter inserire un immagine & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OBB][F]9.4.1 & Il sistema deve accettare in input immagini di formato JPG & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OBB][F]9.4.2 & Il sistema deve accettare in input immagini di formato PNG & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OBB][F]9.4.3 & Il sistema deve accettare in input immagini di formato GIF & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OBB][F]9.5 & Il proprietario deve poter inserire elementi di testo & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OPZ][F]9.6 & Il proprietario deve poter inserire dati real time & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OPZ][F]9.6.1 & Il proprietario deve poter caricare un file di dati & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OPZ][F]9.6.2 & Il proprietario deve poter caricare un file per la funzione di estrapolazione dati & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OPZ][F]9.6.3 & Il proprietario deve poter caricare un file per la funzione di elaborazione di dati dall'array & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OPZ][F]9.6.4 & Il proprietario deve poter scegliere il tipo di dati real time da inserire & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OPZ][F]9.6.5 & Il proprietario deve poter scegliere la sorgente di dati real time & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+
+		\end{tabular}
+	\end{table}
+	\newpage
+	
+	\begin{table}[h]
+		\begin{tabular}{|p{0.18\textwidth}|p{0.20\textwidth}|p{0.59\textwidth}|}
+			\midrule
+
+			R[OBB][F]9.7 & Il proprietario deve poter inserire le tabelle & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OBB][F]9.7.1 & Il proprietario deve poter scegliere il numero di righe della tabella & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OBB][F]9.7.2 & Il proprietario deve poter scegliere il numero di colonne della tabella & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OPZ][F]9.8 & Il proprietario deve poter inserire un grafico & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OPZ][F]9.8.1 & Il proprietario deve poter scegliere il modello di grafico & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OPZ][F]9.8.1.1 & Il proprietario deve poter scegliere il modello di grafico istogramma & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OPZ][F]9.8.1.2 & Il proprietario deve poter scegliere il modello di grafico a torta & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OPZ][F]9.8.1.3 & Il proprietario deve poter scegliere il modello di grafico a linea & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OPZ][F]9.8.2 & Il proprietario deve poter inserire il numero di elementi che avrà il grafico & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OPZ][F]9.8.3 & Il proprietario deve poter inserire il nome degli elementi del grafico  & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+			R[OPZ][F]9.8.4 & Il proprietario deve poter inserire il valore degli elementi del grafico & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model ; Front-End::Controller \\ \midrule
+
+	\end{tabular}
+	\end{table}
+	\newpage
+	
+	\begin{table}[h]
+		\begin{tabular}{|p{0.18\textwidth}|p{0.20\textwidth}|p{0.59\textwidth}|}
+			\midrule
+	
+			R[OBB][F]9.9 & Il proprietario deve poter scegliere un effetto di transizione delle slide & Back-End::Presentation-Tier ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views::PresentSlideShowViews ; Front-End::Controller::PresentSlideShowController \\ \midrule
+			R[OBB][F]9.9.1 & Il proprietario deve poter scegliere l'effetto di transizione a scorrimento & Back-End::Presentation-Tier ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views::PresentSlideShowViews ; Front-End::Controller::PresentSlideShowController \\ \midrule
+			R[OBB][F]9.9.2 & Il proprietario deve poter scegliere l'effetto di transizione a dissolvenza & Back-End::Presentation-Tier ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views::PresentSlideShowViews ; Front-End::Controller::PresentSlideShowController \\ \midrule
+			R[OBB][F]9.9.3 & Il proprietario deve poter scegliere l'effetto di transizione a convesso & Back-End::Presentation-Tier ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views::PresentSlideShowViews ; Front-End::Controller::PresentSlideShowController \\ \midrule
+			R[OBB][F]9.9.4 & Il proprietario deve poter scegliere l'effetto di transizione a concavo & Back-End::Presentation-Tier ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views::PresentSlideShowViews ; Front-End::Controller::PresentSlideShowController \\ \midrule
+			R[OBB][F]9.9.5 & Il proprietario deve poter scegliere nessun effetto di transizione & Back-End::Presentation-Tier ; Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Back-End::Data-Tier ; Front-End::Views::PresentSlideShowViews ; Front-End::Controller::PresentSlideShowController \\ \midrule
+			R[OBB][F]9.10 & Il proprietario deve poter ridimensionare un elemento selezionato & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]9.11 & Il proprietario deve poter spostare un elemento selezionato & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]9.12 & Il proprietario deve poter ruotare un elemento selezionato & Back-End::Logic-Tier::Controller::ComponentController; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]9.13 & Il proprietario deve poter rimuovere un elemento selezionato & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller \\ \midrule
+
+		\end{tabular}	
+		\end{table}
+		\newpage
+
+		
+	\begin{table}[h]
+		\begin{tabular}{|p{0.18\textwidth}|p{0.20\textwidth}|p{0.59\textwidth}|}
+			\midrule
+			
+			R[OBB][F]9.14 & Il proprietario deve poter caricare un file da inserire nella slide & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]9.15 & Il proprietario deve poter modificare la formattazione del testo & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]9.15.1 & Il proprietario deve poter cambiare la grandezza del testo & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]9.15.2 & Il proprietario deve poter cambiare il colore del testo & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]9.15.3 & Il proprietario deve poter cambiare il font del testo & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]9.15.4 & Il proprietario deve poter abilitare/disabilitare il corsivo del testo & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]9.15.5 & Il proprietario deve poter abilitare/disabilitare il grassetto del testo & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]9.15.6 & Il proprietario deve poter cambiare la posizione del testo all'interno della slide & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]9.16 & Il proprietario deve poter modificare una tabella & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]9.16.1 & Il proprietario deve poter cambiare il contenuto di una cella della tabella & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]9.16.2 & Il proprietario deve poter aggiungere righe alla tabella & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			
+	\end{tabular}
+		\end{table}
+			\newpage
+			
+	\begin{table}[h]
+		\begin{tabular}{|p{0.18\textwidth}|p{0.20\textwidth}|p{0.59\textwidth}|}
+		\midrule
+		
+		R[OBB][F]9.16.3 & Il proprietario deve poter cancellare righe alla tabella & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+		R[OBB][F]9.16.4 & Il proprietario deve poter aggiungere colonne alla tabella & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+		R[OBB][F]9.16.5 & Il proprietario deve poter cancellare colonne alla tabella & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+		R[OBB][F]9.16.6 & Il proprietario deve poter modificare la grandezza della tabella & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+		R[OPZ][F]9.17 & Il proprietario deve poter modificare un grafico & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+		R[OPZ][F]9.17.1 & Il proprietario deve poter aggiungere un elemento al grafico & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+		R[OPZ][F]9.17.2 & Il proprietario deve poter cancellare un elemento dal grafico & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+		R[OPZ][F]9.17.3 & Il proprietario deve poter modificare il nome di un elemento del grafico & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+		R[OPZ][F]9.17.4 & Il proprietario deve poter modificare il valore di un elemento del grafico & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+		R[OPZ][F]9.17.5 & Il proprietario deve poter modificare il modello di grafico & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+		R[OPZ][F]9.17.5.1 & Il proprietario deve poter modificare il modello di grafico a istogramma & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+		
+		\end{tabular}
+	\end{table}
+	\newpage
+	
+	\begin{table}
+		\begin{tabular}{|p{0.18\textwidth}|p{0.20\textwidth}|p{0.59\textwidth}|}
+			\midrule
+			
+			R[OPZ][F]9.17.5.2 & Il proprietario deve poter modificare il modello di grafico a torta & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OPZ][F]9.17.5.3 & Il proprietario deve poter modificare il modello di grafico a linea & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OPZ][F]9.17.6 & Il proprietario deve poter modificare la grandezza del grafico & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OPZ][F]9.17.7 & Il proprietario deve poter modificare il set di colori del grafico & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OPZ][F]9.18 & Il proprietario deve poter modificare le note di una slide & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OPZ][F]9.19 & Il proprietario deve poter spostare una slide & Back-End::Logic-Tier::Controller::ComponentController ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[DES][F]10 & Il proprietario deve poter creare un'infografica & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views::InfographicEditorViews ; Front-End::Model; Front-End::InfographicEditorController  \\ \midrule
+			R[DES][F]10.1 & Il proprietario deve poter scegliere il template dell'infografica & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views::InfographicEditorViews ; Front-End::Model; Front-End::InfographicEditorController  \\ \midrule
+			R[DES][F]10.2 & Il proprietario deve poter scegliere le slide da inserire nell'infografica & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model::ProjectModel ; Front-End::Views::InfographicEditorViews ; Front-End::Model; Front-End::InfographicEditorController  \\ \midrule
+			R[OBB][F]11 & Il proprietario deve poter salvare il progetto & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model; Front-End::Controller   \\ \midrule
+			
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}
+		\begin{tabular}{|p{0.18\textwidth}|p{0.20\textwidth}|p{0.59\textwidth}|}
+			\midrule
+			
+			R[OBB][F]11.1 & Il sistema deve essere previsto di una funziona salva & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]11.2 & Il proprietario deve poter modificare il nome inserito alla creazione del progetto & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]12 & Il proprietario deve poter eliminare un progetto & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]12.1 & Il proprietario deve poter selezionare il progetto da eliminare & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]12.2.1 & Il sistema deve permettere la visualizzazione di un messaggio per la conferma eleminazione & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model; Front-End::Controller \\ \midrule
+			R[OBB][F]12.2.2 & Il proprietario deve poter confermare l'eliminazione del progetto  & Back-End::Logic-Tier::Controller ; Back-End::Logic-Tier::Model ; Back-End::Data-Tier ; Front-End::Views ; Front-End::Model; Front-End::Controller  \\ \midrule
+			R[OBB][F]13 & Il proprietario deve poter consultare il manuale utente & Front-End::Views \\ 
+				
+		\bottomrule
+	\end{tabular}
+	\end{table}
+	\newpage
