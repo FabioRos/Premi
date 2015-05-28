@@ -6,7 +6,7 @@
 	\end{figure}
 
 	\begin{itemize}
-		\item \textbf{Attori:} Utente autenticato, Proprietario;
+		\item \textbf{Attori:} Utente autenticato;
 		\item \textbf{Scopo e descrizione:} L'utente ha aperto un progetto e vuole esportarlo in locale per poterlo visualizzare offline;
 		\item \textbf{Precondizione:} Il sistema è in attesa che l'utente selezioni la funzione esporta;
 		\item \textbf{Flusso principale degli eventi:}
@@ -20,17 +20,17 @@
 
 \subsection{Caso d'uso UC6.1: Selezionare la funzione esporta}
 	\begin{itemize}
-		\item \textbf{Attori:} Utente autenticato, Proprietario;
+		\item \textbf{Attori:} Utente autenticato;
 		\item \textbf{Scopo e descrizione:} L'utente seleziona dall'apposito menù la funzione di esportazione per esportare il progetto;
 		\item \textbf{Precondizione:} L'utente ha un progetto aperto e il sistema è in attesa che l'utente selezioni la funzione esporta;
-		\item \textbf{Postcondizione:} Il sistema inizia la procedura di esportazione.
+		\item \textbf{Postcondizione:} Il sistema inizia la procedura di esportazione preparando il pacchetto.
 	\end{itemize}
 
 
 \subsection{Caso d'uso UC6.2: Salvataggio del pacchetto in locale}
 	\begin{itemize}
-		\item \textbf{Attori:} Utente autenticato, Proprietario;
-		\item \textbf{Scopo e descrizione:} L'utente deve salvare il pacchetto del progetto in locale.
+		\item \textbf{Attori:} Utente autenticato;
+		\item \textbf{Scopo e descrizione:} L'utente deve salvare il pacchetto del progetto in locale per poterlo visualizzare in locale senza connessione a internet. Il pacchetto contiene la struttura del server e del programma necessaria per la visualizzazione corretta della presentazione e dell'\gls{infografica} anche in assenza della connessione diretta al server stesso.
 		\item \textbf{Precondizione:} Il sistema ha preparato il pacchetto, il quale è pronto per essere scaricato;
 		\item \textbf{Postcondizione:} Il pacchetto è stato scaricato e salvato in locale dall'utente.
 	\end{itemize}

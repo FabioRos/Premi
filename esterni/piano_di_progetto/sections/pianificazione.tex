@@ -1,4 +1,4 @@
-Date le scadenze viste nel paragrafo 1.6 si è deciso di suddividere il progetto \PROGETTO{} in cinque macro-fasi:
+Date le scadenze viste nel paragrafo 1.6 si è deciso di suddividere il progetto \PROGETTO{} in cinque periodi di lavoro:
 \begin{itemize}
 	\item \textbf{Analisi (AN)};
 	\item \textbf{Analisi Dettaglio (AD)};
@@ -6,7 +6,7 @@ Date le scadenze viste nel paragrafo 1.6 si è deciso di suddividere il progetto
 	\item \textbf{Progettazione di Dettaglio e Codifica (PDC)};
 	\item \textbf{Verifica e Validazione (VV)}.
 \end{itemize}
-Ogni macro-fase è stata suddivisa in varie attività alle quali sono state associate una o più risorse. Tali attività sono state suddivise in ulteriori sotto-attività ancora più di dettaglio. 
+Ogni periodo è stato suddiviso in varie attività alle quali sono state associate una o più risorse. Tali attività sono state suddivise in ulteriori sotto-attività ancora più di dettaglio. 
 
 \noindent Di queste sotto-attività viene riportato il diagramma di \gls{Gantt} per evidenziare la pianificazione di dettaglio rimanendo focalizzati sui concetti maggiormente importanti. Le attività possono essere di due tipi e vengono usate due colorazioni diverse nei diagrammi di \gls{Gantt} che indicano il diverso tipo alla quale un'attività appartiene, in dettaglio:
 \begin{itemize}
@@ -19,10 +19,10 @@ Ogni macro-fase è stata suddivisa in varie attività alle quali sono state asso
 \end{itemize}
 Nel diagramma di \gls{Gantt} vengono indicate anche:
 \begin{itemize}
-	\item \textbf{\gls{Milestone}:} hanno durata nulla e rappresentano le date attese di conclusione delle attività. Coincidono con la consegna dei documenti  in vista della successiva revisione o approvazione di quanto fatto precedentemente alla \gls{milestone}. 
+	\item \textbf{\gls{Milestone}:} hanno durata nulla e rappresentano le date attese di conclusione delle attività. Coincidono con la consegna dei documenti in vista della successiva revisione o approvazione di quanto fatto precedentemente alla \gls{milestone}. 
 	
 	\noindent È indicata nel diagramma di \gls{Gantt} con un rombo di colore \textit{rosso};
-	\item \textbf{Macro-attività:} attività della macro-fase divise in sotto-attività. 
+	\item \textbf{Macro-attività:} attività del periodo divisa in sotto-attività. 
 	
 	\noindent Sono indicate nel diagramma di \gls{Gantt} con una barra di colore \textit{nero}.
 \end{itemize}
@@ -32,13 +32,58 @@ Si è deciso di non riportare i diagrammi \gls{PERT} in quanto si sono dimostrat
 
 \noindent Sono riportati anche i \gls{WBS} delle varie attività al fine di mostrarne la gerarchia.
 
+\subsection{Stati di progresso per SEMAT}
+Per ogni periodo individuato per lo sviluppo del progetto \PROGETTO{} è stato pianificato il raggiungimento di uno stato di avanzamento di \gls{SEMAT}. Di seguito si specificano in maggior dettaglio alcuni stati, adattandoli alle circostanze di questo progetto:
+\begin{itemize}
+	\item \textbf{Opportunity:} rappresenta l'insieme delle circostanze che rendono appropriato lo sviluppo o il cambiamento di un sistema software. Nel nostro caso le opportunità sono derivate dalla valutazione effettuata sui capitolati d'appalto.
+	\begin{itemize}
+		\item \textit{Benefit Accrued:} identifica i benefici derivanti dall'utilizzo del prodotto e dal ritorno dell'investimento. Nel nostro caso il beneficio riguarda la valutazione finale del progetto.
+	\end{itemize}
+	\item \textbf{Requirements:} rappresentano i requisiti che il sistema software deve soddisfare in accordo con l'opportunità individuata e soddisfando gli stakeholder. Nel nostro caso i requisiti dovranno essere ricavati dal capitolato d'appalto scelto e la progettazione dovrà essere effetuata in accordo con i Proponenti.
+	\begin{itemize}
+		\item \textit{Fulfilled:} il sistema soddisfa tutti i requisiti individuati in fase di analisi. Nel nostro caso il sistema software creato soddisfa sia i requisiti obbligatori che quelli opzionali e desiderabili.
+	\end{itemize}
+	\item \textbf{Work:} rappresenta le attività che comportano uno sforzo fisico o mentale al fine di ottenere un risultato. Nel nostro caso rappresenta tutte le attività pianificate per il completamento del progetto.
+	\begin{itemize}
+		\item \textit{Conclused:} tutte le attività per il completamento del progetto sono terminate ed il Proponente accetta il prodotto. I risultati del lavoro sono stati raggiunti.
+	\end{itemize}
+\end{itemize}
+
+\noindent Per la descrizione degli stati non specificati si rimanda alle schede informative della sezione \ref{sezione 1.2.2}.
+
+\noindent Gli stati pianificati sono definiti nella seguente tabella:
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|p{0.15\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|p{0.10\textwidth}|}
+	\toprule
+		 & AN & AD & PA & PDC & VV \\
+	\midrule
+	\midrule
+		\textbf{Opportunity} & Value Established & Value Established & Viable & Addressed & Benefit Accrued \\
+	\midrule
+		\textbf{Stakeholders} & Involved & Involved & In Agreement & Satisfied for Deployment & Satisfied in Use \\
+	\midrule
+		\textbf{Requirements} & Coherent & Coherent & Acceptable & Addressed & Fulfilled \\
+	\midrule
+		\textbf{Software System} & & & Architecture Selected & Usable & Ready \\
+	\midrule
+		\textbf{Team} & Formed & Collaborating & Performing & Performing & Adjourned \\     	 
+	\midrule
+		\textbf{Work} & Prepared & Started & Under Control & Under Control & Conclused \\
+	\midrule
+		\textbf{Way of Work} & In Use & In Place & Working Well & Working Well & Retired  \\  
+	\bottomrule 
+\end{tabular}
+\caption{Stati avanzamento per SEMAT}
+\end{table}
+
 \subsection{Analisi}
 \begin{description}
 	\item[Periodo:] Dal 2015-02-27 al 2015-04-15 .
 \end{description}
-Questa macro-fase inizia con la scelta del capitolato da svolgere e termina con la scadenza per consegna della documentazione in ingresso alla \textit{Revisione dei Requisiti}. 
+Questo periodo di lavoro inizia con la scelta del capitolato da svolgere e termina con la scadenza per consegna della documentazione in ingresso alla \textit{Revisione dei Requisiti}. 
 
-\noindent Le macro-attività principali di questa fase sono:
+\noindent Le macro-attività principali sono:
 \begin{itemize}
 	\item \textbf{Norme di Progetto:} l'\textit{Amministratore di Progetto} emana le norme alle quali il gruppo dovrà attenersi durante lo svolgimento di ogni singola attività. Sarà la prima attività da iniziare essendo non vincolata alla scelta del capitolato in quanto le norme regolano la scrittura dei documenti e l'utilizzo di software a supporto del gruppo. Il rispetto di tali norme sarà poi certificato dai verificatori;
 	\item \textbf{Studio di Fattibilità:} vengono valutati tutti i capitolati d'appalto disponibili studiandone la difficoltà e complessità	ed infine viene redatto uno \textit{Studio di Fattibilità}. Tale attività va fatta all'inizio in quanto bloccante rispetto l'\textit{Analisi dei Requisiti}. Al termine di ciò il gruppo sceglie il capitolato da svolgere;
@@ -48,13 +93,13 @@ Questa macro-fase inizia con la scelta del capitolato da svolgere e termina con 
 	\item \textbf{Glossario:} contiene le definizioni di alcuni termini contenuti nei documenti, in modo da eliminare ogni ambiguità o incertezza. Viene scritto in maniera incrementale e parallela da tutti i redattori dei documenti ed è costantemente aggiornato ogni volta che si utilizza un termine che necessita di spiegazione;
 	\item \textbf{Lettera di Presentazione:} documento presentato al Committente, permette al gruppo di partecipare alla gara d'appalto per il capitolato.	
 \end{itemize}
-I ruoli maggiormente coinvolti in questa macro-fase sono: \textit{Analista}, \textit{Amministratore di Progetto}, \textit{Responsabile di Progetto} e \textit{Verificatore}.
+I ruoli maggiormente coinvolti in questo periodo di lavoro sono: \textit{Analista}, \textit{Amministratore di Progetto}, \textit{Responsabile di Progetto} e \textit{Verificatore}.
 \newpage
 \subsubsection{Diagramma di Gantt: Analisi}
 \begin{figure}[h] 
 	\centering
 	\includegraphics[width=\textwidth]{./img/analisi.png}
-	\caption{Diagramma di Gantt della macro-fase di Analisi}
+	\caption{Diagramma di Gantt, Analisi}
 	\label{fig1}
 \end{figure}
 
@@ -72,14 +117,15 @@ I ruoli maggiormente coinvolti in questa macro-fase sono: \textit{Analista}, \te
 \begin{description}
 	\item[Periodo:] Dal 2015-04-16 al 2015-04-28 .
 \end{description}
-Questa macro-fase inizia subito dopo la consegna dei documenti in ingresso per la \textbf{Revisione dei Requisiti} e termina con l'inizio della fase di \textbf{Progettazione Architetturale}. Questo periodo serve a consolidare i requisiti richiesti, migliorando il documento di \textit{Analisi dei Requisiti} ed incrementando i contenuti degli altri documenti. 
+Questo periodo di lavoro inizia subito dopo la consegna dei documenti in ingresso per la \textbf{Revisione dei Requisiti} e termina con l'inizio della \textbf{Progettazione Architetturale}. Questo periodo serve a consolidare i requisiti richiesti, migliorando il documento di \textit{Analisi dei Requisiti} ed incrementando i contenuti degli altri documenti. 
 
-\noindent I ruoli maggiormente coinvolti sono: \textit{Analista}, \textit{Amministratore di Progetto} e \textit{Responsabile di Progetto}.
+\noindent I ruoli maggiormente coinvolti in questo periodo di lavoro sono: \textit{Analista}, \textit{Amministratore di Progetto} e \textit{Responsabile di Progetto}.
 \subsubsection{Diagramma di Gantt: Analisi di Dettaglio}
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{./img/analisi_dettaglio.png}
-\caption{Diagramma di Gantt della macro-fase di Analisi di Dettaglio}
+\caption{Diagramma di Gantt, Analisi di Dettaglio}
+\label{fig2}
 \end{figure}
 
 \newpage
@@ -95,19 +141,20 @@ Questa macro-fase inizia subito dopo la consegna dei documenti in ingresso per l
 \begin{description}
 	\item[Periodo:] Dal 2015-04-29 al 2015-05-24 .
 \end{description}
-Questa macro-fase inizia al concludersi dell'\textbf{Analisi di Dettaglio} e termina con la consegna della \textbf{Revisione di Progetto}. 
+Questo periodo di lavoro inizia al concludersi dell'\textbf{Analisi di Dettaglio} e termina con la consegna della \textbf{Revisione di Progetto}. 
 
-\noindent Le macro-attività principali di questa fase sono:
+\noindent Le macro-attività principali sono:
 \begin{itemize}
 	\item \textbf{Specifica Tecnica:} il \textit{Progettista} espone le scelte progettuali ad alto livello che si intendono inserire nel prodotto che si andrà a sviluppare.	Verranno descritti anche i \gls{Design Pattern} utilizzati nella creazione del prodotto, l'architettura generale del software, i principali flussi di controllo ed il tracciamento dei requisiti;
 	\item \textbf{Incremento e Verifica:} verranno aggiornati ed incrementati tutti i documenti redatti sino ad ora in base ai risultati della \textit{Revisione dei Requisiti}.	
 \end{itemize}
-I ruoli maggiormente coinvolti in questa macro-fase sono: \textit{Analista}, \textit{Progettista}, \textit{Verificatore}. 
+I ruoli maggiormente coinvolti in questo periodo di lavoro sono: \textit{Analista}, \textit{Progettista}, \textit{Verificatore}. 
 \subsubsection{Diagramma di Gantt: Progettazione Architetturale}
 \begin{figure}[h] 
 	\centering
 	\includegraphics[width=\textwidth]{./img/progettazione_architetturale.png}
-	\caption{Diagramma di Gantt della macro-fase di Progettazione Architetturale}
+	\caption{Diagramma di Gantt, Progettazione Architetturale}
+	\label{fig3}
 \end{figure}
 
 \newpage
@@ -123,21 +170,21 @@ I ruoli maggiormente coinvolti in questa macro-fase sono: \textit{Analista}, \te
 \begin{description}
 	\item[Periodo:] Dal 2015-05-30 al 2015-06-13 .
 \end{description}
-Questa macro-fase ha inizio con la consegna della \textbf{Revisione di Progetto} e termina con la consegna della \textbf{Revisione di Qualifica}. 
+Questo periodo di lavoro ha inizio con la consegna della \textbf{Revisione di Progetto} e termina con la consegna della \textbf{Revisione di Qualifica}. 
 
-\noindent Le macro-attività principali di questa fase sono:
+\noindent Le macro-attività principali sono:
 \begin{itemize}
 	\item \textbf{Definizione di Prodotto:} vengono definite in maniera più approfondita la struttura e le relazioni delle componenti del prodotto, sulla base del documento di \textit{Specifica Tecnica};
 	\item \textbf{Codifica:} seguendo quanto scritto nella \textit{Definizione di Prodotto}, i programmatori iniziano a sviluppare il codice del programma. Questa macro-attività è stata suddivisa in due attività, in quanto, adottando un ciclo di vita incrementale, nel primo ciclo verranno realizzate le parti che riguardano i requisiti obbligatori mentre nel secondo verrà valutato, in base al tempo disponibile e all'interesse del gruppo, la possibilità di sviluppare funzionalità aggiuntive opzionali e desiderabili da inserire nel prodotto;
 	\item \textbf{Manuali Utente:} verranno redatti una volta finito lo sviluppo del codice e avranno lo scopo di fornire delle linee guida per l'utilizzo del sistema da parte degli utenti coinvolti;
 	\item \textbf{Incremento e Verifica:} verranno aggiornati ed incrementati tutti i documenti redatti sino ad ora in base ai risultati della \textit{Revisione di Progettazione}.
 \end{itemize}
-I ruoli più utilizzati in questa macro-fase sono: \textit{Progettista}, \textit{Programmatore} e \textit{Verificatore}. 
+I ruoli più utilizzati in questo periodo di lavoro sono: \textit{Progettista}, \textit{Programmatore} e \textit{Verificatore}. 
 \subsubsection{Diagramma di Gantt: Progettazione di Dettaglio e Codifica}
 \begin{figure}[h] 
 	\centering
 	\includegraphics[width=\textwidth]{./img/progettazione_dettaglio.png}
-	\caption{Diagramma di Gantt della macro-fase di Progettazione di Dettaglio e Codifica}
+	\caption{Diagramma di Gantt, Progettazione di Dettaglio e Codifica}
 \end{figure}
 
 \newpage
@@ -153,21 +200,21 @@ I ruoli più utilizzati in questa macro-fase sono: \textit{Progettista}, \textit
 \begin{description}
 	\item[Periodo:] Dal 2015-06-19 al 2015-07-03 .
 \end{description}
-Questa macro-fase ha inizio alla consegna della \textbf{Revisione di Qualifica} e ha termine con la consegna della \textbf{Revisione di Accettazione}, cioè col termine del processo dello sviluppo del software.
+Questo periodo di lavoro ha inizio alla consegna della \textbf{Revisione di Qualifica} e ha termine con la consegna della \textbf{Revisione di Accettazione}, cioè col termine del processo dello sviluppo del software.
 
-\noindent Le macro-attività principali di questa fase sono:
+\noindent Le macro-attività principali sono:
 \begin{itemize}
 	\item \textbf{Validazione Verifica e Collaudo del Sistema:} il prodotto verrà convalidato per testare che è conforme alle specifiche e che soddisfa le richieste espresse dal cliente nel capitolato;
 	\item \textbf{Incremento e Verifica:} verranno aggiornati ed incrementati tutti i documenti redatti sino ad ora in base ai risultati della \textit{Revisione di Qualifica}.
 \end{itemize}
-Si noti che non è da intendersi che le verifiche necessarie vengano fatte solamente durante la macro-fase di \textbf{Verifica e Validazione}. Tale macro-fase incorpora le attività necessarie per il collaudo del prodotto. La verifica è un'attività presente in tutte le macro-fasi precedenti e non è dunque da confondere con questa macro-fase.
+Si noti che non è da intendersi che le verifiche necessarie vengano fatte solamente durante \textbf{Verifica e Validazione}. Tale periodo incorpora le attività necessarie per il collaudo del prodotto. La verifica è un'attività presente in tutti i periodi precedenti e non è dunque da confondere con questo periodo.
 
-\noindent I ruoli più utilizzati in questa macro-fase sono: \textit{Progettista}, \textit{Programmatore} e \textit{Verificatore}.
+\noindent I ruoli più utilizzati in questo periodo di lavoro sono: \textit{Progettista}, \textit{Programmatore} e \textit{Verificatore}.
 \subsubsection{Diagramma di Gantt: Verifica e Validazione}
 \begin{figure}[h] 
 	\centering
 	\includegraphics[width=\textwidth]{./img/verifica_validazione.png}
-	\caption{Diagramma di Gantt della macro-fase di Verifica e Validazione}
+	\caption{Diagramma di Gantt, Verifica e Validazione}
 \end{figure}
 
 \newpage

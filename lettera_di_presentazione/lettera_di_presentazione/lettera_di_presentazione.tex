@@ -1,0 +1,44 @@
+% importa variabili globali
+\input{../../template/config.tex}
+
+
+% definizione variabili locali
+\def\DOCUMENTO{}
+\def\VERSIONE{}
+
+\def\DESCRIZIONE{}
+
+\def\REDATTORE {}
+\def\VERIFICATORE {}
+\def\RESPONSABILE {}
+
+\def\USO {}
+
+\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\}
+
+
+% abilita (true) / disabilita (false) indice, lista tabelle, lista figure
+\def\INDICE	{false}
+\def\TABELLE {false}
+\def\FIGURE {false}
+
+
+% importa struttura
+\input {../../template/structure.tex}
+
+
+% importa indici
+\input {../../template/index.tex}
+
+
+% importa parti documento
+\input{sections/letteraRP.tex}
+
+%\input {sections/nomesezione}
+%\newpage
+
+% ...
+
+%\printglossaries
+
+\end{document}

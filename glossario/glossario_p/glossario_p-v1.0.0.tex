@@ -4,11 +4,11 @@
 
 % definizione variabili locali
 \def\DOCUMENTO{Glossario}
-\def\VERSIONE{1.0.0}
+\def\VERSIONE{2.0.0}
 
-\def\REDATTORE {Agostinetto Matteo\\ & Carraro Nicola\\ & Crespan Emanuele\\ & Ros Fabio}
-\def\VERIFICATORE {Suierica Bogdan}
-\def\RESPONSABILE {Burlin Valerio}
+\def\REDATTORE {Burlin Valerio\\ & Carraro Nicola\\ & Crespan Emanuele\\ & Ros Fabio}
+\def\VERIFICATORE {Suierica Bogdan\\ & Agostinetto Matteo}
+\def\RESPONSABILE {Carraro Nicola}
 
 \def\USO {Esterno}
 
@@ -31,20 +31,16 @@
 % importa indici
 \input {../../template/index.tex}
 
-\section{Introduzione}
-\subsection{Scopo del documento}
-Questo documento ha lo scopo di raccogliere i termini e le parole usati all'interno dei documenti che possono non essere conosciuti a una persona esterna che legge la documentazione e quindi di dare una breve definizione di essi.
-\newpage
-
 
 % importa parti documento
-\glsaddall
+%\glsaddall
 
 %\input {sections/nomesezione}
+\input {sections/gloss.tex}
 %\newpage
 
 % ...
 
-\printglossary[title=Glossario, nonumberlist]
+%\printglossary[title=Glossario, nonumberlist]
 
 \end{document}
