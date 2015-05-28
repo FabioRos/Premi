@@ -1,0 +1,26 @@
+La verifica dei processi, documenti e prodotti è un'attività da eseguire continuamente durante lo sviluppo del progetto. Di conseguenza, servono modalità operative chiare e dettagliate per i \textit{Verificatori}, in modo da uniformare le attività di verifica svolte ed ottenere il miglior risultato possibile. Si descrivono ora le modalità ordinate e puntuali di verifica di processi, documenti, attività e codice alle quali ci si riferirà in questo documento e alle quali i \textit{Verificatori} dovranno attenersi.
+
+\subsubsection{Tecniche di analisi}
+\paragraph{Walkthrough}
+Cosiddetta lettura a pettine, questa tecnica di analisi prevede una lettura critica del codice o del documento prodotto. Tale tecnica è molto dispendiosa in termini di risorse, poiché viene applicata all'intero documento, senza avere una precisa idea di quale sia il tipo di anomalia e di dove ricercarla. Essa è però necessaria nelle prime fasi del progetto, vista l'inesperienza da parte del gruppo nell'attuare un tipo di verifica più precisa e mirata. Dopo una prima fase di lettura ed identificazione degli errori, si procede alla discussione degli stessi, proponendo le modifiche da apportare per garantirne la correzione. Il passo finale consiste nell'applicare le modifiche proposte, redigendo un rapporto preciso che elenchi le modifiche effettuate. Una caratteristica di questo tipo di analisi è che richiede l'utilizzo di più risorse umane;
+\paragraph{Inspection}
+Cosiddetta ricerca selettiva, questa tecnica di analisi presuppone l'esperienza da parte del verificatore nell'individuare gli errori e le anomalie più frequenti. A tal scopo è necessaria una lista di controllo stilata in una precedente analisi di tipo \gls{walkthrough} nella quale sono elencate le sezioni critiche. Questo ci consente una verifica più rapida e meno risorse umane. Dopo aver terminato l'analisi, è necessario stilare un rapporto di verifica.
+
+\subsubsection{Verifica dei documenti}
+La verifica dei documenti verrà eseguita ogni volta che sarà effettuata una modifica ad un documento e debba essere approvato.
+Per una corretta verifica di un documento vanno seguite le seguenti pratiche:
+
+\begin{itemize}
+	\item \textbf{Controllo tipografico: }tramite l'utilizzo di TeXstudio verranno individuati errori tipografici presenti nel documento;
+	\item \textbf{Controllo lessicale: }il \textit{Verificatore} dovrà controllare che il documento non presenti errori lessicali attraverso un'attenta analisi del testo utilizzando la tecnica \gls{inspection} o \gls{walkthrough};
+	\item \textbf{Controllo glossario: }il \textit{Verificatore} dovrà controllare che ogni parola, nel testo, presente nel glossario sia correttamente evidenziata;
+	\item \textbf{Controllo contenuto: }il \textit{Verificatore} dovrà controllare che il documento contenga tutto il necessario e che sia impaginato adeguatamente;
+	\item \textbf{Rispetto delle norme del progetto: }il \textit{Verificatore} dovrà controllare che il documento segua le norme di progetto stabilite;
+	\item \textbf{Lista di controllo: }si dovrà stilare una lista di errori più frequenti, per semplificare le successive verifiche dei documenti;
+	\item \textbf{Rispetto \gls{indice Gulpease}: }il \textit{Verificatore} dovrà calcolare e controllare, per ogni documento, che gli \gls{indici di Gulpease} ricadano nel range di valori specificato nel \textit{Piano di Qualifica}, altrimenti si dovrà effettuare una ricerca \gls{walkthrough} delle frasi troppo lunghe e complesse;
+	\item \textbf{Segnalazione errori: }una volta completata la verifica di un documento, se sono stati riscontrati errori, il \textit{Verificatore} dovrà aprire dei \gls{ticket} per segnalarli.
+\end{itemize}
+	
+\subsubsection{Verifica dei diagrammi}
+I diagrammi devono essere verificati manualmente dal \textit{Verificatore} che deve controllare che aderiscano correttamente allo standard \gls{UML} 2.0.
+In particolare deve controllare che i diagrammi di flusso siano rappresentati in maniera corretta e che i \gls{casi d'uso} utilizzino correttamente le inclusioni e le estensioni.

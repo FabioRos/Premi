@@ -16,6 +16,15 @@
 \usepackage[italian]{babel}   % lingua principale del documento
 \usepackage[a4paper, top= 3cm, bottom= 3cm, left= 3cm, right= 3cm, bindingoffset= 5mm]{geometry} % impostazione margini
 
+% ------- uso il quarto livello di section attraverso \paragraph{title} 
+\usepackage{titlesec} 
+\setcounter{secnumdepth}{4} % dichiaro il numero di livelli 
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+% -------
+
 \usepackage{amssymb} %
 
 \usepackage{booktabs} % comandi aggiuntivi per le tabelle
