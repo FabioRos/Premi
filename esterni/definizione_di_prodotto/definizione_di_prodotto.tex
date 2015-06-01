@@ -3,20 +3,20 @@
 
 
 % definizione variabili locali
-\def\DOCUMENTO{<Nome documento>}
+\def\DOCUMENTO{Definizione di Prodotto}
 \def\VERSIONE{1.0.0}
 
-\def\DESCRIZIONE{<Info documento}
+\def\DESCRIZIONE{Documento che definisce in dettaglio l'architettura del prodotto \PROGETTO.}
 
-\def\REDATTORE {<Redattore>}
-\def\VERIFICATORE {<Verificatore>}
-\def\RESPONSABILE {<Responsabile>}
+\def\REDATTORE {Burlin Valerio \\ & Carraro Nicola \\ & Crespan Emanuele \\ & Ros Fabio}
+\def\VERIFICATORE {Agostinetto Matteo}
+\def\RESPONSABILE {Suierica Bogdan}
 
-\def\USO {<Uso>}
+\def\USO {Esterno}
 
-\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\}
+\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\ & \PROPONENTE{}\\}
 
-\def\DESCRIZIONE {<Descrizione>}
+\def\DESCRIZIONE {Documento che definisce in dettaglio l'architettura del prodotto \PROGETTO.}
 
 
 % abilita (true) / disabilita (false) indice, lista tabelle, lista figure
@@ -34,9 +34,12 @@
 
 
 % importa parti documento
-\section{Esempio}
-\input{sections/1_analisi_dei_requisiti.tex}
-
+\section{Introduzione}
+\input{sections/introduzione.tex}
+\newpage
+\section{Standard di Progetto}
+\input{sections/standard_di_progetto.tex}
+\newpage
 %\input {sections/nomesezione}
 %\newpage
 
