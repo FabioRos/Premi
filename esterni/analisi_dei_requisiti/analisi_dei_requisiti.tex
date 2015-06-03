@@ -1,22 +1,21 @@
 % importa variabili globali
 \input{../../template/config.tex}
 
-
 % definizione variabili locali
-\def\DOCUMENTO{<Nome documento>}
-\def\VERSIONE{1.0.0}
+\def\DOCUMENTO{Analisi dei Requisiti}
+\def\VERSIONE{2.0.0}
 
-\def\DESCRIZIONE{<Info documento}
+\def\DESCRIZIONE{Documento che descrive l'analisi dei requisiti e dei casi d'uso del gruppo \GRUPPO\ per il progetto \PROGETTO.}
 
-\def\REDATTORE {<Redattore>}
-\def\VERIFICATORE {<Verificatore>}
-\def\RESPONSABILE {<Responsabile>}
+\def\REDATTORE {Burlin Valerio \\ & Suierica Bogdan}
+\def\VERIFICATORE {Crespan Emanuele}
+\def\RESPONSABILE {Carraro Nicola}
 
-\def\USO {<Uso>}
+\def\USO {Esterno}
 
-\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\}
+\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\ & \PROPONENTE{}\\}
 
-\def\DESCRIZIONE {<Descrizione>}
+\def\DESCRIZIONE {Documento che descrive l'analisi dei requisiti e dei casi d'uso del gruppo \GRUPPO{} per il progetto \PROGETTO.}
 
 
 % abilita (true) / disabilita (false) indice, lista tabelle, lista figure
@@ -28,19 +27,32 @@
 % importa struttura
 \input {../../template/structure.tex}
 
+\input{diario_modifiche.tex}
 
 % importa indici
 \input {../../template/index.tex}
 
 
-% importa parti documento
+\section{Introduzione}
+\input{sections/introduzione.tex}
+\newpage
 
-%\section{<nomesezione>}
-%\input{sections/<nomefile>.tex}
+\section{Descrizione Generale}
+\input{sections/descrizione_generale.tex}
+\newpage
 
-%\newpage
+\section{Casi d'uso}
+\input{sections/casi_d_uso.tex}
+\newpage
 
-% ...
+\section{Requisiti}
+\input{sections/requisiti.tex}
+\newpage
+
+
+\section{Tracciamento dei test}
+\input{sections/tracciamento_dei_test.tex}
+\newpage
 
 %\printglossaries
 

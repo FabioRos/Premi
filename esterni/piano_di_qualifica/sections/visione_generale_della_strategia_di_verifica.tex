@@ -41,9 +41,9 @@ Ogni metrica avrà due caratteristiche fondamentali:
 Per misurare lo stato di avanzamento dei processi si è scelto di utilizzare indici che ne analizzino i costi e
 tempi.
 \subsubsection{Schedule Variance (SV)}
-Lo Schedule Variance è un indicatore di efficacia e serve a controllare se si è in linea, in anticipo o in ritardo rispetto alla pianificazione temporale delle attività nella \gls{baseline}.
+Lo Schedule Variance è un indicatore di efficacia e serve a controllare se si è in linea, in anticipo o in ritardo rispetto alla pianificazione temporale delle attività nella baseline.
 Se SV G > 0 significa che il gruppo di lavoro sta producendo con maggior velocità rispetto a quanto pianificato, viceversa se negativo.
-Essendo stati inseriti \gls{slack} durante la pianificazione della \gls{baseline} dei processi, il valore di tale indice è inizialmente positivo.
+Essendo stati inseriti slack durante la pianificazione della baseline dei processi, il valore di tale indice è inizialmente positivo.
 Parametri utilizzati:
 \begin{itemize}
 	\item \textbf{Range-accettazione}: $\left[  \geq - \: costo \: preventivo \: fase * 5 \% \right]$
@@ -60,7 +60,7 @@ Parametri utilizzati:
 
 \subsection{Metriche per la documentazione}
 \label{sezione 3.8}
-Come metrica per i documenti redatti si è deciso di utilizzare l'indice di leggibilità \gls{Gulpease}. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico. L'indice è tarato sulla lingua italiana e considera due variabili linguistiche: la lunghezza della parola e la lunghezza della frase rispetto al numero delle lettere. \\
+Come metrica per i documenti redatti si è deciso di utilizzare l'indice di leggibilità Gulpease. Rispetto ad altri ha il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificandone il calcolo automatico. L'indice è tarato sulla lingua italiana e considera due variabili linguistiche: la lunghezza della parola e la lunghezza della frase rispetto al numero delle lettere. \\
 \noindent L'indice è calcolato attraverso la seguente formula:\\
 \begin{center}
 	$89+ \frac{300*\left(numero\:\ delle\:\ frasi \right)-10*\left(numero\:\ delle\:\ lettere\right)}{numero\:\ delle\:\ parole}$
