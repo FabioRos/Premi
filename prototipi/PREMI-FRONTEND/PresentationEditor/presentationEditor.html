@@ -1,0 +1,70 @@
+<h1>Presentation Editor</h1>
+<div class="row">
+    <div class="large-2 columns" >
+        <ul id="strumenti">
+            <li>
+                <ul id="PRESENTAZIONE">
+                    <li>Style</li>
+                    <li>Default Settings</li>
+                </ul>
+            </li>
+            <li>
+                <ul id="COMPONENTS">
+                    <li><a href id="editText">Text</a></li>
+                    <li><a href id="editImage">Image</a></li>
+                    <li><a href id="editTable">Table</a></li>
+                    <li><a href id="editChart">Chart</a></li>
+                    <li><a href id="editRealTimeData">RealTimeData</a></li>
+                    <li><a href id="editShape">Forma</a></li>
+                </ul>
+            </li>
+        </ul>
+        <button id="btnShowEditComponentForm">Opzioni Modifica Componente</button>
+        <div id="editComponentForm">
+            <form>
+                <label for='txt1_change'>Testo</label>
+                <input id='txt1_change' type="text" />
+                <label for='txt1_size_change'>Size</label>
+                <input id='txt1_size_change' type="number" value='20'/>
+                
+                <div class="row">
+                  <div class="large-6 columns">
+                    <label>origin-X
+                      <input type="number" placeholder="" />
+                    </label>
+                  </div>
+                    <div class="large-6 columns">
+                    <label>origin-Y
+                      <input type="number" placeholder="" />
+                    </label>
+                  </div>
+                </div>
+                
+               <div class="row">
+                  <div class="large-6 columns">
+                    <label>Height
+                      <input type="number" placeholder="" />
+                    </label>
+                  </div>
+                    <div class="large-6 columns">
+                    <label>Width
+                      <input type="number" placeholder="" />
+                    </label>
+                  </div>
+               </div>
+            </form>
+        </div>
+    
+    </div>
+  <div class="large-10 columns">
+    <canvas id="slide" width="800" height="600" style="border:1px solid #000000;"></canvas>
+  </div>
+ 
+    
+</div>
+<div class="row">
+        <div class="large-12 columns" >
+            <button id="btnSerialize">Serializza</button>
+            <p id="serialized"></p>
+        </div>
+</div>

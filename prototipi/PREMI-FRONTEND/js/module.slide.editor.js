@@ -5,8 +5,44 @@
  */
 
 var canvas;
+var editComponentFormVisible=false;
 
 jQuery( document ).ready(function(){
+    
+    
+    
+    
+    /*INIT & BUSINESS LOGIC*/
+    
+    jQuery('#editComponentForm').hide();
+    
+    jQuery('#btnShowEditComponentForm').click(function(){
+        toggleComponentForm();
+    });
+    
+    function toggleComponentForm(){
+        editComponentFormVisible=!editComponentFormVisible;
+        if(editComponentFormVisible){
+            jQuery('#editComponentForm').show('slow');
+        }else{
+            jQuery('#editComponentForm').hide('slow');   
+        }
+    }
+    
+    
+    
+    jQuery('#txt1_change').change(function(){
+        txt= jQuery(this).val();
+        text20.set('text',txt);
+    });
+    jQuery('#txt1_size_change').change(function(){
+        s= jQuery(this).val();
+        text20.set('fontSize',s);
+    });
+    
+    /* *** */
+    
+    
         // create a wrapper around native canvas element (with id="c")
     canvas = new fabric.Canvas('slide');
     if (canvas != null) {
@@ -35,7 +71,7 @@ jQuery( document ).ready(function(){
     var text = new fabric.Text('Beeeeee', {left: 50, top: 400 });
     canvas.add(text);
                             
-    var text40 = new fabric.Text("I'm at fontSize 40 2/ shadow", {
+    var text40 = new fabric.Text("I'm at fontSize 40 w/ shadow", {
         left:50,
         top:200,
         fontSize: 40,
@@ -63,7 +99,7 @@ jQuery( document ).ready(function(){
     originY: 'center'
   });
 
-  var text = new fabric.Text('hello world', {
+  var text = new fabric.Text('hello world ', {
     fontSize: 30,
     originX: 'center',
     originY: 'center'
@@ -88,6 +124,7 @@ jQuery( document ).ready(function(){
         canvas.add(textTest);
         return false;
     });
+
 
 });
   
