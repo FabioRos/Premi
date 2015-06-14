@@ -18,12 +18,16 @@
 
 % ------- uso il quarto livello di section attraverso \paragraph{title} 
 \usepackage{titlesec} 
-\setcounter{secnumdepth}{4} % dichiaro il numero di livelli 
+\setcounter{secnumdepth}{5} % dichiaro il numero di livelli 
 \titleformat{\paragraph}
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\setcounter{tocdepth}{5} % 5 livelli nel table of content
+\setcounter{secnumdepth}{5} %quanti livelli sono contati.
 % -------
+
 
 \usepackage{amssymb} %
 

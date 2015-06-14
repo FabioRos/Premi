@@ -1,10 +1,33 @@
 La verifica dei processi, documenti e prodotti è un'attività da eseguire continuamente durante lo sviluppo del progetto. Di conseguenza, servono modalità operative chiare e dettagliate per i \textit{Verificatori}, in modo da uniformare le attività di verifica svolte ed ottenere il miglior risultato possibile. Si descrivono ora le modalità ordinate e puntuali di verifica di processi, documenti, attività e codice alle quali ci si riferirà in questo documento e alle quali i \textit{Verificatori} dovranno attenersi.
 
 \subsubsection{Tecniche di analisi}
-\paragraph{Walkthrough}
+
+	\paragraph{Analisi statica}
+		\subparagraph{Walkthrough:}
 Cosiddetta lettura a pettine, questa tecnica di analisi prevede una lettura critica del codice o del documento prodotto. Tale tecnica è molto dispendiosa in termini di risorse, poiché viene applicata all'intero documento, senza avere una precisa idea di quale sia il tipo di anomalia e di dove ricercarla. Essa è però necessaria nelle prime fasi del progetto, vista l'inesperienza da parte del gruppo nell'attuare un tipo di verifica più precisa e mirata. Dopo una prima fase di lettura ed identificazione degli errori, si procede alla discussione degli stessi, proponendo le modifiche da apportare per garantirne la correzione. Il passo finale consiste nell'applicare le modifiche proposte, redigendo un rapporto preciso che elenchi le modifiche effettuate. Una caratteristica di questo tipo di analisi è che richiede l'utilizzo di più risorse umane;
-\paragraph{Inspection}
+	\subparagraph{Inspection:}
 Cosiddetta ricerca selettiva, questa tecnica di analisi presuppone l'esperienza da parte del verificatore nell'individuare gli errori e le anomalie più frequenti. A tal scopo è necessaria una lista di controllo stilata in una precedente analisi di tipo \gls{walkthrough} nella quale sono elencate le sezioni critiche. Questo ci consente una verifica più rapida e meno risorse umane. Dopo aver terminato l'analisi, è necessario stilare un rapporto di verifica.
+
+	\paragraph{Analisi dinamica}
+Si applica solo alle componenti software e consiste nella verifica e validazione attraverso i test. Per garantire la correttezza è necessario che i test siano ripetibili: dato lo stesso input il test deve produrre sempre lo stesso output. Solo i test con queste caratteristiche riescono a verificare la correttezza del prodotto.\\
+Per ogni test deve essere definito:
+\begin{itemize}
+	\item \textbf{Ambiente: }consiste nel sistema hardware e software sul quale andrà eseguito il test;
+	\item \textbf{Specifica dei valori: }consiste nel definire i valori di input e i valori attesi per i parametri di output;
+	\item \textbf{Procedura: }consiste nel definire il modo in cui i test dovranno essere effettuati, specificando un eventuale ordine e come dovranno essere interpretati i risultati.  
+\end{itemize}
+
+	\paragraph{Test}
+		\subparagraph{Test di unità:}
+		Il test di unità verifica che ogni singola unità funzioni correttamente. In particolare si verifica che i requisiti per quella determinata unità siano soddisfatti.
+		\subparagraph{Test di integrazione:}
+		Il test di integrazione rappresenta l'estensione logica del test di unità. Consiste nella combinazione di due unità già sottoposte a test in un solo componente e nel test dell'interfaccia presente tra le due. Il test di integrazione consente di individuare i problemi che si verificano quando due unità si combinano. Per effettuare tali test si farà uso di classi appositamente create per simulare e verificare l'interazione.
+		\subparagraph{Test di sistema:}
+		Il test di sistema consiste nella validazione del sistema. Viene eseguito quando si ritiene che il prodotto sia giunto ad una versione definitiva, verificando la completa copertura dei requisiti da parte del prodotto.
+		\subparagraph{Test di regressione:}
+		Il test di regressione va eseguito ogni volta che viene modificata un'implementazione in un programma. A tale scopo, è possibile eseguire nuovamente i test esistenti sul codice modificato per stabilire se le modifiche apportate hanno alterato elementi precedentemente funzionanti. Se necessario è anche possibile scrivere nuovi test.
+		\subparagraph{Test di accettazione:}
+		Il test di accettazione consiste nel collaudo del sistema eseguito dal committente. Se l'esito è positivo si può procedere al rilascio ufficiale del prodotto.
 
 \subsubsection{Verifica dei documenti}
 La verifica dei documenti verrà eseguita ogni volta che sarà effettuata una modifica ad un documento e debba essere approvato.

@@ -1,0 +1,49 @@
+Il seguente processo contiene le attività che sovraintendono alla costruzione del prodotto software da parte del team \GRUPPO. 
+
+\subsubsection{Analisi dei requisiti}
+\input{sections/Analisi_Requisiti.tex}
+
+\newpage
+\subsubsection{Progettazione}
+\input{sections/Progettazione.tex}
+
+\newpage
+\subsubsection{Progettazione architetturale}
+Lo scopo di questa attività è di fornire un'architettura di alto livello finalizzato ad individuare i sottosistemi che compongono il sistema da realizzare e le loro inter-relazioni di controllo e comunicazione. I compiti principali di questa attività constano nell'individuare le componenti fondamentali e i design pattern che serviranno a comporre lo scheletro dell'architettura. Sarà inoltre necessario individuare le componenti esterne che andranno ad interagire con il software e andranno definite di conseguenze le relative interfacce.
+ \begin{itemize}
+ 	\item \textbf{Identificazione dei componenti: }consiste nell'identificazione dei componenti che il sistema software dovrà avere. I \textit{Progettisti} sono tenuti a studiare le migliore strategie implementative, al fine di soddisfarli, e individuare i design pattern più adatti;
+ 	\item \textbf{Identificazione delle interfacce: }consiste nell'identificazione delle interfacce necessarie per la comunicazione con le entità esterne. I \textit{Progettisti} sono tenuti a studiare i possibili componenti esterni;
+ 	\item \textbf{Documentazione dei documenti: }nel momento dell'individuazione di un componente, è necessario procedere alla stesura della sua documentazione. Ogni package avrà le seguenti caratteristiche:
+	 	\begin{itemize}
+	 		\item \textbf{Identificativo: }ogni package va tracciato con un nome esaustivo con la prima lettera maiuscola. Di seguito si riporta un esempio con package e sotto-package:
+	 		{\centering \textbf{Package::SottoPackage1::SottoPackage2 ...};}
+	 		\item \textbf{Diagramma: }ogni package deve essere corredato da un diagramma di package in linguaggio UML;
+	 		\item \textbf{Descrizione: }ogni package deve avere una descrizione esauriente;
+	 		\item \textbf{Sotto-Package: }ogni package deve essere corredato dalla lista di sotto-package che eventualmente contiene;
+	 		\item \textbf{Classi contenute: }ogni package deve essere corredato dalla lista delle classi che eventualmente contiene.
+	 	\end{itemize}
+	 \item \textbf{Tracciamento dei componenti: }ogni requisito deve essere tracciato al componente che lo soddisfa. Per questo i \textit{Progettisti} sono tenuti a utilizzare l'applicativo \textbf{Tracker} per le varie operazioni di tracciamento.
+ \end{itemize}
+ 
+\subsubsection{Progettazione architetturale di dettaglio}
+Lo scopo di questa attività è fornire un'architettura sufficientemente dettagliata per permettere la codifica e la stesura dei relativi test di unità. I compiti principali di questa attività constano nell'individuare i metodi delle classi definite durante la progettazione ad alto livello, nella documentazione e nella stesura dei test di unità.
+	\begin{itemize}
+		\item \textbf{Documentazione delle classi: }ogni classe deve avere le seguenti informazioni:
+			\begin{itemize}
+				\item \textbf{Diagramma: }diagramma UML che rappresenta la classe;
+				\item \textbf{Descrizione: }ogni classe deve avere una descrizione esauriente;
+				\item \textbf{Attributi: }devono essere indicati li attributi della classe con una breve descrizione;
+				\item \textbf{Metodi: }devono essere indicati i metodi della classe con una breve descrizione.
+			\end{itemize}
+		\item \textbf{Definizione test di unità: } i progettisti dovranno provvedere alla creazione di test di unità per verificare il corretto funzionamento di parti di programma permettendo cosi una precoce individuazione dei bug. I test di unità accurati possono dare una prova certa se un pezzo di codice funziona correttamente, con importanti vantaggi:
+			\begin{itemize}
+				\item Semplifica le modifiche;
+				\item Semplifica l'integrazione;
+				\item Supporta la documentazione.
+			\end{itemize}
+	\end{itemize}
+
+\subsection{Codifica e Convenzioni}
+\input{sections/Codifica_Convenzioni.tex}
+
+
