@@ -13,7 +13,8 @@
 	\begin{enumerate}
 		\item L'utente inserisce le proprie credenziali [UC2.1];
 		\item L'utente conferma l'inserimento dei dati selezionando la voce "login" [UC2.2];
-		\item L'utente può recuperare le sue credenziali se le ha dimenticate [UC2.3].
+		\item L'utente può recuperare le sue credenziali se le ha dimenticate [UC2.3];
+		\item L'utente inserisce le credenziali errate [UC2.4].
 	\end{enumerate}
 	\item \textbf{Postcondizione:} Il sistema verifica le credenziali inserite e permette all'utente di accedere alla sua pagina personale.
 \end{itemize}
@@ -78,18 +79,26 @@
 	\item \textbf{Postcondizione:} Il sistema ha inviato una mail contenente i dati di accesso relativi all'utente che ne ha fatto richiesta.
 \end{itemize}
 
-\subsection{Caso d'uso UC2.3.1: Inserire indirizzo mail}
-\begin{itemize}
-	\item \textbf{Attori:} Utente non autenticato;
-	\item \textbf{Scopo e descrizione:} L'utente inserisce il proprio indirizzo e-mail nella casella vuota;
-	\item \textbf{Precondizione:} La casella dove inserire l'indirizzo e-mail è vuota;
-	\item \textbf{Postcondizione:} La casella è stata compilata con l'indirizzo e-mail inserito dall'utente.
-\end{itemize}
+	\subsection{Caso d'uso UC2.3.1: Inserire indirizzo mail}
+	\begin{itemize}
+		\item \textbf{Attori:} Utente non autenticato;
+		\item \textbf{Scopo e descrizione:} L'utente inserisce il proprio indirizzo e-mail nella casella vuota;
+		\item \textbf{Precondizione:} La casella dove inserire l'indirizzo e-mail è vuota;
+		\item \textbf{Postcondizione:} La casella è stata compilata con l'indirizzo e-mail inserito dall'utente.
+	\end{itemize}
+	
+	\subsection{Caso d'uso UC2.3.2: Conferma della mail inserita}
+	\begin{itemize}
+		\item \textbf{Attori:} Utente non autenticato;
+		\item \textbf{Scopo e descrizione:} L'utente conferma la mail inserita in precedenza e invia la richiesta;
+		\item \textbf{Precondizione:} L'utente ha inserito un indirizzo e-mail;
+		\item \textbf{Postcondizione:} L'utente ha confermato l'indirizzo e-mail inserito.
+	\end{itemize}
 
-\subsection{Caso d'uso UC2.3.2: Conferma della mail inserita}
+\subsection{Caso d'uso UC2.4: Errore credenziali errate}
 \begin{itemize}
 	\item \textbf{Attori:} Utente non autenticato;
-	\item \textbf{Scopo e descrizione:} L'utente conferma la mail inserita in precedenza e invia la richiesta;
-	\item \textbf{Precondizione:} L'utente ha inserito un indirizzo e-mail;
-	\item \textbf{Postcondizione:} L'utente ha confermato l'indirizzo e-mail inserito.
+	\item \textbf{Scopo e descrizione:} L'utente ha inserito una mail e una password non coincidenti a quelle registrate nel sistema, gli viene quindi comunicato l'errore;
+	\item \textbf{Precondizione:} L'utente ha scritto un indirizzo email e una password negli appositi form;
+	\item \textbf{Postcondizione:} L'utente ha inserito la mail o la password errate e il sistema lo comunica.
 \end{itemize}
