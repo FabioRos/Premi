@@ -56,6 +56,8 @@ app.controller('InfographicEditorController', function($scope) {
 //SLIDE EDITOR
 app.controller('Premi_SLIDE_EditorCtrl', function($scope) {
     $scope.test = 'TEST_TXT';
+
+    hidePanels();
     //hideAllEditForms();
     $scope.EditPanels = [
         {
@@ -117,93 +119,114 @@ app.controller('Premi_SLIDE_EditorCtrl', function($scope) {
     ];
 
     //Slides Components
-    $scope.slideComponents={
-    "objects":[
-        {
-            "type":"rect", 
-            "originX":"left", 
-            "originY":"top", 
-            "left":100,
-            "top":100, 
-            "width":50, 
-            "height":60, 
-            "fill":"red", 
-            "stroke":null, 
-            "strokeWidth":1,
-            "strokeDashArray":null,
-            "strokeLineCap":"butt",
-            "strokeLineJoin":"miter",
-            "strokeMiterLimit":10, 
-            "scaleX":1, 
-            "scaleY":1,
-            "angle":45,
-            "flipX":false, 
-            "flipY":false,
-            "opacity":1, 
-            "shadow":null,
-            "visible":true,
-            "clipTo":null,
-            "backgroundColor":"",
-            "fillRule":"nonzero",
-            "globalCompositeOperation":"source-over", 
-            "rx":0, 
-            "ry":0
-        }, 
-        {
-            "type":"text",
-            "originX":"left",
-            "originY":"top", 
-            "left":50, 
-            "top":400,
-            "width":133.2,
-            "height":52.43,
-            "fill":"rgb(0,0,0)", 
-            "stroke":null,
-            "strokeWidth":1,
-            "strokeDashArray":null,
-            "strokeLineCap":"butt",
-            "strokeLineJoin":"miter",
-            "strokeMiterLimit":10, 
-            "scaleX":1,
-            "scaleY":1,
-            "angle":0, 
-            "flipX":false,
-            "flipY":false, 
-            "opacity":1,
-            "shadow":null, 
-            "visible":true, 
-            "clipTo":null,
-            "backgroundColor":"", 
-            "fillRule":"nonzero", 
-            "globalCompositeOperation":"source-over",
-            "text":"Beeeeee",
-            "fontSize":40,
-            "fontWeight":"normal",
-            "fontFamily":"Times New Roman",
-            "fontStyle":"",
-            "lineHeight":1.16,
-            "textDecoration":"",
-            "textAlign":"left", 
-            "textBackgroundColor":""
-        }
-    ],
-    "background":""}; 
+    $scope.slideComponents = {
+        "objects": [
+            {"id": 1,
+                "type": "rect",
+                "originX": "left",
+                "originY": "top",
+                "left": 100,
+                "top": 100,
+                "width": 50,
+                "height": 60,
+                "fill": "red",
+                "stroke": null,
+                "strokeWidth": 1,
+                "strokeDashArray": null,
+                "strokeLineCap": "butt",
+                "strokeLineJoin": "miter",
+                "strokeMiterLimit": 10,
+                "scaleX": 1,
+                "scaleY": 1,
+                "angle": 45,
+                "flipX": false,
+                "flipY": false,
+                "opacity": 1,
+                "shadow": null,
+                "visible": true,
+                "clipTo": null,
+                "backgroundColor": "",
+                "fillRule": "nonzero",
+                "globalCompositeOperation": "source-over",
+                "rx": 0,
+                "ry": 0
+            },
+            {
+                "id": 2,
+                "type": "text",
+                "originX": "left",
+                "originY": "top",
+                "left": 50,
+                "top": 400,
+                "width": 133.2,
+                "height": 52.43,
+                "fill": "rgb(0,0,0)",
+                "stroke": null,
+                "strokeWidth": 1,
+                "strokeDashArray": null,
+                "strokeLineCap": "butt",
+                "strokeLineJoin": "miter",
+                "strokeMiterLimit": 10,
+                "scaleX": 1,
+                "scaleY": 1,
+                "angle": 0,
+                "flipX": false,
+                "flipY": false,
+                "opacity": 1,
+                "shadow": null,
+                "visible": true,
+                "clipTo": null,
+                "backgroundColor": "",
+                "fillRule": "nonzero",
+                "globalCompositeOperation": "source-over",
+                "text": "Beeeeee",
+                "fontSize": 40,
+                "fontWeight": "normal",
+                "fontFamily": "Times New Roman",
+                "fontStyle": "",
+                "lineHeight": 1.16,
+                "textDecoration": "",
+                "textAlign": "left",
+                "textBackgroundColor": ""
+            }
+        ],
+        "background": ""};
 
     $scope.canvas = new fabric.Canvas('slide');
-    $scope.canvas.loadFromJSON($scope.slideComponents,$scope.canvas.renderAll.bind($scope.canvas));
-    
-    
-    jQuery().ready(function() {
-       
+    $scope.canvas.loadFromJSON($scope.slideComponents, $scope.canvas.renderAll.bind($scope.canvas));
+    $scope.editTypeItem = 'null';
+
+    //functions
+    $scope.canvas.on('mouse:down', function(options) {
+        //alert(options.e.id + ' ' + options.e.clientX + ' ' + options.e.clientY); //e evento generico
+        //alert(options.target.id + ' ' + options.e.clientX + ' ' + options.e.clientY); //target ritorna l'oggetto
     });
-    
+
+    $scope.canvas.on('before:selection:cleared', function() {
+         console.log("persa selezione");
+         $scope.editTypeItem ="null";
+    });
+
+    $scope.canvas.on('object:selected', function(options) {
+            //console.log(options.target.type);
+            $scope.editTypeItem = options.target.type;
+    });
+
+    $scope.canvas.on('object:modified', function(options) {
+        //alert(options.e.id + ' ' + options.e.clientX + ' ' + options.e.clientY); //e evento generico
+        //alert(options.target.id + ' ' + options.e.clientX + ' ' + options.e.clientY); //target ritorna l'oggetto
+        console.log('obj_id: ' + options.target.id + 'obj_angle: ' + options.target.angle + ' type: ' + options.target.type);
+
+
+    });
+
+
     //$scope.canvas.$apply();
-    
+
     jQuery("#btnSerialize").click(function() {
 
-        //var canvas = new fabric.Canvas('slide');
-        jQuery("#serialized").html(JSON.stringify( $scope.canvas)); // '{"objects":[],"background":"rgba(0, 0, 0, 0)"}'
-        
+        jQuery("#serialized").html(JSON.stringify($scope.canvas)); // '{"objects":[],"background":"rgba(0, 0, 0, 0)"}'
+
     });
 });
 
@@ -256,6 +279,27 @@ app.directive('textEditPanel', function() {
     return directive;
 });
 
+app.directive('slideEditPanel', function() {
+    var directive = {};
+    directive.scope = false;
+    directive.restrict = 'E'; /* restrict this directive to elements */
+
+
+    /*
+     *
+     switch (base_url_string) {
+     case "xxx.local":
+     // Blah
+     break;
+     case "xxx.dev.yyy.com":
+     // Blah
+     break;
+     }
+     * 
+     */
+    directive.templateUrl = "views/PresentationEditor/editPanel.html";
+    return directive;
+});
 
 
 
@@ -274,6 +318,10 @@ function showSection(name) {
         jQuery('#PresentationEditor').show();
     if (name == "'InfographicEditor'")
         jQuery('#InfographicEditor').show();
+}
+
+function hidePanels() {
+    //jQuery('#textComponent').hide();
 }
 
 jQuery().ready(function() {
@@ -318,8 +366,8 @@ jQuery().ready(function() {
 
     }
 
-    jQuery("#textEdit").click(function() {
-        SetEditMenuSelectedId("textEdit")
-    });
+    /*jQuery("#textEdit").click(function() {
+     SetEditMenuSelectedId("textEdit")
+     });*/
 
 });
