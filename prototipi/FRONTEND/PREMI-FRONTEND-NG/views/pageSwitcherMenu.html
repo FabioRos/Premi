@@ -1,0 +1,5 @@
+ <nav  id="SectionMenu"  ng-controller="menuRadioController">
+          <div class="button-group">
+              <button ng-repeat="menuItem in menuItems" ng-attr-id="'{{menuItem.key}}'" class="button MenuRadioButtons" ng-model="radioSectionModel"  btn-radio="'{{menuItem.key}}'">{{menuItem.txt}}</button>
+          </div>
+</nav>

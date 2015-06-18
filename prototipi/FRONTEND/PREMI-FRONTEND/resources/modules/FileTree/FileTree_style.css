@@ -1,0 +1,42 @@
+#folder {
+    margin: 2em;
+}
+
+#folder > li {margin-bottom: 0.5em;}
+
+#folder > li > a {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-indent: -1000em;
+    background: url(img/icons.png) no-repeat 0 -32px;
+    margin-right: 5px;
+}
+
+#folder > li > a:active {background-position: 0 -16px;}
+
+
+
+#folder > li > a + span {
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    padding-left: 20px;
+    font-weight: bold;
+    background: url(img/icons.png) no-repeat 0 0;
+}
+
+#folder > li ul {
+    margin-left: 2.5em;
+    line-height: 1.4;
+    display: none;
+}
+
+#folder > li ul:target {
+    display: block;
+}
+
+
+.row {
+  max-width: 90%;
+}

@@ -1,0 +1,76 @@
+
+<div ng-controller="Premi_SLIDE_EditorCtrl"><!-- BEGIN -->
+<h1>Presentation Editor</h1>
+    <div class="row">
+        <div class="large-2 columns" >
+                    <ul id="COMPONENTS">
+                        <li class="editMenuItemContainer generalMenuSettings  fa fa-cogs fa-2x large-12">
+                            <div id="editMenuSettings" class="editMenuItemIcon">
+                                <span class="editMenuItemLabel">Settings</span>
+                            </div>
+                        </li>
+                        <li class="editMenuItemContainer generalMenuSettings fa fa-puzzle-piece fa-2x large-12">
+                            <div  id="editMenuStyle" class="editMenuItemIcon">
+                                <span class="editMenuItemLabel">Style</span>
+                            </div>
+                        </li>
+                         
+                        <li ng-repeat="component in components" class="editMenuItemContainer">
+                            <div  id="{{component.id}}" class="editMenuItemIcon {{component.classes}}" >
+                                <span class="editMenuItemLabel">{{component.label}}</span>
+                            </div>
+                        </li>
+                    </ul>
+            
+
+        </div>
+        <div class="large-8 columns">
+            <canvas id="slide" width="800" height="600" style="border:1px solid #000000;" ></canvas>
+        </div>
+        <div class="large-2 columns">
+            <button id="btnShowEditComponentForm">Opzioni Modifica Componente</button>
+            <div id="editComponentForm">
+                <form>
+                    <fieldset>
+                        <legend>common fields</legend>
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <label>origin-X
+                                <input type="number" placeholder="" />
+                            </label>
+                        </div>
+                        <div class="large-6 columns">
+                            <label>origin-Y
+                                <input type="number" placeholder="" />
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <label>Height
+                                <input type="number" placeholder="" />
+                            </label>
+                        </div>
+                        <div class="large-6 columns">
+                            <label>Width
+                                <input type="number" placeholder="" />
+                            </label>
+                        </div>
+                    </div>
+                    </fieldset>
+                    <text-edit-panel/>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns" >
+            <button id="btnSerialize">Serializza</button>
+            <p id="serialized"></p>
+        </div>
+    </div>
+
+</div><!-- END -->
+<!--<script src="js/module.slide.editor.js"></script>-->

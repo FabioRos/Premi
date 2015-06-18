@@ -1,0 +1,40 @@
+
+<div class="row">
+    <h1>My Projects</h1>
+    <div class="large-3 columns">
+        <ul id="folder">
+            <li ng-repeat="Project in Projects">
+                <a href="#sub-{{$index+1}}">{{$index+1}}</a><span ng-class="TreeProjectTitle"> <a href=>{{Project.Title}}</a></span>
+                <ul id="sub-{{$index+1}}">
+                    <li ng-repeat="Section in Project.sections"><a id="s-{{$index+1}}" ng-class="TreeProjectSection" href>{{Section}}</a></li>
+                </ul>
+        </li>
+       
+    </ul>
+        
+        
+        
+        <!--<ul id="folder">
+        <li>
+            <a href="#sub-1">1</a><span>Folder 1</span>
+                <ul id="sub-1">
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                </ul>
+        </li>
+        <li>
+            <a href="#sub-2">1</a><span>Folder 2</span>
+                <ul id="sub-2">
+                    <li>D</li>
+                    <li>E</li>
+                    <li>F</li>
+                </ul>
+        </li>
+    </ul>
+    -->
+    
+    </div>
+  <div class="large-9 columns "style="background-color: #ececec;">8</div>
+</div>
+
