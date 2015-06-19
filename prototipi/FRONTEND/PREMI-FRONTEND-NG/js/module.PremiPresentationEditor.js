@@ -54,7 +54,7 @@ app.controller('InfographicEditorController', function($scope) {
 });
 
 //SLIDE EDITOR
-app.controller('Premi_SLIDE_EditorCtrl', function($scope) {
+app.controller('Premi_SLIDE_EditorCtrl',['$scope'/*,'service_addTextToCanvas'*/, function($scope) {
     $scope.test = 'TEST_TXT';
 
     hidePanels();
@@ -194,7 +194,6 @@ app.controller('Premi_SLIDE_EditorCtrl', function($scope) {
 
     $scope.canvas = new fabric.Canvas('slide');
     $scope.canvas.loadFromJSON($scope.slideComponents, $scope.canvas.renderAll.bind($scope.canvas));
-    $scope.editTypeItem = 'null';
 
     //functions
     $scope.canvas.on('mouse:down', function(options) {
@@ -202,14 +201,28 @@ app.controller('Premi_SLIDE_EditorCtrl', function($scope) {
         //alert(options.target.id + ' ' + options.e.clientX + ' ' + options.e.clientY); //target ritorna l'oggetto
     });
 
-    $scope.canvas.on('before:selection:cleared', function() {
+    $scope.canvas.on('selection:cleared', function() {
          console.log("persa selezione");
-         $scope.editTypeItem ="null";
+         $scope.objectSelected ="null";
+         $scope.$apply();
+    });
+
+    $scope.canvas.on('object:modified', function(options) {
+        //console.log(options.target.type);
+        $scope.objectSelected=options.target;
+        $scope.$apply();
+    });
+    
+    $scope.canvas.on('object:moving', function(options) {
+        //console.log(options.target.type);
+        $scope.objectSelected=options.target;
+        $scope.$apply();
     });
 
     $scope.canvas.on('object:selected', function(options) {
-            //console.log(options.target.type);
-            $scope.editTypeItem = options.target.type;
+        //console.log(options.target.type);
+        $scope.objectSelected=options.target;
+        $scope.$apply();
     });
 
     $scope.canvas.on('object:modified', function(options) {
@@ -228,7 +241,12 @@ app.controller('Premi_SLIDE_EditorCtrl', function($scope) {
         jQuery("#serialized").html(JSON.stringify($scope.canvas)); // '{"objects":[],"background":"rgba(0, 0, 0, 0)"}'
 
     });
-});
+    
+    //definition of functions thet do action on canvas using services
+     $scope.addTextToCanvas = function() {
+        service_addTextToCanvas();
+   };
+}]);
 
 
 
@@ -247,6 +265,7 @@ app.directive('pageSwitcherMenu', function() {
     directive.templateUrl = "views/pageSwitcherMenu.html";
     return directive;
 });
+
 
 
 
@@ -297,9 +316,37 @@ app.directive('slideEditPanel', function() {
      }
      * 
      */
+    directive.transclude=true;
     directive.templateUrl = "views/PresentationEditor/editPanel.html";
     return directive;
 });
+
+
+app.directive('commonEditPanel', function() {
+    var directive = {};
+    directive.restrict = 'E'; /* restrict this directive to elements */
+    directive.templateUrl = "views/PresentationEditor/commonEditPanel.html";
+    return directive;
+});
+
+
+
+// SERVICES
+
+
+/*
+app.factory('service_addTextToCanvas',function () {
+    return new function () {
+        console.log('service_activated');
+    };
+});
+*/
+
+
+
+
+
+
 
 
 

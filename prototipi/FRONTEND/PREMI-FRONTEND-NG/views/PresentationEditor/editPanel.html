@@ -1,1 +1,55 @@
-<p>scelta={{editTypeItem}}</p>
+<form id="slideEditForm">
+    <!--    //Li toglierei perché si possono ottenere da drag and drop senza appesantire l'interfaccia grafica
+    <fieldset>
+        <legend>common fields</legend>
+        <div class="row">
+            <div class="large-6 columns">
+                <label>X</label>
+                <input type="number" ng-model="objectSelected.left" />
+
+            </div>
+            <div class="large-6 columns">
+                <label>Y</label>
+                <input type="number" ng-model="objectSelected.top" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-6 columns">
+                <label>Height</label>
+                <input type="number" ng-model="objectSelected.height" />
+
+            </div>
+            <div class="large-6 columns">
+                <label>Width</label>
+                <input type="number" ng-model="objectSelected.width" />
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 columns">
+                <label>ScaleX (*100)</label>
+                <input type="number" ng-model="objectSelected.scaleX" />
+
+            </div>
+            <div class="large-6 columns">
+                <label>ScaleY (*100)</label>
+                <input type="number" ng-model="objectSelected.scaleY" />
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <label> Angle </label>
+                <input type="number" ng-model="objectSelected.angle" />
+
+            </div>
+        </div>
+       
+    </fieldset>
+    -->
+    <fieldset>
+        <legend> evaluated </legend>
+        <p>scelta={{objectSelected.type}}</p>
+    </fieldset>
+</form>

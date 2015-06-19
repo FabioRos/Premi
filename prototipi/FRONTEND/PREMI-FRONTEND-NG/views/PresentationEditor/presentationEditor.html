@@ -15,7 +15,7 @@
                             </div>
                         </li>
                          
-                        <li ng-repeat="component in components" class="editMenuItemContainer">
+                        <li ng-repeat="component in components" class="editMenuItemContainer" ng-click="addTextToCanvas();">
                             <div  id="{{component.id}}" class="editMenuItemIcon {{component.classes}}" >
                                 <span class="editMenuItemLabel">{{component.label}}</span>
                             </div>
@@ -30,38 +30,7 @@
         <div class="large-2 columns">
             <button id="btnShowEditComponentForm">Opzioni Modifica Componente</button>
             <div id="editComponentForm">
-                <form id="slideEditForm">
-                    <fieldset>
-                        <legend>common fields</legend>
-                    <div class="row">
-                        <div class="large-6 columns">
-                            <label>origin-X
-                                <input type="number" placeholder="" />
-                            </label>
-                        </div>
-                        <div class="large-6 columns">
-                            <label>origin-Y
-                                <input type="number" placeholder="" />
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="large-6 columns">
-                            <label>Height
-                                <input type="number" placeholder="" />
-                            </label>
-                        </div>
-                        <div class="large-6 columns">
-                            <label>Width
-                                <input type="number" placeholder="" />
-                            </label>
-                        </div>
-                    </div>
-                    </fieldset>
-                    <!-- <text-edit-panel/> -->
-                    <slide-edit-panel/>
-                </form>
+               <slide-edit-panel/>
             </div>
         </div>
     </div>
