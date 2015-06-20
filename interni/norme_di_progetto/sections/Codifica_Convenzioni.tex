@@ -31,19 +31,19 @@ Per l'assegnazione di nomi a variabili, metodi e costanti andranno seguite le se
 /*\\
 \vspace{3mm}
 \begin{tabular}{l}
-	File\\
-	Autore\\
-	Data\\
-	Descrizione\\
+	*File\\
+	*Author\\
+	*Date\\
+	*Description\\
 \end{tabular}\\
 \vspace{5mm}
- Modifiche:\\
+ *Changes:\\
  \vspace{3mm}
 \begin{tabular}{| c c c c c c c c c |}
 	\hline
-	Versione & - & Data & - & Programmatore & - & Modifica & - & Descrizione\\
+	Version & - & Date & - & Programmer & - & Change & - & Description\\
 	\hline
-	x.y.z & - & aaaa-mm-gg & - & Nome Cognome & - & Funzione & - & Descrizione modifica\\
+	x.y.z & - & aaaa-mm-gg & - & Nome Cognome & - & Funzione/classe & - & Descrizione\\
 	\hline
 \end{tabular}\\
 \vspace{3mm}
@@ -53,16 +53,16 @@ Per l'assegnazione di nomi a variabili, metodi e costanti andranno seguite le se
 
 \begin{itemize}
 	\item \textbf{File:} nome del file;
-	\item \textbf{Autore:} nome e cognome del creatore del file;
-	\item \textbf{Data:} data di creazione del file nel formato aaaa-mm-gg;
-	\item \textbf{Descrizione:} poche righe di descrizione delle funzionalità contenute nel file;
-	\item \textbf{Cambiamenti:} tabella dello stato di avanzamento del file, contenente tutte le modifiche effettuate :
+	\item \textbf{Author:} creatore del file;
+	\item \textbf{Date:} data di creazione del file nel formato aaaa-mm-gg;
+	\item \textbf{Description:} poche righe di descrizione delle funzionalità contenute nel file;
+	\item \textbf{Changes:} tabella dello stato di avanzamento del file, contenente tutte le modifiche effettuate :
 		\begin{itemize}
-			\item \textbf{Versione:} versione una volta effettuata la modifica;
-			\item \textbf{Data:} data della modifica;
-			\item \textbf{Programmatore:} nome e cognome del programmatore che ha effettuato la modifica;
-			\item \textbf{Modifica:} segnatura della funzione a cui è stata apportata una modifica;
-			\item \textbf{Descrizione:} breve descrizione della modifica effettuata.
+			\item \textbf{Version:} versione una volta effettuata la modifica;
+			\item \textbf{Date:} data della modifica;
+			\item \textbf{Programmer:} nome e cognome del programmatore che ha effettuato la modifica;
+			\item \textbf{Change:} segnatura della classe/metodo a cui è stata apportata una modifica;
+			\item \textbf{Description:} breve descrizione della modifica effettuata.
 		\end{itemize}
 \end{itemize}
 
@@ -71,16 +71,12 @@ Per l'assegnazione di nomi a variabili, metodi e costanti andranno seguite le se
 Prima di ogni funzione dovrà essere presente un commento con la seguente forma:
 
 \begin{flushleft}
-/*\\
-\vspace{3mm}
-\begin{tabular}{l}
-	Descrizione della funzione\\
-	Descrizione dei parametri\\		
-	Descrizione del tipo di ritorno\\
-\end{tabular}\\
-\vspace{3mm}
-*/
-
+	/**\\
+	 *@Descrizione dettagliata del metodo\\
+	 *@param Descrizione del primo parametro\\
+	 *@param Descrizione del n-esimo parametro\\
+	 *@return Il tipo del valore di ritorno\\
+	*/
 \end{flushleft}
 
 Ogni variabile di particolare importanza dovrà essere fornita di commento che ne spieghi scopo e funzionamento.
