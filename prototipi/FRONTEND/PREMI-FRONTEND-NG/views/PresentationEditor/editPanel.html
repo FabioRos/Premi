@@ -51,5 +51,38 @@
     <fieldset>
         <legend> evaluated </legend>
         <p>scelta={{objectSelected.type}}</p>
+        <div ng-switch on="objectSelected.type">
+            <div ng-switch-when="text">
+                <!-- code to render a large video block-->
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label>Testo:
+                            <textarea placeholder="Inserisci il testo qui">{{objectSelected.text}}</textarea>
+                        </label>
+                    </div>
+                </div>
+                <div class="row"><!-- Da collegare-->
+                    <ul>
+                        <li class="formatButtons-list"><button class="formatButtons" ng-click="toggleBold(objectSelected)"><b>B</b></button></li>
+                        <li class="formatButtons-list"><button class="formatButtons" ng-click="toggleItalic(objectSelected)"><i>I</i></button></li>
+                        <li class="formatButtons-list"><button class="formatButtons" ng-click="toggleUnderlined(objectSelected)"><u>U</u></button></li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label>Size
+                            <input type="number" ng-model="objectSelected.fontSize" ng-change="update()"/>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+            <div ng-switch-default>
+                <!-- code to render the regular video block -->
+                <p>Default</p>
+            </div>
+        </div>
+
+
     </fieldset>
 </form>

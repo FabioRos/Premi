@@ -51,5 +51,16 @@ and open the template in the editor.
 
 #slideEditForm input{
     min-width: 60px !important;
-    
+
+}
+
+/**Form buttons*/
+.formatButtons{
+    padding:5px;
+    float: left;
+    min-width: 30px;
+}
+
+.formatButtons-list{
+    float: left;
 }

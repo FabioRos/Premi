@@ -241,11 +241,42 @@ app.controller('Premi_SLIDE_EditorCtrl',['$scope'/*,'service_addTextToCanvas'*/,
         jQuery("#serialized").html(JSON.stringify($scope.canvas)); // '{"objects":[],"background":"rgba(0, 0, 0, 0)"}'
 
     });
+   
+    $scope.updateTextSize = function(obj){
+        
+    }
+   
+    $scope.toggleBold=function(obj){
+        if(obj.fontWeight==="bold"){
+            obj.fontWeight="normal";
+        }else
+            obj.fontWeight="bold";
+        $scope.canvas.renderAll();;
+    };
     
-    //definition of functions thet do action on canvas using services
-     $scope.addTextToCanvas = function() {
-        service_addTextToCanvas();
-   };
+    $scope.toggleItalic=function(obj){
+        
+        if(obj.fontStyle==="italic"){
+            delete obj.fontStyle;
+        }else
+           obj.fontStyle="italic";
+        $scope.canvas.renderAll();
+        //$scope.canvas.renderAll.bind($scope.canvas);
+    };
+    
+    $scope.toggleUnderlined=function(obj){
+        if(obj.textDecoration==="underline"){
+             delete obj.textDecoration;
+        }else
+        obj.textDecoration='underline';
+        $scope.canvas.renderAll();
+    };
+   
+   
+    $scope.update=function(){
+        $scope.canvas.renderAll();  
+    };
+    
 }]);
 
 
@@ -332,16 +363,6 @@ app.directive('commonEditPanel', function() {
 
 
 // SERVICES
-
-
-/*
-app.factory('service_addTextToCanvas',function () {
-    return new function () {
-        console.log('service_activated');
-    };
-});
-*/
-
 
 
 
