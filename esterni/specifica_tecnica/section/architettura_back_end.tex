@@ -89,6 +89,7 @@
 			\item Premi::Http::Controllers::SlideController.
 		\end{itemize}
 		
+	
 	\subsubsection*{Premi::Http::Controllers::Auth}
 		\subsubsection*{Informazioni sul package}
 		\begin{figure}[h]
@@ -109,8 +110,8 @@
 					\item \textbf{Descrizione:} PasswordController contiene la logica per aiutare gli utenti per il reset della password.
 				\end{itemize}
 		\end{itemize}
-	Ognuno di questi controller usa un trait che include i loro metodi necessari.\\
-	Per modificare i campi del form necessari quando un nuovo utente si registra, è possibile farlo modificando la classe Services::Registrar. Questa classe è responsabile per la creazione e validazione dei nuovi utenti. Il metodo validator di Registrar contiene le regole di validazione per i nuovi utenti, mentre il metodo create di Registrar è responsabile della creazione di un nuovo record User nel database. Registrar è chiamato da AuthController tramite dei metodi contenuti nel trait AuthenticatesAndRegistersUsers.
+	Ognuno di questi controller usa un \gls{trait} che include i loro metodi necessari.\\
+	Per modificare i campi del form necessari quando un nuovo utente si registra, è possibile farlo modificando la classe Services::Registrar. Questa classe è responsabile per la creazione e validazione dei nuovi utenti. Il metodo validator di Registrar contiene le regole di validazione per i nuovi utenti, mentre il metodo create di Registrar è responsabile della creazione di un nuovo record User nel database. Registrar è chiamato da AuthController tramite dei metodi contenuti nel \gls{trait} AuthenticatesAndRegistersUsers.
 			
 	\subsubsection*{Premi::Http::ProjectController}
 			\begin{itemize}
@@ -231,11 +232,12 @@
 \newpage
 \subsection{Premi::Model}
 	\subsubsection*{Informazioni sul package}
-		\begin{figure}[h]
-			\centering
-			\includegraphics[width=0.9\linewidth]{img/back-end_logic-tier_premi_model}
-			\caption[Premi::Model]{Premi::Model}
-		\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{img/premi_http_model}
+\caption[Premi::Model]{Premi::Model}
+\label{fig:premi_http_model}
+\end{figure}
 		Il package contiene la struttura delle classi di tutti i componenti dell'applicazione.
 	
 	\subsubsection*{Classi contenute}
@@ -330,90 +332,16 @@
 			\end{itemize}
 		\end{itemize}
 	\end{itemize}
+	
+\subsubsection*{Informazioni su Eloquent}
+Eloquent è l'ORM(Object Relational Mapping) incluso in Laravel: un'implementazione di Active Record. Tutti i model estendono  Eloquent in modo da creare e gestire l'interazione con la collection.
 
-\newpage
-
-\subsection{Premi::Back-End::Data-Tier}
-	\subsubsection*{Informazioni sul package}
-		\begin{figure}[h]
-			\centering
-			\includegraphics[width=0.9\linewidth]{img/back-end_data-tier}
-			\caption[Premi::Back-End::Data-Tier]{Premi::Back-End::Data-Tier}
-		\end{figure}
-		Il package contiene le componenti che gestiscono l'interazione con il tier per la gestione dei dati consistenti.
-		
-		\subsubsection*{Classi contenute}
-		\begin{itemize}
-			\item Premi::Back-End::Data-Tier::DataTierFrontController:
-				\begin{itemize}
-					\item \textbf{Descrizione}: classe per interagire con il livello superiore e ricevere i dati dal model;
-					\item \textbf{Relazione con altre classi}:
-					\begin{itemize}
-						\item Premi::Back-End::Logic-Tier::Model::ProjectModel::MongoHandler.
-					\end{itemize}
-				\end{itemize}
-			
-			\item Premi::Back-End::Data-Tier::DataTierFrontController:
-				\begin{itemize}
-					\item \textbf{Descrizione}: classe per interagire con il livello superiore e ricevere i dati dal model;
-					\item \textbf{Relazione con altre classi}:
-					\begin{itemize}
-						\item Premi::Back-End::Logic-Tier::Model::ProjectModel::MongoHandler;
-						\item Premi::Back-End::Data-Tier::DBMapper.
-					\end{itemize}
-				\end{itemize}
-				
-			\item Premi::Back-End::Data-Tier::ProjectMapper:
-			\begin{itemize}
-				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti di tipo progetto nel \gls{database}.
-				\item \textbf{Relazione con altre classi}:
-				\begin{itemize}
-					\item Premi::Back-End::Data-Tier::DBMapper.
-				\end{itemize}
-			\end{itemize}
-				
-			\item Premi::Back-End::Data-Tier::PresentationMapper:
-			\begin{itemize}
-				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti di tipo presentazione nel \gls{database}.
-				\item \textbf{Relazione con altre classi}:
-				\begin{itemize}
-					\item Premi::Back-End::Data-Tier::DBMapper.
-				\end{itemize}
-			\end{itemize}
-			
-			\item Premi::Back-End::Data-Tier::SlideMapper:
-			\begin{itemize}
-				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti di tipo \gls{slide} nel \gls{database}.
-				\item \textbf{Relazione con altre classi}:
-				\begin{itemize}
-					\item Premi::Back-End::Data-Tier::DBMapper.
-				\end{itemize}
-			\end{itemize}
-			
-			\item Premi::Back-End::Data-Tier::ComponentMapper:
-			\begin{itemize}
-				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti componenti della \gls{slide} nel \gls{database}. Da questa classe deriveranno le altre classi specifiche per ogni componente, seguendo la struttura descritta all'interno del package *::ProjectModel;
-				\item \textbf{Relazione con altre classi}:
-				\begin{itemize}
-					\item Premi::Back-End::Data-Tier::DBMapper.
-				\end{itemize}
-			\end{itemize}
-			
-			\item Premi::Back-End::Data-Tier::InfographicMapper:
-			\begin{itemize}
-				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti di tipo \gls{infografica} nel \gls{database}.
-				\item \textbf{Relazione con altre classi}:
-				\begin{itemize}
-					\item Premi::Back-End::Data-Tier::DBMapper.
-				\end{itemize}
-			\end{itemize}
-			
-			\item Premi::Back-End::Data-Tier::UserMapper:
-			\begin{itemize}
-				\item \textbf{Descrizione}: classe mapper per il caricamento e il salvataggio di oggetti di tipo utente nel \gls{database}.
-				\item \textbf{Relazione con altre classi}:
-				\begin{itemize}
-					\item Premi::Back-End::Data-Tier::DBMapper.
-				\end{itemize}
-			\end{itemize}
-		\end{itemize}
+\subsection{Data-Tier}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{img/premi_mongodb}
+\caption[Premi::Mongodb]{Premi::Mongodb}
+\label{fig:premi_mongodb}
+\end{figure}
+\subsubsection*{Informazioni sul package}
+Ogni collection nel database trova una sua corrispondenza in un Model, il quale ha proprio il compito di gestire l'interazione con la collection stessa. Una volta definito il model se è pronti a selezionare un record, crearne di nuovi ed in generale lavorare con la collection. La sintassi è molto semplice: Laravel mette a disposizione le query tramite il Model Eloquent.
