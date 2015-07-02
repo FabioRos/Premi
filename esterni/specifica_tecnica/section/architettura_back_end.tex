@@ -110,8 +110,8 @@
 					\item \textbf{Descrizione:} PasswordController contiene la logica per aiutare gli utenti per il reset della password.
 				\end{itemize}
 		\end{itemize}
-	Ognuno di questi controller usa un trait che include i loro metodi necessari.\\
-	Per modificare i campi del form necessari quando un nuovo utente si registra, è possibile farlo modificando la classe Services::Registrar. Questa classe è responsabile per la creazione e validazione dei nuovi utenti. Il metodo validator di Registrar contiene le regole di validazione per i nuovi utenti, mentre il metodo create di Registrar è responsabile della creazione di un nuovo record User nel database. Registrar è chiamato da AuthController tramite dei metodi contenuti nel trait AuthenticatesAndRegistersUsers.
+	Ognuno di questi controller usa un \gls{trait} che include i loro metodi necessari.\\
+	Per modificare i campi del form necessari quando un nuovo utente si registra, è possibile farlo modificando la classe Services::Registrar. Questa classe è responsabile per la creazione e validazione dei nuovi utenti. Il metodo validator di Registrar contiene le regole di validazione per i nuovi utenti, mentre il metodo create di Registrar è responsabile della creazione di un nuovo record User nel database. Registrar è chiamato da AuthController tramite dei metodi contenuti nel \gls{trait} AuthenticatesAndRegistersUsers.
 			
 	\subsubsection*{Premi::Http::ProjectController}
 			\begin{itemize}
@@ -334,7 +334,7 @@
 	\end{itemize}
 	
 \subsubsection*{Informazioni su Eloquent}
-Eloquent è l'ORM incluso in Laravel: un'implementazione di Active Record. Tutti i model estendono  Eloquent in modo da creare e gestire l'interazione con la collection.
+Eloquent è l'ORM(Object Relational Mapping) incluso in Laravel: un'implementazione di Active Record. Tutti i model estendono  Eloquent in modo da creare e gestire l'interazione con la collection.
 
 \subsection{Data-Tier}
 \begin{figure}[h]
