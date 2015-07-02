@@ -54,6 +54,11 @@
 
 	\subsubsection*{Informazioni sul package}
 	 Il logic tier contiene a sua volta svariati package. Il package Http funziona come un'interfaccia alla vera applicazione.
+	 \subsubsection*{Classi contenute}
+	 \begin{itemize}
+	 	\item \textbf{routes: }collega una specifica richiesta ad un set di istruzioni ben precise;
+	 	\item \textbf{Kernel: }"filtro" attraverso cui passano tutte le richieste.
+	 \end{itemize}
 	 \subsubsection*{Package contenuti}
 		 \begin{itemize}
 		 	\item Premi::Http::Controllers;
@@ -128,6 +133,32 @@
 			\end{itemize}
 		
 \newpage
+\subsection{Premi::Http::Middleware}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{img/premi_http_middleware}
+\caption[Premi::Http::Middleware]{Premi::Http::Middleware}
+\label{fig:premi_http_middleware}
+\end{figure}
+
+	\subsubsection*{Informazioni sul package}
+	I middleware forniscono un meccanismo molto conveniente di filtraggio delle richieste HTTP in entrata.
+	\subsubsection*{Classi contenute}
+		\begin{itemize}
+			\item \textbf{Premi::Http::Middleware::Autheticate:} verifica se l'utente dell'applicazione ha effettuato l'accesso correttamente;
+			\item \textbf{Premi::Http::Middleware::RedirectIfAutheticate:} nel caso in cui il controllo precedente ha dato una risposta negativa, il middleware effettua un redirect verso la schermata di login. In caso contrario, invece, tutto prosegue normalmente.
+		\end{itemize}
+		
+\newpage
+\subsection{Premi::Http::Request}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{img/premi_http_request}
+\caption[Premi::Http::Request]{Premi::Http::Request}
+\label{fig:premi_http_request}
+\end{figure}
+	\subsubsection*{Informazione sul package}
+	La facade Request garantisce l'accesso alla richiesta corrente contenuta nel container.
 
 	
 %\subsection{Premi::Back-End::Logic-Tier::Controller::ComponentController}
@@ -198,8 +229,6 @@
 %	
 
 \newpage
-
-
 \subsection{Premi::Model}
 	\subsubsection*{Informazioni sul package}
 		\begin{figure}[h]
