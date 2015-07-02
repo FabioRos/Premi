@@ -1,12 +1,21 @@
-\subsubsection*{Informazioni sul package}
+\subsubsection{Informazioni sul package}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{img/front-end_model}
 	\caption[Premi::Front-End::Model]{Premi::Front-End::Model}
 \end{figure}
-Il package serve per mantenere i dati relativi al \textit{\gls{front-end}} e tutta la loro logica di \gls{business}.
+\begin{itemize}
+	\item \textbf{Descrizione}: Il package serve per mantenere i dati relativi al \textit{\gls{front-end}} e tutta la loro logica di \gls{business}.
+	\item \textbf{Interazione con altri package}:
+	\begin{itemize}
+		\item Vi è un'interazione con il package Premi::Front-End::Services responsabile del recupero e salvataggio delle informazioni e dell'invocazione di precise procedure dall'esterno mediante chiamate REST;
+		\item Vi è un'interazione con il package Premi::Front-End::Controller necessaria per far comunicare il model con le view;
+		\item Vi è un'interazione con il package Premi::Front-End::Views necessaria per fornire i dati da far visualizzare all'utente;
+		\item Vi è in'interazione con il package Premi::Front-End::Directives responsabile nel collegamento tra le view e i controller del package.
+	\end{itemize}
+\end{itemize}
 
-\subsubsection*{Classi contenute}
+\subsubsection{Classi contenute}
 \begin{itemize}
 	\item Premi::Front-End::Model::Projects:
 	\begin{itemize}
