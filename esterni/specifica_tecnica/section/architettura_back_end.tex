@@ -1,394 +1,303 @@
-\subsection{Premi::Back-End}
+\subsection{Back-End}
 	\subsubsection*{Informazioni sul package}
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=0.7\linewidth]{img/back-end_package}
+			\includegraphics[width=0.9\linewidth]{img/back-end_package}
 			\caption[Premi::Back-End]{Premi::Back-End}
 		\end{figure}
 		Il package contiene le componenti della parte di \gls{back-end} dell'applicazione.
 		
 	\subsubsection*{Package contenuti}
 		\begin{itemize}
-			\item Premi::Back-End::Presentation-Tier;
-			\item Premi::Back-End::Logic-Tier;
-			\item Premi::Back-End::Data-Tier.
+			\item Premi::Presentation-Tier;
+			\item Premi::Http;
+			\item Premi::Model;
+			\item Premi::Data-Tier.
 		\end{itemize}
 
 \newpage
 
-\subsection{Premi::Back-End::Presentation-Tier}
+\subsection{Premi::Presentation-Tier}
 	\subsubsection*{Informazioni sul package}
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=0.5\linewidth]{img/back-end_presentation-tier}
-			\caption[Premi::Back-End::Presentation-Tier]{Premi::Back-End::Presentation-Tier}
+			\includegraphics[width=0.5\linewidth]{img/premi_presentation-tier}
+			\caption[Premi::Presentation-Tier]{Premi::Presentation-Tier}
 		\end{figure}
-		Il package contiene le componenti necessarie per consentire il funzionamento del servizio \gls{REST}, in modo tale da rendere possibile l'interfacciamento con il \gls{front-end}.
+		Il package contiene rende possibile l'interfacciamento con il \gls{front-end}. Comunica con altri livelli attraverso i risultati di output al livello browser/client e tutti gli altri livelli della rete.
 		
-	\subsubsection*{Package contenuti}
-		\begin{itemize}
-			\item Premi::Back-End::Presentation-Tier::Rest:
-			\begin{itemize}
-				\item \textbf{Descrizione}: Il package contiene la struttura necessaria al funzionamento delle chiamate \gls{REST} da parte del \gls{front-end}, richiamando i rispettivi controller.
-			\end{itemize}
-		\end{itemize}
 		
 \newpage
 		
-\subsection{Premi::Back-End::Logic-Tier}
-	\subsubsection*{Informazioni sul package}
+\subsection{Logic Tier}
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=\linewidth]{img/back-end_logic-tier_package}
-		\caption[Premi::Back-End::Logic-Tier]{Premi::Back-End::Logic-Tier}
+		\caption[Premi::Http , Premi::Model]{Premi::Http , Premi::Model}
 	\end{figure}
-	Il package contiene le componenti che si occupano di ricevere le richieste dal Presentation-Tier e di elaborarle attraverso il controller.
+	Il core dell'applicazione viene implementato dal Model, che incapsulando lo stato dell'applicazione definisce i dati e le operazioni che possono essere eseguite su questi. Il package Http contiene Il componente Controller che ha la responsabilità di trasformare le interazioni dell'utente in azioni eseguite dal Model.
 	
 	\subsubsection*{Package contenuti}
 	\begin{itemize}
-		\item Premi::Back-End::Logic-Tier::Controller;
-		\item Premi::Back-End::Logic-Tier::Model.
+		\item Premi::Http;
+		\item Premi::Model.
 	\end{itemize}
 
 \newpage
+\subsection{Premi::Http}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.9\linewidth]{img/premi_http}
+			\caption[Premi::Http]{Premi::Http}
+			\label{fig:premi_http}
+		\end{figure}
 
-\subsection{Premi::Back-End::Logic-Tier::Controller}
+	\subsubsection*{Informazioni sul package}
+	 Il logic tier contiene a sua volta svariati package. Il package Http funziona come un'interfaccia alla vera applicazione.
+	 \subsubsection*{Package contenuti}
+		 \begin{itemize}
+		 	\item Premi::Http::Controllers;
+		 	\item Premi::Http::Middleware;
+		 	\item Premi::Http::Request;
+		 \end{itemize}
+
+\newpage
+\subsection{Premi::Http::Controllers}
 	\subsubsection*{Informazioni sul package}
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.9\linewidth]{img/back-end_logic-tier_controller}
-		\caption[Premi::Back-End::Logic-Tier::Controller]{Premi::Back-End::Logic-Tier::Controller}
+		\includegraphics[width=0.9\linewidth]{img/premi_http_controllers}
+		\caption[Premi::Http::Controllers]{Premi::Http::Controllers}
 	\end{figure}
-	Il package contiene le componenti che gestiscono la parte controller del lato \gls{back-end} dell'applicazione. Al suo interno è presente l'interfaccia comune \textit{FrontController} dalla quale derivano tutti i controller del programma.
-	Sono presenti i controller per il progetto e i suoi componenti.
+	Il package contiene le componenti che gestiscono la parte controller del lato \gls{back-end} dell'applicazione. 
+	Sono presenti i controller per il progetto e i suoi componenti. È presente inoltre il package Auth che gestisce la parte di registrazione, autenticazione e recupero password dell'utente. 
 
 	\subsubsection*{Package contenuti}
 		\begin{itemize}
-			\item Premi::Back-End::Logic-Tier::Controller::ComponentController:
-			\begin{itemize}
-				\item Descrizione: Il package contiene i controller per la gestione degli elementi di una \gls{slide}.
-			\end{itemize}
-			
-			\item Premi::Back-End::Logic-Tier::Controller::RestController:
-			\begin{itemize}
-				\item Descrizione: Il package contiene i controller per il \gls{REST}.
-			\end{itemize}
-			
-			\item Premi::Back-End::Logic-Tier::Controller::UsersController:
-			\begin{itemize}
-				\item Descrizione: Il package contiene gli elementi di controller per la gestione delle funzioni per l'utente, come login, registrazione, ricerca, ecc.
-			\end{itemize}
+			\item Premi::Http::Auth
 		\end{itemize}
-		
 	\subsubsection*{Classi contenute}
 		\begin{itemize}
-			\item Premi::Back-End::Logic-Tier::Controller::FrontController:
-			\begin{itemize}
-				\item \textbf{Descrizione}: Classe che gestisce le operazioni e la logica applicativa degli elementi del progetto.
-				\item \textbf{Relazioni con altri package}:
+			\item Premi::Http::Controllers::ProjectController;
+			\item Premi::Http::Controllers::InfographicController;
+			\item Premi::Http::Controllers::Presentation;
+			\item Premi::Http::Controllers::SlideController.
+		\end{itemize}
+		
+	\subsubsection*{Premi::Http::Controllers::Auth}
+		\subsubsection*{Informazioni sul package}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.9\linewidth]{img/premi_http_controllers_auth}
+			\caption[Premi::Http::Controllers::Auth]{Premi::Http::Controllers::Auth}
+			\label{fig:premi_http_controllers_auth}
+		\end{figure}
+	Laravel utilizza un semplice meccanismo di autenticazione. I file di configurazioni già documentate si trovano all'interno del package \textbf{config} che servono a ottimizzare il comportamento del servizio di autenticazione.		
+	\subsubsection*{Classi contenute}
+		\begin{itemize}
+			\item Premi::Http::Auth::AuthController:
 				\begin{itemize}
-					\item Premi::Back-End::Presentation-Tier::\gls{Rest}.
+					\item \textbf{Descrizione}: AuthController gestisce le registrazioni di nuovi utenti e i loro accessi.
 				\end{itemize}
-			\end{itemize}
+			\item Premi::Http::Auth::PasswordController:
+				\begin{itemize}
+					\item \textbf{Descrizione:} PasswordController contiene la logica per aiutare gli utenti per il reset della password.
+				\end{itemize}
+		\end{itemize}
+	Ognuno di questi controller usa un trait che include i loro metodi necessari.\\
+	Per modificare i campi del form necessari quando un nuovo utente si registra, è possibile farlo modificando la classe Services::Registrar. Questa classe è responsabile per la creazione e validazione dei nuovi utenti. Il metodo validator di Registrar contiene le regole di validazione per i nuovi utenti, mentre il metodo create di Registrar è responsabile della creazione di un nuovo record User nel database. Registrar è chiamato da AuthController tramite dei metodi contenuti nel trait AuthenticatesAndRegistersUsers.
 			
-			\item Premi::Back-End::Logic-Tier::Controller::ProjectController:
+	\subsubsection*{Premi::Http::ProjectController}
 			\begin{itemize}
 				\item \textbf{Descrizione}: Classe che gestisce le operazioni e la logica riguardante la gestione e la modifica di un progetto;
-				\item \textbf{Relazioni con altre classi}:
-				\begin{itemize}
-					\item Premi::Back-End::Logi-Tier::Controller::FrontController.
-				\end{itemize}
 			\end{itemize}
 			
-			\item Premi::Back-End::Logic-Tier::Controller::PresentationController:
+   \subsubsection*{Premi::Http::PresentationController}
 			\begin{itemize}
 				\item \textbf{Descrizione}: Classe che gestisce le operazioni e la logica riguardante la gestione e la modifica di una presentazione;
-				\item \textbf{Relazioni con altre classi}:
-				\begin{itemize}
-					\item Premi::Back-End::Logi-Tier::Controller::FrontController.
-				\end{itemize}
 			\end{itemize}
 			
-			\item Premi::\gls{Back-End}::Logic-Tier::Controller::InfographicController:
+	\subsubsection*{Premi::Http::InfographicsController}
 			\begin{itemize}
 				\item \textbf{Descrizione}: Classe che gestisce le operazioni e la logica riguardante la gestione e la modifica di un'\gls{infografica};
-				\item \textbf{Relazioni con altre classi}:
-				\begin{itemize}
-					\item Premi::Back-End::Logi-Tier::Controller::FrontController.
-				\end{itemize}
 			\end{itemize}
 			
-			\item Premi::Back-End::Logic-Tier::Controller::SlideController:
+	\subsubsection*{Premi::Http::SlideController}
 			\begin{itemize}
 				\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica riguardante la gestione e la modifica di una \gls{slide};
-				\item \textbf{Relazioni con altre classi}:
-				\begin{itemize}
-					\item Premi::Back-End::Logi-Tier::Controller::FrontController.
-				\end{itemize}
 			\end{itemize}
-		\end{itemize}
 		
 \newpage
+
 	
-\subsection{Premi::Back-End::Logic-Tier::Controller::ComponentController}
-	\subsubsection*{Informazioni sul package}
-		\begin{figure}[h]
-			\centering
-			\includegraphics[width=0.9\linewidth]{img/back-end_logic-tier_controller_componentcontroller}
-			\caption[Premi::Back-End::Logic-Tier::Controller::ComponentController]{Premi::Back-End::Logic-Tier::Controller::ComponentController}
-		\end{figure}
-		Il package contiene le classi dei controller per la gestione degli elementi di una \gls{slide}.
-		
-	\subsubsection*{Classi contenute}
-	\begin{itemize}
-		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController:
-		\begin{itemize}
-			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa di tutti i componenti della \gls{slide};
-			\item \textbf{Relazioni con altre classi}:
-			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Controller::FrontController.
-			\end{itemize}
-		\end{itemize}
-		
-		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::RealTimeDataController:
-		\begin{itemize}
-			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per i dati real-time della \gls{slide};
-			\item \textbf{Relazioni con altre classi}:
-			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController.
-			\end{itemize}
-		\end{itemize}
-		
-		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ChartController:
-		\begin{itemize}
-			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per i grafici della \gls{slide};
-			\item \textbf{Relazioni con altre classi}:
-			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController.
-			\end{itemize}
-		\end{itemize}
-		
-		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ImageController:
-		\begin{itemize}
-			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per le immagini della \gls{slide};
-			\item \textbf{Relazioni con altre classi}:
-			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController.
-			\end{itemize}
-		\end{itemize}
-		
-		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::TableController:
-		\begin{itemize}
-			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per le tabelle della \gls{slide};
-			\item \textbf{Relazioni con altre classi}:
-			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController.
-			\end{itemize}
-		\end{itemize}
-		
-		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::TextController:
-		\begin{itemize}
-			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per le caselle di testo della \gls{slide};
-			\item \textbf{Relazioni con altre classi}:
-			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController.
-			\end{itemize}
-		\end{itemize}
-	\end{itemize}
-	
-\newpage
-	
-\subsection{Premi::Back-End::Logic-Tier::Controller::UsersController}
-	\subsubsection*{Informazioni sul package}
-		\begin{figure}[h]
-			\centering
-			\includegraphics[width=0.9\linewidth]{img/back-end_logic-tier_controller_userscontroller}
-			\caption[Premi::Back-End::Logic-Tier::Controller::UsersController]{Premi::Back-End::Logic-Tier::Controller::UsersController}
-		\end{figure}
-	Il package contiene le classi dei controller per la gestione degli utenti e le loro informazioni.
-	
-	\subsubsection*{Classi contenute}
-		\begin{itemize}
-			\item Premi::Back-End::Logic-Tier::Controller::UsersController::UsersController:
-			\begin{itemize}
-				\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa di tutte le funzioni per la gestione di un utente e dei suoi dati;
-				\item \textbf{Relazioni con altre classi}:
-				\begin{itemize}
-					\item Premi::Back-End::Logic-Tier::Controller::FrontController;
-					\item Premi::Back-End::Logic-Tier::Model::User.
-				\end{itemize}
-			\end{itemize}
-			
-			\item Premi::Back-End::Logic-Tier::Controller::UsersController::LoginController:
-			\begin{itemize}
-				\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa delle funzioni per il login di utente;
-				\item \textbf{Relazioni con altre classi}:
-				\begin{itemize}
-					\item Premi::Back-End::Logic-Tier::Controller::UsersController::UsersController.
-				\end{itemize}
-			\end{itemize}
-			
-			\item Premi::Back-End::Logic-Tier::Controller::UsersController::ForgotPasswordController:
-			\begin{itemize}
-				\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa per il recupero della password di un utente;
-				\item \textbf{Relazioni con altre classi}:
-				\begin{itemize}
-					\item Premi::Back-End::Logic-Tier::Controller::UsersController::UsersController.
-				\end{itemize}
-			\end{itemize}
-			
-			\item Premi::Back-End::Logic-Tier::Controller::UsersController::RegistrationController:
-			\begin{itemize}
-				\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa delle funzioni per la registrazione di un nuovo utente;
-				\item \textbf{Relazioni con altre classi}:
-				\begin{itemize}
-					\item Premi::Back-End::Logic-Tier::Controller::UsersController::UsersController.
-				\end{itemize}
-			\end{itemize}
-			
-			\item Premi::Back-End::Logic-Tier::Controller::UsersController::SearchResultController:
-			\begin{itemize}
-				\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa delle funzioni per la ricerca e la gestione dei risultati;
-				\item \textbf{Relazioni con altre classi}:
-				\begin{itemize}
-					\item Premi::Back-End::Logic-Tier::Controller::UsersController::UsersController.
-				\end{itemize}
-			\end{itemize}
-		\end{itemize}
+%\subsection{Premi::Back-End::Logic-Tier::Controller::ComponentController}
+%	\subsubsection*{Informazioni sul package}
+%		\begin{figure}[h]
+%			\centering
+%			\includegraphics[width=0.9\linewidth]{img/back-end_logic-tier_controller_componentcontroller}
+%			\caption[Premi::Back-End::Logic-Tier::Controller::ComponentController]{Premi::Back-End::Logic-Tier::Controller::ComponentController}
+%		\end{figure}
+%		Il package contiene le classi dei controller per la gestione degli elementi di una \gls{slide}.
+%		
+%	\subsubsection*{Classi contenute}
+%	\begin{itemize}
+%		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController:
+%		\begin{itemize}
+%			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa di tutti i componenti della \gls{slide};
+%			\item \textbf{Relazioni con altre classi}:
+%			\begin{itemize}
+%				\item Premi::Back-End::Logic-Tier::Controller::FrontController.
+%			\end{itemize}
+%		\end{itemize}
+%		
+%		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::RealTimeDataController:
+%		\begin{itemize}
+%			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per i dati real-time della \gls{slide};
+%			\item \textbf{Relazioni con altre classi}:
+%			\begin{itemize}
+%				\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController.
+%			\end{itemize}
+%		\end{itemize}
+%		
+%		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ChartController:
+%		\begin{itemize}
+%			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per i grafici della \gls{slide};
+%			\item \textbf{Relazioni con altre classi}:
+%			\begin{itemize}
+%				\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController.
+%			\end{itemize}
+%		\end{itemize}
+%		
+%		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ImageController:
+%		\begin{itemize}
+%			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per le immagini della \gls{slide};
+%			\item \textbf{Relazioni con altre classi}:
+%			\begin{itemize}
+%				\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController.
+%			\end{itemize}
+%		\end{itemize}
+%		
+%		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::TableController:
+%		\begin{itemize}
+%			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per le tabelle della \gls{slide};
+%			\item \textbf{Relazioni con altre classi}:
+%			\begin{itemize}
+%				\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController.
+%			\end{itemize}
+%		\end{itemize}
+%		
+%		\item Premi::Back-End::Logic-Tier::Controller::ComponentController::TextController:
+%		\begin{itemize}
+%			\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica applicativa dei componenti per le caselle di testo della \gls{slide};
+%			\item \textbf{Relazioni con altre classi}:
+%			\begin{itemize}
+%				\item Premi::Back-End::Logic-Tier::Controller::ComponentController::ComponentController.
+%			\end{itemize}
+%		\end{itemize}
+%	\end{itemize}
+%	
 
 \newpage
 
-\subsection{Premi::Back-End::Logic-Tier::Model}
+
+\subsection{Premi::Model}
 	\subsubsection*{Informazioni sul package}
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width=0.9\linewidth]{img/back-end_logic-tier_model}
-			\caption[Premi::Back-End::Logic-Tier::Model]{Premi::Back-End::Logic-Tier::Model}
-		\end{figure}
-		Il package contiene le classi che definisco il modello dell'applicazione.
-	
-	\subsubsection*{Package Contenuti}
-		\begin{itemize}
-			\item Premi::Back-End::Logic-Tier::Model::ProjectModel.
-		\end{itemize}
-	
-	\subsubsection*{Classi contenute}
-	\begin{itemize}
-		\item Premi::Back-End::Logic-Tier::Model::MongoHandler:
-		\begin{itemize}
-			\item \textbf{Descrizione}: classe per comunicare con il livello inferiore ed interagire direttamente con la base di dati;
-			\item \textbf{Relazione con altre classi}:
-			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Controller::UsersController::UserController.
-			\end{itemize}
-		\end{itemize}
-			
-		\item Premi::Back-End::Logic-Tier::Model::Utente:
-		\begin{itemize}
-			\item \textbf{Descrizione}: classe che fornisce le operazioni per gestire un utente;
-			\item \textbf{Relazione con altre classi}:
-			\begin{itemize}
-				\item Premi::Back-End::Data-Tier::DataTierFrontController.
-			\end{itemize}
-		\end{itemize}
-	\end{itemize}
-
-\newpage
-
-\subsection{Premi::Back-End::Logic-Tier::Model::ProjectModel}
-	\subsubsection*{Informazioni sul package}
-		\begin{figure}[h]
-			\centering
-			\includegraphics[width=0.9\linewidth]{img/back-end_logic-tier_model_project-model}
-			\caption[Premi::Back-End::Logic-Tier::Model::ProjectModel]{Premi::Back-End::Logic-Tier::Model::ProjectModel}
+			\includegraphics[width=0.9\linewidth]{img/back-end_logic-tier_premi_model}
+			\caption[Premi::Model]{Premi::Model}
 		\end{figure}
 		Il package contiene la struttura delle classi di tutti i componenti dell'applicazione.
 	
 	\subsubsection*{Classi contenute}
 	\begin{itemize}
-		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project:
+		\item Premi::Model::User:
+		\begin{itemize}
+			\item \textbf{Descrizione:} classe contenente le informazioni di un utente.
+		\end{itemize}
+		\item Premi::Model::Project:
 		\begin{itemize}
 			\item \textbf{Descrizione}: classe base contenente le informazioni principali del progetto.
 		\end{itemize}
 			
-		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Infographic:
+		\item Premi::Model::Infographic:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta le infografiche associate a un progetto;
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
+				\item Premi::Model::Project.
 			\end{itemize}
 		\end{itemize}
 		
-		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Presentation:
+		\item Premi::Model::Presentation:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta la presentazione del progetto;
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
+				\item Premi::Model::Project.
 			\end{itemize}
 		\end{itemize}
 		
-		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::\gls{Slide}:
+		\item Premi::Model::Slide:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta le \gls{slide} che compongono una presentazione;
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
+				\item Premi::Model::Project.
 			\end{itemize}
 		\end{itemize}
 		
-		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Component:
+		\item Premi::Model::Component:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe base che rappresenta i componenti di cui è formata una \gls{slide};
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
+				\item Premi::Model::Project.
 			\end{itemize}
 		\end{itemize}
 		
-		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Chart:
+		\item Premi::Model::Chart:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta l'elemento "grafico" che può essere inserito in una \gls{slide};
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
+				\item Premi::Model::Project.
 			\end{itemize}
 		\end{itemize}
 		
-		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::RealTimeData:
+		\item Premi::Model::RealTimeData:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta l'elemento "dati real-time" che può essere inserito in una \gls{slide};
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
+				\item Premi::Model::Project.
 			\end{itemize}
 		\end{itemize}
 		
-		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Text:
+		\item Premi::Model::Text:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta l'elemento "testo" che può essere inserito in una \gls{slide};
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
+				\item Premi::Model::Project.
 			\end{itemize}
 		\end{itemize}
 		
-		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Image:
+		\item Premi::Model::Image:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta l'elemento "immagine" che può essere inserito in una \gls{slide};
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
+				\item Premi::Model::Project.
 			\end{itemize}
 		\end{itemize}
 		
-		\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Table:
+		\item Premi::Model::Table:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta l'elemento "tabella" che può essere inserito in una \gls{slide};
 			\item \textbf{Relazione con altre classi}:
 			\begin{itemize}
-				\item Premi::Back-End::Logic-Tier::Model::ProjectModel::Project.
+				\item Premi::Model::Project.
 			\end{itemize}
 		\end{itemize}
 	\end{itemize}
