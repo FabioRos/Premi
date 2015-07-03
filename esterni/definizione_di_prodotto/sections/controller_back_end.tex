@@ -1,0 +1,232 @@
+\subsubsection{UserController}
+
+	\paragraph{Descrizione}
+		Questa classe gestisce i dati dell'utente sfruttando i dati forniti dal model.
+	\paragraph{Utilizzo}
+		La classe è progettata per consentire la creazione, la manipolazione  dei dati utente e l'interrogazione efficiente del database.
+
+	\paragraph{Metodi}
+		\begin{itemize}
+			\item \textbf{+ show(username = "")}\\
+			Il metodo verifica se c'è un utente autenticato. Se la verifica ha avuto successo si procede con il recupero dei dati dell'utente, in particolare il suo profilo e i progetti associati all'utente e li restituisce:\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item username : string = "";\\
+				Stringa contenente il nome utente con valore di default NULL.
+			\end{itemize}
+			
+			\item \textbf{+ update()}\\
+			Il metodo recupera l'utente loggato e aggiorna i dati del profilo;
+			
+			\item \textbf{+ destroy()}
+			Il metodo recupera l'utente loggato e lo cancella dal database insieme a tutte le  sue informazioni.
+		\end{itemize}
+		
+\newpage
+\subsubsection{ProjectController}
+
+	\paragraph{Descrizione}
+		Questa classe gestisce i dati di un progetto.
+	\paragraph{Utilizzo}
+		La classe è progettata per consentire la creazione e la manipolazione dei dati di un progetto.
+		
+	\paragraph{Metodi}
+		\begin{itemize}
+			\item \textbf{+ index()}\\
+			Il metodo recupera tutti i progetti dell'utente loggato e li restituisce;
+			\item \textbf{+ store()}\\
+			Il metodo crea un nuovo progetto assegnandoli un nome e lo salva nel database;
+			\item \textbf{+ show(project)}\\
+			Il metodo interroga il database recuperando il progetto con l'id "project":\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item project : string; \\
+				Stringa contenente l'id univoco di un progetto.
+			\end{itemize}
+			\item \textbf{+ update(project)}\\
+			Il metodo recupera il progetto e aggiorna i dati del progetto:\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item project : string; \\
+				Stringa contenente l'id univoco di un progetto.
+			\end{itemize}
+			\item \textbf{+ destroy(project)}\\
+			Il metodo recupera il progetto e lo cancella dal database insieme a tutte le  sue informazioni:\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item project : string; \\
+				Stringa contenente l'id univoco di un progetto.
+			\end{itemize}
+		\end{itemize}
+		
+\newpage
+\subsubsection{InfographicController}
+
+	\paragraph{Descrizione}
+		Questa classe gestisce i dati di un'infografica.
+	\paragraph{Utilizzo}
+		La classe è progettata per consentire la creazione e la manipolazione dei dati di un infografica.
+		
+	\paragraph{Metodi}
+		\begin{itemize}
+			\item \textbf{+ index(project)}\\
+			Il metodo recupera il progetti dell'utente loggato con id = project per poi ricavarsi l'infografica associato a tale progetto e la restituisce;
+			\item \textbf{+ store(project)}\\
+			Il metodo crea una nuova infografica assegnandoli un nome e il path per il salvataggio e la salva nel progetto con id = project;
+			\item \textbf{+ show(project, infographic)}\\
+			Il metodo interroga il database recuperando il progetto con l'id "project" e a partire dal progetto recupera l'infografica con id = infographic.\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item project : string; \\
+				Stringa contenente l'id univoco di un progetto;
+				\item infographic : string; \\
+				Stringa contenente l'id univoco di un'infografica.
+			\end{itemize}
+			\item \textbf{+ update(project, infographic)}\\
+			Il metodo recupera il progetto con id = project e a partire dal progetto recupera l'infografica con id = infografica e aggiorna i dati dell'infografica.\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item project : string; \\
+				Stringa contenente l'id univoco di un progetto;
+				\item infographic : string; \\
+				Stringa contenente l'id univoco di un'infografica.
+			\end{itemize}
+			\item \textbf{+ destroy(project, infographic)}\\
+			Il metodo recupera il progetto con id = project e a partire dal progetto recupera l'infografica con id = infografica chiamando il metodo delete su tale infografica cancellandola dal database.\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item project : string; \\
+				Stringa contenente l'id univoco di un progetto;
+				\item infographic : string; \\
+				Stringa contenente l'id univoco di un'infografica.
+			\end{itemize}
+		\end{itemize}
+		
+\newpage
+\subsubsection{PresentationController}
+	
+	\paragraph{Descrizione}
+		Questa classe gestisce i dati della presentazione.
+	\paragraph{Utilizzo}
+		La classe è stata progettata per consentire la creazione e la manipolazione dei dati di una presentazione.
+	
+	\paragraph{Metodi}
+		\begin{itemize}
+			\item \textbf{+ store(project)}\\
+			Il metodo crea una nuova presentazione associata al progetto con id = project, assegnandole un titolo e la salva nel database:\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item project : string; \\
+				Stringa contenente l'id univoco di un progetto.
+			\end{itemize}
+			\item \textbf{+ show(project)}\\
+			Il metodo interroga il database recuperando il progetto con l'id "project" e restituisce l'unica presentazione associata a tale progetto:\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item project : string; \\
+				Stringa contenente l'id univoco di un progetto.
+			\end{itemize}
+			\item \textbf{+ update(project)}\\
+			Il metodo recupera il progetto con id = project per poi recuperare l'unica presentazione associata a tale progetto e aggiorna i dati della presentazione:\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item project : string; \\
+				Stringa contenente l'id univoco di un progetto.
+			\end{itemize}
+			\item \textbf{+ destroy(project)}\\
+			Il metodo recupera il progetto con id = project e recupare la presentazione associata a tale progetto e la elimina dal database cancellando tutte le sue informazioni:\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item project : string; \\
+				Stringa contenente l'id univoco di un progetto.
+			\end{itemize}
+		\end{itemize}
+		
+\newpage
+\subsubsection{SlideController}
+	\paragraph{Descrizione}
+		Questa classe gestisce i dati di una slide.
+	\paragraph{Utilizzo}
+		La classe è stata progettata per consentire la creazione e la manipolazione dei dati di una slide.
+
+	\paragraph{Metodi}
+		\begin{itemize}
+			\item \textbf{+ index(project)}\\
+				Il metodo recupera e restituisce tutte le slide associate a una presentazione.\\
+				\textbf{Argomenti:}
+				\begin{itemize}
+					\item project : string; \\
+					Stringa contenente l'id univoco di un progetto;
+				\end{itemize}
+			\item \textbf{+ store(project)}\\
+				Il metodo crea una nuova slide.\\
+				\textbf{Argomenti:}
+				\begin{itemize}
+					\item project : string; \\
+					Stringa contenente l'id univoco di un progetto;
+				\end{itemize}
+			\item \textbf{+ show(project, slide)}\\
+				Il metodo interroga il database recuperando la slide con id = slide:\\
+				\textbf{Argomenti:}
+					\begin{itemize}
+						\item project : string; \\
+						Stringa contenente l'id univoco di un progetto;
+						\item slide : string;\\
+						Stringa contenente l'id univoco di una slide.
+					\end{itemize}
+			\item \textbf{+ update(project, slide)}\\
+				Il metodo recupera il progetto con id = project per poi recuperare l'unica presentazione associata a tale progetto e la slide con id = slide aggiornando i dati della slide:\\
+					\textbf{Argomenti:}
+					\begin{itemize}
+						\item project : string; \\
+						Stringa contenente l'id univoco di un progetto;
+						\item slide : string;\\
+						Stringa contenente l'id univoco di una slide.
+					\end{itemize}
+			\item \textbf{+ destroy(project, slide)}\\
+				Il metodo recupera il progetto con id = project e recupare la presentazione associata a tale progetto e la slide con id = slide e la elimina dal database cancellando tutte le sue informazioni:\\
+				\textbf{Argomenti:}
+				\begin{itemize}
+					\item project : string; \\
+					Stringa contenente l'id univoco di un progetto;
+					\item slide : string;\\
+					Stringa contenente l'id univoco di una slide.
+				\end{itemize}
+\end{itemize}
+
+\newpage
+\subsubsection{Premi::Http::Controllers::Auth}
+Laravel implementa un semplice meccanismo di autenticazione. Infatti, quasi tutto è già configurato "out of the box". Il file di configurazione si trova in config/auth.php, che contiene una serie di opzioni, ben documentate, che useremo per ottimizzare il comportamento del servizio di autenticazione.\\
+Ognuno di questi controller usa un trait che include i loro metodi necessari.
+	\paragraph{AuthController}
+		\subparagraph{Descrizione}
+			AuthController gestisce la registrazione dei nuovi utenti e i loro accessi.
+		\subparagraph{Metodi}
+			\begin{itemize}
+				\item \textbf{+ \_\_construct()}\\
+				Il costruttore della classe AuthController.
+				\item \textbf{\# validator(data)}\\
+				Il metodo si occupa della validazione di tutte le informazioni che riguardano l'utente al momento della registrazione.\\
+					\textbf{Argomenti:}
+						\begin{itemize}
+							\item data : array;
+							Array di valori contenente tutti i dati della registrazione di un utente. 
+						\end{itemize}
+				\item \textbf{\# create(data)}\\
+				Il metodo si occupa della creazione di un nuovo utente.\\
+					\textbf{Argomenti:}
+						\begin{itemize}
+							\item data : array;
+							Array di valori contenente tutti i dati della registrazione di un utente.
+						\end{itemize}
+			\end{itemize}
+			
+	\paragraph{PasswordController}
+		\subparagraph{Descrizione}
+			PasswordController contiene la logica per aiutare gli utenti per il reset delle loro credenziali di accesso.
+		\subparagraph{Metodi}
+			\begin{itemize}
+				\item \textbf{+ \_\_construct()}\\
+				Il costruttore della classe PasswordController.
+			\end{itemize}
+	
