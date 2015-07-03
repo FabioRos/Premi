@@ -3,7 +3,7 @@
 		\begin{figure}[h]
 			\centering
 			\includegraphics[width=0.9\linewidth]{img/back-end_package}
-			\caption[Premi::Back-End]{Premi::Back-End}
+			\caption[Premi::Back-End]{Premi - Architettura di Back-End}
 		\end{figure}
 		Il package contiene le componenti della parte di \gls{back-end} dell'applicazione.
 		
@@ -24,8 +24,8 @@
 			\includegraphics[width=0.5\linewidth]{img/premi_presentation-tier}
 			\caption[Premi::Presentation-Tier]{Premi::Presentation-Tier}
 		\end{figure}
-		Il package contiene rende possibile l'interfacciamento con il \gls{front-end}. Comunica con altri livelli attraverso i risultati di output al livello browser/client e tutti gli altri livelli della rete.
-		
+		Il package rende possibile l'interfacciamento con il \gls{front-end}. Comunica con altri livelli attraverso i risultati di output al livello browser/client e tutti gli altri livelli della rete.
+		Gestisce le chiamate \gls{REST} restituendo i risultati o eseguendo le procedure a seguito delle chiamate da parte del \gls{front-end} di uno specifico \gls{URI}. 
 		
 \newpage
 		
@@ -56,14 +56,14 @@
 	 Il logic tier contiene a sua volta svariati package. Il package Http funziona come un'interfaccia alla vera applicazione.
 	 \subsubsection*{Classi contenute}
 	 \begin{itemize}
-	 	\item \textbf{routes: }collega una specifica richiesta ad un set di istruzioni ben precise;
+	 	\item \textbf{Routes: }collega una specifica richiesta ad un set di istruzioni ben precise;
 	 	\item \textbf{Kernel: }"filtro" attraverso cui passano tutte le richieste.
 	 \end{itemize}
 	 \subsubsection*{Package contenuti}
 		 \begin{itemize}
 		 	\item Premi::Http::Controllers;
 		 	\item Premi::Http::Middleware;
-		 	\item Premi::Http::Request;
+		 	\item Premi::Http::Requests;
 		 \end{itemize}
 
 \newpage
@@ -79,7 +79,7 @@
 
 	\subsubsection*{Package contenuti}
 		\begin{itemize}
-			\item Premi::Http::Auth
+			\item Premi::Http::Controllers::Auth
 		\end{itemize}
 	\subsubsection*{Classi contenute}
 		\begin{itemize}
@@ -107,30 +107,30 @@
 				\end{itemize}
 			\item Premi::Http::Auth::PasswordController:
 				\begin{itemize}
-					\item \textbf{Descrizione:} PasswordController contiene la logica per aiutare gli utenti per il reset della password.
+					\item \textbf{Descrizione:} PasswordController contiene la logica di aiuto agli utenti per la procedura di reset della password.
 				\end{itemize}
 		\end{itemize}
-	Ognuno di questi controller usa un \gls{trait} che include i loro metodi necessari.\\
-	Per modificare i campi del form necessari quando un nuovo utente si registra, è possibile farlo modificando la classe Services::Registrar. Questa classe è responsabile per la creazione e validazione dei nuovi utenti. Il metodo validator di Registrar contiene le regole di validazione per i nuovi utenti, mentre il metodo create di Registrar è responsabile della creazione di un nuovo record User nel database. Registrar è chiamato da AuthController tramite dei metodi contenuti nel \gls{trait} AuthenticatesAndRegistersUsers.
+	Ognuno di questi controller usa un \gls{trait} che include i metodi necessari al loro corretto funzionamento.\\
+	Per modificare i campi del form necessari alla registrazione di un nuovo utente, è sufficente modificare la classe Services::Registrar. Questa classe è responsabile della creazione e validazione dei nuovi utenti. Il metodo \textit{validator} di Registrar contiene le regole di validazione per i nuovi utenti, mentre il metodo \textit{create} di Registrar è responsabile della creazione di un nuovo record User nel database. Registrar è chiamato da AuthController tramite dei metodi contenuti nel \gls{trait} AuthenticatesAndRegistersUsers.
 			
-	\subsubsection*{Premi::Http::ProjectController}
+	\subsubsection*{Premi::Http::Controllers::ProjectController}
 			\begin{itemize}
-				\item \textbf{Descrizione}: Classe che gestisce le operazioni e la logica riguardante la gestione e la modifica di un progetto;
+				\item \textbf{Descrizione}: Classe responsabile delle operazioni e della logica riguardante la gestione e la modifica di un progetto;
 			\end{itemize}
 			
-   \subsubsection*{Premi::Http::PresentationController}
+   \subsubsection*{Premi::Http::Controllers::PresentationController}
 			\begin{itemize}
-				\item \textbf{Descrizione}: Classe che gestisce le operazioni e la logica riguardante la gestione e la modifica di una presentazione;
+				\item \textbf{Descrizione}: Classe responsabile delle operazioni e della logica riguardante la gestione e la modifica di una presentazione;
 			\end{itemize}
 			
-	\subsubsection*{Premi::Http::InfographicsController}
+	\subsubsection*{Premi::Http::Controllers::InfographicsController}
 			\begin{itemize}
-				\item \textbf{Descrizione}: Classe che gestisce le operazioni e la logica riguardante la gestione e la modifica di un'\gls{infografica};
+				\item \textbf{Descrizione}: Classe responsabile delle operazioni e della logica riguardante la gestione e la modifica di un'\gls{infografica};
 			\end{itemize}
 			
-	\subsubsection*{Premi::Http::SlideController}
+	\subsubsection*{Premi::Http::Controllers::SlideController}
 			\begin{itemize}
-				\item \textbf{Descrizione}: classe che gestisce le operazioni e la logica riguardante la gestione e la modifica di una \gls{slide};
+				\item \textbf{Descrizione}: Classe responsabile delle operazioni e della logica riguardante la gestione e la modifica di una \gls{slide};
 			\end{itemize}
 		
 \newpage
@@ -147,9 +147,8 @@
 	\subsubsection*{Classi contenute}
 		\begin{itemize}
 			\item \textbf{Premi::Http::Middleware::Autheticate:} verifica se l'utente dell'applicazione ha effettuato l'accesso correttamente;
-			\item \textbf{Premi::Http::Middleware::RedirectIfAutheticate:} nel caso in cui il controllo precedente ha dato una risposta negativa, il middleware effettua un redirect verso la schermata di login. In caso contrario, invece, tutto prosegue normalmente.
+			\item \textbf{Premi::Http::Middleware::RedirectIfAutheticate:} al verificarsi di un esito negativo del controllo precedente, il middleware effettua un redirect verso la schermata di login. In caso contrario, invece, tutto prosegue normalmente.
 		\end{itemize}
-		
 \newpage
 \subsection{Premi::Http::Request}
 \begin{figure}[h]
@@ -159,7 +158,7 @@
 \label{fig:premi_http_request}
 \end{figure}
 	\subsubsection*{Informazione sul package}
-	La facade Request garantisce l'accesso alla richiesta corrente contenuta nel container.
+	La classe Facade Request garantisce l'accesso alla richiesta corrente contenuta nel container.
 
 	
 %\subsection{Premi::Back-End::Logic-Tier::Controller::ComponentController}
@@ -248,7 +247,7 @@
 		\end{itemize}
 		\item Premi::Model::Project:
 		\begin{itemize}
-			\item \textbf{Descrizione}: classe base contenente le informazioni principali del progetto.
+			\item \textbf{Descrizione}: classe base contenente le informazioni principali di un progetto.
 		\end{itemize}
 			
 		\item Premi::Model::Infographic:
@@ -344,4 +343,4 @@ Eloquent è l'ORM(Object Relational Mapping) incluso in Laravel: un'implementazi
 \label{fig:premi_mongodb}
 \end{figure}
 \subsubsection*{Informazioni sul package}
-Ogni collection nel database trova una sua corrispondenza in un Model, il quale ha proprio il compito di gestire l'interazione con la collection stessa. Una volta definito il model se è pronti a selezionare un record, crearne di nuovi ed in generale lavorare con la collection. La sintassi è molto semplice: Laravel mette a disposizione le query tramite il Model Eloquent.
+Ogni collection nel database trova una sua corrispondenza in un Model, il quale ha proprio il compito di gestire l'interazione con la collection stessa. Una volta definito il model si è pronti a selezionare un record, crearne di nuovi ed in generale lavorare con la collection. La sintassi è molto semplice: Laravel mette a disposizione le query tramite il Model Eloquent.
