@@ -19,7 +19,11 @@
 		\item \textbf{\# fillable : array = ['username', 'email', 'firstName', 'lastName', 'password']:}\\
 		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment.
 		\begin{itemize}
-			\item \textbf{name:} indica il nome del progetto.
+			\item \textbf{username:} indica il nome utente scelto dall'utente.
+			\item \textbf{email:} indica l'indirizzo email inserito dall'utente.
+			\item \textbf{firstName:} indica il nome inserito dall'utente.
+			\item \textbf{lastName:} indica il cognome inserito dall'utente.
+			\item \textbf{password:} indica la password scelta dall'utente.
 		\end{itemize}
 	\end{itemize}
 	
@@ -27,11 +31,37 @@
 	\begin{itemize}
 		\item \textbf{+ projects() : Project}\\
 		Abbiamo utilizzato la relazione embedsMany per riuscire ad incorporare il model projects all'interno dell'oggetto principale User. Il metodo ritorna Project su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello;
-		\item \textbf{+ infographics() : Infographics}\\
-		Abbiamo utilizzato la relazione embedsMany per riuscire ad incorporare il model Infographic all’interno dell’oggetto principale Project. Il metodo ritorna Infographic su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello.
 	\end{itemize}
 \newpage
 
+\subsubsection{Project}
+
+	%figure
+	
+	\paragraph{Descrizione}
+	Questa classe rappresenta un progetto di un utente, ovvero una presentazione più zero o più infografiche relative a tale presentazione.
+	
+	\paragraph{Utilizzo}
+	Viene utilizzata alla creazione di un progetto di un utente.
+	
+	\paragraph{Attributi}
+	\begin{itemize}
+		\item \textbf{+ timestamps : boolean = false :}\\
+		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection;
+		\item \textbf{\# fillable : array = [’name’]:}\\
+		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment.
+		\begin{itemize}
+			\item \textbf{name:} indica il nome del progetto.
+		\end{itemize}
+	\end{itemize}
+	
+	\paragraph{Metodi}
+	\begin{itemize}
+		\item \textbf{+ presentations() : Presentation}\\
+		Abbiamo utilizzato la relazione embedsMany per riuscire ad incorporare il model presentation all'interno dell'oggetto principale Project. Il metodo ritorna Presentation su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello;
+		\item \textbf{+ infographics() : Infographic}\\
+		Abbiamo utilizzato la relazione embedsMany per riuscire ad incorporare il model Infographic all’interno dell’oggetto principale Project. Il metodo ritorna Infographic su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello.
+	\end{itemize}
 
 \subsubsection{Infographic}
 
