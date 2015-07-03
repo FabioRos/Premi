@@ -137,7 +137,7 @@
 \subsection{Premi::Http::Middleware}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\linewidth]{img/premi_http_middleware}
+\includegraphics[width=0.6\linewidth]{img/premi_http_middleware}
 \caption[Premi::Http::Middleware]{Premi::Http::Middleware}
 \label{fig:premi_http_middleware}
 \end{figure}
@@ -153,12 +153,12 @@
 \subsection{Premi::Http::Request}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\linewidth]{img/premi_http_request}
+\includegraphics[width=0.6\linewidth]{img/premi_http_request}
 \caption[Premi::Http::Request]{Premi::Http::Request}
 \label{fig:premi_http_request}
 \end{figure}
 	\subsubsection*{Informazione sul package}
-	La classe Facade Request garantisce l'accesso alla richiesta corrente contenuta nel container.
+	La classe Facade Request garantisce l'accesso alla richiesta corrente contenuta nel container ed estende la classe base Facade. Questo "passaggio" trova la sua concretizzazione nella classe Facade
 
 	
 %\subsection{Premi::Back-End::Logic-Tier::Controller::ComponentController}
@@ -253,82 +253,46 @@
 		\item Premi::Model::Infographic:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta le infografiche associate a un progetto;
-			\item \textbf{Relazione con altre classi}:
-			\begin{itemize}
-				\item Premi::Model::Project.
-			\end{itemize}
 		\end{itemize}
 		
 		\item Premi::Model::Presentation:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta la presentazione del progetto;
-			\item \textbf{Relazione con altre classi}:
-			\begin{itemize}
-				\item Premi::Model::Project.
-			\end{itemize}
 		\end{itemize}
 		
 		\item Premi::Model::Slide:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta le \gls{slide} che compongono una presentazione;
-			\item \textbf{Relazione con altre classi}:
-			\begin{itemize}
-				\item Premi::Model::Project.
-			\end{itemize}
 		\end{itemize}
 		
 		\item Premi::Model::Component:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe base che rappresenta i componenti di cui è formata una \gls{slide};
-			\item \textbf{Relazione con altre classi}:
-			\begin{itemize}
-				\item Premi::Model::Project.
-			\end{itemize}
 		\end{itemize}
 		
 		\item Premi::Model::Chart:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta l'elemento "grafico" che può essere inserito in una \gls{slide};
-			\item \textbf{Relazione con altre classi}:
-			\begin{itemize}
-				\item Premi::Model::Project.
-			\end{itemize}
 		\end{itemize}
 		
 		\item Premi::Model::RealTimeData:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta l'elemento "dati real-time" che può essere inserito in una \gls{slide};
-			\item \textbf{Relazione con altre classi}:
-			\begin{itemize}
-				\item Premi::Model::Project.
-			\end{itemize}
 		\end{itemize}
 		
 		\item Premi::Model::Text:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta l'elemento "testo" che può essere inserito in una \gls{slide};
-			\item \textbf{Relazione con altre classi}:
-			\begin{itemize}
-				\item Premi::Model::Project.
-			\end{itemize}
 		\end{itemize}
 		
 		\item Premi::Model::Image:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta l'elemento "immagine" che può essere inserito in una \gls{slide};
-			\item \textbf{Relazione con altre classi}:
-			\begin{itemize}
-				\item Premi::Model::Project.
-			\end{itemize}
 		\end{itemize}
 		
 		\item Premi::Model::Table:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta l'elemento "tabella" che può essere inserito in una \gls{slide};
-			\item \textbf{Relazione con altre classi}:
-			\begin{itemize}
-				\item Premi::Model::Project.
-			\end{itemize}
 		\end{itemize}
 	\end{itemize}
 	
