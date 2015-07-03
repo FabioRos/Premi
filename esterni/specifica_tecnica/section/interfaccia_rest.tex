@@ -20,7 +20,7 @@ Le tipologie di permessi sono:
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/auth/register} & \textbf{POST} & \textbf{Utente non autenticato} \\ \midrule
-		\multicolumn{3}{|c|}{Crea una richiesta di registrazione.} \\
+		\multicolumn{3}{|c|}{Registra un nuovo utente nel sistema.} \\
 		\bottomrule
 	\end{tabular}\\
 	\par\bigskip
@@ -28,7 +28,7 @@ Le tipologie di permessi sono:
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/auth/login} & \textbf{POST} & \textbf{Utente non autenticato} \\ \midrule
-		\multicolumn{3}{|c|}{Crea una richiesta di autenticazione.} \\
+		\multicolumn{3}{|c|}{Autentica un utente nel sistema.} \\
 		\bottomrule
 	\end{tabular}\\
 	\par\bigskip
@@ -36,23 +36,7 @@ Le tipologie di permessi sono:
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/auth/logout} & \textbf{POST} & \textbf{Utente autenticato} \\ \midrule
-		\multicolumn{3}{|c|}{Crea una richiesta di disconnessione.} \\
-		\bottomrule
-	\end{tabular}\\
-	\par\bigskip
-	
-	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
-		\toprule
-		\textbf{/api/user} & \textbf{GET} & \textbf{Utente autenticato} \\ \midrule
-		\multicolumn{3}{|c|}{Restituisce le informazioni relative all'utente corrente.} \\
-		\bottomrule
-	\end{tabular}\\
-	\par\bigskip
-	
-	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
-		\toprule
-		\textbf{/api/user} & \textbf{POST} & \textbf{Utente autenticato} \\ \midrule
-		\multicolumn{3}{|c|}{Inserisce le informazioni relative all'utente corrente.} \\
+		\multicolumn{3}{|c|}{Disconnessione l'utente corrente.} \\
 		\bottomrule
 	\end{tabular}\\
 	\par\bigskip
@@ -60,7 +44,7 @@ Le tipologie di permessi sono:
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/api/user/\{user\}} & \textbf{GET} & \textbf{Utente non autenticato, Utente autenticato} \\ \midrule
-		\multicolumn{3}{|c|}{Restituisce le informazioni relative all'utente {user}.} \\
+		\multicolumn{3}{|c|}{Restituisce le informazioni relative all'utente \{user\}.} \\
 		\bottomrule
 	\end{tabular}\\
 	\par\bigskip
@@ -81,26 +65,29 @@ Le tipologie di permessi sono:
 	\end{tabular}\\
 	\par\bigskip
 	
-	
-\end{table}
-\newpage	
-\begin{table}[H]	
-		
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/api/user/\{user\}/project} & \textbf{GET} & \textbf{Utente non autenticato, Utente autenticato, Utente proprietario} \\ \midrule
-		\multicolumn{3}{|c|}{Restituisce i progetti dell'utente \{user\}.} \\
+		\multicolumn{3}{|c|}{Restituisce tutti i progetti dell'utente corrente \{user\}.} \\
 		\bottomrule
 	\end{tabular}\\
 	\par\bigskip
 	
-	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
+		\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/api/user/\{user\}/project} & \textbf{POST} & \textbf{Utente autenticato} \\ \midrule
 		\multicolumn{3}{|c|}{Crea un nuovo progetto di proprietà dell'utente \{user\}.} \\
 		\bottomrule
 	\end{tabular}\\
 	\par\bigskip
+	
+\end{table}
+\newpage	
+\begin{table}[H]	
+		
+	
+	
+
 	
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
@@ -138,10 +125,11 @@ Le tipologie di permessi sono:
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/api/user/\{user\}/project
-		/infographic} & \textbf{POST} & \textbf{Utente autenticato} \\ \midrule
+		/\{project\}/infographic} & \textbf{POST} & \textbf{Utente autenticato} \\ \midrule
 		\multicolumn{3}{|c|}{Crea un'infografica nel progetto \{project\} dell'utente \{user\}.} \\
 		\bottomrule
 	\end{tabular}\\
+	\par\bigskip
 	
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
@@ -170,12 +158,6 @@ Le tipologie di permessi sono:
 	\end{tabular}\\
 	\par\bigskip
 		
-\end{table}
-\newpage
-
-
-
-\begin{table}[H]
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/api/user/\{user\}/project/\{project\}
@@ -202,6 +184,14 @@ Le tipologie di permessi sono:
 		\bottomrule
 	\end{tabular}\\
 	\par\bigskip
+	
+\end{table}
+\newpage
+
+
+
+\begin{table}[H]
+	
 	
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
