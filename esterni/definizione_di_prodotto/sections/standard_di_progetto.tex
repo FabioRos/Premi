@@ -1,26 +1,39 @@
 \subsection{Standard di progettazione architetturale}
 Gli standard di progettazione architetturale seguiti sono definiti e descritti nel documento \textit{Specifica Tecnica v3.0.0}. Si faccia riferimento a tale
 documento per approfondimenti.
+
 \subsection{Standard di documentazione del codice}
 Gli standard di documentazione del codice seguiti sono definiti e descritti nel documento \textit{Norme di Progetto v3.0.0}. Si faccia riferimento a tale
 documento per approfondimenti.
+
 \subsection{Standard di denominazione di entità e relazioni}
 La nomenclatura di tutti gli elementi definiti in questo documento, siano essi package, classi, metodi o attributi, deve essere chiara e concisa. 
 La chiarezza del nome sarà anteposta alla sua lunghezza, che potrà essere appositamente abbreviata. \\
 \noindent Sono ammesse abbreviazioni quando esse risultino:
 \begin{itemize}
- \item Immediatamente comprensibili;
- \item Non ambigue;
- \item Sufficientemente contestualizzate.
+	 \item Immediatamente comprensibili;
+	 \item Non ambigue;
+	 \item Sufficientemente contestualizzate.
 \end{itemize}
 Per tutte le regole tipografiche adottate si faccia riferimento al documento \textit{Norme di Progetto v3.0.0}.
 
 \subsection{Standard di programmazione}
 Gli standard di programmazione seguiti sono definiti e descritti nel documento \textit{Norme di Progetto v3.0.0}. Si faccia riferimento a tale
 documento per approfondimenti.
-\subsection{Standard di lavoro}
+
+\subsection{Strumenti di lavoro}
 Tutti gli strumenti di lavoro e le procedure da seguire per la corretta realizzazione del prodotto sono definiti nel documento \textit{Norme di Progetto v3.0.0}.
 Si faccia riferimento a tale documento per approfondimenti.
 
-
-
+\subsection{Notazioni derivate dai framework}
+	\subsubsection{AngularJS}
+		\paragraph{Directive}
+		Nelle descrizioni degli \textit{scope} delle directive, le modalità con cui vengono passati i parametri utilizzano questa notazione:
+		\begin{itemize}
+			\item @: indica che il parametro passato è una stringa, quindi non è possibile vedere i cambiamenti fatti su di essa all'esterno;
+			\item =: indica che il parametro passato allo scope è un riferimento ad un oggetto;
+			\item \&: indica che il parametro passato è una funzione, con i relativi parametri.
+		\end{itemize}
+		
+		\paragraph{Controller}
+		Le funzioni che un controller definisce all'interno dell'oggetto \SCOPE sono state modellate come metodi pubblici del controller stesso.
