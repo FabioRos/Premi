@@ -15,9 +15,18 @@
 	\subsubsection*{Attributi}
 	\begin{itemize}
 		\item \textbf{+ timestamps : boolean = false :}\\
-		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection.
+		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection;
 		\item \textbf{\# fillable : array = ['username', 'email', 'firstName', 'lastName', 'password']:}\\
-		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment.
+		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment;
+
+		\begin{itemize}
+			\item \textbf{username:} indica l'username dell'utente;
+			\item \textbf{email:} indica l'email dell'utente;
+			\item \textbf{firstName:} indica il nome dell'utente;
+			\item \textbf{lastName:} indica il cognome dell'utente;
+			\item \textbf{password:} indica la password dell'utente.
+		\end{itemize}
+		
 		\item \textbf{\# hidden : array = ['password', 'remember\_token''] : }\\
 		La proprietà hidden si aggiunge quando si vuole limitare gli attributi che sono inclusi nel JSON.
 	\end{itemize}
@@ -45,14 +54,15 @@ più infografiche create da esso o nessuna.
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection.
 		\item \textbf{\# fillable : array = [’name’]:}\\
 		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment.
-		\item \textbf{\# hiddem : array = ['password', 'remember\_token''] : }\\
-		La proprietà hidden si aggiunge quando si vuole limitare gli attributi che sono inclusi nel JSON.
+		\begin{itemize}
+			\item \textbf{name:} indica il nome del progetto.
+		\end{itemize}
 	\end{itemize}
 	
 	\subsubsection*{Metodi}
 	\begin{itemize}
 		\item \textbf{+ presentation() : Presentation}\\
-		Abbiamo utilizzato la relazione embedsOne per riuscire ad incorporare il model Presentation all’interno dell’oggetto principale Project. Il metodo ritorna Presentation su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello.
+		Abbiamo utilizzato la relazione embedsOne per riuscire ad incorporare il model Presentation all’interno dell’oggetto principale Project. Il metodo ritorna Presentation su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello;
 		\item \textbf{+ infographics() : Infographics}\\
 		Abbiamo utilizzato la relazione embedsMany per riuscire ad incorporare il model Infographic all’interno dell’oggetto principale Project. Il metodo ritorna Infographic su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello.
 	\end{itemize}
@@ -71,9 +81,13 @@ Viene utilizzata alla creazione di un’infografica di una presentazione.
 \subsubsection*{Attributi}
 	\begin{itemize}
 		\item \textbf{+ timestamps : boolean = false :}\\
-		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection.
+		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection;
 		\item \textbf{\# fillable : array = [’name’, ’path’]:}\\
 		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment.
+		\begin{itemize}
+			\item \textbf{name:} indica il nome dell'infografica;
+			\item \textbf{path:} indica il percorso dove recuperare il file dell'infografica.
+		\end{itemize}
 	\end{itemize}
 
 
@@ -91,9 +105,12 @@ Viene utilizzata alla creazione di un’infografica di una presentazione.
 	\subsubsection*{Attributi}
 	\begin{itemize}
 		\item \textbf{+ timestamps : boolean = false :}\\
-		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection.
+		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection;
 		\item \textbf{\# fillable : array = ['title']:}\\
 		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment.
+		\begin{itemize}
+			\item \textbf{title:} indica il titolo della presentazione.
+		\end{itemize}
 	\end{itemize}
 
 	\subsubsection*{Metodi}
@@ -116,9 +133,13 @@ Viene utilizzato alla creazione o caricamento di una slide.
 	\subsubsection*{Attributi}
 	\begin{itemize}
 		\item \textbf{+ timestamps : boolean = false :}\\
-		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection.
+		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection;
 		\item \textbf{\# fillable : array = [’xIndex’, ’yIndex']:}\\
 		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment.
+		\begin{itemize}
+			\item \textbf{xIndex:} indica la posizione relativa all'asse X delle slide nella matrice di Slide della presentazione;
+			\item \textbf{yIndex:} indica la posizione relativa all'asse Y delle slide nella matrice di Slide della presentazione.
+		\end{itemize}
 	\end{itemize}
 	\subsubsection*{Metodi}
 	\begin{itemize}
@@ -140,9 +161,37 @@ Viene utilizzato alla creazione o caricamento di una slide.
 	\subsubsection*{Attributi}
 	\begin{itemize}
 		\item \textbf{+ timestamps : boolean = false :}\\
-		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection.
+		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection;
 		\item \textbf{\# fillable : array = [’type’, ’originX’, ’OriginY’, ’left’, ’top’, ’width’, ’height’, ’fill’, ’stroke’, ’strokeWidth’, ’strokeDashArray’, ’strokeLineCap’, ’strokeLine-Join’, ’strokeMiterLimit’, ’scaleX’, ’scaleY’, ’angle’, ’flipX’, ’flipY’, ’opacity’, ’shadow’, ’visible’, ’clipTo’, ’backgroundColor’, ’fillRule’, ’globalCompositeOperation']:}\\
 		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment.
+		\begin{itemize}
+			\item \textbf{type:} indica il tipo di componente;
+			\item \textbf{originX:} indica la posizione relativa all'asse X del vertice d'origine del componente;
+			\item \textbf{originY:} indica la posizione relativa all'asse Y del vertice d'origine del componente;
+			\item \textbf{left:} indica la posizione relativa all'asse delle X dell'area di disegno in cui verrà disegnato il componente;
+			\item \textbf{top:} indica la posizione relativa all'asse delle Y dell'area di disegno in cui verrà disegna il componente;
+			\item \textbf{width:} larghezza del riquadro che racchiode il componente;
+			\item \textbf{height:} altezza del riquadro che racchiode il componente;
+			\item \textbf{fill:} indica il colore di riempimento del
+			\item \textbf{stroke:} indica il colore del tratto utilizzato per disegnare il componente;
+			\item \textbf{strokeWidth:} indica la larghezza del tratto utilizzato per disegnare il componente;
+			\item \textbf{strokeDashArray:} indica il tipo di tratto utilizzato per disegnare il componente;
+			\item \textbf{strokeLineCap:} indica lo stile di fine del tratto utilizzato per disegnare il componente;
+			\item \textbf{strokeLine-Join:} indica lo stile degli angoli del tratto utilizzato per disegnare il componente;
+			\item \textbf{strokeMiterLimit:} indica il limite della distanza di unione tra due linee;
+			\item \textbf{scaleX:} indica il volore con cui viene scalato in larghezza il componente;
+			\item \textbf{scaleY:} indica il volore con cui viene scalato in altezza il componente;
+			\item \textbf{angle:} indica l'angolo di rotazione del componente;
+			\item \textbf{flipX:} indica se il componente è capovolto rispetto all'asse X;
+			\item \textbf{flipY:} indica se il componente è capovolto rispetto all'asse Y;
+			\item \textbf{opacity:} indica il livello di opacità del componente;
+			\item \textbf{shadow:} indica il livello dell'ombra del componente;
+			\item \textbf{visible:} indica  se il componente è visibile o no;
+			\item \textbf{clipTo:} indica se il componente ha l'effetto clip attivo;
+			\item \textbf{backgroundColor:} indica il colore di sfondo del componente;
+			\item \textbf{fillRule:} indica lo stile di riempimento;
+			\item \textbf{globalCompositeOperation:} indica l'ordine in cui vengono disegnati i componenti all'interno di un gruppo;
+		\end{itemize}
 	\end{itemize}
 	
 
@@ -163,6 +212,10 @@ Viene utilizzato alla creazione o caricamento di un grafico.
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection.
 		\item \textbf{\# fillable : array = [’typeChart’ , ’data’]:}\\
 		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment.
+		\begin{itemize}
+			\item \textbf{typeChart:} indica il tipo di grafico;
+			\item \textbf{data:} indica l'array di dati che servono a comporre il grafico.
+		\end{itemize}
 		
 	\end{itemize}
 	
@@ -184,6 +237,11 @@ Viene utilizzato alla creazione o caricamento di un grafico.
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection.
 		\item \textbf{\# fillable : array = ['pathParser’, ’pathFallback’, ’pathHandlerJs']:}\\
 		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment.
+		\begin{itemize}
+			\item \textbf{pathParser:} Indirizzo del parser php\footnoter{file php con nil compito di recuperare i dati da un indirizzo remoto (evitando cosi il poroblema della same-origin-policy) fornendo come risultato un oggetto Json che sara' poi processato dall'Handler javcascript};
+			\item \textbf{pathFallback:} Indirizzo del file contenente l'oggetto più recente salvato in caso di consultazione offline;
+			\item \textbf{pathHandlerJs:} Indirizzo dell'handler javascript con il compitpo di impaginare i risultati provenienti dal parser e riaggiornare la vista dopo n secondi.
+		\end{itemize}
 		
 	\end{itemize}
 	
@@ -205,6 +263,17 @@ Viene utilizzato alla creazione o caricamento di un grafico.
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection.
 		\item \textbf{\# fillable : array = [’text’, ’fontSize’, ’fontWeight’, ’fontFamily’, ’fontStyle’, ’lineHeight’, ’textDecoration’, ’textAlign’, ’textBackgroundColor']:}\\
 		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment.
+		\begin{itemize}
+			\item \textbf{text:} indica il contenuto del campo di testo;
+			\item \textbf{fontSize:} indica le dimensioni del font del campo di testo;
+			\item \textbf{fontWeight:} indica lo spessore del testo
+			\item \textbf{fontFamily:} indica la famiglia di font del campo di testo;
+			\item \textbf{fontStyle:} indica lo stile del font del campo di testo (corsivo, grasseto, sottolineato);
+			\item \textbf{lineHeight:} indica l'altezza della linea del campo di testo;
+			\item \textbf{textDecoration:} indica il tipo di decorazione;
+			\item \textbf{textAlign:} indica l'allineamento del testo all'interno del campo di testo;
+			\item \textbf{textBackgroundColor:} indica il colore di sfondo del campo di testo.
+		\end{itemize}
 
 	\end{itemize}
 
@@ -225,6 +294,15 @@ Viene utilizzato alla creazione o caricamento di un grafico.
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection.
 		\item \textbf{\# fillable : array = [’src’, ’filters’, ’crossOrigin’, ’alignX’, ’alignY’,’meetOrSlice’, ’background’]:}\\
 		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment.
+		\begin{itemize}
+			\item \textbf{src:} indica il percorso dove recuperare il file immagine;
+			\item \textbf{filters:} indica quali filtri verrano applicati all'immagine;
+			\item \textbf{crossOrigin:} utilizzato per passara informazioni assieme all'immagine;
+			\item \textbf{alignX:} indica l'allineamento relativo all'asse X dell'immagine se la sua larghezza differisce da quella della sua sulla finestra;
+			\item \textbf{alignY:} indica l'allineamento relativo all'asse Y dell'immagine se la sua altezza differisce da quella della sua sulla finestra;
+			\item \textbf{meetOrSlice:} indica se l'immagine dev'essere tagliata quando la sua finestra si restringe o essere sempre copletamente visibile;
+			\item \textbf{background:} indica lo sfondo dell'immagine.
+		\end{itemize}
 
 	\end{itemize}
 
@@ -245,5 +323,11 @@ Viene utilizzato alla creazione o caricamento di un grafico.
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection.
 		\item \textbf{\# fillable : array = [’row’, ’column’, ’title’, ’cellData’]:}\\
 		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment.
+		\begin{itemize}
+			\item \textbf{row:} indica il numero di righe della tabella;
+			\item \textbf{column:} indica il numero dei colonne della tabella;
+			\item \textbf{title:} ilndica il titolo della tabella;
+			\item \textbf{cellData:} indica l'array di dati necessario a comporre la tabella.
+		\end{itemize}
 
 	\end{itemize}
