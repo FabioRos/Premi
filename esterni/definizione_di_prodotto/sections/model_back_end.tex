@@ -205,7 +205,7 @@
 		\item \textbf{\# fillable : array = ['pathParser’, ’pathFallback’, ’pathHandlerJs']:}\\
 		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment.
 		\begin{itemize}
-			\item \textbf{pathParser:} Indirizzo del parser php\footnoter{file php con nil compito di recuperare i dati da un indirizzo remoto (evitando cosi il poroblema della same-origin-policy) fornendo come risultato un oggetto Json che sara' poi processato dall'Handler javcascript};
+			\item \textbf{pathParser:} Indirizzo del parser php \footnote{file php con il compito di recuperare i dati da un indirizzo remoto (evitando cosi il poroblema della same-origin-policy) fornendo come risultato un oggetto Json che sara' poi processato dall'Handler javcascript};
 			\item \textbf{pathFallback:} Indirizzo del file contenente l'oggetto più recente salvato in caso di consultazione offline;
 			\item \textbf{pathHandlerJs:} Indirizzo dell'handler javascript con il compitpo di impaginare i risultati provenienti dal parser e riaggiornare la vista dopo n secondi.
 		\end{itemize}
