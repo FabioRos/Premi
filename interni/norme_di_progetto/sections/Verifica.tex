@@ -47,3 +47,21 @@ Per una corretta verifica di un documento vanno seguite le seguenti pratiche:
 \subsubsection{Verifica dei diagrammi}
 I diagrammi devono essere verificati manualmente dal \textit{Verificatore} che deve controllare che aderiscano correttamente allo standard \gls{UML} 2.0.
 In particolare deve controllare che i diagrammi di flusso siano rappresentati in maniera corretta e che i \gls{casi d'uso} utilizzino correttamente le inclusioni e le estensioni.
+
+\subsubsection{Verifica del codice}
+Per la verifica del codice è richiesta l'analisi dell'output prodotto da \textbf{Travis CI}, sistema di integrazione continua, il quale è stato impostato per avviare i test dinamici del codice prodotto ad ogni \textit{push} eseguito nel \gls{repository}, e di esaminare i risultati prodotti dagli strumenti scelti appositamente per avere un'analisi statica.
+
+	\paragraph{Analisi Statica}
+	Gli strumenti utilizzati per effettuare l'analisi statica del prodotto sono i seguenti:
+	\begin{itemize}
+		\item \textbf{JSHint} (\url{http://www.jshint.com}): tool che aiuta a controllare che il codice sorgente in \gls{Javascript} rispetti le regole definite in precedenza;
+		\item \textbf{PHPLint} (\url{http://www.icosaedro.it/phplint/}): tool per controllare il codice sorgente scritto in \gls{PHP}.
+	\end{itemize}
+	
+	\paragraph{Analisi Dinamica}
+	Per i test dinamici del codice prodotto verranno utilizzati:
+	\begin{itemize}
+		\item \textbf{Jasmine}(\url{http://jasmine.github.io}): test \gls{framework} per \gls{Javascript}, quindi utilizzato per \gls{Angular}, che permette di scrivere test di unità per il \gls{front-end};
+		\item \textbf{PHPUnit}(\url{https://phpunit.de/}): test \gls{framework} per \gls{PHP}, utilizzato per scrivere test di unità per Laravel e, quindi, per la parte di \gls{back-end}.
+	\end{itemize}
+	

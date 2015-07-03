@@ -2,7 +2,11 @@
 Dopo un'analisi del capitolato d'appalto e dei requisiti si è deciso che per lo sviluppo del software richiesto si utilizzeranno i linguaggi \gls{HTML5} , \gls{PHP} e \gls{Javascript}.
 
 \subsubsection{Framework e librerie}
-Per semplificare la realizzazione della nostra applicazione web si è deciso di utilizzare il \gls{framework} \gls{Angular}, per migliorare le interfacce utente, , la libreria \gls{Chart.js}, utilizzata per generare grafici e \gls{Laravel}.
+Per semplificare la realizzazione della nostra applicazione web si è deciso di utilizzare il \gls{framework} \gls{Angular}, per migliorare le interfacce utente, la libreria \gls{Chart.js}, utilizzata per generare grafici e \gls{Laravel}, per lo sviluppo della parte di back-end in \gls{PHP}.
+
+\subsubsection{Software per l’integrazione continua}
+Il termine \gls{integrazione continua} identifica una serie di operazioni da eseguire in modo automatico, utili per la compilazione del progetto. L'obiettivo è di verificare il codice in modo che sia sempre compilabile e utilizzabile da tutto il team. Nel caso siano presenti errori in ciò che è stato prodotto, la compilazione viene interrotta e viene notificato all'autore della parte di codice di correggere il problema.
+A questo scopo, stato scelto di utilizzare la piattaforma \textbf{Travis CI} (\url{https://travis-ci.org}), creando degli script che richiamano gli appositi tool per la verifica del codice.
 
 \subsubsection{Convenzioni di codifica}
 Di seguito è riportato l'insieme di norme e convenzioni che il gruppo dovrà seguire nella scrittura e documentazione del codice.
