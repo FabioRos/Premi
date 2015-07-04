@@ -1,0 +1,55 @@
+% importa variabili globali
+\input{../../template/config.tex}
+
+% definizione variabili locali
+\def\DOCUMENTO{Manuale Utente}
+\def\VERSIONE{1.0.0}
+
+\def\DESCRIZIONE{Documento che facilita l'utilizzo dell'applicazione da parte dell'utente.}
+
+\def\REDATTORE {Crespan Emanuele}
+\def\VERIFICATORE {Agostinetto Matteo}
+\def\RESPONSABILE {Suierica Bogdan}
+
+\def\USO {Esterno}
+
+\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\ & Piccoli Gregorio, \textit{Zucchetti spa}\\}
+
+
+% abilita (true) / disabilita (false) indice, lista tabelle, lista figure
+\def\INDICE	{true}
+\def\TABELLE {true}
+\def\FIGURE {true}
+
+
+% importa struttura
+\input {../../template/structure.tex}
+
+
+% importa indici
+\input {../../template/index.tex}
+
+\section{Introduzione}
+\input{sections/introduzione.tex}
+\newpage
+\input{sections/start.tex}
+\newpage
+\section{Editor Presentazioni}
+\input{sections/editor_presentazioni.tex}
+\newpage
+\section{Editor Infografiche}
+\input{sections/editor_infografiche.tex}
+\newpage
+\section{Visualizzazione Presentazioni}
+\input{sections/visualizzazione_presentazioni.tex}
+\newpage
+\section{Gestione dell'Account}
+\input{sections/account.tex}
+
+%\newpage
+
+% ...
+
+%\printglossaries
+
+\end{document}
