@@ -2,32 +2,34 @@
 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{img/User}
+		\includegraphics[width=0.5\linewidth]{img/back_end_user_model}
 		\caption[Diagramma della classe User]{Diagramma della classe User}
+		\label{fig:back_end_user_model}
 	\end{figure}
 
-	\paragraph{Descrizione}
+
+	\paragraph{Descrizione:}
 	Il model User permette di gestire la collection users del database. Eloquent presume che il nome della classe sia il singolare del nome della collection nel database, quindi collega User alla collection users.
 
-	\paragraph{Utilizzo}
+	\paragraph{Utilizzo:}
 	Il model gestisce la collection users del database.
 	
-	\paragraph{Attributi}
+	\paragraph{Attributi:}
 	\begin{itemize}
 		\item \textbf{+ timestamps : boolean = false :}\\
-		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection.
+		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore \textit{false} le informazioni dell'inserimento e del aggiornamento non verranno aggiunte alla collection.
 		\item \textbf{\# fillable : array = ['username', 'email', 'firstName', 'lastName', 'password']:}\\
 		Quando si crea un model, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il mass-assignment.
 		\begin{itemize}
-			\item \textbf{username:} indica il nome utente scelto dall'utente.
-			\item \textbf{email:} indica l'indirizzo email inserito dall'utente.
-			\item \textbf{firstName:} indica il nome inserito dall'utente.
-			\item \textbf{lastName:} indica il cognome inserito dall'utente.
+			\item \textbf{username:} indica il nome utente scelto dall'utente;
+			\item \textbf{email:} indica l'indirizzo email inserito dall'utente;
+			\item \textbf{firstName:} indica il nome inserito dall'utente;
+			\item \textbf{lastName:} indica il cognome inserito dall'utente;
 			\item \textbf{password:} indica la password scelta dall'utente.
 		\end{itemize}
 	\end{itemize}
 	
-	\paragraph{Metodi}
+	\paragraph{Metodi:}
 	\begin{itemize}
 		\item \textbf{+ projects() : Project}\\
 		Abbiamo utilizzato la relazione embedsMany per riuscire ad incorporare il model projects all'interno dell'oggetto principale User. Il metodo ritorna Project su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello;
@@ -36,15 +38,21 @@
 
 \subsubsection{Project}
 
-	%figure
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_project}
+		\caption[Diagramma della classe Project]{Diagramma della classe Project}
+		\label{fig:back_end_premi_model_project}
+	\end{figure}
+
 	
-	\paragraph{Descrizione}
+	\paragraph{Descrizione:}
 	Questa classe rappresenta un progetto di un utente, ovvero una presentazione più zero o più infografiche relative a tale presentazione.
 	
-	\paragraph{Utilizzo}
+	\paragraph{Utilizzo:}
 	Viene utilizzata alla creazione di un progetto di un utente.
 	
-	\paragraph{Attributi}
+	\paragraph{Attributi:}
 	\begin{itemize}
 		\item \textbf{+ timestamps : boolean = false :}\\
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection;
@@ -55,25 +63,32 @@
 		\end{itemize}
 	\end{itemize}
 	
-	\paragraph{Metodi}
+	\paragraph{Metodi:}
 	\begin{itemize}
 		\item \textbf{+ presentations() : Presentation}\\
-		Abbiamo utilizzato la relazione embedsMany per riuscire ad incorporare il model presentation all'interno dell'oggetto principale Project. Il metodo ritorna Presentation su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello;
+		Abbiamo utilizzato la relazione embedsOne per riuscire ad incorporare il model presentation all'interno dell'oggetto principale Project. Il metodo ritorna Presentation su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello;
 		\item \textbf{+ infographics() : Infographic}\\
 		Abbiamo utilizzato la relazione embedsMany per riuscire ad incorporare il model Infographic all’interno dell’oggetto principale Project. Il metodo ritorna Infographic su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello.
 	\end{itemize}
 
+\newpage
 \subsubsection{Infographic}
 
-	%figure
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_infographic}
+		\caption[Diagramma della classe Infographic]{Diagramma della classe Infographic}
+		\label{fig:back_end_premi_model_infographic}
+	\end{figure}
 
-	\paragraph{Descrizione}
+
+	\paragraph{Descrizione:}
 	Questa classe rappresenta un’infografica di un progetto, ovvero una rappresentazione visuale della presentazione per mostrare in maniera semplice e veloce le informazioni.
 	
-	\paragraph{Utilizzo}
+	\paragraph{Utilizzo:}
 	Viene utilizzata alla creazione di un’infografica di una presentazione.
 
-	\paragraph{Attributi}
+	\paragraph{Attributi:}
 		\begin{itemize}
 			\item \textbf{+ timestamps : boolean = false :}\\
 			Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection;
@@ -89,15 +104,21 @@
 
 \subsubsection{Presentation}
 
-	%figura
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_presentation}
+		\caption[Diagramma della classe Presentation]{Diagramma della classe Presentation}
+		\label{fig:back_end_premi_model_presentation}
+	\end{figure}
 
-	\paragraph{Descrizione}
+
+	\paragraph{Descrizione:}
 	Questa classe descrive la presentazione di un progetto. Contiene tutte le slide che servono a comporre la presentazione.
 
 	\paragraph{Utilizzo}
 	Viene utilizzato alla creazione o caricamento di una presentazione.
 	
-	\paragraph{Attributi}
+	\paragraph{Attributi:}
 	\begin{itemize}
 		\item \textbf{+ timestamps : boolean = false :}\\
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection;
@@ -108,7 +129,7 @@
 		\end{itemize}
 	\end{itemize}
 
-	\paragraph{Metodi}
+	\paragraph{Metodi:}
 	\begin{itemize}
 		\item \textbf{+ slides() : Slide}\\
 		Abbiamo utilizzato la relazione embedsMany per riuscire ad incorporare il model Slide all’interno dell’oggetto principale Presentation. Il metodo ritorna Slide su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello.
@@ -118,15 +139,21 @@
 
 \subsubsection{Slide}
 
-	%figura
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_slide}
+		\caption[Diagramma della classe Slide]{Diagramma della classe Slide}
+		\label{fig:back_end_premi_model_slide}
+	\end{figure}
 
-	\paragraph{Descrizione}
+
+	\paragraph{Descrizione:}
 	Questa classe descrive una singola slide. Contiene tutti i gli oggetti appartenenti alla slide.
 	
-	\paragraph{Utilizzo}
+	\paragraph{Utilizzo:}
 	Viene utilizzato alla creazione o caricamento di una slide.
 
-	\paragraph{Attributi}
+	\paragraph{Attributi:}
 	\begin{itemize}
 		\item \textbf{+ timestamps : boolean = false :}\\
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection;
@@ -138,7 +165,7 @@
 		\end{itemize}
 	\end{itemize}
 	
-	\paragraph{Metodi}
+	\paragraph{Metodi:}
 	\begin{itemize}
 		\item \textbf{+ components() : Component}\\
 		Abbiamo utilizzato la relazione embedsMany per riuscire ad incorporare il model Component all’interno dell’oggetto principale Slide. Il metodo ritorna Component su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello.
@@ -148,15 +175,21 @@
 
 \subsubsection{Component}
 
-	%figura
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_component}
+		\caption[Diagramma della classe Component]{Diagramma della classe Component}
+		\label{fig:back_end_premi_model_component}
+	\end{figure}
 
-	\paragraph{Descrizione}
+
+	\paragraph{Descrizione:}
 	Questa classe descrive la struttura genera di un componente.
 	
-	\paragraph{Utilizzo}
+	\paragraph{Utilizzo:}
 	Viene utilizzato alla creazione o caricamento di una componente.
 	
-	\paragraph{Attributi}
+	\paragraph{Attributi:}
 	\begin{itemize}
 		\item \textbf{+ timestamps : boolean = false :}\\
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collection;
@@ -188,14 +221,15 @@
 			\item \textbf{clipTo:} indica se il componente ha l'effetto clip attivo;
 			\item \textbf{backgroundColor:} indica il colore di sfondo del componente;
 			\item \textbf{fillRule:} indica lo stile di riempimento;
-			\item \textbf{globalCompositeOperation:} indica l'ordine in cui vengono disegnati i componenti all'interno di un gruppo;
+			\item \textbf{globalCompositeOperation:} indica l'ordine in cui vengono disegnati i componenti all'interno di un gruppo.
 		\end{itemize}
 	\end{itemize}
 \newpage
 
 \subsubsection{Chart}
 
-	%figura
+
+
 
 	\paragraph{Descrizione}
 	Questa classe rappresenta la struttura di dati necessari per descrivere un grafico all’interno di una slide.
@@ -220,7 +254,13 @@
 
 \subsubsection{RealTimeData}
 
-	%figura
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_realTimeData}
+		\caption[Diagramma della classe RealTimeData]{Diagramma della classe RealTimeData}
+		\label{fig:back_end_premi_model_realTimeData}
+	\end{figure}
+
 
 	\paragraph{Descrizione}
 	Questa classe rappresenta la struttura di dati necessari per descrivere RealTimeData (dato in tempo reale) all’interno di una slide.
@@ -245,7 +285,13 @@
 
 \subsubsection{Text}
 
-	%figura
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_text}
+		\caption[Diagramma della classe Text]{Diagramma della classe Text}
+		\label{fig:back_end_premi_model_text}
+	\end{figure}
+
 
 	\paragraph{Descrizione}
 	Questa classe rappresenta la struttura di dati di un campo di testo di una slide.
@@ -276,7 +322,13 @@
 
 \subsubsection{Image}
 
-	%figura
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_image}
+		\caption[Diagramma della classe Image]{Diagramma della classe Image}
+		\label{fig:back_end_premi_model_image}
+	\end{figure}
+
 
 	\paragraph{Descrizione}
 	La classe Image rappresenta la struttura dei dati necessari per rapresentare un’immagine all’interno di una slide.
@@ -305,7 +357,13 @@
 
 \subsubsection{Table}
 
-	%figura
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_table}
+		\caption[Diagramma della classe Table]{Diagramma della classe Table}
+		\label{fig:back_end_premi_model_table}
+	\end{figure}
+
 
 	\paragraph{Descrizione}
 	Questa classe rappresenta la struttura di dati di una tabella di una slide.
