@@ -1,8 +1,42 @@
+\subsection{Definizione obiettivi}
+\subsubsection{Qualità di processo}
+Affinchè venga garantita la qualità del prodotto è necessario perseguire la qualità dei processi che lo definiscono. Per garantire questo è stato deciso di adottare lo standard ISO/IEC 15504\footnote{Per approfondimenti consultare la sezione \ref{15504} in appendice A.} denominato SPICE(Software Process Improvement and Capability Determination), il quale fornisce gli strumenti necessari a valutare l'idoneità di questi ultimi.
+
+\noindent Per applicare correttamente questo modello è necessario utilizzare il ciclo di Deming\footnote{Per approfondimenti consultare la sezione \ref{PDCA} in appendice A.}, detto ciclo PDCA, il quale definisce una metodologia di controllo dei processi durante il loro ciclo di vita che permette di migliorarne in modo continuo la qualità.
+
+\subsubsection{Qualità di prodotto}
+Al fine di garantire il corretto funzionamento di un prodotto software ed aumentarne il valore commerciale è necessario fissare degli obiettivi qualitativi e garantire che questi vengano effettivamente rispettati.
+
+\noindent Lo standard ISO/IEC 9126\footnote{Per approfondimenti consultare la sezione \ref{9126} in appendice A.} è stato scritto allo scopo di descrivere questi obiettivi e delineare delle metriche capaci di misurare il raggiungimento di tali obiettivi.
+
+\subsection{Procedure di controllo di qualità di processo}
+La qualità dei processi sarà garantita dall'applicazione del principio PDCA, descritto nella sezione \ref{PDCA}. Tramite questo principio sarà possibile garantire un miglioramento continuo della qualità di tutti processi, inclusa la verifica, e come conseguenza si otterrà un miglioramento dei prodotti risultanti.
+
+\noindent Per avere il controllo dei processi, e conseguentemente qualità è necessario che:
+\begin{itemize}
+	\item I processi siano pianificati dettagliatamente;
+	\item Nella pianificazione siano ripartite in modo chiaro le risorse;
+	\item Vi sia controllo sui processi;
+\end{itemize}
+\noindent L'attuazione di tali punti è descritta nel dettaglio nel \textit{Piano di Progetto v3.0.0}.
+
+\noindent La qualità dei processi viene inoltre monitorata attraverso l'analisi costante della qualità di prodotto. Un prodotto di bassa qualità indica un processo da migliorare.
+
+\noindent Per migliorare la qualità dei processi si possono utilizzare le metriche descritte nella sezione \ref{sezione 3.7}.
+
+\subsection{Procedure di controllo di qualità di prodotto}
+Il controllo di qualità di prodotto sarà garantito da:
+\begin{itemize}
+	\item \textbf{Quality assurance:} insieme di attività realizzate per garantire il raggiungimento degli obiettivi di qualità. Prevede l'attuazione di tecniche di analisi statica e dinamica, descritte nelle \textit{Norme di Progetto v3.0.0};
+	\item \textbf{Verifica:} processo che determina se l'output di una fase è consistente, completo e corretto. La verifica andrà eseguita costantemente durante l'intera durata del progetto. I risultati delle attività di verifica eseguite nei vari periodi di svolgimento del progetto sono riportati in appendice \ref{verifica}.
+	\item \textbf{Validazione:} conferma oggettivamente che il sistema risponda ai requisiti.
+\end{itemize}
+
 \subsection{Organizzazione}
-L'attività di verifica verrà istanziata per ogni processo attuato. La finalità di ogni attività di verifica è garantire la qualità per ogni processo e prodotto.\\
+L'organizzazione della strategia di verifica si basa sull'attuazione di attività di verifica per ogni processo attuato. Per ogni processo realizzato ne viene verificata la qualità oltre a che quella relativa al prodotto ottenuto da esso.\\
 Il processo di verifica, diverso nelle varie fasi del progetto descritte nel \textit{Piano di Progetto v3.0.0}, sarà il seguente:
 \begin{itemize}
-	\item \textbf{Analisi:} in questa fase si devono seguire i metodi di verifica, descritti nelle \textit{Norme di Progetto v2.0.0}, sui documenti prodotti;
+	\item \textbf{Analisi:} in questa fase si devono seguire i metodi di verifica, descritti nelle \textit{Norme di Progetto v3.0.0}, sui documenti prodotti;
 	\item \textbf{Analisi di Dettaglio:} in questa fase si devono verificare i processi che hanno portato ad un incremento nel \gls{versionamento} dei documenti, prodotti nella fase precedente, seguendo le procedure descritte nelle \textit{Norme di Progetto v3.0.0};
 	\item \textbf{Progettazione architetturale:} in questa fase, oltre a verificare i processi che hanno portato ad un incremento nel \gls{versionamento} dei documenti, si andranno a verificare i prodotti ed i processi attuati per l'attività di progettazione architetturale;
 	\item \textbf{Progettazione di Dettaglio e Codifica:} in questa fase, oltre a verificare i processi che hanno portato ad un incremento nel \gls{versionamento} dei documenti, si andrà a verificare che ogni requisito sia rintracciabile da uno dei componenti emersi durante la fase di progettazione;
@@ -10,9 +44,9 @@ Il processo di verifica, diverso nelle varie fasi del progetto descritte nel \te
 \end{itemize} 
 
 \subsection{Pianificazione strategica e temporale}
-Gli obiettivi fissati possono essere raggiunti solamente attraverso una buona pianificazione in base alla quale si dovrà agire. Con l'obiettivo di rispettare le scadenze fissate nel \textit{Piano di Progetto v3.0.0} è fondamentale un'attività di verifica ben organizzata e sistematica, pertanto è essenziale, prima di iniziare qualsiasi attività, capirne la struttura ed i contenuti. È inoltre necessaria un'attenta lettura delle \textit{Norme di Progetto v3.0.0} in cui sono descritte le varie metodologie da seguire per l'individuazione e la correzione degli errori.
+Gli obiettivi fissati possono essere raggiunti solamente attraverso una buona pianificazione in base alla quale si dovrà agire. Con l'obiettivo di rispettare le scadenze fissate nel \textit{Piano di Progetto v3.0.0} è fondamentale un'attività di verifica ben organizzata e sistematica, pertanto è essenziale, prima di iniziare qualsiasi attività, capirne la struttura ed i contenuti. È inoltre necessaria un'attenta lettura delle \textit{Norme di Progetto v3.0.0} in cui sono descritte le varie metodologie da seguire per l'individuazione e la correzione degli errori. Ogni attività di redazione dei documenti e di codifica deve essere preceduta da uno studio preliminare sulla struttura e sui contenuti degli stessi. Tale attività ha lo scopo di ridurre la possibilità di commettere imprecisioni di natura concettuale e tecnica favorendo l'attività verifica, dove saranno necessari minori interventi di correzione.
 
-\subsection{Responsabile}
+\subsection{Responsabilità}
 Le responsabilità di tutte le attività di verifica e validazione sono a carico del \textit{Responsabile di Progetto} e dei \textit{Verificatori}. Questi ruoli, durante le varie fasi di progetto, saranno ricoperti da diversi componenti del gruppo, come descritto nel \textit{Piano di Progetto v3.0.0}. Per questo motivo è necessario che tutti i componenti del gruppo siano motivati e incoraggiati ad assumersi le responsabilità per il lavoro svolto e per sviluppare nuovi approcci atti al miglioramento della qualità.
 
 \subsection{Risorse necessarie}
@@ -24,14 +58,13 @@ Per assicurarsi che gli obiettivi siano raggiunti e monitorare costantemente lo 
 	\item \textbf{Pianificazione della qualità del prodotto:} la selezione di procedure standard appropriate per questo sistema, adattandole per uno specifico progetto software;
 	\item \textbf{Controllo della qualità:} la definizione dei processi che assicurano che il team  di sviluppo software segua le procedure e gli standard adottati nel progetto.
 \end{itemize}
-Per garantire la qualità dei processi e per garantire una corretta pianificazione delle attività descritte in precedenza, si è deciso di aderire allo standard ISO/IEC 15504 conosciuto anche come SPICE(Software Process Improvement and Capability Determination)\footnote{Per una descrizione dettagliata si rimanda alla sezione \ref{15504} .}.
 	
 \subsection{Misure e Metriche}
-\label{sezione 3.6}
 Per garantire il raggiungimento degli obiettivi è necessario fissare delle metriche sulla base delle quali poter misurare i risultati ottenuti dalle varie attività di verifica. È dunque di fondamentale importanza saper quantificare, attraverso delle metriche stabilite a priori, il processo di verifica. Grazie al ciclo di vita adottato, descritto nel \textit{Piano di Progetto v3.0.0}, le metriche incerte ed approssimate si potranno migliorare in modo incrementale.\\
 Ogni metrica avrà due caratteristiche fondamentali:
 \begin{itemize}
 	\item \textbf{Range di accettazione:} intervallo entro il quale il prodotto si può ritenere soddisfacente;
 	\item \textbf{Range ottimale:} valore entro il quale dovrebbe arrivare la misurazione.
 \end{itemize}
+Le metriche utilizzate per la verifica dei documenti e del codice sono descritte in appendice \ref{standard}.
 

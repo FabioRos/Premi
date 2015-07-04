@@ -124,10 +124,10 @@ Esso divide i criteri qualitativi in 3 aree diverse:
 La qualità dei processi è basata sul \textit{ciclo di Deming}. Tale modello è studiato per il miglioramento continuo della qualità in un'ottica a lungo raggio.
 Il \textit{ciclo di Deming} è chiamato anche \textit{\gls{PDCA}} a causa delle quattro fasi che lo compongono:
 \begin{itemize}
-	\item \textbf{Plan:} fase di pianificazione in cui si stabiliscono gli obbiettivi e i processi necessari per raggiungerli;
-	\item \textbf{Do:} fase in cui si eseguono le attività rispettando il piano;
-	\item \textbf{Check:} si verificano i risultati ottenuti e si confrontano con quelli attesi dalla fase Plan;
-	\item \textbf{Act:} fase in cui si rendono definitivi i processi o si procede al miglioramento degli stessi. 
+	\item \textbf{Plan:} fase di pianificazione in cui vengono definite attività, risorse, scadenze e responsabilità;
+	\item \textbf{Do:} fase in cui si eseguono le attività pianificate;
+	\item \textbf{Check:} fase di verifica in cui si controllano i risultati ottenuti nella fase \textit{Do} e si confrontano con quelli pianificati dalla fase \textit{Plan};
+	\item \textbf{Act:} fase in cui si mette in pratica il miglioramento continuo dei processi utilizzando i risultati della verifica per modificare gli aspetti critici dei processi in esame. 
 \end{itemize}
 Per migliorare la qualità, le quattro fasi devono ruotare costantemente, tenendo come criterio principale la qualità di processo.
 \begin{figure}[h]
@@ -180,6 +180,7 @@ Basandoci su queste considerazioni è stato scelto di utilizzare:
 \end{itemize}
 	
 \subsection{Metriche per il software}
+\label{sezione 3.9}
 Di seguito saranno descritte le metriche che riguardano il software. Data l'inesperienza del gruppo, questa sezione sarà soggetta a modifiche nelle prossime revisioni.
 \begin{itemize}
 	\item \textbf{Complessità ciclomatica:} misura direttamente il numero di cammini linearmente indipendenti attraverso il grafo di controllo di flusso. Essa viene calcolata utilizzando il grafo di controllo di flusso del programma: i nodi del grafo corrispondono a gruppi indivisibili di istruzioni, mentre gli archi connettono due nodi se il secondo gruppo di istruzioni può essere eseguito immediatamente dopo il primo gruppo. La complessità ciclomatica può, inoltre, essere applicata a singole funzioni, moduli, metodi o classi di un programma.

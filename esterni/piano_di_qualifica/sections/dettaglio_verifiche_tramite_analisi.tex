@@ -1,4 +1,5 @@
 \subsection{Analisi}
+\label{verifica}
 \subsubsection{Documenti}
 \label{appendice 1}
 
@@ -34,7 +35,7 @@ Di seguito viene riportata una tabella con gli indici di Gulpease calcolati per 
 		\midrule
 		\midrule
 			\textit{Norme di Progetto v1.0.0} & -15 & 0 \\ 
-			\textit{Studio di Fattibilità v1.0.0} & & -5 \\ 
+			\textit{Studio di Fattibilità v1.0.0} & 0 & -5 \\ 
 			\textit{Piano di Progetto v1.0.0} & -15 & -30 \\ 
 			\textit{Piano di Qualifica v1.0.0} & -45 & 0 \\ 
 			\textit{Analisi dei Requisiti v1.0.0} & 35 & 60 \\ 
@@ -108,7 +109,7 @@ Di seguito viene riportata una tabella con gli indici di Gulpease calcolati per 
 \noindent Da tali valori si può dedurre che i periodi di slack pianificati abbiano aiutato ad avere una schedule variance positiva, al contrario l'inesperienza ad affrontare una progettazione architetturale di un sistema software ha portato ad un costo maggiore in termini di budget variance. Nonostante quest'ultima sia negativa, essa rimane comunque al di sopra del minimo accettabile di \euro -346.
 
 
-\subsection{Definizione di Prodotto}
+\subsection{Progettazione di Dettaglio e Codifica}
 \subsubsection{Documenti}
 \label{appendice 5}
 
@@ -121,16 +122,17 @@ Di seguito viene riportata una tabella con gli indici di Gulpease calcolati per 
 		\hline 
 		\textbf{Documento} & \textbf{Valore Indice} & \textbf{Risultato} \\ 
 		\hline
-		\textit{Norme di Progetto v2.0.0} & 0 & \textcolor{green}{\textit{Superato}} \\  
-		\textit{Piano di Progetto v2.0.0} & 0 & \textcolor{green}{\textit{Superato}} \\ 
-		\textit{Piano di Qualifica v2.0.0} & 0 & \textcolor{green}{\textit{Superato}} \\ 
-		\textit{Analisi dei Requisiti v2.0.0} & 0 & \textcolor{green}{\textit{Superato}} \\
-		\textit{Specifica Tecnica v1.0.0} & 0 & \textcolor{green}{\textit{Superato}} \\ 
+		\textit{Norme di Progetto v3.0.0} & 76 & \textcolor{green}{\textit{Superato}} \\  
+		\textit{Piano di Progetto v3.0.0} & 68 & \textcolor{green}{\textit{Superato}} \\ 
+		\textit{Piano di Qualifica v3.0.0} & 70 & \textcolor{green}{\textit{Superato}} \\ 
+		\textit{Analisi dei Requisiti v3.0.0} & 79 & \textcolor{green}{\textit{Superato}} \\
+		\textit{Specifica Tecnica v2.0.0} & 0 & \textcolor{green}{\textit{Superato}} \\ 
 		\textit{Definizione di Prodotto v1.0.0} & 0 & \textcolor{green}{\textit{Superato}} \\ 
-		\textit{Glossario v2.0.0} & 0 & \textcolor{green}{\textit{Superato}} \\ 
+		\textit{Manuale Utente v1.0.0} & 0 & \textcolor{green}{\textit{Superato}} \\ 
+		\textit{Glossario v3.0.0} & 80 & \textcolor{green}{\textit{Superato}} \\ 
 		\hline 
 \end{tabular}
-\caption{Indice Gulpease, Progettazione Architetturale}
+\caption{Indice Gulpease, Progettazione di Dettaglio e Codifica}
 \end{table}
 
 \subsubsection{Processi}
@@ -143,32 +145,37 @@ Di seguito viene riportata una tabella con gli indici di Gulpease calcolati per 
 			\textbf{Documento} & \textbf{SV\euro} & \textbf{BV\euro} \\ 
 		\midrule
 		\midrule
-			\textit{Norme di Progetto v2.0.0} & 0 & 0 \\  
-			\textit{Piano di Progetto v2.0.0} & 0 & 0 \\ 
-			\textit{Piano di Qualifica v2.0.0} & 0 & 0 \\ 
-			\textit{Analisi dei Requisiti v2.0.0} & 0 & 0 \\
-			\textit{Specifica Tecnica v1.0.0} & 0 & 0 \\ 
-			\textit{Glossario v2.0.0} & 0 & 0 \\ 
+			\textit{Norme di Progetto v3.0.0} & 0 & 0 \\  
+			\textit{Piano di Progetto v3.0.0} & 0 & 0 \\ 
+			\textit{Piano di Qualifica v3.0.0} & +50 & 0 \\ 
+			\textit{Analisi dei Requisiti v3.0.0} & 0 & 0 \\
+			\textit{Specifica Tecnica v2.0.0} & -22 & 0 -30\\ 
+			\textit{Definizione di Prodotto v1.0.0} & +66 & 0 +100\\
+			\textit{Codifica} & 0 & +90 \\
+			\textit{Manuale Utente v1.0.0} & 0 & +25\\
+			\textit{Glossario v3.0.0} & +20 & 0 \\ 
 		\bottomrule
 	\end{tabular}
-\caption{Esiti verifica processi, Progettazione Architetturale}
+\caption{Esiti verifica processi, Progettazione di Dettaglio e Codifica}
 \end{table}
 
 \noindent Complessivamente sono stati registrati:
 \begin{itemize}
-	\item \textbf{Schedule Variance:} 0 \euro;
-	\item \textbf{Budget Variance:} 0 \euro.
+	\item \textbf{Schedule Variance:} 114 \euro;
+	\item \textbf{Budget Variance:} 185 \euro.
 \end{itemize}
 
-\noindent Nuova descrizione
+\noindent La ripianificazione descritta nel \textit{Piano di Progetto v3.0.0} ha prolungato i tempi per le attività di questo periodo, facendo si che i nuovi \gls{slack} assegnati alle varie attività fossero ampi, in tal modo molte attività sono state ultimate prima della scadenza del termine fissata con effetti positivi sullo SV.
+
+\noindent A causa della diminuzione di ore di impiego di alcuni componenti del gruppo, descritte nell'analisi dei rischi nel \textit{Piano di Progetto v3.0.0}, abbiamo avuto un netto risparmio rispetto a quanto preventivato, con effetti positivi sul BV. Nonostante la diminuzione di ore, si è riusciti comunque a far fronte a tutte le attività da svolgere in questo periodo, grazie alla ripianificazione temporale di cui sopra.  
 
 \subsubsection{Risultati delle misurazioni del codice}
 \label{appendice 7}
 \vspace{3mm}
 
-Sono di seguito riportati i risultati dei test di analisi efettuati sul codice.
+Sono di seguito riportati i risultati dei test di analisi statica effettuati sul codice.
 
-Si è deciso di omettere i risultati ottenuti per i singoli metodi perché troppo onerosi e a volte poco significativi, per ogni test vengono qundi riportati il valore medio e il valore massimo riscontrato, giustificandi eventuali risultati fuori dal range di accettazione.
+Si è deciso di omettere i risultati ottenuti per i singoli metodi perché troppo onerosi e a volte poco significativi, per ogni test vengono quindi riportati il valore medio e il valore massimo riscontrato, giustificando eventuali risultati fuori dal range di accettazione.
 
 \begin{itemize}
 
