@@ -240,73 +240,79 @@ All'utente é richiesto di:
 	\toprule
 		\textbf{Test} & \textbf{Descrizione} & \textbf{Metodi} & \textbf{Stato}\\
 	\midrule
-		TU1 & Viene verificato che i metodi ritornano il valore nel formato corretto & getX(), getY(), getHeigth(), getWidth(), getExtraFields(), getAngle(), getScaleX(), getScaleY(), getTips(), getPresentation()  & Success\\
+		%TU1 & Viene verificato che i metodi di accesso ai dati ritornino i valori corretti rispetto a quanto previsto & getX(), getY(), getHeigth(), getWidth(), getExtraFields(), getAngle(), getScaleX(), getScaleY(), getTips(), getPresentation()  & Success\\
+	%\midrule
+		%TU2 & Viene verificato che i metodi set  modifichino i valori correttamente & setX(value:Double), setY(value:Double), setHeigth(value:Double), setWidth(value:Double), setExtraFields(obj:JSON), setAngle(value:Double), setScaleX(value:Double), setScaleY(value:Double), setTips(obj:JSON), setPresentation(id:Int), setStyle(style: JSON) & Success\\
+	%\midrule
+		TU1 & Viene verificato venga aggiunto l'elemento con codice identificativo id alla infografica
+in posizione position & addElement(position:Int, id:Int) & Success\\
 	\midrule
-		TU2 & Viene verificato che i metodi modifichino i valori correttamente & setX(value:Double), setY(value:Double), setHeigth(value:Double), setWidth(value:Double), setExtraFields(obj:JSON), setAngle(value:Double), setScaleX(value:Double), setScaleY(value:Double), setTips(obj:JSON), setPresentation(id:Int), setStyle(style: JSON) & Success\\
+		TU2 & Viene verificato che la procedura di aggiunta di un nuovo componente nella slide corrente mediante una chiamata al service PresentationService ritornando il codice identificativo id funzioni correttamente & addObject():Int & Success\\
 	\midrule
-		TU3 & Viene verificato che venga aggiunto l'elemento in posizione corretta nell'area di disegno & addElement(position:Int, id:Int), addObject() & Success\\
+		%TU4 & Viene verificato che venga restituito l'elemento corretto & getElement(position:Int) & Success\\
+	%\midrule
+		TU3 & Viene verificato che venga rimosso l'elemento nella posizione position correttamente aggiornando l'area di disegno & removeElement(position:Int) & Success\\
 	\midrule
-		TU4 & Viene verificato che venga restituito l'elemento corretto & getElement(position:Int) & Success\\
+		TU4 & Viene verificato che venga caricato il template selezionato Tid per l'infografica corrente nella vista InfographicEditorView & setTemplate(Tid:Int) & Success\\
 	\midrule
-		TU5 & Viene verificato che venga rimosso l'elemento correttamente aggiornando l'area di disegno & removeElement(position:Int) & Success\\
+		TU5 & Viene verificato che vengano restituite le slide corrette in formato JSON del infografica con le relative posizioni nel template & getSlideList() & Success\\
 	\midrule
-		TU6 & Viene verificato che venga caricato il template selezionato & setTemplate(Tid:Int),  setTemplate(template: template & Success\\
+		TU6 & Viene verificato che i meccanismi di autenticazione funzionino correttamente & logIn(username:String, Password:String), logOut(username:String) & Success\\
 	\midrule
-		TU7 & Viene verificato che vengano restituite le slide corrette in formato JSON & getSlideList() & Success\\
+		TU7 & Viene verificato che il meccanismo di recupero password funzioni correttamente & forgotPassword(username:String) & Success\\
 	\midrule
-		TU8 & Viene verificato che i meccanismi di autenticazione funzionino correttamente & logIn(username:String, Password:String), logOut(username:String) & Success\\
-	\midrule
-		TU9 & Viene verificato che il meccanismo di recupero password funzioni correttamente & forgotPassword(username:String) & Success\\
-	\midrule
-		TU10 & Viene verificato che venga aggiunta una slide nella posizione corretta & addSlide(direction: String) & Success\\ Success\\
+		TU8 & Viene verificato che venga aggiunta una slide nella posizione corretta rispetto alla slide corrente nella posizione indicata da direnction & addSlide(direction: String) & Success\\ Success\\
 \end{tabular}
-\end{center}
+\end{center}	
 \end{table}
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{|l|p{0.3\textwidth}|p{0.3\textwidth}|c|}
-		TU11 & Viene verificato che venga rimossa una slide e vengano riposizionale le altre nella posizione corretta & removeSlide() & N.A.\\
+		TU9 & Viene verificato che venga rimossa una slide e vengano riposizionale le altre nella posizione corretta & removeSlide() & N.A.\\
 	\midrule
-		TU12 & Viene verificato che venga caricata correttamente la slide & loadSlide(direction: String) & Success\\
+		TU10 & Viene verificato che venga caricata correttamente la slide nella posizione indicata da direction & loadSlide(direction: String) & Success\\
 	\midrule
-		TU13 & Viene verificato che venga salvata correttamente la slide corrente nel database & saveSlide() & Success\\
+		TU11 & Viene verificato che venga salvata correttamente la slide corrente nel database & saveSlide() & Success\\
+		
 	\midrule
-		TU14 & Viene verificato che vengano restituiti tutti i progetti appartenenti allo user \textit{username} & searchUsers(username:String) & Success\\
+		TU12 & Viene verificato che venga impostato il template della presentazione con quello passato per parametro & setTemplate(template: template) & Success\\
 	\midrule
-		TU15 & Viene verificato che vengano restituiti tutti i progetti con nome \textit{name} & searchProject(name:String) & Success\\
+		TU13 & Viene verificato che vengano restituiti tutti e soli i progetti appartenenti allo user username in formato JSON \textit{username} & searchUsers(username:String) & Success\\
+	\midrule
+		TU14 & Viene verificato che vengano restituiti tutti e soli i progetti nei quali nel nome ci sia un match con il parametro passato name \textit{name} & searchProject(name:String) & Success\\
 		\midrule
-		TU16 & Viene verificato che vengano retiruiti tutti i progetti di che hanno nome \textit{name} o appartinenti all'utente \textit{username} & search(query:String) & Success\\
+		TU15 & Viene verificato che vengano retiruiti tutti e soli i progetti di che hanno nel nome un match con il parametro \textit{name} o appartenenti all'utente \textit{username} & search(query:String) & Success\\
 	\midrule
-		TU17 & Verifica che il metodo di registrazione salvi correttamente i dati sul database & register(username:String,password:String) & Success\\
+		TU16 & Verifica che il metodo di registrazione salvi correttamente i dati sul database e che venga ritornato true nel caso di avvenuta registrazione o false in caso di fallimento & register(username:String,password:String) & Success\\
 	\midrule
-		TU18 & Viene verificato che venga effettuata correttamente la registrazione tramite account di socialNetwork Facebook e GooglePlus & registerViaFacebook(),registerViaGooglePlus() & N.A.\\
+		TU17 & Viene verificato che venga effettuata correttamente la registrazione tramite account di socialNetwork Facebook e GooglePlus e che venga ritornato true nel caso di avvenuta registrazione o false in caso di fallimento & registerViaFacebook(),registerViaGooglePlus() & N.A.\\
 	\midrule
-		TU19 & Viene verificato che il componente venga aggiornato correttamente il componente indetificato da \textit{id} nell'area di disegno della slide corrente & udpateObject(id:String) & Success\\
+		TU18 & Viene verificato che il componente venga aggiornato correttamente il componente indetificato da \textit{id} nella slide corrente mediante una chiamata al service PresentationService e che venga ritornato \textbf{true} in caso di successo e \textbf{false} altrimenti & udpateObject(id:String) & Success\\
 	\midrule
-		TU20 & Viene verificato che l'utente venga registrato correttamente nel server & signUp(email: String, username: String, password: String, passwordCheck:String) & Success\\
+		TU19 & Viene verificata la corretta iterazione tra Front-End e Back-End nella registrazione di un nuovo utente e che i parametri vengano passati correttamente nella chiamta dei metodi dem Back-End & signUp(email: String, username: String, password: String, passwordCheck:String) & Success\\
 \end{tabular}
 \end{center}
 \end{table}
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{|l|p{0.3\textwidth}|p{0.3\textwidth}|c|}
-		TU21 & Viene verificato che venga caricata l'infografica corretta & load(id: int) & Success\\
+		TU20 & Viene verificata la corretta iterazione col Back-End nel caricamento dell'infografica \textbf{id} & load(id: int) & Success\\
 	\midrule
-		TU22 & Viene verificato che venga salvata correttamente l'infografica & save() & Success\\
+		TU21 & Viene verificata la corretta iterazione col Back-End nel salvataggio dell'infografica & save() & Success\\
 	\midrule
-		TU23 & Viene verificato che venga esportata l'infografica con formato corretto PNG o PDF &  exportPNG(), exportPDF() & Success\\
+		TU22 & Viene verificato che venga esportata l'infografica con formato corretto PNG o PDF &  exportPNG(), exportPDF() & Success\\
 	\midrule
-		TU24 & Viene verificato che la stampa avvenga correttamente &  print() & Success\\
+		TU23 & Viene verificato che la stampa avvenga correttamente &  print() & Success\\
 	\midrule
-		TU24 & Viene verificato che il progetto sia caricato correttamente & getProject(id: int) & Success\\
+		TU24 & Viene verificata la corretta iterazione col Back-End nel caricamento del progetto passato per parametro & getProject(id: int) & Success\\
 	\midrule
-		TU26 & Viene verificato che il progetto sia salvato in maniera corretta &  saveProject() & Success\\
+		TU25 & Viene verificato che il progetto sia salvato in maniera corretta nel database &  saveProject() & Success\\
 	\midrule
-		TU27 & Verifica la corretta gestione e visualizzazione degli errori all'utente&  errorMsg() & N.A.\\
+		TU26 & Verifica la corretta gestione e visualizzazione degli errori all'utente &  errorMsg() & N.A.\\
 	\midrule
-		TU28 & Verifica il corretto aggiornamento dei dati di un utente loggato nel database &  update() & Success\\
+		TU27 & Verifica il corretto aggiornamento dei dati di un utente loggato nel database &  update() & Success\\
 	\midrule
-		TU29 & Verifica la corretta eliminazione di un utente dal database &  destroy() & Success\\
+		TU28 & Verifica la corretta eliminazione di un utente dal database &  destroy() & Success\\
 	\bottomrule
 	\end{tabular}
 	\end{center}
