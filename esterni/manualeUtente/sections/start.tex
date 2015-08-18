@@ -1,48 +1,72 @@
-Di seguito viene spiegato l'utilizzo delle principali funzioni dell'applicazione
-\section{Registrazione}
-Per creare un nuovo account selezionare il tasto \textbf{Sign Up} posizionato in alto a destra dello schermo.
+Di seguito viene spiegato come utilizzare le principali funzionalità dell'applicativo con l'ausilio di immagini.
 
-\noindent Ora bisogna compilare un piccolo form che richiede alcuni dati necessari per poter effettuare la registrazione: username, email, first name, last name, password e verifica password.
+\subsection{Ricerca di un progetto}
 
-\noindent Una volta compilati tutti i campi richiesti premere il bottone \textbf{Sign Up} situato sotto il form.
-
-\section{Autenticazione}
-Se si possiede già un account è possibile effettuare l'autenticazione.
-
-\noindent Per autenticarsi premere il pulsante \textbf{Login} situato in alto a destra dello schermo accanto al pulsante di registrazione.
-
-\noindent Ora sono richiesti i dati d'accesso.
+È possibile fare ricerche di progetti utilizzando come filtro l'username di un utente oppure il nome di un progetto.
+\newline
+Per eseguire una ricerca è sufficiente recarsi sulla home page tramite l'utilizzo del pulsante \textbf{PREMI} posto nell'angolo superiore sinistro dello schermo, scrivere la chiave di ricerca nell'apposita casella di testo, selezionare il filtro che si vuole utilizzare (Users o Project) e infine premere il tasto \textbf{Search}.
 
 \begin{figure}[h] 
 	\centering 
-	\includegraphics[scale=0.40] {img/MULogin.png}
-	\caption{UC1 - Registrazione} 
+	\includegraphics[scale=0.40] {img/ricerca.png}
+	\caption{Ricerca} 
 \end{figure}
 
-\noindent Una volta inseriti premere il pulsante \textbf{Login} situato sotto il form.
 
-\section{Creazione di un Progetto}
+\noindent I risultati della ricerca verranno mostrati sotto il pulsante \textbf{Search}, come mostrato nella figura sottostante.
 
-Effettuata l'autenticazione è possibile cominciare a creare progetti.
+\begin{figure}[h] 
+	\centering 
+	\includegraphics[scale=0.40] {img/ricercaris.png}
+	\caption{Risultati ricerca} 
+\end{figure}
 
+\newpage
+\subsection{Registrazione}
+Per creare un nuovo account utente è necessario premere il pulsante \textbf{Sign Up} posto nell'angolo superiore destro dello schermo. Si aprirà un pop-up nel quale saranno richieste le informazioni necessarie per registrare il nuovo utente (tutti i campi dati sono obbligatori). Dopo aver inserito i propri dati è sufficiente premere il tasto \textbf{Confirm}.
 
-\noindent Per creare un progetto selezionare dal menù in alto \textbf{New Project} e inserite un titolo per il progetto.
+\begin{figure}[h] 
+	\centering 
+	\includegraphics[scale=0.40] {img/signup.png}
+	\caption{Registrazione} 
+\end{figure}
 
+\noindent Nel caso in cui tutti i dati inseriti siano stati accettati, il sistema effettuerà in automatico il login del nuovo utente creato reindirizzandolo alla sua pagina personale.
+In caso contrario verranno segnalati i campi dati da correggere.
 
-\section{Creazione di una Presentazione}
+\subsection{Autenticazione}
+Se un utente è già in possesso di un account e vuole autenticarsi è necessario premere il pulsante \textbf{Login} posto nell'angolo superiore destro dello schermo, infine inserire il proprio username, la password e premere \textbf{OK}.
 
-Una volta creato un progetto verrà automaticamente aperto l'editor che permette di creare le \gls{slide} della presentazione.
+\begin{figure}[h] 
+	\centering 
+	\includegraphics[scale=0.40] {img/login.png}
+	\caption{Login} 
+\end{figure}
 
-\section{Creazione di un'Infografica}
+\noindent Se i dati inseriti sono corretti il sistema reindirizzerà l'utente alla propria pagina personale, altrimenti verrà segnalato un errore nelle credenziali inserite.
+\newline
+\noindent Nel caso in cui l'utente non ricordi più la sua password, può premere il link \textit{Forgot password}. Una volta premuto si aprirà un pop-up nel quale verrà richiesto di inserire la mail utilizzata al momento della registrazione al fine di recuperare la password di accesso. Dopo aver inserito la mail corretta e aver premuto \textbf{Submit} la procedura di recupero password sarà inviata alla mail indicata. Il pop-up è mostrato nella figura sottostante.
 
-Per creare un'\gls{infografica} è sufficiente aprire un progetto e premere il pulsante \textbf{New Infographic}; dal menù laterale e verrà aperto l'editor con cui è possibile modificare l'\gls{infografica}.
+\begin{figure}[H] 
+	\centering 
+	\includegraphics[scale=0.40] {img/forgot.png}
+	\caption{Recupero password} 
+\end{figure}
 
-\section{Ricerca di un progetto}
+\subsection{Pagina personale}
+Una volta autenticato un utente ha accesso alla sua pagina personale, nella quale sono riportati tutti i dati relativi a esso e dalla quale può accedere a tutte le funzionalità del sistema.
 
-È possibile fare una ricerca tra i progetti salvati da altri utenti.
+\begin{figure}[H] 
+	\centering 
+	\includegraphics[scale=0.40] {img/myaccount.png}
+	\caption{Pagina personale} 
+\end{figure}
 
-\noindent Per fare ciò è sufficiente compilare il filtro di ricerca, presente sulla propria home page, e premere il pulsante \textbf{Search}.
+\subsection{Logout}
+Un utente autenticato può eseguire il logout, da qualunque pagina stia visualizzando, tramite il pulsante \textbf{Logout} posto nell'angolo in alto a destro dello schermo.
 
-Verrà visualizzata una lista di progetti che rispettano i parametri inseriti.
-
-\noindent A questo punto basta selezionarne uno e scegliere la modalità di visualizzazione.
+\begin{figure}[H] 
+	\centering 
+	\includegraphics[scale=0.80] {img/logout.png}
+	\caption{Logout} 
+\end{figure}
