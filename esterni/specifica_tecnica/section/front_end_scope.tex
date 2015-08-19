@@ -2,64 +2,201 @@ In AngularJS la variabile \$scope è utilizzata per indicare il contesto in cui 
 Per la natura di AngularJS, in cui esiste una stretta correlazione fra view e model, ogni elemento di una view è associato ad un oggetto di scope .
 Sono qui di seguito riportati i principali esempi di oggetti di \$scope.
 \begin{itemize}
-    \item \textbf{ \$scope.canvas: }
+
+%     \item \textbf{\$scope.addImage(\textit{path}):}
+%     \begin{itemize}
+%     	\item Funzione con il compito di aggiungere in una posizione di default del canvas un'immagine raggiungibile mediante il percorso "\textit{path}" passato per argomento.
+%     \end{itemize}
+%     
+%     \item \textbf{\$scope.addText(\textit{text}):}
+%     \begin{itemize}
+%     	\item Funzione con il compito di aggiungere in una posizione di default del canvas un oggetto di tipo testuale inizializzato con il valore "\textit{text}" passato per argomento.
+%     \end{itemize}
+%     
+%     \item \textbf{\$scope.availableFonts:}
+%     \begin{itemize}
+%     	\item Variabile che contiene una lista di tutte le tipologie di carattere utilizzabili per gli oggetti di tipo testuale.
+%     \end{itemize}
+%    
+%    \item \textbf{\$scope.canvas:}
+%	\begin{itemize}
+%	      \item Variabile che contiene l'oggetto dalla libreria fabric.js per la gestione di un canvas interattivo.
+%	\end{itemize}
+%	
+%    \item \textbf{\$scope.components:}
+%	\begin{itemize}
+%	      \item Variabile che contiene una lista di tutte le tipologie di oggetti che possono essere inseriti nelle slide.
+%	\end{itemize}
+%	
+%	\item \textbf{\$scope.objectSelected:}
+%	\begin{itemize}
+%		\item Variabile che contiene l'oggetto selezionato all'interno della slide in modalità editor presentazioni. Può assumere il valore  "\textit{group}" per permettere la selezione multipla. 
+%	\end{itemize}
+%	
+%    \item \textbf{\$scope.slidesSVG:}
+%	\begin{itemize}
+%	      \item Variabile che contiene le slides della presentazione in formato SVG, ognuna con le rispettive coordinate x e y.
+%	\end{itemize}
+%	
+%    \item \textbf{\$scope.slidesList:}
+%	\begin{itemize}
+%	      \item Variabile che contiene la lista delle slides di una infografica in modalità editor.\footnote{Un'infografica è costruita a partire da un template.}.
+%	\end{itemize}
+%	
+%    \item \textbf{\$scope.template:}
+%	\begin{itemize}
+%	      \item Variabile che contiene le informazioni di un template di una infografica. La dimesione di un template appartiene ai formati di carta internazionale  epuò accogliere una lista di slide stabilendo i punti in cui andranno a posizionarsi.
+%	\end{itemize}
+%	
+%	\item \textbf{\$scope.toggleBold(\textit{obj}):}
+%	\begin{itemize}
+%		\item Funzione con il compito di impostare la proprietà "grassetto" dell'oggetto "\textit{obj}" passato per argomento.
+%	\end{itemize}
+%	
+%	\item \textbf{\$scope.togglItalic(\textit{obj}):}
+%	\begin{itemize}
+%		\item Funzione con il compito di impostare la proprietà "corsivo" dell'oggetto "\textit{obj}" passato per argomento.
+%	\end{itemize}
+%	
+%	\item \textbf{\$scope.toggleUnderlined(\textit{obj}):}
+%	\begin{itemize}
+%		\item Funzione con il compito di impostare la proprietà "sottolineato" dell'oggetto "\textit{obj}" passato per argomento.
+%	\end{itemize}
+%	
+%	\item \textbf{\$scope.update():}
+%	\begin{itemize}
+%		\item Funzione con il compito di aggiornare il canvas a seguito di un cambiamento nel model.
+%	\end{itemize}
+%	
+%	\item \textbf{\$scope.updateColor(\textit{path}):}
+%	\begin{itemize}
+%		\item Funzione con il compito di aggiornare nel canvas il colore dell'oggetto testuale selezionato a seguito di un aggiornamento del model.
+%	\end{itemize}
+
+
+	\item \textbf{\$scope.addSlide():}
 	\begin{itemize}
-	      \item Variabile che contiene l'oggetto dalla libreria fabric.js per la gestione di un canvas interattivo.
+		\item Variabile che contiene la funzione per aggiungere una nuova slide alla presentazione.
 	\end{itemize}
-    \item \textbf{ \$scope.components: }
+	
+	\item \textbf{\$scope.changeSlide():}
 	\begin{itemize}
-	      \item Variabile che contiene una lista di tutte le tipologie di oggetti che possono essere inseriti nelle slide.
+		\item Variabile che contiene la funzione per spostarsi tra una slide e l'altra.
 	\end{itemize}
-    \item \textbf{ \$scope.user: }
+	
+	\item \textbf{\$scope.currentProject:}
 	\begin{itemize}
-	      \item Variabile che contiene le informazioni relative all'utente che sta utilizzando il sistema.
+		\item Variabile che contiene le informazioni relative al progetto corrente (idProgetto, idPresentazione, idPrimaSlide).
 	\end{itemize}
-    \item \textbf{ \$scope.objectSelected: }
+	
+	\item \textbf{\$scope.currentSlide:}
 	\begin{itemize}
-	      \item Variabile che contiene l'oggetto selezionato all'interno della slide in modalità editor presentazioni. Può assumere il valore  "\textit{group}" per permettere la selezione multipla. 
+		\item Variabile che contiene l'id della slide corrente che si sta modificando.
 	\end{itemize}
-    \item \textbf{ \$scope.update(): }
+	
+	\item \textbf{\$scope.deleteProject():}
 	\begin{itemize}
-	      \item Funzione con il compito di aggiornare il canvas a seguito di un cambiamento nel model.
+		\item Variabile che contiene la funzione per eliminare un progetto.
 	\end{itemize}
-    \item \textbf{ \$scope.toggleBold(\textit{obj}): }
+	
+	\item \textbf{\$scope.deleteSlide():}
 	\begin{itemize}
-	      \item Funzione con il compito di impostare la proprietà "grassetto" dell'oggetto "\textit{obj}" passato per argomento.
+		\item Variabile che contiene la funzione per cancellare la slide corrente.
 	\end{itemize}
-     \item \textbf{ \$scope.togglItalic(\textit{obj}): }
+	
+	\item \textbf{\$scope.editProject():}
 	\begin{itemize}
-	      \item Funzione con il compito di impostare la proprietà "corsivo" dell'oggetto "\textit{obj}" passato per argomento.
+		\item Variabile che contiene la funzione per aprire l'editor del progetto.
 	\end{itemize}
-     \item \textbf{ \$scope.toggleUnderlined(\textit{obj}): }
+	
+	\item \textbf{\$scope.findProjectById():}
 	\begin{itemize}
-	      \item Funzione con il compito di impostare la proprietà "sottolineato" dell'oggetto "\textit{obj}" passato per argomento.
+		\item Variabile che contiene la funzione per caricare il progetto tramite il suo id.
 	\end{itemize}
-     \item \textbf{ \$scope.addText(\textit{text}): }
+	
+	\item \textbf{\$scope.getIdSlide():}
 	\begin{itemize}
-	      \item Funzione con il compito di aggiungere in una posizione di default del canvas un oggetto di tipo testuale inizializzato con il valore "\textit{text}" passato per argomento.
+		\item Variabile che contiene la funzione per recuperare l'id della slide dalle coordinate x e y.
 	\end{itemize}
-      \item \textbf{ \$scope.availableFonts: }
+	
+	\item \textbf{\$scope.home:}
 	\begin{itemize}
-	      \item Variabile che contiene una lista di tutte le tipologie di carattere utilizzabili per gli oggetti di tipo testuale.
+		\item Variabile che contiene true o false a seconda se è visualizzata la schermata home, oppure no.
 	\end{itemize}
-    \item \textbf{ \$scope.addImage(\textit{path}): }
+	
+	\item \textbf{\$scope.loadSlide():}
 	\begin{itemize}
-	      \item Funzione con il compito di aggiungere in una posizione di default del canvas un'immagine raggiungibile mediante il percorso "\textit{path}" passato per argomento.
+		\item Variabile che contiene la funzione per caricare la slide dal backend attraverso il suo id.
 	\end{itemize}
-    \item \textbf{ \$scope.updateColor(\textit{path}): }
+	
+	\item \textbf{\$scope.login():}
 	\begin{itemize}
-	      \item Funzione con il compito di aggiornare nel canvas il colore dell'oggetto testuale selezionato a seguito di un aggiornamento del model.
+		\item Variabile che contiene la funzione per permettere il login di un utente.
 	\end{itemize}
-    \item \textbf{ \$scope.slidesSVG:}
+	
+	\item \textbf{\$scope.logout():}
 	\begin{itemize}
-	      \item Variabile che contiene le slides della presentazione in formato SVG, ognuna con le rispettive coordinate x e y.
+		\item Variabile che contiene la funzione per permettere il logout di un utente.
 	\end{itemize}
-    \item \textbf{ \$scope.slidesList:}
+	
+	\item \textbf{\$scope.newProject():}
 	\begin{itemize}
-	      \item Variabile che contiene la lista delle slides di una infografica in modalità editor.\footnote{Un'infografica è costruita a partire da un template.}.
+		\item Variabile che contiene la funzione per creare un nuovo progetto.
 	\end{itemize}
-    \item \textbf{ \$scope.template:}
+
+	\item \textbf{\$scope.refreshProjects():}
 	\begin{itemize}
-	      \item Variabile che contiene le informazioni di un template di una infografica. La dimesione di un template appartiene ai formati di carta internazionale  epuò accogliere una lista di slide stabilendo i punti in cui andranno a posizionarsi.
+		\item Variabile che contiene la funzione per caricare i dati principali dei progetti salvati di un utente.
 	\end{itemize}
+	
+	\item \textbf{\$scope.resetPassword():}
+	\begin{itemize}
+		\item Variabile che contiene la funzione per fare il reset della password di accesso.
+	\end{itemize}
+	
+	\item \textbf{\$scope.restrictedArea:}
+	\begin{itemize}
+		\item Variabile che contiene la pagina dell'area riservata correntemente attiva.
+	\end{itemize}
+	
+	\item \textbf{\$scope.saveSlide():}
+	\begin{itemize}
+		\item Variabile che contiene la funzione per creare una slide vuota e salvarla nel backend.
+	\end{itemize}
+	
+	\item \textbf{\$scope.searc():}
+	\begin{itemize}
+		\item Variabile che contiene la funzione per la ricerca di un utente o di un progetto.
+	\end{itemize}
+	
+	\item \textbf{\$scope.searchViewVisibility:}
+	\begin{itemize}
+		\item Variabile che contiene true o false a seconda se è visualizzata la schermata con i risultati di ricerca, oppure no.
+	\end{itemize}
+	
+	\item \textbf{\$scope.setCurrentProject():}
+	\begin{itemize}
+		\item Variabile che contiene la funzione per impostare il progetto corrente, con tutte le sue informazioni.
+	\end{itemize}
+	
+	\item \textbf{\$scope.signIn():}
+	\begin{itemize}
+		\item Variabile che contiene la funzione per permettere la registrazione di un utente.
+	\end{itemize}
+	
+	\item \textbf{\$scope.updateSlide():}
+	\begin{itemize}
+		\item Variabile che contiene la funzione per salvare una slide modificata nel backend.
+	\end{itemize}
+	
+	\item \textbf{\$scope.user:}
+	\begin{itemize}
+		\item Variabile che contiene lo username dell'utente che sta utilizzando il sistema.
+	\end{itemize}
+	
+	\item \textbf{\$scope.zoomCanvas():}
+	\begin{itemize}
+		\item Variabile che contiene la funzione per gestire lo zoom del canvas nel ridimensionamento della finestra del browser.
+	\end{itemize}
+	
 \end{itemize}
