@@ -1,22 +1,42 @@
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{img/premi_front_end_controllers}
+	\includegraphics[width=1.0\linewidth]{img/premi_front_end_controllers}
 	\caption[Premi::Front-End::Controllers]{Premi::Front-End::Controllers}
 \end{figure}
-Il package gestisce i controller del front-end dell'applicazione. Comunica con il model, le view e i service della struttura per gestire tutte le operazioni tra di essi. Fa comunicare le view con il model per rendere visibili gli aggiornati effettuati con quest'ultimo e viceversa, aggiorna il model con le informazioni provenienti dalla view. Richiama inoltre i service per comunicare con il back-end e caricare o salvare quindi i dati nel database.
+Il package gestisce i controller del front-end dell'applicazione. Comunica con il model, le view e i service della struttura per gestire tutte le operazioni tra di essi. Fa comunicare le view con il model per rendere visibili gli aggiornamenti di quest'ultimo sulle view che utilizzano quei dati. Viceversa, aggiorna il model con le informazioni provenienti dalle view. Richiama inoltre i service per comunicare con il back-end rendendo possibile caricare o salvare i dati nel database.\\
+Per brevità la nell'identificare un controller è stata omessa la dicitura Premi::Front-End::Controllers lasciando solamente il nome del controller stesso. Si assume dunque che la dicitura compatta <nomeController> rappresenta la forma estesa Premi::Front-End::Controllers::<nomeController>.
+
 \newpage
 
-\subsubsection{ComponentController}
+\subsubsection{ComponentCtrl}
       \paragraph{Descrizione}
-	Il controller ComponentController si occupa della costruzione e gestione dei componenti in una slide.
-	
+	Il controller ComponentController si occupa di fornire le primitive per la costruzione e gestione dei componenti in una slide.\\
+	È una classe astratta in quanto non sarà possibile istanziare un componente direttamente ma solo oggetti che concretizzano la classe costruendo oggetti dei tipi previsti dal sistema.
+		
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per consentire all'utente di aggiungere, modificare o rimuovere un componente in una slide.
 	
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
-				Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione.
+			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		\item\textbf{-x:Double}:\\
+			Campo dati contenente il valore della distanza dal bordo sinistro del canvas utilizzata per l'ancoraggio dell'oggetto;
+		\item\textbf{-y:Double}:\\
+			Campo dati contenente il valore della distanza dal bordo superiore del canvas utilizzata per l'ancoraggio dell'oggetto;
+		\item\textbf{-heigth:Double}:\\
+			Campo dati contenente il valore dell'altezza dell'oggetto;
+		\item\textbf{-width:Double}:\\
+			Campo dati contenente il valore della larghezza dell'oggetto;
+		\item\textbf{-extraFields:JSON}:\\
+			Campo dati contenente eventuali parametri supplementari per ogni componente in un array di oggetti in formato JSON. Progettato in ottica di estensioni future; 
+		\item\textbf{-angle:Double}:\\	
+			Campo dati contenente il valore dell'angolo di rotazione;
+		\item\textbf{-scaleX:Double}:\\
+			Campo dati contenente il coefficiente di scala in orizzontale rispetto al valore originale rappresentato dal valore 1;
+		\item\textbf{-scaleY:Double}:\\	
+			Campo dati contenente il coefficiente di scala in verticale rispetto al valore originale rappresentato dal valore 1.
+	
 	\end{itemize}
 	
 	\paragraph{Metodi}
@@ -56,14 +76,24 @@ Il package gestisce i controller del front-end dell'applicazione. Comunica con i
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
-	 \item OUT: \textbf{SlideEditorController}:\\
+	 \item OUT: \textbf{SlideEditorCtrl}:\\
 		Il controller SlideEditorController utilizza ComponentController per la gestione dei componenti al fine di costruire la slide.
+	 \item OUT: \textbf{ChartCtrl}:\\
+	 	Il controller ChartCtrl estende ComponentController per la costruzione e gestione di grafici.
+	 \item OUT: \textbf{ImageCtrl}:\\
+		Il controller ImageCtrlController estende ComponentController per la costruzione e gestione di oggetti di tipo immagine.
+	 \item OUT: \textbf{RealTimeDataCtrl}:\\
+		Il controller RealTimeDataCtrl estende ComponentController per la costruzione e gestione di oggetti con aggiornamento in tempo reale.
+	 \item OUT: \textbf{TableCtrl}:\\
+		Il controller TableCtrl estende ComponentController per la costruzione e gestione di oggetti di tipo tabella.
+	 \item OUT: \textbf{TextCtrl}:\\
+		Il controller TextCtrl estende ComponentController per la costruzione e gestione di oggetti di tipo testo.
+	
 	\end{itemize}
 
-
-\subsubsection{HelpController}
+\subsubsection*{HelpController}
       \paragraph{Descrizione}
-	Il controller HelpController gestisce i meccanismi di aiuto ll'utente.
+	Il controller HelpController gestisce i meccanismi di aiuto all'utente.
 	
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per gestire le informazioni e la logica di erogazione degli aiuti all'utente sotto forma di suggerimenti(tips) esplicativi delle funzionalità.
@@ -72,6 +102,8 @@ Il package gestisce i controller del front-end dell'applicazione. Comunica con i
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 				Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione.
+		\item \textbf{-\$scope.tips: JSON}:\\
+				Campo dati che racchiude in un array di oggetti JSON tutti i suggerimenti necessari allo svolgimento del tour tra le funzionalità del sistema ed al supporto all'utente. 
 	\end{itemize}
 	
 	\paragraph{Metodi}
@@ -83,24 +115,25 @@ Il package gestisce i controller del front-end dell'applicazione. Comunica con i
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
-	 \item OUT: \textbf{SlideEditorView}:\\
+	 \item OUT: \textbf{Views::SlideEditor}:\\
 		La vista SlideEditorController utilizza HelpController per la gestione degli aiuti nella composizione e modifica di una slide.
-	 \item OUT: \textbf{InfographicEditorView}:\\
+	 \item OUT: \textbf{Views::InfographicEditor}:\\
 		La vista InfographicEditorView utilizza HelpController per la gestione degli aiuti nella composizione e modifica di una infografica.
-	 \item OUT: \textbf{ProjectsView}:\\
+	 \item OUT: \textbf{Views::Projects}:\\
 		La vista ProjectsView utilizza HelpController per la gestione degli aiuti nella gestione dei progetti dell'utente.
-	 \item OUT: \textbf{SearchView}:\\
+	 \item OUT: \textbf{Views::Search}:\\
 		La vista SearchView utilizza HelpController per la gestione degli aiuti nella ricerca di progetti.
 	\end{itemize}
 
 
 \subsubsection{InfographicEditorController}
-\paragraph{Descrizione}
-	Il controller InfographicEditorController gestisce la composizione e modifica di una infografica.
+	\paragraph{Descrizione}
+		Il controller InfographicEditorController gestisce la composizione e modifica di una infografica sulla base di template predefiniti che permettono l'inserimento in posizioni specifiche di slide precedentemente create.
 	
-	\paragraph{Utilizzo}
-	Questa classe viene utilizzata per gestire le richieste da parte della vista InfographicEditorView ed aggiornarla a seconda delle modifiche della classe Premi::Front-End::Model::Infographic.
-	Ha il compito di tener traccia ed aggiornare codice identificativo e posizione delle slides in un template di infografica.
+	\paragraph{Utilizzo} 
+	
+		Questa classe viene utilizzata per gestire le richieste da parte della vista InfographicEditor ed aggiornarla a seconda delle modifiche della classe Premi::Front-End::Model::Infographic.
+		Ha il compito di tener traccia ed aggiornare codice identificativo e posizione delle slide in un template di infografica.
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
@@ -118,24 +151,25 @@ Il package gestisce i controller del front-end dell'applicazione. Comunica con i
 	  \item \textbf{+removeElement(\textit{position}:Int):void}:\\
 		  Metodo che elimina l'oggetto in posizione \textit{position}.
 	  \item \textbf{+setTemplate(\textit{Tid}:Int):void}:\\
-		  Metodo che imposta il template \textit{Tid} per l'infografica corrente nella vista InfographicEditorView.
+		  Metodo che imposta il template \textit{Tid} per l'infografica corrente nella vista InfographicEditor.
 	  \item \textbf{+getSlideList():JSON}:\\
-		  Metodo che restituisce un oggetto JSON contenente un array con tutte le slides dell'infografica con le relative posizioni nel template.
+		  Metodo che restituisce un oggetto JSON contenente un array con tutte le slide dell'infografica con le relative posizioni nel template.
 		  
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
-	  \item IN: \textbf{InfographicService};
-	  \item OUT: \textbf{InfographicEditorView}:\\
-		La vista InfographicEditorView utilizza HelpController per la gestione degli aiuti nella composizione e modifica di una infografica. 	
+		\item IN: \textbf{InfographicService};
+		\item IN: \textbf{HelpCtrl};
+		\item OUT: \textbf{InfographicEditorView}:\\
+			La vista InfographicEditor utilizza HelpCtrl per la gestione degli aiuti nella composizione e modifica di una infografica. 	
 	\end{itemize}
 	
-\subsubsection{LoginController}
+\subsubsection{AuthenticationCtrl}	
 \paragraph{Descrizione}
-	Il controller LoginController gestisce l'autenticazione di un utente nel sistema.
+	Il controller AuthenticationCtrl gestisce l'autenticazione di un utente nel sistema.
 	
 	\paragraph{Utilizzo}
-	Questa classe viene utilizzata per gestire le richieste di autenticazione nel sistema e di regolare l'accesso alle aree riservate.
+	Questa classe viene utilizzata per gestire le richieste di autenticazione, disconnessione e gestione password all'interno del sistema e di regolare l'accesso alle aree riservate.
 	In particolare gestisce le operazioni di logIn, logOut e recupero Password.
 	\paragraph{Attributi}
 	\begin{itemize}
@@ -148,7 +182,7 @@ Il package gestisce i controller del front-end dell'applicazione. Comunica con i
 	\paragraph{Metodi}
 	\begin{itemize}
 	  \item \textbf{+logIn(\textit{username}:String, \textit{Password}:String):boolean}:\\
-		 Metodo che permette di connettere l'utente con username \textit{username} nel sistema verificando le sue credenziali;
+		 Metodo che permette di autenticare l'utente con username \textit{username} nel sistema verificando le sue credenziali;
 	  \item \textbf{+logOut(\textit{username}:String):void}:\\
 		  Metodo che permette di disconnettere l'utente con username \textit{username} dal sistema;
 	  \item \textbf{+forgotPassword(\textit{username}:String):void}:\\
@@ -156,16 +190,18 @@ Il package gestisce i controller del front-end dell'applicazione. Comunica con i
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
-	  \item OUT: \textbf{InfographicEditorView}:\\
-		La vista InfographicEditorView utilizza LoginController per autorizzare un autente alla composizione e modifica di una infografica;	
-	  \item OUT: \textbf{PresentationEditorView}:\\
-		La vista PresentationEditorView utilizza LoginController per autorizzare un autente alla composizione e modifica di una presentazione;	
-	  \item OUT: \textbf{ProjectView}:\\
-		La vista ProjectView utilizza HelpController per autorizzare un autente alla creazione e modifica di un progetto;	
-	  \item IN: \textbf{model::user}:\\
+	  \item OUT: \textbf{Views::InfographicEditor}:\\
+		La vista Views::InfographicEditor utilizza AuthenticationCtrl per autorizzare un utente alla composizione e modifica di una infografica;	
+	  \item OUT: \textbf{Views::PresentationEditor}:\\
+		La vista Views::PresentationEditor utilizza AuthenticationCtrl per autorizzare un utente alla composizione e modifica di una presentazione;	
+	  \item OUT: \textbf{Views::Project}:\\
+		La vista Views::Project utilizza AuthenticationCtrl per autorizzare un utente alla creazione e modifica di un progetto;	
+	  \item IN: \textbf{Model::User}:\\
 		Classe del model che gestisce gli utenti e le loro informazioni comprensive di quelle di autenticazione;
 	   \item IN: \textbf{AuthenticationService}.
-	\end{itemize}
+	\end{itemize}	
+	
+
 \subsubsection{PresentationController}
 	\paragraph{Descrizione}
 	Il controller PresentationController gestisce la composizione e modifica di una presentazione.
