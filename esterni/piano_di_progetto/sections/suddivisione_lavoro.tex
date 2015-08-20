@@ -197,11 +197,11 @@ Nella macro-fase di \textbf{Progettazione di Dettaglio e Codifica} ciascun compo
 		
 		\midrule
 		Agostinetto Matteo & & & & & 38 & 14 & 52 \\
-		Burlin Valerio & & 4 & & 12 & 24 & 12 & 52 \\ 
-		Carraro Nicola & & & & 4 & 32 & 16 & 52 \\
+		Burlin Valerio & & 4 & & 12 & 24 & 14 & 54 \\ 
+		Carraro Nicola & & & & 4 & 32 & 18 & 54 \\
 		Crespan Emanuele & & & 4 & 18 & 24 & 8 & 54 \\
-		Ros Fabio & & & & 18 & 24 & 10 & 52 \\
-		Suierica Bogdan & 4 & & & 12 & 32 & 6 & 54 \\
+		Ros Fabio & & & & 18 & 24 & 12 & 54 \\
+		Suierica Bogdan & 4 & & & 12 & 32 & 10 & 58 \\
 		
 		\bottomrule
 	\end{tabular}
@@ -224,10 +224,10 @@ Nella macro-fase di \textbf{Progettazione di Dettaglio e Codifica} ciascun compo
 	symbolic x coords = {Agostinetto Matteo,Burlin Valerio,Carraro Nicola,Crespan Emanuele,Ros Fabio,Suierica Bogdan},
 	xtick = data,
 	x tick label style = {rotate=45,anchor=east},
-	ytick = {5,10,15,20,25,30,35,40,45,50,55},
+	ytick = {5,10,15,20,25,30,35,40,45,50,55,60},
 	ymajorgrids = true,
 	ymin = 0,
-	ymax = 55]
+	ymax = 60]
 	\addplot+[ybar,fill = blue,draw = black]
 	plot coordinates {(Agostinetto Matteo, 0) (Burlin Valerio, 0) (Carraro Nicola, 0) (Crespan Emanuele, 0) (Ros Fabio, 0) (Suierica Bogdan, 4)};
 	\addplot+[ybar,fill = red,draw = black]
@@ -239,7 +239,7 @@ Nella macro-fase di \textbf{Progettazione di Dettaglio e Codifica} ciascun compo
 	\addplot+[ybar,fill = orange,draw = black]
 	plot coordinates {(Agostinetto Matteo, 38) (Burlin Valerio, 24) (Carraro Nicola, 32) (Crespan Emanuele, 24) (Ros Fabio, 24) (Suierica Bogdan, 32)};
 	\addplot+[ybar,fill = green,draw = black]
-	plot coordinates {(Agostinetto Matteo, 14) (Burlin Valerio, 12) (Carraro Nicola, 16) (Crespan Emanuele, 8) (Ros Fabio, 10) (Suierica Bogdan, 6)};
+	plot coordinates {(Agostinetto Matteo, 14) (Burlin Valerio, 14) (Carraro Nicola, 18) (Crespan Emanuele, 8) (Ros Fabio, 12) (Suierica Bogdan, 10)};
 	\legend{\strut Responsabile di Progetto, \strut Amministratore di Progetto, \strut Analista, \strut Progettista, \strut Programmatore, \strut Verificatore}
 \end{axis}
 \end{tikzpicture}
@@ -258,11 +258,11 @@ Nella macro-fase di \textbf{Verifica e Validazione} ciascun componente del grupp
 		
 	\midrule
 	Agostinetto Matteo & & & & 10 & & 15 & 25 \\
-	Burlin Valerio & & & 8 & & 8 & 9 & 25 \\ 
-	Carraro Nicola & & & & 10 & & 15 & 25 \\
+	Burlin Valerio & & & 8 & & 8 & 7 & 23 \\ 
+	Carraro Nicola & & & & 10 & & 13 & 23 \\
 	Crespan Emanuele & 8 & & & & & 16 & 24 \\
-	Ros Fabio & & 8 & & & 8 & 10 & 26 \\
-	Suierica Bogdan & & & & 5 & & 17 & 22 \\
+	Ros Fabio & & 8 & & & 8 & 8 & 24 \\
+	Suierica Bogdan & & & & 5 & & 13 & 18 \\
 		
 	\bottomrule
 \end{tabular}
@@ -300,7 +300,7 @@ Nella macro-fase di \textbf{Verifica e Validazione} ciascun componente del grupp
 	\addplot+[ybar,fill = orange,draw = black]
 	plot coordinates {(Agostinetto Matteo, 0) (Burlin Valerio, 8) (Carraro Nicola, 0) (Crespan Emanuele, 0) (Ros Fabio, 8) (Suierica Bogdan, 0)};
 	\addplot+[ybar,fill = green,draw = black]
-	plot coordinates {(Agostinetto Matteo, 15) (Burlin Valerio, 9) (Carraro Nicola, 15) (Crespan Emanuele, 16) (Ros Fabio, 10) (Suierica Bogdan, 17)};
+	plot coordinates {(Agostinetto Matteo, 15) (Burlin Valerio, 7) (Carraro Nicola, 13) (Crespan Emanuele, 16) (Ros Fabio, 8) (Suierica Bogdan, 13)};
 	\legend{\strut Responsabile di Progetto, \strut Amministratore di Progetto, \strut Analista, \strut Progettista, \strut Programmatore, \strut Verificatore}
 \end{axis}
 \end{tikzpicture}
