@@ -12,6 +12,9 @@
 			\item Premi::Presentation-Tier;
 			\item Premi::Http;
 			\item Premi::Model;
+			\item Premi::Events;
+			\item Premi::Listeners;
+			\item Premi::Providers;
 			\item Premi::Data-Tier.
 		\end{itemize}
 
@@ -33,13 +36,16 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=\linewidth]{img/back-end_logic-tier_package}
-		\caption[Premi::Http , Premi::Model]{Premi::Http , Premi::Model}
+		\caption[*::Http , *::Model, *::Events, *::Listeners, *::Providers]{*::Http , *::Model, *::Events, *::Listeners, *::Providers}
 	\end{figure}
 	Il core dell'applicazione viene implementato dal Model, che incapsulando lo stato dell'applicazione definisce i dati e le operazioni che possono essere eseguite su questi. Il package Http contiene Il componente Controller che ha la responsabilità di trasformare le interazioni dell'utente in azioni eseguite dal Model.
 	
 	\subsubsection*{Package contenuti}
 	\begin{itemize}
 		\item Premi::Http;
+		\item Premi::Events;
+		\item Premi::Listeners;
+		\item Premi::Providers;
 		\item Premi::Model.
 	\end{itemize}
 
@@ -63,7 +69,7 @@
 		 \begin{itemize}
 		 	\item Premi::Http::Controllers;
 		 	\item Premi::Http::Middleware;
-		 	\item Premi::Http::Requests;
+		 	\item Premi::Http::Requests.
 		 \end{itemize}
 
 \newpage
@@ -227,6 +233,51 @@
 %		\end{itemize}
 %	\end{itemize}
 %	
+\newpage
+\subsection{Premi::Events}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/premi_events}
+	\caption[Premi::Events]{Premi::Events}
+	\label{fig:premi_events}
+\end{figure}
+
+\subsubsection*{Informazioni sul package}
+Il package permette di gestire l'applicazione attraverso gli eventi.
+\subsubsection*{Classi contenute}
+\begin{itemize}
+	\item \textbf{Event: }la classe Event fornisce una semplice implementazione di un observer, che permette di gestire l'applicazione attraverso gli eventi;
+	\item \textbf{ProjectWasCreated: }la classe è un container di dati che mantiene le informazioni relative all'evento creazione di un progetto.
+\end{itemize}
+
+\newpage
+\subsection{Premi::Listeners}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/premi_listeners}
+	\caption[Premi::Listeners]{Premi::Listeners}
+	\label{fig:premi_listeners}
+\end{figure}
+
+\subsubsection*{Informazioni sul package}
+Il package contiene tutti i handler delle classi evento. Gli event listeners ricevono ricevono un istanza di un evento nel loro metodo handle;
+\subsubsection*{Classi contenute}
+\begin{itemize}
+	\item \textbf{PresentationCreate; }
+	\item \textbf{SlideCreate; }
+\end{itemize}
+
+\subsection{Premi::Providers}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\linewidth]{img/premi_providers}
+	\caption[Premi::Providers]{Premi::Providers}
+	\label{fig:premi_providers}
+\end{figure}
+
+\subsubsection*{Informazioni sul package}
+Il package è la parte centrale delle operazioni di avvio l'applicazione di \gls{Laravel}. \gls{Laravel} compila e memorizza una lista di tutti i servizi forniti dai service provider differiti, insieme al nome della classe dei suoi service provider. Quindi, solo quando si tenta di risolvere uno di questi servizi \gls{Laravel} carica il service provider appropriato.
+
 
 \newpage
 \subsection{Premi::Model}
@@ -299,6 +350,8 @@
 \subsubsection*{Informazioni su Eloquent}
 Eloquent è l'ORM(Object Relational Mapping) incluso in Laravel: un'implementazione di Active Record. Tutti i model estendono  Eloquent in modo da creare e gestire l'interazione con la collection.
 
+
+\newpage
 \subsection{Data-Tier}
 \begin{figure}[h]
 \centering
