@@ -2,14 +2,14 @@
 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{img/back_end_user_model}
+		\includegraphics[width=0.8\linewidth]{img/back_end_user_model}
 		\caption[Diagramma della classe User]{Diagramma della classe User}
 		\label{fig:back_end_user_model}
 	\end{figure}
 
 
 	\paragraph{Descrizione:}
-	Il modello User permette di gestire la collezione users del database. Eloquent presume che il nome della classe sia il singolare del nome della collezione nel database, quindi collega User alla collezione users.
+	Il modello User permette di gestire la collezione users del database, relativa agli utenti registrati. Eloquent presume che il nome della classe sia il singolare del nome della collezione nel database, quindi collega User alla collezione users.
 
 	\paragraph{Utilizzo:}
 	Il modello gestisce la collezione users del database.
@@ -19,7 +19,7 @@
 		\item \textbf{+ timestamps : boolean = false :}\\
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore \textit{false} le informazioni dell'inserimento e del aggiornamento non verranno aggiunte alla collezione.
 		\item \textbf{\# fillable : array = ['username', 'email', 'firstName', 'lastName', 'password']:}\\
-		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass-assignment}.
+		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass assignment}.
 		\begin{itemize}
 			\item \textbf{username:} indica il nome utente scelto dall'utente;
 			\item \textbf{email:} indica l'indirizzo email inserito dall'utente;
@@ -32,7 +32,7 @@
 	\paragraph{Metodi:}
 	\begin{itemize}
 		\item \textbf{+ projects() : Project}\\
-		Abbiamo utilizzato la relazione \textit{embedsMany} per riuscire ad incorporare il modello projects all'interno dell'oggetto principale User. Il metodo ritorna Project su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello;
+		Abbiamo utilizzato la relazione \textit{embedsMany} per riuscire ad incorporare il modello Project all'interno dell'oggetto principale User. Il metodo ritorna Project su cui verrà chiamato il metodo \textit{save()} nel caso in cui si voglia aggiornare il modello;
 	\end{itemize}
 \newpage
 
@@ -47,7 +47,7 @@
 
 	
 	\paragraph{Descrizione:}
-	Questa classe rappresenta un progetto di un utente..
+	Questa classe rappresenta un progetto di un utente.
 	
 	\paragraph{Utilizzo:}
 	Viene utilizzata alla creazione di un progetto di un utente.
@@ -57,7 +57,7 @@
 		\item \textbf{+ timestamps : boolean = false :}\\
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore \textit{false} le informazioni dell'inserimento e del aggiornamento non verranno aggiunte alla collezione;
 		\item \textbf{\# fillable : array = [’name’]:}\\
-		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass-assignment}.
+		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass assignment}.
 		\begin{itemize}
 			\item \textbf{name:} indica il nome del progetto.
 		\end{itemize}
@@ -65,10 +65,10 @@
 	
 	\paragraph{Metodi:}
 	\begin{itemize}
-		\item \textbf{+ presentations() : Presentation}\\
-		Abbiamo utilizzato la relazione \textit{embedsOne} per riuscire ad incorporare il modello Presentation all'interno dell'oggetto principale Project. Il metodo ritorna Presentation su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello;
+		\item \textbf{+ presentation() : Presentation}\\
+		Abbiamo utilizzato la relazione \textit{embedsOne} per riuscire ad incorporare il modello Presentation all'interno dell'oggetto principale Project. Il metodo ritorna Presentation su cui verrà chiamato il metodo \textit{save()} nel caso in cui si voglia aggiornare il modello;
 		\item \textbf{+ infographics() : Infographic}\\
-		Abbiamo utilizzato la relazione embedsMany per riuscire ad incorporare il model Infographic all’interno dell’oggetto principale Project. Il metodo ritorna Infographic su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello.
+		Abbiamo utilizzato la relazione \textit{embedsMany} per riuscire ad incorporare il modello Infographic all'interno dell'oggetto principale Project. Il metodo ritorna Infographic su cui verrà chiamato il metodo \textit{save()} nel caso in cui si voglia aggiornare il modello.
 	\end{itemize}
 
 \newpage
@@ -83,17 +83,17 @@
 
 
 	\paragraph{Descrizione:}
-	Questa classe rappresenta un’infografica di un progetto, ovvero una rappresentazione visuale della presentazione per mostrare in maniera semplice e veloce le informazioni.
+	Questa classe rappresenta un'infografica di un progetto, ovvero una rappresentazione visuale della presentazione per mostrare in maniera semplice e veloce le informazioni.
 	
 	\paragraph{Utilizzo:}
-	Viene utilizzata alla creazione di un’infografica di una presentazione.
+	Viene utilizzata alla creazione di un'infografica di una progetto.
 
 	\paragraph{Attributi:}
 		\begin{itemize}
 			\item \textbf{+ timestamps : boolean = false :}\\
 			Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore \textit{false} le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collezione;
 			\item \textbf{\# fillable : array = [’name’, ’path’]:}\\
-			Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass-assignment}.
+			Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass assignment}.
 			\begin{itemize}
 				\item \textbf{name:} indica il nome dell'infografica;
 				\item \textbf{path:} indica il percorso dove recuperare il file dell'infografica.
@@ -106,14 +106,14 @@
 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_presentation}
+		\includegraphics[width=0.8\linewidth]{img/back_end_premi_model_presentation}
 		\caption[Diagramma della classe Presentation]{Diagramma della classe Presentation}
 		\label{fig:back_end_premi_model_presentation}
 	\end{figure}
 
 
 	\paragraph{Descrizione:}
-	Questa classe descrive la presentazione di un progetto. Contiene tutte le slide che servono a comporre la presentazione.
+	Questa classe descrive la presentazione di un progetto. Contiene tutte le \textit{slide} che servono a comporre la presentazione.
 
 	\paragraph{Utilizzo}
 	Viene utilizzato alla creazione o caricamento di una presentazione.
@@ -122,17 +122,41 @@
 	\begin{itemize}
 		\item \textbf{+ timestamps : boolean = false :}\\
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore \textit{false} le informazioni dell'inserimento e del aggiornamento non verranno aggiunte alla collezione;
-		\item \textbf{\# fillable : array = ['title']:}\\
-		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass-assignment}.
+		\item \textbf{\# fillable : array = ['title', 'theme', 'transition']:}\\
+		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass assignment}.
 		\begin{itemize}
-			\item \textbf{title:} indica il titolo della presentazione.
+			\item \textbf{title:} indica il titolo della presentazione;
+			\item \textbf{theme:} indica il tema, inteso come \textit{font} e colore di sfondo, utilizzato per la presentazione;
+			\item \textbf{transition:} indica il tipo di transizione da una \textit{slide} all'altra durante la visualizzazione della presentazione.
 		\end{itemize}
 	\end{itemize}
 
 	\paragraph{Metodi:}
 	\begin{itemize}
 		\item \textbf{+ slides() : Slide}\\
-		Abbiamo utilizzato la relazione embedsMany per riuscire ad incorporare il modello Slide all’interno dell’oggetto principale Presentation. Il metodo ritorna Slide su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello.
+		Abbiamo utilizzato la relazione \textit{embedsMany} per riuscire ad incorporare il modello Slide all’interno dell’oggetto principale Presentation. Il metodo ritorna Slide su cui verrà chiamato il metodo \textit{save()} nel caso in cui si voglia aggiornare il modello.
+		\item \textbf{+ incrementIndex(presentation: Presentation, xIndex: int, yIndex: int) : void}\\
+		Tale metodo statico riceve in input un oggetto di tipo Presentation ed i valori degli assi X e Y dove verrà inserita la nuova slide. Il metodo utilizza una query per ritornare l'insieme delle slide che devono essere traslate a causa dell'inserimento della nuova slide, e, per ognuna, effettua un incremento dei valori degli assi X e Y in base alla nuova posizione che dovrà occupare la slide:\\
+		\textbf{Argomenti:}
+		\begin{itemize}
+			\item presentation : Presentation;
+			Presentazione di cui si vogliono incrementare gli indici delle slide.
+			\item xIndex : int;
+			Indice dell'asse X della slide appena inserita, da cui, se necessario, bisogna partire a fare l'incremento.
+			\item yIndex : int;
+			Indice dell'asse Y della slide appena inserita, da cui, se necessario, bisogna partire a fare l'incremento.
+		\end{itemize}
+		\item \textbf{+ decrementIndex(presentation: Presentation, xIndex: int, yIndex: int) : void}\\
+		Tale metodo statico riceve in input un oggetto di tipo Presentation ed i valori degli assi X e Y della slide appena cancellata. Il metodo utilizza una query per ritornare l'insieme delle slide che devono essere traslate a causa della cancellazione della nuova slide, e, per ognuna, effettua un decremento dei valori degli assi X e Y in base alla nuova posizione che dovrà occupare la slide:\\
+		\textbf{Argomenti:}
+		\begin{itemize}
+			\item presentation : Presentation;
+			Presentazione di cui si vogliono decrementare gli indici delle slide.
+			\item xIndex : int;
+			Indice dell'asse X della slide appena inserita, da cui, se necessario, bisogna partire a fare il decremento.
+			\item yIndex : int;
+			Indice dell'asse Y della slide appena inserita, da cui, se necessario, bisogna partire a fare decremento.
+		\end{itemize}
 	\end{itemize}
 \newpage
 
@@ -141,7 +165,7 @@
 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_slide}
+		\includegraphics[width=0.7\linewidth]{img/back_end_premi_model_slide}
 		\caption[Diagramma della classe Slide]{Diagramma della classe Slide}
 		\label{fig:back_end_premi_model_slide}
 	\end{figure}
@@ -157,18 +181,36 @@
 	\begin{itemize}
 		\item \textbf{+ timestamps : boolean = false :}\\
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore \textit{false} le informazioni dell'inserimento e del aggiornamento non verranno aggiunte alla collezione;
-		\item \textbf{\# fillable : array = [’xIndex’, ’yIndex']:}\\
-		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass-assignment}.
+		\item \textbf{\# fillable : array = [’xIndex’, ’yIndex', 'svg', 'background']:}\\
+		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass assignment}.
 		\begin{itemize}
-			\item \textbf{xIndex:} indica la posizione relativa all'asse X delle slide nella matrice di Slide della presentazione;
-			\item \textbf{yIndex:} indica la posizione relativa all'asse Y delle slide nella matrice di Slide della presentazione.
+			\item \textbf{xIndex:} indica la posizione relativa all'asse X delle slide nella matrice di slide della presentazione;
+			\item \textbf{yIndex:} indica la posizione relativa all'asse Y delle slide nella matrice di slide della presentazione;
+			\item \textbf{svg:} specifica l'attributo che identifica la stringa SVG relativa alla slide;
+			\item \textbf{background:} indica il colore di sfondo di una slide.
 		\end{itemize}
 	\end{itemize}
 	
 	\paragraph{Metodi:}
 	\begin{itemize}
 		\item \textbf{+ components() : Component}\\
-		Abbiamo utilizzato la relazione embedsMany per riuscire ad incorporare il modello Component all’interno dell’oggetto principale Slide. Il metodo ritorna Component su cui verrà chiamato il metodo save() nel caso in cui si voglia aggiornare il modello.
+		Abbiamo utilizzato la relazione \textit{embedsMany} per riuscire ad incorporare il modello Component all'interno dell'oggetto principale Slide. Il metodo ritorna Component su cui verrà chiamato il metodo \textit{save()} nel caso in cui si voglia aggiornare il modello.
+		\item \textbf{+ deleteOldComponents(slide: Slide) : void}\\
+		Questo metodo statico riceve in ingresso un oggetto di tipo Slide, ed elimina tutti i vecchi componenti di tale slide prima di effettuare l'aggiornamento con i nuovi componenti:\\
+		\textbf{Argomenti:}
+		\begin{itemize}
+			\item slide : Slide;
+			Slide di cui eliminare i componenti.
+		\end{itemize}
+		\item \textbf{+ updateNewComponents(slide: Slide, components[]: Component) : void}\\
+		Questo metodo statico riceve in ingresso un oggetto di tipo Slide ed un array di Component ed inserisce nella slide tutti i nuovi componenti presenti nell'array:\\
+		\textbf{Argomenti:}
+		\begin{itemize}
+			\item slide : Slide;
+			Slide di cui si vogliono aggiornare i componenti.
+			\item components[] : Component;
+			Array di componenti da inserire nella slide.
+		\end{itemize}
 	\end{itemize}
 	\newpage
 	
@@ -194,7 +236,7 @@
 		\item \textbf{+ timestamps : boolean = false :}\\
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore \textit{false} le informazioni dell'inserimento e del aggiornamento non verranno aggiunte alla collezione;
 		\item \textbf{\# fillable : array = [’type’, ’originX’, ’OriginY’, ’left’, ’top’, ’width’, ’height’, ’fill’, ’stroke’, ’strokeWidth’, ’strokeDashArray’, ’strokeLineCap’, ’strokeLine-Join’, ’strokeMiterLimit’, ’scaleX’, ’scaleY’, ’angle’, ’flipX’, ’flipY’, ’opacity’, ’shadow’, ’visible’, ’clipTo’, ’backgroundColor’, ’fillRule’, ’globalCompositeOperation']:}\\
-		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass-assignment}.
+		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass assignment}.
 		\begin{itemize}
 			\item \textbf{type:} indica il tipo di componente;
 			\item \textbf{originX:} indica la posizione relativa all'asse X del vertice d'origine del componente;
@@ -203,7 +245,7 @@
 			\item \textbf{top:} indica la posizione relativa all'asse delle Y dell'area di disegno in cui verrà disegna il componente;
 			\item \textbf{width:} larghezza del riquadro che racchiude il componente;
 			\item \textbf{height:} altezza del riquadro che racchiude il componente;
-			\item \textbf{fill:} indica il colore di riempimento del
+			\item \textbf{fill:} indica il colore di riempimento del riquadro che racchiude il componente;
 			\item \textbf{stroke:} indica il colore del tratto utilizzato per disegnare il componente;
 			\item \textbf{strokeWidth:} indica la larghezza del tratto utilizzato per disegnare il componente;
 			\item \textbf{strokeDashArray:} indica il tipo di tratto utilizzato per disegnare il componente;
@@ -228,11 +270,15 @@
 
 \subsubsection{Chart}
 
-
-
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_realTimeData}
+		\caption[Diagramma della classe RealTimeData]{Diagramma della classe RealTimeData}
+		\label{fig:back_end_premi_model_chart}
+	\end{figure}
 
 	\paragraph{Descrizione}
-	Questa classe rappresenta la struttura di dati necessari per descrivere un grafico all'interno di una slide.
+	Questa classe rappresenta la struttura di dati necessari per descrivere un grafico all'interno di una slide. Tale classe estende la classe Component.
 	
 	\paragraph{Utilizzo}
 	Viene utilizzato alla creazione o caricamento di un grafico.
@@ -242,7 +288,7 @@
 		\item \textbf{+ timestamps : boolean = false :}\\
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore \textit{false} le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collezione.
 		\item \textbf{\# fillable : array = [’typeChart’ , ’data’]:}\\
-		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass-assignment}.
+		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al model tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass assignment}.
 		\begin{itemize}
 			\item \textbf{typeChart:} indica il tipo di grafico;
 			\item \textbf{data:} indica l'array di dati che servono a comporre il grafico.
@@ -263,7 +309,7 @@
 
 
 	\paragraph{Descrizione}
-	Questa classe rappresenta la struttura di dati necessari per descrivere RealTimeData (dato in tempo reale) all'interno di una slide.
+	Questa classe rappresenta la struttura di dati necessari per descrivere RealTimeData (dato in tempo reale) all'interno di una slide. Tale classe estende la classe Component.
 	
 	\paragraph{Utilizzo}
 	Viene utilizzato alla creazione o caricamento di un RealTimeData.
@@ -273,7 +319,7 @@
 		\item \textbf{+ timestamps : boolean = false :}\\
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore \textit{false} le informazioni dell'inserimento e del aggiornamento non verranno aggiunte alla collection.
 		\item \textbf{\# fillable : array = ['pathParser’, ’pathFallback’, ’pathHandlerJs']:}\\
-		Quando si crea un modello, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass-assignment}.
+		Quando si crea un modello, si deve passare una serie di attributi al costruttore del model stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass assignment}.
 		\begin{itemize}
 			\item \textbf{pathParser:} Indirizzo del parser php \footnote{file php con il compito di recuperare i dati da un indirizzo remoto (evitando cosi il problema della same-origin-policy) fornendo come risultato un oggetto JSON che sarà poi processato dall'Handler javascript};
 			\item \textbf{pathFallback:} Indirizzo del file contenente l'oggetto più recente salvato in caso di consultazione offline;
@@ -294,7 +340,7 @@
 
 
 	\paragraph{Descrizione}
-	Questa classe rappresenta la struttura di dati di un campo di testo di una slide.
+	Questa classe rappresenta la struttura di dati di un campo di testo di una slide. Tale classe estende la classe Component.
 	
 	\paragraph{Utilizzo}
 	Viene utilizzato alla creazione o caricamento di un campo di testo.
@@ -304,11 +350,11 @@
 		\item \textbf{+ timestamps : boolean = false :}\\
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore \textit{false} le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collezione.
 		\item \textbf{\# fillable : array = [’text’, ’fontSize’, ’fontWeight’, ’fontFamily’, ’fontStyle’, ’lineHeight’, ’textDecoration’, ’textAlign’, ’textBackgroundColor']:}\\
-		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass-assignment}.
+		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass assignment}.
 		\begin{itemize}
 			\item \textbf{text:} indica il contenuto del campo di testo;
 			\item \textbf{fontSize:} indica le dimensioni del font del campo di testo;
-			\item \textbf{fontWeight:} indica lo spessore del testo
+			\item \textbf{fontWeight:} indica lo spessore del testo;
 			\item \textbf{fontFamily:} indica la famiglia di font del campo di testo;
 			\item \textbf{fontStyle:} indica lo stile del font del campo di testo (corsivo, grassetto, sottolineato);
 			\item \textbf{lineHeight:} indica l'altezza della linea del campo di testo;
@@ -324,14 +370,14 @@
 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_image}
+		\includegraphics[width=0.8\linewidth]{img/back_end_premi_model_image}
 		\caption[Diagramma della classe Image]{Diagramma della classe Image}
 		\label{fig:back_end_premi_model_image}
 	\end{figure}
 
 
 	\paragraph{Descrizione}
-	La classe Image rappresenta la struttura dei dati necessari per rappresentare un'immagine all'interno di una slide.
+	La classe Image rappresenta la struttura dei dati necessari per rappresentare un'immagine all'interno di una slide. Tale classe estende la classe Component.
 	
 	\paragraph{Utilizzo}
 	Utilizzata quando viene inserita un'immagine per tenerne traccia.
@@ -341,13 +387,13 @@
 		\item \textbf{+ timestamps : boolean = false :}\\
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore \textit{false} le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collezione.
 		\item \textbf{\# fillable : array = [’src’, ’filters’, ’crossOrigin’, ’alignX’, ’alignY’,’meetOrSlice’, ’background’]:}\\
-		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass-assignment}.
+		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass assignment}.
 		\begin{itemize}
-			\item \textbf{src:} indica il percorso dove recuperare il file immagine;
+			\item \textbf{src:} indica il percorso dove recuperare il file dell'immagine;
 			\item \textbf{filters:} indica quali filtri verranno applicati all'immagine;
 			\item \textbf{crossOrigin:} utilizzato per passare informazioni assieme all'immagine;
-			\item \textbf{alignX:} indica l'allineamento relativo all'asse X dell'immagine se la sua larghezza differisce da quella della sua sulla finestra;
-			\item \textbf{alignY:} indica l'allineamento relativo all'asse Y dell'immagine se la sua altezza differisce da quella della sua sulla finestra;
+			\item \textbf{alignX:} indica l'allineamento relativo all'asse X dell'immagine;
+			\item \textbf{alignY:} indica l'allineamento relativo all'asse Y dell'immagine;
 			\item \textbf{meetOrSlice:} indica se l'immagine dev'essere tagliata quando la sua finestra si restringe o essere sempre completamente visibile;
 			\item \textbf{background:} indica lo sfondo dell'immagine.
 		\end{itemize}
@@ -366,7 +412,7 @@
 
 
 	\paragraph{Descrizione}
-	Questa classe rappresenta la struttura di dati di una tabella di una slide.
+	Questa classe rappresenta la struttura di dati di una tabella di una slide. Tale classe estende la classe Component.
 	
 	\paragraph{Utilizzo}
 	Viene utilizzato alla creazione o caricamento di una tabella.
@@ -376,10 +422,10 @@
 		\item \textbf{+ timestamps : boolean = false :}\\
 		Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore le informazioni dell'inserimento e del aggiornamento non verranno aggiunto alla collezione.
 		\item \textbf{\# fillable : array = [’row’, ’column’, ’title’, ’cellData’]:}\\
-		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass-assignment}.
+		Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass assignment}.
 		\begin{itemize}
 			\item \textbf{row:} indica il numero di righe della tabella;
-			\item \textbf{column:} indica il numero dei colonne della tabella;
+			\item \textbf{column:} indica il numero di colonne della tabella;
 			\item \textbf{title:} indica il titolo della tabella;
 			\item \textbf{cellData:} indica l'array di dati necessario a comporre la tabella.
 		\end{itemize}
