@@ -77,7 +77,7 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
 	 \item OUT: \textbf{SlideEditorCtrl}:\\
-		Il controller SlideEditorController utilizza ComponentController per la gestione dei componenti al fine di costruire la slide.
+		Il controller SlideEditorCtrl utilizza ComponentController per la gestione dei componenti al fine di costruire la slide.
 	 \item OUT: \textbf{ChartCtrl}:\\
 	 	Il controller ChartCtrl estende ComponentController per la costruzione e gestione di grafici.
 	 \item OUT: \textbf{ImageCtrl}:\\
@@ -90,10 +90,10 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 		Il controller TextCtrl estende ComponentController per la costruzione e gestione di oggetti di tipo testo.
 	
 	\end{itemize}
-
-\subsubsection*{HelpController}
+\newpage
+\subsubsection{HelpCtrl}
       \paragraph{Descrizione}
-	Il controller HelpController gestisce i meccanismi di aiuto all'utente.
+	Il controller HelpCtrl gestisce i meccanismi di aiuto all'utente.
 	
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per gestire le informazioni e la logica di erogazione degli aiuti all'utente sotto forma di suggerimenti(tips) esplicativi delle funzionalità.
@@ -116,19 +116,19 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
 	 \item OUT: \textbf{Views::SlideEditor}:\\
-		La vista SlideEditorController utilizza HelpController per la gestione degli aiuti nella composizione e modifica di una slide.
+		La vista SlideEditorCtrl utilizza HelpCtrl per la gestione degli aiuti nella composizione e modifica di una slide.
 	 \item OUT: \textbf{Views::InfographicEditor}:\\
-		La vista InfographicEditorView utilizza HelpController per la gestione degli aiuti nella composizione e modifica di una infografica.
+		La vista Views::InfographicEditor utilizza HelpCtrl per la gestione degli aiuti nella composizione e modifica di una infografica.
 	 \item OUT: \textbf{Views::Projects}:\\
-		La vista ProjectsView utilizza HelpController per la gestione degli aiuti nella gestione dei progetti dell'utente.
+		La vista Views::Projects utilizza HelpCtrl per la gestione degli aiuti nella gestione dei progetti dell'utente.
 	 \item OUT: \textbf{Views::Search}:\\
-		La vista SearchView utilizza HelpController per la gestione degli aiuti nella ricerca di progetti.
+		La vista SearchView utilizza HelpCtrl per la gestione degli aiuti nella ricerca di progetti.
 	\end{itemize}
 
-
-\subsubsection{InfographicEditorController}
+\newpage
+\subsubsection{InfographicEditorCtrl}
 	\paragraph{Descrizione}
-		Il controller InfographicEditorController gestisce la composizione e modifica di una infografica sulla base di template predefiniti che permettono l'inserimento in posizioni specifiche di slide precedentemente create.
+		Il controller InfographicEditorCtrl gestisce la composizione e modifica di una infografica sulla base di template predefiniti che permettono l'inserimento in posizioni specifiche di slide precedentemente create.
 	
 	\paragraph{Utilizzo} 
 	
@@ -160,7 +160,7 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	\begin{itemize}
 		\item IN: \textbf{InfographicService};
 		\item IN: \textbf{HelpCtrl};
-		\item OUT: \textbf{InfographicEditorView}:\\
+		\item OUT: \textbf{Views::InfographicEditor}:\\
 			La vista InfographicEditor utilizza HelpCtrl per la gestione degli aiuti nella composizione e modifica di una infografica. 	
 	\end{itemize}
 	
@@ -201,57 +201,67 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	   \item IN: \textbf{AuthenticationService}.
 	\end{itemize}	
 	
-
-\subsubsection{PresentationController}
+\newpage
+\subsubsection{PresentationCtrl}
 	\paragraph{Descrizione}
-	Il controller PresentationController gestisce la composizione e modifica di una presentazione.
+	Il controller PresentationCtrl gestisce la creazione e modifica e visualizzazione di una presentazione.
 	
 	\paragraph{Utilizzo}
-	Questa classe viene utilizzata per gestire le richieste da parte della vista PresentationView ed aggiornarla a seconda delle modifiche della classe Premi::Front-End::Model::Presentation.
-	Ha il compito di tener traccia delle slides da visualizzare e delle rispettive posizioni\footnote{La presentazione è organizzata secondo una griglia, quindi per ogni slide è necessario salvare le coordinate X e Y.}.
+	Questa classe viene utilizzata per gestire le richieste da parte della vista Views::Presentation ed aggiornarla a seconda delle modifiche della classe Premi::Front-End::Model::Presentation. PresentationCtrl ha la responsabilità di rendere persistenti le modifiche di un progetto nel front-end anche nel back-end mediante una chiamata al servizio PresentationService.
+	Ha il compito di tener traccia delle slide da visualizzare e delle rispettive posizioni\footnote{La presentazione è organizzata secondo una griglia, quindi per ogni slide è necessario salvare le coordinate X e Y.}.
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione.
 		\item \textbf{-PresentationService: PresentationService}:\\
-			Campo dati che contiene un riferimento al servizio che si occupa di reperire le informazioni necessarie alla vista PresentationView e di fornire le funzionalità necessarie alla corretta erogazione della presentazione.
+			Campo dati che contiene un riferimento al servizio che si occupa di reperire le informazioni necessarie alla vista Views::Presentation e di fornire le funzionalità necessarie alla corretta erogazione della presentazione.
+		\item \textbf{-\$scope.slides: JSON}:\\
+			Campo dati che contiene sottoforma di array di oggetti JSON tutte le slide appartenenti alla presentazione. Ogni slide è corredata dalle coordinate cartesiane di posizionamento sulla griglia.
+		
+		\item \textbf{-\$scope.theme: String}:\\
+			Campo dati che contiene un riferimento alla configurazione grafica che l'utente ha scelto come predefinita per la sua presentazione.
+		
+		\item \textbf{-\$scope.transition: String}:\\
+			Campo dati che contiene un riferimento alla tipologia di transizione tra slide che l'utente ha scelto come predefinita per la sua presentazione.
 	\end{itemize}
 	
 	\paragraph{Metodi}
 	\begin{itemize}
 	  \item \textbf{+setPresentation(\textit{id}:Int):void}:\\
-		  Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione della presentazione da parte della vista PresentationView;
+		  Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione da parte della vista Views::Presentation;
 	  \item \textbf{+getPresentation():JSON}:\\
-		  Metodo che restituisce un oggetto JSON contenente un array con tutte le slides della presentazione con le relative coordinate nella presentazione.
+		  Metodo che restituisce un array di oggetti JSON contenente un array con tutte le slides della presentazione con le relative coordinate nella presentazione.
 		  
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
-	  \item OUT: \textbf{PresentationView}:\\
-		La vista InfographicEditorView utilizza HelpController per la gestione degli aiuti nella composizione e modifica di una infografica;	
-	  \item IN: \textbf{PresentationService}.
+	  \item OUT: \textbf{Views::Presentation}:\\
+		La vista Views::InfographicEditor utilizza HelpCtrl per la gestione degli aiuti nella composizione e modifica di una infografica;	
+	  \item IN: \textbf{PresentationService}
+	  	Il servizio PresentationService viene utilizzato per il reperimento ed il salvataggio di una presentazione.
 	\end{itemize}
 	
-	
-\subsubsection{PresentationEditorController}
+\newpage	
+\subsubsection{PresentationEditorCtrl}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\linewidth]{img/premi_front_end_controllers_presentationeditorcontroller}
-	\caption[Premi::Front-End::Controllers::PresentationEditorController]{Premi::Front-End::Controllers::PresentationEditorController}
+	\caption[Premi::Front-End::Controllers::PresentationEditorCtrl]{Premi::Front-End::Controllers::PresentationEditorCtrl}
 \end{figure}
 
 	\paragraph{Descrizione}
-	Il controller PresentationEditorController si occupa della modifica di una presentazione con i metodi per gestire le slide.
+	Il controller PresentationEditorCtrl si occupa della modifica di una presentazione con i metodi per gestire le slide.
 	
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per consentire all'utente di aggiungere o rimuovere una slide dalla presentazione e spostarsi tra di esse. Permette inoltre di impostare lo stile e il template della presentazione.
 	
 	\paragraph{Attributi}
 	\begin{itemize}
-		\item \textbf{- PresentationData: PresentationData}:\\
-				Campo dati che contiene un riferimento al servizio che si occupa della gestione dei dati e delle impostazioni di una presentazione;
+		\item \textbf{- PresentationService: PresentationService}:\\
+			Campo dati che contiene un riferimento al servizio che si occupa della gestione dei dati e delle impostazioni di una presentazione;
 		\item \textbf{\$scope: Object}:\\
-				Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione.
+			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione.
+		
 	\end{itemize}
 	
 	\paragraph{Metodi}
@@ -271,49 +281,51 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
-	  \item OUT: \textbf{PresentationEditorView}:\\
-		La vista PresentationEditorView utilizza PresentationEditorController per la gestione delle slide nella composizione e modifica di una presentazione;	
-	  \item IN: \textbf{PresentationData}.
-	  \item IN: \textbf{SlideEditorView}.
-	  \item IN: \textbf{SlideEditorController}.
+	  \item OUT: \textbf{Views::PresentationEditor}:\\
+		La vista Views::PresentationEditor utilizza PresentationEditorCtrl per la gestione delle slide nella composizione e modifica di una presentazione;	
+	  \item IN: \textbf{PresentationService}.
+	  \item IN: \textbf{Views::SlideEditor}.
+	  \item IN: \textbf{SlideEditorCtrl}.
 	\end{itemize}  
-\subsubsection{ProjectController}
+\newpage
+\subsubsection{ProjectCtrl}
 	\paragraph{Descrizione}
-	Il controller ProjectController gestisce il progetto corrente.
+	Il controller ProjectCtrl gestisce il progetto corrente.
 	
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per modificare un progetto esistente\footnote{Un progetto vuoto viene creato di default con una presentazione vuota.}.\\
-	Permette di aggiungere infografiche, richiamare le funzionalità di modifica di infografiche e della presentazion. Inoltre permette di lanciare la vista di visualizzazione della presentazione.
+	Permette di aggiungere infografiche, richiamare le funzionalità di modifica di infografiche e della presentazione. Inoltre permette di lanciare la vista di visualizzazione della presentazione.
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
 		\item \textbf{-ProjectService: ProjectService}:\\
-			Campo dati che contiene un riferimento al servizio che si occupa di reperire le informazioni necessarie al corretto funzionamento della vista ProjectView che rappresenta una sorta di Dashboard di progetto.
+			Campo dati che contiene un riferimento al servizio che si occupa di reperire le informazioni necessarie al corretto funzionamento della vista Views::Project che rappresenta una sorta di Dashboard di progetto.
 	\end{itemize}
 	
 	\paragraph{Metodi}
 	\begin{itemize}
 	  \item \textbf{+setPresentation(\textit{id}:Int):void}:\\
-		  Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione della presentazione da parte della vista PresentationView;
+		  Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione della presentazione da parte della vista Views::Presentation;
 	  \item \textbf{+getPresentation():JSON}:\\
-		  Metodo che restituisce un oggetto JSON contenente un array con tutte le slides della presentazione con le relative coordinate nella presentazione.
+		  Metodo che restituisce un oggetto JSON contenente un array con tutte le slide della presentazione con le relative coordinate nella presentazione.
 		  
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
-	  \item OUT: \textbf{ProjectView}:\\
-		La vista ProjectView utilizza ProjectController per la gestione reperire ed aggiornare le informazioni di pertinenza del progetto corrente;	
+	  \item OUT: \textbf{Views::Project}:\\
+		La vista Views::Project utilizza ProjectCtrl per la gestione reperire ed aggiornare le informazioni di pertinenza del progetto corrente;	
 	  \item IN: \textbf{ProjectService}.
-		La vista ProjectView utilizza il service ProjectService per reperire ed aggiornare le informazioni di pertinenza del progetto corrente dal back-end.
+		La vista Views::Project utilizza il service ProjectService per reperire ed aggiornare le informazioni di pertinenza del progetto corrente dal back-end.
 	\end{itemize}
-	
-\subsubsection{ProjectsController}
+
+\newpage
+\subsubsection{ProjectsCtrl}
 	\paragraph{Descrizione}
-	Il controller ProjectsController gestisce i progetti dell' utente corrente.
+	Il controller ProjectsCtrl gestisce i progetti dell' utente corrente.
 	
 	\paragraph{Utilizzo}
-	Questa classe viene utilizzata per visualizzare tutti i progetti dell'utente corrente, lanciarne la modalità di modifica (gestita da ProjectController) e crearne di nuovi.\\
+	Questa classe viene utilizzata per visualizzare tutti i progetti dell'utente corrente, lanciarne la modalità di modifica (gestita da ProjectCtrl) e crearne di nuovi.\\
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
@@ -324,18 +336,20 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	\paragraph{Metodi}
 	\begin{itemize}
 	  \item \textbf{+setPresentation(\textit{id}:Int):void}:\\
-		  Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione della presentazione da parte della vista PresentationView;
+		  Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione della presentazione da parte della vista Views::Presentation;
 	  \item \textbf{+getProject(\textit{id}:Int):JSON}:\\
 		  Metodo che restituisce un oggetto JSON contenente un array con la presentazione e tutte le infografiche del progetto identificato da \textit{id}.
 		  
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
-	  \item OUT: \textbf{ProjectsView}:\\
-		La vista ProjectsView utilizza ProjectsController per la gestione reperire ed aggiornare le informazioni di pertinenza dei progetti dell'utente corrente;	
+	  \item OUT: \textbf{Views::Projects}:\\
+		La vista Views::Projects utilizza ProjectsCtrl per la gestione reperire ed aggiornare le informazioni di pertinenza dei progetti dell'utente corrente;	
 	  \item IN: \textbf{ProjectService}.
-		La vista ProjectsView utilizza il service ProjectService per reperire ed aggiornare le informazioni di pertinenza dei progetti dell'utente corrente dall back-end.
-	\end{itemize}		
+		La vista Views::Projects utilizza il service ProjectService per reperire ed aggiornare le informazioni di pertinenza dei progetti dell'utente corrente dall back-end.
+	\end{itemize}	
+
+\newpage	
 \subsubsection{SearchController}
 	\paragraph{Descrizione}
 	Il controller SearchController gestisce le funzionalità di ricerca del sistema.
@@ -363,11 +377,12 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
 	  \item OUT: \textbf{SearchView}:\\
-		La vista SearchView utilizza ProjectsController per la gestione reperire ed aggiornare le informazioni di pertinenza dei progetti che hanno un match con il nome del progetto oppure con lo username dell'utente;	
+		La vista SearchView utilizza ProjectsCtrl per la gestione reperire ed aggiornare le informazioni di pertinenza dei progetti che hanno un match con il nome del progetto oppure con lo username dell'utente;	
 	  \item IN: \textbf{ProjectService}.
 		La vista SearchView utilizza il service ProjectService per reperire ed aggiornare le informazioni di pertinenza dei progetti dal back-end che hanno un match con il nome del progetto oppure con lo username dell'utente proprietario a seguito di un'interrogazione.	
 	\end{itemize}		
 	
+\newpage
 \subsubsection{SignUpController}
 	\paragraph{Descrizione}
 	Il controller SignUpController gestisce le funzionalità di registrazione di un nuovo utente nel sistema.
@@ -395,14 +410,15 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
 	  \item OUT: \textbf{SignUpView}:\\
-		La vista SearchView utilizza ProjectsController per la gestione reperire ed aggiornare le informazioni di pertinenza dei progetti che hanno un match con il nome del progetto oppure con lo username dell'utente;	
+		La vista SearchView utilizza ProjectsCtrl per la gestione reperire ed aggiornare le informazioni di pertinenza dei progetti che hanno un match con il nome del progetto oppure con lo username dell'utente;	
 	  \item IN: \textbf{AuthenticationService}.
 		La vista SignUpView utilizza il service AuthenticationService utilizzare la funzionalità di registrazione del Back-End.	
 	\end{itemize}		
-	
-\subsubsection{SlideEditorController}
+
+\newpage	
+\subsubsection{SlideEditorCtrl}
 	\paragraph{Descrizione}
-	Il controller SlideEditorController gestisce le funzionalità di modifica di una slide..
+	Il controller SlideEditorCtrl gestisce le funzionalità di modifica di una slide..
 	
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per permettere alla view SignUpView di registrare un nuovo utente.\\
@@ -432,12 +448,12 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
-	  \item OUT: \textbf{SlideEditorView}:\\
-		La vista SlideEditorView utilizza SlideEditorController per la gestione reperire ed aggiornare le informazioni di pertinenza della slide corrente;	
+	  \item OUT: \textbf{Views::SlideEditor}:\\
+		La vista Views::SlideEditor utilizza SlideEditorCtrl per la gestione reperire ed aggiornare le informazioni di pertinenza della slide corrente;	
 	  \item IN: \textbf{SlideService}.
-		La vista SlideEditorView utilizza il service SlideService per recuperare ed aggiornare le informazioni della slide crrente sul Back-End.	
+		La vista Views::SlideEditor utilizza il service SlideService per recuperare ed aggiornare le informazioni della slide crrente sul Back-End.	
 	  \item IN: \textbf{PresentationService}.
-		La vista SlideEditorView utilizza il service PresentationService capire la posizione della slide nella presentazione sapendo come aggiornare i suoi indici sincronizzandosi con il Back-End.	
+		La vista Views::SlideEditor utilizza il service PresentationService capire la posizione della slide nella presentazione sapendo come aggiornare i suoi indici sincronizzandosi con il Back-End.	
 	\end{itemize}		
 	
 	
