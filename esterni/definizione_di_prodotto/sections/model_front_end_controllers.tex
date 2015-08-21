@@ -355,7 +355,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\item \textbf{+getText():String}:\\
 		Metodo che restituisce il contenuto testuale dell'oggetto corrente situato nella variabile \$scope.text.
 	\item \textbf{+load():String}:\\	
-		Metodo che permette di caricare un componente testuale mediante l'utilizzo del servizio TextService restituendo l'oggetto JSON corrispondente in caso di successo ed un oggetto vuoto in caso di fallimento.	
+		Metodo che permette di caricare un componente testuale mediante l'utilizzo del servizio TextService restituendo l'oggetto Object corrispondente in caso di successo ed un oggetto vuoto in caso di fallimento.	
 	\item \textbf{+save():Boolean}:\\	
 		Metodo che permette di salvare un componente testuale mediante l'utilizzo del servizio TextService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\item \textbf{+setBold(\textit{value}:Boolean):Boolean};
@@ -391,15 +391,15 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 				Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione.
-		\item \textbf{-\$scope.tips: JSON}:\\
+		\item \textbf{-\$scope.tips: Object}:\\
 				Campo dati che racchiude in un array di oggetti JSON tutti i suggerimenti necessari allo svolgimento del tour tra le funzionalità del sistema ed al supporto all'utente. 
 	\end{itemize}
 	
 	\paragraph{Metodi}
 	\begin{itemize}
-	  \item \textbf{+setTips(\textit{obj}:JSON):Boolean}:\\
+	  \item \textbf{+setTips(\textit{obj}:Object):Boolean}:\\
 		  Metodo che permette di aggiungere uno o più suggerimenti tramite un oggetto JSON. Il metodo restituisce \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-	  \item \textbf{+getTips():JSON}:\\
+	  \item \textbf{+getTips():Object}:\\
 		  Metodo che restituisce tutti i suggerimenti in un oggetto JSON.
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
@@ -441,7 +441,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		  Metodo che elimina l'oggetto in posizione \textit{position} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
 	  \item \textbf{+setTemplate(\textit{Tid}:Int):Boolean}:\\
 		  Metodo che imposta il template \textit{Tid} per l'infografica corrente nella vista InfographicEditor restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
-	  \item \textbf{+getSlideList():JSON}:\\
+	  \item \textbf{+getSlideList():Object}:\\
 		  Metodo che restituisce un oggetto JSON contenente un array con tutte le slide dell'infografica con le relative posizioni nel template.
 		  
 	\end{itemize}
@@ -516,7 +516,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione.
 		\item \textbf{-PresentationService: PresentationService}:\\
 			Campo dati che contiene un riferimento al servizio che si occupa di reperire le informazioni necessarie alla vista Views::Presentation e di fornire le funzionalità necessarie alla corretta erogazione della presentazione.
-		\item \textbf{-\$scope.slides: JSON}:\\
+		\item \textbf{-\$scope.slides: Object}:\\
 			Campo dati che contiene sottoforma di array di oggetti JSON tutte le slide appartenenti alla presentazione. Ogni slide è corredata dalle coordinate cartesiane di posizionamento sulla griglia.
 		
 		\item \textbf{-\$scope.theme: String}:\\
@@ -530,7 +530,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\begin{itemize}
 	  \item \textbf{+setPresentation(\textit{id}:Int):Boolean}:\\
 		  Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione da parte della vista Views::Presentation restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-	  \item \textbf{+getPresentation():JSON}:\\
+	  \item \textbf{+getPresentation():Object}:\\
 		  Metodo che restituisce un array di oggetti JSON contenente un array con tutte le slides della presentazione con le relative coordinate nella presentazione.
 		  
 	\end{itemize}
@@ -562,7 +562,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 			Campo dati che contiene un riferimento al servizio che si occupa della gestione dei dati e delle impostazioni di una presentazione;
 		\item \textbf{- \$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione.
-		\item \textbf{- \$scope.currentPresentation: JSON}:\\
+		\item \textbf{- \$scope.currentPresentation: Object}:\\
 			Campo dati che contiene un array di oggetti JSON contenenti le informazioni della presentazione corrente;		
 		
 	\end{itemize}
@@ -602,9 +602,9 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-		\item \textbf{-\$scope.presentation: JSON}:\\
+		\item \textbf{-\$scope.presentation: Object}:\\
 			Campo dati contenente un riferimento alla presentazione appartenente al progetto corrente;
-		\item \textbf{-\$scope.infographics: JSON}:\\
+		\item \textbf{-\$scope.infographics: Object}:\\
 			Campo dati contenente un array di oggetti JSON ognuno rappresentante una infografica del progetto corrente;	
 		\item \textbf{-ProjectService: ProjectService}:\\
 			Campo dati che contiene un riferimento al servizio che si occupa di reperire le informazioni necessarie al corretto funzionamento della vista Views::Project.
@@ -614,7 +614,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\begin{itemize}
 	  	\item \textbf{+setPresentation(\textit{id}:Int):Boolean}:\\
 		  	Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione della presentazione da parte della vista Views::Presentation restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-	  	\item \textbf{+getPresentation():JSON}:\\
+	  	\item \textbf{+getPresentation():Object}:\\
 		  	Metodo che restituisce un oggetto JSON contenente un array con tutte le slide della presentazione con le relative coordinate nella presentazione;
 	 	\item \textbf{+resetPresentation():Boolean}:\\
 			Metodo che riporta la presentazione relativa al progetto corrente allo stato iniziale ovvero dotata di una sola slide vuota restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
@@ -651,7 +651,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\begin{itemize}
 	  \item \textbf{+setPresentation(\textit{id}:Int):void}:\\
 		  Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione della presentazione da parte della vista Views::Presentation;
-	  \item \textbf{+getProject(\textit{id}:Int):JSON}:\\
+	  \item \textbf{+getProject(\textit{id}:Int):Object}:\\
 		  Metodo che restituisce un oggetto JSON contenente un array con la presentazione e tutte le infografiche del progetto identificato da \textit{id}.
 		  
 	\end{itemize}
@@ -800,7 +800,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	
 	\paragraph{Metodi}
 	\begin{itemize}
-	  \item \textbf{+loadUserdata(\textit{userId}:String):JSON}:\\
+	  \item \textbf{+loadUserdata(\textit{userId}:String):Object}:\\
 		 Metodo che recupera dal back-end le informazioni relative all'utente identificato da \textit{id} mediante il service UserService salvandole sull'oggetto \$scope.currentUser e restituendo un oggetto JSON con il suo contenuto.
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
