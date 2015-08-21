@@ -43,6 +43,30 @@ Le tipologie di permessi sono:
 	
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
+		\textbf{/password/email} & \textbf{POST} & \textbf{Utente non autenticato} \\ \midrule
+		\multicolumn{3}{|c|}{Viene inviato un email per il recupero password.} \\
+		\bottomrule
+	\end{tabular}\\
+	\par\bigskip
+	
+	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
+		\toprule
+		\textbf{/password/reset/{token}} & \textbf{GET} & \textbf{Utente non autenticato} \\ \midrule
+		\multicolumn{3}{|c|}{Restituisce la procedura di reset della password.} \\
+		\bottomrule
+	\end{tabular}\\
+	\par\bigskip
+	
+	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
+		\toprule
+		\textbf{/password/reset} & \textbf{POST} & \textbf{Utente non autenticato} \\ \midrule
+		\multicolumn{3}{|c|}{Avviene il reset della password.} \\
+		\bottomrule
+	\end{tabular}\\
+	\par\bigskip
+	
+	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
+		\toprule
 		\textbf{/api/user/\{user\}} & \textbf{GET} & \textbf{Utente non autenticato, Utente autenticato} \\ \midrule
 		\multicolumn{3}{|c|}{Restituisce le informazioni relative all'utente \{user\}.} \\
 		\bottomrule
@@ -56,7 +80,14 @@ Le tipologie di permessi sono:
 		\bottomrule
 	\end{tabular}\\
 	\par\bigskip
-		
+	
+	
+	
+\end{table}
+\newpage	
+\begin{table}[H]	
+	
+
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/api/user/\{user\}} & \textbf{DELETE} & \textbf{Utente autenticato} \\ \midrule
@@ -81,14 +112,6 @@ Le tipologie di permessi sono:
 	\end{tabular}\\
 	\par\bigskip
 	
-\end{table}
-\newpage	
-\begin{table}[H]	
-		
-	
-	
-
-	
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/api/user/\{user\}/project/\{project\}} & \textbf{GET} & \textbf{Utente non autenticato, Utente autenticato, Utente proprietario} \\ \midrule
@@ -104,7 +127,7 @@ Le tipologie di permessi sono:
 		\bottomrule
 	\end{tabular}\\
 	\par\bigskip
-
+	
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/api/user/\{user\}/project/\{project\}} & \textbf{DELETE} & \textbf{Utente proprietario} \\ \midrule
@@ -115,8 +138,24 @@ Le tipologie di permessi sono:
 	
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
+		\textbf{/search/byUsername} & \textbf{GET} & \textbf{Utente non autenticato} \\ \midrule
+		\multicolumn{3}{|c|}{Restituisce tutti i progetti associati all'utente.} \\
+		\bottomrule
+	\end{tabular}\\
+	\par\bigskip
+	
+	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
+		\toprule
+		\textbf{/search/byProject} & \textbf{GET} & \textbf{Utente non autenticato} \\ \midrule
+		\multicolumn{3}{|c|}{Restituisce tutti i progetti con un certo titolo.} \\
+		\bottomrule
+	\end{tabular}\\
+	\par\bigskip
+	
+	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
+		\toprule
 		\textbf{/api/user/\{user\}/project/\{project\}
-		/infographic} & \textbf{GET} & \textbf{Utente non autenticato, Utente autenticato, Utente proprietario} \\ \midrule
+			/infographic} & \textbf{GET} & \textbf{Utente non autenticato, Utente autenticato, Utente proprietario} \\ \midrule
 		\multicolumn{3}{|c|}{Restituisce tutte le infografiche del progetto \{project\} dell'utente \{user\}.} \\
 		\bottomrule
 	\end{tabular}\\
@@ -125,7 +164,7 @@ Le tipologie di permessi sono:
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/api/user/\{user\}/project
-		/\{project\}/infographic} & \textbf{POST} & \textbf{Utente autenticato} \\ \midrule
+			/\{project\}/infographic} & \textbf{POST} & \textbf{Utente autenticato} \\ \midrule
 		\multicolumn{3}{|c|}{Crea un'infografica nel progetto \{project\} dell'utente \{user\}.} \\
 		\bottomrule
 	\end{tabular}\\
@@ -134,16 +173,23 @@ Le tipologie di permessi sono:
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/api/user/\{user\}/project/\{project\}
-		/infographic/\{infographic\}} & \textbf{GET} & \textbf{Utente non autenticato, Utente autenticato, Utente proprietario} \\ \midrule
+			/infographic/\{infographic\}} & \textbf{GET} & \textbf{Utente non autenticato, Utente autenticato, Utente proprietario} \\ \midrule
 		\multicolumn{3}{|c|}{Restituisce l'infografica \{infographic\} tra quelle del  progetto \{project\} dell'utente \{user\}.} \\
 		\bottomrule
 	\end{tabular}\\
 	\par\bigskip
 	
+	
+	
+\end{table}
+\newpage	
+\begin{table}[H]	
+		
+
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/api/user/\{user\}/project/\{project\}
-		/infographic/\{infographic\}} & \textbf{PUT} & \textbf{Utente proprietario} \\ \midrule
+			/infographic/\{infographic\}} & \textbf{PUT} & \textbf{Utente proprietario} \\ \midrule
 		\multicolumn{3}{|c|}{Aggiorna l'infografica \{infographic\} tra quelle del progetto \{project\} dell'utente \{user\}.} \\
 		\bottomrule
 	\end{tabular}\\
@@ -185,38 +231,19 @@ Le tipologie di permessi sono:
 	\end{tabular}\\
 	\par\bigskip
 	
-\end{table}
-\newpage
-
-
-
-\begin{table}[H]
-	
-	
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/api/user/\{user\}/project/\{project\}
-		/presentation/\{presentation\}} & \textbf{DELETE} & \textbf{Utente proprietario} \\ \midrule
+			/presentation/\{presentation\}} & \textbf{DELETE} & \textbf{Utente proprietario} \\ \midrule
 		\multicolumn{3}{|c|}{Elimina la presentazione \{presentation\} del progetto \{project\} dell'utente \{user\}.} \\
 		\bottomrule
 	\end{tabular}\\
 	\par\bigskip
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/api/user/\{user\}/project/\{project\}
-		/presentation/\{presentation\}/slide} & \textbf{GET} & \textbf{Utente non autenticato, Utente autenticato, Utente proprietario} \\ \midrule
+			/presentation/\{presentation\}/slide} & \textbf{GET} & \textbf{Utente non autenticato, Utente autenticato, Utente proprietario} \\ \midrule
 		\multicolumn{3}{|c|}{Restituisce tutte le slide della presentazione \{presentation\} del progetto \{project\} dell'utente \{user\}.} \\
 		\bottomrule
 	\end{tabular}\\
@@ -225,7 +252,7 @@ Le tipologie di permessi sono:
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/api/user/\{user\}/project/\{project\}
-		/presentation/\{presentation\}/slide/\{slide\}} & \textbf{GET} & \textbf{Utente autenticato} \\ \midrule
+			/presentation/\{presentation\}/slide/\{slide\}} & \textbf{GET} & \textbf{Utente autenticato} \\ \midrule
 		\multicolumn{3}{|c|}{Restituisce la slide  \{slide\} della presentazione \{presentation\} del progetto \{project\} dell'utente \{user\}.} \\
 		\bottomrule
 	\end{tabular}\\
@@ -234,8 +261,24 @@ Le tipologie di permessi sono:
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
 		\textbf{/api/user/\{user\}/project/\{project\}
-		/presentation/\{presentation\}/slide} & \textbf{POST} & \textbf{Utente proprietario} \\ \midrule
+			/presentation/\{presentation\}/slide} & \textbf{POST} & \textbf{Utente proprietario} \\ \midrule
 		\multicolumn{3}{|c|}{Crea una slide della presentazione \{presentation\} del progetto \{project\} dell'utente \{user\}.} \\
+		\bottomrule
+	\end{tabular}\\
+	\par\bigskip
+	
+\end{table}
+\newpage
+
+
+
+\begin{table}[H]
+	
+	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
+		\toprule
+		\textbf{/api/user/\{user\}/project/\{project\}
+			/presentation/\{presentation\}/slide/\{slide\}} & \textbf{GET} & \textbf{Utente autenticato} \\ \midrule
+		\multicolumn{3}{|c|}{Restituisce la slide \{slide\} della presentazione \{presentation\} del progetto \{project\} dell'utente \{user\}.} \\
 		\bottomrule
 	\end{tabular}\\
 	\par\bigskip
