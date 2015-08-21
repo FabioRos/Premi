@@ -57,22 +57,22 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 		Metodo che restituisce il livello di zoom applicato alla larghezza dell'oggetto selezionato;
 	\item \textbf{+getScaleY():Double}:\\
 		Metodo che restituisce il livello di zoom applicato all'altezza dell'oggetto selezionato;
-	\item \textbf{+setX(\textit{value}:Double):void}:\\
-		Metodo che permette di impostare la distanza dal bordo sinistro del canvas utilizzata per l'ancoraggio dell'oggetto selezionato al valore \textit{value};
-	\item \textbf{+setY(\textit{value}:Double):void}:\\
-		Metodo che permette di impostare la distanza dal bordo superiore del canvas utilizzata per l'ancoraggio dell'oggetto selezionato al valore \textit{value};
-	\item \textbf{+setHeigth(\textit{value}:Double):void}:\\
-		Metodo che permette di impostare l'altezza dell'oggetto selezionato al valore \textit{value};
-	\item \textbf{+setWidth(\textit{value}:Double):void}:\\
-		Metodo che permette di impostare la larghezza dell'oggetto selezionato al valore \textit{value};
-	\item \textbf{+setExtraFields(\textit{obj}:JSON):void}:\\
-		Metodo che permette di impostare le proprietà aggiuntive dell'oggetto selezionato prendendo i valori dall'oggetto JSON \textit{obj} passato per parametro;
-	\item \textbf{+setAngle(\textit{value}:Double):void}:\\
-		Metodo che permette di impostare l'angolo di rotazione dell'oggetto selezionato al valore \textit{value};
-	\item \textbf{+setScaleX(\textit{value}:Double):void}:\\
-		Metodo che permette di impostare il livello di zoom applicato alla larghezza dell'oggetto selezionato al valore \textit{value};
-	\item \textbf{+setScaleY(\textit{value}:Double):void}:\\
-		Metodo che permette di impostare il livello di zoom applicato all'altezza dell'oggetto selezionato al valore \textit{value}.
+	\item \textbf{+setX(\textit{value}:Double):Boolean}:\\
+		Metodo che permette di impostare la distanza dal bordo sinistro del canvas utilizzata per l'ancoraggio dell'oggetto selezionato al valore \textit{value} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	\item \textbf{+setY(\textit{value}:Double):Boolean}:\\
+		Metodo che permette di impostare la distanza dal bordo superiore del canvas utilizzata per l'ancoraggio dell'oggetto selezionato al valore \textit{value} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	\item \textbf{+setHeigth(\textit{value}:Double):Boolean}:\\
+		Metodo che permette di impostare l'altezza dell'oggetto selezionato al valore \textit{value} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	\item \textbf{+setWidth(\textit{value}:Double):Boolean}:\\
+		Metodo che permette di impostare la larghezza dell'oggetto selezionato al valore \textit{value} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	\item \textbf{+setExtraFields(\textit{obj}:JSON):Boolean}:\\
+		Metodo che permette di impostare le proprietà aggiuntive dell'oggetto selezionato prendendo i valori dall'oggetto JSON \textit{obj} passato per parametro restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	\item \textbf{+setAngle(\textit{value}:Double):Boolean}:\\
+		Metodo che permette di impostare l'angolo di rotazione dell'oggetto selezionato al valore \textit{value} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	\item \textbf{+setScaleX(\textit{value}:Double):Boolean}:\\
+		Metodo che permette di impostare il livello di zoom applicato alla larghezza dell'oggetto selezionato al valore \textit{value} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	\item \textbf{+setScaleY(\textit{value}:Double):Boolean}:\\
+		Metodo che permette di impostare il livello di zoom applicato all'altezza dell'oggetto selezionato al valore \textit{value} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
@@ -108,8 +108,8 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	
 	\paragraph{Metodi}
 	\begin{itemize}
-	  \item \textbf{+setTips(\textit{obj}:JSON):void}:\\
-		  Metodo che permette di aggiungere uno o più suggerimenti tramite un oggetto JSON \textit{obj};
+	  \item \textbf{+setTips(\textit{obj}:JSON):Boolean}:\\
+		  Metodo che permette di aggiungere uno o più suggerimenti tramite un oggetto JSON. Il metodo restituisce \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	  \item \textbf{+getTips():JSON}:\\
 		  Metodo che restituisce tutti i suggerimenti in un oggetto JSON.
 	\end{itemize}
@@ -144,14 +144,14 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	
 	\paragraph{Metodi}
 	\begin{itemize}
-	  \item \textbf{+addElement(\textit{position}:Int, \textit{id}:Int):void}:\\
+	  \item \textbf{+addElement(\textit{position}:Int, \textit{id}:Int):Boolean}:\\
 		  Metodo che permette di aggiungere l'elemento con codice identificativo \textit{id} alla infografica in posizione \textit{position}.
 	  \item \textbf{+getElement(\textit{position}:Int):Int}:\\
-		  Metodo che restituisce il codice identificativo dell'oggetto in posizione \textit{position}.
-	  \item \textbf{+removeElement(\textit{position}:Int):void}:\\
-		  Metodo che elimina l'oggetto in posizione \textit{position}.
-	  \item \textbf{+setTemplate(\textit{Tid}:Int):void}:\\
-		  Metodo che imposta il template \textit{Tid} per l'infografica corrente nella vista InfographicEditor.
+		  Metodo che restituisce il codice identificativo dell'oggetto in posizione \textit{position} in caso di successo e \textit{-1} in caso di fallimento.
+	  \item \textbf{+removeElement(\textit{position}:Int):Boolean}:\\
+		  Metodo che elimina l'oggetto in posizione \textit{position} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
+	  \item \textbf{+setTemplate(\textit{Tid}:Int):Boolean}:\\
+		  Metodo che imposta il template \textit{Tid} per l'infografica corrente nella vista InfographicEditor restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
 	  \item \textbf{+getSlideList():JSON}:\\
 		  Metodo che restituisce un oggetto JSON contenente un array con tutte le slide dell'infografica con le relative posizioni nel template.
 		  
@@ -181,24 +181,36 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	
 	\paragraph{Metodi}
 	\begin{itemize}
-	  \item \textbf{+logIn(\textit{username}:String, \textit{Password}:String):boolean}:\\
-		 Metodo che permette di autenticare l'utente con username \textit{username} nel sistema verificando le sue credenziali;
-	  \item \textbf{+logOut(\textit{username}:String):void}:\\
-		  Metodo che permette di disconnettere l'utente con username \textit{username} dal sistema;
-	  \item \textbf{+forgotPassword(\textit{username}:String):void}:\\
-		  Metodo che si occupa di fornire il supporto al recupero password dell'utente con username \textit{username}.
+	  	\item \textbf{+logIn(\textit{username}:String, \textit{Password}:String):Boolean}:\\
+		 	Metodo che permette di autenticare l'utente con username \textit{username} nel sistema verificando le sue credenziali;
+	  	\item \textbf{+logOut(\textit{username}:String):Boolean}:\\
+		  	Metodo che permette di disconnettere l'utente con username \textit{username} dal sistema restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	  	\item \textbf{+forgotPassword(\textit{username}:String):void}:\\
+		  	Metodo che si occupa di fornire il supporto al recupero password dell'utente con username \textit{username}.
+	   	\item \textbf{+register(\textit{username}:String,\textit{password}:String):Boolean}:\\
+	  		Metodo che esegue la procedura di registrazione di un nuovo utente con username \textit{username} e password \textit{password} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	  	\item \textbf{+registerViaFacebook()(\textit{name}:Boolean}:\\
+	  		 Metodo che esegue la procedura di registrazione di un nuovo utente con le API di Facebook restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	  	\item \textbf{+registerViaGooglePlus()(\textit{query}:Boolean}:\\
+	  		 Metodo che esegue la procedura di registrazione di un nuovo utente con le API di Google+ restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
 	  \item OUT: \textbf{Views::InfographicEditor}:\\
 		La vista Views::InfographicEditor utilizza AuthenticationCtrl per autorizzare un utente alla composizione e modifica di una infografica;	
 	  \item OUT: \textbf{Views::PresentationEditor}:\\
-		La vista Views::PresentationEditor utilizza AuthenticationCtrl per autorizzare un utente alla composizione e modifica di una presentazione;	
+		La vista Views::PresentationEditor utilizza AuthenticationCtrl per autorizzare un utente alla composizione e modifica di una presentazione;
+	  \item OUT: \textbf{Views::SignUp}:\\
+		La vista Views::SignUp utilizza AuthenticationCtrl per gestire permettere al sistema di registrare un nuovo utente;
+	  \item OUT: \textbf{Views::LogIn}:\\
+	  		La vista Views::LogIn utilizza AuthenticationCtrl per gestire permettere ad un utente di accreditarsi nel sistema;
+	  \item IN: \textbf{AuthenticationService}.	
 	  \item OUT: \textbf{Views::Project}:\\
 		La vista Views::Project utilizza AuthenticationCtrl per autorizzare un utente alla creazione e modifica di un progetto;	
 	  \item IN: \textbf{Model::User}:\\
 		Classe del model che gestisce gli utenti e le loro informazioni comprensive di quelle di autenticazione;
-	   \item IN: \textbf{AuthenticationService}.
+	  \item IN: \textbf{AuthenticationService}.
+	  
 	\end{itemize}	
 	
 \newpage
@@ -227,8 +239,8 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	
 	\paragraph{Metodi}
 	\begin{itemize}
-	  \item \textbf{+setPresentation(\textit{id}:Int):void}:\\
-		  Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione da parte della vista Views::Presentation;
+	  \item \textbf{+setPresentation(\textit{id}:Int):Boolean}:\\
+		  Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione da parte della vista Views::Presentation restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	  \item \textbf{+getPresentation():JSON}:\\
 		  Metodo che restituisce un array di oggetti JSON contenente un array con tutte le slides della presentazione con le relative coordinate nella presentazione.
 		  
@@ -237,7 +249,7 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	\begin{itemize}
 	  \item OUT: \textbf{Views::Presentation}:\\
 		La vista Views::InfographicEditor utilizza HelpCtrl per la gestione degli aiuti nella composizione e modifica di una infografica;	
-	  \item IN: \textbf{PresentationService}
+	  \item IN: \textbf{PresentationService}: \\
 	  	Il servizio PresentationService viene utilizzato per il reperimento ed il salvataggio di una presentazione.
 	\end{itemize}
 	
@@ -253,31 +265,33 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	Il controller PresentationEditorCtrl si occupa della modifica di una presentazione con i metodi per gestire le slide.
 	
 	\paragraph{Utilizzo}
-	Questa classe viene utilizzata per consentire all'utente di aggiungere o rimuovere una slide dalla presentazione e spostarsi tra di esse. Permette inoltre di impostare lo stile e il template della presentazione.
+	Questa classe viene utilizzata per consentire all'utente di aggiungere o rimuovere una slide dalla presentazione in una posizione qualsiasi e spostarsi tra di esse. Permette inoltre di impostare lo stile e il template della presentazione.
 	
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{- PresentationService: PresentationService}:\\
 			Campo dati che contiene un riferimento al servizio che si occupa della gestione dei dati e delle impostazioni di una presentazione;
-		\item \textbf{\$scope: Object}:\\
+		\item \textbf{- \$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione.
+		\item \textbf{- \$scope.currentPresentation: JSON}:\\
+			Campo dati che contiene un array di oggetti JSON contenenti le informazioni della presentazione corrente;		
 		
 	\end{itemize}
 	
 	\paragraph{Metodi}
 	\begin{itemize}
-		\item \textbf{addSlide(direction: String)}:\\
-				Metodo che aggiunge una slide alla presentazione rispetto alla slide corrente nella posizione indicata da \textit{direction}\footnote{Per \textit{direction} si intende la direzione nella quale si vuole aggiungere o caricare una slide\{up, right, down, left\}};
-		\item \textbf{removeSlide()}:\\
-				Metodo che rimuove la slide corrente dalla presentazione caricata sul canvas di editing;
-		\item \textbf{loadSlide(direction: String)}\\
-				Metodo che carica la slide nella posizione indicata da \textit{direction};
-		\item \textbf{saveSlide()}\\
-				Metodo che salva la slide correntemente caricata sul canvas di editing;
-		\item \textbf{setTemplate(template: template)}
-				Metodo che imposta il template per la presentazione con quello passato per parametro;
-		\item \textbf{setStyle(style: JSON)}
-				Metodo che imposta lo stile della presentazione con quello passato per parametro.
+		\item \textbf{addSlide(direction: String):Boolean}:\\
+			Metodo che aggiunge una slide alla presentazione rispetto alla slide corrente nella posizione indicata da \textit{direction}\footnote{Per \textit{direction} si intende la direzione nella quale si vuole aggiungere o caricare una slide\{up, right, down, left\}}. Il metodo restituisce \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+		\item \textbf{removeSlide():Boolean}:\\
+			Metodo che rimuove la slide corrente dal canvas di modifica restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+		\item \textbf{loadSlide(direction: String):Boolean}\\
+			Metodo che carica la slide nella posizione indicata da \textit{direction} nel canvas di modifica restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+		\item \textbf{saveSlide():Boolean}\\
+			Metodo che salva la slide correntemente caricata sul canvas di modifica restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+		\item \textbf{setTheme(theme: String):Boolean}
+			Metodo che imposta l'aspetto grafico predefinito per la presentazione al valore passato per parametro restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+		\item \textbf{setTransition(transition: String):Boolean}
+			Metodo che imposta lo stile di transizione tra slide al valore passato per parametro restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
@@ -299,16 +313,27 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		\item \textbf{-\$scope.presentation: JSON}:\\
+			Campo dati contenente un riferimento alla presentazione appartenente al progetto corrente;
+		\item \textbf{-\$scope.infographics: JSON}:\\
+			Campo dati contenente un array di oggetti JSON ognuno rappresentante una infografica del progetto corrente;	
 		\item \textbf{-ProjectService: ProjectService}:\\
-			Campo dati che contiene un riferimento al servizio che si occupa di reperire le informazioni necessarie al corretto funzionamento della vista Views::Project che rappresenta una sorta di Dashboard di progetto.
+			Campo dati che contiene un riferimento al servizio che si occupa di reperire le informazioni necessarie al corretto funzionamento della vista Views::Project.
 	\end{itemize}
 	
 	\paragraph{Metodi}
 	\begin{itemize}
-	  \item \textbf{+setPresentation(\textit{id}:Int):void}:\\
-		  Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione della presentazione da parte della vista Views::Presentation;
-	  \item \textbf{+getPresentation():JSON}:\\
-		  Metodo che restituisce un oggetto JSON contenente un array con tutte le slide della presentazione con le relative coordinate nella presentazione.
+	  	\item \textbf{+setPresentation(\textit{id}:Int):Boolean}:\\
+		  	Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione della presentazione da parte della vista Views::Presentation restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	  	\item \textbf{+getPresentation():JSON}:\\
+		  	Metodo che restituisce un oggetto JSON contenente un array con tutte le slide della presentazione con le relative coordinate nella presentazione;
+	 	\item \textbf{+resetPresentation():Boolean}:\\
+			Metodo che riporta la presentazione relativa al progetto corrente allo stato iniziale ovvero dotata di una sola slide vuota restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+		\item \textbf{+addInfographic():Int}:\\
+			Metodo che inserisce ua nuova infografica al progetto corrente restituendone il codice identificativo;
+		\item \textbf{+deleteInfographic(\textit{id}:Int):Boolean}:\\
+	  		Metodo che elimina l'infografica identificata da \textit{id} dal progetto corrente restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
+		
 		  
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
@@ -346,82 +371,86 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	  \item OUT: \textbf{Views::Projects}:\\
 		La vista Views::Projects utilizza ProjectsCtrl per la gestione reperire ed aggiornare le informazioni di pertinenza dei progetti dell'utente corrente;	
 	  \item IN: \textbf{ProjectService}.
-		La vista Views::Projects utilizza il service ProjectService per reperire ed aggiornare le informazioni di pertinenza dei progetti dell'utente corrente dall back-end.
+		La vista Views::Projects utilizza il service ProjectService per reperire ed aggiornare le informazioni di pertinenza dei progetti dell'utente corrente dal back-end.
 	\end{itemize}	
 
-\newpage	
-\subsubsection{SearchController}
-	\paragraph{Descrizione}
-	Il controller SearchController gestisce le funzionalità di ricerca del sistema.
-	
-	\paragraph{Utilizzo}
-	Questa classe viene utilizzata per visualizzare tutti i risultati di ricerca a seguito di una interrogazione da parte di utente qualunque.\\
-	\paragraph{Attributi}
-	\begin{itemize}
-		\item \textbf{-\$scope: Object}:\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-		\item \textbf{-ProjectService: ProjectService}
-			Campo dati che contiene un riferimento al servizio che si occupa di gestire le funzionalità di gestione di un progetto nel sistema.
-	\end{itemize}
-	
-	\paragraph{Metodi}
-	\begin{itemize}
-	  \item \textbf{+searchUsers(\textit{username}:String):JSON}:\\
-		  Metodo ritorna un oggetto JSON contenente un array di tutti i progetti dell'utente con username \textit{username};
-	  \item \textbf{+searchProject(\textit{name}:String):JSON}:\\
-		  Metodo ritorna un oggetto JSON contenente un array di tutti i progetti il cui nome ha un match con \textit{name};
-	  \item \textbf{+search(\textit{query}:String):JSON}:\\
-		  Metodo ritorna un oggetto JSON contenente un array di tutti i progetti il cui nome ha un match con \textit{name} e dell'utente con username \textit{username};
-		  
-	\end{itemize}
-	\paragraph{Relazioni con altre classi}
-	\begin{itemize}
-	  \item OUT: \textbf{SearchView}:\\
-		La vista SearchView utilizza ProjectsCtrl per la gestione reperire ed aggiornare le informazioni di pertinenza dei progetti che hanno un match con il nome del progetto oppure con lo username dell'utente;	
-	  \item IN: \textbf{ProjectService}.
-		La vista SearchView utilizza il service ProjectService per reperire ed aggiornare le informazioni di pertinenza dei progetti dal back-end che hanno un match con il nome del progetto oppure con lo username dell'utente proprietario a seguito di un'interrogazione.	
-	\end{itemize}		
-	
-\newpage
-\subsubsection{SignUpController}
-	\paragraph{Descrizione}
-	Il controller SignUpController gestisce le funzionalità di registrazione di un nuovo utente nel sistema.
-	
-	\paragraph{Utilizzo}
-	Questa classe viene utilizzata per permettere alla view SignUpView di registrare un nuovo utente.\\
-	\paragraph{Attributi}
-	\begin{itemize}
-		\item \textbf{-\$scope: Object}:\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-		\item \textbf{-AuthenticationService: AuthenticationService}:\\
-			Campo dati che contiene un riferimento al servizio che si occupa di gestire le funzionalità di autenticazione nel sistema.
-	\end{itemize}
-	
-	\paragraph{Metodi}
-	\begin{itemize}
-	  \item \textbf{+register(\textit{username}:String,\textit{password}:String):boolean}:\\
-		 Metodo che esegue la procedura di registrazione di un nuovo utente con username \textit{username} e password \textit{password} ritornando TRUE se la registrazione è andata a buon fine, FALSE altrimenti.
-	  \item \textbf{+registerViaFacebook()(\textit{name}:boolean}:\\
-		 Metodo che esegue la procedura di registrazione di un nuovo utente con le API di Facebook ritornando TRUE se la registrazione è andata a buon fine, FALSE altrimenti.
-	  \item \textbf{+registerViaGooglePlus()(\textit{query}:boolean}:\\
-		 Metodo che esegue la procedura di registrazione di un nuovo utente con le API di Google+ ritornando TRUE se la registrazione è andata a buon fine, FALSE altrimenti.
-		  
-	\end{itemize}
-	\paragraph{Relazioni con altre classi}
-	\begin{itemize}
-	  \item OUT: \textbf{SignUpView}:\\
-		La vista SearchView utilizza ProjectsCtrl per la gestione reperire ed aggiornare le informazioni di pertinenza dei progetti che hanno un match con il nome del progetto oppure con lo username dell'utente;	
-	  \item IN: \textbf{AuthenticationService}.
-		La vista SignUpView utilizza il service AuthenticationService utilizzare la funzionalità di registrazione del Back-End.	
-	\end{itemize}		
 
-\newpage	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%
+%\newpage	
+%\subsubsection{SearchController}
+%	\paragraph{Descrizione}
+%	Il controller SearchController gestisce le funzionalità di ricerca del sistema.
+%	
+%	\paragraph{Utilizzo}
+%	Questa classe viene utilizzata per visualizzare tutti i risultati di ricerca a seguito di una interrogazione da parte di utente qualunque.\\
+%	\paragraph{Attributi}
+%	\begin{itemize}
+%		\item \textbf{-\$scope: Object}:\\
+%			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+%		\item \textbf{-ProjectService: ProjectService}
+%			Campo dati che contiene un riferimento al servizio che si occupa di gestire le funzionalità di gestione di un progetto nel sistema.
+%	\end{itemize}
+%	
+%	\paragraph{Metodi}
+%	\begin{itemize}
+%	  \item \textbf{+searchUsers(\textit{username}:String):JSON}:\\
+%		  Metodo ritorna un oggetto JSON contenente un array di tutti i progetti dell'utente con username \textit{username};
+%	  \item \textbf{+searchProject(\textit{name}:String):JSON}:\\
+%		  Metodo ritorna un oggetto JSON contenente un array di tutti i progetti il cui nome ha un match con \textit{name};
+%	  \item \textbf{+search(\textit{query}:String):JSON}:\\
+%		  Metodo ritorna un oggetto JSON contenente un array di tutti i progetti il cui nome ha un match con \textit{name} e dell'utente con username \textit{username};
+%		  
+%	\end{itemize}
+%	\paragraph{Relazioni con altre classi}
+%	\begin{itemize}
+%	  \item OUT: \textbf{SearchView}:\\
+%		La vista SearchView utilizza ProjectsCtrl per la gestione reperire ed aggiornare le informazioni di pertinenza dei progetti che hanno un match con il nome del progetto oppure con lo username dell'utente;	
+%	  \item IN: \textbf{ProjectService}.
+%		La vista SearchView utilizza il service ProjectService per reperire ed aggiornare le informazioni di pertinenza dei progetti dal back-end che hanno un match con il nome del progetto oppure con lo username dell'utente proprietario a seguito di un'interrogazione.	
+%	\end{itemize}		
+%	
+\newpage
+	
 \subsubsection{SlideEditorCtrl}
 	\paragraph{Descrizione}
-	Il controller SlideEditorCtrl gestisce le funzionalità di modifica di una slide..
+	Il controller SlideEditorCtrl gestisce le funzionalità di modifica di una slide.
 	
 	\paragraph{Utilizzo}
-	Questa classe viene utilizzata per permettere alla view SignUpView di registrare un nuovo utente.\\
+	Questa classe viene utilizzata per permettere alla vista Views::SlideEditor di inserire componenti in un a slide, modificarne le caratteristiche oppure eliminarli.\\
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
@@ -436,14 +465,14 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	\begin{itemize}
 	  \item \textbf{+addObject():Int}:\\
 		 Metodo che esegue la procedura di aggiunta di un nuovo componente nella slide corrente mediante una chiamata al service PresentationService ritornando il codice identificativo \textit{id}.
-	  \item \textbf{+udpateObject(\textit{id}:String):boolean}:\\
-		 Metodo che esegue la procedura di aggiornamento di un componente  identificato da \textit{id} nella slide corrente mediante una chiamata al service PresentationService ritornando TRUE in caso di successo e FALSE altrimenti.\\I valori sono presi dalla variabile \$scope.
-	  \item \textbf{+removeObject(\textit{id}:String):boolean}\\
-		 Metodo che esegue la rimozione di aggiunta del componente identificato da \textit{id} nella slide corrente mediante una chiamata al service PresentationService ritornando TRUE in caso di successo e FALSE altrimenti.
-	  \item \textbf{+saveSlide(\textit{id}:Int):boolean}:\\
-		 Metodo che esegue la procedura di salvataggio della slide corrente mediante una chiamata al service PresentationService ritornando TRUE in caso di successo e FALSE altrimenti.
-	  \item \textbf{+loadSlide(\textit{id}:Int):boolean}:\\
-		 Metodo che esegue la procedura di caricamento della slide corrente mediante una chiamata al service PresentationService ritornando TRUE in caso di successo e FALSE altrimenti.
+	  \item \textbf{+udpateObject(\textit{id}:String):Boolean}:\\
+		 Metodo che esegue la procedura di aggiornamento di un componente  identificato da \textit{id} nella slide corrente mediante una chiamata al service PresentationService  restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.\\I valori sono reperiti dalla variabile \$scope.selectedObject;
+	  \item \textbf{+removeObject(\textit{id}:String):Boolean}\\
+		 Metodo che esegue la rimozione del componente identificato da \textit{id} nella slide corrente mediante una chiamata al service SlideService  restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
+	  \item \textbf{+saveSlide(\textit{id}:Int):Boolean}:\\
+		 Metodo che esegue la procedura di salvataggio della slide corrente mediante una chiamata al service SlideService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
+	  \item \textbf{+loadSlide(\textit{id}:Int):Boolean}:\\
+		 Metodo che esegue la procedura di caricamento della slide corrente mediante una chiamata al service PresentationService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
 	  	  
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
@@ -451,9 +480,9 @@ Per brevità la nell'identificare un controller è stata omessa la dicitura Prem
 	  \item OUT: \textbf{Views::SlideEditor}:\\
 		La vista Views::SlideEditor utilizza SlideEditorCtrl per la gestione reperire ed aggiornare le informazioni di pertinenza della slide corrente;	
 	  \item IN: \textbf{SlideService}.
-		La vista Views::SlideEditor utilizza il service SlideService per recuperare ed aggiornare le informazioni della slide crrente sul Back-End.	
+		La vista Views::SlideEditor utilizza il service SlideService per recuperare ed aggiornare le informazioni della slide corrente sul Back-End.	
 	  \item IN: \textbf{PresentationService}.
-		La vista Views::SlideEditor utilizza il service PresentationService capire la posizione della slide nella presentazione sapendo come aggiornare i suoi indici sincronizzandosi con il Back-End.	
+		La vista Views::SlideEditor utilizza il service PresentationService recuperare la posizione della slide nella presentazione ed aggiornare i suoi indici sincronizzandosi con il Back-End.	
 	\end{itemize}		
 	
 	
