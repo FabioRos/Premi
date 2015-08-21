@@ -7,7 +7,6 @@ Il package gestisce i controller del front-end dell'applicazione. Comunica con i
 Per brevità nell'identificare un controller è stata omessa la dicitura Premi::Front-End::Controllers lasciando solamente il nome del controller stesso. Si assume dunque che la dicitura compatta <nomeController> rappresenta la forma estesa Premi::Front-End::Controllers::<nomeController>.
 
 \newpage
-
 \subsubsection{ComponentCtrl}
       \paragraph{Descrizione}
 	Il controller ComponentCtrl si occupa di fornire le primitive per la costruzione e gestione dei componenti in una slide.\\
@@ -663,80 +662,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		La vista Views::Projects utilizza il service ProjectService per reperire ed aggiornare le informazioni di pertinenza dei progetti dell'utente corrente dal back-end.
 	\end{itemize}
 	
-	
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%
-%\newpage	
-%\subsubsection{SearchController}
-%	\paragraph{Descrizione}
-%	Il controller SearchController gestisce le funzionalità di ricerca del sistema.
-%	
-%	\paragraph{Utilizzo}
-%	Questa classe viene utilizzata per visualizzare tutti i risultati di ricerca a seguito di una interrogazione da parte di utente qualunque.\\
-%	\paragraph{Attributi}
-%	\begin{itemize}
-%		\item \textbf{-\$scope: Object}:\\
-%			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-%		\item \textbf{-ProjectService: ProjectService}
-%			Campo dati che contiene un riferimento al servizio che si occupa di gestire le funzionalità di gestione di un progetto nel sistema.
-%	\end{itemize}
-%	
-%	\paragraph{Metodi}
-%	\begin{itemize}
-%	  \item \textbf{+searchUsers(\textit{username}:String):JSON}:\\
-%		  Metodo ritorna un oggetto JSON contenente un array di tutti i progetti dell'utente con username \textit{username};
-%	  \item \textbf{+searchProject(\textit{name}:String):JSON}:\\
-%		  Metodo ritorna un oggetto JSON contenente un array di tutti i progetti il cui nome ha un match con \textit{name};
-%	  \item \textbf{+search(\textit{query}:String):JSON}:\\
-%		  Metodo ritorna un oggetto JSON contenente un array di tutti i progetti il cui nome ha un match con \textit{name} e dell'utente con username \textit{username};
-%		  
-%	\end{itemize}
-%	\paragraph{Relazioni con altre classi}
-%	\begin{itemize}
-%	  \item OUT: \textbf{SearchView}:\\
-%		La vista SearchView utilizza ProjectsCtrl per la gestione reperire ed aggiornare le informazioni di pertinenza dei progetti che hanno un match con il nome del progetto oppure con lo username dell'utente;	
-%	  \item IN: \textbf{ProjectService}.
-%		La vista SearchView utilizza il service ProjectService per reperire ed aggiornare le informazioni di pertinenza dei progetti dal back-end che hanno un match con il nome del progetto oppure con lo username dell'utente proprietario a seguito di un'interrogazione.	
-%	\end{itemize}		
-%	
 \newpage
-	
 \subsubsection{SlideEditorCtrl}
 	\paragraph{Descrizione}
 	Il controller SlideEditorCtrl gestisce le funzionalità di modifica di una slide.
@@ -811,7 +737,46 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	  	La vista Views::MyAccount utilizza il service UserService per recuperare ed aggiornare le informazioni relative ad un particolare utente.	
 	  		
 	\end{itemize}		
+
+\newpage
+\subsubsection{HomePageCtrl}
+	\paragraph{Descrizione}
+	Il controller HomePageCtrl gestisce gli strumenti messi a disposizione dalla Home Page. In particolare le funzionalità di ricerca.
 	
+	\paragraph{Utilizzo}
+	Questa classe viene utilizzata per permettere alla vista Views::HomePage di riecrcare progetti per nome oppure per username dell'utente proprietario.\\
+	\paragraph{Attributi}
+	\begin{itemize}
+		\item \textbf{-\$scope: Object}:\\
+			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;	
+		\item \textbf{-\$scope.searchResults}:\\
+			Campo dati contenente le informazioni relative all'esito della ricerca;
+				
+		\item \textbf{-ProjectService: ProjectService}:\\
+			Campo dati che contiene un riferimento al servizio che fornisce le funzionalità relative alla gestione di un progetto in aggiunta a quelle di ricerca.
+	
+	\end{itemize}
+	
+	\paragraph{Metodi}
+	\begin{itemize}
+	  \item \textbf{+\$scope.searchByUsername(\textit{text}:String):Object}:\\
+		 Metodo che recupera dal back-end le informazioni relative agli utenti che hanno una corrispondenza con la stringa mediante il service ProjectService::searchByUsernameService salvandole sull'oggetto \$scope.searchResults e restituendo un array di oggetti JSON con il suo contenuto.
+	 \item \textbf{+\$scope.searchByProjectName(\textit{text}:String):Object}:\\
+		Metodo che recupera dal back-end le informazioni relative ai nomi di progetto che hanno una corrispondenza con la stringa mediante il service ProjectService::searchByProjectNameService salvandole sull'oggetto \$scope.searchResults e restituendo un array di oggetti JSON con il suo contenuto.
+	\item \textbf{+\$scope.resetSearchResults():void}:\\
+		Metodo che azzera i risultati di ricerca per poterne accogliere di nuovi oppure perché non più necessari.
+		
+	\end{itemize}
+	\paragraph{Relazioni con altre classi}
+	\begin{itemize}
+	  \item OUT: \textbf{Views::HomePage}:\\
+		La vista Views::HomePage utilizza HomePageCtrl per reperire ed aggiornare le informazioni di pertinenza dell'account relativo all'utente corrente;	
+	   \item IN: \textbf{ProjectService}.
+	  	La vista Views::HomePage utilizza il service ProjectService per recuperare ed aggiornare le informazioni relative ad un particolare progetto in aggiunta a quelle di ricerca.	
+	  		
+	\end{itemize}
+	
+		
 % 	SlideService
 % PresentationService
 % addObject(id)
