@@ -1,12 +1,58 @@
-%\noindent
-%Per entrare in modalità visualizzazione di una presentazione è necessario entrare nel progetto ad essa asciato e premere il bottone play. 
+Per avviare una presentazione è necessario prima selezionare il progetto dalla lista dei progetti disponibili. Una volta selezionato il progetto apparirà al centro dello schermo il titolo del progetto scelto, un'immagine di default e sotto a questa un menù. Selezionando dal menù la voce \textbf{Play} si aprirà una nuova scheda nel browser dove sarà avviata la presentazione.
 
-%All'interno di una presentazione sono possibili le seguenti azioni:
+\begin{figure}[H] 
+	\centering 
+	\includegraphics[scale=0.40] {img/avv_pres.png}
+	\caption{Avvio di una presentazione} 
+\end{figure}
 
-%\begin{itemize}
- %\item \textbf{spostamento tra slides}: \\disponibile attraverso dei tasti freccia in basso a destra o mediante i tasti freccia della tastiera.
- %\item \textbf{passare in modalità presentatore}: \\disponibile attraverso la pressione del tasto '\textbf{S}' della tastiera (S sta per Speaker View).
-  %\item \textbf{pausa esposizione}: \\disponibile attraverso la pressione del tasto '\textbf{B}' della tastiera (B sta per Blind). In questa modalità la presentazione si oscura, permettendo al presentatore di fare una pausa.
-  %\item \textbf{visualizzazione dell'indice}: \\disponibile attraverso la pressione del tasto '\textbf{esc}' della tastiera. In questa modalità è possibile vedere la matrice completa di tutte le \gls{slide} che compongono la presentazione.
+\subsection{Menù di navigazione}
+\noindent Il menù di navigazione è composto da quattro frecce di colore diverso in base alle slide che sono disponibili nella direzione indicata dalla freccia. Se la freccia è di colore nero non ci sono slide disponibili in quella direzione, viceversa se la freccia è di colore blu ci si può spostare in quella direzione verso la prossima slide. Come esempio si prenda l'immagine sottostante, che indica la possibilità di visualizzare la prossima slide spostandosi a sinistra o in basso.
 
-%  \end{itemize}
+\begin{figure}[H] 
+	\centering 
+	\includegraphics[scale=0.70] {img/nav.png}
+	\caption{Menù di navigazione in dettaglio} 
+	\end{figure}
+
+\subsection{Presentazione in modalità ascoltatore}
+
+\noindent Una volta avviata una presentazione essa verrà avviata di default in modalità ascoltatore. Verrà visualizzata la prima slide del progetto e, in basso a destra, il menù di navigazione utilizzabile sia con il mouse sia con i tasti freccia della tastiera. 
+\begin{figure}[H] 
+	\centering 
+	\includegraphics[scale=0.40] {img/sfondook.png}
+	\caption{Presentazione in modalità ascoltatore} 
+\end{figure}
+
+
+\subsection{Presentazione in modalità presentatore}
+\noindent Per avviare presentazione in modalità presentatore è necessario avviare prima una presentazione come ascoltatore. Una volta avviata è necessario premere il tasto \textbf{S} della tastiera per avviare la modalità presentatore.
+\begin{figure}[H] 
+	\centering 
+	\includegraphics[scale=0.40] {img/note.png}
+	\caption{Presentazione in modalità presentatore} 
+\end{figure}
+
+\noindent Come si può notare dall'immagine precedente, l'interfaccia grafica di questa modalità presenta delle funzionalità di supporto al presentatore, dividendo lo schermo in tre parti ben distinte:
+\begin{itemize}
+	\item \textbf{A}: in questa parte di schermo viene visualizzata la slide che attualmente si sta visualizzando;
+	\item \textbf{B}: in questa parte di schermo viene visualizzata la prossima slide che verrà visualizzata;
+	\item \textbf{C}: in questa parte di schermo vengono visualizzati gli aiuti al presentatore, cioè il tempo trascorso da quando la presentazione è partita, l'orario corrente e, sotto di essi, eventuali note che il presentatore può essersi scritto. 
+\end{itemize}
+
+\subsection{Scorciatoie da tastiera}
+\noindent Una volta avviata una presentazione, in qualunque modalità, sono possibili le seguenti azioni:
+\begin{itemize}
+	\item \textbf{Tasto ESC}: la pressione di questo tasto permette la visualizzazione della matrice completa di tutte le slides che compongono la presentazione. Ripremendo il tasto \textbf{ESC} si ritorna alla visualizzazione normale delle slides;
+	\begin{figure}[H] 
+		\centering 
+		\includegraphics[scale=0.40] {img/anteprima.png}
+		\caption{Tasto ESC - Matrice delle slides} 
+	\end{figure}
+	\item \textbf{Tasto B}: la pressione di questo tasto permette di mettere in pausa la presentazione oscurando la slide corrente. Per riprendere la presentazione è sufficiente ripremere il tasto \textbf{B}.
+	\begin{figure}[H] 
+		\centering 
+		\includegraphics[scale=0.40] {img/b.png}
+		\caption{Tasto B - Pausa della presentazione} 
+	\end{figure}
+\end{itemize}
