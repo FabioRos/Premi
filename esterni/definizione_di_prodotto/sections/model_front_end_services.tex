@@ -5,6 +5,7 @@
 \end{figure}
 Il package gestisce i services del front-end dell'applicazione. Comunica con i controller e con i servizi REST offerti dal lato back-end, fornendo delle risorse sulle quali creare le funzioni per comunicare tra i due layer. La struttura prevede cinque service principali i quali al loro interno contengono dei metodi specifici che forniscono le risorse per dei servizi più precisi.
 Per brevità nell'identificare un service è stata omessa la dicitura Premi::Front-End::Services lasciando solamente il nome del service stesso. Si assume dunque che la dicitura compatta <nomeService> rappresenta la forma estesa Premi::Front-End::Services::<nomeService>.
+\newpage
 
 
 \subsubsection{AuthenticationService}
@@ -13,7 +14,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		\subsubsection{AuthenticationService::forgotPasswordService}
 		\begin{figure}[h]
 			\centering
-			%		\includegraphics[width=0.6\linewidth]{img/premi_front_end_services_forgotpasswordservice}
+				\includegraphics[width=0.4\linewidth]{img/premi_front_end_services_forgotpasswordservice}
 			\caption[Premi::Front-End::Services::ForgotPasswordService]{Premi::Front-End::Services::ForgotPasswordService}
 		\end{figure}
 		
@@ -44,11 +45,13 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 				\item \textit{data: Object}: parametro di un oggetto JSON che contiene l'indirizzo email inserito nella view.
 			\end{itemize}
 		\end{itemize}
+\newpage
+		
 		
 		\subsubsection{AuthenticationService::loginService}
 		\begin{figure}[h]
 			\centering
-			%		\includegraphics[width=0.6\linewidth]{img/premi_front_end_services_loginservice}
+				\includegraphics[width=0.4\linewidth]{img/premi_front_end_services_loginservice}
 			\caption[Premi::Front-End::Services::LoginService]{Premi::Front-End::Services::LoginService}
 		\end{figure}
 		
@@ -79,12 +82,13 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 				\item \textit{data: Object}: parametro di un oggetto JSON che contiene il nome utente e la password inseriti nella view e necessari per l'autenticazione al sistema.
 			\end{itemize}
 		\end{itemize}
+\newpage
 		
 		
 		\subsubsection{AuthenticationService::logoutService}
 		\begin{figure}[h]
 			\centering
-			%		\includegraphics[width=0.6\linewidth]{img/premi_front_end_services_logoutservice}
+				\includegraphics[width=0.4\linewidth]{img/premi_front_end_services_logoutservice}
 			\caption[Premi::Front-End::Services::LogoutService]{Premi::Front-End::Services::LogoutService}
 		\end{figure}
 		
@@ -111,12 +115,13 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 			\item \textbf{+ get(): Promise}:\\
 			Metodo che richiama la funzione GET collegata alla risorsa e permette di eseguire il logout dell'utente. Il metodo ritorna una promessa e porta all'aggiornamento della pagina per il reset delle variabili si \$scope.
 		\end{itemize}
+\newpage
 		
 		
-		\subsubsection{AuthenticationService::signupService}
+		\subsubsection{AuthenticationService::signUpService}
 		\begin{figure}[h]
 			\centering
-			%		\includegraphics[width=0.6\linewidth]{img/premi_front_end_services_signupservice}
+				\includegraphics[width=0.4\linewidth]{img/premi_front_end_services_signupservice}
 			\caption[Premi::Front-End::Services::SignupService]{Premi::Front-End::Services::SignupService}
 		\end{figure}
 		
@@ -147,12 +152,13 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 				\item \textit{data: Object}: parametro di un oggetto JSON che contiene tutte le credenziali necessarie inserite nella view per registrarsi come nuovo utente al sistema.
 			\end{itemize}
 		\end{itemize}
+\newpage
 		
 		
 		\subsubsection{AuthenticationService::userService}
 		\begin{figure}[h]
 			\centering
-			%		\includegraphics[width=0.6\linewidth]{img/premi_front_end_services_userservice}
+				\includegraphics[width=0.4\linewidth]{img/premi_front_end_services_userservice}
 			\caption[Premi::Front-End::Services::UserService]{Premi::Front-End::Services::UserService}
 		\end{figure}
 		
@@ -183,6 +189,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 				\item \textit{id: String}: parametro di una stringa contenente l'id dell'utente.
 			\end{itemize}
 		\end{itemize}
+\newpage
 
 
 \subsubsection{InfographicService}
@@ -192,8 +199,8 @@ L'InfographicService è una classe che mette a disposizione dei metodi per la ge
 		\subsubsection{InfographicService::infographicEditorService}
 		\begin{figure}[h]
 			\centering
-			%		\includegraphics[width=0.6\linewidth]{img/premi_front_end_services_infographicservice}
-			\caption[Premi::Front-End::Services::InfographicService]{Premi::Front-End::Services::infographicService}
+				\includegraphics[width=0.4\linewidth]{img/premi_front_end_services_infographiceditorservice}
+			\caption[Premi::Front-End::Services::InfographicEditorService]{Premi::Front-End::Services::infographicEditorService}
 		\end{figure}
 		
 		\paragraph{Descrizione}
@@ -229,6 +236,7 @@ L'InfographicService è una classe che mette a disposizione dei metodi per la ge
 				\item \textit{data: Object}: parametro di una oggetto contenente i dati necessari per aggiornare l'infografica.
 			\end{itemize}
 		\end{itemize}
+\newpage
 
 
 \subsubsection{PresentationService}
@@ -238,7 +246,7 @@ Il PresentationService rende disponibili dei servizi che si occupano della gesti
 		\subsubsection{PresentationService::presentationService}
 		\begin{figure}[h]
 			\centering
-			%		\includegraphics[width=0.6\linewidth]{img/premi_front_end_services_searchbypresentationservice}
+				\includegraphics[width=0.5\linewidth]{img/premi_front_end_services_presentationservice}
 			\caption[Premi::Front-End::Services::PresentationService]{Premi::Front-End::Services::PresentationService}
 		\end{figure}
 		
@@ -275,6 +283,7 @@ Il PresentationService rende disponibili dei servizi che si occupano della gesti
 				\item \textit{transition: String}: parametro di una stringa contenente il nome della transizione da applicare alla presentazione.
 			\end{itemize}
 		\end{itemize}
+\newpage
 
 
 \subsubsection{ProjectService}
@@ -283,7 +292,7 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 		\subsubsection{ProjectService::projectsService}
 		\begin{figure}[h]
 			\centering
-			%		\includegraphics[width=0.6\linewidth]{img/premi_front_end_services_projectsservice}
+				\includegraphics[width=0.4\linewidth]{img/premi_front_end_services_projectsservice}
 			\caption[Premi::Front-End::Services::ProjectsService]{Premi::Front-End::Services::ProjectsService}
 		\end{figure}
 		
@@ -322,12 +331,13 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 				\item \textit{data: Object}: parametro di un oggetto contenente i dati necessari per creare il progetto, quali ad esempio il nome.
 			\end{itemize}
 		\end{itemize}
+\newpage
 		
 		
 		\subsubsection{ProjectService::searchByProjectService}
 		\begin{figure}[h]
 			\centering
-			%		\includegraphics[width=0.6\linewidth]{img/premi_front_end_services_searchbyprojectservice}
+				\includegraphics[width=0.4\linewidth]{img/premi_front_end_services_searchbyprojectservice}
 			\caption[Premi::Front-End::Services::SearchByProjectService]{Premi::Front-End::Services::SearchByProjectService}
 		\end{figure}
 		
@@ -358,12 +368,13 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 				\item \textit{name: String}: parametro di una stringa contenente il nome del progetto da cercare inserito nella view.
 			\end{itemize}
 		\end{itemize}
+\newpage
 		
 		
 		\subsubsection{ProjectService::searchByUserService}
 		\begin{figure}[h]
 			\centering
-			%		\includegraphics[width=0.6\linewidth]{img/premi_front_end_services_searchbyuserservice}
+				\includegraphics[width=0.4\linewidth]{img/premi_front_end_services_searchbyuserservice}
 			\caption[Premi::Front-End::Services::SearchByUserService]{Premi::Front-End::Services::SearchByUserService}
 		\end{figure}
 		
@@ -394,12 +405,13 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 				\item \textit{username: String}: parametro di una stringa contenente il nome utente da cercare inserito nella view.
 			\end{itemize}
 		\end{itemize}
+\newpage
 		
 		
 		\subsubsection{ProjectService::projectService}
 		\begin{figure}[h]
 			\centering
-			%		\includegraphics[width=0.6\linewidth]{img/premi_front_end_services_projectservice}
+				\includegraphics[width=0.4\linewidth]{img/premi_front_end_services_projectservice}
 			\caption[Premi::Front-End::Services::ProjectService]{Premi::Front-End::Services::ProjectService}
 		\end{figure}
 		
@@ -433,6 +445,7 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 				\item \textit{data: Object}: parametro di un oggetto contenente i dati del progetto da aggiornare.
 			\end{itemize}
 		\end{itemize}
+\newpage
 
 
 \subsubsection{SlideService}
@@ -442,7 +455,7 @@ SlideService è l'ultimo dei macro servizi offerti e si occupa della gestione de
 		\subsubsection{SlideService::indexService}
 		\begin{figure}[h]
 			\centering
-			%		\includegraphics[width=0.6\linewidth]{img/premi_front_end_services_indexservice}
+				\includegraphics[width=0.4\linewidth]{img/premi_front_end_services_indexservice}
 			\caption[Premi::Front-End::Services::IndexService]{Premi::Front-End::Services::IndexService}
 		\end{figure}
 		
@@ -466,7 +479,7 @@ SlideService è l'ultimo dei macro servizi offerti e si occupa della gestione de
 		
 		\paragraph{Metodi}
 		\begin{itemize}
-			\item \textbf{+ get(id: String, xIndex:int, yIndex:y): Promise}:\\
+			\item \textbf{+ get(id: String, xIndex:int, yIndex:int): Promise}:\\
 			Metodo che richiama la funzione GET collegata alla risorsa e permette di ottenere la slide avente x e y corrispondenti ai parametri passati. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà un oggetto avente l'id della slide.\\
 			\textbf{Parametri:}\\
 			\begin{itemize}
@@ -475,12 +488,12 @@ SlideService è l'ultimo dei macro servizi offerti e si occupa della gestione de
 				\item \textit{yIndex: int}: parametro di un intero rappresentate la coordinata y della slide richiesta.
 			\end{itemize}
 		\end{itemize}
-		
+\newpage
 		
 		\subsubsection{SlideService::slideService}
 		\begin{figure}[h]
 			\centering
-			%		\includegraphics[width=0.6\linewidth]{img/premi_front_end_services_slideservice}
+				\includegraphics[width=0.5\linewidth]{img/premi_front_end_services_slideservice}
 			\caption[Premi::Front-End::Services::SlideService]{Premi::Front-End::Services::SlideService}
 		\end{figure}
 		
