@@ -107,7 +107,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		\item \textbf{-ChartService: ChartService}:\\
 			
 		\item\textbf{-dataSet:Object}:\\
-			Array di oggetti JSON ognuno dei quali rappresenta un dato da rappresentare nel grafico;
+			Array di oggetti JSON ognuno dei quali indica un dato da rappresentare nel grafico;
 		\item\textbf{-type:String}:\\
 			Campo dati che indica la tipologia di grafico da rappresentare.
 	\end{itemize}
@@ -124,6 +124,8 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		Metodo che restituisce la tipologia del grafico corrente.
 	\item \textbf{+load()}:Object	\\	
 		Metodo che permette di caricare un grafico proveniente dal server web dove risiede il sistema mediante l'utilizzo del servizio ChartService. Esso restituisce un oggetto JSON contenente la tipologia ed il set di dati del grafico in caso di successo ed una stringa vuota in caso di fallimento;
+	\item \textbf{+save():Boolean}:\\	
+		Metodo che permette di salvare un grafico mediante l'utilizzo del servizio ChartService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
 	
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
@@ -158,13 +160,14 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\begin{itemize}
 	\item \textbf{+setSrc(\textit{type}:String):Boolean}:\\
 		Metodo che permette di impostare il percorso dove è possibile recuperare l'immagine restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-	\item \textbf{+getSet():String}:\\
-		Metodo che restituisce la tipologia del grafico corrente.
+	\item \textbf{+getSrc():String}:\\
+		Metodo che restituisce il percorso dove è possibile recuperare l'immagine.
 	\item \textbf{+upload():String}:\\	
 		Metodo che permette di caricare un immagine proveniente da un dispositivo esterno al sistema restituendo il percorso dove risiede l'immagine in caso di successo ed una stringa vuota in caso di fallimento;
 	\item \textbf{+load():String}:\\	
-		Metodo che permette di caricare un immagine proveniente dal server web dove risiede il sistema mediante l'utilizzo del servizio ImageService restituendo il percorso dell'immagine in caso di successo ed una stringa vuota in caso di fallimento.	
-	
+		Metodo che permette di caricare una immagine proveniente dal server web dove risiede il sistema mediante l'utilizzo del servizio ImageService restituendo il percorso dell'immagine in caso di successo ed una stringa vuota in caso di fallimento;
+	\item \textbf{+save():Boolean}:\\	
+		Metodo che permette di salvare una immagine mediante l'utilizzo del servizio ImageService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
@@ -177,84 +180,140 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\end{itemize}
 
 \newpage
-%\subsubsection{ImageCtrl}
-%   \paragraph{Descrizione}
-%	Il controller ImageCtrl concretizza ComponentCtrl e si occupa di fornire le primitive per la costruzione e gestione degli oggetti di tipo immagine all'interno di una slide.
-%		
-%	\paragraph{Utilizzo}
-%	Questa classe viene utilizzata per consentire all'utente di aggiungere, modificare o rimuovere un immagine in una slide.
-%	
-%	\paragraph{Attributi}
-%	\begin{itemize}
-%		\item \textbf{-\$scope: Object}:\\
-%			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-%		\item IN \textbf{ImageService}:\\
-%			Campo dati che contiene un riferimento al servizio che si occupa di gestire reperimento, cancellazione ed aggiornamento delle immagini all'interno del sistema.
-%		\item\textbf{-src:String}:\\
-%			Campo dati che indica il percorso dove è possibile recuperare l'immagine.
-%	\end{itemize}
-%	
-%	\paragraph{Metodi}
-%	\begin{itemize}
-%	\item \textbf{+setSrc(\textit{type}:String):Boolean}:\\
-%		Metodo che permette di impostare il percorso dove è possibile recuperare l'immagine restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-%	\item \textbf{+getSet():String}:\\
-%		Metodo che restituisce la tipologia del grafico corrente.
-%	\item \textbf{+upload():String}:\\	
-%		Metodo che permette di caricare un immagine proveniente da un dispositivo esterno al sistema restituendo il percorso dove risiede l'immagine in caso di successo ed una stringa vuota in caso di fallimento;
-%	\item \textbf{+load():String}:\\	
-%		Metodo che permette di caricare un immagine proveniente dal server web dove risiede il sistema mediante l'utilizzo del servizio ImageService restituendo il percorso dell'immagine in caso di successo ed una stringa vuota in caso di fallimento.	
-%	
-%	\end{itemize}
-%	\paragraph{Relazioni con altre classi}
-%	\begin{itemize}
-% 	\item IN: \textbf{ComponentCtrl}:\\
-%	 	Il controller ImageCtrl estende ComponentCtrl per la costruzione e gestione di grafici.
-%	\item IN \textbf{ImageService}:\\
-%		Il controller ImageCtrl necessita di ImageCtrl per il recupero ed il salvataggio delle immagini
-%	\item OUT: \textbf{SlideEditorCtrl}:\\
-%		Il controller SlideEditorCtrl necessita di ImageCtrl per la costruzione e gestione delle immagini. 	
-%	\end{itemize}
-%
-%\newpage
-%\subsubsection{ImageCtrl}
-%   \paragraph{Descrizione}
-%	Il controller ImageCtrl concretizza ComponentCtrl e si occupa di fornire le primitive per la costruzione e gestione degli oggetti di tipo immagine all'interno di una slide.
-%		
-%	\paragraph{Utilizzo}
-%	Questa classe viene utilizzata per consentire all'utente di aggiungere, modificare o rimuovere un immagine in una slide.
-%	
-%	\paragraph{Attributi}
-%	\begin{itemize}
-%		\item \textbf{-\$scope: Object}:\\
-%			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-%		\item IN \textbf{ImageService}:\\
-%			Campo dati che contiene un riferimento al servizio che si occupa di gestire reperimento, cancellazione ed aggiornamento delle immagini all'interno del sistema.
-%		\item\textbf{-src:String}:\\
-%			Campo dati che indica il percorso dove è possibile recuperare l'immagine.
-%	\end{itemize}
-%	
-%	\paragraph{Metodi}
-%	\begin{itemize}
-%	\item \textbf{+setSrc(\textit{type}:String):Boolean}:\\
-%		Metodo che permette di impostare il percorso dove è possibile recuperare l'immagine restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-%	\item \textbf{+getSet():String}:\\
-%		Metodo che restituisce la tipologia del grafico corrente.
-%	\item \textbf{+upload():String}:\\	
-%		Metodo che permette di caricare un immagine proveniente da un dispositivo esterno al sistema restituendo il percorso dove risiede l'immagine in caso di successo ed una stringa vuota in caso di fallimento;
-%	\item \textbf{+load():String}:\\	
-%		Metodo che permette di caricare un immagine proveniente dal server web dove risiede il sistema mediante l'utilizzo del servizio ImageService restituendo il percorso dell'immagine in caso di successo ed una stringa vuota in caso di fallimento.	
-%	
-%	\end{itemize}
-%	\paragraph{Relazioni con altre classi}
-%	\begin{itemize}
-% 	\item IN: \textbf{ComponentCtrl}:\\
-%	 	Il controller ImageCtrl estende ComponentCtrl per la costruzione e gestione di grafici.
-%	\item IN \textbf{ImageService}:\\
-%		Il controller ImageCtrl necessita di ImageCtrl per il recupero ed il salvataggio delle immagini
-%	\item OUT: \textbf{SlideEditorCtrl}:\\
-%		Il controller SlideEditorCtrl necessita di ImageCtrl per la costruzione e gestione delle immagini. 	
-%	\end{itemize}
+\subsubsection{RealTimeDataCtrl}
+   \paragraph{Descrizione}
+	Il controller RealTimeDataCtrl concretizza ComponentCtrl e si occupa di fornire le primitive per la costruzione e gestione degli oggetti di tipo immagine all'interno di una slide.
+		
+	\paragraph{Utilizzo}
+	Questa classe viene utilizzata per consentire all'utente di aggiungere, modificare o rimuovere delle componenti con aggiornamento periodico all'interno di una slide.
+	
+	\paragraph{Attributi}
+	\begin{itemize}
+		\item \textbf{-\$scope: Object}:\\
+			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		\item \textbf{RealTimeDataService:RealTimeDataService}:\\
+			Campo dati che contiene un riferimento al servizio che si occupa di gestire reperimento, cancellazione ed aggiornamento dei dati in tempo reale all'interno del sistema;
+		\item \textbf{-targetUrl:String}:\\
+			Campo dati che indica il percorso dove è possibile recuperare le informazioni;
+		\item \textbf{-selector:String}:
+			Campo dati che indica il selettore, secondo le regole del css, dove individuare i dati di interesse all'interno dell'indirizzo contenuto in targetUrl;
+		\item \textbf{-callbackUrl:String}:
+			Campo dati che indica l'indirizzo dove reperire il file in formato javascript che ha il compito di elaborare ed impaginare i dati ottenuti in precedenza;
+		\item \textbf{-fallbackFileUrl:String}
+			Campo dati che indica il percorso dove trovare le informazioni in caso di impossibilità di raggiungere la risorsa;
+		\item \textbf{-refreshInterval: Int}
+			Campo dati che indica il tempo che intercorre tra gli aggiornamenti dei dati in secondi.
+			
+	\end{itemize}
+	
+	\paragraph{Metodi}
+	\begin{itemize}
+	\item \textbf{+setTargetUrl(\textit{url}:String):Boolean}:\\
+		Metodo che permette di impostare il percorso della risorsa che contiene le informazioni d'interesse restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	\item \textbf{+setSelector(\textit{cssSelector}:String):Boolean}:\\
+		Metodo che permette di impostare il selettore all'interno del targetUrl che permette di raggiungere le informazioni d'interesse al valore \textit{cssSelector}, restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	\item \textbf{+setCallbackUrl(\textit{url}:String):Boolean}:\\
+		Metodo che permette di impostare il percorso della risorsa che contiene le informazioni d'interesse restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	\item \textbf{+setFallbackFileUrl(\textit{url}:String):Boolean}:\\
+		Metodo che permette di impostare il percorso dove trovare le informazioni in caso di impossibilità di reperire la risorsa d'interesse al valore \textit{url}, restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	\item \textbf{+setRefreshInterval(\textit{t}:Int):Boolean}:\\
+		Metodo che permette di impostare il tempo che intercorre tra due aggiornamenti successivi al valore di \textit{t} secondi, restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+					
+							
+	\item \textbf{+getTargetUrl():String}:\\
+		Metodo che restituisce il percorso della risorsa che contiene le informazioni d'interesse;
+	\item \textbf{+getSelector():String}:\\
+		Metodo che restituisce il selettore all'interno del targetUrl che permette di raggiungere le informazioni d'interesse;			
+	\item \textbf{+getCallbackUrl():String}:\\
+		Metodo che restituisce il percorso della risorsa che contiene le informazioni d'interesse;
+	\item \textbf{+getFallbackFileUrl():String}:\\
+		Metodo che restituisce il percorso dove reperire le informazioni in caso di impossibilità di raggiungere la risorsa d'interesse;
+	\item \textbf{+getRefreshInterval():Int}:\\
+		Metodo che restituisce il tempo che intercorre tra due aggiornamenti successivi del componente d'interesse;			
+
+
+	\item \textbf{+load():Boolean}:\\	
+		Metodo che permette di reperire le informazioni del componente dal file di fallback, ove presente, ed istanziare il componente, prescindendo dalla raggiungibilità o meno della risorsa mediante l'utilizzo del servizio RealTimeService. Viene restituito \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+		
+	\item \textbf{+save():Boolean}:\\	
+		Metodo che permette di aggiornare le informazioni del componente nel file di fallback, ove presente, ed istanziare il componente mediante l'utilizzo del servizio RealTimeDataService. Viene restituito \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+		
+	\item \textbf{+run():Boolean}:\\
+		Metodo che permette di eseguire tutte le chiamate che provocano l'ottenimento del codice html finale da aggiornare nella slide mediante l'utilizzo del servizio RealTimeDataService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
+		Nello specifico le operazioni svolte sono le seguenti:
+		\begin{enumerate}
+			\item Viene scaricato il contenuto della risorsa referenziata da targetUrl. Se non è disponibile, il sistema riproverà l'operazione automaticamente facendo tre tentativi attendendo di volta in volta per trenta secondi. In caso di ulteriore fallimento sarà necessario un aggiornamento della pagina per la corretta erogazione di questa attività;
+			\item Viene recuperata l'informazione d'interesse mediante il selettore;
+			\item Viene processato l'output del passaggio precedente mediante uno script presente nel file disponibile all'indirizzo callbackUrl restituendo del codice html;
+			\item Vengono salvate le informazioni del punto precente nel file di fallback mediante il metodo save.
+			\item Viene aggiornato il contenuto della slide.
+		\end{enumerate}
+	
+	\end{itemize}
+	\paragraph{Relazioni con altre classi}
+	\begin{itemize}
+ 	\item IN: \textbf{ComponentCtrl}:\\
+	 	Il controller RealTimeDataService estende ComponentCtrl per la costruzione e gestione di componenti con aggiornamento in tempo reale;
+	\item IN \textbf{RealTimeDataService}:\\
+		Il controller RealTimeDataCtrl necessita di RealTimeDataService per il recupero ed il salvataggio delle informazioni necessarie alla corretta erogazione e gestione degli oggetti con aggiornamento in tempo reale;
+	\item OUT: \textbf{SlideEditorCtrl}:\\
+		Il controller SlideEditorCtrl necessita di ComponentCtrl per la costruzione e gestione degli oggetti con aggiornamento in tempo reale. 	
+	\end{itemize}
+
+\newpage
+\subsubsection{TableCtrl}
+   \paragraph{Descrizione}
+	Il controller TableCtrl concretizza ComponentCtrl e si occupa di fornire le primitive per la costruzione e gestione degli oggetti di tipo tabella all'interno di una slide.
+		
+	\paragraph{Utilizzo}
+	Questa classe viene utilizzata per consentire all'utente di aggiungere, modificare o rimuovere tabelle in una slide.
+	
+	\paragraph{Attributi}
+	\begin{itemize}
+		\item \textbf{-\$scope: Object}:\\
+			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		\item  \textbf{-ImageService:TableService}:\\
+			Campo dati che contiene un riferimento al servizio che si occupa di gestire reperimento, cancellazione ed aggiornamento delle immagini all'interno del sistema.
+		\item\textbf{-rows:int}:\\
+			Campo dati che indica il numeri di righe che compongono la tabella.
+		\item\textbf{-columns:int}:\\
+			Campo dati che indica il numeri di colonne che compongono la tabella.
+		\item\textbf{-dataSet:Object}:\\
+			Array di oggetti JSON ognuno dei quali indica un dato da rappresentare nel grafico comprensivo di coordinate;
+	\end{itemize}
+	
+	\paragraph{Metodi}
+	\begin{itemize}
+	\item \textbf{+getDataSet():Object}:\\
+		Metodo che restituisce i dati sorgente della tabella corrente;
+	\item \textbf{+getRows():Object}:\\
+		Metodo che restituisce il numero di righe della tabella corrente;
+	\item \textbf{+getColumns():Object}:\\
+		Metodo che restituisce il numero di colonne della tabella corrente;
+
+	
+	\item \textbf{+setDataSet(\textit{obj}:Object):Boolean}:\\
+		Metodo che permette di impostare i dati sorgentedella tabella corrente al valore \textit{obj} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	\item \textbf{+setRows(\textit{r}:Int):Boolean}:\\
+		Metodo che restituisce il numero di righe della tabella corrente  al valore \textit{r} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	\item \textbf{+setColumns(\textit{c}:Int):Boolean}:\\
+		Metodo che restituisce il numero di colonne della tabella corrente \textit{c} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+	\item \textbf{+\$scope.refreshTable():void}:\\
+		Metodo che ridisegna la tabella d'interesse;
+
+	\item \textbf{+load():Boolean}:\\	
+		Metodo che permette di caricare le informazioni relative alla tabella corrente mediante l'utilizzo del servizio TableService che produce un array di oggetti JSON \textit{"A"} in output. La tabella verrà poi aggiornata invocando il metodo setDataSet(\textit{"A"}) restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;	
+	
+	\end{itemize}
+	\paragraph{Relazioni con altre classi}
+	\begin{itemize}
+ 	\item IN: \textbf{ComponentCtrl}:\\
+	 	Il controller TableCtrl estende ComponentCtrl per la costruzione e gestione di tabelle;
+	\item IN \textbf{TableService}:\\
+		Il controller TableCtrl necessita di TableService per la gestione, il recupero ed il salvataggio delle tabelle;
+	\item OUT: \textbf{SlideEditorCtrl}:\\
+		Il controller SlideEditorCtrl necessita di TableCtrl per la costruzione e gestione delle tabelle. 	
+	\end{itemize}
 
 \newpage
 \subsubsection{TextCtrl}
@@ -298,7 +357,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\item \textbf{+load():String}:\\	
 		Metodo che permette di caricare un componente testuale mediante l'utilizzo del servizio TextService restituendo l'oggetto JSON corrispondente in caso di successo ed un oggetto vuoto in caso di fallimento.	
 	\item \textbf{+save():Boolean}:\\	
-			Metodo che permette di salvare un componente testuale mediante l'utilizzo del servizio TextService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
+		Metodo che permette di salvare un componente testuale mediante l'utilizzo del servizio TextService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\item \textbf{+setBold(\textit{value}:Boolean):Boolean};
 		Metodo che permette di im postare la proprietà "grassetto" dell'oggetto testuale corrente al valore \textit{value} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\item \textbf{+setItalic(\textit{value}:Boolean):Boolean};
