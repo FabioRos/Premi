@@ -76,6 +76,9 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
+	
+	 \item IN: \textbf{Model::Component}:\\
+		Il controller ComponentCtrl utilizza Model::Component per stabilire la struttura dell'oggetto che rappresenta.
 	 \item OUT: \textbf{SlideEditorCtrl}:\\
 		Il controller SlideEditorCtrl utilizza ComponentCtrl per la gestione dei componenti al fine di costruire la slide.
 	 \item OUT: \textbf{ChartCtrl}:\\
@@ -130,11 +133,14 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
  	\item IN: \textbf{ComponentCtrl}:\\
-	 	Il controller ChartCtrl estende ComponentCtrl per la costruzione e gestione di grafici.
+	 	Il controller ChartCtrl estende ComponentCtrl per la costruzione e gestione di grafici;
 	\item IN: \textbf{ChartService}:\\
-		Campo dati che contiene un riferimento al servizio che si occupa di gestire reperimento, cancellazione ed aggiornamento dei grafici all'interno del sistema.
+		Campo dati che contiene un riferimento al servizio che si occupa di gestire reperimento, cancellazione ed aggiornamento dei grafici all'interno del sistema;
+	\item IN: \textbf{Model::Chart}:\\
+		Il controller ChartCtrl utilizza Model::Chart per stabilire la struttura dell'oggetto che rappresenta;
  	\item OUT: \textbf{SlideEditorCtrl}:\\
 	 	Il controller SlideEditorCtrl necessita di ChartCtrl per la costruzione e gestione di grafici.
+	 	
 	\end{itemize}
 
 \newpage
@@ -174,6 +180,8 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	 	Il controller ImageCtrl estende ComponentCtrl per la costruzione e gestione di grafici;
 	\item IN: \textbf{ImageService}:\\
 		Il controller ImageCtrl necessita di ImageCtrl per il recupero ed il salvataggio delle immagini;
+	\textbf{\item IN: \textbf{Model::Image}:\\
+			Il controller ComponentCtrl utilizza Model::Image per stabilire la struttura dell'oggetto che rappresenta.}
 	\item OUT: \textbf{SlideEditorCtrl}:\\
 		Il controller SlideEditorCtrl necessita di ImageCtrl per la costruzione e gestione delle immagini. 	
 	\end{itemize}
@@ -255,6 +263,9 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	 	Il controller RealTimeDataCtrl estende ComponentCtrl per la costruzione e gestione di componenti con aggiornamento in tempo reale;
 	\item IN: \textbf{RealTimeDataService}:\\
 		Il controller RealTimeDataCtrl necessita di RealTimeDataService per il recupero ed il salvataggio delle informazioni necessarie alla corretta erogazione e gestione degli oggetti con aggiornamento in tempo reale;
+	\item IN: \textbf{Model::RealTimeData}:\\
+		Il controller RealTimeDataCtrl utilizza Model::RealTimeData per stabilire la struttura dell'oggetto che rappresenta;	
+	
 	\item OUT: \textbf{SlideEditorCtrl}:\\
 		Il controller SlideEditorCtrl necessita di ComponentCtrl per la costruzione e gestione degli oggetti con aggiornamento in tempo reale. 	
 	\end{itemize}
@@ -310,6 +321,8 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	 	Il controller TableCtrl estende ComponentCtrl per la costruzione e gestione di tabelle;
 	\item IN: \textbf{TableService}:\\
 		Il controller TableCtrl necessita di TableService per la gestione, il recupero ed il salvataggio delle tabelle;
+	\item IN: \textbf{Model::Table}:\\
+		Il controller TableCtrl utilizza Model::Table per stabilire la struttura dell'oggetto che rappresenta;
 	\item OUT: \textbf{SlideEditorCtrl}:\\
 		Il controller SlideEditorCtrl necessita di TableCtrl per la costruzione e gestione delle tabelle. 	
 	\end{itemize}
@@ -373,6 +386,8 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	 	Il controller TextCtrl estende ComponentCtrl per la costruzione e gestione di componenti testuali.
 	\item IN: \textbf{TextService}:\\
 		Il controller TextCtrl necessita di TextService per il recupero ed il salvataggio delle informazioni necessarie alla corretta erogazione e gestione degli oggetti di tipo testuale;
+	\item IN: \textbf{Model::Text}:\\
+		Il controller TextCtrl utilizza Model::Text per stabilire la struttura dell'oggetto che rappresenta;
 	\item OUT: \textbf{SlideEditorCtrl}:\\
 		Il controller SlideEditorCtrl necessita di TextCtrl per la costruzione e gestione di componenti testuali. 	
 	\end{itemize}
