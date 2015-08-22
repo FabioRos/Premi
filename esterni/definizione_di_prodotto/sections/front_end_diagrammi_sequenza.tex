@@ -7,6 +7,18 @@ Vengono di seguito riportate alcune sequenze di operazioni svolte dai controller
 
 \begin{figure}[H] 
 	\centering 
-	\includegraphics[scale=0.40] {img/ricerca.png}
+	\includegraphics[scale=0.60] {img/ricerca.png}
 	\caption{Diagrammi di sequenza front-end - Ricerca} 
+\end{figure}
+
+
+
+\paragraph{5.1.1.2 Inserimento dati real time}\mbox{}\\
+
+\noindent Il diagramma sottostante rappresenta le operazioni che vengono eseguite quando un utente inserisce dei dati real time all'interno di una slide. La sequenza di operazioni che portano a mostrare i risultati di una ricerca ha inizio dopo che l'utente ha premuto il bottone di inserimento dati real time nell'editor delle slide, ha riempito i campi richiesti dal form che appare ed ha premuto il bottone \textbf{Insert}. I dati inseriti vengono raccolti da addRealTimeData() che li invia a \textbf{ComponentCtrl}. Ogni dato raccolto viene controllato dal proprio metodo (target da targetUrl(), selector da selector() e così via) e settato dal rispettivo metodo (target da setTargetUrl(), selector da setSelector() e così via). Una volta raccolti i dati vengono inviati a RealTimeDataService() che li processa, e se risultano esatti risponde con un \textit{True} aggiungendo i dati real time alla slide, in caso contrario risponde con un \textit{false} e viene segnalato con un  messaggio di errore.
+
+\begin{figure}[H] 
+	\centering 
+	\includegraphics[scale=0.60] {img/realtime.png}
+	\caption{Diagrammi di sequenza front-end - Inserimento dati real time} 
 \end{figure}
