@@ -14,7 +14,7 @@
 	\paragraph{Metodi}
 		\begin{itemize}
 			\item \textbf{+ show(username: String) : JSON}\\
-			Il metodo verifica se c'è un utente autenticato. Se la verifica ha avuto successo si procede con il recupero dei dati dell'utente a cui corrisponde la variabile \textit{username}, in particolare il suo profilo, e restituisce un oggetto JSON contenente tali informazioni:\\
+			Il metodo verifica se c'è un utente autenticato. Se la verifica ha avuto successo si procede con il recupero dei dati dell'utente a cui corrisponde la variabile \textit{username}, in particolare il suo profilo, e restituisce un oggetto \gls{JSON} contenente tali informazioni:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item username : String;\\
@@ -33,7 +33,7 @@
 			\end{itemize}
 			
 			\item \textbf{+ destroy(username: String) : boolean}
-			Il metodo recupera l'utente autenticato e lo cancella dal database insieme a tutte le  sue informazioni. Il metodo ritorna un valore booleano che indica l'avvenuta cancellazione dal database:\\
+			Il metodo recupera l'utente autenticato e lo cancella dal \gls{database} insieme a tutte le  sue informazioni. Il metodo ritorna un valore booleano che indica l'avvenuta cancellazione dal \gls{database}:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item username : String;\\
@@ -58,7 +58,7 @@
 	\paragraph{Metodi}
 		\begin{itemize}
 			\item \textbf{+ index(username: String) : JSON}\\
-			Il metodo recupera tutti i progetti dell'utente autenticato e li restituisce. Il metodo restituisce un oggetto JSON con le informazioni richieste:\\
+			Il metodo recupera tutti i progetti dell'utente autenticato e li restituisce. Il metodo restituisce un oggetto \gls{JSON} con le informazioni richieste:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item username : String;\\
@@ -66,7 +66,7 @@
 			\end{itemize}
 			
 			\item \textbf{+ store(request: Request, username: String) : boolean}\\
-			Il metodo crea un nuovo progetto assegnandoli un nome e lo salva nel database all'interno della collection relativa all'utente autenticato. Il metodo restituisce un oggetto JSON contenente il progetto appena creato. Inoltre emette un segnale di tipo \textit{ProjectWasCreated} per la corretta inizializzazione della presentazione relativa al nuovo progetto:\\
+			Il metodo crea un nuovo progetto assegnandoli un nome e lo salva nel \gls{database} all'interno della collection relativa all'utente autenticato. Il metodo restituisce un oggetto \gls{JSON} contenente il progetto appena creato. Inoltre emette un segnale di tipo \textit{ProjectWasCreated} per la corretta inizializzazione della presentazione relativa al nuovo progetto:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item request : Request;\\
@@ -88,7 +88,7 @@
 			\end{itemize}
 			
 			\item \textbf{+ destroy(username: String, projectID: String) : boolean}\\
-			Il metodo recupera il progetto dell'utente autenticato, indicato da projectID, e lo cancella dal database insieme a tutte le sue informazioni. Il metodo ritorna un valore booleano che indica che la cancellazione del progetto dal database è avvenuta:\\
+			Il metodo recupera il progetto dell'utente autenticato, indicato da projectID, e lo cancella dal \gls{database} insieme a tutte le sue informazioni. Il metodo ritorna un valore booleano che indica che la cancellazione del progetto dal \gls{database} è avvenuta:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item username : String;\\
@@ -98,7 +98,7 @@
 			\end{itemize}
 			
 			\item \textbf{+ searchByUsername(request: Request) : JSON}\\
-			Il metodo ritorna un oggetto JSON contenente la lista di tutti gli utenti che hanno \textit{username} uguale a quello inserito nell'apposito form:\\
+			Il metodo ritorna un oggetto \gls{JSON} contenente la lista di tutti gli utenti che hanno \textit{username} uguale a quello inserito nell'apposito form:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item request : Request;\\
@@ -106,7 +106,7 @@
 			\end{itemize}
 			
 			\item \textbf{+ searchByProjectName(request: Request) : JSON}\\
-			Il metodo ritorna un oggetto JSON contenente la lista di tutti i progetti che hanno \textit{name} uguale a quello inserito nell'apposito form:\\
+			Il metodo ritorna un oggetto \gls{JSON} contenente la lista di tutti i progetti che hanno \textit{name} uguale a quello inserito nell'apposito form:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item request : Request;\\
@@ -124,14 +124,14 @@
 \end{figure}
 
 	\paragraph{Descrizione}
-		Questa classe gestisce i dati di un'infografica.
+		Questa classe gestisce i dati di un'\gls{infografica}.
 	\paragraph{Utilizzo}
-		La classe è progettata per consentire la creazione, la manipolazione dei dati, l'interrogazione e l'eliminazione di un'infografica.
+		La classe è progettata per consentire la creazione, la manipolazione dei dati, l'interrogazione e l'eliminazione di un'\gls{infografica}.
 		
 	\paragraph{Metodi}
 		\begin{itemize}
 			\item \textbf{+ index(username: String, projectID: String) : JSON}\\
-			Il metodo recupera le infografiche relative ad un progetto dell'utente autenticato e restituisce un oggetto JSON con tutte le infografiche associate al progetto:\\
+			Il metodo recupera le infografiche relative ad un progetto dell'utente autenticato e restituisce un oggetto \gls{JSON} con tutte le infografiche associate al progetto:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item username : String; \\
@@ -141,11 +141,11 @@
 			\end{itemize}
 			
 			\item \textbf{+ store(request: Request, username: String, projectID: String) : JSON}\\
-			Il metodo crea una nuova infografica assegnandoli un nome e il path per il salvataggio e la salva nel progetto con ID = projectID relativo all'utente autenticato. Il metodo ritorna un oggetto JSON contenente l'infografica appena creata:\\
+			Il metodo crea una nuova \gls{infografica} assegnandoli un nome e il path per il salvataggio e la salva nel progetto con ID = projectID relativo all'utente autenticato. Il metodo ritorna un oggetto \gls{JSON} contenente l'\gls{infografica} appena creata:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item request : Request;\\
-				Richiesta HTTP contenente i valori con cui creare l'infografica.
+				Richiesta HTTP contenente i valori con cui creare l'\gls{infografica}.
 				\item username : String; \\
 				Stringa contenente il nome utente.
 				\item projectID : String; \\
@@ -153,7 +153,7 @@
 			\end{itemize}
 			
 			\item \textbf{+ show(username: String, projectID: String, infographicID: String) : JSON}\\
-			Il metodo interroga il database recuperando il progetto con l'ID = projectID relativo all'utente autenticato ed a partire dal progetto recupera l'infografica con ID = infographicID. Il metodo ritorna un oggetto JSON con le informazioni richieste dell'infografica:\\
+			Il metodo interroga il \gls{database} recuperando il progetto con l'ID = projectID relativo all'utente autenticato ed a partire dal progetto recupera l'\gls{infografica} con ID = infographicID. Il metodo ritorna un oggetto \gls{JSON} con le informazioni richieste dell'\gls{infografica}:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item username : String; \\
@@ -161,25 +161,25 @@
 				\item projectID : String; \\
 				Stringa contenente l'ID univoco di un progetto associato all'utente autenticato.
 				\item infographicID : String; \\
-				Stringa contenente l'ID univoco di un'infografica associato al progetto.
+				Stringa contenente l'ID univoco di un'\gls{infografica} associato al progetto.
 			\end{itemize}
 			
 			\item \textbf{+ update(request: Request, username: String, projectID: String, infographicID: String) : boolean}\\
-			Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato ed a partire dal progetto recupera l'infografica con ID = infographicID ed aggiorna i dati \textit{name} e \textit{path} dell'infografica. Il metodo ritorna un valore booleano che indica che l'aggiornamento è stato effettuato:\\
+			Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato ed a partire dal progetto recupera l'\gls{infografica} con ID = infographicID ed aggiorna i dati \textit{name} e \textit{path} dell'\gls{infografica}. Il metodo ritorna un valore booleano che indica che l'aggiornamento è stato effettuato:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item request : Request;\\
-				Richiesta HTTP contenente i valori con cui aggiornare l'infografica.
+				Richiesta HTTP contenente i valori con cui aggiornare l'\gls{infografica}.
 				\item username : String; \\
 				Stringa contenente il nome utente.
 				\item projectID : String; \\
 				Stringa contenente l'ID univoco di un progetto associato all'utente autenticato.
 				\item infographicID : String; \\
-				Stringa contenente l'ID univoco di un'infografica associato al progetto.
+				Stringa contenente l'ID univoco di un'\gls{infografica} associato al progetto.
 			\end{itemize}
 			
 			\item \textbf{+ destroy(username: String, projectID: String, infographicID: String) : boolean}\\
-			Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato ed a partire dal progetto recupera l'infografica con ID = infographicID chiamando il metodo \textit{delete} su tale infografica cancellandola dal database. Il metodo ritorna un valore booleano che indica che la cancellazione è avvenuta:\\
+			Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato ed a partire dal progetto recupera l'\gls{infografica} con ID = infographicID chiamando il metodo \textit{delete} su tale \gls{infografica} cancellandola dal \gls{database}. Il metodo ritorna un valore booleano che indica che la cancellazione è avvenuta:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item username : String; \\
@@ -187,7 +187,7 @@
 				\item projectID : String; \\
 				Stringa contenente l'ID univoco di un progetto associato all'utente autenticato.
 				\item infographicID : String; \\
-				Stringa contenente l'ID univoco di un'infografica associato al progetto.
+				Stringa contenente l'ID univoco di un'\gls{infografica} associato al progetto.
 			\end{itemize}
 		\end{itemize}
 		
@@ -208,7 +208,7 @@
 	\paragraph{Metodi}
 		\begin{itemize}
 			\item \textbf{+ show(username: String, projectID: String, presentationID: String) : JSON}\\
-			Il metodo interroga il database recuperando il progetto con l'ID = projectID relativo all'utente autenticato ed a partire dal progetto recupera la presentazione con ID = presentationID. Il metodo ritorna un oggetto JSON con le informazioni richieste della presentazione:\\
+			Il metodo interroga il \gls{database} recuperando il progetto con l'ID = projectID relativo all'utente autenticato ed a partire dal progetto recupera la presentazione con ID = presentationID. Il metodo ritorna un oggetto \gls{JSON} con le informazioni richieste della presentazione:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item username : String; \\
@@ -234,7 +234,7 @@
 			\end{itemize}
 			\newpage
 			\item \textbf{+ destroy(username: String, projectID: String, presentationID: String) : boolean}\\
-			Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato ed a partire dal progetto recupera la presentazione con ID = presentationID chiamando il metodo \textit{delete} su tale presentazione cancellandola dal database. Il metodo ritorna un valore booleano che indica che la cancellazione è avvenuta:\\
+			Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato ed a partire dal progetto recupera la presentazione con ID = presentationID chiamando il metodo \textit{delete} su tale presentazione cancellandola dal \gls{database}. Il metodo ritorna un valore booleano che indica che la cancellazione è avvenuta:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item username : String; \\
@@ -256,14 +256,14 @@
 \end{figure}
 
 	\paragraph{Descrizione}
-		Questa classe gestisce i dati di una slide.
+		Questa classe gestisce i dati di una \gls{slide}.
 	\paragraph{Utilizzo}
-		La classe è stata progettata per consentire la creazione e la manipolazione dei dati di una slide.
+		La classe è stata progettata per consentire la creazione e la manipolazione dei dati di una \gls{slide}.
 
 	\paragraph{Metodi}
 		\begin{itemize}
-			\item \textbf{+ index(username: String, projectID: String, presentationID: String) : JSON}\\
-				Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto e restituisce tutte le slide associate ad essa. Il metodo ritorna un oggetto JSON contenente le slide all'interno della presentazione:\\
+			\item \textbf{+ index(username: String, projectID: String, presentationID: String) : \gls{JSON}}\\
+				Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto e restituisce tutte le \gls{slide} associate ad essa. Il metodo ritorna un oggetto \gls{JSON} contenente le \gls{slide} all'interno della presentazione:\\
 				\textbf{Argomenti:}
 				\begin{itemize}
 					\item username : String; \\
@@ -274,12 +274,12 @@
 					Stringa contenente l'ID univoco di una presentazione associata al progetto.
 				\end{itemize}
 				
-			\item \textbf{+ store(request: Request, username: String, projectID: String, presentationID: String) : JSON}\\
-				Il metodo crea una nuova slide recuperando il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto e la slide con ID = slideID. Invoca il metodo statico della classe Presentation \textit{incrementIndex} che aggiorna in modo corretto tutti gli indici delle slide della presentazione. Il metodo ritorna un oggetto JSON che contiene la slide appena creata:\\
+			\item \textbf{+ store(request: Request, username: String, projectID: String, presentationID: String) : \gls{JSON}}\\
+				Il metodo crea una nuova \gls{slide} recuperando il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto e la \gls{slide} con ID = slideID. Invoca il metodo statico della classe Presentation \textit{incrementIndex} che aggiorna in modo corretto tutti gli indici delle \gls{slide} della presentazione. Il metodo ritorna un oggetto \gls{JSON} che contiene la \gls{slide} appena creata:\\
 				\textbf{Argomenti:}
 				\begin{itemize}
 					\item request : Request;\\
-					Richiesta HTTP contenente i componenti da inserire nella slide.
+					Richiesta HTTP contenente i componenti da inserire nella \gls{slide}.
 					\item username : String; \\
 					Stringa contenente il nome utente.
 					\item projectID : String; \\
@@ -289,8 +289,8 @@
 				\end{itemize}
 			
 			\newpage
-			\item \textbf{+ show(username: String, projectID: String, presentationID: String, slideID: String) : JSON}\\
-				Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto e la slide con ID = slideID. Il metodo ritorna un oggetto JSON contenente la slide richiesta:\\
+			\item \textbf{+ show(username: String, projectID: String, presentationID: String, slideID: String) : \gls{JSON}}\\
+				Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto e la \gls{slide} con ID = slideID. Il metodo ritorna un oggetto \gls{JSON} contenente la \gls{slide} richiesta:\\
 				\textbf{Argomenti:}
 					\begin{itemize}
 						\item username : String; \\
@@ -300,15 +300,15 @@
 						\item presentationID : String; \\
 						Stringa contenente l'ID univoco di una presentazione associata al progetto.
 						\item slideID : String; \\
-						Stringa contenente l'ID univoco della slide associata alla presentazione.
+						Stringa contenente l'ID univoco della \gls{slide} associata alla presentazione.
 					\end{itemize}
 					
 			\item \textbf{+ update(request: Request, username: String, projectID: String, presentationID: String, slideID: String) : b}oolean\\
-				Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto e la slide con ID = slideID. Invoca i metodi statici della classe Slide \textit{deleteOldComponents} e \textit{updateNewComponents} per inserire in modo corretto i nuovi componenti passati tramite la richiesta HTTP. Il metodo ritorna un valore booleano che indica che l'aggiornamento è stato effettuato:\\
+				Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto e la \gls{slide} con ID = slideID. Invoca i metodi statici della classe \gls{Slide} \textit{deleteOldComponents} e \textit{updateNewComponents} per inserire in modo corretto i nuovi componenti passati tramite la richiesta HTTP. Il metodo ritorna un valore booleano che indica che l'aggiornamento è stato effettuato:\\
 					\textbf{Argomenti:}
 					\begin{itemize}
 						\item request : Request;\\
-						Richiesta HTTP contenente i componenti con cui aggiornare la slide.
+						Richiesta HTTP contenente i componenti con cui aggiornare la \gls{slide}.
 						\item username : String; \\
 						Stringa contenente il nome utente.
 						\item projectID : String; \\
@@ -316,11 +316,11 @@
 						\item presentationID : String; \\
 						Stringa contenente l'ID univoco di una presentazione associata al progetto.
 						\item slideID : String; \\
-						Stringa contenente l'ID univoco della slide associata alla presentazione.
+						Stringa contenente l'ID univoco della \gls{slide} associata alla presentazione.
 					\end{itemize}
 					
 			\item \textbf{+ destroy(username: String, projectID: String, presentationID: String, slideID: String) : boolean}\\
-				Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto e la slide con ID = slideID e la elimina dal database cancellando tutte le sue informazioni. Invoca il metodo statico della classe Presentation \textit{decrementIndex} che aggiorna in modo corretto tutti gli indici delle slide della presentazione. il metodo ritorna un valore booleano che indica che la cancellazione nel database è stata effettuata:\\
+				Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto e la \gls{slide} con ID = slideID e la elimina dal \gls{database} cancellando tutte le sue informazioni. Invoca il metodo statico della classe Presentation \textit{decrementIndex} che aggiorna in modo corretto tutti gli indici delle \gls{slide} della presentazione. il metodo ritorna un valore booleano che indica che la cancellazione nel \gls{database} è stata effettuata:\\
 				\textbf{Argomenti:}
 				\begin{itemize}
 					\item username : String; \\
@@ -330,15 +330,15 @@
 					\item presentationID : String; \\
 					Stringa contenente l'ID univoco di una presentazione associata al progetto.
 					\item slideID : String; \\
-					Stringa contenente l'ID univoco della slide associata alla presentazione.
+					Stringa contenente l'ID univoco della \gls{slide} associata alla presentazione.
 				\end{itemize}
 				
 			\item \textbf{+ findByAxis(request: Request, username: String, projectID: String, presentationID: String) : String}\\
-			Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto. Il metodo recupera dalla richiesta HTTP gli indici degli assi X ed Y della slide che si vuole avere, esegue una query per trovare tale slide associata agli indici e ne ritorna l'ID. Ritorna ID = null se non trova nessuna slide:\\
+			Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto. Il metodo recupera dalla richiesta HTTP gli indici degli assi X ed Y della \gls{slide} che si vuole avere, esegue una query per trovare tale \gls{slide} associata agli indici e ne ritorna l'ID. Ritorna ID = null se non trova nessuna \gls{slide}:\\
 			\textbf{Argomenti:}
 			\begin{itemize}
 				\item request : Request;\\
-				Richiesta HTTP contenente i valori degli assi X ed Y della slide desiderata.
+				Richiesta HTTP contenente i valori degli assi X ed Y della \gls{slide} desiderata.
 				\item username : String; \\
 				Stringa contenente il nome utente.
 				\item projectID : String; \\
@@ -350,8 +350,8 @@
 
 \newpage
 \subsubsection{Premi::Http::Controllers::Auth}
-Laravel implementa un semplice meccanismo di autenticazione. Infatti, quasi tutto è già configurato "out of the box". Il file di configurazione si trova in config/auth.php, che contiene una serie di opzioni, ben documentate, che useremo per ottimizzare il comportamento del servizio di autenticazione.\\
-Ognuno di questi controller usa un trait che include i loro metodi necessari.
+\gls{Laravel} implementa un semplice meccanismo di autenticazione. Infatti, quasi tutto è già configurato "out of the box". Il file di configurazione si trova in config/auth.\gls{php}, che contiene una serie di opzioni, ben documentate, che useremo per ottimizzare il comportamento del servizio di autenticazione.\\
+Ognuno di questi controller usa un \gls{trait} che include i loro metodi necessari.
 	\paragraph{AuthController}
 	\begin{figure}[h]
 \centering

@@ -3,8 +3,8 @@
 	\includegraphics[width=0.7\linewidth]{img/premi_front_end_services}
 	\caption[Premi::Front-End::Services]{Premi::Front-End::Services}
 \end{figure}
-Il package gestisce i services del front-end dell'applicazione. Comunica con i controller e con i servizi REST offerti dal lato back-end, fornendo delle risorse sulle quali creare le funzioni per comunicare tra i due layer. La struttura prevede cinque service principali i quali al loro interno contengono dei metodi specifici che forniscono le risorse per dei servizi più precisi.
-Per brevità nell'identificare un service è stata omessa la dicitura Premi::Front-End::Services lasciando solamente il nome del service stesso. Si assume dunque che la dicitura compatta <nomeService> rappresenta la forma estesa Premi::Front-End::Services::<nomeService>.
+Il package gestisce i services del \gls{front-end} dell'applicazione. Comunica con i controller e con i servizi \gls{REST} offerti dal lato \gls{back-end}, fornendo delle risorse sulle quali creare le funzioni per comunicare tra i due layer. La struttura prevede cinque service principali i quali al loro interno contengono dei metodi specifici che forniscono le risorse per dei servizi più precisi.
+Per brevità nell'identificare un service è stata omessa la dicitura Premi::\gls{Front-End}::Services lasciando solamente il nome del service stesso. Si assume dunque che la dicitura compatta <nomeService> rappresenta la forma estesa Premi::\gls{Front-End}::Services::<nomeService>.
 \newpage
 
 
@@ -22,7 +22,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		Si occupa di gestire il processo di recupero password per l'autenticazione dell'utente.
 		
 		\paragraph{Utilizzo}
-		Viene utilizzato per creare una risorsa collegata al servizio REST che permette il recupero della password dell'utente.
+		Viene utilizzato per creare una risorsa collegata al servizio \gls{REST} che permette il recupero della password dell'utente.
 		
 		\paragraph{Relazioni con le altre classi}
 		\begin{itemize}
@@ -33,7 +33,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio REST specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -42,7 +42,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 			Metodo che richiama la funzione PUT collegata alla risorsa e permette di eseguire la chiamata alla funzione definita nella parte di backend la quale avvia il processo di recupero password, inviando una mail all'indirizzo passato attraverso il parametro della funzione.\\
 			\textbf{Parametri:}\\
 			\begin{itemize}
-				\item \textit{data: Object}: parametro di un oggetto JSON che contiene l'indirizzo email inserito nella view.
+				\item \textit{data: Object}: parametro di un oggetto \gls{JSON} che contiene l'indirizzo email inserito nella view.
 			\end{itemize}
 		\end{itemize}
 \newpage
@@ -59,7 +59,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		Si occupa di gestire il processo di login dell'utente.
 		
 		\paragraph{Utilizzo}
-		Viene utilizzato per creare una risorsa collegata al servizio REST che permette l'autenticazione dell'utente al sistema.
+		Viene utilizzato per creare una risorsa collegata al servizio \gls{REST} che permette l'autenticazione dell'utente al sistema.
 		
 		\paragraph{Relazioni con le altre classi}
 		\begin{itemize}
@@ -70,7 +70,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio REST specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -79,7 +79,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 			Metodo che richiama la funzione PUT collegata alla risorsa e permette di eseguire il login dell'utente al sistema. Il metodo ritorna una promessa la quale, se ha esito positivo, verrà analizzata per ottenere lo username dell'utente o il messaggio di errore. \\
 			\textbf{Parametri:}\\
 			\begin{itemize}
-				\item \textit{data: Object}: parametro di un oggetto JSON che contiene il nome utente e la password inseriti nella view e necessari per l'autenticazione al sistema.
+				\item \textit{data: Object}: parametro di un oggetto \gls{JSON} che contiene il nome utente e la password inseriti nella view e necessari per l'autenticazione al sistema.
 			\end{itemize}
 		\end{itemize}
 \newpage
@@ -96,7 +96,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		Si occupa di gestire il processo di logout dell'utente.
 		
 		\paragraph{Utilizzo}
-		Viene utilizzato per creare una risorsa collegata al servizio REST che permette l'autenticazione dell'utente al sistema.
+		Viene utilizzato per creare una risorsa collegata al servizio \gls{REST} che permette l'autenticazione dell'utente al sistema.
 		
 		\paragraph{Relazioni con le altre classi}
 		\begin{itemize}
@@ -107,7 +107,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio REST specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -129,7 +129,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		Si occupa di gestire il processo di registrazione dell'utente.
 		
 		\paragraph{Utilizzo}
-		Viene utilizzato per creare una risorsa collegata al servizio REST che permette l'autenticazione dell'utente al sistema.
+		Viene utilizzato per creare una risorsa collegata al servizio \gls{REST} che permette l'autenticazione dell'utente al sistema.
 		
 		\paragraph{Relazioni con le altre classi}
 		\begin{itemize}
@@ -140,7 +140,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio REST specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -149,7 +149,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 			Metodo che richiama la funzione PUT collegata alla risorsa e permette di eseguire la registrazione dell'utente al sistema. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, verrà analizzata per ottenere la conferma di avvenuta registrazione o altrimenti, l'array contenenti gli errori commessi nell'inserimento dei dati.\\
 			\textbf{Parametri:}\\
 			\begin{itemize}
-				\item \textit{data: Object}: parametro di un oggetto JSON che contiene tutte le credenziali necessarie inserite nella view per registrarsi come nuovo utente al sistema.
+				\item \textit{data: Object}: parametro di un oggetto \gls{JSON} che contiene tutte le credenziali necessarie inserite nella view per registrarsi come nuovo utente al sistema.
 			\end{itemize}
 		\end{itemize}
 \newpage
@@ -166,7 +166,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		Si occupa di gestire le operazioni riguardanti un utente.
 		
 		\paragraph{Utilizzo}
-		Viene utilizzato per creare una risorsa collegata al servizio REST che permette di gestire le operazioni riguardanti un utente, quali il recupero dei suoi dati.
+		Viene utilizzato per creare una risorsa collegata al servizio \gls{REST} che permette di gestire le operazioni riguardanti un utente, quali il recupero dei suoi dati.
 		
 		\paragraph{Relazioni con le altre classi}
 		\begin{itemize}
@@ -177,7 +177,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio REST specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -207,33 +207,33 @@ L'InfographicService è una classe che mette a disposizione dei metodi per la ge
 		Si occupa di gestire le operazioni riguardanti le infografiche del progetto.
 		
 		\paragraph{Utilizzo}
-		Viene utilizzato per creare una risorsa collegata al servizio REST che permette di gestire le operazioni sulle infografiche, quali la crezione, la modifica, il salvataggio e l'eliminazione.
+		Viene utilizzato per creare una risorsa collegata al servizio \gls{REST} che permette di gestire le operazioni sulle infografiche, quali la crezione, la modifica, il salvataggio e l'eliminazione.
 		
 		\paragraph{Relazioni con le altre classi}
 		\begin{itemize}
 			\item OUT: \textbf{InfographicEditorCtrl}:\\
-			Classe che gestisce le operazioni di modifica di una infografica.
+			Classe che gestisce le operazioni di modifica di una \gls{infografica}.
 		\end{itemize}
 		
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio REST specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
 		\begin{itemize}
 			\item \textbf{+ query(id: String): Promise}:\\
-				Metodo che richiama la funzione GET collegata alla risorsa e permette di caricare l'infografica richiesta dal database. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà l'infografica con tutti i propri dati.\\
+				Metodo che richiama la funzione GET collegata alla risorsa e permette di caricare l'\gls{infografica} richiesta dal \gls{database}. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà l'\gls{infografica} con tutti i propri dati.\\
 			\item \textbf{+ save(name: String): Promise}:\\
-				Metodo che richiama la funzione POST collegata alla risorsa e permette di creare una nuova infografica e di salvarla nel database. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà il valore \textit{true}.\\
+				Metodo che richiama la funzione POST collegata alla risorsa e permette di creare una nuova \gls{infografica} e di salvarla nel \gls{database}. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà il valore \textit{true}.\\
 			\item \textbf{+ update(id: String, data:Object): Promise}:\\
-				Metodo che richiama la funzione PUT collegata alla risorsa e permette di salvare l'infografica aggiornando i dati passati per parametro. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà il valore \textit{true}.\\
+				Metodo che richiama la funzione PUT collegata alla risorsa e permette di salvare l'\gls{infografica} aggiornando i dati passati per parametro. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà il valore \textit{true}.\\
 			\textbf{Parametri:}\\
 			\begin{itemize}
-				\item \textit{id: String}: parametro di una stringa contenente l'id dell'infografica sulla quale eseguire le operazioni;
-				\item \textit{name: String}: parametro di una stringa contenente il nome dell'infografica da creare;
-				\item \textit{data: Object}: parametro di una oggetto contenente i dati necessari per aggiornare l'infografica.
+				\item \textit{id: String}: parametro di una stringa contenente l'id dell'\gls{infografica} sulla quale eseguire le operazioni;
+				\item \textit{name: String}: parametro di una stringa contenente il nome dell'\gls{infografica} da creare;
+				\item \textit{data: Object}: parametro di una oggetto contenente i dati necessari per aggiornare l'\gls{infografica}.
 			\end{itemize}
 		\end{itemize}
 \newpage
@@ -254,7 +254,7 @@ Il PresentationService rende disponibili dei servizi che si occupano della gesti
 		Si occupa di gestire le operazioni riguardanti la presentazione di un progetto.
 		
 		\paragraph{Utilizzo}
-		Viene utilizzato per creare una risorsa collegata al servizio REST che permette di gestire le operazioni sulle presentazioni, cioè di caricarle dal backend oppure di salvarle nel database.
+		Viene utilizzato per creare una risorsa collegata al servizio \gls{REST} che permette di gestire le operazioni sulle presentazioni, cioè di caricarle dal backend oppure di salvarle nel \gls{database}.
 		
 		\paragraph{Relazioni con le altre classi}
 		\begin{itemize}
@@ -263,21 +263,21 @@ Il PresentationService rende disponibili dei servizi che si occupano della gesti
 			\item OUT: \textbf{PresentationEditorCtrl}:\\
 			Classe che gestisce le operazioni modifica di una presentazione;
 			\item OUT: \textbf{SlideEditorCtrl}:\\
-			Classe che gestisce le operazioni di modifica di una slide.
+			Classe che gestisce le operazioni di modifica di una \gls{slide}.
 		\end{itemize}
 		
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio REST specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
 		\begin{itemize}
 			\item \textbf{+ query(id: String): Promise}:\\
-			Metodo che richiama la funzione GET collegata alla risorsa e permette di caricare la presentazione dal database. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà la presentazione con tutte le rispettive slide.\\
+			Metodo che richiama la funzione GET collegata alla risorsa e permette di caricare la presentazione dal \gls{database}. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà la presentazione con tutte le rispettive \gls{slide}.\\
 			\item \textbf{+ update(id: String, theme:String, transition:String): Promise}:\\
-			Metodo che richiama la funzione POST collegata alla risorsa e permette di salvare la presentazione aggiornando i dati, anche quelli riguardanti il tema e la transizione tra le slide passati per parametro. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà il valore \textit{true}.\\
+			Metodo che richiama la funzione POST collegata alla risorsa e permette di salvare la presentazione aggiornando i dati, anche quelli riguardanti il tema e la transizione tra le \gls{slide} passati per parametro. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà il valore \textit{true}.\\
 			\textbf{Parametri:}\\
 			\begin{itemize}
 				\item \textit{id: String}: parametro di una stringa contenente l'id della presentazione sulla quale eseguire le operazioni;
@@ -289,7 +289,7 @@ Il PresentationService rende disponibili dei servizi che si occupano della gesti
 
 
 \subsubsection{ProjectService}
-ProjectService è una classe che mette a disposizione i metodi per l'organizzazione di un progetto. Con le risorse create da questi, è possibile caricare e salvare un progetto già presente nel database, eliminarlo oppure crearne uno di nuovo inserendo i parametri opportuni.
+ProjectService è una classe che mette a disposizione i metodi per l'organizzazione di un progetto. Con le risorse create da questi, è possibile caricare e salvare un progetto già presente nel \gls{database}, eliminarlo oppure crearne uno di nuovo inserendo i parametri opportuni.
 
 		\subsubsection{ProjectService::projectsService}
 		\begin{figure}[h]
@@ -302,7 +302,7 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 		Si occupa di gestire le operazioni riguardanti i progetti.
 		
 		\paragraph{Utilizzo}
-		Viene utilizzato per creare una risorsa collegata al servizio REST che permette di gestire le operazioni sui progetti, cioè di caricarli o eliminarli dal database.
+		Viene utilizzato per creare una risorsa collegata al servizio \gls{REST} che permette di gestire le operazioni sui progetti, cioè di caricarli o eliminarli dal \gls{database}.
 		
 		\paragraph{Relazioni con le altre classi}
 		\begin{itemize}
@@ -317,13 +317,13 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio REST specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
 		\begin{itemize}
 			\item \textbf{+ query(username: String): Promise}:\\
-			Metodo che richiama la funzione GET collegata alla risorsa e permette di caricare i progetti dell'utente con username passato per parametro e i rispettivi contenuti dal database. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà un oggetto avente il progetto e i suoi dati.\\
+			Metodo che richiama la funzione GET collegata alla risorsa e permette di caricare i progetti dell'utente con username passato per parametro e i rispettivi contenuti dal \gls{database}. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà un oggetto avente il progetto e i suoi dati.\\
 			\item \textbf{+ save(id: String, data:Object): Promise}:\\
 			Metodo che richiama la funzione POST collegata alla risorsa e permette di creare un nuovo progetto con i dati passati per parametro. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà il valore \textit{true}.\\
 			\textbf{Parametri:}\\
@@ -347,7 +347,7 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 		Si occupa di gestire il processo di ricerca del sistema.
 		
 		\paragraph{Utilizzo}
-		Viene utilizzato per creare una risorsa collegata al servizio REST che permette la ricerca nel sistema attraverso il nome del progetto.
+		Viene utilizzato per creare una risorsa collegata al servizio \gls{REST} che permette la ricerca nel sistema attraverso il nome del progetto.
 		
 		\paragraph{Relazioni con le altre classi}
 		\begin{itemize}
@@ -358,7 +358,7 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio REST specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -384,7 +384,7 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 		Si occupa di gestire il processo di ricerca del sistema.
 		
 		\paragraph{Utilizzo}
-		Viene utilizzato per creare una risorsa collegata al servizio REST che permette la ricerca nel sistema attraverso il nome utente.
+		Viene utilizzato per creare una risorsa collegata al servizio \gls{REST} che permette la ricerca nel sistema attraverso il nome utente.
 		
 		\paragraph{Relazioni con le altre classi}
 		\begin{itemize}
@@ -395,7 +395,7 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio REST specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -421,7 +421,7 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 		Si occupa di gestire le operazioni riguardanti uno specifico progetto di un utente.
 		
 		\paragraph{Utilizzo}
-		Viene utilizzato per creare una risorsa collegata al servizio REST che permette di gestire le operazioni sul progetto, cioè di caricarlo o eliminarli dal database.
+		Viene utilizzato per creare una risorsa collegata al servizio \gls{REST} che permette di gestire le operazioni sul progetto, cioè di caricarlo o eliminarli dal \gls{database}.
 		
 		\paragraph{Relazioni con le altre classi}
 		\begin{itemize}
@@ -434,13 +434,13 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio REST specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
 		\begin{itemize}
 			\item \textbf{+ delete(id: String): Promise}:\\
-			Metodo che richiama la funzione DELETE collegata alla risorsa e permette di rimuovere il progetto e tutto il suo contenuto dal database. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà il valore \textit{true}.\\
+			Metodo che richiama la funzione DELETE collegata alla risorsa e permette di rimuovere il progetto e tutto il suo contenuto dal \gls{database}. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà il valore \textit{true}.\\
 			\item \textbf{+ update(id: String, data:Object): Promise}:\\
 			Metodo che richiama la funzione PUT collegata alla risorsa e permette di aggiornare i dati del progetto passati per parametro. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà il valore \textit{true}.\\
 			\textbf{Parametri:}\\
@@ -453,7 +453,7 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 
 
 \subsubsection{SlideService}
-SlideService è l'ultimo dei macro servizi offerti e si occupa della gestione delle slide che compongono una presentazione. Con i metodi che mette a disposizione vengono create delle risorse apposite adatte a gestire tutte le operazioni che è possibile eseguire in una slide.
+SlideService è l'ultimo dei macro servizi offerti e si occupa della gestione delle \gls{slide} che compongono una presentazione. Con i metodi che mette a disposizione vengono create delle risorse apposite adatte a gestire tutte le operazioni che è possibile eseguire in una \gls{slide}.
 
 
 		\subsubsection{SlideService::indexService}
@@ -464,32 +464,32 @@ SlideService è l'ultimo dei macro servizi offerti e si occupa della gestione de
 		\end{figure}
 		
 		\paragraph{Descrizione}
-		Si occupa di gestire le operazioni riguardanti gli indici delle slide.
+		Si occupa di gestire le operazioni riguardanti gli indici delle \gls{slide}.
 		
 		\paragraph{Utilizzo}
-		Viene utilizzato per creare una risorsa collegata al servizio REST che permette di gestire le operazioni riguardanti gli indici delle slide.
+		Viene utilizzato per creare una risorsa collegata al servizio \gls{REST} che permette di gestire le operazioni riguardanti gli indici delle \gls{slide}.
 		
 		\paragraph{Relazioni con le altre classi}
 		\begin{itemize}
 			\item OUT: \textbf{SlideServiceCtrl}:\\
-			Classe che gestisce le operazioni riguardanti le slide di un progetto.
+			Classe che gestisce le operazioni riguardanti le \gls{slide} di un progetto.
 		\end{itemize}
 		
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio REST specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
 		\begin{itemize}
 			\item \textbf{+ get(id: String, xIndex:int, yIndex:int): Promise}:\\
-			Metodo che richiama la funzione GET collegata alla risorsa e permette di ottenere la slide avente x e y corrispondenti ai parametri passati. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà un oggetto avente l'id della slide.\\
+			Metodo che richiama la funzione GET collegata alla risorsa e permette di ottenere la \gls{slide} avente x e y corrispondenti ai parametri passati. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà un oggetto avente l'id della \gls{slide}.\\
 			\textbf{Parametri:}\\
 			\begin{itemize}
 				\item \textit{id: String}: parametro di una stringa contenente l'id del progetto sul quale eseguire la funzione;
-				\item \textit{xIndex: int}: parametro di un intero rappresentate la coordinata x della slide richiesta;
-				\item \textit{yIndex: int}: parametro di un intero rappresentate la coordinata y della slide richiesta.
+				\item \textit{xIndex: int}: parametro di un intero rappresentate la coordinata x della \gls{slide} richiesta;
+				\item \textit{yIndex: int}: parametro di un intero rappresentate la coordinata y della \gls{slide} richiesta.
 			\end{itemize}
 		\end{itemize}
 \newpage
@@ -502,42 +502,42 @@ SlideService è l'ultimo dei macro servizi offerti e si occupa della gestione de
 		\end{figure}
 		
 		\paragraph{Descrizione}
-		Si occupa di gestire le operazioni di una slide.
+		Si occupa di gestire le operazioni di una \gls{slide}.
 		
 		\paragraph{Utilizzo}
-		Viene utilizzato per creare una risorsa collegata al servizio REST che permette di modificare una slide. Dà la possiblità di creare, caricare, salvare e eliminare una slide dal database.
+		Viene utilizzato per creare una risorsa collegata al servizio \gls{REST} che permette di modificare una \gls{slide}. Dà la possiblità di creare, caricare, salvare e eliminare una \gls{slide} dal \gls{database}.
 		
 		\paragraph{Relazioni con le altre classi}
 		\begin{itemize}
 			\item OUT: \textbf{SlideEditorCtrl}:\\
-			Classe che gestisce le operazioni di modifica di una slide.
+			Classe che gestisce le operazioni di modifica di una \gls{slide}.
 		\end{itemize}
 		
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio REST specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
 		\begin{itemize}
 			\item \textbf{+ get(id:String): Promise}:\\
-			Metodo che richiama la funzione GET collegata alla risorsa e permette di ottenere la slide dal backend identificata dall'id passato come parametro. IL metodo ritorna una promessa contenente un oggetto JSON avente tutte le informazioni e i dati riguardanti la slide e i suoi componenti. Questo oggetto è pronto per essere passato all'apposito metodo di caricamento della slide;
+			Metodo che richiama la funzione GET collegata alla risorsa e permette di ottenere la \gls{slide} dal backend identificata dall'id passato come parametro. IL metodo ritorna una promessa contenente un oggetto \gls{JSON} avente tutte le informazioni e i dati riguardanti la \gls{slide} e i suoi componenti. Questo oggetto è pronto per essere passato all'apposito metodo di caricamento della \gls{slide};
 			\item \textbf{+ save(xIndex:int, yIndex:int): Promise}:\\
-			Metodo che richiama la funzione POST collegata alla risorsa e permette di creare una nuova slide avente le coordinate passate per parametro. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà l'id della nuova slide creata;\\
+			Metodo che richiama la funzione POST collegata alla risorsa e permette di creare una nuova \gls{slide} avente le coordinate passate per parametro. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà l'id della nuova \gls{slide} creata;\\
 			\item \textbf{+ update(id:String, xIndex:int, yIndex:int, components:JSON, background:String, slideSVG:SVG):Promise}\\
-			Metodo che richiama la funzione PUT collegata alla risorsa e permette di aggiornare una slide già creata (identificata dal parametro id). Con questa chiamata è possibile passare le coordinate aggiornate, i componenti della slide, il colore di sfondo e l'SVG rappresentante la slide stessa. Il metodo ritorna una promessa che conterrà \textit{true} se l'esito del salvataggio è positivo;
+			Metodo che richiama la funzione PUT collegata alla risorsa e permette di aggiornare una \gls{slide} già creata (identificata dal parametro id). Con questa chiamata è possibile passare le coordinate aggiornate, i componenti della \gls{slide}, il colore di sfondo e l'SVG rappresentante la \gls{slide} stessa. Il metodo ritorna una promessa che conterrà \textit{true} se l'esito del salvataggio è positivo;
 			\item \textbf{+ delete(id:String):Promise}\\
-			Metodo che richiama la funzione DELETE collegata alla risorsa e permette di eliminare la slide con id passato per parametro. Il metodo ritorna una promessa che conterrà \textit{true} se l'esito del salvataggio è positivo.
+			Metodo che richiama la funzione DELETE collegata alla risorsa e permette di eliminare la \gls{slide} con id passato per parametro. Il metodo ritorna una promessa che conterrà \textit{true} se l'esito del salvataggio è positivo.
 			
 			\textbf{Parametri:}\\
 			\begin{itemize}
-				\item \textit{background: String}: parametro di una stringa che contiene il codice del colore di sfondo della slide;
-				\item \textit{components: JSON}: parametro di un oggetto JSON contenente tutti i componenti inclusi nella slide;
+				\item \textit{background: String}: parametro di una stringa che contiene il codice del colore di sfondo della \gls{slide};
+				\item \textit{components: JSON}: parametro di un oggetto \gls{JSON} contenente tutti i componenti inclusi nella \gls{slide};
 				\item \textit{id: String}: parametro di una stringa contenente l'id del progetto sul quale eseguire la funzione;
-				\item \textit{slideSVG: SVG}: parametro di un oggetto SVG che contiene la rappresentazione della slide in SVG;
-				\item \textit{xIndex: int}: parametro di un intero rappresentate la coordinata x della slide richiesta;
-				\item \textit{yIndex: int}: parametro di un intero rappresentate la coordinata y della slide richiesta.
+				\item \textit{slideSVG: SVG}: parametro di un oggetto SVG che contiene la rappresentazione della \gls{slide} in SVG;
+				\item \textit{xIndex: int}: parametro di un intero rappresentate la coordinata x della \gls{slide} richiesta;
+				\item \textit{yIndex: int}: parametro di un intero rappresentate la coordinata y della \gls{slide} richiesta.
 			\end{itemize}
 		\end{itemize}
 \newpage		
@@ -550,10 +550,10 @@ SlideService è l'ultimo dei macro servizi offerti e si occupa della gestione de
 	\end{figure}
 	
 	\paragraph{Descrizione}
-	Si occupa di gestire le operazioni dei componenti di una slide.
+	Si occupa di gestire le operazioni dei componenti di una \gls{slide}.
 	
 	\paragraph{Utilizzo}
-	Viene utilizzato per creare una risorsa collegata al servizio REST che permette di modificare un componente di una slide.
+	Viene utilizzato per creare una risorsa collegata al servizio \gls{REST} che permette di modificare un componente di una \gls{slide}.
 	
 	\paragraph{Relazioni con le altre classi}
 	\begin{itemize}
@@ -572,7 +572,7 @@ SlideService è l'ultimo dei macro servizi offerti e si occupa della gestione de
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{- \$request: Object}:\\
-		Campo dati contenente la route per la chiamata al servizio REST specifico del servizio.
+		Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
 	\end{itemize}	
 	
 	\paragraph{Metodi}
@@ -580,7 +580,7 @@ SlideService è l'ultimo dei macro servizi offerti e si occupa della gestione de
 		\item \textbf{+ get(id:String): Promise}:\\
 			Metodo che richiama la funzione GET collegata alla risorsa e permette di ottenere il componente richiesto. Il metodo ritorna una promessa che conterrà i dati del componente.
 		\item \textbf{+ save(type:String): Promise}:\\
-			Metodo che richiama la funzione POST collegata alla risorsa e permette di creare un nuovo componente del tipo richiesto attraverso il parametro. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà l'id della nuova slide creata;\\
+			Metodo che richiama la funzione POST collegata alla risorsa e permette di creare un nuovo componente del tipo richiesto attraverso il parametro. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà l'id della nuova \gls{slide} creata;\\
 		\item \textbf{+ update(id:String, data:Object):Promise}\\
 			Metodo che richiama la funzione PUT collegata alla risorsa e permette di aggiornare un componente già creato in precedenza con i dati passi per parametro. Il metodo ritorna una promessa che conterrà il valore \textit{true} se il processo è andato a buon fine. 
 		\item \textbf{+ delete(id:String):Promise}\\

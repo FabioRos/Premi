@@ -3,7 +3,7 @@
 	\includegraphics[width=0.7\linewidth]{img/premi_front_end_views}
 	\caption[Premi::Front-End::Views]{Premi::Front-End::Views}
 \end{figure}
-Il package gestisce le view del front-end dell'applicazione. Comunica con il model, il controller e le direttive della struttura per acquisire i dati da visualizzare e far ottenere al model i dati modificati dall'utente attraverso il controller. Il package inoltre comunica con i framework esterni necessari per la creazione degli oggetti da utilizzare nel programma.
+Il package gestisce le view del \gls{front-end} dell'applicazione. Comunica con il model, il controller e le direttive della struttura per acquisire i dati da visualizzare e far ottenere al model i dati modificati dall'utente attraverso il controller. Il package inoltre comunica con i \gls{framework} esterni necessari per la creazione degli oggetti da utilizzare nel programma.
 
 \subsubsection{Component}
 	\begin{figure}[h]
@@ -13,10 +13,10 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	\end{figure}
 	
 	\paragraph{Descrizione}
-	Visualizza i componenti che è possibile inserire in una slide e le rispettive informazioni.
+	Visualizza i componenti che è possibile inserire in una \gls{slide} e le rispettive informazioni.
 	
 	\paragraph{Utilizzo}
-	Viene utilizzata come view per visualizzare e modificare gli attributi di un componente della slide. Da essa derivano le view specifiche di ciascun componente.
+	Viene utilizzata come view per visualizzare e modificare gli attributi di un componente della \gls{slide}. Da essa derivano le view specifiche di ciascun componente.
 	
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
@@ -40,8 +40,8 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 			Campo dati che contiene la scala sull'asse x del componente;
 		\item \textbf{+ scaleY: double}:\\
 			Campo dati che contiene la scala sull'asse y del componente;
-		\item \textbf{+ extraFields: JSON}:\\
-			Campo dati che contiene un array JSON avente tutti i campi dati secondari di un componente.
+		\item \textbf{+ extraFields: JSON}}:\\
+			Campo dati che contiene un array \gls{JSON} avente tutti i campi dati secondari di un componente.
 	\end{itemize}
 \newpage
 	
@@ -50,7 +50,7 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 %	\begin{figure}[h]
 %		\centering
 %		\includegraphics[width=0.3\linewidth]{img/premi_front_end_views_help}
-%		\caption[Premi::Front-End::Views::Help]{Premi::Front-End::Views::Help}
+%		\caption[Premi::\gls{Front-End}::Views::Help]{Premi::\gls{Front-End}::Views::Help}
 %	\end{figure}
 %	
 %	\paragraph{Descrizione}
@@ -67,8 +67,8 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 %	
 %	\paragraph{Attributi}
 %	\begin{itemize}
-%		\item \textbf{+ tips:JSON}: \\
-%		Campo dati che contiene un array JSON con tutti gli aiuti da fornire all'utente.
+%		\item \textbf{+ tips:\gls{JSON}}: \\
+%		Campo dati che contiene un array \gls{JSON} con tutti gli aiuti da fornire all'utente.
 %	\end{itemize}
 %\newpage
 	
@@ -116,10 +116,10 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	\end{figure}
 	
 	\paragraph{Descrizione}
-	Visualizza la pagina per la gestione di un'infografica.
+	Visualizza la pagina per la gestione di un'\gls{infografica}.
 	
 	\paragraph{Utilizzo}
-	Viene utilizzata come view per visualizzare un'infografica, modificarla e salvarla.
+	Viene utilizzata come view per visualizzare un'\gls{infografica}, modificarla e salvarla.
 	
 	\paragraph{Relazioni con le altre classi}
 	\begin{itemize}
@@ -132,11 +132,11 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{+ paperFormat: String}:\\
-			Campo dati per il formato adottato dall'infografica;
-		\item \textbf{+ slides[]: JSON}:\\
-			Campo dati contenente l'array di slide che compongono l'infografica;
-		\item \textbf{+ style: JSON}:\\
-		Campo dati per le informazioni dello stile da utilizzare per l'infografica.
+			Campo dati per il formato adottato dall'\gls{infografica};
+		\item \textbf{+ slides[]: \gls{JSON}}:\\
+			Campo dati contenente l'array di \gls{slide} che compongono l'\gls{infografica};
+		\item \textbf{+ style: \gls{JSON}}:\\
+		Campo dati per le informazioni dello stile da utilizzare per l'\gls{infografica}.
 	\end{itemize}
 \newpage
 	
@@ -212,26 +212,26 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	Visualizza l'editor di una presentazione.
 	
 	\paragraph{Utilizzo}
-	Viene utilizzata come view per modificare una presentazione e le impostazioni globali di essa. Permette di aggiungere o rimuovere slide e di spostarsi tra di esse. Dà la possibilità, inoltre, di accedere alla sezione di modifica di ogni singola slide.
+	Viene utilizzata come view per modificare una presentazione e le impostazioni globali di essa. Permette di aggiungere o rimuovere \gls{slide} e di spostarsi tra di esse. Dà la possibilità, inoltre, di accedere alla sezione di modifica di ogni singola \gls{slide}.
 	
 	\paragraph{Relazioni con le altre classi}
 	\begin{itemize}
 		\item \textbf{\textit{IN} PresentationEditorCtrl}:\\
-		Classe che gestisce le operazioni di modifica delle impostazioni generali della presentazione e le operazioni di spostamento, aggiunta e rimozione di una slide;
+		Classe che gestisce le operazioni di modifica delle impostazioni generali della presentazione e le operazioni di spostamento, aggiunta e rimozione di una \gls{slide};
 		\item \textbf{\textit{IN} AuthenticationCtrl}:\\
 		Classe che gestisce le operazioni per l'autenticazione dell'utente.
 	\end{itemize}
 	
 	\paragraph{Attributi}
 	\begin{itemize}
-		\item \textbf{+ project: JSON}:\\
+		\item \textbf{+ project: \gls{JSON}}:\\
 		Campo dati che contiene le informazioni del progetto corrente;
-		\item \textbf{+ slides[]: JSON}:\\
-		Campo dati che contiene un array JSON avente le principali informazioni delle slide della presentazione;
+		\item \textbf{+ slides[]: \gls{JSON}}:\\
+		Campo dati che contiene un array \gls{JSON} avente le principali informazioni delle \gls{slide} della presentazione;
 		\item \textbf{+ currentSlideId: int}:\\
-		Campo dati che contiene l'id della slide corrente;
-		\item \textbf{- localData: JSON}:\\
-		Campo dati che contiene le informazioni relative agli indici della slide corrente e agli indici massimi della presentazione.
+		Campo dati che contiene l'id della \gls{slide} corrente;
+		\item \textbf{- localData: \gls{JSON}}:\\
+		Campo dati che contiene le informazioni relative agli indici della \gls{slide} corrente e agli indici massimi della presentazione.
 	\end{itemize}
 \newpage
 	
@@ -258,9 +258,9 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{+ slideSVG[]: String}:\\
-		Campo dati che contiene un array di stringhe di oggetti SVG rappresentanti le slide della presentazione;
+		Campo dati che contiene un array di stringhe di oggetti SVG rappresentanti le \gls{slide} della presentazione;
 		\item \textbf{+ style: JSON}: \\
-		Campo dati che contiene un oggetto JSON con i dati dello stile della presentazione (tema e effetto di transizione).
+		Campo dati che contiene un oggetto \gls{JSON} con i dati dello stile della presentazione (tema e effetto di transizione).
 	\end{itemize}
 \newpage
 	
@@ -328,9 +328,9 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{+ presentation: JSON}:\\
-			Campo dati che contiene un oggetto JSON avente l'id e i dati relativi all'anteprima del progetto;
+			Campo dati che contiene un oggetto \gls{JSON} avente l'id e i dati relativi all'anteprima del progetto;
 		\item \textbf{+ infographic[]: JSON}:\\
-			Campo dati che contiene un array di oggetti JSON aventi gli id e i dati relativi alle infografiche del progetto.
+			Campo dati che contiene un array di oggetti \gls{JSON} aventi gli id e i dati relativi alle infografiche del progetto.
 	\end{itemize}
 \newpage
 	
@@ -390,7 +390,7 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{+ search: String}:\\
 		Campo dati per identificare il nome utente o il nome del progetto da cercare;
 		\item \textbf{+ results: JSON}:\\
-		Campo dati che contiene un array JSON con i risultati della ricerca;
+		Campo dati che contiene un array \gls{JSON} con i risultati della ricerca;
 	\end{itemize}
 \newpage
 	
@@ -444,27 +444,27 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	\end{figure}
 	
 	\paragraph{Descrizione}
-	Visualizza la sezione dedicata alla modifica di una slide della presentazione.
+	Visualizza la sezione dedicata alla modifica di una \gls{slide} della presentazione.
 	
 	\paragraph{Utilizzo}
-	Viene utilizzata come view per modificare una slide, permette di inserire i componenti, modificarli secondo i rispettivi parametri e rimuoverli. Permette inoltre di salvare le modifiche effettuate.
+	Viene utilizzata come view per modificare una \gls{slide}, permette di inserire i componenti, modificarli secondo i rispettivi parametri e rimuoverli. Permette inoltre di salvare le modifiche effettuate.
 	
 	\paragraph{Relazioni con le altre classi}
 	\begin{itemize}
 		\item \textbf{\textit{IN} HelpCtrl}:\\
 			Classe che gestisce le operazioni per l'aiuto all'utente;
 		\item \textbf{\textit{IN} SlideEditorCtrl}:\\
-			Classe che gestisce le operazioni di modifica di una slide, la gestione dei suoi componenti e il suo salvataggio;
+			Classe che gestisce le operazioni di modifica di una \gls{slide}, la gestione dei suoi componenti e il suo salvataggio;
 		\item \textbf{\textit{IN} PresentationEditorCtrl}:\\
-			Classe che gestisce le operazioni di modifica delle impostazioni generali della presentazione e le operazioni di spostamento, aggiunta e rimozione di una slide.
+			Classe che gestisce le operazioni di modifica delle impostazioni generali della presentazione e le operazioni di spostamento, aggiunta e rimozione di una \gls{slide}.
 	\end{itemize}
 	
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{+ background: String}:\\
-			Campo dati per il background della slide;
+			Campo dati per il background della \gls{slide};
 		\item \textbf{+ components[]: JSON}:\\
-			Campo dati contenente un array con tutti gli elementi presenti nella slide;
+			Campo dati contenente un array con tutti gli elementi presenti nella \gls{slide};
 		\item \textbf{+ slideId: int}:\\
-			Campo dati per l'id della slide corrente.
+			Campo dati per l'id della \gls{slide} corrente.
 	\end{itemize}
