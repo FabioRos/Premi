@@ -1,0 +1,108 @@
+\subsection{Tracciamento test-metodi}
+\begin{table}[h]
+	\begin{center}
+	\begin{tabular}{|l|p{0.3\textwidth}|p{0.4\textwidth}|c|}
+	\toprule
+		\textbf{Test}  & \textbf{Metodi}\\
+		
+	\midrule
+		TU1 & ChartCtrl :: load() , ChartCtrl :: save() \\
+	\midrule
+		TU2 & ImageCtrl :: upload() ,ImageCtrl :: load() , ImageCtrl :: save() \\
+	\midrule
+		TU3 & RealTimeDataCtrl :: load() , RealTimeDataCtrl :: save() \\
+	\midrule
+		TU4 & TableCtrl :: load() \\
+	\midrule
+		TU5 &TextCtrl :: load() \\
+	\midrule
+		TU6 &InfographicEditorCtrl :: addElement() \\
+	\midrule
+		TU7 & AuthenticationCtrl :: register(username:String,password:String) , AuthenticationCtrl :: logIn() , AuthenticationCtrl :: logOut() \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l|p{0.3\textwidth}|p{0.4\textwidth}|c|}
+
+	\toprule
+		TU8 & AuthenticationCtrl :: registerViaFacebook(name:Boolean) , AuthenticationCtrl :: registerViaGooglePlus(query:Boolean) \\
+	\midrule
+		TU9 & AuthenticationCtrl :: forgotPassword(username:String) \\
+	\midrule
+		TU10 & PresentationEditorCtrl :: addSlide(direction: String) \\
+	\midrule
+		TU11 & PresentationEditorCtrl :: removeSlide() \\
+	\midrule
+		TU12 & PresentationEditorCtrl :: loadSlide(direction: String) \\
+	\midrule
+		TU13 & PresentationEditorCtrl :: saveSlide() \\
+	\midrule
+		TU14 & ProjectCtrl :: resetPresentation() \\
+	\midrule
+		TU15 & ProjectCtrl :: addInfographic() , ProjectCtrl :: deleteInfographic(id:Int) \\
+			\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l|p{0.3\textwidth}|p{0.4\textwidth}|c|}
+
+	\toprule
+		TU16 & SlideEditorCtrl :: addObject():Int \\
+	\midrule
+		TU17 & SlideEditorCtrl :: removeObject(id:String) \\
+	\midrule
+		TU18 & SlideEditorCtrl :: udpateObject(id:String) \\
+
+	\midrule
+		TU19 & MyAccountCtrl :: loadUserdata(userId:String) \\
+	\midrule
+		TU20 & HomePageCtrl :: searchByUsername(text:String) \\
+	\midrule
+		TU21 & HomePageCtrl :: searchByProjectName(text:String) \\
+	\midrule
+		TU22 & InfographicEditorCtrl :: addElement(position:Int, id:Int) \\
+	\midrule
+		TU23 & InfographicEditorCtrl :: removeElement(position:Int) \\
+	\midrule
+			TU24 & InfographicEditorCtrl :: setTemplate(Tid:Int) \\
+			\midrule
+			TU25 & InfographicEditorCtrl :: getSlideList() \\
+			\midrule
+			TU26 & forgotPasswordService ::  save(data: Object) , loginService :: save(data: Object) , logoutService :: get() , signUpService :: save(data: Object) , userService :: query(id:String) \\
+			\midrule
+			TU27 & infographicEditorService :: query(id: String) , infographicEditorService :: save(name: String) , infographicEditorService :: update(id: String, data:Object) \\
+			\midrule
+			TU28 & presentationService :: query(id: String) , presentationService :: update(id: String, theme:String, transition:String) \\
+
+\bottomrule
+
+\end{tabular}
+\end{center}
+\end{table}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l|p{0.3\textwidth}|p{0.4\textwidth}|c|}
+
+	\toprule
+	
+
+		TU29 & projectsService :: query(username: String) , projectsService :: save(id: String, data:Object) \\
+	\midrule
+		TU30 & searchByProjectService ::  query(name: String) \\
+	\midrule
+		TU31 & projectService :: delete(id: String) , projectService :: update(id: String, data:Object) \\
+	\midrule
+		TU32 & indexService :: get(id: String, xIndex:int, yIndex:int) , slideService :: get(id:String) , slideService :: save(xIndex:int, yIndex:int) , slideService :: update(id:String, xIndex:int, yIndex:int, components:JSON, background:String,
+slideSVG:SVG) , slideService :: delete(id:String) \\
+
+	\bottomrule
+	\end{tabular}
+	\end{center}
+	\caption{Tabella di tracciamento test-metodi}
+\end{table}
