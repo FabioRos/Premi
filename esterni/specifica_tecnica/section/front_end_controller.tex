@@ -18,86 +18,218 @@
 \subsubsection*{Classi contenute}
 \begin{itemize}
 
-	\item Premi::Front-End::Controllers::ProjectsController:
+	\item Premi::Front-End::Controllers::ProjectsCtrl:
 	\begin{itemize}
 		\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie alla visualizzazione e gestione dei progetti relativi ad un utente.
 		\item \textbf{Relazioni con altre classi}:
 		\begin{itemize}
-			\item Premi::Front-End::Services::ProjectService.
+			\item Premi::Front-End::Services::ProjectService;
+			\item Premi::Front-End::Views::Projects.
 		\end{itemize}
 	\end{itemize}
-	\item  Premi::Front-End::Controllers::ProjectController:
+	\item  Premi::Front-End::Controllers::ProjectCtrl:
 	\begin{itemize}
 		\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie alla gestione di un progetto.
 		\item \textbf{Relazioni con altre classi}:
 		\begin{itemize}
-			\item Premi::Front-End::Services::ProjectService.
+			\item Premi::Front-End::Services::ProjectService;
+			\item Premi::Front-End::Views::Project.
 		\end{itemize}
 	\end{itemize}
-	\item  Premi::Front-End::Controllers::SlideEditorController:
+	\item  Premi::Front-End::Controllers::SlideEditorCtrl:
 	\begin{itemize}
 		\item \textbf{Descrizione}: classe di suporto all'editor di una presentazione fornendo le operazioni necessarie alla composizione e modifica di una slide. Essa permette di assemblare e modificare una \gls{slide} e i metodi che effettueranno le operazioni sui componenti.
 		\item \textbf{Relazioni con altre classi}:
 		\begin{itemize}
-			\item Premi::Front-End::Controllers::ComponentController;
-			\item Premi::Front-End::Services::SlideService.
+			\item Premi::Front-End::Views::SlideEditor;
+			\item Premi::Front-End::Controllers::PresentationEditorCtrl;
+			\item Premi::Front-End::Services::SlideService;
+			\item Premi::Front-End::Controllers::ComponentCtrl;
+			\item Premi::Front-End::Controllers::ChartCtrl;
+			\item Premi::Front-End::Controllers::ImageCtrl;
+			\item Premi::Front-End::Controllers::RealTimeDataCtrl;
+			\item Premi::Front-End::Controllers::TableCtrl;
+			\item Premi::Front-End::Controllers::TextCtrl.
 		\end{itemize}
 	\end{itemize}
-	\item  Premi::Front-End::Controllers::PresentationEditorController:
+	\item  Premi::Front-End::Controllers::PresentationEditorCtrl:
 	\begin{itemize}
 		\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie alla gestione dell'editor di una presentazione. Essa permette di assemblare e modificare una \gls{slide} e i metodi che effettueranno le operazioni sui componenti.
 		\item \textbf{Relazioni con altre classi}:
 		\begin{itemize}
-			\item Premi::Front-End::Controllers::SlideEditorController;
-			\item Premi::Front-End::Services::PresentationService.
+			\item Premi::Front-End::Services::PresentationService;
+			\item Premi::Front-End::Views::Presentation;
+			\item Premi::Front-End::Controllers::SlideEditorCtrl.
 		\end{itemize}
 	\end{itemize}
-	\item  Premi::Front-End::Controllers::InfographicEditorController:
+	\item  Premi::Front-End::Controllers::InfographicEditorCtrl:
 	\begin{itemize}
 		\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie alla gestione dell'editor di una inforgrafica. Essa permette di assemblare e modificare una \gls{slide} e i metodi che effettueranno le operazioni sui componenti.
 		\item \textbf{Relazioni con altre classi}:
 		\begin{itemize}
-			\item Premi::Front-End::Services::InfographicService.
+			\item Premi::Front-End::Services::InfographicService;
+			\item Premi::Front-End::Views::InfographicEditor.
 		\end{itemize}
 	\end{itemize}
-	\item  Premi::Front-End::Controllers::ComponentController:
+	\item  Premi::Front-End::Controllers::ComponentCtrl:
 	\begin{itemize}
 		\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie alla gestione di un componente di una \gls{slide}.
+		\item \textbf{Relazioni con altre classi}:
+			\begin{itemize}
+				\item Premi::Front-End::Model::Component;
+				\item Premi::Front-End::Controllers::ChartCtrl;
+				\item Premi::Front-End::Controllers::ImageCtrl;
+				\item Premi::Front-End::Controllers::RealTimeDataCtrl;
+				\item Premi::Front-End::Controllers::TableCtrl;
+				\item Premi::Front-End::Controllers::TextCtrl.
+			\end{itemize}
 	\end{itemize}
-	\item  Premi::Front-End::Controllers::PresentationController:
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\item  Premi::Front-End::Controllers::ChartCtrl:
+		\begin{itemize}
+			\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie alla gestione di un grafico.
+			\item \textbf{Relazioni con altre classi}:
+				\begin{itemize}
+					\item Premi::Front-End::Model::Component;
+					\item Premi::Front-End::Model::Chart;
+					\item Premi::Front-End::Controllers::ComponentCtrl;
+					\item Premi::Front-End::Controllers::SlideEditorCtrl;
+					\item Premi::Front-End::Services::ChartService.
+				\end{itemize}
+		\end{itemize}
+		
+	\item  Premi::Front-End::Controllers::ImageCtrl:
+			\begin{itemize}
+				\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie alla gestione di una immagine.
+				\item \textbf{Relazioni con altre classi}:
+					\begin{itemize}
+						\item Premi::Front-End::Model::Component;
+						\item Premi::Front-End::Model::Image;
+						\item Premi::Front-End::Controllers::ComponentCtrl;
+						\item Premi::Front-End::Controllers::SlideEditorCtrl;
+						\item Premi::Front-End::Services::ImageService.
+					\end{itemize}
+			\end{itemize}
+			
+	\item  Premi::Front-End::Controllers::RealTimeDataCtrl:
+			\begin{itemize}
+				\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie alla gestione di un componente con aggiornamento in tempo reale.
+				\item \textbf{Relazioni con altre classi}:
+					\begin{itemize}
+						\item Premi::Front-End::Model::Component;
+						\item Premi::Front-End::Model::RealTimeData;
+						\item Premi::Front-End::Controllers::ComponentCtrl;
+						\item Premi::Front-End::Controllers::SlideEditorCtrl;
+						\item Premi::Front-End::Services::RealTimeDataService.
+					\end{itemize}
+			\end{itemize}
+			
+	\item  Premi::Front-End::Controllers::TableCtrl:
+			\begin{itemize}
+				\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie alla gestione di una tabella.
+				\item \textbf{Relazioni con altre classi}:
+					\begin{itemize}
+						\item Premi::Front-End::Model::Component;
+						\item Premi::Front-End::Model::TableCtrl;
+						\item Premi::Front-End::Controllers::ComponentCtrl;
+						\item Premi::Front-End::Controllers::SlideEditorCtrl;
+						\item Premi::Front-End::Services::TableService.
+					\end{itemize}
+			\end{itemize}
+			
+	\item  Premi::Front-End::Controllers::TextCtrl:
+			\begin{itemize}
+				\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie alla gestione di un componente di tipo testuale.
+				\item \textbf{Relazioni con altre classi}:
+					\begin{itemize}
+						\item Premi::Front-End::Model::Component;
+						\item Premi::Front-End::Model::TextCtrl;
+						\item Premi::Front-End::Controllers::ComponentCtrl;
+						\item Premi::Front-End::Controllers::SlideEditorCtrl;
+						\item Premi::Front-End::Services::TextService.
+					\end{itemize}
+			\end{itemize}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\item  Premi::Front-End::Controllers::PresentationCtrl:
 	\begin{itemize}
 		\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie alla gestione della visualizzazione di una presentazione. Essa permette di assemblare e configurare una presentazione e di rendere disponibile la visualizzazione in modalità classica o presentatore.
 		\item \textbf{Relazioni con altre classi}:
 		\begin{itemize}
-			\item Premi::Front-End::Services::PresentationService.
+			\item Premi::Front-End::Services::PresentationService;
+			\item Premi::Front-End::Views::Presentation.
 		\end{itemize}
 	\end{itemize}
-	\item  Premi::Front-End::Controllers::LoginController:
-	\begin{itemize}
-		\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie all'autenticazione nel sistema.
+	\item  Premi::Front-End::Controllers::AuthenticationCtrl
+		\begin{itemize}
+		\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie all'autenticazione nel sistema, registrazione,accredito e recupero password di un utente.
 		\item \textbf{Relazioni con altre classi}:
 		\begin{itemize}
-			\item Premi::Front-End::Services::AuthenticationService.
+			\item Premi::Front-End::Services::AuthenticationService;
+			\item Premi::Front-End::Views::InfographicEditor;
+			\item Premi::Front-End::Views::PresentationEditor;
+			\item Premi::Front-End::Views::SignUpEditor;
+			\item Premi::Front-End::Views::LogIn;
+			\item Premi::Front-End::Views::Project;
+			\item Premi::Front-End::Model::User.
 		\end{itemize}
 	\end{itemize}
-	\item  Premi::Front-End::Controllers::SignUpController:
+	\item  Premi::Front-End::Controllers::HomePageCtrl:
 	\begin{itemize}
-		\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie alla registrazione di un nuovo utente nel sistema.
+		\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie al corretto funzionamento della Home Page. In particolare si occupa della gestione delle funzionalità di ricerca di progetti e presentazioni mediante il titolo oppure il nome dell'utente proprietario.
+		\begin{itemize}
+			\item Premi::Front-End::Services::ProjectService;
+			\item Premi::Front-End::Views::HomePage.
+		\end{itemize}
+	\end{itemize}
+	\item  Premi::Front-End::Controllers::HelpCtrl:
+	\begin{itemize}
+		\item \textbf{Descrizione}: 
+			classe con lo scopo di fornire le operazioni necessarie alla gestione dell'aiuto agli utenti sottoforma di tour\footnote{Un tour è una esplorazione guidata delle funzionalità basilari del sistema al fine di permettere all'utente di familiarizzare velocemente con esso.} e suggerimenti.
 		\item \textbf{Relazioni con altre classi}:
+			\begin{itemize}
+				\item Premi::Front-End::Views::SlideEditor;
+				\item Premi::Front-End::Views::InfographicEditor;
+				\item Premi::Front-End::Views::Projects;
+				\item Premi::Front-End::Views::Search.
+			\end{itemize}
+			
+	\end{itemize}
+	\item  Premi::Front-End::Controllers::MyAccountCtrl:
 		\begin{itemize}
-			\item Premi::Front-End::Services::AuthenticationService.
+			\item \textbf{Descrizione}: 
+				classe con lo scopo di fornire le operazioni necessarie alla visualizzazione e gestione del profilo di un utente che si è autenticato nel sistema.
+			\item \textbf{Relazioni con altre classi}:	
+			\begin{itemize}
+				\item Premi::Front-End::Services::AuthenticationService::UserService.
+				\item Premi::Front-End::Views::MyAccount.
+			\end{itemize}
 		\end{itemize}
-	\end{itemize}
-	\item  Premi::Front-End::Controllers::SearchController:
-	\begin{itemize}
-		\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie alla ricerca di progetti e presentazioni mediante il titolo oppure il nome.
-		\begin{itemize}
-			\item Premi::Front-End::Services::ProjectService.
-		\end{itemize}
-	\end{itemize}
-	\item  Premi::Front-End::Controllers::HelpController:
-	\begin{itemize}
-		\item \textbf{Descrizione}: classe con lo scopo di fornire le operazioni necessarie alla gestione dell'aiuto agli utenti sottoforma di tour\footnote{Un tour è una esplorazione guidata delle funzionalità basilari del sistema al fine di permettere all'utente di familiarizzare velocemente con esso.} e suggerimenti.
-	\end{itemize}
 \end{itemize}
 \newpage
