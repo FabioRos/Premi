@@ -21,6 +21,7 @@
 				Stringa contenente il nome utente.
 			\end{itemize}
 			
+			\newpage
 			\item \textbf{+ update(request: Request, username: String) : boolean}\\
 			Il metodo recupera l'utente autenticato e aggiorna i dati del profilo contenuti nella richiesta HTTP \textit{request}. Il metodo ritorna un valore booleano che indica che i dati sono stati aggiornati:\\
 			\textbf{Argomenti}
@@ -231,7 +232,7 @@
 				\item presentationID : String; \\
 				Stringa contenente l'ID univoco di una presentazione associata al progetto.
 			\end{itemize}
-			
+			\newpage
 			\item \textbf{+ destroy(username: String, projectID: String, presentationID: String) : boolean}\\
 			Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato ed a partire dal progetto recupera la presentazione con ID = presentationID chiamando il metodo \textit{delete} su tale presentazione cancellandola dal database. Il metodo ritorna un valore booleano che indica che la cancellazione è avvenuta:\\
 			\textbf{Argomenti}
@@ -286,7 +287,8 @@
 					\item presentationID : String; \\
 					Stringa contenente l'ID univoco di una presentazione associata al progetto.
 				\end{itemize}
-				
+			
+			\newpage
 			\item \textbf{+ show(username: String, projectID: String, presentationID: String, slideID: String) : JSON}\\
 				Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto e la slide con ID = slideID. Il metodo ritorna un oggetto JSON contenente la slide richiesta:\\
 				\textbf{Argomenti:}
@@ -378,7 +380,8 @@ Ognuno di questi controller usa un trait che include i loro metodi necessari.
 							Array di valori contenente tutti i dati della registrazione di un utente.
 						\end{itemize}
 			\end{itemize}
-			
+		
+\newpage
 	\paragraph{PasswordController}
 	\begin{figure}[h]
 \centering
