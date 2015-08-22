@@ -8,10 +8,15 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 
 \newpage
 \subsubsection{ComponentCtrl}
-      \paragraph{Descrizione}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_componentctrl}
+		\caption[Premi::Front-End::Controllers::ComponentCtrl]{Premi::Front-End::Controllers::ComponentCtrl}
+	\end{figure}
+
+    \paragraph{Descrizione}
 	Il controller ComponentCtrl si occupa di fornire le primitive per la costruzione e gestione dei componenti in una slide.\\
 	È una classe astratta in quanto non sarà possibile istanziare un componente direttamente ma solo oggetti che concretizzano la classe costruendo oggetti dei tipi previsti dal sistema.\\
-%	Alla richiesta di un componente concreto da parte di slideEditorCtrl, viene invocato ComponentCtrl con il corretto parametro di tipo per costruire l'oggetto della classe corrispondente. 
 		
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per consentire all'utente di aggiungere, modificare o rimuovere un componente in una slide.
@@ -93,6 +98,11 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	
 \newpage
 \subsubsection{ChartCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_chartctrl}
+	\caption[Premi::Front-End::Controllers::ChartCtrl]{Premi::Front-End::Controllers::ChartCtrl}
+\end{figure}
    \paragraph{Descrizione}
 	Il controller ChartCtrl concretizza ComponentCtrl e si occupa di fornire le primitive per la costruzione e gestione dei grafici in una slide.
 		
@@ -104,7 +114,6 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		\item \textbf{-\$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
 		\item \textbf{-ChartService: ChartService}:\\
-			
 		\item\textbf{-dataSet:Object}:\\
 			Array di oggetti JSON ognuno dei quali indica un dato da rappresentare nel grafico;
 		\item\textbf{-type:String}:\\
@@ -121,7 +130,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		Metodo che restituisce i dati sorgente del grafico corrente;
 	\item \textbf{+getType():Object}:\\
 		Metodo che restituisce la tipologia del grafico corrente.
-	\item \textbf{+load()}:Object	\\	
+	\item \textbf{+load():Object}:\\	
 		Metodo che permette di caricare un grafico proveniente dal server web dove risiede il sistema mediante l'utilizzo del servizio ChartService. Esso restituisce un oggetto JSON contenente la tipologia ed il set di dati del grafico in caso di successo ed una stringa vuota in caso di fallimento;
 	\item \textbf{+save():Boolean}:\\	
 		Metodo che permette di salvare un grafico mediante l'utilizzo del servizio ChartService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
@@ -139,6 +148,11 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 
 \newpage
 \subsubsection{ImageCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_imagectrl}
+	\caption[Premi::Front-End::Controllers::ImageCtrl]{Premi::Front-End::Controllers::ImageCtrl}
+\end{figure}
    \paragraph{Descrizione}
 	Il controller ImageCtrl concretizza ComponentCtrl e si occupa di fornire le primitive per la costruzione e gestione degli oggetti di tipo immagine all'interno di una slide.
 		
@@ -149,7 +163,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-		\item ImageService \textbf{ImageService}:\\
+		\item \textbf{-ImageService: ImageService}:\\
 			Campo dati che contiene un riferimento al servizio che si occupa di gestire reperimento, cancellazione ed aggiornamento delle immagini all'interno del sistema.
 		\item\textbf{-src:String}:\\
 			Campo dati che indica il percorso dove è possibile recuperare l'immagine.
@@ -180,6 +194,11 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 
 \newpage
 \subsubsection{RealTimeDataCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{img/premi_front_end_controllers_realtimedatactrl}
+	\caption[Premi::Front-End::Controllers::RealTimeDataCtrl]{Premi::Front-End::Controllers::RealTimeDataCtrl}
+\end{figure}
    \paragraph{Descrizione}
 	Il controller RealTimeDataCtrl concretizza ComponentCtrl e si occupa di fornire le primitive per la costruzione e gestione degli oggetti di tipo immagine all'interno di una slide.
 		
@@ -217,8 +236,6 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		Metodo che permette di impostare il percorso dove trovare le informazioni in caso di impossibilità di reperire la risorsa d'interesse al valore \textit{url}, restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\item \textbf{+setRefreshInterval(\textit{t}:Int):Boolean}:\\
 		Metodo che permette di impostare il tempo che intercorre tra due aggiornamenti successivi al valore di \textit{t} secondi, restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-					
-							
 	\item \textbf{+getTargetUrl():String}:\\
 		Metodo che restituisce il percorso della risorsa che contiene le informazioni d'interesse;
 	\item \textbf{+getSelector():String}:\\
@@ -229,14 +246,10 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		Metodo che restituisce il percorso dove reperire le informazioni in caso di impossibilità di raggiungere la risorsa d'interesse;
 	\item \textbf{+getRefreshInterval():Int}:\\
 		Metodo che restituisce il tempo che intercorre tra due aggiornamenti successivi del componente d'interesse;			
-
-
 	\item \textbf{+load():Boolean}:\\	
 		Metodo che permette di reperire le informazioni del componente dal file di fallback, ove presente, ed istanziare il componente, prescindendo dalla raggiungibilità o meno della risorsa mediante l'utilizzo del servizio RealTimeService. Viene restituito \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-		
 	\item \textbf{+save():Boolean}:\\	
 		Metodo che permette di aggiornare le informazioni del componente nel file di fallback, ove presente, ed istanziare il componente mediante l'utilizzo del servizio RealTimeDataService. Viene restituito \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-		
 	\item \textbf{+run():Boolean}:\\
 		Metodo che permette di eseguire tutte le chiamate che provocano l'ottenimento del codice html finale da aggiornare nella slide mediante l'utilizzo del servizio RealTimeDataService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
 		Nello specifico le operazioni svolte sono le seguenti:
@@ -261,6 +274,11 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 
 \newpage
 \subsubsection{TableCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_tablectrl}
+	\caption[Premi::Front-End::Controllers::TableCtrl]{Premi::Front-End::Controllers::TableCtrl}
+\end{figure}
    \paragraph{Descrizione}
 	Il controller TableCtrl concretizza ComponentCtrl e si occupa di fornire le primitive per la costruzione e gestione degli oggetti di tipo tabella all'interno di una slide.
 		
@@ -271,7 +289,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-		\item  \textbf{-ImageService:TableService}:\\
+		\item  \textbf{-TableService:TableService}:\\
 			Campo dati che contiene un riferimento al servizio che si occupa di gestire reperimento, cancellazione ed aggiornamento delle immagini all'interno del sistema.
 		\item\textbf{-rows:int}:\\
 			Campo dati che indica il numeri di righe che compongono la tabella.
@@ -289,8 +307,6 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		Metodo che restituisce il numero di righe della tabella corrente;
 	\item \textbf{+getColumns():Object}:\\
 		Metodo che restituisce il numero di colonne della tabella corrente;
-
-	
 	\item \textbf{+setDataSet(\textit{obj}:Object):Boolean}:\\
 		Metodo che permette di impostare i dati sorgentedella tabella corrente al valore \textit{obj} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\item \textbf{+setRows(\textit{r}:Int):Boolean}:\\
@@ -299,7 +315,6 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		Metodo che restituisce il numero di colonne della tabella corrente \textit{c} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\item \textbf{+\$scope.refreshTable():void}:\\
 		Metodo che ridisegna la tabella d'interesse;
-
 	\item \textbf{+load():Boolean}:\\	
 		Metodo che permette di caricare le informazioni relative alla tabella corrente mediante l'utilizzo del servizio TableService che produce un array di oggetti JSON \textit{"A"} in output. La tabella verrà poi aggiornata invocando il metodo setDataSet(\textit{"A"}) restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;	
 	
@@ -316,6 +331,11 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 
 \newpage
 \subsubsection{TextCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_textctrl}
+	\caption[Premi::Front-End::Controllers::TextCtrl]{Premi::Front-End::Controllers::TextCtrl}
+\end{figure}
    \paragraph{Descrizione}
 	Il controller TextCtrl concretizza ComponentCtrl e si occupa di fornire le primitive per la costruzione e gestione degli oggetti di tipo testuale all'interno di una slide.
 		
@@ -380,6 +400,11 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 \newpage
 
 \subsubsection{HelpCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_helpctrl}
+	\caption[Premi::Front-End::Controllers::HelpCtrl]{Premi::Front-End::Controllers::HelpCtrl}
+\end{figure}
       \paragraph{Descrizione}
 	Il controller HelpCtrl gestisce i meccanismi di aiuto all'utente.
 	
@@ -415,6 +440,11 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 
 \newpage
 \subsubsection{InfographicEditorCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_infographiceditorctrl}
+	\caption[Premi::Front-End::Controllers::InfographicEditorCtrl]{Premi::Front-End::Controllers::InfographicEditorCtrl}
+\end{figure}
 	\paragraph{Descrizione}
 		Il controller InfographicEditorCtrl gestisce la composizione e modifica di una infografica sulla base di template predefiniti che permettono l'inserimento in posizioni specifiche di slide precedentemente create.
 	
@@ -452,7 +482,12 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 			La vista InfographicEditor utilizza HelpCtrl per la gestione degli aiuti nella composizione e modifica di una infografica. 	
 	\end{itemize}
 	
-\subsubsection{AuthenticationCtrl}	
+\subsubsection{AuthenticationCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{img/premi_front_end_controllers_authenticationctrl}
+	\caption[Premi::Front-End::Controllers::AuthenticationCtrl]{Premi::Front-End::Controllers::AuthenticationCtrl}
+\end{figure}
 \paragraph{Descrizione}
 	Il controller AuthenticationCtrl gestisce l'autenticazione di un utente nel sistema.
 	
@@ -477,9 +512,9 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		  	Metodo che si occupa di fornire il supporto al recupero password dell'utente con username \textit{username}.
 	   	\item \textbf{+register(\textit{username}:String,\textit{password}:String):Boolean}:\\
 	  		Metodo che esegue la procedura di registrazione di un nuovo utente con username \textit{username} e password \textit{password} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-	  	\item \textbf{+registerViaFacebook()(\textit{name}:Boolean}:\\
+	  	\item \textbf{+registerViaFacebook(\textit{name}:String):Boolean}:\\
 	  		 Metodo che esegue la procedura di registrazione di un nuovo utente con le API di Facebook restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-	  	\item \textbf{+registerViaGooglePlus()(\textit{query}:Boolean}:\\
+	  	\item \textbf{+registerViaGooglePlus(\textit{name}:String):Boolean}:\\
 	  		 Metodo che esegue la procedura di registrazione di un nuovo utente con le API di Google+ restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
@@ -503,6 +538,11 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	
 \newpage
 \subsubsection{PresentationCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_presentationctrl}
+	\caption[Premi::Front-End::Controllers::PresentationCtrl]{Premi::Front-End::Controllers::PresentationCtrl}
+\end{figure}
 	\paragraph{Descrizione}
 	Il controller PresentationCtrl gestisce la creazione e modifica e visualizzazione di una presentazione.
 	
@@ -545,7 +585,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 \subsubsection{PresentationEditorCtrl}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\linewidth]{img/premi_front_end_controllers_presentationeditorcontroller}
+	\includegraphics[width=0.5\linewidth]{img/premi_front_end_controllers_presentationeditorctrl}
 	\caption[Premi::Front-End::Controllers::PresentationEditorCtrl]{Premi::Front-End::Controllers::PresentationEditorCtrl}
 \end{figure}
 
@@ -589,8 +629,16 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	  \item IN: \textbf{Views::SlideEditor}.
 	  \item IN: \textbf{SlideEditorCtrl}.
 	\end{itemize}  
+
 \newpage
+
+
 \subsubsection{ProjectCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_projectctrl}
+	\caption[Premi::Front-End::Controllers::ProjectCtrl]{Premi::Front-End::Controllers::ProjectCtrl}
+\end{figure}
 	\paragraph{Descrizione}
 	Il controller ProjectCtrl gestisce il progetto corrente.
 	
@@ -634,6 +682,11 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 
 \newpage
 \subsubsection{ProjectsCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_projectsctrl}
+	\caption[Premi::Front-End::Controllers::ProjectsCtrl]{Premi::Front-End::Controllers::ProjectsCtrl}
+\end{figure}
 	\paragraph{Descrizione}
 	Il controller ProjectsCtrl gestisce i progetti dell' utente corrente.
 	
@@ -664,6 +717,11 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	
 \newpage
 \subsubsection{SlideEditorCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{img/premi_front_end_controllers_slideeditorctrl}
+	\caption[Premi::Front-End::Controllers::SlideEditorCtrl]{Premi::Front-End::Controllers::SlideEditorCtrl}
+\end{figure}
 	\paragraph{Descrizione}
 	Il controller SlideEditorCtrl gestisce le funzionalità di modifica di una slide.
 	
@@ -673,7 +731,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-		\item \textbf{-\$scope.currentSlide}:\\
+		\item \textbf{-\$scope.currentSlide:String}:\\
 			Campo dati contenente le informazioni relative alla slide correntemente gestita dall'editor;
 		\item \textbf{-SlideService: SlideService}:\\
 			Campo dati che contiene un riferimento al servizio che si occupa di gestire le funzionalità di modifica e gestione di una slide.
@@ -707,6 +765,11 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	
 \newpage	
 \subsubsection{MyAccountCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_myaccountctrl}
+	\caption[Premi::Front-End::Controllers::MyAccountCtrl]{Premi::Front-End::Controllers::MyAccountCtrl}
+\end{figure}
 	\paragraph{Descrizione}
 	Il controller MyAccountCtrl gestisce le funzionalità di visualizzazione e modifica di un profilo utente.
 	
@@ -716,12 +779,10 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;	
-		\item \textbf{-\$scope.currentUser}:\\
+		\item \textbf{-\$scope.currentUser: String}:\\
 			Campo dati contenente le informazioni relative all'utente correntemente collegato al sistema;
-				
 		\item \textbf{-UserService: UserService}:\\
 			Campo dati che contiene un riferimento al servizio che fornisce le funzionalità relative alla gestione di un utente.
-	
 	\end{itemize}
 	
 	\paragraph{Metodi}
@@ -740,6 +801,11 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 
 \newpage
 \subsubsection{HomePageCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{img/premi_front_end_controllers_homepagectrl}
+	\caption[Premi::Front-End::Controllers::HomePageCtrl]{Premi::Front-End::Controllers::HomePageCtrl}
+\end{figure}
 	\paragraph{Descrizione}
 	Il controller HomePageCtrl gestisce gli strumenti messi a disposizione dalla Home Page. In particolare le funzionalità di ricerca.
 	
@@ -749,9 +815,8 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;	
-		\item \textbf{-\$scope.searchResults}:\\
+		\item \textbf{-\$scope.searchResults: Object}:\\
 			Campo dati contenente le informazioni relative all'esito della ricerca;
-				
 		\item \textbf{-ProjectService: ProjectService}:\\
 			Campo dati che contiene un riferimento al servizio che fornisce le funzionalità relative alla gestione di un progetto in aggiunta a quelle di ricerca.
 	
@@ -773,11 +838,4 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		La vista Views::HomePage utilizza HomePageCtrl per reperire ed aggiornare le informazioni di pertinenza dell'account relativo all'utente corrente;	
 	   \item IN: \textbf{ProjectService}.
 	  	La vista Views::HomePage utilizza il service ProjectService per recuperare ed aggiornare le informazioni relative ad un particolare progetto in aggiunta a quelle di ricerca.	
-	  		
 	\end{itemize}
-	
-		
-% 	SlideService
-% PresentationService
-% addObject(id)
-% removeObject(id)
