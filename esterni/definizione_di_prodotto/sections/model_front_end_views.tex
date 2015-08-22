@@ -46,31 +46,31 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 \newpage
 	
 
-\subsubsection{Help}
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=0.3\linewidth]{img/premi_front_end_views_help}
-		\caption[Premi::Front-End::Views::Help]{Premi::Front-End::Views::Help}
-	\end{figure}
-	
-	\paragraph{Descrizione}
-	View che contiene il tool di aiuto all'utente.
-	
-	\paragraph{Utilizzo}
-	Viene utilizzata come view per visualizzare l'help per l'utente.
-	
-	\paragraph{Relazioni con le altre classi}
-	\begin{itemize}
-		\item \textbf{\textit{IN} HelpCtrl}:\\
-		Classe che gestisce la visualizzazione dell'aiuto all'utente.
-	\end{itemize}
-	
-	\paragraph{Attributi}
-	\begin{itemize}
-		\item \textbf{+ tips:JSON}: \\
-		Campo dati che contiene un array JSON con tutti gli aiuti da fornire all'utente.
-	\end{itemize}
-\newpage
+%\subsubsection{Help}
+%	\begin{figure}[h]
+%		\centering
+%		\includegraphics[width=0.3\linewidth]{img/premi_front_end_views_help}
+%		\caption[Premi::Front-End::Views::Help]{Premi::Front-End::Views::Help}
+%	\end{figure}
+%	
+%	\paragraph{Descrizione}
+%	View che contiene il tool di aiuto all'utente.
+%	
+%	\paragraph{Utilizzo}
+%	Viene utilizzata come view per visualizzare l'help per l'utente.
+%	
+%	\paragraph{Relazioni con le altre classi}
+%	\begin{itemize}
+%		\item \textbf{\textit{IN} HelpCtrl}:\\
+%		Classe che gestisce la visualizzazione dell'aiuto all'utente.
+%	\end{itemize}
+%	
+%	\paragraph{Attributi}
+%	\begin{itemize}
+%		\item \textbf{+ tips:JSON}: \\
+%		Campo dati che contiene un array JSON con tutti gli aiuti da fornire all'utente.
+%	\end{itemize}
+%\newpage
 	
 	
 \subsubsection{HomePage}
@@ -91,7 +91,11 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{\textit{IN} HomePageCtrl}:\\
 			Classe che gestisce la home page e gli accessi alle altre pagine dell'applicazione;
 		\item \textbf{\textit{IN} SearchCtrl}:\\
-			Classe che gestisce le operazioni di ricerca.
+			Classe che gestisce le operazioni di ricerca;
+		\item \textbf{\textit{IN} HelpCtrl}:\\
+			Classe che gestisce le operazioni per l'aiuto all'utente;
+		\item \textbf{\textit{IN} AuthenticationCtrl}:\\
+			Classe che gestisce le operazioni per l'autenticazione dell'utente.
 	\end{itemize}
 	
 	\paragraph{Attributi}
@@ -120,7 +124,9 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	\paragraph{Relazioni con le altre classi}
 	\begin{itemize}
 		\item \textbf{\textit{IN} InfographicEditorCtrl}:\\
-			Classe che gestisce le operazioni per le infografiche (creazione, modifica, salvataggio)
+			Classe che gestisce le operazioni per le infografiche (creazione, modifica, salvataggio);
+		\item \textbf{\textit{IN} HelpCtrl}:\\
+			Classe che gestisce le operazioni per l'aiuto all'utente.
 	\end{itemize}
 	
 	\paragraph{Attributi}
@@ -152,6 +158,8 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	\begin{itemize}
 		\item \textbf{\textit{IN} LoginCtrl}:\\
 		Classe che gestisce le operazioni per l'autenticazione al sito;
+		\item \textbf{\textit{IN} AuthenticationCtrl}:\\
+		Classe che gestisce le operazioni per l'autenticazione dell'utente.
 	\end{itemize}
 	
 	\paragraph{Attributi}
@@ -209,7 +217,9 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	\paragraph{Relazioni con le altre classi}
 	\begin{itemize}
 		\item \textbf{\textit{IN} PresentationEditorCtrl}:\\
-		Classe che gestisce le operazioni di modifica delle impostazioni generali della presentazione e le operazioni di spostamento, aggiunta e rimozione di una slide.
+		Classe che gestisce le operazioni di modifica delle impostazioni generali della presentazione e le operazioni di spostamento, aggiunta e rimozione di una slide;
+		\item \textbf{\textit{IN} AuthenticationCtrl}:\\
+		Classe che gestisce le operazioni per l'autenticazione dell'utente.
 	\end{itemize}
 	
 	\paragraph{Attributi}
@@ -273,7 +283,9 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{\textit{IN} NewProject}:\\
 			Classe che gestisce la creazione di un nuovo progetto;
 		\item \textbf{\textit{IN} ProjectsCtrl}:\\
-			Classe che gestisce il caricamento dei progetti di un utente e le operazioni che è possibile effettuare su di essi.
+			Classe che gestisce il caricamento dei progetti di un utente e le operazioni che è possibile effettuare su di essi;
+		\item \textbf{\textit{IN} HelpCtrl}:\\
+		Classe che gestisce le operazioni per l'aiuto all'utente.
 	\end{itemize}
 	
 	\paragraph{Attributi}
@@ -308,7 +320,9 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{\textit{OUT} presentationEditorCtrl}:\\
 			Classe che gestisce la modifica di una presentazione;
 		\item \textbf{\textit{OUT} infographicEditorCtrl}:\\
-			Classe che gestisce le infografiche e la loro modifica.
+			Classe che gestisce le infografiche e la loro modifica;
+		\item \textbf{\textit{IN} AuthenticationCtrl}:\\
+			Classe che gestisce le operazioni per l'autenticazione dell'utente.
 	\end{itemize}
 	
 	\paragraph{Attributi}
@@ -398,6 +412,8 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	\begin{itemize}
 		\item \textbf{\textit{IN} SignUpCtrl}:\\
 		Classe che gestisce le operazioni di registrazione al sito;
+		\item \textbf{\textit{IN} AuthenticationCtrl}:\\
+		Classe che gestisce le operazioni per l'autenticazione dell'utente.
 	\end{itemize}
 	
 	\paragraph{Attributi}
@@ -435,8 +451,12 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	
 	\paragraph{Relazioni con le altre classi}
 	\begin{itemize}
+		\item \textbf{\textit{IN} HelpCtrl}:\\
+			Classe che gestisce le operazioni per l'aiuto all'utente;
 		\item \textbf{\textit{IN} SlideEditorCtrl}:\\
-		Classe che gestisce le operazioni di modifica di una slide, la gestione dei suoi componenti e il suo salvataggio.
+			Classe che gestisce le operazioni di modifica di una slide, la gestione dei suoi componenti e il suo salvataggio;
+		\item \textbf{\textit{IN} PresentationEditorCtrl}:\\
+			Classe che gestisce le operazioni di modifica delle impostazioni generali della presentazione e le operazioni di spostamento, aggiunta e rimozione di una slide.
 	\end{itemize}
 	
 	\paragraph{Attributi}
