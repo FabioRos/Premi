@@ -43,32 +43,34 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{+ extraFields: JSON}:\\
 			Campo dati che contiene un array JSON avente tutti i campi dati secondari di un componente.
 	\end{itemize}
+\newpage
 	
 
-\subsubsection{Help}
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=0.3\linewidth]{img/premi_front_end_views_help}
-		\caption[Premi::Front-End::Views::Help]{Premi::Front-End::Views::Help}
-	\end{figure}
-	
-	\paragraph{Descrizione}
-	View che contiene il tool di aiuto all'utente.
-	
-	\paragraph{Utilizzo}
-	Viene utilizzata come view per visualizzare l'help per l'utente.
-	
-	\paragraph{Relazioni con le altre classi}
-	\begin{itemize}
-		\item \textbf{\textit{IN} HelpCtrl}:\\
-		Classe che gestisce la visualizzazione dell'aiuto all'utente.
-	\end{itemize}
-	
-	\paragraph{Attributi}
-	\begin{itemize}
-		\item \textbf{+ tips:JSON}: \\
-		Campo dati che contiene un array JSON con tutti gli aiuti da fornire all'utente.
-	\end{itemize}
+%\subsubsection{Help}
+%	\begin{figure}[h]
+%		\centering
+%		\includegraphics[width=0.3\linewidth]{img/premi_front_end_views_help}
+%		\caption[Premi::Front-End::Views::Help]{Premi::Front-End::Views::Help}
+%	\end{figure}
+%	
+%	\paragraph{Descrizione}
+%	View che contiene il tool di aiuto all'utente.
+%	
+%	\paragraph{Utilizzo}
+%	Viene utilizzata come view per visualizzare l'help per l'utente.
+%	
+%	\paragraph{Relazioni con le altre classi}
+%	\begin{itemize}
+%		\item \textbf{\textit{IN} HelpCtrl}:\\
+%		Classe che gestisce la visualizzazione dell'aiuto all'utente.
+%	\end{itemize}
+%	
+%	\paragraph{Attributi}
+%	\begin{itemize}
+%		\item \textbf{+ tips:JSON}: \\
+%		Campo dati che contiene un array JSON con tutti gli aiuti da fornire all'utente.
+%	\end{itemize}
+%\newpage
 	
 	
 \subsubsection{HomePage}
@@ -89,7 +91,11 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{\textit{IN} HomePageCtrl}:\\
 			Classe che gestisce la home page e gli accessi alle altre pagine dell'applicazione;
 		\item \textbf{\textit{IN} SearchCtrl}:\\
-			Classe che gestisce le operazioni di ricerca.
+			Classe che gestisce le operazioni di ricerca;
+		\item \textbf{\textit{IN} HelpCtrl}:\\
+			Classe che gestisce le operazioni per l'aiuto all'utente;
+		\item \textbf{\textit{IN} AuthenticationCtrl}:\\
+			Classe che gestisce le operazioni per l'autenticazione dell'utente.
 	\end{itemize}
 	
 	\paragraph{Attributi}
@@ -99,6 +105,7 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{+ searchType: boolean}:\\
 			Campo dati la scelta del tipo di ricerca da effettuare (per nome utente o per nome del progetto).
 	\end{itemize}
+\newpage
 	
 	
 \subsubsection{InfographicEditor}
@@ -117,7 +124,9 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	\paragraph{Relazioni con le altre classi}
 	\begin{itemize}
 		\item \textbf{\textit{IN} InfographicEditorCtrl}:\\
-			Classe che gestisce le operazioni per le infografiche (creazione, modifica, salvataggio)
+			Classe che gestisce le operazioni per le infografiche (creazione, modifica, salvataggio);
+		\item \textbf{\textit{IN} HelpCtrl}:\\
+			Classe che gestisce le operazioni per l'aiuto all'utente.
 	\end{itemize}
 	
 	\paragraph{Attributi}
@@ -129,6 +138,7 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{+ style: JSON}:\\
 		Campo dati per le informazioni dello stile da utilizzare per l'infografica.
 	\end{itemize}
+\newpage
 	
 	
 \subsubsection{Login}
@@ -148,6 +158,8 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	\begin{itemize}
 		\item \textbf{\textit{IN} LoginCtrl}:\\
 		Classe che gestisce le operazioni per l'autenticazione al sito;
+		\item \textbf{\textit{IN} AuthenticationCtrl}:\\
+		Classe che gestisce le operazioni per l'autenticazione dell'utente.
 	\end{itemize}
 	
 	\paragraph{Attributi}
@@ -159,6 +171,7 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{+ errorMsg: String}:\\
 		Campo dati contenente l'eventuale messaggio di errore da fornire all'utente.
 	\end{itemize}
+\newpage
 
 
 \subsubsection{MyAccount}
@@ -185,6 +198,7 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{+ data: JSON}:\\
 		Campo dati contenente i dati dell'utente.
 	\end{itemize}
+\newpage
 	
 	
 \subsubsection{PresentationEditor}
@@ -203,7 +217,9 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	\paragraph{Relazioni con le altre classi}
 	\begin{itemize}
 		\item \textbf{\textit{IN} PresentationEditorCtrl}:\\
-		Classe che gestisce le operazioni di modifica delle impostazioni generali della presentazione e le operazioni di spostamento, aggiunta e rimozione di una slide.
+		Classe che gestisce le operazioni di modifica delle impostazioni generali della presentazione e le operazioni di spostamento, aggiunta e rimozione di una slide;
+		\item \textbf{\textit{IN} AuthenticationCtrl}:\\
+		Classe che gestisce le operazioni per l'autenticazione dell'utente.
 	\end{itemize}
 	
 	\paragraph{Attributi}
@@ -217,6 +233,7 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{- localData: JSON}:\\
 		Campo dati che contiene le informazioni relative agli indici della slide corrente e agli indici massimi della presentazione.
 	\end{itemize}
+\newpage
 	
 	
 \subsubsection{Presentation}
@@ -245,6 +262,7 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{+ style: JSON}: \\
 		Campo dati che contiene un oggetto JSON con i dati dello stile della presentazione (tema e effetto di transizione).
 	\end{itemize}
+\newpage
 	
 	
 \subsubsection{Projects}
@@ -265,7 +283,9 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{\textit{IN} NewProject}:\\
 			Classe che gestisce la creazione di un nuovo progetto;
 		\item \textbf{\textit{IN} ProjectsCtrl}:\\
-			Classe che gestisce il caricamento dei progetti di un utente e le operazioni che è possibile effettuare su di essi.
+			Classe che gestisce il caricamento dei progetti di un utente e le operazioni che è possibile effettuare su di essi;
+		\item \textbf{\textit{IN} HelpCtrl}:\\
+		Classe che gestisce le operazioni per l'aiuto all'utente.
 	\end{itemize}
 	
 	\paragraph{Attributi}
@@ -275,6 +295,7 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{+ user: int}:\\
 			Campo dati che contiene l'id dell'utente.
 	\end{itemize}
+\newpage
 	
 	
 \subsubsection{Project}
@@ -299,7 +320,9 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{\textit{OUT} presentationEditorCtrl}:\\
 			Classe che gestisce la modifica di una presentazione;
 		\item \textbf{\textit{OUT} infographicEditorCtrl}:\\
-			Classe che gestisce le infografiche e la loro modifica.
+			Classe che gestisce le infografiche e la loro modifica;
+		\item \textbf{\textit{IN} AuthenticationCtrl}:\\
+			Classe che gestisce le operazioni per l'autenticazione dell'utente.
 	\end{itemize}
 	
 	\paragraph{Attributi}
@@ -309,6 +332,7 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{+ infographic[]: JSON}:\\
 			Campo dati che contiene un array di oggetti JSON aventi gli id e i dati relativi alle infografiche del progetto.
 	\end{itemize}
+\newpage
 	
 	
 \subsubsection{ResetPassword}
@@ -339,6 +363,7 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{+ passwordConfirmation:String}: \\
 		Campo dati che contiene la conferma della nuova password per l'utente.
 	\end{itemize}
+\newpage
 	
 
 \subsubsection{Search}
@@ -367,6 +392,7 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{+ results: JSON}:\\
 		Campo dati che contiene un array JSON con i risultati della ricerca;
 	\end{itemize}
+\newpage
 	
 	
 \subsubsection{SignUp}
@@ -386,6 +412,8 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	\begin{itemize}
 		\item \textbf{\textit{IN} SignUpCtrl}:\\
 		Classe che gestisce le operazioni di registrazione al sito;
+		\item \textbf{\textit{IN} AuthenticationCtrl}:\\
+		Classe che gestisce le operazioni per l'autenticazione dell'utente.
 	\end{itemize}
 	
 	\paragraph{Attributi}
@@ -405,6 +433,7 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 		\item \textbf{+ errorMsg[]: String}:\\
 			Array contenente gli eventuali messaggi di errore da fornire all'utente se i dati non sono inseriti correttamente.
 	\end{itemize}
+\newpage
 	
 	
 \subsubsection{SlideEditor}
@@ -422,8 +451,12 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 	
 	\paragraph{Relazioni con le altre classi}
 	\begin{itemize}
+		\item \textbf{\textit{IN} HelpCtrl}:\\
+			Classe che gestisce le operazioni per l'aiuto all'utente;
 		\item \textbf{\textit{IN} SlideEditorCtrl}:\\
-		Classe che gestisce le operazioni di modifica di una slide, la gestione dei suoi componenti e il suo salvataggio.
+			Classe che gestisce le operazioni di modifica di una slide, la gestione dei suoi componenti e il suo salvataggio;
+		\item \textbf{\textit{IN} PresentationEditorCtrl}:\\
+			Classe che gestisce le operazioni di modifica delle impostazioni generali della presentazione e le operazioni di spostamento, aggiunta e rimozione di una slide.
 	\end{itemize}
 	
 	\paragraph{Attributi}
@@ -434,5 +467,4 @@ Il package gestisce le view del front-end dell'applicazione. Comunica con il mod
 			Campo dati contenente un array con tutti gli elementi presenti nella slide;
 		\item \textbf{+ slideId: int}:\\
 			Campo dati per l'id della slide corrente.
-
 	\end{itemize}

@@ -261,7 +261,9 @@ Il PresentationService rende disponibili dei servizi che si occupano della gesti
 			\item OUT: \textbf{PresentationCtrl}:\\
 			Classe che gestisce le operazioni di visualizzazione di una presentazione;
 			\item OUT: \textbf{PresentationEditorCtrl}:\\
-			Classe che gestisce le operazioni modifica di una presentazione.
+			Classe che gestisce le operazioni modifica di una presentazione;
+			\item OUT: \textbf{SlideEditorCtrl}:\\
+			Classe che gestisce le operazioni di modifica di una slide.
 		\end{itemize}
 		
 		\paragraph{Attributi}
@@ -424,7 +426,9 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 		\paragraph{Relazioni con le altre classi}
 		\begin{itemize}
 			\item OUT: \textbf{ProjectCtrl}:\\
-			Classe che gestisce le operazioni riguardanti i progetti;
+				Classe che gestisce le operazioni riguardanti i progetti;
+			\item OUT: \textbf{HomeCtrl}:\\
+				Classe che gestisce le operazioni riguardanti la home page del sito.
 		\end{itemize}
 		
 		\paragraph{Attributi}
@@ -536,3 +540,56 @@ SlideService è l'ultimo dei macro servizi offerti e si occupa della gestione de
 				\item \textit{yIndex: int}: parametro di un intero rappresentate la coordinata y della slide richiesta.
 			\end{itemize}
 		\end{itemize}
+\newpage		
+		
+\subsubsection{SlideService::componentService}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{img/premi_front_end_services_componentservice}
+		\caption[Premi::Front-End::Services::ComponentService]{Premi::Front-End::Services::ComponentService}
+	\end{figure}
+	
+	\paragraph{Descrizione}
+	Si occupa di gestire le operazioni dei componenti di una slide.
+	
+	\paragraph{Utilizzo}
+	Viene utilizzato per creare una risorsa collegata al servizio REST che permette di modificare un componente di una slide.
+	
+	\paragraph{Relazioni con le altre classi}
+	\begin{itemize}
+		\item OUT: \textbf{ChartCtrl}:\\
+			Classe che gestisce le operazioni di modifica di un componente di tipo grafico;
+		\item OUT: \textbf{ImageCtrl}:\\
+			Classe che gestisce le operazioni di modifica di un componente di tipo immagine;
+		\item OUT: \textbf{RealTimeDataCtrl}:\\
+			Classe che gestisce le operazioni di modifica di un componente di tipo dato realtime;
+		\item OUT: \textbf{TableCtrl}:\\
+			Classe che gestisce le operazioni di modifica di un componente di tipo tabella;
+		\item OUT: \textbf{TextCtrl}:\\
+			Classe che gestisce le operazioni di modifica di un componente di tipo grafico.
+	\end{itemize}
+	
+	\paragraph{Attributi}
+	\begin{itemize}
+		\item \textbf{- \$request: Object}:\\
+		Campo dati contenente la route per la chiamata al servizio REST specifico del servizio.
+	\end{itemize}	
+	
+	\paragraph{Metodi}
+	\begin{itemize}
+		\item \textbf{+ get(id:String): Promise}:\\
+			Metodo che richiama la funzione GET collegata alla risorsa e permette di ottenere il componente richiesto. Il metodo ritorna una promessa che conterrà i dati del componente.
+		\item \textbf{+ save(type:String): Promise}:\\
+			Metodo che richiama la funzione POST collegata alla risorsa e permette di creare un nuovo componente del tipo richiesto attraverso il parametro. Il metodo ritorna una promessa la quale, se la chiamata ha esito positivo, conterrà l'id della nuova slide creata;\\
+		\item \textbf{+ update(id:String, data:Object):Promise}\\
+			Metodo che richiama la funzione PUT collegata alla risorsa e permette di aggiornare un componente già creato in precedenza con i dati passi per parametro. Il metodo ritorna una promessa che conterrà il valore \textit{true} se il processo è andato a buon fine. 
+		\item \textbf{+ delete(id:String):Promise}\\
+			Metodo che richiama la funzione DELETE collegata alla risorsa e permette di eliminare il componente con id passato per parametro. Il metodo ritorna una promessa che conterrà \textit{true} se l'esito del salvataggio è positivo.
+		
+		\textbf{Parametri:}\\
+		\begin{itemize}
+			\item \textit{id: String}: parametro di una stringa contenente l'id del componente sul quale eseguire la funzione;
+			\item \textit{type: String}: parametro di un oggetto di tipo stringa che contiene il tipo di componente da creare;
+			\item \textit{data: Object}: parametro di un oggetto contente le informazioni sul componente da salvare.
+		\end{itemize}
+	\end{itemize}

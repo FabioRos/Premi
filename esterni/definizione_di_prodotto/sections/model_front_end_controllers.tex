@@ -8,14 +8,19 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 
 \newpage
 \subsubsection{ComponentCtrl}
-      \paragraph{Descrizione}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_componentctrl}
+		\caption[Premi::Front-End::Controllers::ComponentCtrl]{Premi::Front-End::Controllers::ComponentCtrl}
+	\end{figure}
+
+    \paragraph{Descrizione}
 	Il controller ComponentCtrl si occupa di fornire le primitive per la costruzione e gestione dei componenti in una slide.\\
 	È una classe astratta in quanto non sarà possibile istanziare un componente direttamente ma solo oggetti che concretizzano la classe costruendo oggetti dei tipi previsti dal sistema.\\
-%	Alla richiesta di un componente concreto da parte di slideEditorCtrl, viene invocato ComponentCtrl con il corretto parametro di tipo per costruire l'oggetto della classe corrispondente. 
-		
+
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per consentire all'utente di aggiungere, modificare o rimuovere un componente in una slide.
-	
+
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
@@ -29,16 +34,16 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		\item\textbf{-width:Double}:\\
 			Campo dati contenente il valore della larghezza dell'oggetto;
 		\item\textbf{-extraFields:Object}:\\
-			Campo dati contenente eventuali parametri supplementari per ogni componente in un array di oggetti in formato JSON. Progettato in ottica di estensioni future; 
-		\item\textbf{-angle:Double}:\\	
+			Campo dati contenente eventuali parametri supplementari per ogni componente in un array di oggetti in formato JSON. Progettato in ottica di estensioni future;
+		\item\textbf{-angle:Double}:\\
 			Campo dati contenente il valore dell'angolo di rotazione;
 		\item\textbf{-scaleX:Double}:\\
 			Campo dati contenente il coefficiente di scala in orizzontale rispetto al valore originale rappresentato dal valore 1;
-		\item\textbf{-scaleY:Double}:\\	
+		\item\textbf{-scaleY:Double}:\\
 			Campo dati contenente il coefficiente di scala in verticale rispetto al valore originale rappresentato dal valore 1.
-	
+
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
 	\item \textbf{+getX():Double}:\\
@@ -76,6 +81,9 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
+
+	 \item IN: \textbf{Model::Component}:\\
+		Il controller ComponentCtrl utilizza Model::Component per stabilire la struttura dell'oggetto che rappresenta.
 	 \item OUT: \textbf{SlideEditorCtrl}:\\
 		Il controller SlideEditorCtrl utilizza ComponentCtrl per la gestione dei componenti al fine di costruire la slide.
 	 \item OUT: \textbf{ChartCtrl}:\\
@@ -88,29 +96,33 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		Il controller TableCtrl estende ComponentCtrl per la costruzione e gestione di oggetti di tipo tabella.
 	 \item OUT: \textbf{TextCtrl}:\\
 		Il controller TextCtrl estende ComponentCtrl per la costruzione e gestione di oggetti di tipo testo.
-	
+
 	\end{itemize}
-	
+
 \newpage
 \subsubsection{ChartCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_chartctrl}
+	\caption[Premi::Front-End::Controllers::ChartCtrl]{Premi::Front-End::Controllers::ChartCtrl}
+\end{figure}
    \paragraph{Descrizione}
 	Il controller ChartCtrl concretizza ComponentCtrl e si occupa di fornire le primitive per la costruzione e gestione dei grafici in una slide.
-		
+
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per consentire all'utente di aggiungere, modificare o rimuovere un grafico in una slide.
-	
+
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
 		\item \textbf{-ChartService: ChartService}:\\
-			
 		\item\textbf{-dataSet:Object}:\\
 			Array di oggetti JSON ognuno dei quali indica un dato da rappresentare nel grafico;
 		\item\textbf{-type:String}:\\
 			Campo dati che indica la tipologia di grafico da rappresentare.
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
 	\item \textbf{+setDataSet(\textit{type}:String):Boolean}:\\
@@ -121,51 +133,59 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		Metodo che restituisce i dati sorgente del grafico corrente;
 	\item \textbf{+getType():Object}:\\
 		Metodo che restituisce la tipologia del grafico corrente.
-	\item \textbf{+load()}:Object	\\	
+	\item \textbf{+load():Object}:\\
 		Metodo che permette di caricare un grafico proveniente dal server web dove risiede il sistema mediante l'utilizzo del servizio ChartService. Esso restituisce un oggetto JSON contenente la tipologia ed il set di dati del grafico in caso di successo ed una stringa vuota in caso di fallimento;
-	\item \textbf{+save():Boolean}:\\	
+	\item \textbf{+save():Boolean}:\\
 		Metodo che permette di salvare un grafico mediante l'utilizzo del servizio ChartService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
-	
+
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
  	\item IN: \textbf{ComponentCtrl}:\\
-	 	Il controller ChartCtrl estende ComponentCtrl per la costruzione e gestione di grafici.
+	 	Il controller ChartCtrl estende ComponentCtrl per la costruzione e gestione di grafici;
 	\item IN: \textbf{ChartService}:\\
-		Campo dati che contiene un riferimento al servizio che si occupa di gestire reperimento, cancellazione ed aggiornamento dei grafici all'interno del sistema.
+		Campo dati che contiene un riferimento al servizio che si occupa di gestire reperimento, cancellazione ed aggiornamento dei grafici all'interno del sistema;
+	\item IN: \textbf{Model::Chart}:\\
+		Il controller ChartCtrl utilizza Model::Chart per stabilire la struttura dell'oggetto che rappresenta;
  	\item OUT: \textbf{SlideEditorCtrl}:\\
 	 	Il controller SlideEditorCtrl necessita di ChartCtrl per la costruzione e gestione di grafici.
+
 	\end{itemize}
 
 \newpage
 \subsubsection{ImageCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_imagectrl}
+	\caption[Premi::Front-End::Controllers::ImageCtrl]{Premi::Front-End::Controllers::ImageCtrl}
+\end{figure}
    \paragraph{Descrizione}
 	Il controller ImageCtrl concretizza ComponentCtrl e si occupa di fornire le primitive per la costruzione e gestione degli oggetti di tipo immagine all'interno di una slide.
-		
+
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per consentire all'utente di aggiungere, modificare o rimuovere un immagine in una slide.
-	
+
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-		\item \textbf{ImageService : ImageService}:\\
-			Campo dati che contiene un riferimento al servizio che si occupa di gestire reperimento, cancellazione ed aggiornamento delle immagini all'interno del sistema;
+		\item \textbf{-ImageService: ImageService}:\\
+			Campo dati che contiene un riferimento al servizio che si occupa di gestire reperimento, cancellazione ed aggiornamento delle immagini all'interno del sistema.
 		\item\textbf{-src:String}:\\
 			Campo dati che indica il percorso dove è possibile recuperare l'immagine.
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
 	\item \textbf{+setSrc(\textit{type}:String):Boolean}:\\
 		Metodo che permette di impostare il percorso dove è possibile recuperare l'immagine restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\item \textbf{+getSrc():String}:\\
 		Metodo che restituisce il percorso dove è possibile recuperare l'immagine.
-	\item \textbf{+upload():String}:\\	
+	\item \textbf{+upload():String}:\\
 		Metodo che permette di caricare un immagine proveniente da un dispositivo esterno al sistema restituendo il percorso dove risiede l'immagine in caso di successo ed una stringa vuota in caso di fallimento;
-	\item \textbf{+load():String}:\\	
+	\item \textbf{+load():String}:\\
 		Metodo che permette di caricare una immagine proveniente dal server web dove risiede il sistema mediante l'utilizzo del servizio ImageService restituendo il percorso dell'immagine in caso di successo ed una stringa vuota in caso di fallimento;
-	\item \textbf{+save():Boolean}:\\	
+	\item \textbf{+save():Boolean}:\\
 		Metodo che permette di salvare una immagine mediante l'utilizzo del servizio ImageService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
@@ -174,18 +194,25 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	 	Il controller ImageCtrl estende ComponentCtrl per la costruzione e gestione di grafici;
 	\item IN: \textbf{ImageService}:\\
 		Il controller ImageCtrl necessita di ImageCtrl per il recupero ed il salvataggio delle immagini;
+	\textbf{\item IN: \textbf{Model::Image}:\\
+			Il controller ComponentCtrl utilizza Model::Image per stabilire la struttura dell'oggetto che rappresenta.}
 	\item OUT: \textbf{SlideEditorCtrl}:\\
-		Il controller SlideEditorCtrl necessita di ImageCtrl per la costruzione e gestione delle immagini. 	
+		Il controller SlideEditorCtrl necessita di ImageCtrl per la costruzione e gestione delle immagini.
 	\end{itemize}
 
 \newpage
 \subsubsection{RealTimeDataCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{img/premi_front_end_controllers_realtimedatactrl}
+	\caption[Premi::Front-End::Controllers::RealTimeDataCtrl]{Premi::Front-End::Controllers::RealTimeDataCtrl}
+\end{figure}
    \paragraph{Descrizione}
 	Il controller RealTimeDataCtrl concretizza ComponentCtrl e si occupa di fornire le primitive per la costruzione e gestione degli oggetti di tipo immagine all'interno di una slide.
-		
+
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per consentire all'utente di aggiungere, modificare o rimuovere delle componenti con aggiornamento periodico all'interno di una slide.
-	
+
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
@@ -202,9 +229,9 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 			Campo dati che indica il percorso dove trovare le informazioni in caso di impossibilità di raggiungere la risorsa;
 		\item \textbf{-refreshInterval: Int}:\\
 			Campo dati che indica il tempo che intercorre tra gli aggiornamenti dei dati in secondi.
-			
+
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
 	\item \textbf{+setTargetUrl(\textit{url}:String):Boolean}:\\
@@ -217,26 +244,20 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		Metodo che permette di impostare il percorso dove trovare le informazioni in caso di impossibilità di reperire la risorsa d'interesse al valore \textit{url}, restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\item \textbf{+setRefreshInterval(\textit{t}:Int):Boolean}:\\
 		Metodo che permette di impostare il tempo che intercorre tra due aggiornamenti successivi al valore di \textit{t} secondi, restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-					
-							
 	\item \textbf{+getTargetUrl():String}:\\
 		Metodo che restituisce il percorso della risorsa che contiene le informazioni d'interesse;
 	\item \textbf{+getSelector():String}:\\
-		Metodo che restituisce il selettore all'interno del targetUrl che permette di raggiungere le informazioni d'interesse;			
+		Metodo che restituisce il selettore all'interno del targetUrl che permette di raggiungere le informazioni d'interesse;
 	\item \textbf{+getCallbackUrl():String}:\\
 		Metodo che restituisce il percorso della risorsa che contiene le informazioni d'interesse;
 	\item \textbf{+getFallbackFileUrl():String}:\\
 		Metodo che restituisce il percorso dove reperire le informazioni in caso di impossibilità di raggiungere la risorsa d'interesse;
 	\item \textbf{+getRefreshInterval():Int}:\\
-		Metodo che restituisce il tempo che intercorre tra due aggiornamenti successivi del componente d'interesse;			
-
-
-	\item \textbf{+load():Boolean}:\\	
+		Metodo che restituisce il tempo che intercorre tra due aggiornamenti successivi del componente d'interesse;
+	\item \textbf{+load():Boolean}:\\
 		Metodo che permette di reperire le informazioni del componente dal file di fallback, ove presente, ed istanziare il componente, prescindendo dalla raggiungibilità o meno della risorsa mediante l'utilizzo del servizio RealTimeService. Viene restituito \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-		
-	\item \textbf{+save():Boolean}:\\	
+	\item \textbf{+save():Boolean}:\\
 		Metodo che permette di aggiornare le informazioni del componente nel file di fallback, ove presente, ed istanziare il componente mediante l'utilizzo del servizio RealTimeDataService. Viene restituito \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-		
 	\item \textbf{+run():Boolean}:\\
 		Metodo che permette di eseguire tutte le chiamate che provocano l'ottenimento del codice html finale da aggiornare nella slide mediante l'utilizzo del servizio RealTimeDataService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
 		Nello specifico le operazioni svolte sono le seguenti:
@@ -247,7 +268,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 			\item Vengono salvate le informazioni del punto precente nel file di fallback mediante il metodo save;
 			\item Viene aggiornato il contenuto della slide.
 		\end{enumerate}
-	
+
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
@@ -255,18 +276,26 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	 	Il controller RealTimeDataCtrl estende ComponentCtrl per la costruzione e gestione di componenti con aggiornamento in tempo reale;
 	\item IN: \textbf{RealTimeDataService}:\\
 		Il controller RealTimeDataCtrl necessita di RealTimeDataService per il recupero ed il salvataggio delle informazioni necessarie alla corretta erogazione e gestione degli oggetti con aggiornamento in tempo reale;
+	\item IN: \textbf{Model::RealTimeData}:\\
+		Il controller RealTimeDataCtrl utilizza Model::RealTimeData per stabilire la struttura dell'oggetto che rappresenta;
+
 	\item OUT: \textbf{SlideEditorCtrl}:\\
-		Il controller SlideEditorCtrl necessita di ComponentCtrl per la costruzione e gestione degli oggetti con aggiornamento in tempo reale. 	
+		Il controller SlideEditorCtrl necessita di ComponentCtrl per la costruzione e gestione degli oggetti con aggiornamento in tempo reale.
 	\end{itemize}
 
 \newpage
 \subsubsection{TableCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_tablectrl}
+	\caption[Premi::Front-End::Controllers::TableCtrl]{Premi::Front-End::Controllers::TableCtrl}
+\end{figure}
    \paragraph{Descrizione}
 	Il controller TableCtrl concretizza ComponentCtrl e si occupa di fornire le primitive per la costruzione e gestione degli oggetti di tipo tabella all'interno di una slide.
-		
+
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per consentire all'utente di aggiungere, modificare o rimuovere tabelle in una slide.
-	
+
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
@@ -280,7 +309,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		\item\textbf{-dataSet:Object}:\\
 			Array di oggetti JSON ognuno dei quali indica un dato da rappresentare nel grafico comprensivo di coordinate;
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
 	\item \textbf{+getDataSet():Object}:\\
@@ -289,8 +318,6 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		Metodo che restituisce il numero di righe della tabella corrente;
 	\item \textbf{+getColumns():Object}:\\
 		Metodo che restituisce il numero di colonne della tabella corrente;
-
-	
 	\item \textbf{+setDataSet(\textit{obj}:Object):Boolean}:\\
 		Metodo che permette di impostare i dati sorgentedella tabella corrente al valore \textit{obj} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\item \textbf{+setRows(\textit{r}:Int):Boolean}:\\
@@ -299,10 +326,9 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		Metodo che restituisce il numero di colonne della tabella corrente \textit{c} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\item \textbf{+\$scope.refreshTable():void}:\\
 		Metodo che ridisegna la tabella d'interesse;
+	\item \textbf{+load():Boolean}:\\
+		Metodo che permette di caricare le informazioni relative alla tabella corrente mediante l'utilizzo del servizio TableService che produce un array di oggetti JSON \textit{"A"} in output. La tabella verrà poi aggiornata invocando il metodo setDataSet(\textit{"A"}) restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 
-	\item \textbf{+load():Boolean}:\\	
-		Metodo che permette di caricare le informazioni relative alla tabella corrente mediante l'utilizzo del servizio TableService che produce un array di oggetti JSON \textit{"A"} in output. La tabella verrà poi aggiornata invocando il metodo setDataSet(\textit{"A"}) restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;	
-	
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
@@ -310,18 +336,25 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	 	Il controller TableCtrl estende ComponentCtrl per la costruzione e gestione di tabelle;
 	\item IN: \textbf{TableService}:\\
 		Il controller TableCtrl necessita di TableService per la gestione, il recupero ed il salvataggio delle tabelle;
+	\item IN: \textbf{Model::Table}:\\
+		Il controller TableCtrl utilizza Model::Table per stabilire la struttura dell'oggetto che rappresenta;
 	\item OUT: \textbf{SlideEditorCtrl}:\\
-		Il controller SlideEditorCtrl necessita di TableCtrl per la costruzione e gestione delle tabelle. 	
+		Il controller SlideEditorCtrl necessita di TableCtrl per la costruzione e gestione delle tabelle.
 	\end{itemize}
 
 \newpage
 \subsubsection{TextCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_textctrl}
+	\caption[Premi::Front-End::Controllers::TextCtrl]{Premi::Front-End::Controllers::TextCtrl}
+\end{figure}
    \paragraph{Descrizione}
 	Il controller TextCtrl concretizza ComponentCtrl e si occupa di fornire le primitive per la costruzione e gestione degli oggetti di tipo testuale all'interno di una slide.
-		
+
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per consentire all'utente di aggiungere, modificare o rimuovere un testo in una slide.
-	
+
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
@@ -331,7 +364,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		\item\textbf{-text:String}:\\
 			Campo dati che indica la stringa di testo da rappresentare.
 		\item\textbf{-isBold:Boolean}:\\
-			Campo dati che, con valore true, indica che il testo deve essere rappresentato in grassetto; È stato scelto \textit{false} come valore di default; 
+			Campo dati che, con valore true, indica che il testo deve essere rappresentato in grassetto; È stato scelto \textit{false} come valore di default;
 		\item\textbf{-isItalic:Boolean}:\\
 			Campo dati che, con valore true, indica che il testo deve essere rappresentato in corsivo; È stato scelto \textit{false} come valore di default;
 		\item\textbf{-isUnderlined:Boolean}:\\
@@ -342,20 +375,20 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 				\item '00' = 0\%;
 				\item 'FF' = 100\%.
 			\end{itemize}
-			È stato previsto il nero (\#000000) come colore predefinito per il testo. 
-				
-											
+			È stato previsto il nero (\#000000) come colore predefinito per il testo.
+
+
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
 	\item \textbf{+setText(\textit{type}:String):Boolean}:\\
 		Metodo che permette di impostare la stringa di testo da rappresentare restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\item \textbf{+getText():String}:\\
 		Metodo che restituisce il contenuto testuale dell'oggetto corrente situato nella variabile \$scope.text.
-	\item \textbf{+load():String}:\\	
-		Metodo che permette di caricare un componente testuale mediante l'utilizzo del servizio TextService restituendo l'oggetto Object corrispondente in caso di successo ed un oggetto vuoto in caso di fallimento.	
-	\item \textbf{+save():Boolean}:\\	
+	\item \textbf{+load():String}:\\
+		Metodo che permette di caricare un componente testuale mediante l'utilizzo del servizio TextService restituendo l'oggetto Object corrispondente in caso di successo ed un oggetto vuoto in caso di fallimento.
+	\item \textbf{+save():Boolean}:\\
 		Metodo che permette di salvare un componente testuale mediante l'utilizzo del servizio TextService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\item \textbf{+setBold(\textit{value}:Boolean):Boolean};
 		Metodo che permette di im postare la proprietà "grassetto" dell'oggetto testuale corrente al valore \textit{value} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
@@ -365,7 +398,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		Metodo che permette di im postare la proprietà "sottolineato" dell'oggetto testuale corrente al valore \textit{value} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\item \textbf{+setColor(\textit{value}:String):Boolean};
 			Metodo che permette di im postare il colore dell'oggetto testuale corrente al valore \textit{value} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
-	
+
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
@@ -373,27 +406,34 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	 	Il controller TextCtrl estende ComponentCtrl per la costruzione e gestione di componenti testuali.
 	\item IN: \textbf{TextService}:\\
 		Il controller TextCtrl necessita di TextService per il recupero ed il salvataggio delle informazioni necessarie alla corretta erogazione e gestione degli oggetti di tipo testuale;
+	\item IN: \textbf{Model::Text}:\\
+		Il controller TextCtrl utilizza Model::Text per stabilire la struttura dell'oggetto che rappresenta;
 	\item OUT: \textbf{SlideEditorCtrl}:\\
-		Il controller SlideEditorCtrl necessita di TextCtrl per la costruzione e gestione di componenti testuali. 	
+		Il controller SlideEditorCtrl necessita di TextCtrl per la costruzione e gestione di componenti testuali.
 	\end{itemize}
 
 \newpage
 
 \subsubsection{HelpCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_helpctrl}
+	\caption[Premi::Front-End::Controllers::HelpCtrl]{Premi::Front-End::Controllers::HelpCtrl}
+\end{figure}
       \paragraph{Descrizione}
 	Il controller HelpCtrl gestisce i meccanismi di aiuto all'utente.
-	
+
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per gestire le informazioni e la logica di erogazione degli aiuti all'utente sotto forma di suggerimenti(tips) esplicativi delle funzionalità.
-	
+
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 				Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione.
 		\item \textbf{-\$scope.tips: Object}:\\
-				Campo dati che racchiude in un array di oggetti JSON tutti i suggerimenti necessari allo svolgimento del tour tra le funzionalità del sistema ed al supporto all'utente. 
+				Campo dati che racchiude in un array di oggetti JSON tutti i suggerimenti necessari allo svolgimento del tour tra le funzionalità del sistema ed al supporto all'utente.
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
 	  \item \textbf{+setTips(\textit{obj}:Object):Boolean}:\\
@@ -415,11 +455,16 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 
 \newpage
 \subsubsection{InfographicEditorCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_infographiceditorctrl}
+	\caption[Premi::Front-End::Controllers::InfographicEditorCtrl]{Premi::Front-End::Controllers::InfographicEditorCtrl}
+\end{figure}
 	\paragraph{Descrizione}
 		Il controller InfographicEditorCtrl gestisce la composizione e modifica di una infografica sulla base di template predefiniti che permettono l'inserimento in posizioni specifiche di slide precedentemente create.
-	
-	\paragraph{Utilizzo} 
-	
+
+	\paragraph{Utilizzo}
+
 		Questa classe viene utilizzata per gestire le richieste da parte della vista InfographicEditor ed aggiornarla a seconda delle modifiche della classe Premi::Front-End::Model::Infographic.
 		Ha il compito di tener traccia ed aggiornare codice identificativo e posizione delle slide in un template di infografica.
 	\paragraph{Attributi}
@@ -429,34 +474,39 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		\item \textbf{-InfographicService: InfographicService}:\\
 			Campo dati che contiene un riferimento al servizio che si occupa di reperire e salvare le informazioni di una infografica.
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
-	  \item \textbf{+addElement(\textit{position}:Int, \textit{id}:Int):Boolean}:\\
+	  \item \textbf{+addElement(\textit{position}:Int, \textit{id}:String):Boolean}:\\
 		  Metodo che permette di aggiungere l'elemento con codice identificativo \textit{id} alla infografica in posizione \textit{position}.
-	  \item \textbf{+getElement(\textit{position}:Int):Int}:\\
-		  Metodo che restituisce il codice identificativo dell'oggetto in posizione \textit{position} in caso di successo e \textit{-1} in caso di fallimento.
+	  \item \textbf{+getElement(\textit{position}:Int):String}:\\
+		  Metodo che restituisce il codice identificativo dell'oggetto in posizione \textit{position} in caso di successo es una stringa vuota in caso di fallimento.
 	  \item \textbf{+removeElement(\textit{position}:Int):Boolean}:\\
 		  Metodo che elimina l'oggetto in posizione \textit{position} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
-	  \item \textbf{+setTemplate(\textit{Tid}:Int):Boolean}:\\
+	  \item \textbf{+setTemplate(\textit{Tid}:String):Boolean}:\\
 		  Metodo che imposta il template \textit{Tid} per l'infografica corrente nella vista InfographicEditor restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
 	  \item \textbf{+getSlideList():Object}:\\
 		  Metodo che restituisce un oggetto JSON contenente un array con tutte le slide dell'infografica con le relative posizioni nel template.
-		  
+
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
 		\item IN: \textbf{InfographicService}:\\
 			Il controller InfographicCtrl necessita di InfographicService per il recupero ed il salvataggio delle informazioni necessarie alla corretta erogazione e gestione delle infografiche;
 		\item OUT: \textbf{Views::InfographicEditor}:\\
-			La vista InfographicEditor utilizza HelpCtrl per la gestione degli aiuti nella composizione e modifica di una infografica. 	
+			La vista InfographicEditor utilizza HelpCtrl per la gestione degli aiuti nella composizione e modifica di una infografica.
 	\end{itemize}
+\newpage
 
-\newpage	
-\subsubsection{AuthenticationCtrl}	
+\subsubsection{AuthenticationCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{img/premi_front_end_controllers_authenticationctrl}
+	\caption[Premi::Front-End::Controllers::AuthenticationCtrl]{Premi::Front-End::Controllers::AuthenticationCtrl}
+\end{figure}
 \paragraph{Descrizione}
 	Il controller AuthenticationCtrl gestisce l'autenticazione di un utente nel sistema.
-	
+
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per gestire le richieste di autenticazione, disconnessione e gestione password all'interno del sistema e di regolare l'accesso alle aree riservate.
 	In particolare gestisce le operazioni di logIn, logOut e recupero Password.
@@ -467,7 +517,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		\item \textbf{-AuthenticationService: AuthenticationService}:\\
 			Campo dati che contiene un riferimento al servizio che si occupa di gestire le funzionalità di autenticazione nel sistema.
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
 	  	\item \textbf{+logIn(\textit{username}:String, \textit{Password}:String):Boolean}:\\
@@ -478,15 +528,15 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		  	Metodo che si occupa di fornire il supporto al recupero password dell'utente con username \textit{username}.
 	   	\item \textbf{+register(\textit{username}:String,\textit{password}:String):Boolean}:\\
 	  		Metodo che esegue la procedura di registrazione di un nuovo utente con username \textit{username} e password \textit{password} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-	  	\item \textbf{+registerViaFacebook()(\textit{name}:Boolean}:\\
+	  	\item \textbf{+registerViaFacebook(\textit{name}:String):Boolean}:\\
 	  		 Metodo che esegue la procedura di registrazione di un nuovo utente con le API di Facebook restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-	  	\item \textbf{+registerViaGooglePlus()(\textit{query}:Boolean}:\\
+	  	\item \textbf{+registerViaGooglePlus(\textit{name}:String):Boolean}:\\
 	  		 Metodo che esegue la procedura di registrazione di un nuovo utente con le API di Google+ restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
 	  \item OUT: \textbf{Views::InfographicEditor}:\\
-		La vista Views::InfographicEditor utilizza AuthenticationCtrl per autorizzare un utente alla composizione e modifica di una infografica;	
+		La vista Views::InfographicEditor utilizza AuthenticationCtrl per autorizzare un utente alla composizione e modifica di una infografica;
 	  \item OUT: \textbf{Views::PresentationEditor}:\\
 		La vista Views::PresentationEditor utilizza AuthenticationCtrl per autorizzare un utente alla composizione e modifica di una presentazione;
 	  \item OUT: \textbf{Views::SignUp}:\\
@@ -496,17 +546,22 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	  \item OUT: \textbf{Views::Project}:\\
 	  	La vista Views::Project utilizza AuthenticationCtrl per autorizzare un utente alla creazione e modifica di un progetto;
 	  \item IN: \textbf{AuthenticationService}:\\
-	  	Il controller AuthenticationCtrl necessita di AuthenticationService per implementare la gestione delle autorizzazioni e modalità di connessione fornite agli utenti;	
-	  	
+	  	Il controller AuthenticationCtrl necessita di AuthenticationService per implementare la gestione delle autorizzazioni e modalità di connessione fornite agli utenti;
+
 	  \item IN: \textbf{Model::User}:\\
 		Classe del model che gestisce gli utenti e le loro informazioni comprensive di quelle di autenticazione.
-	\end{itemize}	
-	
+	\end{itemize}
+
 \newpage
 \subsubsection{PresentationCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_presentationctrl}
+	\caption[Premi::Front-End::Controllers::PresentationCtrl]{Premi::Front-End::Controllers::PresentationCtrl}
+\end{figure}
 	\paragraph{Descrizione}
 	Il controller PresentationCtrl gestisce la creazione e visualizzazione di una presentazione.
-	
+
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per gestire le richieste da parte della vista Views::Presentation ed aggiornarla a seconda delle modifiche della classe Premi::Front-End::Model::Presentation. PresentationCtrl ha la responsabilità di rendere persistenti le modifiche di un progetto nel front-end anche nel back-end mediante una chiamata al servizio PresentationService.
 	Ha il compito di tener traccia delle slide da visualizzare e delle rispettive posizioni\footnote{La presentazione è organizzata secondo una griglia, quindi per ogni slide è necessario salvare le coordinate X e Y.}.
@@ -518,21 +573,21 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 			Campo dati che contiene un riferimento al servizio che si occupa di reperire le informazioni necessarie alla vista Views::Presentation e di fornire le funzionalità necessarie alla corretta erogazione della presentazione;
 		\item \textbf{-\$scope.slides: Object}:\\
 			Campo dati che contiene sottoforma di array di oggetti JSON tutte le slide appartenenti alla presentazione. Ogni slide è corredata dalle coordinate cartesiane di posizionamento sulla griglia;
-		
+
 		\item \textbf{-\$scope.theme: String}:\\
 			Campo dati che contiene un riferimento alla configurazione grafica che l'utente ha scelto come predefinita per la sua presentazione;
-		
+
 		\item \textbf{-\$scope.transition: String}:\\
 			Campo dati che contiene un riferimento alla tipologia di transizione tra slide che l'utente ha scelto come predefinita per la sua presentazione.
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
-	  \item \textbf{+setPresentation(\textit{id}:Int):Boolean}:\\
+	  \item \textbf{+setPresentation(\textit{id}:String):Boolean}:\\
 		  Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione da parte della vista Views::Presentation restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	  \item \textbf{+getPresentation():Object}:\\
 		  Metodo che restituisce un array di oggetti JSON contenente un array con tutte le slides della presentazione con le relative coordinate nella presentazione corrente.
-		  
+
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
@@ -541,21 +596,21 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	  \item IN: \textbf{PresentationService}: \\
 	  	Il servizio PresentationService viene utilizzato per il reperimento ed il salvataggio di una presentazione.
 	\end{itemize}
-	
-\newpage	
+
+\newpage
 \subsubsection{PresentationEditorCtrl}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\linewidth]{img/premi_front_end_controllers_presentationeditorcontroller}
+	\includegraphics[width=0.5\linewidth]{img/premi_front_end_controllers_presentationeditorctrl}
 	\caption[Premi::Front-End::Controllers::PresentationEditorCtrl]{Premi::Front-End::Controllers::PresentationEditorCtrl}
 \end{figure}
 
 	\paragraph{Descrizione}
 	Il controller PresentationEditorCtrl si occupa della modifica di una presentazione con i metodi per gestire le slide.
-	
+
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per consentire all'utente di aggiungere o rimuovere una slide dalla presentazione in una posizione qualsiasi e spostarsi tra di esse. Permette inoltre di impostare lo stile e il template della presentazione.
-	
+
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{- PresentationService: PresentationService}:\\
@@ -563,10 +618,10 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		\item \textbf{- \$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione.
 		\item \textbf{- \$scope.currentPresentation: Object}:\\
-			Campo dati che contiene un array di oggetti JSON contenenti le informazioni della presentazione corrente;		
-		
+			Campo dati che contiene un array di oggetti JSON contenenti le informazioni della presentazione corrente;
+
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
 		\item \textbf{addSlide(direction: String):Boolean}:\\
@@ -585,17 +640,25 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
 	  \item OUT: \textbf{Views::PresentationEditor}:\\
-		La vista Views::PresentationEditor utilizza PresentationEditorCtrl per la gestione delle slide nella composizione e modifica di una presentazione;	
+		La vista Views::PresentationEditor utilizza PresentationEditorCtrl per la gestione delle slide nella composizione e modifica di una presentazione;
 	  \item IN: \textbf{PresentationService}:\\
 	  	Il controller PresentationEditorCtrl utilizza il servizio PresentationService per il recupero ed il salvataggio di una presentazione interagendo con il back-end;
 	  \item IN: \textbf{SlideEditorCtrl}:\\
 	  	Il controller SlideEditorCtrl utilizza PresentationEditorCtrl per ottenere ed agguiornare le informazioni sul progetto corrente.
-	\end{itemize}  
+	\end{itemize}
+
 \newpage
+
+
 \subsubsection{ProjectCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_projectctrl}
+	\caption[Premi::Front-End::Controllers::ProjectCtrl]{Premi::Front-End::Controllers::ProjectCtrl}
+\end{figure}
 	\paragraph{Descrizione}
 	Il controller ProjectCtrl gestisce il progetto corrente.
-	
+
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per modificare un progetto esistente\footnote{Un progetto vuoto viene creato di default con una presentazione vuota.}.\\
 	Permette di aggiungere infografiche, richiamare le funzionalità di modifica di infografiche e della presentazione. Inoltre permette di lanciare la vista di visualizzazione della presentazione.
@@ -606,39 +669,44 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		\item \textbf{-\$scope.presentation: Object}:\\
 			Campo dati contenente un riferimento alla presentazione appartenente al progetto corrente;
 		\item \textbf{-\$scope.infographics: Object}:\\
-			Campo dati contenente un array di oggetti JSON ognuno rappresentante una infografica del progetto corrente;	
+			Campo dati contenente un array di oggetti JSON ognuno rappresentante una infografica del progetto corrente;
 		\item \textbf{-ProjectService: ProjectService}:\\
 			Campo dati che contiene un riferimento al servizio che si occupa di reperire le informazioni necessarie al corretto funzionamento della vista Views::Project.
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
-	  	\item \textbf{+setPresentation(\textit{id}:Int):Boolean}:\\
+	  	\item \textbf{+setPresentation(\textit{id}:String):Boolean}:\\
 		  	Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione della presentazione da parte della vista Views::Presentation restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	  	\item \textbf{+getPresentation():Object}:\\
 		  	Metodo che restituisce un oggetto JSON contenente un array con tutte le slide della presentazione con le relative coordinate nella presentazione;
 	 	\item \textbf{+resetPresentation():Boolean}:\\
 			Metodo che riporta la presentazione relativa al progetto corrente allo stato iniziale ovvero dotata di una sola slide vuota restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-		\item \textbf{+addInfographic():Int}:\\
+		\item \textbf{+addInfographic():String}:\\
 			Metodo che inserisce ua nuova infografica al progetto corrente restituendone il codice identificativo;
-		\item \textbf{+deleteInfographic(\textit{id}:Int):Boolean}:\\
+		\item \textbf{+deleteInfographic(\textit{id}:String):Boolean}:\\
 	  		Metodo che elimina l'infografica identificata da \textit{id} dal progetto corrente restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
-		
-		  
+
+
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
 	  \item OUT: \textbf{Views::Project}:\\
-		La vista Views::Project utilizza ProjectCtrl per la gestione reperire ed aggiornare le informazioni di pertinenza del progetto corrente;	
+		La vista Views::Project utilizza ProjectCtrl per la gestione reperire ed aggiornare le informazioni di pertinenza del progetto corrente;
 	  \item IN: \textbf{ProjectService}.
 		La vista Views::Project utilizza il service ProjectService per reperire ed aggiornare le informazioni di pertinenza del progetto corrente dal back-end.
 	\end{itemize}
 
 \newpage
 \subsubsection{ProjectsCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_projectsctrl}
+	\caption[Premi::Front-End::Controllers::ProjectsCtrl]{Premi::Front-End::Controllers::ProjectsCtrl}
+\end{figure}
 	\paragraph{Descrizione}
 	Il controller ProjectsCtrl gestisce i progetti dell' utente corrente.
-	
+
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per visualizzare tutti i progetti dell'utente corrente, lanciarne la modalità di modifica (gestita da ProjectCtrl) e crearne di nuovi.\\
 	\paragraph{Attributi}
@@ -647,67 +715,72 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
 		\item \textbf{-ProjectService: ProjectService}
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
-	  \item \textbf{+setPresentation(\textit{id}:Int):void}:\\
+	  \item \textbf{+setPresentation(\textit{id}:String):void}:\\
 		  Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione della presentazione da parte della vista Views::Presentation;
-	  \item \textbf{+getProject(\textit{id}:Int):Object}:\\
+	  \item \textbf{+getProject(\textit{id}:String):Object}:\\
 		  Metodo che restituisce un oggetto JSON contenente un array con la presentazione e tutte le infografiche del progetto identificato da \textit{id}.
-		  
+
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
 	  \item OUT: \textbf{Views::Projects}:\\
-		La vista Views::Projects utilizza ProjectsCtrl per la gestione reperire ed aggiornare le informazioni di pertinenza dei progetti dell'utente corrente;	
+		La vista Views::Projects utilizza ProjectsCtrl per la gestione reperire ed aggiornare le informazioni di pertinenza dei progetti dell'utente corrente;
 	  \item IN: \textbf{ProjectService}.
 		La vista Views::Projects utilizza il service ProjectService per reperire ed aggiornare le informazioni di pertinenza dei progetti dell'utente corrente dal back-end.
 	\end{itemize}
-	
+
 \newpage
 \subsubsection{SlideEditorCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{img/premi_front_end_controllers_slideeditorctrl}
+	\caption[Premi::Front-End::Controllers::SlideEditorCtrl]{Premi::Front-End::Controllers::SlideEditorCtrl}
+\end{figure}
 	\paragraph{Descrizione}
 	Il controller SlideEditorCtrl gestisce le funzionalità di modifica di una slide.
-	
+
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per permettere alla vista Views::SlideEditor di inserire componenti in un a slide, modificarne le caratteristiche oppure eliminarli.\\
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
-		\item \textbf{-\$scope.currentSlide}:\\
+		\item \textbf{-\$scope.currentSlide:String}:\\
 			Campo dati contenente le informazioni relative alla slide correntemente gestita dall'editor;
 		\item \textbf{-SlideService: SlideService}:\\
 			Campo dati che contiene un riferimento al servizio che si occupa di gestire le funzionalità di modifica e gestione di una slide.
 		\item \textbf{-PresentationService: PresentationService}:\\
 			Campo dati che contiene un riferimento al servizio che si occupa di gestire le funzionalità di modifica e gestione di una Presentazione.
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
-	  \item \textbf{+addObject():Int}:\\
+	  \item \textbf{+addObject():String}:\\
 		 Metodo che esegue la procedura di aggiunta di un nuovo componente nella slide corrente mediante una chiamata al service PresentationService ritornando il codice identificativo \textit{id}.
 	  \item \textbf{+udpateObject(\textit{id}:String):Boolean}:\\
 		 Metodo che esegue la procedura di aggiornamento di un componente  identificato da \textit{id} nella slide corrente mediante una chiamata al service PresentationService  restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.\\I valori sono reperiti dalla variabile \$scope.selectedObject;
 	  \item \textbf{+removeObject(\textit{id}:String):Boolean}\\
 		 Metodo che esegue la rimozione del componente identificato da \textit{id} nella slide corrente mediante una chiamata al service SlideService  restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
-	  \item \textbf{+saveSlide(\textit{id}:Int):Boolean}:\\
+	  \item \textbf{+saveSlide(\textit{id}:String):Boolean}:\\
 		 Metodo che esegue la procedura di salvataggio della slide corrente mediante una chiamata al service SlideService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
-	  \item \textbf{+loadSlide(\textit{id}:Int):Boolean}:\\
+	  \item \textbf{+loadSlide(\textit{id}:String):Boolean}:\\
 		 Metodo che esegue la procedura di caricamento della slide corrente sulla variabile \$scope.currentSlide mediante una chiamata al service PresentationService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
-	  	  
+
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
 	  \item OUT: \textbf{Views::SlideEditor}:\\
-		La vista Views::SlideEditor utilizza SlideEditorCtrl per reperire ed aggiornare le informazioni di pertinenza della slide corrente;	
+		La vista Views::SlideEditor utilizza SlideEditorCtrl per reperire ed aggiornare le informazioni di pertinenza della slide corrente;
 	  \item OUT: \textbf{PresentationEditorCtrl}: \\
 		 Il servizio PresentationService viene utilizzato per il reperimento ed il salvataggio di una presentazione;
 	  \item IN: \textbf{SlideService}:\\
-		Il controller SlideEditorCtrl utilizza il service SlideService per recuperare ed aggiornare le informazioni relative ad una particolare slide;	
+		Il controller SlideEditorCtrl utilizza il service SlideService per recuperare ed aggiornare le informazioni relative ad una particolare slide;
 	  \item IN: \textbf{PresentationEditorCtrl}:\\
 		Il controller SlideEditorCtrl utilizza  PresentationEditorCtrl per la gestione delle slide nella presentazione corrente;
-		
+
 	\item IN: \textbf{ChartCtrl}:\\
 		Il controller SlideEditorCtrl necessita di ChartCtrl per la costruzione e gestione di grafici nella slide corrente;
 	\item IN: \textbf{ImageCtrl}:\\
@@ -718,27 +791,30 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		Il controller SlideEditorCtrl necessita di TableCtrl per la costruzione e gestione delle tabelle nella slide corrente;
 	\item IN: \textbf{TextCtrl}:\\
 		Il controller SlideEditorCtrl necessita di TextCtrl per la costruzione e gestione di componenti di tipo testuale nella slide corrente.
-	\end{itemize}	
-	
-\newpage	
+	\end{itemize}
+
+\newpage
 \subsubsection{MyAccountCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/premi_front_end_controllers_myaccountctrl}
+	\caption[Premi::Front-End::Controllers::MyAccountCtrl]{Premi::Front-End::Controllers::MyAccountCtrl}
+\end{figure}
 	\paragraph{Descrizione}
 	Il controller MyAccountCtrl gestisce le funzionalità di visualizzazione e modifica di un profilo utente.
-	
+
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per permettere alla vista Views::SlideEditor di inserire componenti in un a slide, modificarne le caratteristiche oppure eliminarli.\\
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;	
-		\item \textbf{-\$scope.currentUser}:\\
+			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		\item \textbf{-\$scope.currentUser: String}:\\
 			Campo dati contenente le informazioni relative all'utente correntemente collegato al sistema;
-				
 		\item \textbf{-UserService: UserService}:\\
 			Campo dati che contiene un riferimento al servizio che fornisce le funzionalità relative alla gestione di un utente.
-	
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
 	  \item \textbf{+loadUserdata(\textit{userId}:String):Object}:\\
@@ -747,31 +823,35 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
 	  \item OUT: \textbf{Views::MyAccount}:\\
-		La vista Views::MyAccount utilizza MyAccountCtrl per reperire ed aggiornare le informazioni di pertinenza dell'account relativo all'utente corrente;	
+		La vista Views::MyAccount utilizza MyAccountCtrl per reperire ed aggiornare le informazioni di pertinenza dell'account relativo all'utente corrente;
 	   \item IN: \textbf{UserService}.
-	  	La vista Views::MyAccount utilizza il service UserService per recuperare ed aggiornare le informazioni relative ad un particolare utente.	
-	  		
-	\end{itemize}		
+	  	La vista Views::MyAccount utilizza il service UserService per recuperare ed aggiornare le informazioni relative ad un particolare utente.
+
+	\end{itemize}
 
 \newpage
 \subsubsection{HomePageCtrl}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{img/premi_front_end_controllers_homepagectrl}
+	\caption[Premi::Front-End::Controllers::HomePageCtrl]{Premi::Front-End::Controllers::HomePageCtrl}
+\end{figure}
 	\paragraph{Descrizione}
 	Il controller HomePageCtrl gestisce gli strumenti messi a disposizione dalla Home Page. In particolare le funzionalità di ricerca.
-	
+
 	\paragraph{Utilizzo}
 	Questa classe viene utilizzata per permettere alla vista Views::HomePage di riecrcare progetti per nome oppure per username dell'utente proprietario.\\
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
-			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;	
-		\item \textbf{-\$scope.searchResults}:\\
+			Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione;
+		\item \textbf{-\$scope.searchResults: Object}:\\
 			Campo dati contenente le informazioni relative all'esito della ricerca;
-				
 		\item \textbf{-ProjectService: ProjectService}:\\
 			Campo dati che contiene un riferimento al servizio che fornisce le funzionalità relative alla gestione di un progetto in aggiunta a quelle di ricerca.
-	
+
 	\end{itemize}
-	
+
 	\paragraph{Metodi}
 	\begin{itemize}
 	  \item \textbf{+\$scope.searchByUsername(\textit{text}:String):Object}:\\
@@ -780,19 +860,12 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 		Metodo che recupera dal back-end le informazioni relative ai nomi di progetto che hanno una corrispondenza con la stringa mediante il service ProjectService::searchByProjectNameService salvandole sull'oggetto \$scope.searchResults e restituendo un array di oggetti JSON con il suo contenuto;
 	\item \textbf{+\$scope.resetSearchResults():void}:\\
 		Metodo che azzera i risultati di ricerca per poterne accogliere di nuovi oppure perché non più necessari.
-		
+
 	\end{itemize}
 	\paragraph{Relazioni con altre classi}
 	\begin{itemize}
 	  \item OUT: \textbf{Views::HomePage}:\\
-		La vista Views::HomePage utilizza HomePageCtrl per reperire ed aggiornare le informazioni di pertinenza dell'account relativo all'utente corrente;	
+		La vista Views::HomePage utilizza HomePageCtrl per reperire ed aggiornare le informazioni di pertinenza dell'account relativo all'utente corrente;
 	   \item IN: \textbf{ProjectService}.
-	  	La vista Views::HomePage utilizza il service ProjectService per recuperare ed aggiornare le informazioni relative ad un particolare progetto in aggiunta a quelle di ricerca.	
-	  		
+	  	La vista Views::HomePage utilizza il service ProjectService per recuperare ed aggiornare le informazioni relative ad un particolare progetto in aggiunta a quelle di ricerca.
 	\end{itemize}
-	
-		
-% 	SlideService
-% PresentationService
-% addObject(id)
-% removeObject(id)
