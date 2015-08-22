@@ -447,13 +447,13 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	
 	\paragraph{Metodi}
 	\begin{itemize}
-	  \item \textbf{+addElement(\textit{position}:Int, \textit{id}:Int):Boolean}:\\
+	  \item \textbf{+addElement(\textit{position}:Int, \textit{id}:String):Boolean}:\\
 		  Metodo che permette di aggiungere l'elemento con codice identificativo \textit{id} alla infografica in posizione \textit{position}.
-	  \item \textbf{+getElement(\textit{position}:Int):Int}:\\
-		  Metodo che restituisce il codice identificativo dell'oggetto in posizione \textit{position} in caso di successo e \textit{-1} in caso di fallimento.
+	  \item \textbf{+getElement(\textit{position}:Int):String}:\\
+		  Metodo che restituisce il codice identificativo dell'oggetto in posizione \textit{position} in caso di successo es una stringa vuota in caso di fallimento.
 	  \item \textbf{+removeElement(\textit{position}:Int):Boolean}:\\
 		  Metodo che elimina l'oggetto in posizione \textit{position} restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
-	  \item \textbf{+setTemplate(\textit{Tid}:Int):Boolean}:\\
+	  \item \textbf{+setTemplate(\textit{Tid}:String):Boolean}:\\
 		  Metodo che imposta il template \textit{Tid} per l'infografica corrente nella vista InfographicEditor restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
 	  \item \textbf{+getSlideList():Object}:\\
 		  Metodo che restituisce un oggetto JSON contenente un array con tutte le slide dell'infografica con le relative posizioni nel template.
@@ -543,7 +543,7 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	
 	\paragraph{Metodi}
 	\begin{itemize}
-	  \item \textbf{+setPresentation(\textit{id}:Int):Boolean}:\\
+	  \item \textbf{+setPresentation(\textit{id}:String):Boolean}:\\
 		  Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione da parte della vista Views::Presentation restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	  \item \textbf{+getPresentation():Object}:\\
 		  Metodo che restituisce un array di oggetti JSON contenente un array con tutte le slides della presentazione con le relative coordinate nella presentazione corrente.
@@ -628,15 +628,15 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	
 	\paragraph{Metodi}
 	\begin{itemize}
-	  	\item \textbf{+setPresentation(\textit{id}:Int):Boolean}:\\
+	  	\item \textbf{+setPresentation(\textit{id}:String):Boolean}:\\
 		  	Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione della presentazione da parte della vista Views::Presentation restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
 	  	\item \textbf{+getPresentation():Object}:\\
 		  	Metodo che restituisce un oggetto JSON contenente un array con tutte le slide della presentazione con le relative coordinate nella presentazione;
 	 	\item \textbf{+resetPresentation():Boolean}:\\
 			Metodo che riporta la presentazione relativa al progetto corrente allo stato iniziale ovvero dotata di una sola slide vuota restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento;
-		\item \textbf{+addInfographic():Int}:\\
+		\item \textbf{+addInfographic():String}:\\
 			Metodo che inserisce ua nuova infografica al progetto corrente restituendone il codice identificativo;
-		\item \textbf{+deleteInfographic(\textit{id}:Int):Boolean}:\\
+		\item \textbf{+deleteInfographic(\textit{id}:String):Boolean}:\\
 	  		Metodo che elimina l'infografica identificata da \textit{id} dal progetto corrente restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
 		
 		  
@@ -665,9 +665,9 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	
 	\paragraph{Metodi}
 	\begin{itemize}
-	  \item \textbf{+setPresentation(\textit{id}:Int):void}:\\
+	  \item \textbf{+setPresentation(\textit{id}:String):void}:\\
 		  Metodo che imposta la presentazione identificata da  \textit{id} per la corretta erogazione della presentazione da parte della vista Views::Presentation;
-	  \item \textbf{+getProject(\textit{id}:Int):Object}:\\
+	  \item \textbf{+getProject(\textit{id}:String):Object}:\\
 		  Metodo che restituisce un oggetto JSON contenente un array con la presentazione e tutte le infografiche del progetto identificato da \textit{id}.
 		  
 	\end{itemize}
@@ -700,15 +700,15 @@ Per brevità nell'identificare un controller è stata omessa la dicitura Premi::
 	
 	\paragraph{Metodi}
 	\begin{itemize}
-	  \item \textbf{+addObject():Int}:\\
+	  \item \textbf{+addObject():String}:\\
 		 Metodo che esegue la procedura di aggiunta di un nuovo componente nella slide corrente mediante una chiamata al service PresentationService ritornando il codice identificativo \textit{id}.
 	  \item \textbf{+udpateObject(\textit{id}:String):Boolean}:\\
 		 Metodo che esegue la procedura di aggiornamento di un componente  identificato da \textit{id} nella slide corrente mediante una chiamata al service PresentationService  restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.\\I valori sono reperiti dalla variabile \$scope.selectedObject;
 	  \item \textbf{+removeObject(\textit{id}:String):Boolean}\\
 		 Metodo che esegue la rimozione del componente identificato da \textit{id} nella slide corrente mediante una chiamata al service SlideService  restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
-	  \item \textbf{+saveSlide(\textit{id}:Int):Boolean}:\\
+	  \item \textbf{+saveSlide(\textit{id}:String):Boolean}:\\
 		 Metodo che esegue la procedura di salvataggio della slide corrente mediante una chiamata al service SlideService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
-	  \item \textbf{+loadSlide(\textit{id}:Int):Boolean}:\\
+	  \item \textbf{+loadSlide(\textit{id}:String):Boolean}:\\
 		 Metodo che esegue la procedura di caricamento della slide corrente sulla variabile \$scope.currentSlide mediante una chiamata al service PresentationService restituendo \textit{true} in caso di successo e \textit{false} in caso di fallimento.
 	  	  
 	\end{itemize}
