@@ -238,49 +238,78 @@ All'utente é richiesto di:
 	\begin{tabular}{|l|p{0.3\textwidth}|p{0.4\textwidth}|c|}
 	\toprule
 		\textbf{Test} & \textbf{Descrizione} & \textbf{Metodi} & \textbf{Stato}\\
+		
 	\midrule
-		TU1 & Viene verificato venga aggiunto l'elemento con codice identificativo id alla infografica
-in posizione position & addElement(position:Int, id:Int) & Success\\
+		TU1 & Viene verificato il corretto caricamento di un grafico dal server web e che venga salvato correttamente & ChartCtrl :: load() , ChartCtrl :: save() & N.A\\
 	\midrule
-		TU2 & Viene verificato che la procedura di aggiunta di un nuovo componente nella slide corrente mediante una chiamata al service PresentationService ritornando il codice identificativo id funzioni correttamente & addObject():Int & Success\\
+		TU2 & Viene verificato il corretto caricamento e salvataggio di un'immagine proveniente dal server web o dispositivo esterno & ImageCtrl :: upload() ,ImageCtrl :: load() , ImageCtrl :: save() & N.A\\
 	\midrule
-		TU3 & Viene verificato che venga rimosso l'elemento nella posizione position correttamente aggiornando l'area di disegno & removeElement(position:Int) & Success\\
+		TU3 & Viene verificato che vengano reperite correttamente le informazioni per l'istanziazione del componenten inoltre viene verificato che le informazioni del componente vengano aggiornate correttamente & RealTimeDataCtrl :: load() , RealTimeDataCtrl :: save() & N.A\\
 	\midrule
-		TU4 & Viene verificato che venga caricato il template selezionato Tid per l'infografica corrente nella vista InfographicEditorView & setTemplate(Tid:Int) & Success\\
+		TU4 & Viene verificato che vengano caricate correttamente le informazioni relative alla tabella corrente mediante  l'utilizzo del servizio  TableService & TableCtrl :: load() & Success\\
 	\midrule
-		TU5 & Viene verificato che vengano restituite le slide corrette in formato JSON del infografica con le relative posizioni nel template & getSlideList() & Success\\
+		TU5 & Viene verificato il corretto caricamento di un componente testuale  mediante l'utilizzo del servizio
+TextService & TextCtrl :: load() & Success\\
 	\midrule
-		TU6 & Viene verificato che i meccanismi di autenticazione funzionino correttamente & logIn(username:String, Password:String), logOut(username:String) & Success\\
+		TU6 & Viene verificato venga aggiunto l'elemento con codice identificativo id alla infografica
+in posizione position & InfographicEditorCtrl :: addElement() & Success\\
 	\midrule
-		TU7 & Viene verificato che il meccanismo di recupero password funzioni correttamente & forgotPassword(username:String) & Success\\
-	\midrule
-		TU8 & Viene verificato che venga aggiunta una slide nella posizione corretta rispetto alla slide corrente nella posizione indicata da direnction & addSlide(direction: String) & Success\\
-	\midrule
+		TU7 & Viene verificato che i meccanismi di autenticazione funzionino correttamente & AuthenticationCtrl :: register(username:String,password:String) , AuthenticationCtrl :: logIn() , AuthenticationCtrl :: logOut() & Success\\
+\bottomrule
 \end{tabular}
-\end{center}	
+\end{center}
 \end{table}
-\newpage
 \begin{table}[H]
 \begin{center}
 \begin{tabular}{|l|p{0.3\textwidth}|p{0.4\textwidth}|c|}
+
+	\toprule
+		TU8 & Verifica che il servizio di registrazione tramite Facebook e Google+ funzioni correttamente & AuthenticationCtrl :: registerViaFacebook(name:Boolean) , AuthenticationCtrl :: registerViaGooglePlus(query:Boolean) & N.A\\
 	\midrule
-		TU9 & Viene verificato che venga rimossa una slide e vengano riposizionale le altre nella posizione corretta & removeSlide() & N.A.\\
+		TU9 & Viene verificato che il meccanismo di recupero password funzioni correttamente & AuthenticationCtrl :: forgotPassword(username:String) & Success\\
 	\midrule
-		TU10 & Viene verificato che venga caricata correttamente la slide nella posizione indicata da direction & loadSlide(direction: String) & Success\\
+		TU10 & Viene verificato che venga aggiunta una slide nella posizione corretta rispetto alla slide corrente nella posizione indicata da direnction & PresentationEditorCtrl :: addSlide(direction: String) & Success\\
 	\midrule
-		TU11 & Viene verificato che venga salvata correttamente la slide corrente nel database & saveSlide() & Success\\
-		
+		TU11 & Viene verificato che venga rimossa una slide e vengano riposizionale le altre nella posizione corretta & PresentationEditorCtrl :: removeSlide() & Success\\
 	\midrule
-		TU12 & Viene verificato che venga impostato il template della presentazione con quello passato per parametro & setTemplate(template: template) & Success\\
+		TU12 & Viene verificato che venga caricata correttamente la slide nella posizione indicata da direction & PresentationEditorCtrl :: loadSlide(direction: String) & Success\\
 	\midrule
-		TU13 & Viene verificato che vengano restituiti tutti e soli i progetti appartenenti allo user username in formato JSON \textit{username} & searchUsers(username:String) & Success\\
+		TU13 & Viene verificato che venga salvata correttamente la slide corrente nel database & PresentationEditorCtrl :: saveSlide() & Success\\
 	\midrule
-		TU14 & Viene verificato che vengano restituiti tutti e soli i progetti nei quali nel nome ci sia un match con il parametro passato name \textit{name} & searchProject(name:String) & Success\\
-		\midrule
-		TU15 & Viene verificato che vengano retiruiti tutti e soli i progetti di che hanno nel nome un match con il parametro \textit{name} o appartenenti all'utente \textit{username} & search(query:String) & Success\\
+		TU14 & Viene verificato il corretto reset della presentazione corrente allo stato iniziale ovvero
+dotata di una sola slide vuota & ProjectCtrl :: resetPresentation() & Success\\
 	\midrule
-		TU16 & Verifica che il metodo di registrazione salvi correttamente i dati sul database e che venga ritornato true nel caso di avvenuta registrazione o false in caso di fallimento & register(username:String, password:String) & Success\\
+		TU15 & Viene controllato il corretto inserimento ed eliminazione di un'infografica al progetto corrente & ProjectCtrl :: addInfographic() , ProjectCtrl :: deleteInfographic(id:Int) & N.A\\
+			\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l|p{0.3\textwidth}|p{0.4\textwidth}|c|}
+
+	\toprule
+		TU16 & Viene verificato che la procedura di aggiunta di un nuovo componente nella slide corrente mediante una chiamata al service PresentationService ritornando il codice identificativo id funzioni correttamente & SlideEditorCtrl :: addObject():Int & Success\\
 	\midrule
+		TU17 & Verifica la corretta eliminazione di un componente identificato da id nella slide corrente
+mediante una chiamata al service SlideService & SlideEditorCtrl :: removeObject(id:String) & Success\\
+	\midrule
+		TU18 & Viene verificato che il componente venga aggiornato correttamente il componente identificato da \textit{id} nella slide corrente mediante una chiamata al service PresentationService e che venga ritornato \textbf{true} in caso di successo e \textbf{false} altrimenti & SlideEditorCtrl :: udpateObject(id:String) & Success\\
+
+	\midrule
+		TU19 &  Verifica il corretto recupero delle informazioni relative all'utente identificato da id dal back-end 
+mediante il service UserService & MyAccountCtrl :: loadUserdata(userId:String) & Success\\
+	\midrule
+		TU20 & Viene verificato che vengano recuperate dal back-end le informazioni relative agli utenti che hanno una corrispondenza con la stringa \textit{text} & HomePageCtrl :: searchByUsername(text:String) & Success\\
+	\midrule
+		TU21 & Viene verificato che vengano recuperate dal back-end le informazioni relative ai nomi di progetto che hanno una corrispondenza con la stringa \textit{text} & HomePageCtrl :: searchByProjectName(text:String) & Success\\
+	\midrule
+		TU22 & Viene verificata la corretta aggiunto l'elemento con codice identificativo id alla infografica
+in posizione position & InfographicEditorCtrl :: addElement(position:Int, id:Int) & N.A\\
+	\midrule
+		TU23 & Viene verificata la corretta eliminazione delle elemento in posizione position dall'infografica corrente & InfographicEditorCtrl :: removeElement(position:Int) & N.A\\
+
+\bottomrule
 
 \end{tabular}
 \end{center}
@@ -288,30 +317,29 @@ in posizione position & addElement(position:Int, id:Int) & Success\\
 \begin{table}[H]
 \begin{center}
 \begin{tabular}{|l|p{0.3\textwidth}|p{0.4\textwidth}|c|}
+
+	\toprule
+		TU24 & Viene verificato che venga caricato il template selezionato Tid per l'infografica corrente nella vista InfographicEditor & InfographicEditorCtrl :: setTemplate(Tid:Int) & N.A\\
 	\midrule
-		TU17 & Viene verificato che il componente venga aggiornato correttamente il componente indetificato da \textit{id} nella slide corrente mediante una chiamata al service PresentationService e che venga ritornato \textbf{true} in caso di successo e \textbf{false} altrimenti & udpateObject(id:String) & Success\\
-		\midrule
-		TU18 & Viene verificata la corretta iterazione tra Front-End e Back-End nella registrazione di un nuovo utente e che i parametri vengano passati correttamente nella chiamta dei metodi dem Back-End & signUp(email: String, username: String, password: String, passwordCheck:String) & Success\\
-		\midrule
-		TU19 & Viene verificata la corretta iterazione col Back-End nel caricamento dell'infografica \textbf{id} & load(id: int) & Success\\
+		TU25 & Viene verificato che vengano restituite le slide corrette in formato JSON del infografica con le relative posizioni nel template & InfographicEditorCtrl :: getSlideList() & N.A\\
 	\midrule
-		TU20 & Viene verificata la corretta iterazione col Back-End nel salvataggio dell'infografica & save() & Success\\
+		TU26 & Viene verificata la corretta interazione dei servizi di autenticazione con il back-end & forgotPasswordService ::  save(data: Object) , loginService :: save(data: Object) , logoutService :: get() , signUpService :: save(data: Object) , userService :: query(id:String) & Success\\
 	\midrule
-		TU21 & Viene verificato che venga esportata l'infografica con formato corretto PNG o PDF &  exportPNG(), exportPDF() & Success\\
+		TU27 & Viene verificato la corretta interazione tra il infographicEditorService e il back-end & infographicEditorService :: query(id: String) , infographicEditorService :: save(name: String) , infographicEditorService :: update(id: String, data:Object) & N.A\\
 	\midrule
-		TU22 & Viene verificato che la stampa avvenga correttamente &  print() & Success\\
+		TU28 & Viene verificato la corretta interazione tra il presentationService e il back-end & presentationService :: query(id: String) , presentationService :: update(id: String, theme:String, transition:String) & Success\\
 	\midrule
-		TU23 & Viene verificata la corretta iterazione col Back-End nel caricamento del progetto passato per parametro & getProject(id: int) & Success\\
+		TU29 & Viene verificato la corretta interazione tra il projectsService e il back-end & projectsService :: query(username: String) , projectsService :: save(id: String, data:Object) & Success\\
 	\midrule
-		TU24 & Viene verificato che il progetto sia salvato in maniera corretta nel database &  saveProject() & Success\\
+		TU30 & Viene verificato la corretta interazione tra il searchByProjectService e il back-end & searchByProjectService ::  query(name: String) & Success\\
 	\midrule
-		TU25 & Verifica la corretta gestione e visualizzazione degli errori all'utente &  errorMsg() & N.A.\\
+		TU31 & Viene verificato la corretta interazione tra il projectService e il back-end & projectService :: delete(id: String) , projectService :: update(id: String, data:Object) & Success\\
 	\midrule
-		TU26 & Verifica il corretto aggiornamento dei dati di un utente loggato nel database &  update() & Success\\
-	\midrule
-		TU27 & Verifica la corretta eliminazione di un utente dal database &  destroy() & Success\\
+		TU32 & Viene verificato la corretta interazione tra gli SlideService e il back-end & indexService :: get(id: String, xIndex:int, yIndex:int) , slideService :: get(id:String) , slideService :: save(xIndex:int, yIndex:int) , slideService :: update(id:String, xIndex:int, yIndex:int, components:JSON, background:String,
+slideSVG:SVG) , slideService :: delete(id:String) & Success\\
+
 	\bottomrule
 	\end{tabular}
 	\end{center}
-	\caption{Tabella di tracciamento test di integrazione}
+	\caption{Tabella di tracciamento test di unità}
 \end{table}
