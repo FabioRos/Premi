@@ -1,8 +1,8 @@
 In questo capitolo si descrivono i vari standard adottati da \GRUPPO\ nella stesura, verifica ed approvazione della documentazione da produrre.
-\subsection{Template}
+\subsubsection{Template}
 Per semplificare la redazione dei documenti è stato creato un \gls{template} \LaTeX\ contenente tutte le impostazioni per l'aspetto grafico. \\
 Ogni documento dovrà essere realizzato con il \gls{template} \LaTeX\ presente nel \gls{repository}, il quale utilizzo è regolamentato da un'apposita guida presente su \gls{Google Drive}.
-\subsection{Versionamento}
+\subsubsection{Versionamento}
 Per ogni documento è obbligatorio specificare la versione. Un numero di versione deve essere nella seguente forma:
 \begin{center}
 	\emph{X.Y.Z}
@@ -15,8 +15,8 @@ dove X, Y, Z sono interi non negativi e non devono contenere zeri iniziali. X è
 \end{itemize}
 Una volta che un pacchetto versionato è stato rilasciato, i contenuti di quella versione \textbf{non devono} essere modificati. Qualsiasi modifica \textbf{deve} essere rilasciata come una nuova versione.
 
-\subsection{Struttura dei documenti}
-\subsubsection{Prima pagina}
+\subsubsection{Struttura dei documenti}
+\paragraph{Prima pagina}
 Ogni documento deve avere in prima pagina le seguenti informazioni:
 \begin{itemize}
 	\item Nome del progetto;
@@ -31,9 +31,9 @@ Ogni documento deve avere in prima pagina le seguenti informazioni:
 	\item Lista di distribuzione del documento;
 	\item Breve descrizione del documento.
 \end{itemize}
-\subsubsection{Diario delle modifiche}
-A partire dalla seconda pagina di ogni documento deve essere presente il diario delle modifiche.\\
-Ogni riga del diario delle modifiche contiene:
+\paragraph{Registro delle modifiche}
+A partire dalla seconda pagina di ogni documento deve essere presente il registro delle modifiche.\\
+Ogni riga del registro delle modifiche contiene:
 \begin{itemize}
 	\item Una breve descrizione sulle modifiche effettuate;
 	\item Cognome e nome di chi ha effettuato la modifica;
@@ -42,11 +42,11 @@ Ogni riga del diario delle modifiche contiene:
 	\item Versione del documento dopo la modifica.
 \end{itemize}
 
-\subsubsection{Indice}
+\paragraph{Indice}
 In ogni documento deve essere presente un indice delle sezioni.\\
 Nel caso in cui il documento contenga immagini e/o tabelle devono essere presenti anche i relativi indici.
 
-\subsubsection{Formattazione delle pagine}
+\paragraph{Formattazione delle pagine}
 L'intestazione di ogni pagina contiene:
 \begin{itemize}
 	\item Logo del gruppo;
@@ -58,10 +58,10 @@ A piè pagina sono sempre presenti:
 	\item Pagina corrente nel formato N di T, dove N è il numero della pagina corrente e T è il numero di pagine totali del documento.
 \end{itemize}
 
-\subsection{Classificazione documenti}
-\subsubsection{Documenti informali}
+\subsubsection{Classificazione documenti}
+\paragraph{Documenti informali}
 Si definiscono documenti informali tutti i documenti in fase di sviluppo che devono ancora essere approvati dal \textit{Responsabile di Progetto}. I documenti sono da considerarsi esclusivamente per uso interno e non potranno essere divulgati prima di essere stati verificati ed approvati. 
-\subsubsection{Documenti formali}
+\paragraph{Documenti formali}
 Si definiscono documenti formali tutti i documenti che sono stati approvati dal \textit{Responsabile di Progetto} e quindi pronti ad essere diffusi a terze parti.\\
 I documenti pronti per il rilascio dovranno essere rinominati osservando le seguenti regole:
 \begin{itemize}
@@ -71,11 +71,26 @@ I documenti pronti per il rilascio dovranno essere rinominati osservando le segu
 	\item La versione del documento verrà aggiunta dopo il nome, e sarà preceduta dal carattere "-"(trattino) e da una "v".
 \end{itemize}
 
-\newpage
-\subsection{Norme tipografiche}
+\paragraph{Verbale}
+	Per \gls{verbali} si intende quanto si è discusso nel corso di una riunione e le decisioni che eventualmente sono state assunte. \\
+	Nella stesura di un \gls{verbale} occorre essere sintetici, essenziali ed esaustivi, cercando di rappresentare gli interventi, le osservazioni o le decisioni assunte in maniera oggettiva, senza interpretazioni personali, ambigue o fuorvianti. Il tempo dei verbi che deve essere utilizzato è il presente.\\
+	I verbali dovranno obbligatoriamente includere le seguenti informazioni:
+	\begin{itemize}
+		\item Dove e quando si svolge la riunione, i partecipanti, gli assenti, il nome di chi presiede e quello del segretario verbalizzante;
+		\item Tipo di incontro(interno o esterno);
+		\item Le questioni e/o i problemi ancora irrisolti;
+		\item I (nuovi) argomenti posti in discussione all'ordine del giorno;
+		\item Gli interventi più significativi rappresentati in ordine temporale; 
+		\item I suggerimenti, le proposte, le conclusioni e le decisioni assunte; 
+		\item I compiti assegnati ad ognuno con indicazione delle rispettive scadenze; 
+		\item Gli argomenti da trattare nella prossima riunione. 
+	\end{itemize}
+
+
+\subsubsection{Norme tipografiche}
 Questa sezione racchiude tutte le informazioni riguardanti l'ortografia, la tipografia e l'assunzione di uno stile uniforme in tutti i documenti allo scopo di evitare incoerenze tra le diverse parti.
 
-\subsubsection{Punteggiatura}
+\paragraph{Punteggiatura}
 \begin{itemize}
 	\item \textbf{Punteggiatura}: qualsiasi carattere di punteggiatura non può seguire un carattere di spazio;
 	\item \textbf{Lettere maiuscole}: l'uso delle maiuscole è obbligatorio nelle seguenti situazioni:
@@ -88,7 +103,8 @@ Questa sezione racchiude tutte le informazioni riguardanti l'ortografia, la tipo
 	\item \textbf{Parentesi}: il testo racchiuso dentro le parentesi non deve mai iniziare con un carattere di spazio e non deve mai terminare con un carattere di spazio o punteggiatura.
 \end{itemize}	
 
-\subsubsection{Stile del testo}
+\newpage
+\paragraph{Stile del testo}
 \begin{itemize}
 	\item \textbf{Maiuscolo}: l'uso delle maiuscole è limitato alla trascrizione degli acronimi;
 	\item \textbf{Grassetto}: l'uso del grassetto deve essere utilizzato nei seguenti casi: 
@@ -98,7 +114,7 @@ Questa sezione racchiude tutte le informazioni riguardanti l'ortografia, la tipo
 	\end{itemize}
 	\item \textbf{Corsivo}: l'uso del corsivo deve essere utilizzato nei seguenti casi:
 	\begin{itemize}
-		\item \textbf{Citazion}i: ogni citazione deve essere scritta in corsivo; 
+		\item \textbf{Citazioni}: ogni citazione deve essere scritta in corsivo; 
 		\item \textbf{Documenti}: ogni riferimento ad un documento deve essere scritto in corsivo (esempio: \textit{Glossario});
 		\item \textbf{Ruoli}: ogni riferimento a figure particolari deve essere scritto in corsivo (esempio: \textit{Verificatore});
 		\item \textbf{Altri casi}: è possibile utilizzare il corsivo per evidenziare parole particolarmente significative;
@@ -106,15 +122,15 @@ Questa sezione racchiude tutte le informazioni riguardanti l'ortografia, la tipo
 	\item \textbf{\LaTeX}: ogni riferimento a \LaTeX\ va scritto tramite il comando \verb|\LaTex|.
 \end{itemize}
 
-\subsubsection{Composizione del testo}
+\paragraph{Composizione del testo}
 \begin{itemize}
 	\item \textbf{Elenchi puntati}: per redigere un elenco si qualificano gli elementi e si introducono mediante
 	i due punti. Dopo i due punti si deve andare a capo. Ogni elemento dell'elenco termina con un punto e virgola, eccetto l'ultimo che termina con un punto semplice;
-	\item \textbf{Pedice "G"}: il pedice "G" viene utilizzato in presenza di termini presenti nel \textit{Glossario};
+	\item \textbf{Pedice "G"}: il pedice \G{} viene utilizzato in presenza di termini presenti nel \textit{Glossario};
 	\item \textbf{Note a piè di pagina}: ogni nota deve iniziare con la lettera della prima parola maiuscola e non deve essere preceduta da alcun carattere di spaziatura. Ogni nota deve terminare con un punto.
 \end{itemize}
 
-\subsubsection{Formati ricorrenti}
+\paragraph{Formati ricorrenti}
 \begin{itemize}
 	\item \textbf{Nomi propri}: l'utilizzo dei nomi propri deve seguire la seguente forma "Cognome Nome";
 	\item \textbf{Percorsi}: per gli indirizzi email e gli indirizzi web deve essere usato esclusivamente il comando \LaTeX  \verb|\url|;
@@ -133,7 +149,7 @@ Questa sezione racchiude tutte le informazioni riguardanti l'ortografia, la tipo
 	\item \textbf{Nome del progetto}: ci si riferirà al nome del progetto solo come "\textbf{PREMI}". Per una scrittura corretta del nome è stato creato il comando \LaTeX\ \verb|\PROGETTO|.
 \end{itemize}
 
-\subsubsection{Sigle}
+\paragraph{Sigle}
 Le Sigle potranno comparire esclusivamente all'interno di tabelle e diagrammi. Nello specifico quelle consentite sono: 
 \begin{itemize}
 	\item Documenti:
@@ -143,7 +159,8 @@ Le Sigle potranno comparire esclusivamente all'interno di tabelle e diagrammi. N
 		\item PdP = \textit{Piano di Progetto};
 		\item PdQ = \textit{Piano di Qualifica};
 		\item SdF = \textit{Studio di Fattibilità};
-		\item ST = \textit{Specifica Tecnica}.
+		\item ST = \textit{Specifica Tecnica};
+		\item DdP = \textit{Definizione di Prodotto}.
 	\end{itemize}
 	\item Revisioni:
 	\begin{itemize}
@@ -154,13 +171,14 @@ Le Sigle potranno comparire esclusivamente all'interno di tabelle e diagrammi. N
 	\end{itemize}
 \end{itemize}
 
-\subsection{Componenti grafiche}
-\subsubsection{Immagini}
+\subsubsection{Componenti grafiche}
+\paragraph{Immagini}
 Tutte le immagini dovranno avere il formato PDF oppure \gls{PNG}. In modo da garantire una maggiore qualità dell'immagine in caso di ridimensionamento è consigliato usare il formato PDF vettoriale. La conversione di un immagine in formato PDF è possibile attraverso il software GIMP\footnote{GNU Image Manipulation Program è un programma per la creazione e modifica di immagini digitali.}, il quale è stato già usato da tutti  i componenti del gruppo. \\ Le immagini devono essere accompagnate da una didascalia che inizia con la parola "Figura", seguita dal numero della figura, dal carattere "due punti" e da una breve descrizione.
-\subsubsection{Tabelle}
+\paragraph{Tabelle}
 Ogni tabella deve essere accompagnata da una didascalia che inizia con la parola "Tabella", seguita dal numero della tabella, dal carattere "due punti" e da una  descrizione breve ma significativa.
 
-\subsection{Procedure di avanzamento di un documento}
+\newpage
+\subsubsection{Procedure di avanzamento di un documento}
 Nel momento in cui il redattore ritenga di aver concluso la stesura di un documento, si dovranno seguire i seguenti passi nell'ordine esatto di comparizione:
 \begin{enumerate}
 	\item Il redattore ha il compito di contattare il \textit{Responsabile di Progetto} per informarlo della terminazione della stesura del documento;
@@ -171,7 +189,7 @@ Nel momento in cui il redattore ritenga di aver concluso la stesura di un docume
 \end{enumerate}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\linewidth]{img/proceduraDocumenti}
+\includegraphics[width=1\linewidth]{img/proceduraDocumenti}
 \caption[Procedura avanzamento documento]{Procedura avanzamento documento}
 \label{fig:proceduraDocumenti}
 \end{figure}
