@@ -198,7 +198,7 @@
 	\subsection{Caso d'uso UC9.8.1: Scegliere la tipologia del grafico}
 	\begin{itemize}
 		\item \textbf{Attori:} Proprietario;
-		\item \textbf{Scopo e descrizione:} L'utente deve scegliere il tipo di grafico da inserire;
+		\item \textbf{Scopo e descrizione:} L'utente deve scegliere il tipo di grafico da inserire tra istogramma, torta e linea;
 		\item \textbf{Precondizione:} La finestra di dialogo per la scelta del tipo di grafico è aperta;
 		\item \textbf{Postcondizione:} Il sistema ha registrato la scelta dell'utente.
 	\end{itemize}
@@ -282,9 +282,10 @@
 		\item L'utente può cambiare la grandezza del testo [UC9.15.1];
 		\item L'utente può cambiare il colore del testo [UC9.15.2];
 		\item L'utente può cambiare il \gls{font} del testo [UC9.15.3];
-		\item L'utente può abilitare o disabilitare il testo in corsivo [UC9.15.4];
-		\item L'utente può abilitare o disabilitare il testo in grassetto [UC9.15.5];
-		\item L'utente può spostare il testo in una nuova posizione [UC9.15.6].
+		\item L'utente può impostare il testo normale [UC9.15.4];
+		\item L'utente può impostare il testo in corsivo [UC9.15.5];
+		\item L'utente può impostare il testo in grassetto [UC9.15.6];
+		\item L'utente può spostare il testo in una nuova posizione [UC9.15.7].
 	\end{enumerate}
 	\item \textbf{Postcondizione:} Il sistema ha apportato le modifiche scelte all'elemento di testo selezionato.
 \end{itemize}
@@ -313,29 +314,38 @@
 	\item \textbf{Postcondizione:} Il testo ha cambiato \gls{font} secondo la scelta dell'utente.
 \end{itemize}
 
-\subsection{Caso d'uso UC9.15.4: Abilitare/disabilitare corsivo}
+\subsection{Caso d'uso UC9.15.4: Impostare stile normale}
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente può abilitare o disabilitare la scrittura in corsivo;
+	\item \textbf{Scopo e descrizione:} L'utente può impostare lo stile del testo normale;
 	\item \textbf{Precondizione:} Il testo da modificare è selezionato;
 	\item \textbf{Postcondizione:} Il testo è stato modificato secondo la scelta dell'utente.
 \end{itemize}
 
-\subsection{Caso d'uso UC9.15.5: Abilitare/Disabilitare grassetto}
+\subsection{Caso d'uso UC9.15.5: Impostare stile corsivo}
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
-	\item \textbf{Scopo e descrizione:} L'utente può abilitare o disabilitare la scrittura in grassetto;
+	\item \textbf{Scopo e descrizione:} L'utente può impostare la scrittura in corsivo;
 	\item \textbf{Precondizione:} Il testo da modificare è selezionato;
 	\item \textbf{Postcondizione:} Il testo è stato modificato secondo la scelta dell'utente.
 \end{itemize}
 
-\subsection{Caso d'uso UC9.15.6: Posizionare il testo}
+\subsection{Caso d'uso UC9.15.6: Impostare stile grassetto}
+\begin{itemize}
+	\item \textbf{Attori:} Proprietario;
+	\item \textbf{Scopo e descrizione:} L'utente può impostare la scrittura in grassetto;
+	\item \textbf{Precondizione:} Il testo da modificare è selezionato;
+	\item \textbf{Postcondizione:} Il testo è stato modificato secondo la scelta dell'utente.
+\end{itemize}
+
+\subsection{Caso d'uso UC9.15.7: Posizionare il testo}
 \begin{itemize}
 	\item \textbf{Attori:} Proprietario;
 	\item \textbf{Scopo e descrizione:} L'utente può allineare il testo in una nuova posizione;
 	\item \textbf{Precondizione:} Il testo da modificare è selezionato;
 	\item \textbf{Postcondizione:} Il testo è stata allineato secondo la scelta dell'utente.
 \end{itemize}
+
 
 \newpage
 \subsection{Caso d'uso UC9.16: Modificare una tabella}

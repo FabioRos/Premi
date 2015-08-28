@@ -1,0 +1,68 @@
+In questa sezione verrà illustrato l'ambiente di lavoro che sarà utilizzato durante lo sviluppo del progetto \PROGETTO.\\
+
+\paragraph{Sistema operativo}
+
+Il sistema operativo utilizzato è lasciato a discrezione di ogni membro del gruppo. Questa scelta è dovuta principalmente al fatto che il progetto dovrà supportare più piattaforme.
+I membri del gruppo utilizzeranno i seguenti sistemi operativi:
+
+\begin{itemize}
+	\item \gls{Windows} 7 64 bit;
+	\item \gls{Windows} 8.1;
+	\item \gls{Ubuntu} 14.10;
+	\item Mac OS 10.10.2.
+\end{itemize}
+
+\paragraph{Coordinamento}
+
+Il coordinamento del gruppo avviene tramite:
+\begin{itemize}
+	\item \gls{Google Drive};
+	\item \gls{Google Calendar};	
+	\item \gls{Repository} \gls{Git}.
+\end{itemize}
+
+\subparagraph{Google Drive:}
+
+Abbiamo scelto di utilizzare questo \gls{servizio cloud} per condividere tutti i documenti che non necessitano di \gls{versionamento} e vengono utilizzati frequentemente da parte dei membri del gruppo. 
+È un servizio molto semplice e accessibile direttamente da \gls{browser} che permette di lavorare su documenti creati con \gls{Google Docs}.
+
+\subparagraph{Google Calendar:}
+\gls{Google Calendar} viene utilizzato per la gestione delle risorse umane e per tenere traccia degli eventi importanti. È stato creato un calendario condiviso con tutti i membri del gruppo in modo da conoscere le date in cui una persona è assente o non reperibile e le date rilevanti per il gruppo.\\
+Inoltre è possibile modificare la gestione delle notifiche per un evento o più eventi in modo che venga inviata automaticamente una email a tutti i membri del gruppo. In questo caso il preavviso deve essere di almeno un giorno.
+
+\subparagraph{Repository Git:}
+
+Nonostante siano disponibili molti \gls{repository} (\gls{Git}, \gls{Mercurial}, \gls{SVN}) è stato scelto di utilizzare \gls{Git} in quanto il servizio soddisfa pienamente le necessità di \gls{hosting} e \gls{versionamento} necessarie per lo sviluppo di questo progetto, inoltre diversi membri del gruppo avevano già usato tale servizio. Esso permette di lavorare senza una connessione attiva a internet e dà la possibilità di ignorare alcune estensioni specificate in un file chiamato .gitignore\footnote{File globale di \gls{Git} che contiene una lista di regole per ignorare i file.}.\\ Per i membri del gruppo che desiderano utilizzare un client, si consigliano i seguenti:
+\begin{itemize}
+	\item \textbf{SourceTree};
+	\item \textbf{\gls{GitHub}};
+\end{itemize}
+Per maggiori dettagli sulle norme che riguardano l'utilizzo si rimanda alla sezione \ref{repository}.
+
+\newpage
+\paragraph{Ambiente documentale}
+
+\subparagraph{Stesura documenti:}
+
+Per la stesura dei documenti verrà utilizzato il \gls{linguaggio di markup} \LaTeX.
+Come editor è consigliato TeXstudio\footnote{\url{http://texstudio.sourceforge.net}}, il quale è disponibile per tutti i principali sistemi operativi.
+
+\subparagraph{Script:}
+
+Per facilitare la stesura dei documenti sono stati creati alcuni script:
+
+\begin{itemize}
+	\item Generazione di tutti i documenti PDF: con il comando "make all" verranno generati tutti i PDF dei documenti contenuti nella directory corrente;
+	%\item Controllo ortografico: con il comando make aspell verrà invocato il programma aspell su tutti i documenti della directory corrente;
+	%\item Eliminazione file errati o vecchi: con il comando make clean verranno eliminatati i file generati da compilazioni vecchio o file non necessari della directory corrente;
+	\item Evidenziare glossario: con il comando "java glossary" verrà eseguito uno script che selezionerà nei documenti della directory corrente le parole contenute nella versione più recente del glossario e le evidenzierà con il simbolo "\G".
+
+\end{itemize}
+
+\paragraph{Pianificazione delle attività}
+Per pianificare le attività e la gestione del progetto e delle risorse umane si è scelto di usare \gls{GanttProject}\footnote{\url{http://www.ganttproject.biz}}.
+
+\paragraph{Diagrammi UML}
+
+Per la realizzazione dei diagrammi \gls{UML} è stato scelto \gls{Astah} Professional Edition\footnote{\url{http://astah.net/download}}.
+È possibile ricevere gratuitamente la licenza della versione professional inviando una richiesta al sito \url{http://astah.net/student-license-request}.

@@ -35,7 +35,9 @@
 		\item L'utente inserisce il proprio indirizzo mail [UC1.1.3];
 		\item L'utente inserisce il proprio nome utente [UC1.1.4];
 		\item L'utente inserisce una password [UC1.1.5];
-		\item L'utente inserisce nuovamente la password [UC1.1.6].
+		\item L'utente inserisce nuovamente la password [UC1.1.6];
+		\item L'utente inserisce un indirizzo email errato o già esistente [UC1.1.7];
+		\item L'utente inserisce un nome utente già esistente [UC1.1.8].
 	\end{enumerate}
 	\item \textbf{Postcondizione:} Tutti i campi richiesti sono stati compilati correttamente.
 \end{itemize}
@@ -87,6 +89,23 @@
 	\item \textbf{Precondizione:} La casella dove inserire la password è già stata compilata e la casella dove reinserire per la seconda volta la password è vuota;
 	\item \textbf{Postcondizione:} La casella di reinserimento password è stata compilata con la password inserita dall'utente.
 \end{itemize}
+
+\subsection{Caso d'uso UC1.1.7: Errore email non conforme}
+\begin{itemize}
+	\item \textbf{Attori:} Utente non autenticato;
+	\item \textbf{Scopo e descrizione:} L'utente ha inserito una mail non conforme alle richieste, gli viene quindi comunicato l'errore;
+	\item \textbf{Precondizione:} L'utente ha scritto un indirizzo email nell'apposito form;
+	\item \textbf{Postcondizione:} L'utente ha inserito una email errata e il sistema lo comunica.
+\end{itemize}
+
+\subsection{Caso d'uso UC1.1.8: Errore nome utente non conforme}
+\begin{itemize}
+	\item \textbf{Attori:} Utente non autenticato;
+	\item \textbf{Scopo e descrizione:} L'utente ha inserito uno nome utente non conforme alle richieste, gli viene quindi comunicato l'errore;
+	\item \textbf{Precondizione:} L'utente ha scritto un nome utente nell'apposito form;
+	\item \textbf{Postcondizione:} L'utente ha inserito un nome utente errato e il sistema lo comunica.
+\end{itemize}
+
 
 \subsection{Caso d'uso UC1.2: Conferma dei dati inseriti}
 \begin{itemize}

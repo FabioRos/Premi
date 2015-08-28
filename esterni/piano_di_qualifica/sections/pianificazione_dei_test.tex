@@ -1,8 +1,8 @@
-Di seguito verranno descritti tutti i test di validazione, di sistema e di integrazione che sono stati previsti. Si prevede in futuro l'aggiornamento dei test di unità. Per le tempistiche di aggiornamento dei test si faccia riferimento al \textit{Piano di Progetto v2.0.0}. La dicitura \textbf{N.A.} contenuta nella colonna \textit{Stato} nelle tabelle sottostanti indica che il test non è ancora stato applicato in quanto verrà applicato solo successivamente, come descritto nel \textit{Piano di Progetto v2.0.0}.
+Di seguito verranno descritti tutti i test di validazione, di sistema e di integrazione che sono stati previsti. Si prevede in futuro l'aggiornamento dei test di unità. Per le tempistiche di aggiornamento dei test si faccia riferimento al \textit{Piano di Progetto v3.0.0}. La dicitura \textbf{N.A.} contenuta nella colonna \textit{Stato} nelle tabelle sottostanti indica che il test non é ancora stato applicato in quanto verrà applicato solo successivamente, come descritto nel \textit{Piano di Progetto v3.0.0}.
 
 
 \subsection{Test di sistema}
-In questa sezione vengono descritti i test di sistema che permettono di verificare il comportamento dinamico del sistema nella sua interezza rispetto ai requisiti descritti nell'\textit{Analisi dei Requisiti v2.0.0}.
+In questa sezione vengono descritti i test di sistema che permettono di verificare il comportamento dinamico del sistema nella sua interezza rispetto ai requisiti descritti nell'\textit{Analisi dei Requisiti v3.0.0}.
 I test di sistema descritti sotto, sono quelli che si riferiscono ai requisisti software individuati e quindi meritevoli di un test.
 
 \subsubsection{Descrizione dei test di sistema}
@@ -14,19 +14,19 @@ I test di sistema descritti sotto, sono quelli che si riferiscono ai requisisti 
 			\textbf{Test} & \textbf{Descrizione} & \textbf{Stato} & \textbf{Requisito} \\
 			
 			\midrule
-			TS1 & Viene verificato che il sistema registri correttamente un utente & N.A. & R[OBB][F]1\\ \midrule
-			TS1.1 & Viene verificato che il sistema sia portabile e correttamente visualizzato su desktop, mobile e tablet & N.A & R[OBB][V]-1.1 \\ \midrule
-			TS1.6 & Viene verificato che il sistema registri correttamente un utente attraverso un social network & N.A. & R[OPZ][F]1.6\\ \midrule
-			TS2 & Viene verificato che il sistema autentichi correttamente un utente & N.A. & R[OBB][F]2\\  \midrule
-			TS3	& Viene verificato che il sistema permetta di effettuare una ricerca di un progetto con le modalità implementate & N.A. & R[OBB][F]3\\ \midrule
-			TS4	& Viene verificato che il sistema apra un progetto & N.A. & R[OBB][F]4\\ \midrule
+			TS1 & Viene verificato che il sistema registri correttamente un utente & Success & R[OBB][F]1\\ \midrule
+			TS2 & Viene verificato che il sistema autentichi correttamente un utente & Success & R[OBB][F]2\\  \midrule
+			TS3	& Viene verificato che il sistema permetta di effettuare una ricerca di un progetto con le modalità implementate & Success & R[OBB][F]3\\ \midrule
+			TS4	& Viene verificato che il sistema apra un progetto in modalità visualizzazione & Success & R[OBB][F]4\\ \midrule
 			TS5 & Viene verificato che il sistema generi il PDF del progetto & N.A. & R[OBB][F]5\\ \midrule
 			TS6 & Viene verificato che il sistema generi un pacchetto stand-alone per la visualizzazione offline & N.A. & R[OBB][F]6\\ \midrule
-			TS7 & Viene verificato che il sistema crei un nuovo progetto & N.A. & R[OBB][F]7\\ \midrule
-			TS8 & Viene verificato che il sistema apra un progetto precedentemente creato & N.A. & R[OBB][F]8\\ \midrule
-			TS9 & Viene verificato che il sistema permetta la modifica del contenuto di una \gls{slide} & N.A. & R[OBB][F]9\\ \midrule
+			TS7 & Viene verificato che il sistema crei un nuovo progetto & Success & R[OBB][F]7\\ \midrule
+			TS8 & Viene verificato che il sistema apra un progetto precedentemente creato & Success & R[OBB][F]8\\ \midrule
+			TS9 & Viene verificato che il sistema permetta la modifica del contenuto di una \gls{slide} & Success & R[OBB][F]9\\ \midrule
 			TS10 & Viene verificato che il sistema crei un'\gls{infografica} & N.A. & R[DES][F]10\\ \midrule
-			TS11 & Viene verificato che il sistema permetta di salvare un progetto & N.A. & R[OBB][F]11\\
+			TS11 & Viene verificato che il sistema permetta di salvare un progetto & Success & R[OBB][F]11\\ \midrule
+			TS12 & Viene verificato che il sistema elimini un progetto & Success & R[OBB][F]12\\ \midrule
+			TS13 & Viene verificato che il sistema permetta di consultare il manuale utente & Success & R[OBB][F]13\\
 			
 						
 			\bottomrule
@@ -41,7 +41,7 @@ I test di sistema descritti sotto, sono quelli che si riferiscono ai requisisti 
 \newpage
 
 \subsection{Test di integrazione}
-In questa sezione vengono descritti i test di integrazione da usare per testare le componenti descritte nella progettazione ad alto livello. Tali test permettono di verificare la corretta implementazione ed il corretto flusso dei dati all'interno del sistema. È stato scelto di utilizzare una strategia di integrazione incrementale, che permette lo sviluppo e la verifica delle componenti in parallelo. Unendo infatti le varie componenti per via incrementale, nella maggior parte dei casi, gli errori riscontrati da un test sono da attribuirsi all'ultima parte aggiunta, inoltre con questa strategia è possibile retrocedere e tornare ad uno stato noto e funzionante del sistema. Si è deciso di utilizzare il metodo \gls{bottom-up} per integrare prima le componenti con minori dipendenze funzionali e maggiori funzionalità (che corrispondono alle componenti per garantire i requisiti obbligatori) al fine di ottenere il prima possibile una versione funzionante delle parti obbligatorie del sistema. Agendo in questo modo le componenti strettamente legate a parti obbligatorie vengono testate molte volte contribuendo così ad abbassare il numero di errori in esse contenute. Si procede poi risalendo l'albero delle dipendenze fino ad arrivare alla componente di alto livello alla quale saranno dedicati gli ultimi test.
+In questa sezione vengono descritti i test di integrazione da usare per testare le componenti descritte nella progettazione ad alto livello. Tali test permettono di verificare la corretta implementazione ed il corretto flusso dei dati all'interno del sistema. È stato scelto di utilizzare una strategia di integrazione incrementale, che permette lo sviluppo e la verifica delle componenti in parallelo. Unendo infatti le varie componenti per via incrementale, nella maggior parte dei casi, gli errori riscontrati da un test sono da attribuirsi all'ultima parte aggiunta, inoltre con questa strategia é possibile retrocedere e tornare ad uno stato noto e funzionante del sistema. Si é deciso di utilizzare il metodo bottom-up per integrare prima le componenti con minori dipendenze funzionali e maggiori funzionalità (che corrispondono alle componenti per garantire i requisiti obbligatori) al fine di ottenere il prima possibile una versione funzionante delle parti obbligatorie del sistema. Agendo in questo modo le componenti strettamente legate a parti obbligatorie vengono testate molte volte contribuendo così ad abbassare il numero di errori in esse contenute. Si procede poi risalendo l'albero delle dipendenze fino ad arrivare alla componente di alto livello alla quale saranno dedicati gli ultimi test.
 
 \begin{figure}[h]
 \centering
@@ -61,17 +61,17 @@ In questa sezione vengono descritti i test di integrazione da usare per testare 
 			\midrule
 			TI1 & Test di controllo finale lato utente & Front-End & N.A\\
 			\midrule
-			TI2 & Test che verifica la corretta visualizzazione delle interfacce & View & N.A\\
+			TI2 & Test che verifica la corretta visualizzazione delle interfacce & View & Success\\
 			\midrule
-			TI3 & Test che verifica la corretta interazione tra i comandi & Controller & N.A\\
+			TI3 & Test che verifica la corretta interazione tra i comandi & Controller & Success\\
 			\midrule
 			TI4 & Test che verifica il corretto comportamento tra client e server & Back-End & N.A\\
 			\midrule
 			TI5 & Test che verifica il corretto funzionamento del server & Logic-tier & N.A\\
 			\midrule
-			TI6 & Test che verifica la corretta interazione tra i comandi del server & Controller & N.A\\
+			TI6 & Test che verifica la corretta interazione tra i comandi del server & Controller & Success\\
 			\midrule
-			TI7 & Test che verifica la correttezza dei dati & Back-End::Data-tier & N.A\\
+			TI7 & Test che verifica la correttezza dei dati & Back-End::Data-tier & Success\\
 		\bottomrule
 		\end{tabular}
 		\caption{Tabella di tracciamento test di integrazione}
@@ -80,6 +80,7 @@ In questa sezione vengono descritti i test di integrazione da usare per testare 
 \newpage
 \subsection{Tracciamento componenti–test di integrazione}
 \begin{table}[h]
+	\begin{center}
 	\begin{tabular}{|c|c|}
 	\toprule
 		\textbf{Componente} & \textbf{Test}\\
@@ -99,120 +100,246 @@ In questa sezione vengono descritti i test di integrazione da usare per testare 
 		Back-End::Data-tier & TI7\\
 	\bottomrule
 	\end{tabular}
+	\end{center}
 	\caption{Tabella di tracciamento test di integrazione}
 \end{table}
 
+
 \subsection{Test di validazione}
 In questa sezione si descrivono i test di validazione che servono per accertarsi che il prodotto realizzato sia conforme alle aspettative.
-Per ogni test vengono descritti i vari passi che un utente deve eseguire per testare i requisiti ad esso associati. Per quanto riguarda il tracciamento test di validazione/requisiti è riportato in \textit{Analisi dei Requisiti v2.0.0?}.
+Per ogni test vengono descritti i vari passi che un utente deve eseguire per testare i requisiti ad esso associati. Per quanto riguarda il tracciamento test di validazione/requisiti é riportato in \textit{Analisi dei Requisiti v3.0.0}.
 
 \subsubsection{Test TV1}
-L'utente vuole verificare che ci si possa iscrivere. \newline
-All'utente è richiesto di:
+L'utente vuole verificare che ci si possa iscrivere, opzionalmente anche tramite social network. \newline
+All'utente é richiesto di:
 \begin{itemize}
-	\item Cliccare il bottone per la registrazione (TV1.1);
-	\item Inserire un nome utente univoco (TV1.2);
-	\item Inserire una password di almeno 8 caratteri (TV1.3);
-	\item Reinserire la password (TV1.4);
-	\item Inserire il proprio nome (TV1.5);
-	\item Inserire il proprio cognome (TV1.6);
-	\item Inserire il proprio indirizzo email (TV1.7);
-	\item Confermare i dati inseriti cliccando il bottone "Registrati" (TV1.8);
-	\item Controllare di aver ricevuto una email di conferma di avvenuta registrazione (TV1.9).
+	\item Inserire un nome utente univoco (TV1.1);
+	\item Inserire una password di almeno 8 caratteri (TV1.2);
+	\item Inserire il proprio nome (TV1.3);
+	\item Inserire il proprio cognome (TV1.4);
+	\item Inserire il proprio indirizzo email (TV1.5);
+	\item Confermare i dati inseriti (TV1.6);
+	\item Se i dati inseriti sono sbagliati visualizzare un messaggio di errore (TV1.7).
 \end{itemize}
 
 \subsubsection{Test TV2}
 L'utente vuole verificare che ci si possa autenticare. \newline
-All'utente è richiesto di:
+All'utente é richiesto di:
 \begin{itemize}
-	\item Cliccare il bottone per effettuare il login (TV2.1);
-	\item Inserire il proprio nome utente (TV2.2);
-	\item Inserire la propria password (TV2.3);
-	\item Confermare i dati inseriti cliccando il bottone "Accedi" (TV2.4);
-	\item Controllare di poter accedere alla propria pagina personale (TV2.5).
+	\item Inserire il proprio nome utente (TV2.1);
+	\item Inserire la propria password (TV2.2);
+	\item Confermare i dati inseriti cliccando il bottone "Ok" (TV2.3);
+	\item Se le credenziali sono errate, premere il bottone per il recupero dei dati (TV2.4);
+	\item Inserire la mail usata durante la registrazione (TV2.5);
+	\item Se le credenziali sono corrette, controllare di poter accedere alla propria pagina personale (TV2.6).
 \end{itemize}
 
 \subsubsection{Test TV3}
 L'utente vuole verificare di riuscire a visualizzare i risultati di una ricerca. \newline
-All'utente è richiesto di:
+All'utente é richiesto di:
 \begin{itemize}
 	\item Effettuare una ricerca usando come chiave un nome utente (TV3.1);
 	\item Effettuare una ricerca usando come chiave un titolo di un progetto (TV3.2);
-	\item Verificare che compaia la lista dei risultati della ricerca (TV3.3).
+	\item Verificare che compaia la lista dei risultati della ricerca (TV3.3);
+	\item Cambiare nome utente e effettuare una nuova ricerca (TV3.4);
+	\item Cambiare titolo del progetto e effettuare una nuova ricerca (TV3.5).
 \end{itemize}
 
 \subsubsection{Test TV4}
-L'utente vuole verificare di riuscire a visualizzare una presentazione. \newline
-All'utente è richiesto di:
+L'utente vuole verificare di riuscire a visualizzare una presentazione o un'infografica. \newline
+All'utente é richiesto di:
 \begin{itemize}
 	\item Aprire una presentazione (TV4.1);
 	\item Scegliere l'opzione per la visualizzazione come ascoltatore (TV4.2);
 	\item Scegliere l'opzione per la visualizzazione come presentatore (TV4.3);
-	\item Verificare che la presentazione sia visualizzata correttamente e che ci si possa muovere liberamente tra le \gls{slide} (TV4.4).
+	\item Verificare che la presentazione sia visualizzata correttamente e che ci si possa muovere liberamente tra le \gls{slide} (TV4.4);
+	\item Verificare che vengano visualizzati gli aiuti a schermo se si ha scelto la visualizzazione come presentatore (TV4.5);
+	\item Scegliere di aprire un'infografica e verificare che venga visualizzata (TV4.6).
 \end{itemize}
 
+
 \subsubsection{Test TV5}
-L'utente vuole verificare che il PDF creato sia corretto rispetto al progetto. \newline
-All'utente è richiesto di:
+L'utente vuole verificare che si possa creare il PDF da una presentazione o da un'infografica. \newline
+All'utente é richiesto di:
 \begin{itemize}
-	\item Aprire un progetto (TV5.1);
-	\item Scegliere la funzione di generazione del PDF dall'apposito menù (TV5.2);
-	\item Verificare che il PDF creato corrisponda al progetto selezionato (TV5.3).
+	\item Scegliere di generare il PDF di una presentazione dall'apposito menù (TV5.1);
+	\item Scegliere di generare il PDF di un'infografica dall'apposito menù (TV5.2).
 \end{itemize}
 
 \subsubsection{Test TV6}
-L'utente vuole verificare che il progetto esportato sia utilizzabile offline. \newline
-All'utente è richiesto di:
+L'utente vuole verificare che il progetto possa essere esportato in un pacchetto stand-alone per la visualizzazione offline. \newline
+All'utente é richiesto di:
 \begin{itemize}
-	\item Aprire un progetto (TV6.1);
-	\item Scegliere la funzione di esportazione del progetto dall'apposito menù (TV6.2);
-	\item Scegliere la posizione in cui salvare il progetto in locale (TV6.3);
-	\item Avviare la presentazione in locale del progetto salvato (TV6.4);
-	\item Verificare che la presentazione funzioni senza errori e che corrisponda al progetto selezionato (TV6.5);
+	\item Scegliere la posizione in cui salvare il progetto in locale (TV6.1).
 \end{itemize}
 
 \subsubsection{Test TV7}
-L'utente vuole verificare che sia possibile editare un progetto precedentemente creato. \newline
-All'utente è richiesto di:
+L'utente vuole verificare che si possa creare un nuovo progetto. \newline
+All'utente é richiesto di:
 \begin{itemize}
-	\item Selezionare un progetto (TV7.1);
-	\item Selezionare la \gls{slide} che si vuole modificare (TV7.2);
-	\item Scegliere l'elemento che si desidera modificare o inserirne uno di nuovo (TV7.3)
-	\item[] All'utente è richiesto di:
-	\begin{itemize}
-		\item Inserire una nuova \gls{slide} (TV7.3.1);
-		\item Inserire un'immagine (TV7.3.2);
-		\item Inserire una casella di testo (TV7.3.3);
-		\item Inserire dati \gls{real time} (TV7.3.4);
-		\item Inserire una tabella (TV7.3.5);
-		\item Inserire un grafico (TV7.3.6);
-		\item Selezionare un effetto di transizione (TV7.3.7);
-		\item Cambiare la dimensione di un elemento (TV7.3.8);
-		\item Cambiare la posizione di un elemento (TV7.3.9);
-		\item Ruotare un elemento (TV7.3.10);
-		\item Rimuovere un elemento (TV7.3.11);
-		\item Modificare una tabella o un grafico (TV7.3.12);
-		\item Inserire note/parole chiave (TV7.3.13);
-	\end{itemize}
-	\item Verificare che le modifiche effettuate siano state applicate al progetto tramite visualizzazione dello stesso (TV7.4).
+	\item Inserire un titolo (TV7.1);
+	\item Scegliere un template (TV7.2).
 \end{itemize}
 
 \subsubsection{Test TV8}
-L'utente vuole verificare che si possa salvare un progetto. \newline
-All'utente è richiesto di:
+L'utente vuole verificare che si possa aprire un progetto salvato. \newline
+All'utente é richiesto di:
 \begin{itemize}
-	\item Creare un nuovo progetto o modificare un progetto già esistente (TV8.1);
-	\item Selezionare la funzione di salvataggio (TV8.2);
-	\item Dare un nome al progetto (TV8.3);
-	\item Verificare che il progetto sia stato salvato, con il nome scelto, nell'apposita sezione riservata ai propri progetti (TV8.4).
+	\item Selezionare il progetto da aprire (TV8.1).
 \end{itemize}
 
 \subsubsection{Test TV9}
-L'utente vuole verificare che si possa eliminare un progetto. \newline
-All'utente è richiesto di:
+L'utente vuole verificare che si possa modificare una slide, inserendo, modificando o eliminando un elemento. \newline
+All'utente é richiesto di:
 \begin{itemize}
-	\item Selezionare il progetto che si vuole eliminare (TV9.1);
-	\item Selezionare la funzione di eliminazione del progetto (TV9.2);
-	\item Confermare l'eliminazione (TV9.3);
-	\item Verificare che il progetto eliminato non sia più presente nell'apposita sezione riservata ai propri progetti (TV9.4).
+	\item Cambiare il template (TV9.1);
+	\item Inserire una slide nella posizione che preferisce (TV9.2);
+	\item Rimuovere una slide (TV9.3);
+	\item Modificare una slide (TV9.4);
+	\item Inserire un'immagine (TV9.5);
+	\item Inserire del testo o modificare del testo già esistente (TV9.6);
+	\item Inserire dei dati real time, possibilmente anche da file (TV9.7);
+	\item Inserire una tabella o modificarne una già esistente (TV9.8);
+	\item Inserire un grafico o modificarne uno già esistente (TV9.9);
+	\item Scegliere un effetto di transizione (TV9.10);
+	\item Modificare l'aspetto di un elemento (TV9.11);
+	\item Rimuovere un elemento (TV9.12);
+	\item Cambiare posizione ad un elemento (9.13);
+	\item Caricare un file da inserire (TV9.14).
 \end{itemize}
+
+\subsubsection{Test TV10}
+L'utente vuole verificare che si possa creare un'infografica. \newline
+All'utente é richiesto di:
+\begin{itemize}
+	\item Scegliere aspetto e contenuti dell'infografica (TV10.1).
+\end{itemize}
+
+\subsubsection{Test TV11}
+L'utente vuole verificare che si possa salvare un progetto. \newline
+All'utente é richiesto di:
+\begin{itemize}
+	\item Premere il bottone di salvataggio (TV11.1).
+\end{itemize}
+
+\subsubsection{Test TV12}
+L'utente vuole verificare che si possa eliminare un progetto. \newline
+All'utente é richiesto di:
+\begin{itemize}
+	\item Selezionare il progetto da eliminare (TV12.1);
+	\item Confermare l'eliminazione (TV12.2).
+\end{itemize}
+
+\newpage
+\subsection{Test di Unità}
+
+\begin{table}[h]
+	\begin{center}
+	\begin{tabular}{|l|p{0.3\textwidth}|p{0.4\textwidth}|c|}
+	\toprule
+		\textbf{Test} & \textbf{Descrizione} & \textbf{Metodi} & \textbf{Stato}\\
+		
+	\midrule
+		TU1 & Viene verificato il corretto caricamento di un grafico dal server web e che venga salvato correttamente & ChartCtrl :: load() , ChartCtrl :: save() & N.A\\
+	\midrule
+		TU2 & Viene verificato il corretto caricamento e salvataggio di un'immagine proveniente dal server web o dispositivo esterno & ImageCtrl :: upload() ,ImageCtrl :: load() , ImageCtrl :: save() & N.A\\
+	\midrule
+		TU3 & Viene verificato che vengano reperite correttamente le informazioni per l'istanziazione del componenten inoltre viene verificato che le informazioni del componente vengano aggiornate correttamente & RealTimeDataCtrl :: load() , RealTimeDataCtrl :: save() & N.A\\
+	\midrule
+		TU4 & Viene verificato che vengano caricate correttamente le informazioni relative alla tabella corrente mediante  l'utilizzo del servizio  TableService & TableCtrl :: load() & Success\\
+	\midrule
+		TU5 & Viene verificato il corretto caricamento di un componente testuale  mediante l'utilizzo del servizio
+TextService & TextCtrl :: load() & Success\\
+	\midrule
+		TU6 & Viene verificato venga aggiunto l'elemento con codice identificativo id alla infografica
+in posizione position & InfographicEditorCtrl :: addElement() & Success\\
+	\midrule
+		TU7 & Viene verificato che i meccanismi di autenticazione funzionino correttamente & AuthenticationCtrl :: register(username:String,password:String) , AuthenticationCtrl :: logIn() , AuthenticationCtrl :: logOut() & Success\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l|p{0.3\textwidth}|p{0.4\textwidth}|c|}
+
+	\toprule
+		TU8 & Verifica che il servizio di registrazione tramite Facebook e Google+ funzioni correttamente & AuthenticationCtrl :: registerViaFacebook(name:Boolean) , AuthenticationCtrl :: registerViaGooglePlus(query:Boolean) & N.A\\
+	\midrule
+		TU9 & Viene verificato che il meccanismo di recupero password funzioni correttamente & AuthenticationCtrl :: forgotPassword(username:String) & Success\\
+	\midrule
+		TU10 & Viene verificato che venga aggiunta una slide nella posizione corretta rispetto alla slide corrente nella posizione indicata da direnction & PresentationEditorCtrl :: addSlide(direction: String) & Success\\
+	\midrule
+		TU11 & Viene verificato che venga rimossa una slide e vengano riposizionale le altre nella posizione corretta & PresentationEditorCtrl :: removeSlide() & Success\\
+	\midrule
+		TU12 & Viene verificato che venga caricata correttamente la slide nella posizione indicata da direction & PresentationEditorCtrl :: loadSlide(direction: String) & Success\\
+	\midrule
+		TU13 & Viene verificato che venga salvata correttamente la slide corrente nel database & PresentationEditorCtrl :: saveSlide() & Success\\
+	\midrule
+		TU14 & Viene verificato il corretto reset della presentazione corrente allo stato iniziale ovvero
+dotata di una sola slide vuota & ProjectCtrl :: resetPresentation() & Success\\
+	\midrule
+		TU15 & Viene controllato il corretto inserimento ed eliminazione di un'infografica al progetto corrente & ProjectCtrl :: addInfographic() , ProjectCtrl :: deleteInfographic(id:Int) & N.A\\
+			\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l|p{0.3\textwidth}|p{0.4\textwidth}|c|}
+
+	\toprule
+		TU16 & Viene verificato che la procedura di aggiunta di un nuovo componente nella slide corrente mediante una chiamata al service PresentationService ritornando il codice identificativo id funzioni correttamente & SlideEditorCtrl :: addObject():Int & Success\\
+	\midrule
+		TU17 & Verifica la corretta eliminazione di un componente identificato da id nella slide corrente
+mediante una chiamata al service SlideService & SlideEditorCtrl :: removeObject(id:String) & Success\\
+	\midrule
+		TU18 & Viene verificato che il componente venga aggiornato correttamente il componente identificato da \textit{id} nella slide corrente mediante una chiamata al service PresentationService e che venga ritornato \textbf{true} in caso di successo e \textbf{false} altrimenti & SlideEditorCtrl :: udpateObject(id:String) & Success\\
+
+	\midrule
+		TU19 &  Verifica il corretto recupero delle informazioni relative all'utente identificato da id dal back-end 
+mediante il service UserService & MyAccountCtrl :: loadUserdata(userId:String) & Success\\
+	\midrule
+		TU20 & Viene verificato che vengano recuperate dal back-end le informazioni relative agli utenti che hanno una corrispondenza con la stringa \textit{text} & HomePageCtrl :: searchByUsername(text:String) & Success\\
+	\midrule
+		TU21 & Viene verificato che vengano recuperate dal back-end le informazioni relative ai nomi di progetto che hanno una corrispondenza con la stringa \textit{text} & HomePageCtrl :: searchByProjectName(text:String) & Success\\
+	\midrule
+		TU22 & Viene verificata la corretta aggiunto l'elemento con codice identificativo id alla infografica
+in posizione position & InfographicEditorCtrl :: addElement(position:Int, id:Int) & N.A\\
+	\midrule
+		TU23 & Viene verificata la corretta eliminazione delle elemento in posizione position dall'infografica corrente & InfographicEditorCtrl :: removeElement(position:Int) & N.A\\
+
+\bottomrule
+
+\end{tabular}
+\end{center}
+\end{table}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l|p{0.3\textwidth}|p{0.4\textwidth}|c|}
+
+	\toprule
+		TU24 & Viene verificato che venga caricato il template selezionato Tid per l'infografica corrente nella vista InfographicEditor & InfographicEditorCtrl :: setTemplate(Tid:Int) & N.A\\
+	\midrule
+		TU25 & Viene verificato che vengano restituite le slide corrette in formato JSON del infografica con le relative posizioni nel template & InfographicEditorCtrl :: getSlideList() & N.A\\
+	\midrule
+		TU26 & Viene verificata la corretta interazione dei servizi di autenticazione con il back-end & forgotPasswordService ::  save(data: Object) , loginService :: save(data: Object) , logoutService :: get() , signUpService :: save(data: Object) , userService :: query(id:String) & Success\\
+	\midrule
+		TU27 & Viene verificato la corretta interazione tra il infographicEditorService e il back-end & infographicEditorService :: query(id: String) , infographicEditorService :: save(name: String) , infographicEditorService :: update(id: String, data:Object) & N.A\\
+	\midrule
+		TU28 & Viene verificato la corretta interazione tra il presentationService e il back-end & presentationService :: query(id: String) , presentationService :: update(id: String, theme:String, transition:String) & Success\\
+	\midrule
+		TU29 & Viene verificato la corretta interazione tra il projectsService e il back-end & projectsService :: query(username: String) , projectsService :: save(id: String, data:Object) & Success\\
+	\midrule
+		TU30 & Viene verificato la corretta interazione tra il searchByProjectService e il back-end & searchByProjectService ::  query(name: String) & Success\\
+	\midrule
+		TU31 & Viene verificato la corretta interazione tra il projectService e il back-end & projectService :: delete(id: String) , projectService :: update(id: String, data:Object) & Success\\
+	\midrule
+		TU32 & Viene verificato la corretta interazione tra gli SlideService e il back-end & indexService :: get(id: String, xIndex:int, yIndex:int) , slideService :: get(id:String) , slideService :: save(xIndex:int, yIndex:int) , slideService :: update(id:String, xIndex:int, yIndex:int, components:JSON, background:String,
+slideSVG:SVG) , slideService :: delete(id:String) & Success\\
+
+	\bottomrule
+	\end{tabular}
+	\end{center}
+	\caption{Tabella di tracciamento test di unità}
+\end{table}
