@@ -1,0 +1,71 @@
+% importa variabili globali
+\input{../../template/config.tex}
+
+
+% definizione variabili locali
+\def\DOCUMENTO{Definizione di Prodotto}
+\def\VERSIONE{1.0.0}
+
+\def\DESCRIZIONE{Documento che definisce in dettaglio l'architettura del prodotto \PROGETTO.}
+
+\def\REDATTORE {Burlin Valerio \\ & Carraro Nicola \\ & Suierica Bogdan \\ & Ros Fabio}
+\def\VERIFICATORE {Agostinetto Matteo}
+\def\RESPONSABILE {Suierica Bogdan}
+
+\def\USO {Esterno}
+
+\def\DISTRIBUZIONE {\GRUPPO{}\\ & \COMMITTENTE{}\\ & \PROPONENTE{}\\}
+
+\def\DESCRIZIONE {Documento che definisce in dettaglio l'architettura del prodotto \PROGETTO.}
+
+\def\SCOPE {\textit{\$scope}}
+
+
+% abilita (true) / disabilita (false) indice, lista tabelle, lista figure
+\def\INDICE	{true}
+\def\TABELLE {false}
+\def\FIGURE {true}
+
+
+% importa struttura
+\input {../../template/structure.tex}
+
+% registro delle modifiche
+\input {registro_modifiche.tex}
+
+% importa indici
+\input {../../template/index.tex}
+
+
+% importa parti documento
+\section{Introduzione}
+\input{sections/introduzione.tex}
+\newpage
+
+\section{Standard di Progetto}
+\input{sections/standard_di_progetto.tex}
+\newpage
+
+\section{Specifica Front-end}
+\input{sections/specifica_front_end.tex}
+\newpage
+
+\section{Specifica Back-end}
+\input{sections/specifica_back_end.tex}
+\newpage
+
+\section{Diagrammi di Sequenza}
+\input{sections/diagrammi_sequenza.tex}
+\newpage
+
+\section{Tracciamento}
+\input{sections/tracciamento_test_unita_metodi.tex}
+\newpage
+\input{sections/tracciamento_requisiti_classi.tex}
+\newpage
+
+
+
+%\printglossaries
+
+\end{document}
