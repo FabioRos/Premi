@@ -1,6 +1,6 @@
 \subsection{Scenari}
 	\subsubsection{Gestione richiesta di registrazione}
-	Il seguente diagramma rappresenta lo scenario con il quale viene gestita una richiesta di registrazione. La richiesta viene gestita da \textit{RegistrationController} che controlla il corretto inserimento dei dati e invia il responso a \textit{UsersController}, il quale può agire in due modi diversi: se la richiesta é stata fatta correttamente allora invia un CreateUser() a Utenti per creare il nuovo utente, avvisa \textit{RegistrationController} che la registrazione é avvenuta tramite RegistrationDone() e viene emanato un segnale di Redirect(); se la richiesta ha prodotto degli errori viene inviato un RegistrationError() a \textit{RegistrationController} che comunica l'errore per mezzo di un ErrorMessage().
+	Il seguente diagramma rappresenta lo scenario con il quale viene gestita una richiesta di registrazione. La richiesta parte da signupService() e viene gestita da \textit{AuthController} che controlla il corretto inserimento dei dati e invia il responso a \textit{AuthController}, tramite postRegister(). Viene poi ritornata create() che indica a signupService che l'utente è stato creato.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.5]{img/register.png}
@@ -9,8 +9,7 @@
 
 \newpage
 	\subsubsection{Gestione richiesta di autenticazione}
-	Il seguente diagramma rappresenta lo scenario con il quale viene gestita una richiesta di autenticazione. La richiesta viene presa in carico da \textit{LoginController} che verifica i dati e invia un CheckData() a \textit{UsersController}, da qui viene inviato un SearchForUser() a \textit{Utenti} per trovare una corrispondenza. Se le credenziali sono corrette \textit{Utenti} lo segnala a \textit{UsersController} tramite CorrectCredentials() e alla fine viene emesso un segnale di Redirect(); se le credenziali non sono corrette viene segnalato l'errore con un IncorrectCredentials() e in uscita arriva un ErrorMessage().\\
-	Da qui è possibile che arrivi una richiesta di recupero password. Essa é gestita da \textit{LoginController} che invia un CredentialsRecoveryRequest() a \textit{ForgotPasswordController}, poi \textit{UsersController} verifica i dati ricevuti e ricerca l'utente con un SearchForUser() verso \textit{Utenti}. Se i dati per il recupero password sono corretti \textit{UsersController} invia un CredentialsSendToMail() a \textit{ForgotPasswordController}, altrimenti viene inviato un CredentialsError(). Alla fine inviato un segnale in uscita RecoveryMessage() o ErrorMessage() da \textit{LoginController} rispettivamente se il recupero credenziali ha avuto buon esito o se é fallito.
+	Il loginService() invia una richiesta che viene gestita da \textit{AuthController}, il quale invia una postLogin() a \textit{AuthenticatesUsers}. Qui li scenari possibili sono due: nel primo caso la procedura va a buon fine e \textit{AuthenticatesUsers} emette un response() verso \textit{AuthController} che segnala a loginService() tramite una redirect() che l'autenticazione ha avuto successo. Nel secondo caso \textit{AuthenticatesUsers} invia una getFailedLoginMessage() a \textit{AuthController} che segnala l'errore a loginService() tramite un failed();
 
 	\begin{figure}[H]
 		\centering
@@ -20,7 +19,7 @@
 
 \newpage
 	\subsubsection{Gestione richiesta di ricerca di un progetto}
-	Il diagramma seguente rappresenta lo scenario con il quale viene gestita una richiesta di ricerca di un progetto. \textit{SearchResultController} interpreta la richiesta e definisce se sia una ricerca tramite nome utente o tramite nome del progetto. Nel primo caso viene inviato un CheckData() a \textit{UsersController} che verifica la richiesta e invia un SendResults() a \textit{SearchResultsController} che emette un DataResults(). Nel secondo caso il CheckData() viene inviato a \textit{ProjectController} che risponde con un SendResults() a \textit{SearchResultsController} che invia un DataResults().
+	Una richiesta di ricerca inoltrata da searchService() viene gestita da \textit{SearchCtrl} che invia una search() a \textit{SearchController}. A questo punto viene ritornato un showResults a \textit{SearchCrtl} che a sua volta segnala i risultati ottenuti a searchService() con un sendResults().
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.5]{img/search.png}
@@ -29,7 +28,7 @@
 	
 \newpage	
 	\subsubsection{Gestione richiesta di visualizzazione di una presentazione}
-	Il diagramma seguente rappresenta lo scenario con il quale viene gestita una richiesta di visualizzazione di una presentazione. La richiesta é gestita da \textit{PresentationController} che invia un FindPresentation() a \textit{Presentation} che recupera la prima \gls{slide} tramite un RetrieveFirstSlide() verso \textit{Slide}, il quale ritorna un FirstSlideFound(). Infine \textit{Presentation} segnala a \textit{PresentationController} che la visualizzazione é pronta, viene inviato un ViewingReady() a \textit{PresentationController} che ritorna un ViewingStartData().
+	presentationService() invia una richiesta gestita da \textit{PresentationCtrl}. Esso invia una loadSlides() a \textit{PresentationController} il quale elabora le informazioni e emette una show() indirizzata a \textit{PresentationCtrl}. Questo controller alla fine invia il risultato di ritorno a presentationService() tramite il metodo slide in (slidesSVG).
 	
 	\begin{figure}[H]
 		\centering
@@ -39,7 +38,7 @@
 	
 	
 	\subsubsection{Gestione richiesta di creazione di un progetto}
-	Il seguente diagramma rappresenta lo scenario con il quale viene gestita una richiesta di creazione di un progetto. La richiesta viene gestita da \textit{ProjectController} il quale crea, tramite CreateProject(), un nuovo progetto in \textit{Project} e invia un ProjectCreatedData() di ritorno.
+	presentationEditorService() invia una richiesta che viene presa in carico dal \textit{PresentationCtrl}, che invia una createPresentation() a \textit{PresentationController}. Quest'ultimo elabora i dati ricevuti ed invia una show() a \textit{PresentationCtrl} che restituisce il risultato a presentationService() tramite il metodo slide in (slidesSVG).
 	
 	\begin{figure}[H]
 		\centering
@@ -49,7 +48,7 @@
 	
 \newpage	
 	\subsubsection{Gestione richiesta di apertura di un progetto}
-	Il seguente diagramma rappresenta lo scenario con il quale viene gestita una richiesta di apertura di un progetto. La richiesta viene gestita da \textit{ProjectController} che invia un SearchForProject() a \textit{Project} per cercare il progetto richiesto. Se l'utente non interrompe l'apertura, da \textit{Project} viene inviato un ProjectFound() a \textit{ProjectController} che ritorna un OpeningProjectData(), altrimenti \textit{Project} invia un OpeningCancelled() e successivamente viene ritornato un UserInterruptMessage() da \textit{ProjectController}.
+	Viene inviata una richiesta di apertura di un progetto da parte di openProjectService() e gestita da \textit{myProjectCtrl}. Questo invia una openProject() a \textit{Project} il quale invia load() gestita sempre da \textit{myProject}. Infine a openProjectService() viene passato il risultato delle operazioni effettuate tramite showProjectService().
 	
 	\begin{figure}[H]
 		\centering
@@ -60,47 +59,18 @@
 	\newpage
 	
 	\subsubsection{Gestione richiesta di modifica di un progetto}
-	Si é deciso di suddividere in sotto-diagrammi il diagramma riguardante la richiesta di modifica, al fine di rendere meno complicata e di più facile comprensione il diagramma stesso. A causa di questa suddivisione i diagrammi saranno tra loro molto simili, la gestione delle richieste infatti é la stessa, cambiano i componenti e il nome di alcuni segnali. Si utilizzerà la dicitura \{element\} per indicare uno degli elementi modificabili di una \gls{slide} (chart, table, image, text, o \gls{real time}) nella seguente spiegazione. 
-	\\Lo scenario generale con il quale vengono gestite le richieste é il seguente:
-	\begin{itemize}
-		\item[]la richiesta di modifica viene gestita da \textit{\{element\}Controller} che la interpreta e invia un InterpretRequest() a \textit{ComponentController}. Nel caso riguardi la creazione di un nuovo \{element\}, \textit{ComponentController} invia un Insert\{element\}() o un Create\{element\}() a \textit{\{element\}} che crea l'elemento richiesto. Viene poi inviato un CreationDone() da \textit{ComponentController} a \textit{\{element\}Controller} che ritorna un ElDataSend().\\
-		Se invece la richiesta é una richiesta di modifica \textit{ComponentController} invia un Modify\{element\} a \textit{\{element\}} che può accettare le modifiche con un \{element\}Updated() o rifiutarle con \{element\}Error(). Se vengono accettate \textit{ComponentController} invia un ModifyDone() a \textit{\{element\}Controller} che ritorna un ElDataSend(), altrimenti invia un ModifyError() e viene ritornato un MessageError().
-	\end{itemize}
-	I diagrammi verranno elencati ora uno dopo l'altro.
-	\newpage
+	slideEditorService() invia una richiesta gestita da \textit{SlideEditorCtrl}, che invia a sua volta un slideEditor() gestito da \textit{SlideController}. Esso invia una showEditor() a \textit{SlideEditorCtrl} che risponde con slideEditorShowService() alla chiamata iniziale.
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.5]{img/chart.png}
-		\caption{Diagrammi di sequenza - Richiesta di modifica di un progetto: grafici}
+		\includegraphics[scale=0.5]{img/modify.png}
+		\caption{Diagrammi di sequenza - Richiesta di modifica di un progetto}
 	\end{figure}
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.5]{img/image.png}
-		\caption{Diagrammi di sequenza - Richiesta di modifica di un progetto: immagini}
-	\end{figure}
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.5]{img/real_time.png}
-		\caption{Diagrammi di sequenza - Richiesta di modifica di un progetto: dati Real Time}
-	\end{figure}
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.5]{img/table.png}
-		\caption{Diagrammi di sequenza - Richiesta di modifica di un progetto: tabelle}
-	\end{figure}
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.5]{img/text.png}
-		\caption{Diagrammi di sequenza - Richiesta di modifica di un progetto: testi}
-	\end{figure}
 	
 	\subsubsection{Gestione richiesta salvataggio di un progetto}
-	Il seguente diagramma rappresenta lo scenario con il quale viene gestita una richiesta di salvataggio di un progetto. La richiesta viene gestita da \textit{ProjectController} che invia un SavingProject() a \textit{Project}. Nel caso l'utente confermi il salvataggio viene inviato un ProjectSaved() a \textit{ProjectController} a sua volta invia un SavingData(); se l'utente interrompe il salvataggio \textit{Project} invia un SavingCancelled() a \textit{ProjectController} che ritorna un UserInterruptMessage().
+	saveProjectService() invia una richiesta che viene gestita da \textit{myProjectCtrl}, questo invia una saveProject() a \textit{ProjectController} che elabora i dati ed emette una store(). store() viene gestita da \textit{myProjectCtrl} che risponde alla chiamata iniziale tramite saveProjectService().
 	
 	\begin{figure}[H]
 		\centering
