@@ -20,14 +20,37 @@ Per ogni test deve essere definito:
 	\paragraph{Test}
 		\subparagraph{Test di unità:}
 		Il test di unità verifica che ogni singola unità funzioni correttamente. In particolare si verifica che i requisiti per quella determinata unità siano soddisfatti.
+		\begin{quote}
+			\centering{I test di unità possono essere identificati grazie alla seguente sintassi:}\\
+			\centering{\textbf{TU[codice test]}}
+		\end{quote}
+		
 		\subparagraph{Test di integrazione:}
 		Il test di integrazione rappresenta l'estensione logica del test di unità. Consiste nella combinazione di due unità già sottoposte a test in un solo componente e nel test dell'interfaccia presente tra le due. Il test di integrazione consente di individuare i problemi che si verificano quando due unità si combinano. Per effettuare tali test si farà uso di classi appositamente create per simulare e verificare l'interazione.
+		\begin{quote}
+			\centering{I test di integrazione possono essere identificati grazie alla seguente sintassi:}\\
+			\centering{\textbf{TI[identificativo del componente]}}\\
+			\centering{Tale identificativo corrisponde al componente i cui elementi sono integrati.}
+		\end{quote}
+	
 		\subparagraph{Test di sistema:}
 		Il test di sistema consiste nella validazione del sistema. Viene eseguito quando si ritiene che il prodotto sia giunto ad una versione definitiva, verificando la completa copertura dei requisiti da parte del prodotto.
+		\begin{quote}
+			\centering{I test di sistema possono essere identificati grazie alla seguente sintassi:}\\
+			\centering{\textbf{TS[tipo requisito][codice requisito]}}\\
+			\centering{ll tipo e il codice si riferiscono al requisito di cui verrà testato il soddisfacimento.}
+		\end{quote}
+		
 		\subparagraph{Test di regressione:}
 		Il test di regressione va eseguito ogni volta che viene modificata un'implementazione in un programma. A tale scopo, è possibile eseguire nuovamente i test esistenti sul codice modificato per stabilire se le modifiche apportate hanno alterato elementi precedentemente funzionanti. Se necessario è anche possibile scrivere nuovi test.
+		
 		\subparagraph{Test di accettazione:}
 		Il test di accettazione consiste nel collaudo del sistema eseguito dal committente. Se l'esito è positivo si può procedere al rilascio ufficiale del prodotto.
+		\begin{quote}
+			\centering{I test di sistema possono essere identificati grazie alla seguente sintassi:}\\
+			\centering{\textbf{TA[tipo requisito][codice requisito]}}\\
+			\centering{ll tipo e il codice si riferiscono al requisito di cui verrà testato il soddisfacimento.}
+		\end{quote}
 
 \subsubsection{Verifica dei documenti}
 La verifica dei documenti verrà eseguita ogni volta che sarà effettuata una modifica ad un documento e debba essere approvato.
@@ -40,7 +63,7 @@ Per una corretta verifica di un documento vanno seguite le seguenti pratiche:
 	\item \textbf{Controllo contenuto: }il \textit{Verificatore} dovrà controllare che il documento contenga tutto il necessario e che sia impaginato adeguatamente;
 	\item \textbf{Rispetto delle norme del progetto: }il \textit{Verificatore} dovrà controllare che il documento segua le norme di progetto stabilite;
 	\item \textbf{Lista di controllo: }si dovrà stilare una lista di errori più frequenti, per semplificare le successive verifiche dei documenti;
-	\item \textbf{Rispetto \gls{indice Gulpease}: }il \textit{Verificatore} dovrà calcolare e controllare, per ogni documento, che gli \gls{indici di Gulpease} ricadano nel range di valori specificato nel \textit{Piano di Qualifica v3.0.0}, altrimenti si dovrà effettuare una ricerca \gls{walkthrough} delle frasi troppo lunghe e complesse;
+	\item \textbf{Rispetto \gls{indice Gulpease}: }il \textit{Verificatore} dovrà calcolare e controllare, per ogni documento, che gli \gls{indici di Gulpease} ricadano nel range di valori specificato nel \textit{Piano di Qualifica v4.0.0}, altrimenti si dovrà effettuare una ricerca \gls{walkthrough} delle frasi troppo lunghe e complesse;
 	\item \textbf{Segnalazione errori: }una volta completata la verifica di un documento, se sono stati riscontrati errori, il \textit{Verificatore} dovrà aprire dei \gls{ticket} per segnalarli.
 \end{itemize}
 	
