@@ -144,3 +144,38 @@ Di seguito saranno descritte le metriche che riguardano il software. Data l'ines
 		\item \textbf{Range ottimale:} [ $\geq$ 60\%].
 	\end{itemize}
 \end{itemize}
+
+\subsection{Tecniche di analisi}
+\subsubsection{Analisi statica}
+L'analisi statica è una tecnica di analisi che permette di verificare quanto è stato prodotto evidenziando errori o anomalie. Essa è applicabile sia ai documenti che al codice e può essere eseguita in due modalità distinte ma complementari.
+
+\paragraph{2.10.1.1 Walkthrough}
+Si effettua eseguendo una lettura critica a largo spettro. Questa tecnica di norma è utilizzata nelle prime attività del progetto, quando i membri del gruppo non hanno ancora acquisito la necessaria esperienza che permette loro di attuare una verifica più precisa. Tramite l'utilizzo di tale tecnica il \textit{Verificatore} potrà creare una lista di controllo con gli errori che si verificano più frequentemente, in modo da 	migliorare il controllo di tali attività nelle fasi future del progetto.
+Per distribuirne il carico di lavoro e affinchè tale attività sia efficace ed efficiente è necessaria la collaborazione di più membri del gruppo. Dopo una fase iniziale di lettura e individuazione degli errori, segue una fase di discussione finalizzata ad esaminare gli errori riscontrati e a proporre strategie adeguate per risolverli. L'ultima fase consiste nell'attuare le correzioni elaborate e a stilare un rapporto delle modifiche effettuate.
+
+\paragraph{2.10.1.2 Inspection}
+Questa tecnica consiste nell'analisi mirata di alcune parti di documenti o di codice che sono ritenute essere le maggiori fonti di errore. Deve essere redatta anticipatamente una lista di controllo da parte dei verificatori, creata tramite l'esperienza ottenuta attraverso la tecnica di walkthrough, che deve essere seguita al fine di rendere efficace questo processo. L'inspection è una tecnica molto più rapida del walkthrough poichè non richiede la lettura integrale del codice o di un documento ma solo delle parti ritenute critiche e riportate nella lista di controllo. A differenza della walkthrough questa tecnica è svolta solamente dai verificatori, che si occupano di individuare e correggere gli errori e di scrivere un rapporto che tenga traccia delle modifiche effettuate.
+
+\subsubsection{Analisi dinamica}
+L'analisi dinamica si applica solamente al prodotto software e si attua durante l'esecuzione del codice tramite l'uso di test predisposti a verificarne il corretto funzionamento e alla rilevazione eventuali malfunzionamenti o difetti di implementazione.
+Condizione strettamente necessaria affinchè questa attività sia utile e generi risultati attendibili è che tali test siano ripetibili: infatti un test che, dato un certo input, produce sempre lo stesso output in uno specifico ambiente è capace di evidenziare problemi e verificare la correttezza del software.
+Di conseguenza è necessario definire a priori:
+\begin{itemize}
+	\item \textbf{Ambiente}: consiste sia nel sistema hardware sia in quello software sui quali si è pianificato l'utilizzo del software prodotto;
+	\item \textbf{Specifica}: consiste nello specificare quali sono gli input necessari affinchè si possa effettuare il test e quali output sono attesi;
+	\item \textbf{Procedure}: consiste nello specificare come e in che ordine devono essere effettuati i test e come devono essere analizzati i risultati ottenuti.
+\end{itemize}
+
+\noindent Sono definibili 4 tipi di test: \textit{test di unità}, \textit{test di sistema}, \textit{test di integrazione}, \textit{test di accettazione}.
+
+\paragraph{2.10.2.1 Test di unità}
+Consiste nella verifica di ogni singola unità del software prodotto tramite l'utilizzo di appositi software dedicati. Per unità si intende la più piccola quantità di software che è utile verificare singolarmente e che viene prodotta da un singolo programmatore. Con questi test si vuole accertare il corretto funzionamento dei moduli che compongono il sistema al fine di individuare ed eliminare possibili errori di implementazione commessi dai programmatori.
+
+\paragraph{2.10.2.2 Test di sistema}
+Consiste nel validare il software prodotto una volta che lo si ritiene giunto ad una versione definitiva. Tali test deve verificare che la copertura dei requisiti software stabiliti nella fase di Analisi di Dettaglio sia totale.
+
+\paragraph{2.10.2.3 Test di integrazione}
+Consiste nella verifica dei componenti di sistema che vengono aggiunti in modo incrementale al software precedentemente prodotto e si prefigge di verificare che la combinazione di più componenti funzioni secondo le aspettative. Questo tipo di test serve per individuare possibili errori rimasti dalla realizzazione dei singoli moduli, dalle modifiche delle interfacce o errori presenti nelle componenti software preesistenti forniti da terze parti che non si conoscono ottimamente. Nel caso in cui manchino delle componenti necessarie all'esecuzione di tali test è necessario aggiungere delle componenti fittizie, in modo da non influenzare negativamente l'esito delle analisi.
+
+\paragraph{2.10.2.4 Test di accettazione}
+Si tratta del collaudo finale del software prodotto da parte del proponente. Se il collaudo viene positivamente superato si può procedere al rilascio ufficiale del prodotto sviluppato.
