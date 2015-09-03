@@ -4,6 +4,7 @@
 	\caption[Premi::Front-End::Services]{Premi::Front-End::Services}
 \end{figure}
 Il package gestisce i services del \gls{front-end} dell'applicazione. Comunica con i controller e con i servizi \gls{REST} offerti dal lato \gls{back-end}, fornendo delle risorse sulle quali creare le funzioni per comunicare tra i due layer. La struttura prevede cinque service principali i quali al loro interno contengono dei metodi specifici che forniscono le risorse per dei servizi più precisi.
+Ciascun \textit{service} crea al suo interno un elemento \textit{\$resource} di \gls{Angular} collegato alla rispettiva chiamata REST definita nel back-end. Una risorsa di Angular è un particolare oggetto contenente l'indirizzo della chiamata REST da effettuare, sul quale è possibile invocare le principali funzioni HTTP per interagire con i metodi lato server.
 Per brevità nell'identificare un service è stata omessa la dicitura Premi::\gls{Front-End}::Services lasciando solamente il nome del service stesso. Si assume dunque che la dicitura compatta <nomeService> rappresenta la forma estesa Premi::\gls{Front-End}::Services::<nomeService>.
 \newpage
 
@@ -33,7 +34,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} di reset della password utente.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -70,7 +71,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} per il login dell'utente.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -107,7 +108,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST}  per disconnettere l'utente dal sistema.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -140,7 +141,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} di registrazione di un utente.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -177,7 +178,7 @@ L'AuthenticationService è una classe che fornisce ulteriori metodi per gestire 
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} per ottenere i dati di un utente.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -218,7 +219,7 @@ L'InfographicService è una classe che mette a disposizione dei metodi per la ge
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} per la gestione delle infografiche.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -269,7 +270,7 @@ Il PresentationService rende disponibili dei servizi che si occupano della gesti
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} per la gestione delle presentazioni.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -317,7 +318,7 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} per la gestione dei progetti di progetti di un utente.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -358,7 +359,7 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} di ricerca tramite il nome del progetto.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -395,7 +396,7 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} di ricerca tramite lo username dell'utente.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -434,7 +435,7 @@ ProjectService è una classe che mette a disposizione i metodi per l'organizzazi
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} per la gestione di un singolo progetto.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -478,7 +479,7 @@ SlideService è l'ultimo dei macro servizi offerti e si occupa della gestione de
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} per la gestione degli indici di ordinamento di una slide.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -516,7 +517,7 @@ SlideService è l'ultimo dei macro servizi offerti e si occupa della gestione de
 		\paragraph{Attributi}
 		\begin{itemize}
 			\item \textbf{- \$request: Object}:\\
-			Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
+			Campo dati contenente la route per la chiamata al servizio \gls{REST} delle operazioni di una slide.
 		\end{itemize}	
 		
 		\paragraph{Metodi}
@@ -572,7 +573,7 @@ SlideService è l'ultimo dei macro servizi offerti e si occupa della gestione de
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{- \$request: Object}:\\
-		Campo dati contenente la route per la chiamata al servizio \gls{REST} specifico del servizio.
+		Campo dati contenente la route per la chiamata al servizio \gls{REST} di un componente della slide.
 	\end{itemize}	
 	
 	\paragraph{Metodi}

@@ -11,7 +11,7 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 \subsubsection{Help}
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{img/premi_front_end_directives_help}
+		\includegraphics[width=0.4\linewidth]{img/premi_front_end_directives_help}
 		\caption[Premi::Front-End::Directives::Help]{Premi::Front-End::Directives::Help}
 	\end{figure}
 	
@@ -19,16 +19,18 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 	Rappresenta il componente grafico che permette di visualizzare gli aiuti agli utenti nelle varie sezioni dell'applicazione.
 	
 	\paragraph{Utilizzo}
-	Viene utilizzata per consentire di far vedere all'utente i tips nelle sezioni dell'applicazione. Si attiva a seconda dell'opzione selezionata dall'utente
+	Viene utilizzata per consentire di far mostrare all'utente i tips nelle sezioni dell'applicazione. Si attiva a seconda dell'opzione selezionata dall'utente, se abilita l'aiuto all'uso dell'applicazione oppure no.
 	
 	\paragraph{Attributi}
 	\begin{itemize}
+		\item \textbf{+ controller: String}:\\
+			Stringa che specifica il controller da associare alla direttiva. Per questa direttiva è l'\textit{HelpCtrl};
 		\item \textbf{+ restrict: String}:\\
-		Stringa che specifica la modalità con la quale è possibile inserire la direttiva all'interno della pagina;
+			Stringa che specifica la modalità con la quale è possibile inserire la direttiva all'interno della pagina;
 		\item \textbf{+ scope: Object}:\\
-		Oggetto scope locale della direttiva;
+			Oggetto scope locale della direttiva;
 		\item \textbf{+ templateUrl: String}:\\
-		Stringa che specifica il percordo dove è situato il file \gls{HTML} che contiene il \gls{template} della direttiva
+			Stringa che specifica il percordo dove è situato il file \gls{HTML} che contiene il \gls{template} della direttiva
 	\end{itemize}
 \newpage
 
@@ -36,7 +38,7 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 \subsubsection{HomePage}
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{img/premi_front_end_directives_homepage}
+		\includegraphics[width=0.4\linewidth]{img/premi_front_end_directives_homepage}
 		\caption[Premi::Front-End::Directives::HomePage]{Premi::Front-End::Directives::HomePage}
 	\end{figure}
 	
@@ -44,10 +46,12 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 	Rappresenta il componente grafico che permette all'utente di accedere alle sezioni di login e registrazione e per effettuare la ricerca. Questo componente è visibile all'apertura dell'applicazione.
 	
 	\paragraph{Utilizzo}
-	Viene utilizzata per consentire all'utente di raggiungere le principali sezioni dell'applicazione e per eseguire la ricerca dei progetti.
+	Viene utilizzata per consentire all'utente di raggiungere le principali sezioni dell'applicazione e per eseguire la ricerca dei progetti. Deve essere inserita nella pagina iniziale del sito e deve essere attivata all'apertura dell'applicazione o nel momento in cui si deve effettuare una ricerca.
 		
 	\paragraph{Attributi}
 	\begin{itemize}
+		\item \textbf{+ controller: String}:\\
+			Stringa che specifica il controller da associare alla direttiva. Per questa direttiva è l'\textit{HomePageCtrl};
 		\item \textbf{+ restrict: String}:\\
 			Stringa che specifica la modalità con la quale è possibile inserire la direttiva all'interno della pagina;
 		\item \textbf{+ scope: Object}:\\
@@ -61,7 +65,7 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 \subsubsection{InfographicEditor}
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{img/premi_front_end_directives_infographiceditor}
+		\includegraphics[width=0.4\linewidth]{img/premi_front_end_directives_infographiceditor}
 		\caption[Premi::Front-End::Directives::InfographicEditor]{Premi::Front-End::Directives::InfographicEditor}
 	\end{figure}
 	
@@ -69,16 +73,18 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 		Rappresenta il componente grafico che permette all'utente di accedere alla sezione per la gestione delle infografiche di un progetto.
 	
 	\paragraph{Utilizzo}
-	Viene utilizzata per consentire all'utente di gestire le proprie infografiche, visualizzarle, modificarle e crearne di nuove. Si attiva quando è selezionata un'\gls{infografica} dalla pagina dei progetti di un utente.
+	Viene utilizzata per consentire all'utente di gestire le proprie infografiche, visualizzarle, modificarle e crearne di nuove. Deve essere inserita nella pagina relativa ai progetti di un utente e attivata quando è selezionata un'\gls{infografica} dalla pagina stessa.
 	
 	\paragraph{Attributi}
 	\begin{itemize}
+		\item \textbf{+ controller: String}:\\
+			Stringa che specifica il controller da associare alla direttiva. Per questa classe èl'\textit{InfographicCtrl};
 		\item \textbf{+ restrict: String}:\\
-		Stringa che specifica la modalità con la quale è possibile inserire la direttiva all'interno della pagina;
+			Stringa che specifica la modalità con la quale è possibile inserire la direttiva all'interno della pagina;
 		\item \textbf{+ scope: Object}:\\
-		Oggetto scope locale della direttiva;
+			Oggetto scope locale della direttiva;
 		\item \textbf{+ templateUrl: String}:\\
-		Stringa che specifica il percordo dove è situato il file \gls{HTML} che contiene il \gls{template} della direttiva
+			Stringa che specifica il percordo dove è situato il file \gls{HTML} che contiene il \gls{template} della direttiva
 	\end{itemize}
 \newpage	
 	
@@ -86,7 +92,7 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 \subsubsection{Presentation}
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{img/premi_front_end_directives_presentation}
+		\includegraphics[width=0.4\linewidth]{img/premi_front_end_directives_presentation}
 		\caption[Premi::Front-End::Directives::Presentation]{Premi::Front-End::Directives::Presentation}
 	\end{figure}
 	
@@ -94,16 +100,18 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 	Rappresenta il componente grafico che permette all'utente di accedere alla sezione per la visualizzazione di una presentazione.
 	
 	\paragraph{Utilizzo}
-	Viene utilizzata per consentire all'utente di visualizzare una presentazione. Si attiva quando è selezionato il comando show nella pagina dei progetti di un utente oppure dalla pagina dei risultati di ricerca.
+	Viene utilizzata per consentire all'utente di visualizzare una presentazione. Deve essere inserita nella pagina relativa ai progetti di un utente e si deve attivare quando è selezionato il comando show nella pagina dei progetti di un utente oppure dalla pagina dei risultati di ricerca.
 	
 	\paragraph{Attributi}
 	\begin{itemize}
+		\item \textbf{+ controller: String}:\\
+			Stringa che specifica il controller da associare alla direttiva. Per questa direttiva è il \textit{PresentationCtrl};
 		\item \textbf{+ restrict: String}:\\
-		Stringa che specifica la modalità con la quale è possibile inserire la direttiva all'interno della pagina;
+			Stringa che specifica la modalità con la quale è possibile inserire la direttiva all'interno della pagina;
 		\item \textbf{+ scope: Object}:\\
-		Oggetto scope locale della direttiva;
+			Oggetto scope locale della direttiva;
 		\item \textbf{+ templateUrl: String}:\\
-		Stringa che specifica il percordo dove è situato il file \gls{HTML} che contiene il \gls{template} della direttiva
+			Stringa che specifica il percordo dove è situato il file \gls{HTML} che contiene il \gls{template} della direttiva
 	\end{itemize}
 \newpage
 
@@ -111,7 +119,7 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 \subsubsection{PresentationEditor}
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{img/premi_front_end_directives_presentationeditor}
+		\includegraphics[width=0.4\linewidth]{img/premi_front_end_directives_presentationeditor}
 		\caption[Premi::Front-End::Directives::PresentationEditor]{Premi::Front-End::Directives::PresentationEditor}
 	\end{figure}
 	
@@ -119,7 +127,7 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 	Rappresenta il componente grafico che permette all'utente di accedere alla sezione per la modifica di una presentazione.
 	
 	\paragraph{Utilizzo}
-	Viene utilizzata per consentire all'utente di modificare una presentazione. Si attiva quando è selezionato il comando edit nella pagina dei progetti di un utente.
+	Viene utilizzata per consentire all'utente di modificare una presentazione. Si attiva quando è selezionato il comando edit nella pagina dei progetti di un utente, deve essere quindi inserita in questa pagina.
 	
 	\paragraph{Relazione con le altre classi}
 	\begin{itemize}
@@ -129,12 +137,14 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 	
 	\paragraph{Attributi}
 	\begin{itemize}
+		\item \textbf{+ controller: String}:\\
+			Stringa che specifica il controller da associare alla direttiva. Per questa classe è il \textit{PresentationEditorCtrl};
 		\item \textbf{+ restrict: String}:\\
-		Stringa che specifica la modalità con la quale è possibile inserire la direttiva all'interno della pagina;
+			Stringa che specifica la modalità con la quale è possibile inserire la direttiva all'interno della pagina;
 		\item \textbf{+ scope: Object}:\\
-		Oggetto scope locale della direttiva;
+			Oggetto scope locale della direttiva;
 		\item \textbf{+ templateUrl: String}:\\
-		Stringa che specifica il percordo dove è situato il file \gls{HTML} che contiene il \gls{template} della direttiva
+			Stringa che specifica il percordo dove è situato il file \gls{HTML} che contiene il \gls{template} della direttiva
 	\end{itemize}
 \newpage
 
@@ -142,7 +152,7 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 \subsubsection{SlideEditor}
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{img/premi_front_end_directives_slideeditor}
+		\includegraphics[width=0.4\linewidth]{img/premi_front_end_directives_slideeditor}
 		\caption[Premi::Front-End::Directives::SlideEditor]{Premi::Front-End::Directives::SlideEditor}
 	\end{figure}
 	
@@ -160,12 +170,14 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 	
 	\paragraph{Attributi}
 	\begin{itemize}
+		\item \textbf{+ controller: String}:\\
+			Stringa che specifica il controller da associare alla direttiva. In questo caso è lo \textit{SlideEditorCtrl};
 		\item \textbf{+ restrict: String}:\\
-		Stringa che specifica la modalità con la quale è possibile inserire la direttiva all'interno della pagina;
+			Stringa che specifica la modalità con la quale è possibile inserire la direttiva all'interno della pagina;
 		\item \textbf{+ scope: Object}:\\
-		Oggetto scope locale della direttiva;
+			Oggetto scope locale della direttiva;
 		\item \textbf{+ templateUrl: String}:\\
-		Stringa che specifica il percordo dove è situato il file \gls{HTML} che contiene il \gls{template} della direttiva
+			Stringa che specifica il percordo dove è situato il file \gls{HTML} che contiene il \gls{template} della direttiva
 	\end{itemize}
 \newpage
 
@@ -173,7 +185,7 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 \subsubsection{Projects}
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{img/premi_front_end_directives_projects}
+		\includegraphics[width=0.4\linewidth]{img/premi_front_end_directives_projects}
 		\caption[Premi::Front-End::Directives::Projects]{Premi::Front-End::Directives::Projects}
 	\end{figure}
 	
@@ -185,12 +197,14 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 	
 	\paragraph{Attributi}
 	\begin{itemize}
+		\item \textbf{+ controller: String}:\\
+			Stringa che specifica il controller da associare alla direttiva. Per questa direttiva è il \textit{ProjectsCtrl};
 		\item \textbf{+ restrict: String}:\\
-		Stringa che specifica la modalità con la quale è possibile inserire la direttiva all'interno della pagina;
+			Stringa che specifica la modalità con la quale è possibile inserire la direttiva all'interno della pagina;
 		\item \textbf{+ scope: Object}:\\
-		Oggetto scope locale della direttiva;
+			Oggetto scope locale della direttiva;
 		\item \textbf{+ templateUrl: String}:\\
-		Stringa che specifica il percordo dove è situato il file \gls{HTML} che contiene il \gls{template} della direttiva
+			Stringa che specifica il percordo dove è situato il file \gls{HTML} che contiene il \gls{template} della direttiva
 	\end{itemize}
 \newpage
 
@@ -198,7 +212,7 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 \subsubsection{User}
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{img/premi_front_end_directives_user}
+		\includegraphics[width=0.4\linewidth]{img/premi_front_end_directives_user}
 		\caption[Premi::Front-End::Directives::User]{Premi::Front-End::Directives::User}
 	\end{figure}
 	
@@ -211,10 +225,10 @@ Per brevità nell'identificare una direttiva è stata omessa la dicitura Premi::
 	\paragraph{Attributi}
 	\begin{itemize}
 		\item \textbf{+ restrict: String}:\\
-		Stringa che specifica la modalità con la quale è possibile inserire la direttiva all'interno della pagina;
+			Stringa che specifica la modalità con la quale è possibile inserire la direttiva all'interno della pagina;
 		\item \textbf{+ scope: Object}:\\
-		Oggetto scope locale della direttiva;
+			Oggetto scope locale della direttiva;
 		\item \textbf{+ templateUrl: String}:\\
-		Stringa che specifica il percordo dove è situato il file \gls{HTML} che contiene il \gls{template} della direttiva
+			Stringa che specifica il percordo dove è situato il file \gls{HTML} che contiene il \gls{template} della direttiva
 	\end{itemize}
 \newpage
