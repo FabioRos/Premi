@@ -8,7 +8,7 @@
 
 
 \paragraph{Descrizione}
-La classe Events è una classe astratta che viene estesa da tutti i nuovi eventi creati.
+La classe Event fornisce una semplice implementazione di un observer, che permette di gestire l'applicazione attraverso gli eventi. Viene estesa da tutti i nuovi eventi creati.
 
 \newpage
 \subsubsection{ProjectWasCreated}
@@ -21,7 +21,7 @@ La classe Events è una classe astratta che viene estesa da tutti i nuovi eventi
 
 
 \paragraph{Descrizione}
-La classe ProjectWasCreated è un evento che gestisce la creazione di un nuovo progetto, creando una presentazione con prima \gls{slide} di default ad esso correlato.
+La classe ProjectWasCreated è un evento che gestisce la creazione di un nuovo progetto, creando una presentazione con prima \gls{slide} di default ad esso correlato. La classe evento è semplicemente un container di dati che mantiene le informazioni relative al momento in cui viene creato un progetto..
 
 \paragraph{Utilizzo}
 Utilizzata quando viene creato un nuovo progetto.
