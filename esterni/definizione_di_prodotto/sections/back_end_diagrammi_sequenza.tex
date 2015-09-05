@@ -1,4 +1,5 @@
-Nei diagrammi di sequenza viene illustrata l'interazione tra il \gls{database} e i controller che recuperano i parametri, richiesti dai services del front-end, attraverso l'\gls{ORM} Eloquent fornito da \gls{Laravel}. Le associazioni tra richieste e controller sono mappate nel file \textit{routes.php}. Un controller termina la propria esecuzione restituendo al service del front-end un oggetto JSON che contiene:
+Laravel rende semplice la connesione al database e successiva esecuzione delle query attaverso l'\gls{ORM}, passando per il query builder. Una volta configurato il \gls{database} il sistema è pronto per eseguire le query tramite la Facade DB fornito da \gls{Laravel}. Tale classe fornisce svariati metodi di commando come, select, update, insert, ecc..
+Nei diagrammi di sequenza viene illustrata l'interazione tra il \gls{database} e il recupero dei parametri, richiesti dai services del front-end. Le associazioni tra richieste e controller sono mappate nel file \textit{routes.php}. Un controller termina la propria esecuzione restituendo al service del front-end un oggetto JSON che contiene:
 \begin{itemize}
 	\item i parametri corretti se la richiesta va a buon fine ed il metodo preveda il ritorno di essi;
 	\item un messaggio di successo nel caso il metodo non preveda il ritorno di alcun paramento(es. salvataggio sul \gls{database});

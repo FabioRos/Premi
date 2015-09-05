@@ -1,3 +1,7 @@
+\subsubsection{Controller}
+La classe base Controller è una classe astratta che usa il \gls{trait} \textit{ValidatesRequest}. \\\textit{ValidatesRequest} permette, tramite un metodo di comodo(validate), di validare le richieste in arrivo con molte tipologie di regole diverse. Il metodo validate() accetta come parametro una richiesta HTTP(la classe Request)e un set di regole di validazione. Se i dati passati nella richiesta "passano" questo test di validazione, il resto del codice viene eseguito normalmente. In caso contrario, invece, l'utente viene possibilmente reindirizzato alla pagina dove si trovava precedentemente, con l'aggiunta di un set di dati (informazioni relative agli errori) da poter mostrare.
+
+
 \subsubsection{UserController}
 \begin{figure}[h]
 \centering
@@ -14,14 +18,13 @@
 	\paragraph{Metodi}
 		\begin{itemize}
 			\item \textbf{+ show(username: String) : JSON}\\
-			Il metodo verifica se c'è un utente autenticato. Se la verifica ha avuto successo si procede con il recupero dei dati dell'utente a cui corrisponde la variabile \textit{username}, in particolare il suo profilo, e restituisce un oggetto \gls{JSON} contenente tali informazioni:\\
+			Il metodo effettua il recupero dei dati dell'utente a cui corrisponde la variabile \textit{username} univoca, in particolare il suo profilo, e restituisce un oggetto \gls{JSON} contenente tali informazioni:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item username : String;\\
 				Stringa contenente il nome utente.
 			\end{itemize}
 			
-			\newpage
 			\item \textbf{+ update(request: Request, username: String) : boolean}\\
 			Il metodo recupera l'utente autenticato e aggiorna i dati del profilo contenuti nella richiesta HTTP \textit{request}. Il metodo ritorna un valore booleano che indica che i dati sono stati aggiornati:\\
 			\textbf{Argomenti}
@@ -350,7 +353,8 @@
 
 \newpage
 \subsubsection{Premi::Http::Controllers::Auth}
-\gls{Laravel} implementa un semplice meccanismo di autenticazione. Infatti, quasi tutto è già configurato "out of the box". Il file di configurazione si trova in config/auth.\gls{php}, che contiene una serie di opzioni, ben documentate, che useremo per ottimizzare il comportamento del servizio di autenticazione.\\
+\gls{Laravel} utilizza due controller legati all'autenticazione, presenti nel namespace Premi::Http::Controllers::Auth. Il motivo è legato alla comodità di avere due controller che solitamente non subiscono modifiche. 
+Implementa un semplice meccanismo di autenticazione. Infatti, quasi tutto è già configurato "out of the box". Il file di configurazione si trova in config/auth.php, che contiene una serie di opzioni, ben documentate, che useremo per ottimizzare il comportamento del servizio di autenticazione.\\
 Ognuno di questi controller usa un \gls{trait} che include i loro metodi necessari.
 	\paragraph{AuthController}
 	\begin{figure}[h]
