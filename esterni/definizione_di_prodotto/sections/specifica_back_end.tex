@@ -22,7 +22,7 @@ Il package gestisce lo scambio di informazioni tra una sorgente dati e l'interfa
 		\label{fig:back_end_premi_http_controllers}
 	\end{figure}
 
-I controller accolgono le richieste dal client sfruttando i dati forniti dal model. Attraverso i controller si organizza il comportamento dell'applicazione. Tutti i controller ereditano la classe \textit{Controller} di base.
+I controller accolgono le richieste dal client sfruttando i dati forniti dal model. Attraverso i controller si organizza il comportamento dell'applicazione. Tutti i controller ereditano la classe \textit{Controller} di base incluso nell'installazione di \gls{Laravel}.
 \input{sections/controller_back_end.tex}
 
 \newpage
@@ -33,8 +33,7 @@ I controller accolgono le richieste dal client sfruttando i dati forniti dal mod
 	\caption[Premi::Events]{Premi::Http::Events}
 	\label{fig:premi_back_end_events}
 \end{figure}
-
-Gli eventi forniscono una semplice implementazione di osservazione che consente all'applicazione di restare in ascolto di eventuali eventi lanciati da qualche funzione.
+Gli eventi forniscono una semplice implementazione di osservazione che consente all'applicazione di restare in ascolto di eventuali eventi lanciati da qualche funzione, mentre i loro handlers sono salvati all'interno di Premi::Listeners.
 \input{sections/events_back_end.tex}
 
 \newpage
@@ -46,5 +45,5 @@ Gli eventi forniscono una semplice implementazione di osservazione che consente 
 	\label{fig:back_end_premi_listeners}
 \end{figure}
 
-I listeners restano in ascolto, in attesa di essere chiamati da qualche evento, e contengono al loro interno la logica per rispondere  all'evento che li ha invocati. 
+I listeners restano in ascolto, in attesa di essere chiamati da qualche evento, e ricevono un istanza di un evento nel loro metodo handle.
 \input{sections/listeners_back_end.tex}
