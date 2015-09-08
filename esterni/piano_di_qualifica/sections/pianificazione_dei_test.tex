@@ -19,7 +19,7 @@ I test di sistema descritti sotto, sono quelli che si riferiscono ai requisisti 
 			TS3	& Viene verificato che il sistema permetta di effettuare una ricerca di un progetto con le modalità implementate & Success & R[OBB][F]3\\ \midrule
 			TS4	& Viene verificato che il sistema apra un progetto in modalità visualizzazione & Success & R[OBB][F]4\\ \midrule
 			TS5 & Viene verificato che il sistema generi il PDF del progetto & Success & R[OPZ][F]5\\ \midrule
-			TS6 & Viene verificato che il sistema generi un pacchetto stand-alone per la visualizzazione offline & N.A. & R[OBB][F]6\\ \midrule
+			TS6 & Viene verificato che il sistema generi un pacchetto stand-alone per la visualizzazione offline & N.A. & R[OPZ][F]6\\ \midrule
 			TS7 & Viene verificato che il sistema crei un nuovo progetto & Success & R[OBB][F]7\\ \midrule
 			TS8 & Viene verificato che il sistema apra un progetto precedentemente creato & Success & R[OBB][F]8\\ \midrule
 			TS9 & Viene verificato che il sistema permetta la modifica del contenuto di una \gls{slide} & Success & R[OBB][F]9\\ \midrule
@@ -244,15 +244,15 @@ All'utente é richiesto di:
 	\midrule
 		TU2 & Viene verificato il corretto caricamento e salvataggio di un'immagine proveniente dal server web o dispositivo esterno & ImageCtrl :: upload() ,ImageCtrl :: load() , ImageCtrl :: save() & N.A\\
 	\midrule
-		TU3 & Viene verificato che vengano reperite correttamente le informazioni per l'istanziazione del componenten inoltre viene verificato che le informazioni del componente vengano aggiornate correttamente & RealTimeDataCtrl :: load() , RealTimeDataCtrl :: save() & N.A\\
+		TU3 & Viene verificato che vengano reperite correttamente le informazioni per l'istanziazione del componente inoltre viene verificato che le informazioni del componente vengano aggiornate correttamente & RealTimeDataCtrl :: load() , RealTimeDataCtrl :: save() & N.A\\
 	\midrule
-		TU4 & Viene verificato che vengano caricate correttamente le informazioni relative alla tabella corrente mediante  l'utilizzo del servizio  TableService & TableCtrl :: load() & Success\\
+		TU4 & Viene verificato che vengano caricate correttamente le informazioni relative alla tabella corrente mediante  l'utilizzo del servizio  TableService & TableCtrl :: load() & N.A.\\
 	\midrule
 		TU5 & Viene verificato il corretto caricamento di un componente testuale  mediante l'utilizzo del servizio
 TextService & TextCtrl :: load() & Success\\
 	\midrule
 		TU6 & Viene verificato venga aggiunto l'elemento con codice identificativo id alla infografica
-in posizione position & InfographicEditorCtrl :: addElement() & Success\\
+in posizione position & InfographicEditorCtrl :: addElement() & N.A.\\
 	\midrule
 		TU7 & Viene verificato che i meccanismi di autenticazione funzionino correttamente & AuthenticationCtrl :: register(username:String,password:String) , AuthenticationCtrl :: logIn() , AuthenticationCtrl :: logOut() & Success\\
 \bottomrule
