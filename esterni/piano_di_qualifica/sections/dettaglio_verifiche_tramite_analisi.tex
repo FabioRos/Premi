@@ -108,6 +108,7 @@ Di seguito viene riportata una tabella con gli indici di Gulpease calcolati per 
 
 \noindent Da tali valori si può dedurre che i periodi di slack pianificati abbiano aiutato ad avere una schedule variance positiva, al contrario l'inesperienza ad affrontare una progettazione architetturale di un sistema software ha portato ad un costo maggiore in termini di budget variance. Nonostante quest'ultima sia negativa, essa rimane comunque al di sopra del minimo accettabile di \euro -346.
 
+\newpage
 
 \subsection{Progettazione di Dettaglio e Codifica}
 \subsubsection{Documenti}
@@ -134,6 +135,7 @@ Di seguito viene riportata una tabella con gli indici di Gulpease calcolati per 
 \end{tabular}
 \caption{Indice Gulpease, Progettazione di Dettaglio e Codifica}
 \end{table}
+
 
 \subsubsection{Processi}
 \label{appendice 6}
@@ -237,3 +239,65 @@ Sono di seguito riportati i risultati dei test di analisi statica effettuati sul
 %Range ottimale: [ >= 60\%].
 
 \end{itemize}
+
+\subsection{Verifica e Validazione}
+\subsubsection{Documenti}
+\label{appendice 8}
+
+Di seguito viene riportata una tabella con gli indici di Gulpease calcolati per ogni documento, una volta terminata la fase di verifica. Ogni documento deve rispettare le metriche descritte nella sezione \ref{sezione 3.8} .\\
+
+\hspace{1cm}
+
+\begin{table}[h]
+	\begin{tabular}{|c|c|c|}
+		\hline 
+		\textbf{Documento} & \textbf{Valore Indice} & \textbf{Risultato} \\ 
+		\hline
+		\textit{Norme di Progetto v4.0.0} & 75 & \textcolor{green}{\textit{Superato}} \\  
+		\textit{Piano di Progetto v4.0.0} & 69 & \textcolor{green}{\textit{Superato}} \\ 
+		\textit{Piano di Qualifica v4.0.0} & 70 & \textcolor{green}{\textit{Superato}} \\ 
+		\textit{Analisi dei Requisiti v4.0.0} & 79 & \textcolor{green}{\textit{Superato}} \\
+		\textit{Specifica Tecnica v3.0.0} & 81 & \textcolor{green}{\textit{Superato}} \\ 
+		\textit{Definizione di Prodotto v2.0.0} & 73 & \textcolor{green}{\textit{Superato}} \\ 
+		\textit{Manuale Utente v2.0.0} & 79 & \textcolor{green}{\textit{Superato}} \\ 
+		\textit{Glossario v4.0.0} & 80 & \textcolor{green}{\textit{Superato}} \\ 
+		\hline 
+	\end{tabular}
+	\caption{Indice Gulpease, Verifica e Validazione}
+\end{table}
+
+\newpage
+
+\subsubsection{Processi}
+\label{appendice 9}
+\vspace{3mm}
+
+\begin{table}[h]
+	\begin{tabular}{|c|c|c|}
+		\toprule
+		\textbf{Documento} & \textbf{SV\euro} & \textbf{BV\euro} \\ 
+		\midrule
+		\midrule
+		\textit{Norme di Progetto v4.0.0} & 0 & 0 \\  
+		\textit{Piano di Progetto v4.0.0} & 0 & +25 \\ 
+		\textit{Piano di Qualifica v4.0.0} & & +40 \\ 
+		\textit{Analisi dei Requisiti v4.0.0} & 0 & -22 \\
+		\textit{Specifica Tecnica v3.0.0} & -22 & 0 \\ 
+		\textit{Definizione di Prodotto v2.0.0} & -22 & +44 \\
+		\textit{Codifica} & -45 & 0 \\
+		\textit{Manuale Utente v2.0.0} & 0 & +18 \\
+		\textit{Glossario v4.0.0} & 0 & 0 \\ 
+		\bottomrule
+	\end{tabular}
+	\caption{Esiti verifica processi, Verifica e Validazione}
+\end{table}
+
+\noindent Complessivamente sono stati registrati:
+\begin{itemize}
+	\item \textbf{Schedule Variance:} -99 \euro;
+	\item \textbf{Budget Variance:} 105 \euro.
+\end{itemize}
+
+\noindent Le difficoltà descritte nel \textit{Piano di Progetto v4.0.0} sull'impegno dei componenti del gruppo hanno prolungato i tempi per alcune attività di questo periodo con un effetto negativo sullo SV.
+
+\noindent A causa della diminuzione di ore di impiego di alcuni componenti del gruppo, descritte nell'analisi dei rischi nel \textit{Piano di Progetto v4.0.0}, si è verificato un risparmio rispetto a quanto preventivato, con effetti positivi sul BV. Nonostante la diminuzione di ore, si è riusciti comunque a far fronte a tutte le attività da svolgere in questo periodo.  
