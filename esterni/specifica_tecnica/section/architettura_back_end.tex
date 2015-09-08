@@ -29,6 +29,10 @@
 		\end{figure}
 		Il package rende possibile l'interfacciamento con il \gls{front-end}. Comunica con altri livelli attraverso i risultati di output al livello browser/client e tutti gli altri livelli della rete.
 		Gestisce le chiamate \gls{REST} restituendo i risultati o eseguendo le procedure a seguito delle chiamate da parte del \gls{front-end} di uno specifico \gls{URI}. 
+		\subsubsection*{Classi contenute}
+		\begin{itemize}
+			\item routes: rappresenta le richieste REST. Questo è l'unico punto di accesso tra la parte Front-End e le funzionalità messe a disposizione nel Back-End.
+		\end{itemize}
 		
 \newpage
 		
@@ -38,7 +42,7 @@
 		\includegraphics[width=\linewidth]{img/back-end_logic-tier_package}
 		\caption[*::Http , *::Model, *::Events, *::Listeners, *::Providers]{*::Http , *::Model, *::Events, *::Listeners, *::Providers}
 	\end{figure}
-	Il core dell'applicazione viene implementato dal Model, che incapsulando lo stato dell'applicazione definisce i dati e le operazioni che possono essere eseguite su questi. Il package Http contiene Il componente Controller che ha la responsabilità di trasformare le interazioni dell'utente in azioni eseguite dal Model.
+	Il core dell'applicazione viene implementato dal Model, che incapsulando lo stato dell'applicazione definisce i dati e le operazioni che possono essere eseguite su questi. Il package Http contiene Il componente Controller che ha la responsabilità di trasformare le interazioni dell'utente in azioni eseguite sul Model.
 	
 	\subsubsection*{Package contenuti}
 	\begin{itemize}
@@ -82,6 +86,12 @@
 	\end{figure}
 	Il package contiene le componenti che gestiscono la parte controller del lato \gls{back-end} dell'applicazione. 
 	Sono presenti i controller per il progetto e i suoi componenti. È presente inoltre il package Auth che gestisce la parte di registrazione, autenticazione e recupero password dell'utente. 
+	
+	\subsubsection*{Interazione con altri package}
+	\begin{itemize}
+		\item Vi è un'interazione con il package Premi::Model poiché in esso vengono depositate e prelevati i dati necessari alle richieste;
+		\item Vi è un'iterazione con il package Illuminate::Contracts::Validation in quanto tutte le richieste arrivate al controller vengono validate.
+	\end{itemize}	
 
 	\subsubsection*{Package contenuti}
 		\begin{itemize}
@@ -89,6 +99,7 @@
 		\end{itemize}
 	\subsubsection*{Classi contenute}
 		\begin{itemize}
+			\item Premi::Http::Controllers::UserController;
 			\item Premi::Http::Controllers::ProjectController;
 			\item Premi::Http::Controllers::InfographicController;
 			\item Premi::Http::Controllers::Presentation;
@@ -118,25 +129,50 @@
 		\end{itemize}
 	Ognuno di questi controller usa un \gls{trait} che include i metodi necessari al loro corretto funzionamento.\\
 	Per modificare i campi del form necessari alla registrazione di un nuovo utente, è sufficente modificare la classe Services::Registrar. Questa classe è responsabile della creazione e validazione dei nuovi utenti. Il metodo \textit{validator} di Registrar contiene le regole di validazione per i nuovi utenti, mentre il metodo \textit{create} di Registrar è responsabile della creazione di un nuovo record User nel database. Registrar è chiamato da AuthController tramite dei metodi contenuti nel \gls{trait} AuthenticatesAndRegistersUsers.
+	
+	\subsection*{Premi:Http::Controllers::UserController}
+		\begin{itemize}
+			\item \textbf{Descrizione:} Classe responsabile delle operazioni e della logica riguardante la gestione e la modifica di un utente;
+		\end{itemize}
+		\subsubsection*{Interazione con altre classi}
+		\begin{itemize}
+			\item Premi::Model::User;
+		\end{itemize}
 			
 	\subsubsection*{Premi::Http::Controllers::ProjectController}
 			\begin{itemize}
 				\item \textbf{Descrizione}: Classe responsabile delle operazioni e della logica riguardante la gestione e la modifica di un progetto;
+			\end{itemize}
+			\subsubsection*{Interazione con altre classi}
+			\begin{itemize}
+				\item Premi::Model::Project;
 			\end{itemize}
 			
    \subsubsection*{Premi::Http::Controllers::PresentationController}
 			\begin{itemize}
 				\item \textbf{Descrizione}: Classe responsabile delle operazioni e della logica riguardante la gestione e la modifica di una presentazione;
 			\end{itemize}
+			\subsubsection*{Interazione con altre classi}
+			\begin{itemize}
+				\item Premi::Model::Presentation;
+			\end{itemize}
 			
 	\subsubsection*{Premi::Http::Controllers::InfographicsController}
 			\begin{itemize}
 				\item \textbf{Descrizione}: Classe responsabile delle operazioni e della logica riguardante la gestione e la modifica di un'\gls{infografica};
 			\end{itemize}
+			\subsubsection*{Interazione con altre classi}
+			\begin{itemize}
+				\item Premi::Model::Infographic;
+			\end{itemize}
 			
 	\subsubsection*{Premi::Http::Controllers::SlideController}
 			\begin{itemize}
 				\item \textbf{Descrizione}: Classe responsabile delle operazioni e della logica riguardante la gestione e la modifica di una \gls{slide};
+			\end{itemize}
+			\subsubsection*{Interazione con altre classi}
+			\begin{itemize}
+				\item Premi::Model::Slide;
 			\end{itemize}
 		
 \newpage
@@ -244,6 +280,12 @@
 
 \subsubsection*{Informazioni sul package}
 Il package permette di gestire l'applicazione attraverso gli eventi.
+
+\subsubsection*{Interazione con altri package}
+\begin{itemize}
+	\item Premi::Listeners: il package gestisce gli eventi lanciati;
+\end{itemize}
+
 \subsubsection*{Classi contenute}
 \begin{itemize}
 	\item \textbf{Event: }la classe Event fornisce una semplice implementazione di un observer, che permette di gestire l'applicazione attraverso gli eventi;
@@ -261,12 +303,19 @@ Il package permette di gestire l'applicazione attraverso gli eventi.
 
 \subsubsection*{Informazioni sul package}
 Il package contiene tutti i handler delle classi evento. Gli event listeners ricevono ricevono un istanza di un evento nel loro metodo handle;
+
+\subsubsection*{Interazione con altri package}
+\begin{itemize}
+	\item Premi::Events in quanto è il lancio degli eventi che determina il funzionamento dei listeners.
+\end{itemize}
+
 \subsubsection*{Classi contenute}
 \begin{itemize}
 	\item \textbf{PresentationCreate; }
 	\item \textbf{SlideCreate; }
 \end{itemize}
 
+\newpage
 \subsection{Premi::Providers}
 \begin{figure}[h]
 	\centering
@@ -289,6 +338,11 @@ Il package è la parte centrale delle operazioni di avvio l'applicazione di \gls
 \label{fig:premi_http_model}
 \end{figure}
 		Il package contiene la struttura delle classi di tutti i componenti dell'applicazione.
+		
+		\subsubsection*{Interazione con altri package}
+		\begin{itemize}
+			\item Premi::Controllers: è necessario per far comunicare il model con le richieste Rest;
+		\end{itemize}
 	
 	\subsubsection*{Classi contenute}
 	\begin{itemize}
@@ -296,54 +350,98 @@ Il package è la parte centrale delle operazioni di avvio l'applicazione di \gls
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe contenente le informazioni di un utente.
 		\end{itemize}
+		\subsubsection*{Interazione con altre classi}
+		\begin{itemize}
+			\item Premi::Controllers::UserController;
+		\end{itemize}
 		\item Premi::Model::Project:
 		\begin{itemize}
 			\item \textbf{Descrizione}: classe base contenente le informazioni principali di un progetto.
+		\end{itemize}
+		\subsubsection*{Interazione con altre classi}
+		\begin{itemize}
+			\item Premi::Controllers::ProjectController;
 		\end{itemize}
 			
 		\item Premi::Model::Infographic:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta le infografiche associate a un progetto;
 		\end{itemize}
+		\subsubsection*{Interazione con altre classi}
+		\begin{itemize}
+			\item Premi::Controllers::InfographicController;
+		\end{itemize}
 		
 		\item Premi::Model::Presentation:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta la presentazione del progetto;
+		\end{itemize}
+		\subsubsection*{Interazione con altre classi}
+		\begin{itemize}
+			\item Premi::Controllers::PresentationController;
 		\end{itemize}
 		
 		\item Premi::Model::Slide:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta le \gls{slide} che compongono una presentazione;
 		\end{itemize}
+		\subsubsection*{Interazione con altre classi}
+		\begin{itemize}
+			\item Premi::Controllers::SlideController;
+		\end{itemize}
 		
 		\item Premi::Model::Component:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe base che rappresenta i componenti di cui è formata una \gls{slide};
+		\end{itemize}
+		\subsubsection*{Interazione con altre classi}
+		\begin{itemize}
+			\item Premi::Controllers::SlideController;
 		\end{itemize}
 		
 		\item Premi::Model::Chart:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta l'elemento "grafico" che può essere inserito in una \gls{slide};
 		\end{itemize}
+		\subsubsection*{Interazione con altre classi}
+		\begin{itemize}
+			\item Premi::Controllers::SlideController;
+		\end{itemize}
 		
 		\item Premi::Model::RealTimeData:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta l'elemento "dati real-time" che può essere inserito in una \gls{slide};
+		\end{itemize}
+		\subsubsection*{Interazione con altre classi}
+		\begin{itemize}
+			\item Premi::Controllers::SlideController;
 		\end{itemize}
 		
 		\item Premi::Model::Text:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta l'elemento "testo" che può essere inserito in una \gls{slide};
 		\end{itemize}
+		\subsubsection*{Interazione con altre classi}
+		\begin{itemize}
+			\item Premi::Controllers::SlideController;
+		\end{itemize}
 		
 		\item Premi::Model::Image:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta l'elemento "immagine" che può essere inserito in una \gls{slide};
 		\end{itemize}
+		\subsubsection*{Interazione con altre classi}
+		\begin{itemize}
+			\item Premi::Controllers::SlideController;
+		\end{itemize}
 		
 		\item Premi::Model::Table:
 		\begin{itemize}
 			\item \textbf{Descrizione:} classe che rappresenta l'elemento "tabella" che può essere inserito in una \gls{slide};
+		\end{itemize}
+		\subsubsection*{Interazione con altre classi}
+		\begin{itemize}
+			\item Premi::Controllers::SlideController;
 		\end{itemize}
 	\end{itemize}
 	

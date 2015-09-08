@@ -6,7 +6,8 @@ Le tipologie di permessi sono:
 	\item Utente autenticato: risorsa che può essere richiesta solo da utenti autenticati;
 	\item Utente proprietario: risorsa che può essere richiesta solo da utenti proprietari di un progetto. Un utente proprietario della sua collection di progetti é anche proprietario degli altri elementi contenuti nella collection.
 \end{itemize}
-
+\noindent Si utilizza il singolare per riferirsi alla risorsa \textit{presentation} in quanto è richiesto dai requisiti che una sola presentazione sia associata a un progetto, per cui tale relazione è stata modellata attraverso il costrutto \textit{embedsOne} di \gls{Laravel} che produce nella collezione del database un nome al singolare.
+\newpage
 \begin{table}[h]
 	\begin{tabular}{|p{0.5\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|}
 		\toprule
