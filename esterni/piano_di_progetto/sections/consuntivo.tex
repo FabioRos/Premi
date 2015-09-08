@@ -326,3 +326,88 @@ La seguente tabella riporta la differenza di ore impiegate rispetto a quanto pre
 
 \subsubsection{Conclusioni}
 Dalla tabella~\ref{tab6} si può notare come, per svolgere le attività riportate nel diagramma di \gls{Gantt} in figura~\ref{fig4}, sono state impiegate dodici ore meno del previsto con un avanzo di \textbf{229} euro. Tale risparmio è dovuto soprattutto ad una carenza di ore dedicate al progetto da alcuni membri che hanno dedicato maggiori sforzi nel preparare altri esami, causando anche qualche contrasto all'interno del gruppo, come spiegato anticipatamente nell'analisi dei rischi in sezione \ref{rischi}. Tale risparmio si cercherà di investire, almeno in parte, nel prossimo ed ultimo periodo, \textit{Verifica e Validazione}, nelle attività di collaudo e validazione del prodotto. 
+
+\newpage
+\subsection{Verifica e Validazione}
+Si riporta di seguito il consuntivo del periodo di \textit{Verifica e Validazione}.
+
+\subsubsection{Consuntivo}
+La seguente tabella riporta la differenza di ore impiegate rispetto a quanto preventivato, divise per ruolo. I valori negativi nella tabella indicano un monte ore maggiore di quello preventivato, i valori positivi una diminuzione di ore.
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|l|c|c|}
+		\toprule
+		\textbf{Ruolo} & \textbf{Ore per ruolo} & \textbf{Costo per ruolo} \\
+		
+		\midrule
+		Responsabile di Progetto & +3 & +75 \\
+		Amministratore di Progetto & & \\ 
+		Analista & +1 & +25 \\
+		Progettista & & \\
+		Programmatore & -7 & -105 \\
+		Verificatore & +1 & +15 \\
+		\midrule
+		\textbf{Totale} & -2 & +10 \\
+		
+		\bottomrule
+	\end{tabular}
+	\caption{Differenza ore e costo per ruolo, Verifica e Validazione}
+	\label{tab7}
+\end{table} 
+
+\noindent La seguente tabella riporta le differenze tra ore preventivate e quelle impiegate, per membro, durante il periodo di \textit{Verifica e Validazione}: 
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|l|c|c|c|c|c|c|c|}
+		\toprule
+		\textbf{Cognome e Nome} & \multicolumn{6}{c}{\textbf{Ore per ruolo}} & \textbf{Ore Totali} \\
+		& \textbf{Re} & \textbf{Am} & \textbf{An} & \textbf{Pt} & \textbf{Pr} & \textbf{Ve} & \\
+		
+		\midrule
+		Agostinetto Matteo & -5 & & & & & & -5 \\
+		Burlin Valerio & & & +1 & & & & +1 \\ 
+		Carraro Nicola & & & & & & & \\
+		Crespan Emanuele & +8 & & & & -8 & & \\
+		Ros Fabio & & & & & & & \\
+		Suierica Bogdan & & & & & & +1 & +1 \\
+		
+		\bottomrule
+	\end{tabular}
+	\caption{Differenza ore a componente per ruolo, Verifica e Validazione}
+\end{table}
+
+\newpage
+\noindent Il seguente grafico riporta la differenza tra le ore preventivate e quelle impiegate, per ruolo, durante il periodo di \textit{Verifica e Validazione}:
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[
+	ybar,
+	tick label style={font=\small},
+	tickpos=left,
+	xlabel = {Ruoli},
+	ylabel = {Ore Produttive},
+	xticklabels={Responsabile di Progetto, Amministratore di Progetto, Analista, Progettista, Programmatore, Verificatore}, 
+	xtick={1,2,3,4,5,6},
+	x tick label style = {rotate=45,anchor=east},
+	ymin=0,
+	ymajorgrids = true,
+	legend pos = outer north east,
+	legend style = {nodes=right,font=\footnotesize},
+	]
+	\addplot +[bar shift=-.2cm] plot coordinates {(1, 8) (2, 8) (3, 8) (4, 25) (5, 16) (6, 72)};
+	
+	\addplot +[bar shift=.2cm] plot coordinates {(1, 5) (2, 8) (3, 7) (4, 25) (5, 24) (6, 71)};
+	\legend{\strut Ore preventivo, \strut Ore consuntivo}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Consuntivo orario, Verifica e Validazione}
+\end{figure}
+
+\subsubsection{Conclusioni}
+Dalla tabella~\ref{tab7} si può notare come, per svolgere le attività riportate nel diagramma di \gls{Gantt} in figura~\ref{fig5}, sono state impiegate due ore in più del previsto, che hanno portato comunque un avanzo minimo di \textbf{10} euro in quanto sono state tolte delle ore ai ruoli più costosi mentre ne sono state aggiunte a ruoli meno gravanti dal punto di vista economico. Inoltre tale risparmio deriva anche dai problemi di impegno e partecipazione di un componente del gruppo citati nella sezione \ref{sezione 2}.
+
+\newpage
