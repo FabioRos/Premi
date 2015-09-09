@@ -2,7 +2,7 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.7\linewidth]{img/premi_model}
-		\caption[Premi::Model]{Premi::Model}
+		\caption[Premi::Back-End::Model]{Premi::Back-End::Model}
 		\label{fig:back_end_premi_model}
 	\end{figure}
 
@@ -22,7 +22,7 @@ Il package gestisce lo scambio di informazioni tra una sorgente dati e l'interfa
 		\label{fig:back_end_premi_http_controllers}
 	\end{figure}
 
-I controller accolgono le richieste dal client sfruttando i dati forniti dal model. Attraverso i controller si organizza il comportamento dell'applicazione. Tutti i controller ereditano la classe \textit{Controller} di base incluso nell'installazione di \gls{Laravel}.
+I controller accolgono le richieste dal client sfruttando i dati forniti dal model. Attraverso i controller si organizza il comportamento dell'applicazione. Tutti i controller ereditano la classe \textit{Controller} di base incluso nell'installazione di \gls{Laravel}. I metodi delle classi controller possono ricevere in input la variabile request di tipo Request che rappresenta una richiesta Http proveniente dal front-end, contenente dei valori utilizzati per inizializzare o aggiornare i dati dei vari model.   
 \input{sections/controller_back_end.tex}
 
 \newpage

@@ -3,7 +3,7 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.8\linewidth]{img/back_end_user_model}
-		\caption[Diagramma della classe User]{Diagramma della classe User}
+		\caption[Premi::Back-End::Model::User]{Premi::Back-End::Model::User}
 		\label{fig:back_end_user_model}
 	\end{figure}
 
@@ -41,7 +41,7 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_project}
-		\caption[Diagramma della classe Project]{Diagramma della classe Project}
+		\caption[Premi::Back-End::Model::Project]{Premi::Back-End::Model::Project}
 		\label{fig:back_end_premi_model_project}
 	\end{figure}
 
@@ -69,6 +69,13 @@
 		Abbiamo utilizzato la relazione \textit{embedsOne} per riuscire ad incorporare il modello Presentation all'interno dell'oggetto principale Project. Il metodo ritorna Presentation su cui verrà chiamato il metodo \textit{save()} nel caso in cui si voglia aggiornare il modello;
 		\item \textbf{+ infographics() : Infographic}\\
 		Abbiamo utilizzato la relazione \textit{embedsMany} per riuscire ad incorporare il modello Infographic all'interno dell'oggetto principale Project. Il metodo ritorna Infographic su cui verrà chiamato il metodo \textit{save()} nel caso in cui si voglia aggiornare il modello.
+		\item \textbf{+ getParamByProject(project: Project) : array}\\
+		La funzione riceve in ingresso una variabile di tipo Project e ne filtra i parametri che compongono tale oggetto restituendo un array contenente l'ID del progetto, il nome del progetto, l'ID della presentazione ad esso associato, il tema e la transizione della presentazione e la stringa SVG della prima slide della presentazione:\\
+		\textbf{Argomenti:}
+		\begin{itemize}
+			\item project : Project;\\
+			Progetto di cui si vogliono filtrare i parametri.
+		\end{itemize}
 	\end{itemize}
 
 \newpage
@@ -77,7 +84,7 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_infographic}
-		\caption[Diagramma della classe Infographic]{Diagramma della classe Infographic}
+		\caption[Premi::Back-End::Model::Infographic]{Premi::Back-End::Model::Infographic}
 		\label{fig:back_end_premi_model_infographic}
 	\end{figure}
 
@@ -93,10 +100,21 @@
 			\item \textbf{+ timestamps : boolean = false :}\\
 			Di default Eloquent automatizza l'inserimento del timestamp relativo all'inserimento e aggiornamento di un campo. Se alla variabile viene assegnato il valore \textit{false} le informazioni dell'inserimento e del aggiornamento non verranno aggiunte alla collezione;
 			\item \textbf{\# fillable : array = [’name’, ’path’]:}\\
-			Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La propietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass assignment}.
+			Quando si crea un modello, si deve passare una serie di attributi al costruttore del modello stesso. Questi attributi vengono assegnati al modello tramite \textbf{mass assignment}. La proprietà \textit{fillable} serve a specificare quali attributi devono essere assegnabili tramite il \textbf{mass assignment}.
 			\begin{itemize}
 				\item \textbf{name:} indica il nome dell'\gls{infografica};
 				\item \textbf{path:} indica il percorso dove recuperare il file dell'\gls{infografica}.
+			\end{itemize}
+		\end{itemize}
+		
+	\paragraph{Metodi:}
+		\begin{itemize}
+			\item \textbf{+ getParamByInfographic(infographic: Infographic) : array}\\
+			La funzione riceve in ingresso una variabile di tipo Infographic e ne filtra i parametri che compongono tale oggetto restituendo un array contenente l'ID dell'infografica, il nome ed il path per recuperarla:\\
+			\textbf{Argomenti:}
+			\begin{itemize}
+				\item infographic : Infographic;\\
+				Infografica di cui si vogliono filtrare i parametri.
 			\end{itemize}
 		\end{itemize}
 \newpage
@@ -107,7 +125,7 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.8\linewidth]{img/back_end_premi_model_presentation}
-		\caption[Diagramma della classe Presentation]{Diagramma della classe Presentation}
+		\caption[Premi::Back-End::Model::Presentation]{Premi::Back-End::Model::Presentation}
 		\label{fig:back_end_premi_model_presentation}
 	\end{figure}
 
@@ -139,22 +157,22 @@
 		Tale metodo statico riceve in input un oggetto di tipo Presentation ed i valori degli assi X e Y dove verrà inserita la nuova \gls{slide}. Il metodo utilizza una query per ritornare l'insieme delle \gls{slide} che devono essere traslate a causa dell'inserimento della nuova \gls{slide}, e, per ognuna, effettua un incremento dei valori degli assi X e Y in base alla nuova posizione che dovrà occupare la \gls{slide}:\\
 		\textbf{Argomenti:}
 		\begin{itemize}
-			\item presentation : Presentation;
+			\item presentation : Presentation;\\
 			Presentazione di cui si vogliono incrementare gli indici delle \gls{slide}.
-			\item xIndex : int;
+			\item xIndex : int;\\
 			Indice dell'asse X della \gls{slide} appena inserita, da cui, se necessario, bisogna partire a fare l'incremento.
-			\item yIndex : int;
+			\item yIndex : int;\\
 			Indice dell'asse Y della \gls{slide} appena inserita, da cui, se necessario, bisogna partire a fare l'incremento.
 		\end{itemize}
 		\item \textbf{+ decrementIndex(presentation: Presentation, xIndex: int, yIndex: int) : void}\\
 		Tale metodo statico riceve in input un oggetto di tipo Presentation ed i valori degli assi X e Y della \gls{slide} appena cancellata. Il metodo utilizza una query per ritornare l'insieme delle \gls{slide} che devono essere traslate a causa della cancellazione della nuova \gls{slide}, e, per ognuna, effettua un decremento dei valori degli assi X e Y in base alla nuova posizione che dovrà occupare la \gls{slide}:\\
 		\textbf{Argomenti:}
 		\begin{itemize}
-			\item presentation : Presentation;
+			\item presentation : Presentation;\\
 			Presentazione di cui si vogliono decrementare gli indici delle \gls{slide}.
-			\item xIndex : int;
+			\item xIndex : int;\\
 			Indice dell'asse X della \gls{slide} appena inserita, da cui, se necessario, bisogna partire a fare il decremento.
-			\item yIndex : int;
+			\item yIndex : int;\\
 			Indice dell'asse Y della \gls{slide} appena inserita, da cui, se necessario, bisogna partire a fare decremento.
 		\end{itemize}
 	\end{itemize}
@@ -166,7 +184,7 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.7\linewidth]{img/back_end_premi_model_slide}
-		\caption[Diagramma della classe \gls{Slide}]{Diagramma della classe Slide}
+		\caption[Premi::Back-End::Model::Slide]{Premi::Back-End::Model::Slide}
 		\label{fig:back_end_premi_model_slide}
 	\end{figure}
 
@@ -199,7 +217,7 @@
 		Questo metodo statico riceve in ingresso un oggetto di tipo \gls{Slide}, ed elimina tutti i vecchi componenti di tale \gls{slide} prima di effettuare l'aggiornamento con i nuovi componenti:\\
 		\textbf{Argomenti:}
 		\begin{itemize}
-			\item \gls{slide} : \gls{Slide};
+			\item \gls{slide} : \gls{Slide};\\
 			\gls{Slide} di cui eliminare i componenti.
 		\end{itemize}
 		\newpage
@@ -207,10 +225,24 @@
 		Questo metodo statico riceve in ingresso un oggetto di tipo \gls{Slide} ed un array di Component ed inserisce nella \gls{slide} tutti i nuovi componenti presenti nell'array:\\
 		\textbf{Argomenti:}
 		\begin{itemize}
-			\item slide : Slide;
+			\item slide : Slide;\\
 			\gls{Slide} di cui si vogliono aggiornare i componenti.
-			\item components[] : Component;
+			\item components[] : Component;\\
 			Array di componenti da inserire nella \gls{slide}.
+		\end{itemize}
+		\item \textbf{+ getComponentsBySlide(slide: Slide) : array}\\
+		La funzione riceve in ingresso una variabile di tipo Slide e ne filtra i parametri che compongono tale oggetto restituendo un array contenente l'ID della \gls{slide}, la sua posizione rispetto agli assi X e Y della matrice della presentazione e la sua collezione di componenti:\\
+		\textbf{Argomenti:}
+		\begin{itemize}
+			\item slide : Slide;\\
+			\gls{Slide} di cui si vogliono filtrare i parametri.
+		\end{itemize}
+		\item \textbf{+ getSVGBySlides(slide: Slide) : array}\\
+		La funzione riceve in ingresso una variabile di tipo Slide e ne filtra i parametri che compongono tale oggetto restituendo un array contenente l'ID della \gls{slide}, la sua posizione rispetto agli assi X e Y della matrice della presentazione e la sua stringa SVG:\\
+		\textbf{Argomenti:}
+		\begin{itemize}
+			\item slide : Slide;\\
+			\gls{Slide} di cui si vogliono filtrare i parametri.
 		\end{itemize}
 	\end{itemize}
 	\newpage
@@ -221,7 +253,7 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_component}
-		\caption[Diagramma della classe Component]{Diagramma della classe Component}
+		\caption[Premi::Back-End::Model::Component]{Premi::Back-End::Model::Component}
 		\label{fig:back_end_premi_model_component}
 	\end{figure}
 
@@ -274,7 +306,7 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_realTimeData}
-		\caption[Diagramma della classe RealTimeData]{Diagramma della classe RealTimeData}
+		\caption[Premi::Back-End::Model::Chart]{Premi::Back-End::Model::Chart}
 		\label{fig:back_end_premi_model_chart}
 	\end{figure}
 
@@ -304,7 +336,7 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_realTimeData}
-		\caption[Diagramma della classe RealTimeData]{Diagramma della classe RealTimeData}
+		\caption[Premi::Back-End::Model::RealTimeData]{Premi::Back-End::Model::RealTimeData}
 		\label{fig:back_end_premi_model_realTimeData}
 	\end{figure}
 
@@ -335,7 +367,7 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_text}
-		\caption[Diagramma della classe Text]{Diagramma della classe Text}
+		\caption[Premi::Back-End::Model::Text]{Premi::Back-End::Model::Text}
 		\label{fig:back_end_premi_model_text}
 	\end{figure}
 
@@ -372,7 +404,7 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.8\linewidth]{img/back_end_premi_model_image}
-		\caption[Diagramma della classe Image]{Diagramma della classe Image}
+		\caption[Premi::Back-End::Model::Image]{Premi::Back-End::Model::Image}
 		\label{fig:back_end_premi_model_image}
 	\end{figure}
 
@@ -407,7 +439,7 @@
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\linewidth]{img/back_end_premi_model_table}
-		\caption[Diagramma della classe Table]{Diagramma della classe Table}
+		\caption[Premi::Back-End::Model::Table]{Premi::Back-End::Model::Table}
 		\label{fig:back_end_premi_model_table}
 	\end{figure}
 

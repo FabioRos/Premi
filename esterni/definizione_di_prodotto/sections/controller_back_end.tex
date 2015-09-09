@@ -6,7 +6,7 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\linewidth]{img/back_end_http_controllers_userController}
-\caption[Diagramma della classe UserController]{Diagramma della classe UserController}
+\caption[Premi::Back-End::Controller::UserController]{Premi::Back-End::Controller::UserController}
 \label{fig:back_end_http_controllers_userController}
 \end{figure}
 
@@ -18,7 +18,7 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 	\paragraph{Metodi}
 		\begin{itemize}
 			\item \textbf{+ show(username: String) : JSON}\\
-			Il metodo effettua il recupero dei dati dell'utente a cui corrisponde la variabile \textit{username} univoca, in particolare il suo profilo, e restituisce un oggetto \gls{JSON} contenente tali informazioni:\\
+			Il metodo effettua il recupero dei dati dell'utente tramite la funzione ausiliaria Auth::user() di \gls{Laravel} che ritorna l'utente autenticato nel sistema, a cui corrisponde la variabile \textit{username} univoca e restituisce un oggetto \gls{JSON} contenente le informazioni del profilo:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item username : String;\\
@@ -42,6 +42,14 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 				\item username : String;\\
 				Stringa contenente il nome utente.
 			\end{itemize}
+			
+			\item \textbf{+ searchByUsername(request: Request) : JSON}\\
+			Il metodo ritorna un oggetto \gls{JSON} contenente la lista di tutti gli utenti che hanno \textit{username} uguale a quello inserito nell'apposito form:\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item request : Request;\\
+				Richiesta HTTP contenente il valore con cui effettuare la ricerca.
+			\end{itemize}
 		\end{itemize}
 		
 \newpage
@@ -49,7 +57,7 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\linewidth]{img/back_end_http_controllers_projectController}
-\caption[Diagramma della classe ProjectController]{Diagramma della classe ProjectController}
+\caption[Premi::Back-End::Controller::ProjectController]{Premi::Back-End::Controller::ProjectController}
 \label{fig:back_end_http_controllers_projectController}
 \end{figure}
 
@@ -61,7 +69,7 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 	\paragraph{Metodi}
 		\begin{itemize}
 			\item \textbf{+ index(username: String) : JSON}\\
-			Il metodo recupera tutti i progetti dell'utente autenticato e li restituisce. Il metodo restituisce un oggetto \gls{JSON} con le informazioni richieste:\\
+			Il metodo recupera tutti i progetti dell'utente autenticato e li restituisce. Il metodo restituisce un oggetto \gls{JSON} con le informazioni richieste, filtrate dalla funzione statica getParamByProject(Project):\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item username : String;\\
@@ -69,7 +77,7 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 			\end{itemize}
 			
 			\item \textbf{+ store(request: Request, username: String) : boolean}\\
-			Il metodo crea un nuovo progetto assegnandoli un nome e lo salva nel \gls{database} all'interno della collection relativa all'utente autenticato. Il metodo restituisce un oggetto \gls{JSON} contenente il progetto appena creato. Inoltre emette un segnale di tipo \textit{ProjectWasCreated} per la corretta inizializzazione della presentazione relativa al nuovo progetto:\\
+			Il metodo crea un nuovo progetto assegnandoli un nome e lo salva nel \gls{database} all'interno della collection relativa all'utente autenticato. Il metodo restituisce un oggetto \gls{JSON} contenente i parametri filtrati, tramite la funzione getParamByProject(Project), del progetto appena creato. Inoltre emette un segnale di tipo \textit{ProjectWasCreated} per la corretta inizializzazione della presentazione relativa al nuovo progetto:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item request : Request;\\
@@ -100,20 +108,44 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 				Stringa contenente l'ID univoco di un progetto.
 			\end{itemize}
 			
-			\item \textbf{+ searchByUsername(request: Request) : JSON}\\
-			Il metodo ritorna un oggetto \gls{JSON} contenente la lista di tutti gli utenti che hanno \textit{username} uguale a quello inserito nell'apposito form:\\
-			\textbf{Argomenti}
-			\begin{itemize}
-				\item request : Request;\\
-				Richiesta HTTP contenente il valore con cui effettuare la ricerca.
-			\end{itemize}
-			
 			\item \textbf{+ searchByProjectName(request: Request) : JSON}\\
 			Il metodo ritorna un oggetto \gls{JSON} contenente la lista di tutti i progetti che hanno \textit{name} uguale a quello inserito nell'apposito form:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item request : Request;\\
 				Richiesta HTTP contenente il valore con cui effettuare la ricerca.
+			\end{itemize}
+			
+			\item \textbf{+ returnAllFiles(username: String, projectID: String) : JSON}\\
+			Il metodo ritorna un oggetto \gls{JSON} contenente tutti i file media dell'utente che ha relativi al progetto con ID uguale a projectID:\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item username : String;\\
+				Username dell'utente.
+				\item projectID : String;\\
+				ID del progetto relativo all'utente di cui si vogliono ritornare tutti i file.
+			\end{itemize}
+			
+			\item \textbf{+ returnAllFiles(username: String, projectID: String, filename: String) : void}\\
+			Il metodo elimina il file che ha nome uguale a filename relativo al progetto con ID uguale a projectID dell'utente cui corrisponde username:\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item username : String;\\
+				Username dell'utente.
+				\item projectID : String;\\
+				ID del progetto relativo all'utente di cui si vuole eliminare un file.
+				\item filename : String;\\
+				Nome del file che si vuole eliminare.
+			\end{itemize}
+			
+			\item \textbf{+ uploadMedia(username: String, projectID: String) : void}\\
+			Il metodo carica nel server un file media nella cartella relativa al progetto con ID uguale a projectID relativo all'utente cui corrisponde username:\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item username : String;\\
+				Username dell'utente.
+				\item projectID : String;\\
+				ID del progetto relativo all'utente in cui si vuole caricare un file.
 			\end{itemize}
 		\end{itemize}
 		
@@ -122,7 +154,7 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\linewidth]{img/back_end_http_controllers_infographicController}
-\caption[Diagramma della classe InfographicController]{Diagramma della classe InfographicController}
+\caption[Premi::Back-End::Controller::InfographicController]{Premi::Back-End::Controller::InfographicController}
 \label{fig:back_end_http_controllers_infographicController}
 \end{figure}
 
@@ -134,7 +166,7 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 	\paragraph{Metodi}
 		\begin{itemize}
 			\item \textbf{+ index(username: String, projectID: String) : JSON}\\
-			Il metodo recupera le infografiche relative ad un progetto dell'utente autenticato e restituisce un oggetto \gls{JSON} con tutte le infografiche associate al progetto:\\
+			Il metodo recupera le infografiche relative ad un progetto dell'utente autenticato e restituisce un oggetto \gls{JSON} con tutte le infografiche associate al progetto, filtrandone i parametri con la funzione statica getParamByInfographic(Infographic):\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item username : String; \\
@@ -144,7 +176,7 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 			\end{itemize}
 			
 			\item \textbf{+ store(request: Request, username: String, projectID: String) : JSON}\\
-			Il metodo crea una nuova \gls{infografica} assegnandoli un nome e il path per il salvataggio e la salva nel progetto con ID = projectID relativo all'utente autenticato. Il metodo ritorna un oggetto \gls{JSON} contenente l'\gls{infografica} appena creata:\\
+			Il metodo crea una nuova \gls{infografica} assegnandoli un nome e il path per il salvataggio e la salva nel progetto con ID = projectID relativo all'utente autenticato. Il metodo ritorna un oggetto \gls{JSON} contenente i dati, filtrati della funzione statica getParamByInfographic(Infographic), dell'\gls{infografica} appena creata:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item request : Request;\\
@@ -156,7 +188,7 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 			\end{itemize}
 			
 			\item \textbf{+ show(username: String, projectID: String, infographicID: String) : JSON}\\
-			Il metodo interroga il \gls{database} recuperando il progetto con l'ID = projectID relativo all'utente autenticato ed a partire dal progetto recupera l'\gls{infografica} con ID = infographicID. Il metodo ritorna un oggetto \gls{JSON} con le informazioni richieste dell'\gls{infografica}:\\
+			Il metodo interroga il \gls{database} recuperando il progetto con l'ID = projectID relativo all'utente autenticato ed a partire dal progetto recupera l'\gls{infografica} con ID = infographicID. Il metodo ritorna un oggetto \gls{JSON} con i parametri, filtrati dalla funzione statica getParamByInfographic(Infographic), dell'\gls{infografica}:\\
 			\textbf{Argomenti}
 			\begin{itemize}
 				\item username : String; \\
@@ -199,7 +231,7 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\linewidth]{img/back_end_http_controllers_presentationController}
-\caption[Diagramma della classe PresentationController]{Diagramma della classe PresentationController}
+\caption[Premi::Back-End::Controller::PresentationController]{Premi::Back-End::Controller::PresentationController}
 \end{figure}
 
 
@@ -210,18 +242,6 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 	
 	\paragraph{Metodi}
 		\begin{itemize}
-			\item \textbf{+ show(username: String, projectID: String, presentationID: String) : JSON}\\
-			Il metodo interroga il \gls{database} recuperando il progetto con l'ID = projectID relativo all'utente autenticato ed a partire dal progetto recupera la presentazione con ID = presentationID. Il metodo ritorna un oggetto \gls{JSON} con le informazioni richieste della presentazione:\\
-			\textbf{Argomenti}
-			\begin{itemize}
-				\item username : String; \\
-				Stringa contenente il nome utente.
-				\item projectID : String; \\
-				Stringa contenente l'ID univoco di un progetto associato all'utente autenticato.
-				\item presentationID : String; \\
-				Stringa contenente l'ID univoco della presentazione associata al progetto.
-			\end{itemize}
-			
 			\item \textbf{+ update(request: Request, username: String, projectID: String, presentationID: String) : boolean}\\
 			Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato ed a partire dal progetto recupera la presentazione con ID = presentationID ed aggiorna i dati \textit{theme} e \textit{transition} della presentazione. Il metodo ritorna un valore booleano che indica che l'aggiornamento è stato effettuato:\\
 			\textbf{Argomenti}
@@ -247,6 +267,19 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 				\item presentationID : String; \\
 				Stringa contenente l'ID univoco di una presentazione associata al progetto.
 			\end{itemize}
+			\item \textbf{+ updateAxisPosition(request: Request, username: String, projectID: String, presentationID: String) : void}\\
+			Il metodo aggiorna la posizione rispetto agli assi X e Y, nella matrice della presentazione, delle \gls{slide} della presentazione che ha ID uguale a presentationID con i valori contenuti all'interno della richiesta Http:\\
+			\textbf{Argomenti}
+			\begin{itemize}
+				\item request : Request;\\
+				Richiesta Http contenente i valori con cui aggiornare la posizione rispetto la matrice della presentazione delle \gls{slide};
+				\item username : String; \\
+				Stringa contenente il nome utente.
+				\item projectID : String; \\
+				Stringa contenente l'ID univoco di un progetto associato all'utente autenticato.
+				\item presentationID : String; \\
+				Stringa contenente l'ID univoco della presentazione associata al progetto.
+			\end{itemize}
 		\end{itemize}
 		
 \newpage
@@ -254,7 +287,7 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\linewidth]{img/back_end_http_controllers_slideController}
-\caption[Diagramma della classe SlideController]{Diagramma della classe SlideController}
+\caption[Premi::Back-End::Controller::SlideController]{Premi::Back-End::Controller:: SlideController}
 \label{fig:back_end_http_controllers_slideController}
 \end{figure}
 
@@ -266,7 +299,7 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 	\paragraph{Metodi}
 		\begin{itemize}
 			\item \textbf{+ index(username: String, projectID: String, presentationID: String) : \gls{JSON}}\\
-				Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto e restituisce tutte le \gls{slide} associate ad essa. Il metodo ritorna un oggetto \gls{JSON} contenente le \gls{slide} all'interno della presentazione:\\
+				Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto e restituisce tutte le \gls{slide} associate ad essa. Il metodo ritorna un oggetto \gls{JSON} contenente le \gls{slide} all'interno della presentazione, i cui parametri di ogni slide vengono filtrati dalla funzione statica getSVGBySlides(Slide[]):\\
 				\textbf{Argomenti:}
 				\begin{itemize}
 					\item username : String; \\
@@ -293,7 +326,7 @@ La classe base Controller è una classe astratta che usa il \gls{trait} \textit{
 			
 			\newpage
 			\item \textbf{+ show(username: String, projectID: String, presentationID: String, slideID: String) : \gls{JSON}}\\
-				Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto e la \gls{slide} con ID = slideID. Il metodo ritorna un oggetto \gls{JSON} contenente la \gls{slide} richiesta:\\
+				Il metodo recupera il progetto con ID = projectID relativo all'utente autenticato, per poi recuperare l'unica presentazione associata a tale progetto e la \gls{slide} con ID = slideID. Il metodo ritorna un oggetto \gls{JSON} contenente la \gls{slide} richiesta, i cui parametri sono filtrati dalla funzione statica getComponentsBySlide(Slide):\\
 				\textbf{Argomenti:}
 					\begin{itemize}
 						\item username : String; \\
