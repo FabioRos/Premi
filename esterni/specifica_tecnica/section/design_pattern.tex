@@ -48,12 +48,11 @@ I \gls{Design Pattern} sono un modello da applicare per la risoluzione di proble
 \begin{itemize}
 	\item Command
 	\begin{itemize}
-		\item \textbf{Descrizione:} permette di incapsulare una richiesta in un oggetto in modo da variare il risultato a seconda di un parametro.
+		\item \textbf{Descrizione:} permette di incapsulare una richiesta in un oggetto in modo da variare il risultato a seconda di un parametro. Il pattern permette agli oggetti dell'ambiente di inoltrare richieste a oggetti sconosciuti dell'applicazione trasformando la richiesta in un oggetto.
 		\item \textbf{Contesto d'utilizzo:} \gls{Front-End} e \gls{Back-End}. I casi sono principalmente i seguenti:
 		\begin{itemize}
-			\item \gls{Front-End}: nella modalità "edit" di una \gls{slide}, a seguito di un click su un componente;
-			\item \gls{Front-End}: nella modalità "edit" oppure durante uno slideshow, nel momento in cui una \gls{slide} deve disegnare le sue componenti con un metodo della forma drawComponent(id,tipo);
-			\item \gls{Back-End}: nel momento in cui devo salvare un componente (la classe Premi::\gls{Back-End}::Data-Tier::DataTierFrontController deve essere in grado di selezionare il mapper adeguato al tipo di dati).
+			\item \gls{Front-End}: nella modalità "edit" di una \gls{slide}, a seguito di un click su un componente. La classe specifica un'azione su un destinatario mantenendo il riferimento al destinatario come un attributo e implementando il metodo in modo tale che invochi la richiesta desiderata sull'oggetto sconosciuto; in questo caso sulle classi che derivano da Component;
+			\item \gls{Front-End}: nella modalità "edit" oppure durante uno slideshow, nel momento in cui una \gls{slide} deve disegnare le sue componenti con un metodo della forma drawComponent(id,tipo).
 		\end{itemize}
 	\end{itemize}
 \end{itemize}
