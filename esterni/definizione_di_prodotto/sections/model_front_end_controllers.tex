@@ -18,7 +18,8 @@ Il controller AuthenticationCtrl gestisce l'autenticazione di un utente nel sist
 
 \paragraph{Utilizzo}
 Questa classe viene utilizzata per gestire le richieste di autenticazione, disconnessione e gestione password all'interno del sistema e di regolare l'accesso alle aree riservate.
-In particolare gestisce le operazioni di logIn, logOut e recupero Password.
+In particolare gestisce le operazioni di logIn, logOut e recupero Password.\\
+Il passaggio delle credenziali al back-end avviene in modo chiaro ma attraverso delle apposite chiamate così che i parametri della chiamata siano nascosti. Il criptaggio della password comunque avviene lato back-end con degli appositi metodi, così da poterla memorizzare nel database in modo da rendere impossibile la sua lettura in chiaro.
 \paragraph{Attributi}
 \begin{itemize}
 	\item \textbf{-\$scope: Object}:\\
