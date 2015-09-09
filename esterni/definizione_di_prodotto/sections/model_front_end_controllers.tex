@@ -275,8 +275,14 @@ Questa classe viene utilizzata per consentire all'utente di aggiungere, modifica
 	\begin{itemize}
 		\item \textbf{-\$scope: Object}:\\
 				Campo dati contenente un riferimento all'oggetto \$scope creato da Angular, viene utilizzato come mezzo di comunicazione tra il controller e la view. Contiene gli oggetti che definiscono il model dell'applicazione.
-		\item \textbf{-\$scope.tips: Object}:\\
+		\item \textbf{-tips: Object}:\\
 				Campo dati che racchiude in un array di oggetti JSON tutti i suggerimenti necessari allo svolgimento del tour tra le funzionalità del sistema ed al supporto all'utente.
+				Nello specifico, ciascun  oggetto contiene:
+				\begin{itemize}
+					\item \textbf{id:} campo dati identificativo dell'aiuto;
+					\item \textbf{reference:} campo dati identificativo dell'identificativo html dell'oggetto per il quale fornisce l'aiuto;
+					\item \textbf{description:} campo dati contenente la stringa di testo effettiva dell'aiuto;
+				\end{itemize}
 	\end{itemize}
 
 	\paragraph{Metodi}
