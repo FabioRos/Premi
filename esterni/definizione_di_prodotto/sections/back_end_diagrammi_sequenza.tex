@@ -9,9 +9,9 @@ Nei diagrammi di sequenza viene illustrata l'interazione tra il \gls{database} e
 \subsubsection{Richieste REST}
 Si mostrano i diagrammi di sequenza di alcune chiamate REST che effettua il sistema per meglio specificarne il funzionamento.
 
-\newpage
+\paragraph{3.2.1.1 GET user/:username/project}\mbox{}\\
+Il diagramma sottostante illustra le operazioni necessarie alla ricerca e restituzione della lista di tutti i progetti relativi ad un utente. Dal \textit{service} del front-end arriva una richiesta Http che viene instradata alla classe \textbf{ProjectController} mediante il file \textit{routes.php}. Il ProjectController recupera l'username dell'utente autenticato tramite una invocazione della funzione ausiliaria \textit{Auth::user()}, fornita da \textit{Laravel}, e lo confronta con il parametro \textit{username} passato nella richiesta per verificare la correttezza di tale richiesta. Una volta recuperato l'utente autenticato invoca il metodo \textit{projects()} che ritorna la lista di tutti i progetti relativi a tale utente.
 
-\textbf{GET user/:username/project}
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.7\linewidth]{img/GET_projects}
@@ -19,7 +19,10 @@ Si mostrano i diagrammi di sequenza di alcune chiamate REST che effettua il sist
 		\label{fig:GET user/:username/project}
 	\end{figure}
 
-\textbf{POST user/:username/project}
+\newpage
+\paragraph{3.2.1.2 POST user/:username/project}\mbox{}\\
+Il diagramma sottostante illustra le operazioni necessarie alla creazione di un nuovo progetto. Dal \textit{service} del front-end arriva una richiesta Http che viene instradata alla classe \textbf{ProjectController} mediante il file \textit{routes.php}. Il ProjectController recupera l'username dell'utente autenticato tramite una invocazione della funzione ausiliaria \textit{Auth::user()}, fornita da \textit{Laravel}, crea un nuovo progetto tramite il costruttore di default e gli assegna i valori contenuti nella richiesta Http. La creazione del progetto lancia un evento di tipo \textbf{ProjectWasCreated} che crea una istanza di questa classe. Tale classe a sua volta, collegata a due \textit{Listeners}, istanzia una classe di tipo \textbf{PresentationCreate} che crea una nuova presentazione all'interno del progetto appena creato e una classe di tipo \textbf{SlideCreate} che crea la prima \gls{slide}, di anteprima, della presentazione appena creata.
+
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.6\linewidth]{img/POST_project}
@@ -29,7 +32,9 @@ Si mostrano i diagrammi di sequenza di alcune chiamate REST che effettua il sist
 
 \newpage
 
-\textbf{PUT user/:username/project/:projectID}
+\paragraph{3.2.1.3 PUT user/:username/project/:projectID}\mbox{}\\
+Il diagramma sottostante illustra le operazioni necessarie all'aggiornamento dei dati di un progetto esistente. Dal \textit{service} del front-end arriva una richiesta Http che viene instradata alla classe \textbf{ProjectController} mediante il file \textit{routes.php}. Il ProjectController recupera l'username dell'utente autenticato tramite una invocazione della funzione ausiliaria \textit{Auth::user()}, fornita da \textit{Laravel}, su tale utente invoca il metodo \textit{projects()} che ritorna la lista dei progetti dell'utente. Su tale lista viene invocato il metodo \textit{find(projectID)} che ritorna il progetto da aggiornare. Successivamente utilizza i parametri contenuti nella richiesta Http per aggiornare i dati del progetto su cui viene invocato il metodo \textit{save} che salva il progetto aggiornato nel database.
+
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.6\linewidth]{img/PUT_project}
@@ -37,7 +42,9 @@ Si mostrano i diagrammi di sequenza di alcune chiamate REST che effettua il sist
 		\label{fig:PUT user/:username/project/projectID}
 	\end{figure}
 
-\textbf{DELETE user/:username/project/:projectID}
+\paragraph{3.2.1.4 DELETE user/:username/project/:projectID}\mbox{}\\
+Il diagramma sottostante illustra le operazioni necessarie alla cancellazione di un progetto esistente. Dal \textit{service} del front-end arriva una richiesta Http che viene instradata alla classe \textbf{ProjectController} mediante il file \textit{routes.php}. Il ProjectController recupera l'username dell'utente autenticato tramite una invocazione della funzione ausiliaria \textit{Auth::user()}, fornita da \textit{Laravel}, su tale utente invoca il metodo \textit{projects()} che ritorna la lista dei progetti dell'utente. Su tale lista viene invocato il metodo \textit{find(projectID)} che ritorna il progetto da eliminare. Su tale progetto viene invocato il metodo \textit{delete()} che rimuove il progetto dal database.
+
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.6\linewidth]{img/DELETE_project}
@@ -47,15 +54,9 @@ Si mostrano i diagrammi di sequenza di alcune chiamate REST che effettua il sist
 	
 \newpage
 
-\textbf{GET user/:username/project/:projectID/presentation/:presentationID}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.6\linewidth]{img/GETpresentation}
-	\caption[GET user/:username/project/:projectID/presentation/:presentationID]{GET user/:username/project/:projectID/presentation/:presentationID}
-	\label{fig:GET user/:username/project/projectID/presentation/:presentationID}
-\end{figure}
+\paragraph{3.2.1.5 PUT user/:username/project/:projectID/presentation/:presentationID}\mbox{}\\
+Il diagramma sottostante illustra le operazioni necessarie all'aggiornamento dei dati di una presentazione. Dal \textit{service} del front-end arriva una richiesta Http che viene instradata alla classe \textbf{PresentationController} mediante il file \textit{routes.php}. Il PresentationController recupera l'username dell'utente autenticato tramite una invocazione della funzione ausiliaria \textit{Auth::user()}, fornita da \textit{Laravel}, su tale utente invoca il metodo \textit{projects()} che ritorna la lista dei progetti dell'utente. Su tale lista viene invocato il metodo \textit{find(projectID)} che ritorna il progetto da cui aggiornare la presentazione. Su tale progetto viene invocato il metodo \textit{presentation()} che ritorna la presentazione, vengono aggiornati i suoi campi tramite i valori contenuti nella richiesta Http, ed infine invocato il metodo \textit{save()} che salva la presentazione nel database.
 
-\textbf{PUT user/:username/project/:projectID/presentation/:presentationID}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\linewidth]{img/PUTpresentation}
@@ -63,9 +64,9 @@ Si mostrano i diagrammi di sequenza di alcune chiamate REST che effettua il sist
 	\label{fig:PUT user/:username/project/:projectID/presentation/:presentationID}
 \end{figure}
 
-\newpage
+\paragraph{3.2.1.5 DELETE user/:username/project/:projectID/presentation/:presentationID}\mbox{}\\
+Il diagramma sottostante illustra le operazioni necessarie alla cancellazione della presentazione associata ad un progetto esistente. Dal \textit{service} del front-end arriva una richiesta Http che viene instradata alla classe \textbf{PresentationController} mediante il file \textit{routes.php}. Il PresentationController recupera l'username dell'utente autenticato tramite una invocazione della funzione ausiliaria \textit{Auth::user()}, fornita da \textit{Laravel}, su tale utente invoca il metodo \textit{projects()} che ritorna la lista dei progetti dell'utente. Su tale lista viene invocato il metodo \textit{find(projectID)} che ritorna il progetto da cui eliminare la presentazione. Su tale progetto viene invocato il metodo \textit{presentation()} che ritorna la presentazione su cui viene invocato il metodo \textit{delete()} che la rimuove dal database.
 
-\textbf{DELETE user/:username/project/:projectID/presentation/:presentationID}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\linewidth]{img/DELETEpresentation}
